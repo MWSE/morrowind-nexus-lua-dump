@@ -1,0 +1,37 @@
+from __future__ import annotations
+
+import loguru
+
+logger = loguru.logger
+
+
+def _format(record: loguru.Record) -> str:
+    source = "{file}:{line}".format(**record)
+    record["extra"]["source"] = source[-24:]
+    return (
+        "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green>"
+        " | "
+        "<level>{level:^8}</level>"
+        " | "
+        "<cyan>{extra[source]:>24}</cyan>"
+        " | "
+        "<level>{message}</level>"
+        "\n"
+    )
+
+
+def set_logger(to: loguru.Logger) -> None:
+    global logger
+    logger = to
+
+
+def get_logger() -> loguru.Logger:
+    from sys import stderr
+    from datetime import datetime
+
+    now = datetime.now().strftime("%m-%d-%Y %H-%M-%S")
+    logger.remove()  # remove the default sync handler
+    logger.add(stderr, format=_format, enqueue=True)
+    logger.add(f"logs/{now}.log", format=_format, enqueue=True)
+
+    return logger

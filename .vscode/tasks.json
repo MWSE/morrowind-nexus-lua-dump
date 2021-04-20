@@ -1,0 +1,107 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "format",
+            "type": "shell",
+            "command": "poetry run black --line-length 110 .",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "check",
+            "type": "shell",
+            "command": "poetry run mypy --strict .",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "poetry run pytest -rP",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "update",
+            "type": "shell",
+            "command": "poetry update",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "poetry run pyinstaller lua_dump.spec --onefile --noconfirm",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "download-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump download-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "extract-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump extract-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "remove-old-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump remove-old-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "scan-added-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump scan-added-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "scan-updated-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump scan-updated-mods 1d",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+    ]
+}
