@@ -1,0 +1,208 @@
+return {
+	-- by default you are guilty of trespassing if you are in an interior cell where it is illegal to rest between 9pm and 8am
+	-- of course this alone makes tons of false positives (Guilds make sense to be open 24/7 but would trigger a felony), here you can set some options to to fine tune
+
+	enabled = true,
+	debug = false,
+	night_start = 21,
+	night_end = 8,
+	min_owner_disposition = 80,
+	
+	-- cells with one of these strings within its name will not be illegal to be at any time
+	find_whitelist = {
+		
+		-- generic public place names
+		"Arena",
+		"Bunkhouse",
+		"Bar",
+		"Camp",
+		"Chapel",
+		"Club",
+		"Canalworks",
+		"Cornerclub",
+		"Ebonheart",
+		"Fort",
+		"Guild",
+		"Hall",
+		"Hlaalu",
+		"Hostel",
+		"Inn",
+		"Imperial",
+		"Mine",
+		"Mission",
+		"Office",
+		"Outpost",
+		"Plaza",
+		"Redoran",
+		"Shipwreck",
+		"Shrine",
+		"Slave Shack",
+		"Temple",
+		"Telvanni",
+		"Tower",
+		"Underworks",
+		"Waistworks",
+		
+		"Mournhold", -- havent never explored it properly so can't tell which cells make sense to be illegal
+		"Solstheim", -- see above
+		
+		-- specific public places names
+		"Seyda Neen, Arrille's Tradehouse",
+		"Caius Cosades",
+		"Desele's House of Earthly Delights",
+		"Eight Plates",
+		"End of the World",
+		"Lucky Lockup",
+		"Palace of Vivec",
+		"Plot and Plaster",
+		"Tel Fyr",
+		"Tel Vos",
+		"The Abbey",
+		"The Flowers of Gold",
+		"The Greathall",
+		"The Lizard's Head",
+		"The Rat In The Pot",
+		
+		-- cave names gently provided by user DremBero on Nexus
+		"Grotto",
+		"Cave",
+		"Cavern",
+		"Abanabi",
+		"Abernanit",
+		"Abinabi",
+		"Adanumuran",
+		"Addamasartus",
+		"Aharnabi",
+		"Aharunartus",
+		"Ahinipalit",
+		"Ainat",
+		"Ansi",
+		"Ashanammu",
+		"Ashinabi",
+		"Ashir-Dan",
+		"Ashirbadon",
+		"Ashmelech",
+		"Assarnud",
+		"Assumnau",
+		"Bensamsi",
+		"Beshara",
+		"Dubdilla",
+		"Dun-Ahhe",
+		"Habinabaes",
+		"Hassour",
+		"Ibar-Dad",
+		"Ilunibi",
+		"Kora-Dur",
+		"Kudanat",
+		"Kumarahaz",
+		"Kurinai",
+		"Maba-Ilu",
+		"Mallapi",
+		"Mannamu",
+		"Maran-Adon",
+		"Masseranit",
+		"Mat",
+		"Milk",
+		"Minabi",
+		"Missamsi",
+		"Nallit",
+		"Nissintu",
+		"Nund",
+		"Odaishah",
+		"Odibaal",
+		"Odirnamat",
+		"Palansour",
+		"Panat",
+		"Pinsun",
+		"Piran",
+		"Pulk",
+		"Punabi",
+		"Punammu",
+		"Punsabanit",
+		"Rissun",
+		"Salmantu",
+		"Sanabi",
+		"Sanit",
+		"Sargon",
+		"Saturan",
+		"Sennananit",
+		"Shal",
+		"Shallit",
+		"Sharapli",
+		"Shurinbaal",
+		"Shushan",
+		"Shushishi",
+		"Sinsibadon",
+		"Subdun",
+		"Sud",
+		"Surirulk",
+		"Tin-Ahhe",
+		"Tukushapal",
+		"Urshilaku Burial Caverns",
+		"Yakanit",
+		"Yakin",
+		"Yasamsi",
+		"Yesamsi",
+		"Zainsipilu",
+		"Zaintirari",
+		"Zanabi",
+		"Zebabi",
+		"Zenarbael",
+	},
+
+	-- Cells with one of these strings in its name will be illegal between 10pm and 8am, this is used to negate a whitelisting from previous config.
+	-- For example in the whitelist there is "Tower" so "Ghostgate, Tower of Dawn" despite being an interior and illegal to rest, will not be illegal to be there (since it's a public place),
+	-- however I want guard towers to be illegal (regular people have no business going there at night) so I added "Guard Tower" to make the various "Ald-ruhn, Guard Tower 1" etc. illegal places
+	find_blacklist = {
+		"Guard Tower"
+	},
+
+	-- Cells with one of these strings in its name will be always be illegal regardless of time, to simulate places that should never be accessible to the public.
+	-- This trumps previous checks.
+	always_illegal = {
+		"Armory",
+		"Barracks",
+		"Manor Bedrooms",
+		"Manor Guard Quarters",
+		"Manor Private Quarters",
+		"Storage",
+		"Storehouse",
+		"Supply",
+		"Vault",
+	},
+
+	-- Cells with the exact name of those listed here will execute the function to determine if it's illegal or not to be there. Use this if you want some places to be illegal only in some circumstances.
+	-- For example being in a great house vault will always be a felony unless you are its grandmaster.
+	-- The functions must be defined in "funcs.lua", and return true when you want it to be illegal
+	-- Remember that in this case there is no time check, you'll need to do it yourself inside the functions if you want it.
+	-- You can also just set the value to false if you want the specific cell to always be legal
+	cell_specific = {
+		['Fort Frostmoth, Armory']			= 'is_not_legion_member',
+		['Fort Frostmoth, Supply Room']		= 'is_not_legion_member',
+		['Gnisis, Barracks']				= 'is_not_legion_member',		
+		
+		['Caldera, Mining Guard Tower']     = 'is_not_legion_member',
+		['Caldera, North Guard Towers']     = 'is_not_legion_member',
+		['Caldera, South Guard Towers']     = 'is_not_legion_member',
+		
+		['Ald-ruhn, Guard Tower 1']         = 'is_not_redoran_member',
+		['Ald-ruhn, Guard Tower 2']         = 'is_not_redoran_member',
+		
+		['Balmora, Eastern Guard Tower']		= 'is_not_hlaalu_member',
+		['Balmora, Western Guard Tower North']  = 'is_not_hlaalu_member',
+		['Balmora, Western Guard Tower South']  = 'is_not_hlaalu_member',
+		
+		
+		['Maar Gan, Guard Tower 1']		= 'is_not_redoran_member',
+		['Maar Gan, Guard Tower 2']     = 'is_not_redoran_member',
+		['Maar Gan, Guard Tower 3']     = 'is_not_redoran_member',
+		['Pelagiad, Guard Tower']       = 'is_not_legion_member',
+		['Suran, Guard Tower']          = 'is_not_hlaalu_member',
+		
+		['Vivec, Hlaalu Ancestral Vaults']  = 'is_not_grandmaster_hlaalu',
+		['Vivec, Hlaalu Vaults']            = 'is_not_grandmaster_hlaalu',
+		['Vivec, Redoran Ancestral Vaults'] = 'is_not_grandmaster_redoran',
+		['Vivec, Redoran Vaults']           = 'is_not_grandmaster_redoran',
+		['Vivec, Telvanni Vault']           = 'is_not_grandmaster_telvanni',
+	}
+}

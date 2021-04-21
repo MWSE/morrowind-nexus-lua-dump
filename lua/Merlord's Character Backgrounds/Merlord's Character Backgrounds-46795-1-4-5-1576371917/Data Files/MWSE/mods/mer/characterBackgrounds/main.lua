@@ -1,0 +1,558 @@
+local configPath = "character_backgrounds"
+
+local config = mwse.loadConfig(configPath)
+if (config == nil) then
+	config = { 
+        enableBackgrounds = true,
+        exclusions = {},
+        greenPactAllowed = {},
+        ratKingInterval = 24,
+        ratKingChance = 3,
+        inheritanceAmount = 2000
+    }
+    mwse.saveConfig(configPath, config)
+end 
+
+
+local backgroundsList = require("mer.characterBackgrounds.backgroundsList")
+
+local perksMenuID = tes3ui.registerID("perksMenu")
+local descriptionID = tes3ui.registerID("perkDescriptionText")
+local descriptionHeaderID = tes3ui.registerID("perkDescriptionHeaderText")
+
+local data
+
+local function modReady()
+    return (
+        config.enableBackgrounds and
+        not tes3.menuMode() and
+        tes3.player and
+        data
+    ) 
+end
+
+
+-------------------------------------------------------------
+--UI functions
+-------------------------------------------------------------
+
+local bgUID = tes3ui.registerID("BackgroundNameUI")
+
+local function updateBGStat()
+    local menu = tes3ui.findMenu(tes3ui.registerID("MenuStat"))
+    if menu then 
+        local background = menu:findChild(bgUID)
+       
+        if data and data.currentBackground then
+            background.text =  backgroundsList[data.currentBackground].name
+        else
+            background.text = "None"
+        end
+        menu:updateLayout()
+    end
+end
+
+local function getDescription(background)
+    if type(background.description) == "function" then
+        return background.description()
+    else
+        return background.description
+    end
+end
+
+local function createBGTooltip()
+    if data.currentBackground then
+        local background = backgroundsList[data.currentBackground]
+
+        local tooltip = tes3ui:createTooltipMenu()
+        local outerBlock = tooltip:createBlock()
+        outerBlock.flowDirection = "top_to_bottom"
+        outerBlock.paddingTop = 6
+        outerBlock.paddingBottom = 12
+        outerBlock.paddingLeft = 6
+        outerBlock.paddingRight = 6
+        outerBlock.width = 400
+        outerBlock.autoHeight = true   
+
+        local header = outerBlock:createLabel{
+            text = background.name 
+        }
+        header.absolutePosAlignX = 0.5
+        header.color = tes3ui.getPalette("header_color")
+
+         
+        local description = outerBlock:createLabel{
+            text = getDescription(background)
+        }
+        description.autoHeight = true
+        description.width = 285
+        description.wrapText = true  
+
+        tooltip:updateLayout()
+    end
+end
+
+
+local function createBGStat(e)
+    
+    local menu = e.element
+    local charBlock = menu:findChild(tes3ui.registerID("MenuStat_level_layout")).parent
+    local bgBlock = charBlock:createBlock()
+    bgBlock.widthProportional = 1.0
+    bgBlock.autoHeight = true
+
+
+    local label = bgBlock:createLabel{ text = "Background"}
+    label.color = tes3ui.getPalette("header_color")
+
+
+    local backgroundBlock = bgBlock:createBlock()
+    backgroundBlock.paddingLeft = 5
+    backgroundBlock.autoHeight = true
+    backgroundBlock.widthProportional = 1.0
+
+    local backgroundLabel = backgroundBlock:createLabel{ id = bgUID,  text = "None" }
+    if data and data.currentBackground then
+        backgroundLabel.text = backgroundsList[data.currentBackground].name
+    end
+    backgroundLabel.wrapText = true
+    backgroundLabel.widthProportional = 1
+    --background.absolutePosAlignX = 1.0
+    backgroundLabel.justifyText = "right"
+    
+
+    label:register("help", createBGTooltip )
+    backgroundBlock:register("help", createBGTooltip )
+    backgroundLabel:register("help", createBGTooltip )
+
+    menu:updateLayout()
+end
+event.register("uiActivated", createBGStat, { filter = "MenuStat" })
+
+-----------------------------------------------------------------
+local okayButton
+
+local function clickedPerk(background)
+    data.currentBackground = background.id
+    
+    local header = tes3ui.findMenu(perksMenuID):findChild(descriptionHeaderID)
+    header.text = background.name
+
+    local description = tes3ui.findMenu(perksMenuID):findChild(descriptionID)
+    description.text = getDescription(background)
+    description:updateLayout()
+    
+    if backgroundsList[data.currentBackground].checkDisabled and backgroundsList[data.currentBackground].checkDisabled() then 
+        header.color = tes3ui.getPalette("disabled_color")
+        okayButton.widget.state = 2
+        okayButton.disabled = true
+    else
+        header.color = tes3ui.getPalette("header_color")
+        okayButton.widget.state = 1
+        okayButton.disabled = false
+    end
+
+end
+
+local function clickedOkay()
+    if data.currentBackground then 
+        --if backgroundsList[data.currentBackground].checkDisabled and backgroundsList[data.currentBackground].checkDisabled() then return end
+        local background = backgroundsList[data.currentBackground]
+        if background.doOnce then
+            background.doOnce(data)
+        end
+
+        if background.callback then
+            background.callback(data)
+        end
+
+        
+    end
+    tes3ui.findMenu(perksMenuID):destroy()
+    tes3ui.leaveMenuMode()
+    updateBGStat()
+end
+
+
+local function createPerkMenu()
+    if not modReady() then return end
+    local perksMenu = tes3ui.createMenu{id = perksMenuID, fixedFrame = true}
+    local outerBlock = perksMenu:createBlock()
+    outerBlock.flowDirection = "top_to_bottom"
+    outerBlock.autoHeight = true
+    outerBlock.autoWidth = true
+
+    --HEADING
+    local title = outerBlock:createLabel{ id = tes3ui.registerID("perksheading"), text = "Select your background:" }
+    title.absolutePosAlignX = 0.5
+    title.borderTop = 4
+    title.borderBottom = 4
+
+    local innerBlock = outerBlock:createBlock()
+    innerBlock.height = 350
+    innerBlock.autoWidth = true
+    innerBlock.flowDirection = "left_to_right"
+
+    --PERKS
+    local perkListBlock = innerBlock:createVerticalScrollPane{ id = tes3ui.registerID("perkListBlock") }
+    perkListBlock.layoutHeightFraction = 1.0
+    perkListBlock.minWidth = 300
+    perkListBlock.autoWidth = true
+    perkListBlock.paddingAllSides = 4
+    perkListBlock.borderRight = 6
+
+    local sort_func = function(a, b)
+        return string.lower(a.name) < string.lower(b.name)
+    end
+    
+    local sortedList = {}
+    for _, background in pairs(backgroundsList) do
+        table.insert(sortedList, background)
+    end
+    table.sort(sortedList, sort_func)
+
+    --Default "No background" button
+    
+    local noBGButton = perkListBlock:createTextSelect{ text = "-Select Background-" }
+    do
+        noBGButton.color = tes3ui.getPalette("disabled_color")
+        noBGButton.widget.idle = tes3ui.getPalette("disabled_color")
+        noBGButton.autoHeight = true
+        noBGButton.layoutWidthFraction = 1.0
+        noBGButton.paddingAllSides = 2
+        noBGButton.borderAllSides = 2
+
+        noBGButton:register("mouseClick", function()
+            data.currentBackground = nil
+            local header = tes3ui.findMenu(perksMenuID):findChild(descriptionHeaderID)
+            header.text = "No Background Selected"
+        
+            local description = tes3ui.findMenu(perksMenuID):findChild(descriptionID)
+            description.text = "Select a Background from the list."
+            description:updateLayout()
+        end)
+    end
+
+    --Rest of the buttons
+    for _, background in pairs(sortedList) do
+        local perkButton = perkListBlock:createTextSelect{ id = tes3ui.registerID("perkBlock"), text = background.name }
+        perkButton.autoHeight = true
+        perkButton.layoutWidthFraction = 1.0
+        perkButton.paddingAllSides = 2
+        perkButton.borderAllSides = 2
+        if background.checkDisabled and background.checkDisabled() then
+            perkButton.color = tes3ui.getPalette("disabled_color")
+            perkButton.widget.idle = tes3ui.getPalette("disabled_color")
+        end
+        perkButton:register("mouseClick", function() clickedPerk(background) end )
+        
+        
+
+    end
+    --DESCRIPTION
+    do
+        local descriptionBlock = innerBlock:createThinBorder()
+        descriptionBlock.layoutHeightFraction = 1.0
+        descriptionBlock.width = 300
+        descriptionBlock.borderRight = 10
+        descriptionBlock.flowDirection = "top_to_bottom"
+        descriptionBlock.paddingAllSides = 10
+
+        local descriptionHeader = descriptionBlock:createLabel{ id = descriptionHeaderID, text = ""}
+        descriptionHeader.color = tes3ui.getPalette("header_color")
+
+        local descriptionText = descriptionBlock:createLabel{id = descriptionID, text = ""}
+        descriptionText.wrapText = true
+    end
+
+    local buttonBlock = outerBlock:createBlock()
+    buttonBlock.flowDirection = "left_to_right"
+    buttonBlock.widthProportional = 1.0
+    buttonBlock.autoHeight = true
+    buttonBlock.childAlignX = 1.0
+
+
+    --Randomise
+    local randomButton = buttonBlock:createButton{ text = "Random"}
+    randomButton.alignX = 1.0
+    randomButton:register("mouseClick", function()
+        local list = perkListBlock:getContentElement().children
+        list[ math.random(#list) ]:triggerEvent("mouseClick")
+    end)
+
+
+    --OKAY
+    okayButton = buttonBlock:createButton{ id = tes3ui.registerID("perkOkayButton"), text = tes3.findGMST(tes3.gmst.sOK).value }
+    okayButton.alignX = 1.0
+    okayButton:register("mouseClick", clickedOkay)
+
+    perksMenu:updateLayout()
+
+    tes3ui.enterMenuMode(perksMenuID)
+    noBGButton:triggerEvent("mouseClick")
+end
+
+
+
+local charGen
+local newGame
+local function checkCharGen()
+    if charGen.value == 10 then
+        newGame = true
+    elseif newGame and charGen.value == -1 then
+        event.unregister("simulate", checkCharGen)
+        timer.start{
+            type = timer.simulate,
+            duration = 0.7,
+            callback = createPerkMenu
+        }
+    end
+end
+
+
+
+local function loaded()
+    newGame = false
+
+    --prepare data
+    tes3.player.data.merBackgrounds = tes3.player.data.merBackgrounds or {}
+    data = tes3.player.data.merBackgrounds
+    --initialise existing background
+    local background = backgroundsList[data.currentBackground]
+    if background and background.callback then
+        background.callback(data)
+    end
+
+    --Check for chargen
+    charGen = tes3.findGlobal("CharGenState")
+    event.unregister("simulate", checkCharGen)
+    event.register("simulate", checkCharGen)
+    updateBGStat()
+    
+end
+
+event.register("loaded", loaded )
+
+
+local meatPatterns = {
+    "meat",
+    "cuttle",
+    "egg",
+    "skin",
+    "hide",
+    "jerky",
+    "bone",
+    "blood",
+    "fish",
+    "scales",
+    "scrib",
+    "shalk",
+    "leather",
+    "pelt",
+    "flesh",
+    "brain",
+    "_ear",
+    "eye",
+    "heart",
+    "tail",
+    "tongue",
+    "morsel",
+    "_ingcrea"
+}
+local function initialiseConfig()
+    local hasInitialised = table.size(config.greenPactAllowed) > 0
+    --[[
+        If we haven't made this yet, use the string patterns to 
+        populate ingredients that are allowed
+    ]]
+    
+    if not hasInitialised then
+        config.greenPactAllowed = config.greenPactAllowed or {}
+        for ingredient in tes3.iterateObjects(tes3.objectType.ingredient) do
+            for _, pattern in ipairs(meatPatterns) do
+                local id = string.lower(ingredient.id)
+                if string.find(string.lower(id), pattern) then
+                    config.greenPactAllowed[id] = true
+                    mwse.log("Added %s to green pact exclusions", id)
+                    break
+                end
+            end
+        end
+        mwse.saveConfig("character_backgrounds", config)
+        mwse.log("------------------------------------------saved Config")
+    end
+end
+event.register("initialized", initialiseConfig)
+---------------------------------------
+---MCM
+---------------------------------------
+
+
+local function registerMCM()
+    local sideBarDefault = (
+        "Welcome to Merlord's Character Backgrounds! This mod adds 25 unique " ..
+        "character backgrounds that can be selected after character generation. "
+    )
+
+    local function addSideBar(component)
+        component.sidebar:createInfo{ text = sideBarDefault}
+        component.sidebar:createHyperLink{
+            text = "Made by Merlord",
+            exec = "start https://www.nexusmods.com/users/3040468?tab=user+files",
+            postCreate = (
+                function(self)
+                    self.elements.outerContainer.borderAllSides = self.indent
+                    self.elements.outerContainer.alignY = 1.0
+                    self.elements.outerContainer.layoutHeightFraction = 1.0
+                    self.elements.info.layoutOriginFractionX = 0.5
+                end
+            ),
+        }
+
+    end
+
+
+
+    local template = mwse.mcm.createTemplate("Merlord's Character Backgrounds")
+    template:saveOnClose(configPath, config)
+
+    local page = template:createSideBarPage()
+    addSideBar(page)
+
+    page:createOnOffButton{
+        label = "Enable Character Backgrounds",
+        variable = mwse.mcm.createTableVariable{
+            id = "enableBackgrounds", 
+            table = config
+        },
+        description = "Turn this mod on or off."
+    }
+
+    page:createButton {
+        buttonText = "Activate Backgrounds Menu",
+        description = "Manually trigger the Character Backgrounds menu. Be warned, activating this on an existing character may have unintended side effects!",
+        inGameOnly = true,
+        callback = function()
+            timer.delayOneFrame(function()
+                createPerkMenu()
+            end)
+        end
+    }
+
+    template:createExclusionsPage{
+        label = "Artificer",
+        description = "The Artificer background blocks the use of spells. Add spells to the whitelist to allow them to be cast. This is intended for compatibility with mods that require casting spells for things like summoning companions. ",
+        leftListLabel = "Allowed Spells",
+        rightListLabel = "Known Spells",
+        variable = mwse.mcm.createTableVariable{
+            id = "exclusions",
+            table = config
+        },
+        filters = {
+            {
+                label = "Spells",
+                callback = function()
+                    local list = {}
+                    if tes3.player then
+                        for spell in tes3.iterate(tes3.player.object.spells.iterator) do
+                            table.insert(list, spell.name)
+                        end
+                    end
+                    return list
+                end
+            }
+        }
+    }
+
+    template:createExclusionsPage{
+        label = "Green Pact",
+        description = "The Green Pact dictates that a Bosmer may only eat meat-based products. Use this page to configure which ingredients can be consumed.",
+        leftListLabel = "Meat (allowed)",
+        rightListLabel = "Non-meat (forbidden)",
+        variable = mwse.mcm.createTableVariable{
+            id = "greenPactAllowed",
+            table = config
+        },
+        filters = {
+            {
+                label = "Ingredients",
+                type = "Object",
+                objectType = tes3.objectType.ingredient
+            }
+        }
+    }
+
+    --local ratKing = page:createCategory("Rat King")
+    local ratKing = template:createSideBarPage{
+        label = backgroundsList.ratKing.name,
+        description = getDescription(backgroundsList.ratKing)
+    }
+    ratKing:createSlider{
+        label = "Time between rat hordes: %s hours",
+        description = "The number of hours after a horde of rats has been summoned that they can appear again. ",
+        variable = mwse.mcm.createTableVariable{ id = "ratKingInterval", table = config },
+        min = 0,
+        max = 20,
+        step = 1,
+        jump = 1
+    }
+    ratKing:createSlider{
+        label = "Chance to summon: %s%%",
+        description = "Chance that a horde of rats will be summoned when combat starts. ",
+        variable = mwse.mcm.createTableVariable{ id = "ratKingChance", table = config },
+        min = 1,
+        max = 240,
+        step = 1,
+        jump = 24
+    }
+
+    --local inheritance = page:createCategory("Inheritance")
+    local inheritance = template:createSideBarPage{
+        label =  backgroundsList.inheritance.name,
+        description = getDescription(backgroundsList.inheritance)
+    }
+    inheritance:createSlider{
+        label = "Inheritance amount: %s gold",
+        description = "How much money you get with the Inheritance background. ",
+        min = 1000,
+        max = 10000,
+        step = 1,
+        jump = 1000,
+        variable = mwse.mcm.createTableVariable{ 
+            id = "inheritanceAmount", 
+            table = config, 
+        },
+    }
+    template:register()
+end
+
+event.register("modConfigReady", registerMCM)
+
+
+--[[local function intialize(e)
+    local interop = require("mer.characterBackgrounds.interop")
+    local testBackground = {
+        id = "test",
+        name = "A Test Background",
+        description = "Put a description here",
+        doOnce = function()
+            --doOnce() called when background is first activated
+            tes3.modStatistic({
+                reference = tes3.player,
+                attribute = tes3.attribute.intelligence,
+                value = 100
+            })
+        end,
+        callback = function()
+            timer.start{
+                type = timer.real, 
+                duration = 1
+                callback = function()
+                    tes3.messageBox("Do something here")
+                end
+            }
+        end
+    }
+    interop.addBackground(testBackground)
+end
+event.register("initialized", intialize)]]--

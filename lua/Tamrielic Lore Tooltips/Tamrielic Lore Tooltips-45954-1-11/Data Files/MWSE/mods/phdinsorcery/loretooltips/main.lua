@@ -1,0 +1,89 @@
+local loreTable = {
+["lords_cuirass_unique"] = "The Lord\'s Mail, sometimes called the Armor of Morihaus or the gift of Kynareth, is an ancient cuirass of unsurpassable quality. It grants the wearer power to absorb health, resist the effects of spells, and cure oneself of poison when used. It is said that whenever Kynareth deigns the wearer unworthy, the Lord\'s Mail will be taken away and hidden for the next chosen one.",
+["ebon_plate_cuirass_unique"] = "The Ebony Mail is a breastplate created before recorded history by the Dark Elven goddess Boethiah. It is she who determines who should possess the Ebony Mail and for how long a time. If judged worthy, its power grants the wearer added resistance of fire, magicka, and grants a magical shield. It is Boethiah alone who determines when a person is ineligible to bear the Ebony Mail any longer, and the goddess can be very capricious.",
+["spell_breaker_unique"] = "Spell Breaker, superficially a Dwemer tower shield, is one of the most ancient relics of Tamriel. Aside from its historical importance in the Battle of Rourken-Shalidor, the Spell Breaker protects its wielder almost completely from any spell caster, either by reflecting magicks or silencing any mage about to cast a spell. It is said that Spell Breaker still searches for its original owner, and will not remain the property of anyone else for long. For most, possessing Spell Breaker for any length of time is power enough.",
+["claymore_chrysamere_unique"] = "The Paladin\'s Blade is an ancient claymore with offensive capabilities surpassed only by its own defenses. It lends the wielder health, protects him or her from fire, and reflects any spells cast against the wielder back to the caster. Seldom has Chrysamere been wielded by any bladesman for any length of time, for it chooses not to favor one champion.",
+["staff_magnus_unique"] = "The Staff of Magnus, one of the elder artifacts of Tamriel, was a metaphysical battery of sorts for its creator, Magnus. When used, it absorbs an enemy\'s health and mystical energy. In time, the Staff will abandon the mage who wields it before he becomes too powerful and upsets the mystical balance it is sworn to protect.",
+["ring_warlock_unique"] = "The Warlock\'s Ring of the Archmage Syrabane is one of the most popular relics of myth and fable. In Tamriel\'s ancient history, Syrabane saved all of the continent by judicious use of his Ring, and ever since, it has helped adventurers with less lofty goals. It is best known for its ability to reflect spells cast at its wearer and to improve his or her speed and to restore health. No adventurer can wear the Warlock\'s Ring for long, for it is said that the Ring is Syrabane\'s alone to command.",
+["ring_phynaster_unique"] = "The Ring of Phynaster was made hundreds of years ago by a man who needed good defenses to survive his adventurous life. Thanks to the Ring, Phynaster lived for hundreds of years, and since then it has passed from person to person. The Ring improves its wearer\'s overall resistance to poison, magicka, and shock. Still, Phynaster was cunning and cursed the ring so that it eventually disappears from its holder\'s possessions and returns to another resting place, discontent to stay anywhere but with Phynaster himself.",
+["ring_khajiit_unique"] = "The Ring of the Khajiit is an ancient relic, hundreds of years older than Rajhin, the thief that made the Ring famous. It was Rajhin who used the Ring\'s powers to make himself invisible and as quick as the breath of wind. Using the Ring, he became the most successful burglar in Elsweyr\'s history. Rajhin\'s eventual fate is a mystery, but according to legend, the Ring rebelled against such constant use and disappeared, leaving Rajhin helpless before his enemies.",
+["mace of molag bal_unique"] = "Also known as the Vampire\'s Mace, the Mace of Molag Bal drains its victims of magicka and gives it to the bearer. It also has the ability to transfer an enemy\'s strength to its wielder. Molag Bal has been quite free with his artifact. There are many legends about the Mace. It seems to be a favorite for vanquishing wizards.",
+["daedric_helm_clavicusvile"] = "Ever the vain one, Clavicus Vile made a masque suited to his own personality. The bearer of the Masque is more likely to get a positive response from the people of Tamriel. The higher his personality, the larger the bonus. The best known story of the Masque tells the tale of Avalea, a noblewoman of some renown. As a young girl, she was grossly disfigured by a spiteful servant. Avalea made a dark deal with Clavicus Vile and received the Masque in return. Though the Masque did not change her looks, suddenly she had the respect and admiration of everyone. A year and a day after her marriage to a well connected baron, Clavicus Vile reclaimed the Masque. Although pregnant with his child, Avalea was banished from the Baron\'s household. Twenty one years and one day later, Avalea\'s daughter claimed her vengeance by slaying the Baron.",
+["mehrunes'_razor_unique"] = "The Dark Brotherhood has coveted this ebony dagger for generations. This mythical artifact is capable of slaying any creature instantly. History does not record any bearers of Mehrunes\' Razor. However, the Dark Brotherhood was once decimated by a vicious internal power struggle. It is suspected that the Razor was involved.",
+["cuirass_savior_unique"] = "Another of Hircine\'s artifacts was the Cuirass of the Savior\'s Hide. The Cuirass has the special ability to resist magicka. Legend has it that Hircine rewarded his peeled hide to the first and only mortal to have ever escaped his hunting grounds. This unknown mortal had the hide tailored into this magical Cuirass for his future adventures. The Savior\'s Hide has a tendency to travel from hero to hero as though it has a mind of its own.",
+["spear_mercy_unique"] = "One of the more mysterious artifacts is the Spear of Bitter Mercy. Little to nothing is known about the Spear. There are no recorded histories but many believe it to be of Daedric origin. The only known legend about it is its use by a mighty hero during the fall of the Battlespire. The hero was aided by the Spear in the defeat of Mehrunes Dagon and the recapturing of the Battlespire. Since that time, the Spear of Bitter Mercy has made few appearances within Tamriel.",
+["daedric_scourge_unique"] = "The Daedric Scourge is a mighty mace forged from sacred ebony in the Fires of Fickledire. The legendary weapon of Mackkan, it was once a fierce weapon used to send spirits of black back into Oblivion. The weapon has the ability to summon creatures from Oblivion, Once a tool used against the Daedric Lords in the Battlespire, it now roams the land with adventurers.",
+["longbow_shadows_unique"] = "Legend has it that the Bow of Shadows was forged by the Daedra Nocturnal. The legendary ranger, Raerlas Ghile, was granted the Bow for a secret mission that failed, and the Bow was lost. Raerlas did not go down without a hearty fight and is said to have, with the aid of the Bow, taken scores of his foes with him. The Bow grants the user the ability of invisibility and increased speed. Many sightings of the Bow of Shadows have been reported, and it is even said that the sinister Dark Elf assassin of the Second Era, Dram, once wielded this bow.",
+["gauntlet_fists_l_unique"] = "Randagulf of Clan Begalin goes down in Tamrielic history as one of the mightiest warriors from Skyrim. He was known for his courage and ferocity in battle and was a factor in many battles. He finally met his fate when King Harald conquered Skyrim. King Harald respected this great hero and took Randagulf\'s gauntlets for his own. After King Harald died, the gauntlets disappeared. The King claimed that the Fists granted the bearer added strength.",
+["gauntlet_fists_r_unique"] = "Randagulf of Clan Begalin goes down in Tamrielic history as one of the mightiest warriors from Skyrim. He was known for his courage and ferocity in battle and was a factor in many battles. He finally met his fate when King Harald conquered Skyrim. King Harald respected this great hero and took Randagulf\'s gauntlets for his own. After King Harald died, the gauntlets disappeared. The King claimed that the Fists granted the bearer added strength.",
+["claymore_iceblade_unique"] = "The Ice Blade of the Monarch is truly one of Tamriel\'s most prized artifacts. Legend has it that the Evil Archmage Almion Celmo enchanted the claymore of a great warrior with the soul of a Frost Monarch, a stronger form of the more common Frost Atronach. The warrior, Thurgnarr Assi, was to play a part in the assassination of a great king in a far off land, and become the new leader. The assassination failed and the Archmage was imprisoned. The Ice Blade freezes all who feel its blade. The Blade circulates from owner to owner, never settling in one place for long.",
+["ring_surrounding_unique"] = "Little is known of this prize but it is said that it lends the wearer the ability to blend in with their surroundings.",
+["boots_apostle_unique"] = "The Boots of the Apostle are a true mystery. The wearer of the boots is rumored to be able to levitate, though nobody has ever seen them used.",
+["ring_mentor_unique"] = "The Mentor\'s Ring is a prized possession for any apprentice to magic. It lends the wearer the ability to increase their intelligence and wisdom, thus making their use of magic more efficient. The High Wizard Carni Asron is said to be the creator of the Ring. It was a construct for his young apprentices while studying under his guidance. After Asron\'s death, the Ring and several other possessions vanished and have been circulated throughout Tamriel.",
+["ring_wind_unique"] = "No facts are known about the Ring of the Wind, but the title and the few rumors lend one to think it grants the wearer added speed.",
+["ring_vampiric_unique"] = "One of the more deadly and rare artifacts in Tamriel is the Vampiric Ring. It is said that the Ring has the power to steal its victim\'s health and grant it to the wearer. The exact nature and origin of the Ring is wholly unknown, but many elders speak of its evil creation in Morrowind long, long ago by a cult of Vampire followers. The Vampiric Ring is an extremely rare artifact and is only seen every few hundred cycles of the moons.",
+["towershield_eleidon_unique"] = "Eleidon was a holy knight of legend in Breton history. He was a sought after man for his courage and determination to set all wrongs right. In one story, it is said that he rescued a Baron\'s daughter from sure death at the hands of an evil warlord. For his reward, the Baron spent all of his riches to have an enchanted shield built for Eleidon. The Shield granted Eleidon the opportunity to heal his wounds.",
+["staff_hasedoki_unique"] = "Hasedoki was said to have been a very competitive wizard. He wandered the land in search for a wizard who was greater than he. To the best of all knowledge, he never found a wizard who could meet up to his challenge. It is said that he felt so lonely and isolated because so many feared his power, that he bonded his life-force into his very own staff, where his soul remains to this very day. Magic users all over Tamriel have been searching for this magical staff. Granting its wielder a protection of magicka, it is a sure prize for any magic user.",
+["bloodworm_helm_unique"] = "The King of Worms was said to have left behind one of his prized possessions, the Bloodworm Helm. The Helm is a construct of magically formed bone. The Helm allows the user to summon skeletons and control the undead. It would be a prized artifact to a necromancer.",
+["dragonbone_cuirass_unique"] = "This cuirass is one of the greatest artifacts any collector or hero could own. It is constructed of real dragon bone and was enchanted by the first Imperial Battlemage, Zurin Arctus, in the early years of the Third Era. It is a truly exquisite piece of work and many have sought to possess it. The properties of the Cuirass allow the wearer to completely resist fire, and to damage an enemy with a blast of fire. Little is known about the involvement of Zurin Arctus with the enchantment of the Cuirass, but an old tale speaks of a debt that he owed to a traveling warrior. Like the warrior, the Dragonbone Mail never stays put for long.",
+["warhammer_crusher_unique"] = "The Skull Crusher is an amazingly large and powerful weapon. The Warhammer was created in a fire, magically fueled by the Wizard, Dorach Gusal, and was forged by the great weaponsmith, Hilbongard Rolamus. The steel is magically hardened and the weight of the weapon is amazingly light, which makes for more powerful swings and deadly blows. The Warhammer was to be put on display for a festival, but thieves got it first. The Skull Crusher still travels Tamriel in search of its creators.",
+["katana_goldbrand_unique"] = "The sword Goldbrand is almost a complete mystery. Thieves tell tales about its golden make and how it was actually forged by ancient dragons of the North. Their tales claim that it was given to a great knight who was sworn to protect the dragons. The Sword lends its wielder the ability to do fire damage on an enemy. Goldbrand has not been sighted in recent history and is said to be awaiting a worthy hero.",
+["dagger_fang_unique"] = "Black Marsh was once known to be inhabited with what the Argonians called the Wamasus. Northern men considered them to be intelligent dragons with lightning for blood. One such mighty beast, Haynekhtnamet, was slain by the Northern men, though it took 7 days and nights, and a score of men. One of the surviving men took a fang home as a trophy. The fang was carved down into a blade and fashioned into a small dagger. The Dagger mysteriously houses some of the beast\'s magical properties and grants the user the ability to do shock damage on an opponent. This unique Dagger is seen occasionally by traveling heroes.",
+["longsword_umbra_unique"] = "The Umbra Sword was enchanted by the ancient witch Naenra Waerr, and its sole purpose was the entrapment of souls. Used in conjunction with a soul gem, the Sword allows the wielder the opportunity to imprison an enemy\'s soul in the gem. Naenra was executed for her evil creation, but not before she was able to hide the Sword. The Umbra Sword is very choosy when it comes to owners and therefore remains hidden until a worthy one is found.",
+["ring_denstagmer_unique"] = "All that is known of this Ring is that it may grant the user protection from certain elements. Even the name Denstagmer is a mystery.",
+["helm_bearclaw_unique"] = "One of Valenwood\'s legendary heroes is Oreyn Bearclaw. Son of King Faume Toad-Eye, he was a respected clan hunter and a future leader. Wood Elven legend claims Oreyn single handedly defeated Glenhwyfaunva, the witch-serpent of the Elven wood, forever bringing peace to his clan. Oreyn would go on to accomplish numerous other deeds, eventually losing his life to the Knahaten Flu. His Helm stood as a monument of his stature for future generations to remember. The Helm was lost eventually, as the Clan split, and is now a treasured artifact for adventurers. The Helm of Oreyn Bearclaw is rumored to improve the wearer\'s agility and endurance.",
+["daedric_crescent_unique"] = "Probably the most rare and even outlawed item of all the great prizes is the Daedric Crescent Blade. The Blade was used by Mehrunes Dagon\'s Daedric forces in the capture of the Imperial Battlespire. These extremely unique Blades were gathered up and destroyed after the Battlespire was recaptured by the Empire. All but one, it seems. Though the Empire believes them all to be destroyed, it is rumored that one still remains in existence, somewhere in Tamriel, though none have ever seen it. The Blade lends its wielder the ability to do great damage on an enemy and allows him to paralyze and put heavy wear on his enemy\'s armor. Quite the prize for any mighty warrior."
+}
+config = mwse.loadConfig("Tamrielic Lore Tooltips")
+if not config then
+	config = {
+		citeYagrum = true
+	}
+end
+
+-- Package to send to the mod config.
+local modConfig = require("phdinsorcery.loretooltips.mcm")
+modConfig.config = config
+local function registerModConfig()
+	mwse.registerModConfig("Tamrielic Lore Tooltips", modConfig)
+end
+event.register("modConfigReady", registerModConfig)
+
+--[[local data
+local function loaded(e)
+	data = tes3.player.data
+	data.phd = data.phd or {}
+end
+local function bookRead(e)
+	if data.phd.bookRead or e.activator ~= tes3.player then
+		return
+	elseif e.target.id == "bk_Yagrum's_Book" then
+		data.phd.bookRead = true
+		tes3.messageBox({ message = "You feel your knowledge on the lore of Vvardenfell expand..." })
+	end
+end]]
+local function loreTooltip(e)
+    local lore = loreTable[e.object.id]
+	if config.citeYagrum and lore then
+		lore = string.format('"%s"\n-Yagrum Bagarn, Tamrielic Lore', lore)
+	end
+	local result = event.trigger("PhD:Identify:Check", { item = e.object })
+    if lore and not ( result and result.block ) then
+        local loreBlock = e.tooltip:createBlock{}
+        loreBlock.minWidth = 1
+        loreBlock.maxWidth = 440
+        loreBlock.autoWidth = true
+        loreBlock.autoHeight = true
+        loreBlock.paddingAllSides = 4
+		local loreLabel = loreBlock:createLabel{ text = lore }
+        loreLabel.color = tes3ui.getPalette("count_color")
+		loreLabel.wrapText = true
+        --[[if tes3.mobilePlayer.intelligence.current < 50 and not data.phd.bookRead then
+            loreLabel.font = 2
+			loreLabel.text = "WOE UPON YOU WOE UPON YOU WOE UPON YOU"
+        end]]
+    end
+end
+event.register("uiObjectTooltip", loreTooltip)
+--event.register("activate", bookRead)
+--event.register("loaded", loaded)
