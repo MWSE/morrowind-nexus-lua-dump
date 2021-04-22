@@ -73,10 +73,10 @@ As a last step this command will take care of cleaning up any older versions of 
 
 If, for what ever reason, using `lua-dump.exe` was not viable or not preferred, you can instead use the source code provided.
 
-The project is written in `python`, which you will need a valid copy of installed on your system. Python version `3.6.1` or newer should work (development was done on version `3.9.4`, so try using that if you run into issues).
+The project is written in [python](https://www.python.org/), which you will need a valid copy of installed on your system. Python version `3.6.1` or newer should work. (Development was done on version `3.9.4`, so try using that if you run into issues.)
 
 To simplify dependency management, the package is set up as [poetry](https://python-poetry.org/) project. You will need to download and install that as detailed on the linked page.
 
-Once you have both `python` and `poetry` you can run `poetry install` from within the source directory to automatically set up a virtual environment with all the necessary dependencies.
+Once you have both [python](https://www.python.org/) and [poetry](https://python-poetry.org/) you can run `poetry install` from within the source directory to automatically set up a virtual environment with all the necessary dependencies.
 
-You can run the program with `poetry run python -m lua_dump`. Or open the project in [vscode](https://code.visualstudio.com/) and utilize the provided [tasks](https://code.visualstudio.com/docs/editor/tasks). If you're going to be working on the source code directly, installing the `python` and `pylance` extensions is highly recommended to make use of the project's type annotations for better code navigation, autocomplete, error checking, etc.
+You can run the program with `poetry run python -m lua_dump`. Or open the project in [vscode](https://code.visualstudio.com/) and utilize the provided [tasks](https://code.visualstudio.com/docs/editor/tasks). If you're going to be working on the source code directly, installing the [python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [pylance extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) is highly recommended to make use of the project's type annotations for better code navigation, autocomplete, error checking, etc.
