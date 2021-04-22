@@ -6,6 +6,9 @@ downloads
 lua/**/*.*
 !lua/**/*.lua
 
+# keep spec file for building exe
+!lua_dump.spec
+
 # See comments about Pipfile.lock
 poetry.lock
 
