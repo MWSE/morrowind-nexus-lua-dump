@@ -103,5 +103,15 @@
                 "focus": true
             }
         },
+        {
+            "label": "lua-dump",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        }
     ]
 }

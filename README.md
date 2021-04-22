@@ -45,6 +45,8 @@ For those wanting to update the repository data, you should run the following co
 
 *Note: You can run any of the commands below with --help for more information about their internals*
 
+**IMPORTANT**: Make sure your `/lua/` folder is placed in the same directory as the `lua-dump.exe`.
+
 1. > `lua-dump scan-added-mods Y`
 
 This updates [index.json](https://github.com/MWSE/morrowind-nexus-lua-dump/blob/source/index.json) with information about lua mods that have been published since the last time the command was ran.

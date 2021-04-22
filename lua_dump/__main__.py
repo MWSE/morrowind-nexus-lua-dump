@@ -7,6 +7,7 @@ from typing import Awaitable, Callable
 
 from typer import Argument, Option, Typer
 
+from lua_dump.extract import LUA_PATH
 from lua_dump.logger import get_logger
 from lua_dump.lua_index import LuaIndex
 from lua_dump.morrowind_nexus import MorrowindNexus
@@ -161,7 +162,10 @@ T = Callable[[LuaIndex, MorrowindNexus], Awaitable]
 async def apply(index: LuaIndex, update: T) -> None:
     # read api key
     api_key = Path("secrets/API_KEY").read_text().rstrip()
-    assert len(api_key), "error: invalid secrets/API_KEY"
+    assert len(api_key), "error: invalid secrets/API_KEY file"
+
+    # read lua dir
+    assert any(LUA_PATH.iterdir()), "error: invalid /lua/ directory"
 
     # update index
     async with MorrowindNexus(api_key) as nexus:
