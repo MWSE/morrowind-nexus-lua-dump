@@ -18,7 +18,7 @@ Usage: lua-dump.exe [OPTIONS] COMMAND [ARGS]...
   Requires a valid Nexus Mods Personal API Key. You can get yours from:
   https://www.nexusmods.com/users/myaccount?tab=api
 
-  Pass your key to the program by saving it to a file at `/secrets/API_Key`.
+  Pass your key to the program by saving it to a file at `/secrets/API_KEY`.
   (The secrets directory is skipped via .gitignore for obvious reasons)
 
   Downloaded archives are saved to `/downloads/mod-name/` directory.
@@ -49,7 +49,7 @@ For those wanting to update the repository data, you should run the following co
 
 This updates [index.json](https://github.com/MWSE/morrowind-nexus-lua-dump/blob/source/index.json) with information about lua mods that have been published since the last time the command was ran.
 
-2. > `lua-dump scan-updated-mods 1m`
+2. > `lua-dump scan-updated-mods 1d`
 
 This updates [index.json](https://github.com/MWSE/morrowind-nexus-lua-dump/blob/source/index.json) with information about lua mods that have been updated within the given period. Supported parameters are `1h`, `1d`, or `1m` (1 hour, 1 day, 1 month).
 
@@ -71,10 +71,10 @@ As a last step this command will take care of cleaning up any older versions of 
 
 If, for what ever reason, using `lua-dump.exe` was not viable or not preferred, you can instead use the source code provided.
 
-The project is written in `python`, which you will need a valid copy of installed on your system. Python version `3.6.1` or newer should work (development was done on version `3.9.4`, so try to using that if you run into issues).
+The project is written in `python`, which you will need a valid copy of installed on your system. Python version `3.6.1` or newer should work (development was done on version `3.9.4`, so try using that if you run into issues).
 
 To simplify dependency management, the package is set up as [poetry](https://python-poetry.org/) project. You will need to download and install that as detailed on the linked page.
 
-Once you have both `python` and `poetry` you can run `poetry install` from within in the source directory to automatically set up a virtual environment with all the necessary dependencies.
+Once you have both `python` and `poetry` you can run `poetry install` from within the source directory to automatically set up a virtual environment with all the necessary dependencies.
 
 You can run the program with `poetry run python -m lua_dump`. Or open the project in [vscode](https://code.visualstudio.com/) and utilize the provided [tasks](https://code.visualstudio.com/docs/editor/tasks). If you're going to be working on the source code directly, installing the `python` and `pylance` extensions is highly recommended to make use of the project's type annotations for better code navigation, autocomplete, error checking, etc.
