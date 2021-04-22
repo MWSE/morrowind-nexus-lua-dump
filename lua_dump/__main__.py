@@ -21,7 +21,7 @@ _help = """Interface for gathering lua mods from the Morrowind Nexus.
     https://www.nexusmods.com/users/myaccount?tab=api
 
     Pass your key to the program by saving it to a file at `/secrets/API_Key`.
-    (The secrets directoy is skipped via .gitignore for obvious reasons)
+    (The secrets directory is skipped via .gitignore for obvious reasons)
 
     Downloaded archives are saved to `/downloads/mod-name/` directory.
     Extracted lua files are saved to `/lua/mod-name/` directory.

@@ -19,7 +19,7 @@ Usage: lua-dump.exe [OPTIONS] COMMAND [ARGS]...
   https://www.nexusmods.com/users/myaccount?tab=api
 
   Pass your key to the program by saving it to a file at `/secrets/API_Key`.
-  (The secrets directoy is skipped via .gitignore for obvious reasons)
+  (The secrets directory is skipped via .gitignore for obvious reasons)
 
   Downloaded archives are saved to `/downloads/mod-name/` directory.
   Extracted lua files are saved to `/lua/mod-name/` directory.
@@ -51,11 +51,11 @@ This updates [index.json](https://github.com/MWSE/morrowind-nexus-lua-dump/blob/
 
 2. > `lua-dump scan-updated-mods 1m`
 
-This updates `index.json` with information about lua mods that have been updated within the given period. Supported parameters are `1h`, `1d`, or `1m` (1 hour, 1 day, 1 month).
+This updates [index.json](https://github.com/MWSE/morrowind-nexus-lua-dump/blob/source/index.json) with information about lua mods that have been updated within the given period. Supported parameters are `1h`, `1d`, or `1m` (1 hour, 1 day, 1 month).
 
 4. > `lua-dump download-mods Y`
 
-Now that `index.json` is updated, this command will download any files known to have content more recent than whats in our `/lua/` directory. The results are saved to the `/downloads/` directory.
+Now that [index.json](https://github.com/MWSE/morrowind-nexus-lua-dump/blob/source/index.json) is updated, this command will download any files known to have content more recent than whats in our `/lua/` directory. The results are saved to the `/downloads/` directory.
 
 5. > `lua-dump extract-mods Y`
 
