@@ -29,7 +29,7 @@ def get_logger() -> loguru.Logger:
     from sys import stderr
     from datetime import datetime
 
-    now = datetime.now().strftime("%m-%d-%Y %H-%M-%S")
+    now = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
     logger.remove()  # remove the default sync handler
     logger.add(stderr, format=_format, enqueue=True)
     logger.add(f"logs/{now}.log", format=_format, enqueue=True)
