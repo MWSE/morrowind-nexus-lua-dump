@@ -5228,12 +5228,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000024051,
-                    "name": "Beautiful Cities of Morrowind-49231-1-8-0-1618992738.7z",
-                    "version": "1.8.0"
+                    "file_id": 1000024073,
+                    "name": "Beautiful Cities of Morrowind-49231-1-8-1-1619117425.7z",
+                    "version": "1.8.1"
                 }
             ],
-            "indexed_timestamp": 1618996014
+            "indexed_timestamp": 1619143810
         },
         {
             "mod_id": 49232,
@@ -5428,12 +5428,12 @@
             "author": "Greatness7 and OperatorJack",
             "files": [
                 {
-                    "file_id": 1000023801,
-                    "name": "The Blight 1.1-49504-1-1-1617761494.7z",
-                    "version": "1.1"
+                    "file_id": 1000024062,
+                    "name": "The Blight 1.2-49504-1-2-1619053579.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1619144044
         },
         {
             "mod_id": 49512,
@@ -5502,6 +5502,6 @@
         }
     ],
     "last_scan_for_added_mods_timestamp": 1618976997,
-    "last_scan_for_updated_mods_timestamp": 1619044203,
+    "last_scan_for_updated_mods_timestamp": 1619144001,
     "highest_validated_mod_id": 49573
 }

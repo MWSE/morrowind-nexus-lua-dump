@@ -1,211 +1,211 @@
-return {
-	["eng"] = {
-		no = "No",
-		yes = "Yes",
-		unknown = "unknown",
-		updateRequired = "Units and Vagueness requires the latest version of MWSE. Please run MWSE-Updater.exe.",
-		summary = "This mod allows you to enable unit conversion for Metric and Imperial units, or omit the numbers for Roleplay purposes. It assumes that the vanilla weight unit is neither in kilograms, nor pounds, but actually in hectogram. Additionally, there are options to display gold values as vague estimates.",
-		configUseUnitConversionType = "Unit Conversion System:",
-		configUseUnitConversionTypeOptions = {
-			{ value = 0, label = "0. Vanilla - unconverted unitless weights" },
-			{ value = 1, label = "1. Metric Unit System - kg/g, or l/ml" },
-			{ value = 2, label = "2. Imperial Unit System - lb/oz" },
-			{ value = 3, label = "3. Vague Roleplay labels" }
-		},
-		configUseUnitConversionTypeDescription = 
-			"The type of Units and Vagueness you wish to use."
-			.."\n"
-			.."This will be applied to item tooltips, the Inventory encumbrance bar, and the new capacity bar added by UI Expansion (if installed)."
-			.."\n"
-			.."\n0. Vanilla - unconverted unitless weights"
-			.."\n"
-			.."\n1. Metric Unit System - kg/g, or l/ml"
-			.."\n"
-			.."\n2. Imperial Unit System - lb/oz"
-			.."\n"
-			.."\n3. Vague Roleplay labels - f.i. light, unhindered, empty, etc",
-		configUseSmallerUnits = "Petty Weight Units:",
-		configUseSmallerUnitsOptions = {
-			{ value = 0, label = "0. No - stick with kg/lb" },
-			{ value = 1, label = "1. Yes - use g/ml/oz, where it makes sense" },
-			{ value = 2, label = "2. Hide petty weights below 2.0 completely" }
-		},
-		configUseSmallerUnitsDescription = 
-			"Convert to smaller units on weights that are below 1 kg or 1 lb. Or hide all weights below 200 g (2.0 in Vanilla) to clean up the interface (which also applies to Roleplay labels)."
-			.."\n"
-			.."\n0. No - stick with kg/lb"
-			.."\n"
-			.."\n1. Yes - use g/ml/oz, where it makes sense"
-			.."\n"
-			.."\n2. Hide petty weights below 2.0 completely",
-		configPotionsInMilliLitres = "Allow Fluid Weight Units and Icon",
-		configPotionsInMilliLitresDescription = "Potions and Drinks will use l/ml instead of kg/g, when Metric System is enabled. Additionally they will receive a flask icon, instead of the weight icon from UI Expansion.",
-		configSummarizeStacks = "Stack Weight and Stack Gold:",
-		configSummarizeStacksOptions = {
-			{ value = 0, label = "0. No" },
-			{ value = 1, label = "1. Yes - weight only" },
-			{ value = 2, label = "2. Yes - weight and gold" },
-		},
-		configSummarizeStacksDescription = 
-			"Summarize weight/gold values on stacked items. An additional counter will be shown next to weight value.\n[Disclaimer: This will not yet work in Barter and Content menus.]"
-			.."\n"
-			.."\n0. No"
-			.."\n"
-			.."\n1. Yes, but only on weights."
-			.."\n"
-			.."\n2. Yes, and also summarize the gold value.",
-		configUseVagueGold = "Gold Value Uncertainty:",
-		configUseVagueGoldOptions = {
-			{ value = 0, label = "0. No - keep it straight" },
-			{ value = 1, label = "1. Yes - use obscure numbers" },
-			{ value = 2, label = "2. Yes - use vague labels" },
-			{ value = 3, label = "3. Yes - use both obscure numbers AND vague labels" },
-		},
-		configUseVagueGoldDescription = 
-			"Display gold values as obscured/uncertain numbers, vague labels, or both. The guessing of gold values may become more precise with higher mercantile and character level."
-			.."\nUsing the Stack value option won't affect PCs ability to guess an item value."
-			.."\n"
-			.."\n0. Keep it straight"
-			.."\n"
-			.."\n1. Obscure the values by rounding them to some estimable number of digits. Bigger item value estimates are naturally less precise. Uncertain values will be marked by question marks: 56?, 50K?, ?. Higher mercantile and character level will increase the precision, up to the point of certainty."
-			.."\n"
-			.."\n2. Use labels such as 'cheap', 'precious', or 'invaluable'. These labels will change over time with advanced mercantile and player level. F.i. a 'prized' item may become 'common' in late game. The 'invaluable' label will give way to higher tier labels."
-			.."\n"
-			.."\n3. Do both. Obscure the values that are estimable. Use labels on the rest.",
-		configUseSoldItemValues = "Remember Prices from Bartering:",
-		configUseSoldItemValuesDescription = "When clicking on an item for buying in a Bartering window, PC will remember the merchants offer, to compare their estimates against.",
-		configHidePettyItemValues = "Hide Petty Item Values",
-		configHidePettyItemValuesDescription = "Hide item values below 20 outside the Barter menu. If stack value is used and is higher, it will still show.",
-		configUseWeightGoldRatio = "Enable Gold/Weight Ratio",
-		configUseWeightGoldRatioDescription = 
-			"Display the ratio of gold value/weight value behind a red slash, next to the weight. It can be used to compare the relative value of items, when one has to be economic about inventory space."
-			.."\n\nIt is being shown only when the item value is below 2000 and the weight is above 4.0 (in Vanilla units). The higher the number, the better.",
-		roleplayLabelZero = "airy",
-		roleplayLabelOne = "light",
-		roleplayLabelTwo = "moderate",
-		roleplayLabelThree = "heavy",
-		roleplayLabelFour = "massive",
-		roleplayCarryWeightZero = "unhindered",
-		roleplayCarryWeightOne = "stocked",
-		roleplayCarryWeightTwo = "packed",
-		roleplayCarryWeightThree = "burdened",
-		roleplayCarryWeightFour = "immobile",
-		roleplayCapacityZero = "empty",
-		roleplayCapacityOne = "sparse",
-		roleplayCapacityTwo = "stuffed", --half-full
-		roleplayCapacityThree = "bulging", --cluttered
-		roleplayCapacityFour = "full", --overfilled
-		roleplayGoldLabelZero = "cheap", --tuppence, ha'penny
-		roleplayGoldLabelOne = "common",
-		roleplayGoldLabelTwo = "prized",
-		roleplayGoldLabelThree = "precious",
-		roleplayGoldLabelFour = "immense",
-		roleplayGoldLabelFive = "mythic",
-		roleplayGoldLabelSix = "legendary",
-		roleplayGoldLabelMask = "invaluable", --"immeasurable",
-	},
-	["deu"] = {
-		no = "Nein",
-		yes = "Ja",
-		unknown = "unbekannt",
-		updateRequired = "Units and Vagueness benötigt die jüngste Version von MWSE. Bitte die MWSE-Updater.exe nutzen.",
-		summary = "Diese Mod erlaubt die Umwandlung von Gewichten in das Metrische oder Britische System, oder nutze Rollenspiel-Stichwörter. Es wird angenommen, dass die Vanilla Einheit in Wirklichkeit weder in Kilogramm, noch Pfund, sondern in Hektogram ist. Desweiteren gibt es die Option Goldwerte als Schätzwerte anzuzeigen.",
-		configUseUnitConversionType = "Gewichtseinheitensystem:",
-		configUseUnitConversionTypeOptions = {
-			{ value = 0, label = "0. Vanilla" },
-			{ value = 1, label = "1. Metrisches System" },
-			{ value = 2, label = "2. Britisches System" },
-			{ value = 3, label = "3. Rollenspiel-Stichwörter" }
-		},
-		configUseUnitConversionTypeDescription = 
-			"Das Gewichtseinheitensystem, dass du nutzen möchtest."
-			.."\n"
-			.."Es wird in Tooltips, in der Belastungsanzeige im Inventar, und in der Füllanzeige von Containern (UI Expansion) zum Einsatz kommen."
-			.."\n"
-			.."\n0. Vanilla - keine Konvertierung oder Einheitenkürzel"
-			.."\n"
-			.."\n1. Metrisches System - kg/g, ggfls. l/ml"
-			.."\n"
-			.."\n2. Britisches System - lb/oz"
-			.."\n"
-			.."\n3. Rollenspiel-Stichwörter - f.i. leicht, belastet, leer, etc",
-		configUseSmallerUnits = "Kleine Einheiten:",
-		configUseSmallerUnitsOptions = {
-			{ value = 0, label = "0. Nein - nutze nur kg/lb" },
-			{ value = 1, label = "1. Ja - nutze g/ml/oz, wenn es Sinn ergibt" },
-			{ value = 2, label = "2. Alles unter 200 g verbergen" }
-		},
-		configUseSmallerUnitsDescription = 
-			"Konvertiere zu kleineren Einheiten in Gewichten weniger als 1 kg oder 1 lb. Oder verberge alle unter 200 g (2.0 in Vanilla) um das Interface aufzuräumen (auch wenn Rollenspiel-Stichwörter genutzt werden)."
-			.."\n"
-			.."\n0. Nein - nutze nur kg/lb"
-			.."\n"
-			.."\n1. Ja - nutze g/ml/oz, wenn es Sinn ergibt"
-			.."\n"
-			.."\n2. Alles unter 200 g verbergen",
-		configPotionsInMilliLitres = "Einheiten und Icon für Flüssigkeiten",
-		configPotionsInMilliLitresDescription = "Tränke und Getränke zeigen l/ml statt kg/g, im Metrischen System. Zusätzlich erhalten die Tooltips ein Flaschensymbol, statt dem Gewichts-Icon von UI Expansion.",
-		configSummarizeStacks = "Stapel-Gewicht und Stapel-Gold:",
-		configSummarizeStacksOptions = {
-			{ value = 0, label = "0. Nein" },
-			{ value = 1, label = "1. Ja - Gewicht" },
-			{ value = 2, label = "2. Ja - Gewicht und Gold" },
-		},
-		configSummarizeStacksDescription = 
-			"Summiere das Gewicht/Gold von Item-Stapeln auf. Ein zusätzlicher Zähler wird ggfls. neben der Gewichtsanzeige eingefügt.\n[Achtung: funktioniert noch nicht in Handels- und Container-Fenstern.]"
-			.."\n"
-			.."\n0. Nein"
-			.."\n"
-			.."\n1. Ja, aber nur die Gewichte"
-			.."\n"
-			.."\n2. Ja, das Gewicht und auch den Goldwert",
-		configUseVagueGold = "Ungenaue Goldwerte:",
-		configUseVagueGoldOptions = {
-			{ value = 0, label = "0. Nein" },
-			{ value = 1, label = "1. Ja - nutze unsichere Zahlen" },
-			{ value = 2, label = "2. Ja - nutze Stichwörter" },
-			{ value = 3, label = "3. Ja - nutze unsichere Zahlen UND Stichwörter" },
-		},
-		configUseVagueGoldDescription = 
-			"Zeige Goldwerte als verschleierte/unsichere Zahlen, Stichwörter, oder beides. Die Schätzungen sind präziser, je höher das Feilschen- und Charakterlevel ist."
-			.."\n"
-			.."\n0. Nein - lass die Werte unverfälscht wie in Vanilla"
-			.."\n"
-			.."\n1. Ja - verschleiere die Zahlen bis zu einer schätzbaren Anzahl von Ziffern. Größere Werte sind weniger präzise. Unsichere Werte werden mit Fragezeichen markiert: 56?, 50K?, ?. Steigende Level in Feilschen und/oder Charakterlevel, werden die Präzision bis zur Gewissheit steigern."
-			.."\n"
-			.."\n2. Ja - nutze Stichwörter wie 'minderwertig', 'wertvoll', oder 'mythisch'. Diese ändern sich mit fortschreitendem Feilschen und Charakterlevel. Z.b. wird ein 'kostspieliger' Gegenstand irgendwann 'günstig'. 'Unermesslich' wird anderen Stichwörtern weichen."
-			.."\n"
-			.."\n3. Ja - beides gleichzeitig verwenden: Verschleiere die Werte die schätzbar sind, nutze Stichwörter bei allen anderen.",
-		configUseSoldItemValues = "Preise merken",
-		configUseSoldItemValuesDescription = "Wenn beim Handeln auf einen Gegenstand zum Kaufen geklickt wird, wird sich der PC den Preis merken, um die eigene Schätzung damit vergleichen zu können.",
-		configHidePettyItemValues = "Goldwerte unter 20 verbergen",
-		configHidePettyItemValuesDescription = "Verstecke außerhalb des Handelsmenüs alles, was weniger als 20 Wert ist. Wenn das Stapelgewicht größer ist und summiert werden soll, so wird es angezeigt.",
-		configUseWeightGoldRatio = "Gold/Gewicht-Verhältnis anzeigen",
-		configUseWeightGoldRatioDescription = 
-			"Zeige das Verhältnis von Gold/Gewicht hinter einem roten '/', neben dem Gewicht. Es kann dazu dienen den relativen Wert eines Gegenstands einzuschätzen, wenn der Platz im Inventar knapp ist."
-			.."\n\nEs wird nur angezeigt wenn der Goldwert unter 2000 und das Gewicht über 400g ist (4.0 in Vanilla Einheiten). Je höher die Zahl, desto besser.",
-		roleplayLabelZero = "sehr leicht",
-		roleplayLabelOne = "leicht",
-		roleplayLabelTwo = "moderat",
-		roleplayLabelThree = "schwer",
-		roleplayLabelFour = "wuchtig",
-		roleplayCarryWeightZero = "unbeschwert",
-		roleplayCarryWeightOne = "ausgerüstet",
-		roleplayCarryWeightTwo = "bepackt",
-		roleplayCarryWeightThree = "belastet",
-		roleplayCarryWeightFour = "überladen",
-		roleplayCapacityZero = "leer",
-		roleplayCapacityOne = "fast leer",
-		roleplayCapacityTwo = "gefüllt",
-		roleplayCapacityThree = "voll",
-		roleplayCapacityFour = "überfüllt",
-		roleplayGoldLabelZero = "minderwertig",
-		roleplayGoldLabelOne = "günstig",
-		roleplayGoldLabelTwo = "kostspielig",
-		roleplayGoldLabelThree = "wertvoll",
-		roleplayGoldLabelFour = "immens",
-		roleplayGoldLabelFive = "mythisch",
-		roleplayGoldLabelSix = "legendär",
-		roleplayGoldLabelMask = "unermesslich", --"unermesslich",
-	},
-}
+return {
+	["eng"] = {
+		no = "No",
+		yes = "Yes",
+		unknown = "unknown",
+		updateRequired = "Units and Vagueness requires the latest version of MWSE. Please run MWSE-Updater.exe.",
+		summary = "This mod allows you to enable unit conversion for Metric and Imperial units, or omit the numbers for Roleplay purposes. It assumes that the vanilla weight unit is neither in kilograms, nor pounds, but actually in hectogram. Additionally, there are options to display gold values as vague estimates.",
+		configUseUnitConversionType = "Unit Conversion System:",
+		configUseUnitConversionTypeOptions = {
+			{ value = 0, label = "0. Vanilla - unconverted unitless weights" },
+			{ value = 1, label = "1. Metric Unit System - kg/g, or l/ml" },
+			{ value = 2, label = "2. Imperial Unit System - lb/oz" },
+			{ value = 3, label = "3. Vague Roleplay labels" }
+		},
+		configUseUnitConversionTypeDescription = 
+			"The type of Units and Vagueness you wish to use."
+			.."\n"
+			.."This will be applied to item tooltips, the Inventory encumbrance bar, and the new capacity bar added by UI Expansion (if installed)."
+			.."\n"
+			.."\n0. Vanilla - unconverted unitless weights"
+			.."\n"
+			.."\n1. Metric Unit System - kg/g, or l/ml"
+			.."\n"
+			.."\n2. Imperial Unit System - lb/oz"
+			.."\n"
+			.."\n3. Vague Roleplay labels - f.i. light, unhindered, empty, etc",
+		configUseSmallerUnits = "Petty Weight Units:",
+		configUseSmallerUnitsOptions = {
+			{ value = 0, label = "0. No - stick with kg/lb" },
+			{ value = 1, label = "1. Yes - use g/ml/oz, where it makes sense" },
+			{ value = 2, label = "2. Hide petty weights below 2.0 completely" }
+		},
+		configUseSmallerUnitsDescription = 
+			"Convert to smaller units on weights that are below 1 kg or 1 lb. Or hide all weights below 200 g (2.0 in Vanilla) to clean up the interface (which also applies to Roleplay labels)."
+			.."\n"
+			.."\n0. No - stick with kg/lb"
+			.."\n"
+			.."\n1. Yes - use g/ml/oz, where it makes sense"
+			.."\n"
+			.."\n2. Hide petty weights below 2.0 completely",
+		configPotionsInMilliLitres = "Allow Fluid Weight Units and Icon",
+		configPotionsInMilliLitresDescription = "Potions and Drinks will use l/ml instead of kg/g, when Metric System is enabled. Additionally they will receive a flask icon, instead of the weight icon from UI Expansion.",
+		configSummarizeStacks = "Stack Weight and Stack Gold:",
+		configSummarizeStacksOptions = {
+			{ value = 0, label = "0. No" },
+			{ value = 1, label = "1. Yes - weight only" },
+			{ value = 2, label = "2. Yes - weight and gold" },
+		},
+		configSummarizeStacksDescription = 
+			"Summarize weight/gold values on stacked items. An additional counter will be shown next to weight value.\n[Disclaimer: This will not yet work in Barter and Content menus.]"
+			.."\n"
+			.."\n0. No"
+			.."\n"
+			.."\n1. Yes, but only on weights."
+			.."\n"
+			.."\n2. Yes, and also summarize the gold value.",
+		configUseVagueGold = "Gold Value Uncertainty:",
+		configUseVagueGoldOptions = {
+			{ value = 0, label = "0. No - keep it straight" },
+			{ value = 1, label = "1. Yes - use obscure numbers" },
+			{ value = 2, label = "2. Yes - use vague labels" },
+			{ value = 3, label = "3. Yes - use both obscure numbers AND vague labels" },
+		},
+		configUseVagueGoldDescription = 
+			"Display gold values as obscured/uncertain numbers, vague labels, or both. The guessing of gold values may become more precise with higher mercantile and character level."
+			.."\nUsing the Stack value option won't affect PCs ability to guess an item value."
+			.."\n"
+			.."\n0. Keep it straight"
+			.."\n"
+			.."\n1. Obscure the values by rounding them to some estimable number of digits. Bigger item value estimates are naturally less precise. Uncertain values will be marked by question marks: 56?, 50K?, ?. Higher mercantile and character level will increase the precision, up to the point of certainty."
+			.."\n"
+			.."\n2. Use labels such as 'cheap', 'precious', or 'invaluable'. These labels will change over time with advanced mercantile and player level. F.i. a 'prized' item may become 'common' in late game. The 'invaluable' label will give way to higher tier labels."
+			.."\n"
+			.."\n3. Do both. Obscure the values that are estimable. Use labels on the rest.",
+		configUseSoldItemValues = "Remember Prices from Bartering:",
+		configUseSoldItemValuesDescription = "When clicking on an item for buying in a Bartering window, PC will remember the merchants offer, to compare their estimates against.",
+		configHidePettyItemValues = "Hide Petty Item Values",
+		configHidePettyItemValuesDescription = "Hide item values below 20 outside the Barter menu. If stack value is used and is higher, it will still show.",
+		configUseWeightGoldRatio = "Enable Gold/Weight Ratio",
+		configUseWeightGoldRatioDescription = 
+			"Display the ratio of gold value/weight value behind a red slash, next to the weight. It can be used to compare the relative value of items, when one has to be economic about inventory space."
+			.."\n\nIt is being shown only when the item value is below 2000 and the weight is above 4.0 (in Vanilla units). The higher the number, the better.",
+		roleplayLabelZero = "airy",
+		roleplayLabelOne = "light",
+		roleplayLabelTwo = "moderate",
+		roleplayLabelThree = "heavy",
+		roleplayLabelFour = "massive",
+		roleplayCarryWeightZero = "unhindered",
+		roleplayCarryWeightOne = "stocked",
+		roleplayCarryWeightTwo = "packed",
+		roleplayCarryWeightThree = "burdened",
+		roleplayCarryWeightFour = "immobile",
+		roleplayCapacityZero = "empty",
+		roleplayCapacityOne = "sparse",
+		roleplayCapacityTwo = "stuffed", --half-full
+		roleplayCapacityThree = "bulging", --cluttered
+		roleplayCapacityFour = "full", --overfilled
+		roleplayGoldLabelZero = "cheap", --tuppence, ha'penny
+		roleplayGoldLabelOne = "common",
+		roleplayGoldLabelTwo = "prized",
+		roleplayGoldLabelThree = "precious",
+		roleplayGoldLabelFour = "immense",
+		roleplayGoldLabelFive = "mythic",
+		roleplayGoldLabelSix = "legendary",
+		roleplayGoldLabelMask = "invaluable", --"immeasurable",
+	},
+	["deu"] = {
+		no = "Nein",
+		yes = "Ja",
+		unknown = "unbekannt",
+		updateRequired = "Units and Vagueness ben?tigt die j?ngste Version von MWSE. Bitte die MWSE-Updater.exe nutzen.",
+		summary = "Diese Mod erlaubt die Umwandlung von Gewichten in das Metrische oder Britische System, oder nutze Rollenspiel-Stichw?rter. Es wird angenommen, dass die Vanilla Einheit in Wirklichkeit weder in Kilogramm, noch Pfund, sondern in Hektogram ist. Desweiteren gibt es die Option Goldwerte als Sch?tzwerte anzuzeigen.",
+		configUseUnitConversionType = "Gewichtseinheitensystem:",
+		configUseUnitConversionTypeOptions = {
+			{ value = 0, label = "0. Vanilla" },
+			{ value = 1, label = "1. Metrisches System" },
+			{ value = 2, label = "2. Britisches System" },
+			{ value = 3, label = "3. Rollenspiel-Stichw?rter" }
+		},
+		configUseUnitConversionTypeDescription = 
+			"Das Gewichtseinheitensystem, dass du nutzen m?chtest."
+			.."\n"
+			.."Es wird in Tooltips, in der Belastungsanzeige im Inventar, und in der F?llanzeige von Containern (UI Expansion) zum Einsatz kommen."
+			.."\n"
+			.."\n0. Vanilla - keine Konvertierung oder Einheitenk?rzel"
+			.."\n"
+			.."\n1. Metrisches System - kg/g, ggfls. l/ml"
+			.."\n"
+			.."\n2. Britisches System - lb/oz"
+			.."\n"
+			.."\n3. Rollenspiel-Stichw?rter - f.i. leicht, belastet, leer, etc",
+		configUseSmallerUnits = "Kleine Einheiten:",
+		configUseSmallerUnitsOptions = {
+			{ value = 0, label = "0. Nein - nutze nur kg/lb" },
+			{ value = 1, label = "1. Ja - nutze g/ml/oz, wenn es Sinn ergibt" },
+			{ value = 2, label = "2. Alles unter 200 g verbergen" }
+		},
+		configUseSmallerUnitsDescription = 
+			"Konvertiere zu kleineren Einheiten in Gewichten weniger als 1 kg oder 1 lb. Oder verberge alle unter 200 g (2.0 in Vanilla) um das Interface aufzur?umen (auch wenn Rollenspiel-Stichw?rter genutzt werden)."
+			.."\n"
+			.."\n0. Nein - nutze nur kg/lb"
+			.."\n"
+			.."\n1. Ja - nutze g/ml/oz, wenn es Sinn ergibt"
+			.."\n"
+			.."\n2. Alles unter 200 g verbergen",
+		configPotionsInMilliLitres = "Einheiten und Icon f?r Fl?ssigkeiten",
+		configPotionsInMilliLitresDescription = "Tr?nke und Getr?nke zeigen l/ml statt kg/g, im Metrischen System. Zus?tzlich erhalten die Tooltips ein Flaschensymbol, statt dem Gewichts-Icon von UI Expansion.",
+		configSummarizeStacks = "Stapel-Gewicht und Stapel-Gold:",
+		configSummarizeStacksOptions = {
+			{ value = 0, label = "0. Nein" },
+			{ value = 1, label = "1. Ja - Gewicht" },
+			{ value = 2, label = "2. Ja - Gewicht und Gold" },
+		},
+		configSummarizeStacksDescription = 
+			"Summiere das Gewicht/Gold von Item-Stapeln auf. Ein zus?tzlicher Z?hler wird ggfls. neben der Gewichtsanzeige eingef?gt.\n[Achtung: funktioniert noch nicht in Handels- und Container-Fenstern.]"
+			.."\n"
+			.."\n0. Nein"
+			.."\n"
+			.."\n1. Ja, aber nur die Gewichte"
+			.."\n"
+			.."\n2. Ja, das Gewicht und auch den Goldwert",
+		configUseVagueGold = "Ungenaue Goldwerte:",
+		configUseVagueGoldOptions = {
+			{ value = 0, label = "0. Nein" },
+			{ value = 1, label = "1. Ja - nutze unsichere Zahlen" },
+			{ value = 2, label = "2. Ja - nutze Stichw?rter" },
+			{ value = 3, label = "3. Ja - nutze unsichere Zahlen UND Stichw?rter" },
+		},
+		configUseVagueGoldDescription = 
+			"Zeige Goldwerte als verschleierte/unsichere Zahlen, Stichw?rter, oder beides. Die Sch?tzungen sind pr?ziser, je h?her das Feilschen- und Charakterlevel ist."
+			.."\n"
+			.."\n0. Nein - lass die Werte unverf?lscht wie in Vanilla"
+			.."\n"
+			.."\n1. Ja - verschleiere die Zahlen bis zu einer sch?tzbaren Anzahl von Ziffern. Gr??ere Werte sind weniger pr?zise. Unsichere Werte werden mit Fragezeichen markiert: 56?, 50K?, ?. Steigende Level in Feilschen und/oder Charakterlevel, werden die Pr?zision bis zur Gewissheit steigern."
+			.."\n"
+			.."\n2. Ja - nutze Stichw?rter wie 'minderwertig', 'wertvoll', oder 'mythisch'. Diese ?ndern sich mit fortschreitendem Feilschen und Charakterlevel. Z.b. wird ein 'kostspieliger' Gegenstand irgendwann 'g?nstig'. 'Unermesslich' wird anderen Stichw?rtern weichen."
+			.."\n"
+			.."\n3. Ja - beides gleichzeitig verwenden: Verschleiere die Werte die sch?tzbar sind, nutze Stichw?rter bei allen anderen.",
+		configUseSoldItemValues = "Preise merken",
+		configUseSoldItemValuesDescription = "Wenn beim Handeln auf einen Gegenstand zum Kaufen geklickt wird, wird sich der PC den Preis merken, um die eigene Sch?tzung damit vergleichen zu k?nnen.",
+		configHidePettyItemValues = "Goldwerte unter 20 verbergen",
+		configHidePettyItemValuesDescription = "Verstecke au?erhalb des Handelsmen?s alles, was weniger als 20 Wert ist. Wenn das Stapelgewicht gr??er ist und summiert werden soll, so wird es angezeigt.",
+		configUseWeightGoldRatio = "Gold/Gewicht-Verh?ltnis anzeigen",
+		configUseWeightGoldRatioDescription = 
+			"Zeige das Verh?ltnis von Gold/Gewicht hinter einem roten '/', neben dem Gewicht. Es kann dazu dienen den relativen Wert eines Gegenstands einzusch?tzen, wenn der Platz im Inventar knapp ist."
+			.."\n\nEs wird nur angezeigt wenn der Goldwert unter 2000 und das Gewicht ?ber 400g ist (4.0 in Vanilla Einheiten). Je h?her die Zahl, desto besser.",
+		roleplayLabelZero = "sehr leicht",
+		roleplayLabelOne = "leicht",
+		roleplayLabelTwo = "moderat",
+		roleplayLabelThree = "schwer",
+		roleplayLabelFour = "wuchtig",
+		roleplayCarryWeightZero = "unbeschwert",
+		roleplayCarryWeightOne = "ausger?stet",
+		roleplayCarryWeightTwo = "bepackt",
+		roleplayCarryWeightThree = "belastet",
+		roleplayCarryWeightFour = "?berladen",
+		roleplayCapacityZero = "leer",
+		roleplayCapacityOne = "fast leer",
+		roleplayCapacityTwo = "gef?llt",
+		roleplayCapacityThree = "voll",
+		roleplayCapacityFour = "?berf?llt",
+		roleplayGoldLabelZero = "minderwertig",
+		roleplayGoldLabelOne = "g?nstig",
+		roleplayGoldLabelTwo = "kostspielig",
+		roleplayGoldLabelThree = "wertvoll",
+		roleplayGoldLabelFour = "immens",
+		roleplayGoldLabelFive = "mythisch",
+		roleplayGoldLabelSix = "legend?r",
+		roleplayGoldLabelMask = "unermesslich", --"unermesslich",
+	},
+}

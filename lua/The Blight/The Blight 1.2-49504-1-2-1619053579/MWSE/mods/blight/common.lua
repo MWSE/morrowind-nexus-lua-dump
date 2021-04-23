@@ -13,20 +13,6 @@ function common.debug(str, ...)
     end
 end
 
-function common.traverse(roots)
-    local function iter(nodes)
-        for i, node in ipairs(nodes or roots) do
-            if node then
-                coroutine.yield(node)
-                if node.children then
-                    iter(node.children)
-                end
-            end
-        end
-    end
-    return coroutine.wrap(iter)
-end
-
 function common.getKeyFromValueFunc(tbl, func)
     for key, value in pairs(tbl) do
         if (func(value) == true) then return key end
@@ -116,6 +102,8 @@ function common.calculateBlightChance(reference)
 end
 
 function common.hasBlight(reference, searchSpell)
+    if reference == tes3.mobilePlayer.firstPersonReference then reference = tes3.player end
+
     for spell in common.iterBlightDiseases(reference) do
         if not searchSpell or searchSpell.id == spell.id then
             return true, spell

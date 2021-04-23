@@ -47,16 +47,6 @@ end
 local function passiveTransmission(e)
     if not common.config.enablePassiveTransmission then return end
 
-    local object = e.reference.object
-
-    -- ensure the reference is susceptible to blight
-    if  object.organic ~= true
-        and object.objectType ~= tes3.objectType.npc
-        and object.objectType ~= tes3.objectType.creature
-    then
-        return
-    end
-
     -- ensure the region is susceptible to blight
     local blightLevel = common.getBlightLevel(e.reference.cell)
     if blightLevel <= 0 then
@@ -112,8 +102,15 @@ local function passiveTransmission(e)
     })
 end
 
--- Trigger for actors / creatures
-event.register("mobileActivated", passiveTransmission)
+-- Trigger for npcs / creatures
+event.register("mobileActivated", function(e)
+    local objectType = e.reference.object.objectType
+    if objectType == tes3.objectType.npc
+        or objectType == tes3.objectType.creature
+    then
+        passiveTransmission(e)
+    end
+end)
 
 -- Trigger for organic containers
 event.register("referenceActivated", function(e)

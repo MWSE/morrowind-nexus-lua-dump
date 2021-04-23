@@ -35,7 +35,7 @@ local function hasBlightDecal(texturingProperty)
 end
 
 local function addBlightDecal(sceneNode)
-    for node in common.traverse{sceneNode} do
+    for node in table.traverse{sceneNode} do
         if node:isInstanceOfType(tes3.niType.NiTriShape) then
             local alphaProperty = node:getProperty(0x0)
             local texturingProperty = node:getProperty(0x4)
@@ -57,7 +57,7 @@ local function addBlightDecal(sceneNode)
 end
 
 local function removeBlightDecal(sceneNode)
-    for node in common.traverse{sceneNode} do
+    for node in table.traverse{sceneNode} do
         local texturingProperty = node:getProperty(0x4)
         if texturingProperty then
             for i in iterBlightDecals(texturingProperty) do
@@ -80,6 +80,7 @@ end)
 
 event.register("loaded", function(e)
     tes3.player:updateEquipment()
+    tes3.mobilePlayer.firstPersonReference:updateEquipment()
 end)
 
 event.register("bodyPartAssigned", function(e)
@@ -123,9 +124,15 @@ event.register("blight:AddedBlight", function(e)
         addBlightDecal(e.reference.sceneNode)
     else
         e.reference:updateEquipment()
+        if e.reference == tes3.player then
+            tes3.mobilePlayer.firstPersonReference:updateEquipment()
+        end
     end
 end)
 
 event.register("blight:RemovedBlight", function(e)
     removeBlightDecal(e.reference.sceneNode)
+    if e.reference == tes3.player then
+        removeBlightDecal(tes3.mobilePlayer.firstPersonReference.sceneNode)
+    end
 end)

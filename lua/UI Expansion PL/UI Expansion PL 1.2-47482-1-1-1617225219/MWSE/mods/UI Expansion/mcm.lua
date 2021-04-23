@@ -203,11 +203,11 @@ function this.onCreate(container)
 	-- Credits:
 	mainPane:createLabel({ text = common.dictionary.configCredits }).borderTop = 6
 	mainPane:createLabel({ text = "  Programowanie: NullCascade, Hrnchamd, Petethegoat, Jiopsi, Remiros, Mort, Wix, abot" })
-	mainPane:createLabel({ text = "  Kolorowe ikony szkó³ magii: R-Zero" })
+	mainPane:createLabel({ text = "  Kolorowe ikony szk? magii: R-Zero" })
 	mainPane:createLabel({ text = "  Ikony filtrowania ekwipunku: Remiros" })
-	mainPane:createLabel({ text = "  Ikony umiejêtnoœci: RedFurryDemon" })
-	mainPane:createLabel({ text = "  Koncepcje i testowanie: Spo³ecznoœæ Morrowind z Discorda" })
-	mainPane:createLabel({ text = "  T³umaczenie: Negato aka GokuZboku, TeWu" })
+	mainPane:createLabel({ text = "  Ikony umiej?tno?ci: RedFurryDemon" })
+	mainPane:createLabel({ text = "  Koncepcje i testowanie: Spo?eczno?? Morrowind z Discorda" })
+	mainPane:createLabel({ text = "  T?umaczenie: Negato aka GokuZboku, TeWu" })
 end
 
 -- Since we are taking control of the mod config system, we will manually handle saves. This is
