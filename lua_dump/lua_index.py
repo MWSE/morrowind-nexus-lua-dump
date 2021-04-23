@@ -154,7 +154,7 @@ class LuaIndex(BaseModel):
     def get_lua_mod(self, mod_id: int) -> Optional[LuaMod]:
         return next((m for m in self.lua_mods if m.mod_id == mod_id), None)
 
-    def extract_all_lua_files(self) -> None:
+    async def extract_all_lua_files(self) -> None:
         """Extract the lua files from all archives in the downloads directory.
 
         Files are extracted to a lua folder with the same name as the archive.
@@ -172,7 +172,7 @@ class LuaIndex(BaseModel):
         operating system errors are satsified.
         """
         if DOWNLOADS_PATH.exists() and any(DOWNLOADS_PATH.iterdir()):
-            extract_all_parellel(self)
+            await extract_all_parellel(self)
         else:
             logger.info("No archives found in downloads directory.")
 

@@ -8,12 +8,9 @@ from typing import Awaitable, Callable
 from typer import Argument, Option, Typer
 
 from lua_dump.extract import LUA_PATH
-from lua_dump.logger import get_logger
+from lua_dump.logger import init_logger
 from lua_dump.lua_index import LuaIndex
 from lua_dump.morrowind_nexus import MorrowindNexus
-
-# set up logger
-logger = get_logger()
 
 # generate cli
 _help = """Interface for gathering lua mods from the Morrowind Nexus.
@@ -128,8 +125,7 @@ def extract_mods(
         return
 
     async def update(index: LuaIndex, _nexus: MorrowindNexus) -> None:
-        index.extract_all_lua_files()
-        await asyncio.sleep(0)
+        await index.extract_all_lua_files()
 
     execute(update)
 
@@ -173,6 +169,7 @@ async def apply(index: LuaIndex, update: T) -> None:
 
 
 def execute(update: T) -> None:
+    logger = init_logger()
     index = LuaIndex.load()
     try:
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())

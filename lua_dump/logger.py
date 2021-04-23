@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-import loguru
+from loguru import Logger, Record, logger
 
-logger = loguru.logger
+__all__ = ["logger", "init_logger"]
 
 
-def _format(record: loguru.Record) -> str:
+def _format(record: Record) -> str:
     source = "{file}:{line}".format(**record)
     record["extra"]["source"] = source[-24:]
     return (
@@ -20,12 +20,7 @@ def _format(record: loguru.Record) -> str:
     )
 
 
-def set_logger(to: loguru.Logger) -> None:
-    global logger
-    logger = to
-
-
-def get_logger() -> loguru.Logger:
+def init_logger() -> Logger:
     from sys import stderr
     from datetime import datetime
 

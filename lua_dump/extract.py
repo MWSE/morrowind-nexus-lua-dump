@@ -2,16 +2,36 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .logger import logger
 from patoolib import extract_archive  # type: ignore
 
 from lua_dump import *
-from .logger import logger, set_logger
 
 LUA_PATH = Path("lua")
 LUA_PATH.mkdir(parents=True, exist_ok=True)
 
 DOWNLOADS_PATH = Path("downloads")
 DOWNLOADS_PATH.mkdir(parents=True, exist_ok=True)
+
+
+def set_logger(to):  # type: ignore
+    global logger
+    logger = to
+
+
+def fix_encodings_for_lua_files(mod_path: Path) -> None:
+    for lua_file in mod_path.rglob("*.lua"):
+        try:
+            contents = lua_file.read_bytes()
+            contents.decode("utf-8")
+        except OSError as e:
+            logger.error(f"Failed to read '{lua_file}'\n{e}")
+        except UnicodeDecodeError:
+            logger.info(f"Stripping invalid characters from '{lua_file}'")
+            try:
+                lua_file.write_text(contents.decode(errors="replace"), errors="replace")
+            except OSError as e:
+                logger.error(f"Failed to strip '{lua_file}'\n{e}")
 
 
 def remove_non_lua_files(mod_path: Path) -> None:
@@ -48,7 +68,7 @@ def remove_non_lua_files(mod_path: Path) -> None:
                 elif path.is_dir():
                     path.rmdir()
             except OSError as e:
-                logger.error(f"Failed to remove non-lua path '{path}'\n{e}")
+                logger.debug(f"Failed to remove non-lua path '{path}'\n{e}")
 
 
 def extract_lua_files(lua_mod: LuaMod) -> None:
@@ -56,33 +76,25 @@ def extract_lua_files(lua_mod: LuaMod) -> None:
         archive_path = DOWNLOADS_PATH / lua_mod.name / file.name
         extract_path = LUA_PATH / lua_mod.name / archive_path.stem
 
-        if extract_path.exists():
-            remove_non_lua_files(extract_path)
-            continue
+        if not extract_path.exists():
+            if not archive_path.exists():
+                logger.error(f"Mod file for '{archive_path}' not found")
+                continue
 
-        if not archive_path.exists():
-            logger.error(f"Mod file for '{archive_path}' not found")
-            continue
+            logger.info(f"Attempting to extract '{archive_path}'")
+            try:
+                extract_archive(str(archive_path), outdir=str(extract_path), interactive=False)
+            except Exception as e:
+                logger.error(f"Failed to extract '{archive_path}'\n{e}")
 
-        logger.info(f"Attempting to extract '{archive_path}'")
-        # guard with logger.complete() calls to prevent 7z stdout mangling our logger queue
-        try:
-            logger.complete()
-            extract_archive(str(archive_path), outdir=str(extract_path), interactive=False)
-        except Exception as e:
-            logger.complete()
-            logger.error(f"Failed to extract '{archive_path}'\n{e}")
-        else:
-            logger.complete()
-            remove_non_lua_files(extract_path)
+        fix_encodings_for_lua_files(extract_path)
+        remove_non_lua_files(extract_path)
 
 
-def extract_all_parellel(index: LuaIndex) -> None:
+async def extract_all_parellel(index: LuaIndex) -> None:
     """Parellel extraction of lua files for all archives specified in the index."""
     from concurrent.futures import ProcessPoolExecutor
-    from multiprocessing import cpu_count
 
-    chunksize = len(index.lua_mods) // cpu_count()
     with ProcessPoolExecutor(initializer=set_logger, initargs=(logger,)) as executor:
-        for _ in executor.map(extract_lua_files, index.lua_mods, chunksize=chunksize):
+        for _ in executor.map(extract_lua_files, index.lua_mods, timeout=300):
             pass
