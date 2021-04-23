@@ -3,7 +3,8 @@ secrets
 downloads
 
 # keep only lua files from /lua/
-lua/**/*.*
+lua/
+!lua/**/
 !lua/**/*.lua
 
 # keep spec file for building exe
