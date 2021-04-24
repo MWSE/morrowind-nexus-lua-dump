@@ -108,27 +108,27 @@ return {
 		no = "Nein",
 		yes = "Ja",
 		unknown = "unbekannt",
-		updateRequired = "Units and Vagueness ben?tigt die j?ngste Version von MWSE. Bitte die MWSE-Updater.exe nutzen.",
-		summary = "Diese Mod erlaubt die Umwandlung von Gewichten in das Metrische oder Britische System, oder nutze Rollenspiel-Stichw?rter. Es wird angenommen, dass die Vanilla Einheit in Wirklichkeit weder in Kilogramm, noch Pfund, sondern in Hektogram ist. Desweiteren gibt es die Option Goldwerte als Sch?tzwerte anzuzeigen.",
+		updateRequired = "Units and Vagueness benцtigt die jьngste Version von MWSE. Bitte die MWSE-Updater.exe nutzen.",
+		summary = "Diese Mod erlaubt die Umwandlung von Gewichten in das Metrische oder Britische System, oder nutze Rollenspiel-Stichwцrter. Es wird angenommen, dass die Vanilla Einheit in Wirklichkeit weder in Kilogramm, noch Pfund, sondern in Hektogram ist. Desweiteren gibt es die Option Goldwerte als Schдtzwerte anzuzeigen.",
 		configUseUnitConversionType = "Gewichtseinheitensystem:",
 		configUseUnitConversionTypeOptions = {
 			{ value = 0, label = "0. Vanilla" },
 			{ value = 1, label = "1. Metrisches System" },
 			{ value = 2, label = "2. Britisches System" },
-			{ value = 3, label = "3. Rollenspiel-Stichw?rter" }
+			{ value = 3, label = "3. Rollenspiel-Stichwцrter" }
 		},
 		configUseUnitConversionTypeDescription = 
-			"Das Gewichtseinheitensystem, dass du nutzen m?chtest."
+			"Das Gewichtseinheitensystem, dass du nutzen mцchtest."
 			.."\n"
-			.."Es wird in Tooltips, in der Belastungsanzeige im Inventar, und in der F?llanzeige von Containern (UI Expansion) zum Einsatz kommen."
+			.."Es wird in Tooltips, in der Belastungsanzeige im Inventar, und in der Fьllanzeige von Containern (UI Expansion) zum Einsatz kommen."
 			.."\n"
-			.."\n0. Vanilla - keine Konvertierung oder Einheitenk?rzel"
+			.."\n0. Vanilla - keine Konvertierung oder Einheitenkьrzel"
 			.."\n"
 			.."\n1. Metrisches System - kg/g, ggfls. l/ml"
 			.."\n"
 			.."\n2. Britisches System - lb/oz"
 			.."\n"
-			.."\n3. Rollenspiel-Stichw?rter - f.i. leicht, belastet, leer, etc",
+			.."\n3. Rollenspiel-Stichwцrter - f.i. leicht, belastet, leer, etc",
 		configUseSmallerUnits = "Kleine Einheiten:",
 		configUseSmallerUnitsOptions = {
 			{ value = 0, label = "0. Nein - nutze nur kg/lb" },
@@ -136,15 +136,15 @@ return {
 			{ value = 2, label = "2. Alles unter 200 g verbergen" }
 		},
 		configUseSmallerUnitsDescription = 
-			"Konvertiere zu kleineren Einheiten in Gewichten weniger als 1 kg oder 1 lb. Oder verberge alle unter 200 g (2.0 in Vanilla) um das Interface aufzur?umen (auch wenn Rollenspiel-Stichw?rter genutzt werden)."
+			"Konvertiere zu kleineren Einheiten in Gewichten weniger als 1 kg oder 1 lb. Oder verberge alle unter 200 g (2.0 in Vanilla) um das Interface aufzurдumen (auch wenn Rollenspiel-Stichwцrter genutzt werden)."
 			.."\n"
 			.."\n0. Nein - nutze nur kg/lb"
 			.."\n"
 			.."\n1. Ja - nutze g/ml/oz, wenn es Sinn ergibt"
 			.."\n"
 			.."\n2. Alles unter 200 g verbergen",
-		configPotionsInMilliLitres = "Einheiten und Icon f?r Fl?ssigkeiten",
-		configPotionsInMilliLitresDescription = "Tr?nke und Getr?nke zeigen l/ml statt kg/g, im Metrischen System. Zus?tzlich erhalten die Tooltips ein Flaschensymbol, statt dem Gewichts-Icon von UI Expansion.",
+		configPotionsInMilliLitres = "Einheiten und Icon fьr Flьssigkeiten",
+		configPotionsInMilliLitresDescription = "Trдnke und Getrдnke zeigen l/ml statt kg/g, im Metrischen System. Zusдtzlich erhalten die Tooltips ein Flaschensymbol, statt dem Gewichts-Icon von UI Expansion.",
 		configSummarizeStacks = "Stapel-Gewicht und Stapel-Gold:",
 		configSummarizeStacksOptions = {
 			{ value = 0, label = "0. Nein" },
@@ -152,7 +152,7 @@ return {
 			{ value = 2, label = "2. Ja - Gewicht und Gold" },
 		},
 		configSummarizeStacksDescription = 
-			"Summiere das Gewicht/Gold von Item-Stapeln auf. Ein zus?tzlicher Z?hler wird ggfls. neben der Gewichtsanzeige eingef?gt.\n[Achtung: funktioniert noch nicht in Handels- und Container-Fenstern.]"
+			"Summiere das Gewicht/Gold von Item-Stapeln auf. Ein zusдtzlicher Zдhler wird ggfls. neben der Gewichtsanzeige eingefьgt.\n[Achtung: funktioniert noch nicht in Handels- und Container-Fenstern.]"
 			.."\n"
 			.."\n0. Nein"
 			.."\n"
@@ -163,49 +163,49 @@ return {
 		configUseVagueGoldOptions = {
 			{ value = 0, label = "0. Nein" },
 			{ value = 1, label = "1. Ja - nutze unsichere Zahlen" },
-			{ value = 2, label = "2. Ja - nutze Stichw?rter" },
-			{ value = 3, label = "3. Ja - nutze unsichere Zahlen UND Stichw?rter" },
+			{ value = 2, label = "2. Ja - nutze Stichwцrter" },
+			{ value = 3, label = "3. Ja - nutze unsichere Zahlen UND Stichwцrter" },
 		},
 		configUseVagueGoldDescription = 
-			"Zeige Goldwerte als verschleierte/unsichere Zahlen, Stichw?rter, oder beides. Die Sch?tzungen sind pr?ziser, je h?her das Feilschen- und Charakterlevel ist."
+			"Zeige Goldwerte als verschleierte/unsichere Zahlen, Stichwцrter, oder beides. Die Schдtzungen sind prдziser, je hцher das Feilschen- und Charakterlevel ist."
 			.."\n"
-			.."\n0. Nein - lass die Werte unverf?lscht wie in Vanilla"
+			.."\n0. Nein - lass die Werte unverfдlscht wie in Vanilla"
 			.."\n"
-			.."\n1. Ja - verschleiere die Zahlen bis zu einer sch?tzbaren Anzahl von Ziffern. Gr??ere Werte sind weniger pr?zise. Unsichere Werte werden mit Fragezeichen markiert: 56?, 50K?, ?. Steigende Level in Feilschen und/oder Charakterlevel, werden die Pr?zision bis zur Gewissheit steigern."
+			.."\n1. Ja - verschleiere die Zahlen bis zu einer schдtzbaren Anzahl von Ziffern. GrцЯere Werte sind weniger prдzise. Unsichere Werte werden mit Fragezeichen markiert: 56?, 50K?, ?. Steigende Level in Feilschen und/oder Charakterlevel, werden die Prдzision bis zur Gewissheit steigern."
 			.."\n"
-			.."\n2. Ja - nutze Stichw?rter wie 'minderwertig', 'wertvoll', oder 'mythisch'. Diese ?ndern sich mit fortschreitendem Feilschen und Charakterlevel. Z.b. wird ein 'kostspieliger' Gegenstand irgendwann 'g?nstig'. 'Unermesslich' wird anderen Stichw?rtern weichen."
+			.."\n2. Ja - nutze Stichwцrter wie 'minderwertig', 'wertvoll', oder 'mythisch'. Diese дndern sich mit fortschreitendem Feilschen und Charakterlevel. Z.b. wird ein 'kostspieliger' Gegenstand irgendwann 'gьnstig'. 'Unermesslich' wird anderen Stichwцrtern weichen."
 			.."\n"
-			.."\n3. Ja - beides gleichzeitig verwenden: Verschleiere die Werte die sch?tzbar sind, nutze Stichw?rter bei allen anderen.",
+			.."\n3. Ja - beides gleichzeitig verwenden: Verschleiere die Werte die schдtzbar sind, nutze Stichwцrter bei allen anderen.",
 		configUseSoldItemValues = "Preise merken",
-		configUseSoldItemValuesDescription = "Wenn beim Handeln auf einen Gegenstand zum Kaufen geklickt wird, wird sich der PC den Preis merken, um die eigene Sch?tzung damit vergleichen zu k?nnen.",
+		configUseSoldItemValuesDescription = "Wenn beim Handeln auf einen Gegenstand zum Kaufen geklickt wird, wird sich der PC den Preis merken, um die eigene Schдtzung damit vergleichen zu kцnnen.",
 		configHidePettyItemValues = "Goldwerte unter 20 verbergen",
-		configHidePettyItemValuesDescription = "Verstecke au?erhalb des Handelsmen?s alles, was weniger als 20 Wert ist. Wenn das Stapelgewicht gr??er ist und summiert werden soll, so wird es angezeigt.",
-		configUseWeightGoldRatio = "Gold/Gewicht-Verh?ltnis anzeigen",
+		configHidePettyItemValuesDescription = "Verstecke auЯerhalb des Handelsmenьs alles, was weniger als 20 Wert ist. Wenn das Stapelgewicht grцЯer ist und summiert werden soll, so wird es angezeigt.",
+		configUseWeightGoldRatio = "Gold/Gewicht-Verhдltnis anzeigen",
 		configUseWeightGoldRatioDescription = 
-			"Zeige das Verh?ltnis von Gold/Gewicht hinter einem roten '/', neben dem Gewicht. Es kann dazu dienen den relativen Wert eines Gegenstands einzusch?tzen, wenn der Platz im Inventar knapp ist."
-			.."\n\nEs wird nur angezeigt wenn der Goldwert unter 2000 und das Gewicht ?ber 400g ist (4.0 in Vanilla Einheiten). Je h?her die Zahl, desto besser.",
+			"Zeige das Verhдltnis von Gold/Gewicht hinter einem roten '/', neben dem Gewicht. Es kann dazu dienen den relativen Wert eines Gegenstands einzuschдtzen, wenn der Platz im Inventar knapp ist."
+			.."\n\nEs wird nur angezeigt wenn der Goldwert unter 2000 und das Gewicht ьber 400g ist (4.0 in Vanilla Einheiten). Je hцher die Zahl, desto besser.",
 		roleplayLabelZero = "sehr leicht",
 		roleplayLabelOne = "leicht",
 		roleplayLabelTwo = "moderat",
 		roleplayLabelThree = "schwer",
 		roleplayLabelFour = "wuchtig",
 		roleplayCarryWeightZero = "unbeschwert",
-		roleplayCarryWeightOne = "ausger?stet",
+		roleplayCarryWeightOne = "ausgerьstet",
 		roleplayCarryWeightTwo = "bepackt",
 		roleplayCarryWeightThree = "belastet",
-		roleplayCarryWeightFour = "?berladen",
+		roleplayCarryWeightFour = "ьberladen",
 		roleplayCapacityZero = "leer",
 		roleplayCapacityOne = "fast leer",
-		roleplayCapacityTwo = "gef?llt",
+		roleplayCapacityTwo = "gefьllt",
 		roleplayCapacityThree = "voll",
-		roleplayCapacityFour = "?berf?llt",
+		roleplayCapacityFour = "ьberfьllt",
 		roleplayGoldLabelZero = "minderwertig",
-		roleplayGoldLabelOne = "g?nstig",
+		roleplayGoldLabelOne = "gьnstig",
 		roleplayGoldLabelTwo = "kostspielig",
 		roleplayGoldLabelThree = "wertvoll",
 		roleplayGoldLabelFour = "immens",
 		roleplayGoldLabelFive = "mythisch",
-		roleplayGoldLabelSix = "legend?r",
+		roleplayGoldLabelSix = "legendдr",
 		roleplayGoldLabelMask = "unermesslich", --"unermesslich",
 	},
 }

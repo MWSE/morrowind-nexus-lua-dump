@@ -9,10 +9,10 @@ this.scroll = {eng = 'Scroll', fre = 'Parchemin'};
 this.parchment = {eng = 'Parchment', fre = 'Parchemin'};
 this.note = {eng = 'Note', fre = 'Note'};
 this.brew = {eng = 'Brew', fre = 'Potion'};
-this.key = {eng = 'Key', fre = 'Cl?'};
-this.MCMmodName = {eng = 'Not Clairvoyant Nerevarine', fre = 'N?r?varine ignorant'};
-this.MCMwhenBart = {eng = 'When bartering reveal', fre = "R?v?ler le nom des objets lors d'un marchandage ?"};
+this.key = {eng = 'Key', fre = 'Clй'};
+this.MCMmodName = {eng = 'Not Clairvoyant Nerevarine', fre = 'Nйrйvarine ignorant'};
+this.MCMwhenBart = {eng = 'When bartering reveal', fre = "Rйvйler le nom des objets lors d'un marchandage ?"};
 this.MCMonlyName = {eng = 'only item name', fre = 'seulement le nom des objets'};
-this.MCMprop = {eng = 'item name and properties', fre = 'nom des objets et leurs propri?t?s'};
+this.MCMprop = {eng = 'item name and properties', fre = 'nom des objets et leurs propriйtйs'};
 
 return this;

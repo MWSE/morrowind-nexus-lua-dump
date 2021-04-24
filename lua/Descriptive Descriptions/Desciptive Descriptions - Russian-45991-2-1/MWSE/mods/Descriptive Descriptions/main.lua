@@ -47,8 +47,8 @@ local function extraTooltip(e)
 
 
     if e.object.objectType == tes3.objectType.weapon then
-        local textSpeed = string.format("????????: %.2f", speed)
-        local textReach = string.format("?????????: %.2f", reach)
+        local textSpeed = string.format("Скорость: %.2f", speed)
+        local textReach = string.format("Дальность: %.2f", reach)
 
         local blockSpeed = e.tooltip:createBlock()
         blockSpeed.minWidth = 1
@@ -69,7 +69,7 @@ local function extraTooltip(e)
 
 	if e.object.enchantment == nil then
 
-        local textEnch = string.format("??????????????? ???????????: %u", enchValue)
+        local textEnch = string.format("Вместительность Зачарования: %u", enchValue)
 
         local blockEnch = e.tooltip:createBlock()
         blockEnch.minWidth = 1
@@ -82,7 +82,7 @@ end
         elseif e.object.objectType == tes3.objectType.armor or e.object.objectType == tes3.objectType.clothing then
 	if e.object.enchantment == nil then
 
-        local textEnch = string.format("??????????????? ???????????: %u", enchValue)
+        local textEnch = string.format("Вместительность Зачарования: %u", enchValue)
 
         local blockEnch = e.tooltip:createBlock()
         blockEnch.minWidth = 1
@@ -95,7 +95,7 @@ end
     elseif e.object.objectType == tes3.objectType.light then
 
 
-		local textDuration = string.format("????????????:    ")
+		local textDuration = string.format("Длительность:    ")
 		local blockDurationBar = e.tooltip:createBlock()
 		blockDurationBar.autoWidth = true
         blockDurationBar.autoHeight = true
@@ -108,7 +108,7 @@ end
 
     elseif isSoulGem == true then
         local soulValue = tes3.getGMST("fSoulGemMult").value * e.object.value
-        local textSoulSize = string.format("??????????? ???: %s", soulValue)
+        local textSoulSize = string.format("Вместимость Душ: %s", soulValue)
 
         local blockSoulSize = e.tooltip:createBlock()
         blockSoulSize.minWidth = 1

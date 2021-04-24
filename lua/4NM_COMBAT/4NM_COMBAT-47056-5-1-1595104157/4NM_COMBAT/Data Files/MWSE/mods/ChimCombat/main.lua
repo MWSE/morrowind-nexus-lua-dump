@@ -27,7 +27,7 @@ if t == mp then
 		else e.hitChance = chance - act		if msg then tes3.messageBox("Hitchance = %.1f (%.1f - %.1f active)", e.hitChance, chance, act) end end
 	else e.hitChance = chance end	
 else e.hitChance = chance - t.sanctuary/2 end
-if a.actorType == 1 then	if a.readiedWeapon then ad.attackSwing = math.random(50,100)/100 else ad.attackSwing = math.random(100,200)/100 * 50/math.min(a:getSkillValue(26),50) end -- ? ??? ??????? 50% ??????, ? ?????????? 100-200%
+if a.actorType == 1 then	if a.readiedWeapon then ad.attackSwing = math.random(50,100)/100 else ad.attackSwing = math.random(100,200)/100 * 50/math.min(a:getSkillValue(26),50) end -- У нпс минимум 50% свинга, у кулачников 100-200%
 elseif a.actorType == 0 then ad.attackSwing = math.random(50,100)/100 end -- tes3.messageBox("Swing = %.2f", ad.attackSwing)
 end
 
@@ -45,7 +45,7 @@ local CritC = Kbonus + WS/10 + (a.agility.current + a.luck.current)/20 + (as == 
 
 if W then
 	if wt > 8 then
-		if wt == 9 then Kperk = ar.position:distance(tr.position) * WS/20000 -- ???? 5% ?? ?????? 1000 ?????????
+		if wt == 9 then Kperk = ar.position:distance(tr.position) * WS/20000 -- Луки 5% за каждую 1000 дистанции
 		elseif wt == 10 then Kperk = arm * WS * 0.003		hs = hs + WS/2
 		elseif wt == 11 then
 			if A[ar] == nil then A[ar] = {met = -1} end	if (A[ar].met or -1) < 10 then A[ar].met = (A[ar].met or -1) + 1 end
@@ -86,14 +86,14 @@ e.damage = e.damage * (100 - Kstam + Kskill + Kbonus + Kperk + Kcrit - Kdef + Kc
 if msg then tes3.messageBox("%.1f = %.1f > %.1f - %.1f%% stam + %.1f%% skill + %.1f%% ab + %.1f%% perk + %.1f%% crit (%.1f%%) + %.1f%% cond - %.1f%% def  Armor = %.1f  Hitstun = %d%% (%s)",
 e.damage, a.actionData.physicalDamage, StartD, Kstam, Kskill, Kbonus, Kperk, Kcrit, CritC, Kcond, Kdef, arm, hs, ar==p and com or "") end
 
-local KSM = tes3.getEffectMagnitude{reference = tr, effect = 508}	-- ???????????? ???
+local KSM = tes3.getEffectMagnitude{reference = tr, effect = 508}	-- Кинетический щит
 if KSM > 0 and t.magicka.current > 1 then	KSM = KSM * Cpower(t,11,14)/100		local Dred = e.damage < KSM and e.damage or KSM		local KScost = Kcost(Dred*1.5,3,t,11,14)
 	if t.magicka.current < KScost then Dred = Dred * t.magicka.current / KScost		KScost = t.magicka.current end
 	e.damage = e.damage - Dred		tes3.modStatistic{reference = tr, name = "magicka", current = - KScost}		tes3.playSound{reference = tr, sound = "Spell Failure Destruction"}
 	if msg then tes3.messageBox("Shield! %.1f damage  %.1f reduction  %.1f mag  Cost = %.1f", e.damage, Dred, KSM, KScost) end
 end
 
-if a.health.normalized < 1 and a.magicka.current > 1 then local LLM = tes3.getEffectMagnitude{reference = ar, effect = 509}	if LLM > 0 then -- ?????
+if a.health.normalized < 1 and a.magicka.current > 1 then local LLM = tes3.getEffectMagnitude{reference = ar, effect = 509}	if LLM > 0 then -- Отжор
 	LLM = LLM * Cpower(a,14,15)/100		local LLhp = math.min(LLM/100 * e.damage, a.health.base - a.health.current)		local LLcost = Kcost(LLhp,2,a,11,14)
 	if a.magicka.current < LLcost then LLhp = LLhp * a.magicka.current / LLcost		LLcost = a.magicka.current end
 	tes3.modStatistic{reference = ar, name = "health", current = LLhp}		tes3.modStatistic{reference = ar, name = "magicka", current = - LLcost}
@@ -111,7 +111,7 @@ else timer.delayOneFrame(function() if t.actionData.animationAttackState == 1 an
 end end
 
 
-local R = {}	local CT, CM, sinus, tik5, status, Sbar		-- ????????: -1 = ????? ??????? ? ?????? ?? ?????? ???? ? ? ???. 6 = ???????; 3 = ?????; 2 - ??? (?? ?????? ? ??? ?????); 0 = ??????; 8 = ??????
+local R = {}	local CT, CM, sinus, tik5, status, Sbar		-- бехевиор: -1 = стоит столбом и ничего не делает хотя и в бою. 6 = убегает; 3 = атака; 2 - идл (но бывает и при атаке); 0 = хеллоу; 8 = бродит
 local function inv(x) tes3.findGMST("fSneakViewMult").value = x and 20 or 2		tes3.findGMST("fSneakNoViewMult").value = x and 20 or 1		CM = x and true or nil end
 local function onCombatStarted(e) if e.target == tes3.mobilePlayer and R[e.actor.reference] == nil and e.actor.combatSession then R[e.actor.reference] = {m = e.actor, fl = e.actor.flee, s = e.actor.combatSession, a = e.actor.actionData}
 if msg2 then tes3.messageBox("%s joined the battle! Enemies = %s", e.actor.object.name, table.size(R)) end

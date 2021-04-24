@@ -6,7 +6,7 @@
 
 -- Version check
 if (mwse.buildDate == nil or mwse.buildDate < 20190416) then
-	mwse.log("[Perfect Placement] Data kompilacji %s nie spe?nia minimalnej daty kompilacji 20190416.", mwse.buildDate)
+	mwse.log("[Perfect Placement] Data kompilacji %s nie speіnia minimalnej daty kompilacji 20190416.", mwse.buildDate)
 	return
 end
 
@@ -98,12 +98,12 @@ local function showGuide()
         bind.absolutePosAlignX = 1.0
     end
     
-    addLine("Obr?? przedmiot", "", config.keybindRotate)
-    addLine("Obr?t w trybie pionowym", "", config.keybindVertical)
+    addLine("Obrуж przedmiot", "", config.keybindRotate)
+    addLine("Obrуt w trybie pionowym", "", config.keybindVertical)
     addLine("Dopasuj ostatnio umieszczony element", "", config.keybindVertical)
-    addLine("Prze??cz obracanie", "", config.keybindSnap)
-    addLine("Prze??cz na pionowe przeci?ganie po powierzchni", "", config.keybindWallAlign)
-    addLine("Upu?? przedmiot", "", config.keybind)
+    addLine("Przeі№cz obracanie", "", config.keybindSnap)
+    addLine("Przeі№cz na pionowe przeci№ganie po powierzchni", "", config.keybindWallAlign)
+    addLine("Upuњж przedmiot", "", config.keybind)
 
     menu:updateLayout()
 end
@@ -137,7 +137,7 @@ local function simulatePlacement(e)
         return
     -- Check for glitches.
     elseif (this.active.sceneNode == nil) then
-        tes3.messageBox{ message = "Lokalizacja przedmiotu zosta?a utracona. Reset miejsca docelowego."}
+        tes3.messageBox{ message = "Lokalizacja przedmiotu zostaіa utracona. Reset miejsca docelowego."}
         this.active.position = this.itemInitialPos
         this.active.orientation = this.itemInitialOri
         endPlacement()
@@ -238,7 +238,7 @@ end
 local function cellChanged(e)
     -- To avoid problems, reset item if moving in or out of an interior cell.
     if (this.active.cell.isInterior or e.cell.isInterior) then
-        tes3.messageBox{ message = "Nie mo?na przenosi? element?w mi?dzy kom?rkami. Reset miejsca docelowego."}
+        tes3.messageBox{ message = "Nie moїna przenosiж elementуw miкdzy komуrkami. Reset miejsca docelowego."}
         this.active.position = this.itemInitialPos
         this.active.orientation = this.itemInitialOri
         endPlacement()
@@ -324,13 +324,13 @@ local function activatePlacement(e)
             if (owner.objectType == tes3.objectType.faction and owner.playerJoined and owner.playerRank >= itemdata.requirement) then
                 -- Player has sufficient faction rank.
             else
-                tes3.messageBox{ message = "Ten przedmiot do kogo? nale?y." }
+                tes3.messageBox{ message = "Ten przedmiot do kogoњ naleїy." }
                 return
             end
         end
         -- Workaround to avoid dupe-on-load bug when moving non-persistent refs into another cell.
         if (target.sourceMod and not target.cell.isInterior) then
-            tes3.messageBox{ message = "Najpierw musisz podnie?? i upu?ci? ten przedmiot." }
+            tes3.messageBox{ message = "Najpierw musisz podnieњж i upuњciж ten przedmiot." }
             return
         end
 
@@ -478,4 +478,4 @@ local function registerModConfig()
 end
 
 event.register("modConfigReady", registerModConfig)
-mwse.log("[Perfect Placement] pomy?lnie wczytane.")
+mwse.log("[Perfect Placement] pomyњlnie wczytane.")

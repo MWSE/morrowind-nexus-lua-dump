@@ -362,11 +362,11 @@ configShowEnableDisableFeatureMenu = function(e)
 
 	-- Show menu. Delay it by one frame.
 	tes3.messageBox({
-		message = "Configuration de SOE\Activation/D?sativation des fonctions",
+		message = "Configuration de SOE\Activation/Dйsativation des fonctions",
 		buttons = {
-			"Chargement rapide de la derni?re sauvegarde: " .. (config.loadLatestSave and "Enabled" or "Disabled"),
+			"Chargement rapide de la derniиre sauvegarde: " .. (config.loadLatestSave and "Enabled" or "Disabled"),
 			"Sauvegarde toutes les " .. config.timeBetweenAutoSaves .. " Minutes: " .. (config.saveOnTimer and "Enabled" or "Disabled"),
-			"Sauvegarde auto en d?but de combat: " .. (config.saveOnCombatStart and "Enabled" or "Disabled"),
+			"Sauvegarde auto en dйbut de combat: " .. (config.saveOnCombatStart and "Enabled" or "Disabled"),
 			"Sauvegarde en fin de combat: " .. (config.saveOnCombatEnd and "Enabled" or "Disabled"),
 			"Sauvegarde au changement de zone: " .. (config.saveOnCellChange and "Enabled" or "Disabled"),
 			"Back"
@@ -392,7 +392,7 @@ configShowConfigSaveCountMenu = function(e)
 
 	-- Show menu. Delay it by one frame.
 	tes3.messageBox({
-		message = "Quantit? ? conserver: " .. (config.maxSaveCount ~= 0 and config.maxSaveCount or "All"),
+		message = "Quantitй а conserver: " .. (config.maxSaveCount ~= 0 and config.maxSaveCount or "All"),
 		buttons = { "-", "Back", "+" },
 		callback = configShowConfigSaveCountMenu
 	})
@@ -442,7 +442,7 @@ configShowConfigMinimumTimerMenu = function(e)
 
 	-- Show menu. Delay it by one frame.
 	tes3.messageBox({
-		message = "D?lai minimum entre les sauvegardes: " .. config.minimumTimeBetweenAutoSaves .. "m",
+		message = "Dйlai minimum entre les sauvegardes: " .. config.minimumTimeBetweenAutoSaves .. "m",
 		buttons = { "-", "Back", "+" },
 		callback = configShowConfigMinimumTimerMenu
 	})
@@ -474,9 +474,9 @@ configShowMainMenu = function(e)
 		message = "CONFIGURATION DES SAUVEGARDES",
 		buttons = {
 			"Conditions",
-			"Quantit? ? conserver",
+			"Quantitй а conserver",
 			"Espacement des sauvegardes",
-			"D?lai minimum entre les sauvegardes",
+			"Dйlai minimum entre les sauvegardes",
 			"Fermer ce Menu"
 		},
 		callback = configShowMainMenu

@@ -1018,26 +1018,26 @@ local weaponReqTable = {
 }
 
 local armorClassInfo = {
-  [0] = {text = "?????? ?????",  name = "lightArmor"},
-  [1] = {text = "??????? ?????", name = "mediumArmor"},
-  [2] = {text = "??????? ?????",  name = "heavyArmor"},
+  [0] = {text = "Легкая Броня",  name = "lightArmor"},
+  [1] = {text = "Средняя Броня", name = "mediumArmor"},
+  [2] = {text = "Тяжелая Броня",  name = "heavyArmor"},
 }
 
 local weaponTypeInfo = {
-    ["ShortBladeOneHand"] = {text = "???????? ??????",  name= "shortBlade"},
-    ["LongBladeOneHand"]  = {text = "??????? ??????",   name= "longBlade"},
-    ["LongBladeTwoClose"] = {text = "??????? ??????",   name= "longBlade"},
-    ["BluntOneHand"]      = {text = "???????? ??????", name= "bluntWeapon"},
-    ["BluntTwoClose"]     = {text = "???????? ??????", name= "bluntWeapon"},
-    ["BluntTwoWide"]      = {text = "???????? ??????", name= "bluntWeapon"},
-    ["SpearTwoWide"]      = {text = "????????? ??????",        name= "spear"},
-    ["AxeOneHand"]        = {text = "??????",          name= "axe"},
-    ["AxeTwoClose"]       = {text = "??????",          name= "axe"},
-    ["MarksmanBow"]       = {text = "????????",     name= "marksman"},
-    ["MarksmanCrossbow"]  = {text = "????????",     name= "marksman"},
-    ["MarksmanThrown"]    = {text = "????????",     name= "marksman"},
-    ["Arrow"]             = {text = "????????",     name= "marksman"},
-    ["Bolt"]              = {text = "????????",     name= "marksman"},
+    ["ShortBladeOneHand"] = {text = "Короткие Клинки",  name= "shortBlade"},
+    ["LongBladeOneHand"]  = {text = "Длинные Клинки",   name= "longBlade"},
+    ["LongBladeTwoClose"] = {text = "Длинные Клинки",   name= "longBlade"},
+    ["BluntOneHand"]      = {text = "Дробящее Оружие", name= "bluntWeapon"},
+    ["BluntTwoClose"]     = {text = "Дробящее Оружие", name= "bluntWeapon"},
+    ["BluntTwoWide"]      = {text = "Дробящее Оружие", name= "bluntWeapon"},
+    ["SpearTwoWide"]      = {text = "Древковое Оружие",        name= "spear"},
+    ["AxeOneHand"]        = {text = "Секиры",          name= "axe"},
+    ["AxeTwoClose"]       = {text = "Секиры",          name= "axe"},
+    ["MarksmanBow"]       = {text = "Меткость",     name= "marksman"},
+    ["MarksmanCrossbow"]  = {text = "Меткость",     name= "marksman"},
+    ["MarksmanThrown"]    = {text = "Меткость",     name= "marksman"},
+    ["Arrow"]             = {text = "Меткость",     name= "marksman"},
+    ["Bolt"]              = {text = "Меткость",     name= "marksman"},
 }
 
 local function getItemSkillInfo(item)
@@ -1086,7 +1086,7 @@ local function reqTooltip(e)
 	local skillReq, skillInfo = getItemSkillInfo(e.object)
 
 	if skillReq then
-        local text = string.format("????????? %s : %u", skillInfo.text, skillReq)
+        local text = string.format("Требуется %s : %u", skillInfo.text, skillReq)
 
         local block = e.tooltip:createBlock()
         block.minWidth = 1

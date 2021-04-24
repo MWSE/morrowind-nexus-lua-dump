@@ -28,12 +28,12 @@ local function collectShavings(e)
 
     if kk_shavingsCount.value == 5 then
         tes3.playSound{reference=e.target, sound="repair fail"}
-        tes3.messageBox("D?uto jest zbyt t?pe, aby zbiera? wi?ry.")
+        tes3.messageBox("Dіuto jest zbyt tкpe, aby zbieraж wiуry.")
     else
         kk_shavingsCount.value = kk_shavingsCount.value + 1
         tes3.playSound{reference=e.target, sound="repair"}
         mwscript.addItem{reference=tes3.player, item="kk_shavings", count=1}
-        tes3.messageBox("Uda?o ci si? zdoby? gar?? wi?r. U?ycia d?uta (%d/5)", 5 - kk_shavingsCount.value)
+        tes3.messageBox("Udaіo ci siк zdobyж garњж wiуr. Uїycia dіuta (%d/5)", 5 - kk_shavingsCount.value)
     end
 	
 	return false

@@ -134,9 +134,9 @@ function this.onCreate(parent)
 
 	local descriptionLabel
 	if (tes3.mobilePlayer) then
-		descriptionLabel = container:createLabel({ text = "Easy Escort teleportuje do gracza towarzyszy, gdy s? wystarczaj?co daleko lub w innym pomieszczeniu. Korzystaj?c z poni?szych informacji, mo?esz wy?wietli? bie??c? czarn? list?, a tak?e aktualnych NPC, kt?rzy s? uwa?ani za przyjaznych. Aby uniemo?liwi? do??czenie przez towarzysza do walki, kliknij przycisk czarnej listy. Mo?esz tak?e usun?? z niej NPC." })
+		descriptionLabel = container:createLabel({ text = "Easy Escort teleportuje do gracza towarzyszy, gdy s№ wystarczaj№co daleko lub w innym pomieszczeniu. Korzystaj№c z poniїszych informacji, moїesz wyњwietliж bieї№c№ czarn№ listк, a takїe aktualnych NPC, ktуrzy s№ uwaїani za przyjaznych. Aby uniemoїliwiж doі№czenie przez towarzysza do walki, kliknij przycisk czarnej listy. Moїesz takїe usun№ж z niej NPC." })
 	else
-		descriptionLabel = container:createLabel({ text = "Easy Escort teleportuje do gracza towarzyszy, gdy s? wystarczaj?co daleko lub w innym pomieszczeniu. Korzystaj?c z poni?szych informacji, mo?esz wy?wietli? bie??c? czarn? list?, a tak?e aktualnych NPC, kt?rzy s? uwa?ani za przyjaznych. Aby wy?wietli? i umie?ci? na czarnej li?cie aktualnie przyjaznych NPC, wczytaj zapisan? gr?." })
+		descriptionLabel = container:createLabel({ text = "Easy Escort teleportuje do gracza towarzyszy, gdy s№ wystarczaj№co daleko lub w innym pomieszczeniu. Korzystaj№c z poniїszych informacji, moїesz wyњwietliж bieї№c№ czarn№ listк, a takїe aktualnych NPC, ktуrzy s№ uwaїani za przyjaznych. Aby wyњwietliж i umieњciж na czarnej liњcie aktualnie przyjaznych NPC, wczytaj zapisan№ grк." })
 	end
 	descriptionLabel.layoutWidthFraction = 1.0
 	descriptionLabel.wrapText = true
@@ -145,7 +145,7 @@ function this.onCreate(parent)
 
 	createConfigSliderPackage({
 		parent = container,
-		label = "Liczba sekund mi?dzy teleportacj? towarzysza:",
+		label = "Liczba sekund miкdzy teleportacj№ towarzysza:",
 		config = this.config,
 		key = "pollRate",
 		min = 1,
@@ -156,7 +156,7 @@ function this.onCreate(parent)
 	
 	createConfigSliderPackage({
 		parent = container,
-		label = "Odleg?o?? przed teleportacj? tej samej kom?rki:",
+		label = "Odlegіoњж przed teleportacj№ tej samej komуrki:",
 		config = this.config,
 		key = "followDistance",
 		min = 100,

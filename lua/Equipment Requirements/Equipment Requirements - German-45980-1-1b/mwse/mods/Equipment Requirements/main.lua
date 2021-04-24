@@ -1018,9 +1018,9 @@ local weaponReqTable = {
 }
 
 local armorClassInfo = {
-  [0] = {text = "Leichte R?stung",  name = "lightArmor"},
-  [1] = {text = "Mittlere R?stung", name = "mediumArmor"},
-  [2] = {text = "Schwere R?stung",  name = "heavyArmor"},
+  [0] = {text = "Leichte Rьstung",  name = "lightArmor"},
+  [1] = {text = "Mittlere Rьstung", name = "mediumArmor"},
+  [2] = {text = "Schwere Rьstung",  name = "heavyArmor"},
 }
 
 local weaponTypeInfo = {
@@ -1033,11 +1033,11 @@ local weaponTypeInfo = {
     ["SpearTwoWide"]      = {text = "Speer",        name= "spear"},
     ["AxeOneHand"]        = {text = "Axt",          name= "axe"},
     ["AxeTwoClose"]       = {text = "Axt",          name= "axe"},
-    ["MarksmanBow"]       = {text = "Sch?tze",     name= "marksman"},
-    ["MarksmanCrossbow"]  = {text = "Sch?tze",     name= "marksman"},
-    ["MarksmanThrown"]    = {text = "Sch?tze",     name= "marksman"},
-    ["Arrow"]             = {text = "Sch?tze",     name= "marksman"},
-    ["Bolt"]              = {text = "Sch?tze",     name= "marksman"},
+    ["MarksmanBow"]       = {text = "Schьtze",     name= "marksman"},
+    ["MarksmanCrossbow"]  = {text = "Schьtze",     name= "marksman"},
+    ["MarksmanThrown"]    = {text = "Schьtze",     name= "marksman"},
+    ["Arrow"]             = {text = "Schьtze",     name= "marksman"},
+    ["Bolt"]              = {text = "Schьtze",     name= "marksman"},
 }
 
 local function getItemSkillInfo(item)
@@ -1086,7 +1086,7 @@ local function reqTooltip(e)
 	local skillReq, skillInfo = getItemSkillInfo(e.object)
 
 	if skillReq then
-        local text = string.format("Ben?tigt %s : %u", skillInfo.text, skillReq)
+        local text = string.format("Benцtigt %s : %u", skillInfo.text, skillReq)
 
         local block = e.tooltip:createBlock()
         block.minWidth = 1
@@ -1110,7 +1110,7 @@ local function onEquip(e)
 
         if skillReq then
             if tes3.mobilePlayer[skillInfo.name].current < skillReq then
-                tes3.messageBox("Eure %s-F?higkeit ist zu niedrig um %s anzulegen.", skillInfo.text, e.item.name)
+                tes3.messageBox("Eure %s-Fдhigkeit ist zu niedrig um %s anzulegen.", skillInfo.text, e.item.name)
                 return false
             end
         end

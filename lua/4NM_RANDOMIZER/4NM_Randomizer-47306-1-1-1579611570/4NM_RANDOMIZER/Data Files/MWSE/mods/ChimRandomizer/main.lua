@@ -49,7 +49,7 @@ local function onMobileActivated(e) if e.reference.object.objectType == tes3.obj
 	tes3.setStatistic({reference = r, name = "magic", value = (m.magic.base * math.random(80,120) / 100 * conj)})
 	tes3.setStatistic({reference = r, name = "stealth", value = (m.stealth.base * math.random(80,120) / 100 * conj)})
 	if AR[id] then m.shield = (AR[id] * math.random(80,120) / 100 * conj) end
-	if msg then tes3.messageBox("%s  activated! ????? = %.2f  ???? = %d  AR = %d  ??? = %s", r, r.scale, m.strength.current, m.shield, d) end
+	if msg then tes3.messageBox("%s  activated! Скейл = %.2f  Сила = %d  AR = %d  Вар = %s", r, r.scale, m.strength.current, m.shield, d) end
 end end
 
 local function initialized(e)

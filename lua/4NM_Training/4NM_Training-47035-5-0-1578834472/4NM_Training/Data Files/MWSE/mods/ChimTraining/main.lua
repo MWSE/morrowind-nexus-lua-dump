@@ -34,17 +34,17 @@ local function onTrapDisarm(e) if e.lockData and e.lockData.trap then koefsec = 
 
 
 local function onExerciseSkill(e)
-	if e.skill == 8 then	e.progress = e.progress * (1 + (tes3.mobilePlayer.encumbrance.current / tes3.mobilePlayer.encumbrance.base)) -- ????????
+	if e.skill == 8 then	e.progress = e.progress * (1 + (tes3.mobilePlayer.encumbrance.current / tes3.mobilePlayer.encumbrance.base)) -- Атлетика
 	elseif weaponSkills[e.skill] then	e.progress = e.progress * koefweapon	if msg then tes3.messageBox("Weapon exp: %.2f", koefweapon) end
 	elseif armorSkills[e.skill] then	e.progress = e.progress * koefarmor		if msg then tes3.messageBox("Armor exp: %.2f", koefarmor) end
 	elseif magSkills[e.skill] then		e.progress = e.progress * koefmag		if msg then tes3.messageBox("Magic exp: %.2f", koefmag) end
 	elseif e.skill == 9 then	if e.progress < 3 then e.progress = e.progress * koefench end		if msg then tes3.messageBox("Enchant exp: %.3f  Koef: %.2f", e.progress, koefench) end
 	elseif e.skill == 18 then	e.progress = e.progress * koefsec		if msg then tes3.messageBox("Security exp: %.2f  Koef: %.2f", e.progress, koefsec) end		
-	elseif e.skill == 16 or e.skill == 1 then	if tes3.player.data.expcraft == nil then tes3.player.data.expcraft = 0 end -- ??????? ? ??????
+	elseif e.skill == 16 or e.skill == 1 then	if tes3.player.data.expcraft == nil then tes3.player.data.expcraft = 0 end -- Алхимия и кузнец
 		koefcraft = 1 - tes3.player.data.expcraft / (tes3.player.data.expcraft + 50)		if koefcraft < 0.05 then koefcraft = 0 end		e.progress = e.progress * koefcraft
 		if tes3.player.data.expcraft < 1000 then tes3.player.data.expcraft = tes3.player.data.expcraft + 10 end
 		if msg then tes3.messageBox("Craft exp: %.2f  Fatigue: %.1f", koefcraft, tes3.player.data.expcraft) end
-	elseif e.skill == 24 or e.skill == 25 then	if tes3.player.data.expsocial == nil then tes3.player.data.expsocial = 0 end -- ??????????? ? ????????
+	elseif e.skill == 24 or e.skill == 25 then	if tes3.player.data.expsocial == nil then tes3.player.data.expsocial = 0 end -- Красноречие и торговля
 		koefsocial = 1 - tes3.player.data.expsocial / (tes3.player.data.expsocial + 50)		if koefsocial < 0.05 then koefsocial = 0 end	e.progress = e.progress * koefsocial
 		if tes3.player.data.expsocial < 1000 then tes3.player.data.expsocial = tes3.player.data.expsocial + 10 end
 		if msg then tes3.messageBox("Social exp: %.2f  Koef: %.2f  Fatigue: %.2f", e.progress, koefsocial, tes3.player.data.expsocial) end

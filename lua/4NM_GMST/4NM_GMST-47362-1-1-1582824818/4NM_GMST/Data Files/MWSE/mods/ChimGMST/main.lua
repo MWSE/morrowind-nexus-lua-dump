@@ -8,13 +8,13 @@ for _, skill in pairs(SkillsHP) do if tes3.mobilePlayer[skill].base >= 100 then 
 
 if tes3.isAffectedBy{reference = tes3.player, effect = 80} == false and tes3.mobilePlayer.health.base == tes3.mobilePlayer.health.current then
 	tes3.setStatistic{reference = tes3.player, name = "health", value = (basehp + perk)}
-	--tes3.messageBox("???????? ???????????.  ??????? = %s  ??????? = %s  ?? ?????? = %s  ?? ?????? = %s", tes3.mobilePlayer.health.current, tes3.mobilePlayer.health.base, basehp, perk)
+	--tes3.messageBox("Здоровье пересчитано.  Текущее = %s  Базовое = %s  От статов = %s  От перков = %s", tes3.mobilePlayer.health.current, tes3.mobilePlayer.health.base, basehp, perk)
 end
 
 if tes3.isAffectedBy{reference = tes3.player, effect = 3} == false then
 	for _, skill in pairs(SkillsAR) do if tes3.mobilePlayer[skill].base >= 100 then AR = AR + 4 elseif tes3.mobilePlayer[skill].base >= 75 then AR = AR + 2 elseif tes3.mobilePlayer[skill].base >= 50 then AR = AR + 1 end end
 	tes3.mobilePlayer.shield = AR
-	--tes3.messageBox("????? ???????????. ??????? = %s   ?????? ???? = %s", tes3.mobilePlayer.shield, AR)
+	--tes3.messageBox("Броня пересчитана. Текущая = %s   Должно быть = %s", tes3.mobilePlayer.shield, AR)
 end
 
 end
