@@ -6,8 +6,8 @@ local SS = setmetatable({}, MT)		local BS = setmetatable({}, MT)		local B = {}	l
 
 local SID = {["4s_DC"] = "discharge", ["4s_CWT"] = "CWT", ["4s_rune1"] = "rune", ["4s_rune2"] = "rune", ["4s_rune3"] = "rune", ["4s_rune4"] = "rune", ["4s_rune5"] = "rune", ["4s_rune0"] = "rune",
 ["4s_totem1"] = "totem", ["4s_totem2"] = "totem", ["4s_totem3"] = "totem", ["4s_totem4"] = "totem", ["4s_totem5"] = "totem", ["4s_totemexp"] = "totem"}
-local School = {[0] = 11, [1] = 13, [2] = 10, [3] = 12, [4] = 14, [5] = 15} -- 11 ?????????, 13 ??????????, 10 ??????????, 12 ???????, 14 ?????????, 15 ??????????????
-local ResAtr = {[3] = 11, [4] = 11, [5] = 11, [9] = 15} -- 3 ?????, 4 ?????, 5 ??????, 9 ??. ??? ????? ?????????? ????????? (14)
+local School = {[0] = 11, [1] = 13, [2] = 10, [3] = 12, [4] = 14, [5] = 15} -- 11 Изменение, 13 Колдовство, 10 Разрушение, 12 Иллюзии, 14 Мистицизм, 15 Восстановление
+local ResAtr = {[3] = 11, [4] = 11, [5] = 11, [9] = 15} -- 3 огонь, 4 мороз, 5 молния, 9 яд. Для всего отсального Мистицизм (14)
 local DurKF = {[14] = 5, [15] = 5, [16] = 5, [23] = 5, [27] = 5, [22] = 5, [24] = 5, [25] = 5, [26] = 5, [37] = 10, [38] = 10, [74] = 5, [75] = 5, [76] = 5, [77] = 5, [78] = 5, [86] = 5, [87] = 5, [88] = 5,
 [516] = 5, [517] = 5, [518] = 5, [519] = 5, [520] = 5}
 local CME = {[4] = "frost", [6] = "fire", [5] = "shock", [73] = "shock", [72] = "poison", [57] = "vital"}
@@ -65,7 +65,7 @@ local function LTnew(it, spos) if LTS then L.radius = tes3.getEffectMagnitude{re
 	end}
 end
 
-local function LightCollision(e) if e.collision and e.sourceInstance.caster == p then -- ?????? (504)
+local function LightCollision(e) if e.collision and e.sourceInstance.caster == p then -- Фонарь (504)
 local ef = e.sourceInstance.source.effects[e.effectIndex + 1]	local L	= tes3.getObject("4nm_light")	local pos = e.collision.point:copy()	pos.z = pos.z + 5	local col = Rcol(cfg.col)
 L.color[1] = col[1]		L.color[2] = col[2]		L.color[3] = col[3]		L.radius = math.random(ef.min, ef.max) * Cpower(mp, 11, 11)
 local LTR = tes3.createReference{object = "4nm_light", scale = math.min(1+L.radius/1000, 9), position = pos, cell = p.cell}	LTR.modified = false	LTRef[LTR] = true
@@ -87,8 +87,8 @@ if c then Cstam = 50*(1 - math.min(c.fatigue.normalized,1))		Emp = EMP[eid] and 
 	CritC = (c.luck.current + c.agility.current)/20 + c.attackBonus/5 + (c == mp and 0 or c.object.level + 20) + Cfocus/2 -
 	(e.resistAttribute == 28 and 10 or (math.min(m.fatigue.normalized,1)*10 + (m.spellReadied and 10 or 0) + (m.willpower.current + m.endurance.current + m.luck.current)/20))
 	CritD = CritC - math.random(100)	if CritD < 0 then CritD = 0 else CritD = CritD + 30 end
-else	Cbonus = 0	Cstam = 0	Cfocus = 0	CritC = 0	CritD = 0 	Emp = 0 end -- ??????? ?????, ??????? ???, ??????, ??????? ? ?????? ????????? ??????????
-if e.caster == p then if e.source.objectType == tes3.objectType.spell and e.source.castType == 0 then -- ???????? ????? ? ??????? ?????????? ??????
+else	Cbonus = 0	Cstam = 0	Cfocus = 0	CritC = 0	CritD = 0 	Emp = 0 end -- Обычные зелья, обычные яды, алтари, ловушки и прочие кастующие активаторы
+if e.caster == p then if e.source.objectType == tes3.objectType.spell and e.source.castType == 0 then -- Отменяем стаки с быстрой бутылочной магией
 	if BS[t.id][e.source.id] then si = tes3.getMagicSourceInstanceBySerial{serialNumber = BS[t.id][e.source.id]}	if si then si.state = 6 end		BS[t.id][e.source.id] = nil end		SS[t.id][e.source.id] = sn
 elseif e.source.name == "4b_Q" then if SS[t.id][QS.id] and SS[t.id][QS.id] ~= sn then si = tes3.getMagicSourceInstanceBySerial{serialNumber = SS[t.id][QS.id]}	if si then si.state = 6 end end
 	SS[t.id][QS.id] = sn	BS[t.id][QS.id] = sn
@@ -96,8 +96,8 @@ elseif ((e.source.objectType == tes3.objectType.enchantment and (e.source.castTy
 	MKF = math.max(0.05, 2*ENPC.normalized, 1-ENcost/(ENPC.max/100))
 end end
 
-if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
-	if e.source.objectType == tes3.objectType.spell then -- ?? ??????  ?? ????.???????, powers(5), ?????? ????????
+if e.resistAttribute == 28 then -- Магия с позитивными эффектами
+	if e.source.objectType == tes3.objectType.spell then -- Не влияет  на пост.эффекты, powers(5), всегда успешные
 		if e.source.castType == 0 and e.source.flags ~= 4 then e.resistedPercent = Cstam - Cbonus - Cfocus - CritD - Dbonus
 		if msg1 then tes3.messageBox("%s  %.1f%% spell power (+ %.1f bonus + %.1f focus + %.1f crit (%.1f%%) + %.1f dur - %.1f stam)", e.source.name, (100 - e.resistedPercent), Cbonus, Cfocus, CritD, CritC, Dbonus, Cstam) end end
 	elseif e.source.objectType == tes3.objectType.alchemy then
@@ -106,7 +106,7 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 				if msg1 then tes3.messageBox("%s  %.1f%% Q spell power (+ %.1f bonus + %.1f focus + %.1f crit (%.1f%%) + %.1f dur - %.1f stam)", QS.name, (100 - e.resistedPercent), Cbonus, Cfocus, CritD, CritC, Dbonus, Cstam) end
 			elseif e.source.icon == "" then e.resistedPercent = 75	if msg1 then tes3.messageBox("%s  ingred power = %.1f for %d seconds", e.source.name, ef.max/4, ef.duration) end end
 		else e.resistedPercent = 0 - e.caster.mobile.willpower.current/10 - e.caster.mobile:getSkillValue(16)/5		if msg1 then tes3.messageBox("%s  %.1f%% alchemy power", e.source.name, (100 - e.resistedPercent)) end end
-	elseif e.source.objectType == tes3.objectType.enchantment then -- ???? ??????????? castType 0=castOnce, 1=onStrike, 2=onUse, 3=constant
+	elseif e.source.objectType == tes3.objectType.enchantment then -- Сила зачарований castType 0=castOnce, 1=onStrike, 2=onUse, 3=constant
 		if e.source.castType ~= 3 then	e.resistedPercent = Cstam - Cbonus - Cfocus - CritD - Dbonus		if MKF < 1 then e.resistedPercent = 100 - (100 - e.resistedPercent) * MKF end
 			if msg1 then tes3.messageBox("%s  %.1f%% enchant power (+ %.1f bonus + %.1f focus + %.1f crit (%.1f%%) + %.1f dur - %.1f stam) x%.2f mult", e.source.id, (100 - e.resistedPercent), Cbonus, Cfocus, CritD, CritC, Dbonus, Cstam, MKF) end
 		elseif t == p then ConstEnLim()	if cfg.enchlim then 
@@ -114,7 +114,7 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 			else tes3.messageBox("Summ enchant volume = %d / %d", D.ENconst, (5000 + mp.enchant.base*30))	if ef.min ~= ef.max then e.resistedPercent = 50		tes3.messageBox("Anti-exploit! Enchant power reduced by half!") end end
 		end end
 	end
-	if ef.object.school == 1 then D.conjpower = 1 - e.resistedPercent/200		D.conjagr = t ~= p and m.fight > 80 or nil end -- ????????????? ??????????? ???? ?????????? ???????
+	if ef.object.school == 1 then D.conjpower = 1 - e.resistedPercent/200		D.conjagr = t ~= p and m.fight > 80 or nil end -- Устанавливаем коэффициент силы призванных существ
 	if eid < 500 then
 		if eid == tes3.effect.restoreHealth then P = math.random(ef.min, ef.max) * ef.duration * (1 - e.resistedPercent/100)
 			if AF[t].vital and AF[t].vital > 0 then AF[t].vital = AF[t].vital - P		P = - AF[t].vital end
@@ -132,15 +132,15 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 		elseif eid == tes3.effect.levitate and ef.rangeType ~= 0 then resist = e.resistedPercent + m.resistMagicka + m.willpower.current/2
 			if msg then tes3.messageBox("%s  %.1f%% levitation resist (%.1f start + %.1f magic + %.1f willpower)", (e.source.name or e.source.id), resist, e.resistedPercent, m.resistMagicka, m.willpower.current/2) end
 			if resist >= math.random(100) then e.resistedPercent = 100 end
-		elseif eid == 118 or eid == 119 then e.resistedPercent = e.resistedPercent + m.resistMagicka + m.willpower.current/2 -- ???????
+		elseif eid == 118 or eid == 119 then e.resistedPercent = e.resistedPercent + m.resistMagicka + m.willpower.current/2 -- Приказы
 			if msg then tes3.messageBox("%s  %.1f%% mind control resist (%.1f magic + %.1f willpower)", (e.source.name or e.source.id), e.resistedPercent, m.resistMagicka, m.willpower.current/2) end
-		elseif eid == 83 and ef.skill == 9 and t == p and (mp.enchant.current + ef.max * (1 - e.resistedPercent/100)) > 200 then -- ?????? ????? ??????????? 200
+		elseif eid == 83 and ef.skill == 9 and t == p and (mp.enchant.current + ef.max * (1 - e.resistedPercent/100)) > 200 then -- Предел баффа зачарования 200
 			e.resistedPercent = (1 - (200 - mp.enchant.current) / ef.max) * 100		tes3.messageBox("Max enchant skill!")
-		elseif eid == 60 and t == p then local mmax = 1 + mp.willpower.base/100 + mp.intelligence.base/50 + mp.alteration.base/50 + mp.mysticism.base/25 -- ???????
+		elseif eid == 60 and t == p then local mmax = 1 + mp.willpower.base/100 + mp.intelligence.base/50 + mp.alteration.base/50 + mp.mysticism.base/25 -- Пометка
 			local mtab = {}		for i = 1, 10 do if mmax >= i then mtab[i] = i.." - "..(DM["mark"..i] and DM["mark"..i].id or "empty") end end
 			tes3.messageBox{message = "Which slot to remember the mark?", buttons = mtab, callback = function(e) DM["mark"..(e.button+1)] = {id = p.cell.id, x = p.position.x, y = p.position.y, z = p.position.z} end}
 		end
-	elseif eid == 501 and AF[t].T501 == nil then -- ??????????? ????????????? (501)
+	elseif eid == 501 and AF[t].T501 == nil then -- Перезарядка зачарованного (501)
 		AF[t].T501 = timer.start{duration = 1, iterations = -1, callback = function() M = tes3.getEffectMagnitude{reference = t, effect = 501}	if M == 0 then AF[t].T501:cancel()	AF[t].T501 = nil else
 			K = Cpower(m, 14, 14)/100	P = M * K	W = m.readiedWeapon
 			if W and W.object.enchantment and W.variables.charge < W.object.enchantment.maxCharge then W.variables.charge = math.min(W.variables.charge + P, W.object.enchantment.maxCharge)
@@ -150,14 +150,14 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 				if msg then tes3.messageBox("Pow = %.1f (x%.2f)  %s charges = %d/%d", P, K, st.object.name, st.variables.charge, st.object.enchantment.maxCharge) end break
 			end end end		
 		end end}
-	elseif eid == 502 and AF[t].T502 == nil then -- ??????? ?????? (502)
+	elseif eid == 502 and AF[t].T502 == nil then -- Починка оружия (502)
 		AF[t].T502 = timer.start{duration = 1, iterations = -1, callback = function() M = tes3.getEffectMagnitude{reference = t, effect = 502}	if M == 0 then AF[t].T502:cancel()	AF[t].T502 = nil else
 			K = Cpower(m, 11, 11)/100	P = M * K	W = m.readiedWeapon
 			if W and W.object.type ~= 11 and W.variables.condition < W.object.maxCondition then W.variables.condition = math.min(W.variables.condition + P, W.object.maxCondition)
 				if msg then tes3.messageBox("Pow = %.1f (x%.2f)  %s condition = %d/%d", P, K, W.object.name, W.variables.condition, W.object.maxCondition) end
 			end
 		end end}
-	elseif eid == 503 and AF[t].T503 == nil then -- ??????? ????? (503)
+	elseif eid == 503 and AF[t].T503 == nil then -- Починка брони (503)
 		AF[t].T503 = timer.start{duration = 1, iterations = -1, callback = function() M = tes3.getEffectMagnitude{reference = t, effect = 503}	if M == 0 then AF[t].T503:cancel()	AF[t].T503 = nil else
 			K = Cpower(m, 11, 11)/100	P = M * K
 			for _, st in pairs(t.object.equipment) do if st.object.objectType == tes3.objectType.armor and st.variables and st.variables.condition < st.object.maxCondition then
@@ -167,8 +167,8 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 		end end}
 	elseif MEF[eid] == "reflect" and t.data.reflect == nil then t.data.reflect = 0
 	elseif eid == 507 and t.data.refspell == nil then t.data.refspell = 0
-	elseif MEF[eid] == "charge" then t.data.CW = true	-- ???????? ??????. ??????? 511, 512, 513, 514, 515
-	elseif MEF[eid] == "aura" and t == p then n = nil -- ???????? ????. ??????? 516, 517, 518, 519, 520
+	elseif MEF[eid] == "charge" then t.data.CW = true	-- Зарядить оружие. Эффекты 511, 512, 513, 514, 515
+	elseif MEF[eid] == "aura" and t == p then n = nil -- Дамажные ауры. Эффекты 516, 517, 518, 519, 520
 		for i, t in ipairs(DA) do if t.s and t.s == e.source.id and t.b.effects[1].id == MID[eid%5] then n = i break end end
 		if n == nil then for i, t in ipairs(DA) do if t.tim == nil then n = i break end end end
 		if n == nil then md = DA[1].tim		n = 1 for i, t in ipairs(DA) do if t.tim < md then md = t.tim	n = i end end end
@@ -183,7 +183,7 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 				else for mob in tes3.iterate(mp.hostileActors) do for i, t in ipairs(DA) do if t.r and p.position:distance(mob.position) < 25*t.r then mwscript.equip{reference = mob.reference, item = t.b} end end end end
 			end
 		end} end
-	elseif MEF[eid] == "prok" and t == p and not T.Prok.timeLeft then	-- ?????. ??????? 531, 532, 533, 534, 535
+	elseif MEF[eid] == "prok" and t == p and not T.Prok.timeLeft then	-- Проки. Эффекты 531, 532, 533, 534, 535
 		T.Prok = timer.start{duration = math.max(3 - m:getSkillValue(11)/100, 2), iterations = -1, callback = function()	PRM = {tes3.getEffectMagnitude{reference = t, effect = 531}, tes3.getEffectMagnitude{reference = t, effect = 532},
 			tes3.getEffectMagnitude{reference = t, effect = 533}, tes3.getEffectMagnitude{reference = t, effect = 534}, tes3.getEffectMagnitude{reference = t, effect = 535}}
 			mc = (PRM[1]*0.3 + PRM[2]*0.3 + PRM[3]*0.4 + PRM[4]*0.5 + PRM[5]*0.4) * 1.5
@@ -193,7 +193,7 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 				if msg then tes3.messageBox("Prok = %d + %d + %d + %d + %d   Manacost = %.1f", PRM[1], PRM[2], PRM[3], PRM[4], PRM[5], mc) end
 			end
 		end}
-	elseif MEF[eid] == "discharge" and t == p and sn ~= DC.sn and not (e.source.objectType == tes3.objectType.enchantment and e.source.castType == 3) then -- ??????. ??????? 541, 542, 543, 544, 545
+	elseif MEF[eid] == "discharge" and t == p and sn ~= DC.sn and not (e.source.objectType == tes3.objectType.enchantment and e.source.castType == 3) then -- Разряд. Эффекты 541, 542, 543, 544, 545
 		DC.sn = sn	local bc = 0	n = 0	for i, eff in ipairs(S.DC.effects) do eff.id = -1 end
 		for i, eff in ipairs(e.source.effects) do if MEF[eff.id] == "discharge" and eff.duration == ef.duration then n = n + 1	S.DC.effects[n].id = MID[eff.id%5]	S.DC.effects[n].duration = 1 	S.DC.effects[n].rangeType = 2
 		S.DC.effects[n].min = durbonus(eff.min, eff.duration - 1, 10)	S.DC.effects[n].max = durbonus(eff.max, eff.duration - 1, 10)	S.DC.effects[n].radius = eff.radius end end
@@ -207,7 +207,7 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 		if mwscript.getItemCount{reference = t, item = BAM.am} == 0 then tes3.addItem{reference = t, item = BAM.am, count = 1, playSound = false}	mwscript.equip{reference = t, item = BAM.am}
 			tes3.modStatistic{reference = t, name = "magicka", current = - Kcost(15,3,mp,13,14)}
 		end
-	elseif eid == 510 and t == p and not T.TS.timeLeft then event.register("simulate", SIMTS)	-- ?????????? ??????? (510)
+	elseif eid == 510 and t == p and not T.TS.timeLeft then event.register("simulate", SIMTS)	-- Замедление времени (510)
 		T.TS = timer.start{duration = 0.5, iterations = -1, callback = function()	P = tes3.getEffectMagnitude{reference = p, effect = 510} * Cpower(mp, 12, 14)/100
 			if P == 0 then T.TS:cancel()	event.unregister("simulate", SIMTS)	TSK = 1		tes3.playSound{reference = p, sound = "illusion cast"} else TSK = math.max(1 - P/(P + 40), 0.1) end
 		end}
@@ -215,7 +215,7 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 		L.color[1] = col[1]		L.color[2] = col[2]		L.color[3] = col[3]		L.radius = 100 * math.random(ef.min, ef.max) * (1 - e.resistedPercent/100)
 		if LTS then	LTRef[LTS]:cancel()		LTS:disable()	LTS.modified = false	LTRef[LTS] = nil end		LTnew(20*ef.duration-1, p.position)
 		if msg then tes3.messageBox("Light active! Radius = %d  Time = %d	Total = %d", L.radius, ef.duration, table.size(LTRef)) end
-	elseif eid == 505 and t == p and wc.flagTeleportingDisabled == false then -- ???????? ? ????? (505) 32 ????????, 22 ???
+	elseif eid == 505 and t == p and wc.flagTeleportingDisabled == false then -- Телепорт в город (505) 32 максимум, 22 щас
 		local TPP = {{-23000, -15200, 700}, {-14300, 52400, 2300}, {30000, -77600, 2000}, {150300, 31800, 900}, {17800, -101900, 500}, {-11200, 20000, 1500}, {53800, -51000, 400}, {-86800, 92300, 1200},
 		{1900, -56800, 1700}, {125000, -105200, 1000}, {125200, 45200, 1800}, {109500, 116000, 600}, {-21600, 103200, 2200}, {109300, -62000, 2200}, {60200, 183300, 500}, {-11100, -71000, 500},
 		{-46600, -38100, 400}, {-60100, 26700, 400}, {-68400, 140400, 400}, {-85400, 125600, 1200}, {94600, 115800, 1800}, {87500, 118100, 3700}}
@@ -223,24 +223,24 @@ if e.resistAttribute == 28 then -- ????? ? ??????????? ?????????
 		"Pelagiad", "Tel Branora", "Tel Aruhn", "Tel Mora", "Maar Gan", "Molag Mar", "Dagon Fel", "Seyda Neen", "Hla Oad", "Gnaar Mok", "Khuul", "Ald Velothi", "Vos", "Tel Vos"},
 		callback = function(e) if e.button ~= 0 then tes3.positionCell{reference = p, position = TPP[e.button], cell = tes3.getCell{x = 0, y = 0}} end end}
 	end
-elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then -- ????? ?????????? ??????? ? ?????????? ??????? ? ????????? ???? ??? ?????????????? ??? ??????? ??? ??? ???????????
+elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then -- Любые негативные эффекты с дальностью касание и удаленная цель ИЛИ пвсевдоалхимия ИЛИ обычные яды ИЛИ ингредиенты
 	if e.caster == t then
-		if ef.rangeType ~= 0 then Cfocus = math.max(Cfocus - 50 - m.willpower.current/2, -100) -- ????????? ??? ??????? ????? ????? ?????????
-		elseif e.source.name == "4b_Q" then e.resistedPercent = 0	return -- ??????? ?????????? ????? ?? ???? ?????? ?? 100% ????
-		elseif not EMP[eid] and (e.source.weight > 0 or ef.radius == 1) then -- ??????? ??? ? ??????????? ?????????? ?????? ? ??? ?? ?????????? ???????
+		if ef.rangeType ~= 0 then Cfocus = math.max(Cfocus - 50 - m.willpower.current/2, -100) -- Отражение или эксплод спелл будут ослаблены
+		elseif e.source.name == "4b_Q" then e.resistedPercent = 0	return -- Быстрая негативная магия на себя всегда на 100% силы
+		elseif not EMP[eid] and (e.source.weight > 0 or ef.radius == 1) then -- Обычные яды и ингредиенты используют резист к яду по упрощенной формуле
 			resist = m.resistPoison + m.willpower.current*0.2 + m.endurance.current*0.3
 			if resist > 200 then e.resistedPercent = 100 elseif resist > 0 then e.resistedPercent = resist/(1 + resist/200) else e.resistedPercent = resist end
 			if msg1 then tes3.messageBox("%s  %.1f poison resist (%.1f = %.1f norm + %.1f target)", e.source.name, e.resistedPercent, resist, m.resistPoison, m.willpower.current*0.2 + m.endurance.current*0.3) end	return
 		end
 	end
-	if t.data.refspell then -- ????? ????????? (507)
+	if t.data.refspell then -- новое отражение (507)
 		if t.data.refspell > 0 then Cfocus = math.max(Cfocus - t.data.refspell, -100) elseif t.data.refspell < 0 then e.resistedPercent = 100	return
 		else	local RFSM = tes3.getEffectMagnitude{reference = t, effect = 507} * Cpower(m, 14, 14)/100
 			if RFSM == 0 then t.data.refspell = nil else	local RFSpow = 0
 				for _, eff in ipairs(e.source.effects) do if eff.rangeType ~= 0 then RFSpow = RFSpow + (eff.min + eff.max) * eff.object.baseMagickaCost * eff.duration/20 end end	RFSpow = RFSpow * (100 + Cbonus + Cfocus + CritD - Cstam)/100
 				if DM.refl then
 					if RFSM > RFSpow then mc = Kcost(RFSpow*1.5,3,m,11,14)
-						if m.magicka.current > mc then -- ????????????? ??????? ? ????????? ???
+						if m.magicka.current > mc then -- пересчитываем бутылку и запускаем шар
 							local RFrad = Curve((m.willpower.current + m:getSkillValue(11)), 0.075, 400)
 							for i, eff in ipairs(e.source.effects) do if eff.rangeType ~= 0 then	if RFrad > eff.radius then B.RFS.effects[i].radius = eff.radius else B.RFS.effects[i].radius = RFrad end
 								B.RFS.effects[i].id = eff.id	B.RFS.effects[i].min = eff.min		B.RFS.effects[i].max = eff.max		B.RFS.effects[i].duration = eff.duration
@@ -261,15 +261,15 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 			end
 		end
 	end
-	if t.data.reflect then -- ?????? ????????? 561-565
-		if t.data.reflect > 0 then Cfocus = math.max(Cfocus - t.data.reflect, -150) -- ?????? ??? ????????? - ??? ????????? ??????? ???????????? ?????? ????? ?????????
+	if t.data.reflect then -- особые отражения 561-565
+		if t.data.reflect > 0 then Cfocus = math.max(Cfocus - t.data.reflect, -150) -- таймер ещё действует - все остальные эффекты вредоносного спелла будут ослаблены
 		else local RFM = {tes3.getEffectMagnitude{reference = t, effect = 561}, tes3.getEffectMagnitude{reference = t, effect = 562}, tes3.getEffectMagnitude{reference = t, effect = 563},
 		tes3.getEffectMagnitude{reference = t, effect = 564}, tes3.getEffectMagnitude{reference = t, effect = 565}}		local RFtar = Cpower(m, 14, 11)/100
 		for i, mag in ipairs(RFM) do if mag ~= 0 then RFM[i] = RFM[i] * RFtar end end	local RFMS = RFM[1] + RFM[2] + RFM[3] + RFM[4] + RFM[5]
 		if RFMS == 0 then t.data.reflect = nil else	local RFpow = 0		local RFcas = (100 + Cbonus + Cfocus + CritD - Cstam)/100
 			for _, eff in ipairs(e.source.effects) do if eff.rangeType ~= 0 then RFpow = RFpow + (eff.min + eff.max) * eff.duration * eff.object.baseMagickaCost/20 end end		local RFpow2 = RFpow * RFcas
 			local RFkoef = math.min(RFMS/RFpow2,1)		mc = Kcost(RFkoef*RFpow2*1.5,3,m,11,14)
-				if m.magicka.current > mc then -- ????????????? ??????? ? ????????? ???
+				if m.magicka.current > mc then -- пересчитываем бутылку и запускаем шар
 					local RFrad = Curve((m.willpower.current + m:getSkillValue(11)), 0.075, 400)
 					for i, mag in ipairs(RFM) do if mag ~= 0 then M = RFpow * RFkoef * mag/RFMS * 10 / tes3.getMagicEffect(MID[i]).baseMagickaCost
 						B.RF.effects[i].id = MID[i]		B.RF.effects[i].min = M*0.8		B.RF.effects[i].max = M*1.2		B.RF.effects[i].radius = RFrad		B.RF.effects[i].duration = 1	B.RF.effects[i].rangeType = 2
@@ -282,7 +282,7 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 			end
 		end
 	end
-	if eid == 14 then	local frostbonus	local burst = AF[t].fire and AF[t].fire^0.5*2 or 0		Tarmor = Armor(m)		Tbonus = m.endurance.current/4 + m.willpower.current/4	-- ?????
+	if eid == 14 then	local frostbonus	local burst = AF[t].fire and AF[t].fire^0.5*2 or 0		Tarmor = Armor(m)		Tbonus = m.endurance.current/4 + m.willpower.current/4	-- Огонь
 		if AF[t].frost and AF[t].frost > 0 then frostbonus = AF[t].frost^0.5*5		AF[t].frost = AF[t].frost - math.random(ef.min, ef.max) * ef.duration else frostbonus = 0 end
 		resist = m.resistFire + Tarmor + Tbonus - Cbonus - Cfocus - CritD - Dbonus + Cstam - Emp - burst + frostbonus
 		if resist > 300 and m.health.normalized < 1 then e.resistedPercent = resist - 200 elseif resist > 200 then e.resistedPercent = 100 elseif resist > 0 then e.resistedPercent = resist/(1 + resist/200) else e.resistedPercent = resist end
@@ -296,7 +296,7 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 				else a.fire = nil end end	if fin then	T.Fire:cancel() end
 			end} end
 		end
-	elseif eid == 16 then	local firebonus		Tarmor = Armor(m)	Tbonus = m.endurance.current/4 + m.willpower.current/4	-- ?????
+	elseif eid == 16 then	local firebonus		Tarmor = Armor(m)	Tbonus = m.endurance.current/4 + m.willpower.current/4	-- Мороз
 		if AF[t].fire and AF[t].fire > 0 then firebonus = AF[t].fire^0.5*5		AF[t].fire = AF[t].fire - math.random(ef.min, ef.max) * ef.duration else firebonus = 0 end
 		resist = m.resistFrost + Tarmor + Tbonus - Cbonus - Cfocus - CritD - Dbonus + Cstam - Emp + firebonus
 		if resist > 300 and m.health.normalized < 1 then e.resistedPercent = resist - 200 elseif resist > 200 then e.resistedPercent = 100 elseif resist > 0 then e.resistedPercent = resist/(1 + resist/200) else e.resistedPercent = resist end
@@ -310,7 +310,7 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 				else a.frost = nil end end	if fin then event.unregister("calcMoveSpeed", CMSFrost)	T.Frost:cancel() end
 			end} end
 		end
-	elseif eid == 15 then	Tarmor = Armor(m)	Tbonus = m.endurance.current/4 + m.willpower.current/4 -- ??????
+	elseif eid == 15 then	Tarmor = Armor(m)	Tbonus = m.endurance.current/4 + m.willpower.current/4 -- Молния
 		resist = m.resistShock + Tarmor + Tbonus - Cbonus - Cfocus - CritD - Dbonus + Cstam - Emp
 		if resist > 300 and m.health.normalized < 1 then e.resistedPercent = resist - 200 elseif resist > 200 then e.resistedPercent = 100 elseif resist > 0 then e.resistedPercent = resist/(1 + resist/200) else e.resistedPercent = resist end
 		if MKF < 1 then e.resistedPercent = 100 - (100 - e.resistedPercent) * MKF end
@@ -326,7 +326,7 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 				else a.shock = nil end end	if fin then	T.Shock:cancel() end
 			end} end
 		end
-	elseif eid == 27 then Tbonus = m.endurance.current * 0.3 + m.willpower.current * 0.2 -- ??
+	elseif eid == 27 then Tbonus = m.endurance.current * 0.3 + m.willpower.current * 0.2 -- Яд
 		resist = m.resistPoison + Tbonus - Cbonus - Cfocus - CritD - Dbonus + Cstam - Emp
 		if resist > 300 and m.health.normalized < 1 then e.resistedPercent = resist - 200 elseif resist > 200 then e.resistedPercent = 100 elseif resist > 0 then e.resistedPercent = resist/(1 + resist/200) else e.resistedPercent = resist end
 		if MKF < 1 then e.resistedPercent = 100 - (100 - e.resistedPercent) * MKF end
@@ -340,12 +340,12 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 			end} end
 		end
 	else	Tbonus = m.endurance.current * 0.2 + m.willpower.current * 0.3
-		if eid == 45 or eid == 46 then resist = m.resistMagicka + m.resistParalysis + Tbonus - Cbonus - Cfocus - CritD + Cstam	-- ??????? ? ???????? ??????? ????????
+		if eid == 45 or eid == 46 then resist = m.resistMagicka + m.resistParalysis + Tbonus - Cbonus - Cfocus - CritD + Cstam	-- Паралич и молчание считаем отдельно
 			if resist > 0 then e.resistedPercent = resist/(1 + (resist/200)) else e.resistedPercent = resist end	if MKF < 1 then e.resistedPercent = 100 - (100 - e.resistedPercent) * MKF end
 			if msg1 then tes3.messageBox("%s  %.1f%% paralysis resist chance (%.1f = %.1f paral + %.1f magic + %.1f target - %.1f caster - %.1f focus - %.1f crit (%.1f%%) + %.1f stam) x%.2f mult",
 			(e.source.name or e.source.id), e.resistedPercent, resist, m.resistParalysis, m.resistMagicka, Tbonus, Cbonus, Cfocus, CritD, CritC, Cstam, MKF) end
 			if e.resistedPercent >= math.random(100) then e.resistedPercent = 100 end
-		else resist = m.resistMagicka + Tbonus - Cbonus - Cfocus - CritD - Dbonus + Cstam - Emp	-- ?? ????????? ?????????? ????? ????????
+		else resist = m.resistMagicka + Tbonus - Cbonus - Cfocus - CritD - Dbonus + Cstam - Emp	-- Всё остальное негативное кроме паралича
 			if resist > 200 then e.resistedPercent = 100 elseif resist > 0 then e.resistedPercent = resist/(1 + resist/200) else e.resistedPercent = resist end		if MKF < 1 then e.resistedPercent = 100 - (100 - e.resistedPercent) * MKF end
 			if msg1 then tes3.messageBox("%s  %.1f%% magic resist (%.1f = %.1f norm + %.1f target - %.1f caster - %.1f focus - %.1f crit (%.1f%%) - %.1f dur + %.1f stam - %.1f emp) x%.2f mult",
 			(e.source.name or e.source.id), e.resistedPercent, resist, m.resistMagicka, Tbonus, Cbonus, Cfocus, CritD, CritC, Dbonus, Cstam, Emp, MKF) end
@@ -360,11 +360,11 @@ elseif ef.rangeType ~= 0 or e.source.objectType == tes3.objectType.alchemy then 
 			end
 		end
 	end
-else e.resistedPercent = 0	end -- ????? ?????????? ??????? ? ?????????? ?? ????, ??????? ?????????? ? ?????-??????? ? ???????, ????? ??????????? ?? 100% ????.
+else e.resistedPercent = 0	end -- Любые негативные эффекты с дальностью на себя, включая постоянные и баффо-дебаффы и болезни, будут действовать на 100% силы.
 end
 
 
-local AOE = {}	local RUN = {}	local Tot = {}	-- ??? (521-525)	???? (526-530)		?????? (551-555)
+local AOE = {}	local RUN = {}	local Tot = {}	-- АОЕ (521-525)	РУНЫ (526-530)		ТОТЕМЫ (551-555)
 local function AOEcol(e) if e.sourceInstance.caster == p then
 n = nil		local ef = e.sourceInstance.source.effects[e.effectIndex + 1]	tes3.getObject(AoEmod[ef.id%5]).radius = ef.radius * 40 -- AOE[n].r.object.radius
 for i, t in ipairs(AOE) do if t.tim == nil then n = i break end end
@@ -394,8 +394,8 @@ RUN[n].r = tes3.createReference{object = "4nm_rune", position = e.collision.poin
 local light = niPointLight.new()	light:setAttenuationForRadius(ef.radius/2)	light.diffuse = tes3vector3.new(LID[ef.id%5][1], LID[ef.id%5][2], LID[ef.id%5][3])
 RUN[n].r.sceneNode:attachChild(light)		light:propagatePositionChange()		RUN[n].r:getOrCreateAttachedDynamicLight(light, 0)		RUN[n].r.modified = false
 RUN[n].tim = math.floor((mp.intelligence.current + mp:getSkillValue(11) + mp:getSkillValue(14))/10 + 20)
-for i, eff in ipairs(RUN[n].s.effects) do eff.id = -1 end -- ??????? ?????
-for i, eff in ipairs(e.sourceInstance.source.effects) do if MEF[eff.id] == "rune" and eff.radius == ef.radius then -- ????????? ?????
+for i, eff in ipairs(RUN[n].s.effects) do eff.id = -1 end -- очищаем спелл
+for i, eff in ipairs(e.sourceInstance.source.effects) do if MEF[eff.id] == "rune" and eff.radius == ef.radius then -- заполняем спелл
 	RUN[n].s.effects[i].id = MID[eff.id%5]	RUN[n].s.effects[i].min = eff.min	RUN[n].s.effects[i].max = eff.max	RUN[n].s.effects[i].duration = eff.duration		RUN[n].s.effects[i].radius = eff.radius		RUN[n].s.effects[i].rangeType = 1
 end end
 if not RUN.Tim.timeLeft then RUN.Tim = timer.start{duration = 1, iterations = -1, callback = function() local fin = true
@@ -417,8 +417,8 @@ end
 Tot[n].r = tes3.createReference{object = "4nm_totem", position = e.collision.point + tes3vector3.new(0,0,60*(1 + ef.radius/50)), cell = p.cell, scale = 1 + ef.radius/50}	Tot[n].c = 0	Tot[n].tim = ef.duration	Tot[n].dur = ef.duration
 local light = niPointLight.new()	light:setAttenuationForRadius((1 + ef.radius/50)*3)		light.diffuse = tes3vector3.new(LID[ef.id%5][1], LID[ef.id%5][2], LID[ef.id%5][3])
 Tot[n].r.sceneNode:attachChild(light)		light:propagatePositionChange()		Tot[n].r:getOrCreateAttachedDynamicLight(light, 0)		Tot[n].r.modified = false
-for i, eff in ipairs(Tot[n].s.effects) do eff.id = -1 end -- ??????? ????? ????
-for i, eff in ipairs(e.sourceInstance.source.effects) do if MEF[eff.id] == "totem" and eff.duration == ef.duration then -- ????????? ????? ???? ??? ??????
+for i, eff in ipairs(Tot[n].s.effects) do eff.id = -1 end -- очищаем спелл шара
+for i, eff in ipairs(e.sourceInstance.source.effects) do if MEF[eff.id] == "totem" and eff.duration == ef.duration then -- заполняем спелл шара для тотема
 	Tot[n].s.effects[i].id = MID[eff.id%5]	Tot[n].s.effects[i].min = eff.min	Tot[n].s.effects[i].max = eff.max	Tot[n].s.effects[i].radius = eff.radius		Tot[n].s.effects[i].duration = 1	Tot[n].s.effects[i].rangeType = 2
 	Tot[n].c = Tot[n].c + (Tot[n].s.effects[i].min + Tot[n].s.effects[i].max) * Tot[n].s.effects[i].object.baseMagickaCost * 0.05 * (1 + Tot[n].s.effects[i].radius^2/(6 * Tot[n].s.effects[i].radius + 200))
 end end
@@ -456,7 +456,7 @@ if table.size(KSR) > 0 and KST == nil then KST = 0	fr = wc.lastFrameTime		event.
 end end
 
 
-local function Drobash(spell)	-- ????????. ??????? 536 - 540
+local function Drobash(spell)	-- Дробовик. Эффекты 536 - 540
 	for i, eff in ipairs(spell.effects) do if MEF[eff.id] == "shotgun" then
 		B.SG.effects[i].id = MID[eff.id%5]	B.SG.effects[i].min = eff.min	B.SG.effects[i].max = eff.max	B.SG.effects[i].radius = eff.radius		B.SG.effects[i].duration = eff.duration		B.SG.effects[i].rangeType = 2
 	else B.SG.effects[i].id = -1 end end	B.SG.icon = spell.name == "4b_ES" and spell.icon == "s\\b_chargeFrost.tga" and "s\\b_chargeFrost.tga" or "s\\b_shotgunFire.tga"
@@ -465,9 +465,9 @@ local function Drobash(spell)	-- ????????. ??????? 536 - 540
 end
 
 
-local RAYTim = timer	-- ???. ??????? 546 - 550
+local RAYTim = timer	-- Луч. Эффекты 546 - 550
 local function RayAllah(spell)	if RAYTim.timeLeft then RAYTim:cancel() end
-	for i, eff in ipairs(spell.effects) do if MEF[eff.id] == "ray" and eff.duration == spell.effects[1].duration then -- ????? ???? ??????????? ???????? ?????? ???? ????? ??????? ???????!
+	for i, eff in ipairs(spell.effects) do if MEF[eff.id] == "ray" and eff.duration == spell.effects[1].duration then -- время всех последующих эффектов должно быть равно времени первого!
 		B.RAY.effects[i].id = MID[eff.id%5]		B.RAY.effects[i].min = durbonus(eff.min, eff.duration - 1, 10)		B.RAY.effects[i].max = durbonus(eff.max, eff.duration - 1, 10)
 		B.RAY.effects[i].radius = eff.radius	B.RAY.effects[i].duration = 1	B.RAY.effects[i].rangeType = 2
 	else B.RAY.effects[i].id = -1 end end	B.RAY.icon = spell.name == "4b_ES" and spell.icon == "s\\b_chargeFrost.tga" and "s\\b_chargeFrost.tga" or "s\\b_rayFire.tga"
@@ -516,7 +516,7 @@ local function DEDEL() for r, ot in pairs(DER) do if r.sceneNode then r.sceneNod
 local QST = timer	local Qicon, QB
 local QK = {[cfg.q0.keyCode] = "0", [cfg.q1.keyCode] = "1", [cfg.q2.keyCode] = "2", [cfg.q3.keyCode] = "3", [cfg.q4.keyCode] = "4", [cfg.q5.keyCode] = "5", [cfg.q6.keyCode] = "6", [cfg.q7.keyCode] = "7", [cfg.q8.keyCode] = "8", [cfg.q9.keyCode] = "9"}
 local function onKey(e) if not tes3ui.menuMode() then local k = e.keyCode
-if k == cfg.magkey.keyCode then -- ??????? ????
+if k == cfg.magkey.keyCode then -- Быстрый каст
 	if D.QSP["0"] == nil then if QS ~= mp.currentSpell then if mp.currentSpell and mp.currentSpell.objectType == tes3.objectType.spell and mp.currentSpell.castType == 0 then QS = mp.currentSpell
 		for i, eff in ipairs(QS.effects) do B.Q.effects[i].id = eff.id		B.Q.effects[i].min = eff.min	B.Q.effects[i].max = eff.max	B.Q.effects[i].duration = eff.duration
 			B.Q.effects[i].radius = eff.radius		B.Q.effects[i].rangeType = eff.rangeType		B.Q.effects[i].attribute = eff.attribute		B.Q.effects[i].skill = eff.skill
@@ -530,7 +530,7 @@ if k == cfg.magkey.keyCode then -- ??????? ????
 			QB.current = QB.current + 1		if QB.current == 20 then QST:cancel() end end} end 
 		end
 	end
-elseif QK[k] then -- ????? ???????? ?????
+elseif QK[k] then -- Выбор быстрого каста
 	if QK[k] ~= "0" then
 		if e.isShiftDown then if mp.currentSpell and mp.currentSpell.objectType == tes3.objectType.spell and mp.currentSpell.castType == 0 then D.QSP[QK[k]] = mp.currentSpell.id
 			tes3.messageBox("%s remembered for %s quick cast slot", D.QSP[QK[k]], QK[k])
@@ -541,7 +541,7 @@ elseif QK[k] then -- ????? ???????? ?????
 			end		if msg then tes3.messageBox("%s prepared for quick cast - slot %s  %s", QS.name, D.QSP["0"], QS.flags == 4 and "No power bonuses" or "") end
 		end
 	else D.QSP["0"] = nil end
-elseif k == cfg.tpkey.keyCode then local DMag = tes3.getEffectMagnitude{reference = p, effect = 600}	-- ???????? ? ????
+elseif k == cfg.tpkey.keyCode then local DMag = tes3.getEffectMagnitude{reference = p, effect = 600}	-- Телепорт и дэши
 	if e.isControlDown then if DM.sectp then DM.sectp = false tes3.messageBox("Secondary TP mode disabled") else DM.sectp = true tes3.messageBox("Secondary TP mode enabled") end
 	elseif e.isAltDown then tes3.runLegacyScript{command = "ToggleLoadFade"}   tes3.messageBox("Load fader state is turned")
 	elseif TPproj then TPpos = TPproj.position		runTeleport()	if not DM.sectp then TPmod = 0 end
@@ -555,14 +555,14 @@ elseif k == cfg.tpkey.keyCode then local DMag = tes3.getEffectMagnitude{referenc
 		if Dfr == nil and mc < mp.magicka.current then V = V*DD		Dfr = 0		event.register("calcMoveSpeed", CMSdash)	tes3.playSound{sound="Spell Failure Destruction"}
 		tes3.modStatistic{reference = p, name = "magicka", current = -mc}	if msg then tes3.messageBox("Dist = %d  Cost = %d", DD, mc) end end
 	end
-elseif k == cfg.telkey.keyCode then -- ?????????
+elseif k == cfg.telkey.keyCode then -- Телекинез
 	if not TEmod then	local ref = tes3.getPlayerTarget()	if ref and ref.object.weight then TELnew(ref) end
 	elseif TEmod == 1 then p:activate(TER)		event.unregister("simulate", SIMTEL)	TER = nil	TEP = nil	TEmod = nil
 	elseif TEmod == 2 then TEmod = 3	TEP = nil
 	elseif TEmod == 3 and mp.magicka.current > 2*TEcost then	mc = Kcost(TEcost,2,mp,11,14) * math.min(1 + p.position:distance(TER.position)/5000, 2)
 		tes3.modStatistic{reference = p, name = "magicka", current = -mc}	TEmod = 1	tes3.playSound{sound = "enchant fail"}	if msg then tes3.messageBox("Extra teleport, manacost = %.1f (%.1f base)", mc, TEcost) end
 	end
-elseif k == cfg.cwkey.keyCode then -- ?????????? ??????
+elseif k == cfg.cwkey.keyCode then -- Заряженное оружие
 	if e.isAltDown then		if DM.cw then DM.cw = false tes3.messageBox("Charged weapon: on hit") else DM.cw = true tes3.messageBox("Charged weapon: on attack") end
 	elseif D.CW and TER then	mc = CWMag(p, 1)	if mc == 0 then D.CW = nil else
 		if mp.magicka.current > mc*2 then CWR = mp:getSkillValue(11)/20	n = 0		for i, eff in ipairs(S.CWT.effects) do eff.id = -1 end
@@ -576,7 +576,7 @@ elseif k == cfg.cwkey.keyCode then -- ?????????? ??????
 			if msg then tes3.messageBox("CWT = %d + %d + %d + %d + %d   Manacost = %.1f", CWM[1], CWM[2], CWM[3], CWM[4], CWM[5], mc) end	
 		end
 	end end
-elseif k == cfg.detkey.keyCode then local mag = Cpower(mp, 14, 12)/5  -- ???????????
+elseif k == cfg.detkey.keyCode then local mag = Cpower(mp, 14, 12)/5  -- Обнаружение
 	local node, nod		local dist = {tes3.getEffectMagnitude{reference = p, effect = 64}*mag, tes3.getEffectMagnitude{reference = p, effect = 65}*mag, tes3.getEffectMagnitude{reference = p, effect = 66}*mag}	DEDEL()
 	for c, _ in pairs(Acells) do for r in c:iterateReferences() do local ot
 		if r.object.objectType == tes3.objectType.container and not r.object.organic then ot = "cont" elseif r.object.objectType == tes3.objectType.door then ot = "door" elseif r.mobile and not r.mobile.isDead then
@@ -586,18 +586,18 @@ elseif k == cfg.detkey.keyCode then local mag = Cpower(mp, 14, 12)/5  -- ???????
 			if p.position:distance(r.position) < dist[DEO[ot].s] then nod = DEO[ot].m:clone()	if r.mobile then nod.translation.z = nod.translation.z + r.mobile.height/2 end
 		r.sceneNode:attachChild(nod, true)	r.sceneNode:update()	r.sceneNode:updateNodeEffects()		DER[r] = ot end end
 	end end		if table.size(DER) > 0 then tes3.playSound{reference = p, sound = "illusion hit"}	if T.DET.timeLeft then T.DET:reset() else T.DET = timer.start{duration = 10, callback = DEDEL} end end
-elseif k == cfg.cpkey.keyCode then -- ???????? ????????
+elseif k == cfg.cpkey.keyCode then -- Контроль снарядов
 	if e.isAltDown then if DM.cpt then DM.cpt = false tes3.messageBox("Free flight") else DM.cpt = true tes3.messageBox("Smart mode") end
 	elseif ic:isKeyDown(ic.inputMaps[1].code) then DM.cp = 3 tes3.messageBox("Teleport projectiles") elseif ic:isKeyDown(ic.inputMaps[2].code) then DM.cp = 1 tes3.messageBox("Homing projectiles")
 	elseif ic:isKeyDown(ic.inputMaps[3].code) then DM.cp = 2 tes3.messageBox("Spin projectiles") else DM.cp = 0 tes3.messageBox("Target projectiles") end
-elseif k == cfg.reflkey.keyCode then -- ?????????
+elseif k == cfg.reflkey.keyCode then -- Отражение
 	if DM.refl then DM.refl = false tes3.messageBox("Reflect spell mode: manashield") else DM.refl = true tes3.messageBox("Reflect spell mode: reflect") end
-elseif k == cfg.markkey.keyCode then	local mtab = {}		for i = 1, 10 do mtab[i] = i.." - "..(DM["mark"..i] and DM["mark"..i].id or "empty") end -- ???????
+elseif k == cfg.markkey.keyCode then	local mtab = {}		for i = 1, 10 do mtab[i] = i.." - "..(DM["mark"..i] and DM["mark"..i].id or "empty") end -- Пометки
 	tes3.messageBox{message = "Select a mark for recall", buttons = mtab, callback = function(e) local v = "mark"..(e.button+1)		if DM[v] then
 		mp.markLocation.cell = tes3.getCell{id = DM[v].id}		mp.markLocation.position = tes3vector3.new(DM[v].x, DM[v].y, DM[v].z)
 	end end}
-elseif k == cfg.ammokey.keyCode then -- ?????????? ?????????? ????????
-	if e.isAltDown and mp.actionData.animationAttackState == 10 then mp.actionData.animationAttackState = 0	-- ?????????? ???????? ?????
+elseif k == cfg.ammokey.keyCode then -- Пополнение призванных патронов
+	if e.isAltDown and mp.actionData.animationAttackState == 10 then mp.actionData.animationAttackState = 0	-- застрявшая анимация каста
 	elseif tes3.isAffectedBy{reference = p, effect = 601} and mp.magicka.current > 15 then	if mp.readiedWeapon then BAM.am = BAM[mp.readiedWeapon.object.type] or BAM.met else BAM.am = BAM.met end
 		if mwscript.getItemCount{reference = p, item = BAM.am} == 0 then tes3.addItem{reference = p, item = BAM.am, count = 1, playSound = false}
 			tes3.modStatistic{reference = p, name = "magicka", current = - Kcost(15,3,mp,13,14)}
@@ -714,7 +714,7 @@ local function SimulateCPS(e)	ppos = p.position:copy()	dt = wc.deltaTime		CPG = 
 	end		if table.size(CPRS) == 0 then event.unregister("simulate", SimulateCPS)		CPScd = nil		CPG = 0		if msg then tes3.messageBox("Spin-timer end!") end end
 end
 
-local function onMobileActivated(e) if e.mobile and e.mobile.firingMobile and e.mobile.firingMobile == mp then -- ?????? e.mobile.flags ????
+local function onMobileActivated(e) if e.mobile and e.mobile.firingMobile and e.mobile.firingMobile == mp then -- только e.mobile.flags есть
 if tes3.isAffectedBy{reference = p, effect = 506} and mp.magicka.current > 10 then	local live = 8 * mp.fatigue.normalized + (mp.willpower.current + mp.intelligence.current + mp:getSkillValue(11))/25		mc = 4
 	if e.mobile.spellInstance then
 		if DM.cp == 3 then mc = 8		timer.delayOneFrame(function() e.reference.position = hitp() end)

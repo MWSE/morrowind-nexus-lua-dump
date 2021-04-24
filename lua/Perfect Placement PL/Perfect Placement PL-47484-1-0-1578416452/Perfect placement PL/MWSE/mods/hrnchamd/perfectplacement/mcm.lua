@@ -136,14 +136,14 @@ function this.onCreate(parent)
     subhead2.font = 2
     subhead2.borderBottom = 12
 
-    local summary = pane:createLabel{ text = "W widoku pierwszoosobowym u?yj przycisku [Chwy? / Upu?? przedmiot] na przedmiocie, aby nim manipulowa?." }
+    local summary = pane:createLabel{ text = "W widoku pierwszoosobowym uїyj przycisku [Chwyж / Upuњж przedmiot] na przedmiocie, aby nim manipulowaж." }
     summary.borderBottom = 40
 
     local optionGuide = pane:createBlock{}
     optionGuide.layoutWidthFraction = 1.0
     optionGuide.autoHeight = true
     optionGuide.borderBottom = 24
-    local optionGuideLabel = optionGuide:createLabel{ text = "Wy?wietl pomoc na temat skr?t?w klawiszowych" }
+    local optionGuideLabel = optionGuide:createLabel{ text = "Wyњwietl pomoc na temat skrуtуw klawiszowych" }
     optionGuideLabel.absolutePosAlignY = 0.5
     optionGuideLabel.minWidth = 300
     local optionGuideButton = optionGuide:createButton{ text = textOnOff[this.config.showGuide] }
@@ -151,8 +151,8 @@ function this.onCreate(parent)
 
 	createConfigSliderPackage({
 		parent = pane,
-		label = "Czu?o?? trybu obracania",
-		key = "Czu?o??",
+		label = "Czuіoњж trybu obracania",
+		key = "Czuіoњж",
 		min = 5,
 		max = 50,
 		step = 1,
@@ -163,7 +163,7 @@ function this.onCreate(parent)
     optionSnap.layoutWidthFraction = 1.0
     optionSnap.autoHeight = true
     optionSnap.borderBottom = 24
-    local optionSnapLabel = optionSnap:createLabel{ text = "Prze??cz tryb obracania na najbli?szy" }
+    local optionSnapLabel = optionSnap:createLabel{ text = "Przeі№cz tryb obracania na najbliїszy" }
     optionSnapLabel.absolutePosAlignY = 0.5
     optionSnapLabel.minWidth = 300
     local optionSnap2 = optionSnap:createBlock{}
@@ -176,11 +176,11 @@ function this.onCreate(parent)
     createSnapOption(optionSnap2, 3, "30 stopni")
     createSnapOption(optionSnap2, 4, "15 stopni")
     
-    createKeybind(pane, "Podnoszenie / Upuszczanie przedmiot?w", "keybind")
-    createKeybind(pane, "Obracanie przedmiot?w", "keybindRotate")
+    createKeybind(pane, "Podnoszenie / Upuszczanie przedmiotуw", "keybind")
+    createKeybind(pane, "Obracanie przedmiotуw", "keybindRotate")
     createKeybind(pane, "Obracanie w trybie pionowym", "keybindVertical")
-    createKeybind(pane, "Prze??czanie trybu obracania", "keybindSnap")
-    createKeybind(pane, "Prze??cznie obracania w trybie pionowym", "keybindWallAlign")
+    createKeybind(pane, "Przeі№czanie trybu obracania", "keybindSnap")
+    createKeybind(pane, "Przeі№cznie obracania w trybie pionowym", "keybindWallAlign")
 
     pane:updateLayout()
 end

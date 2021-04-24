@@ -109,7 +109,7 @@ end
 
     elseif isSoulGem == true then
         local soulValue = tes3.getGMST("fSoulGemMult").value * e.object.value
-        local textSoulSize = string.format("Seelenkapazit?t: %u", soulValue)
+        local textSoulSize = string.format("Seelenkapazitдt: %u", soulValue)
 
         local blockSoulSize = e.tooltip:createBlock()
         blockSoulSize.minWidth = 1
@@ -146,9 +146,9 @@ function modConfig.onCreate(container)
 		local button = e.source
 		button.text = getYesNoText(config.lightColor)
 		descriptionLabel.text = config.lightColor and
-			"Einzigartige Farbe f?r den Dauerbalken."
+			"Einzigartige Farbe fьr den Dauerbalken."
 			or
-			"Generische Farbe f?r den Dauerbalken."
+			"Generische Farbe fьr den Dauerbalken."
 	end
 
 
@@ -176,7 +176,7 @@ function modConfig.onCreate(container)
 			button:register("mouseClick", callBack)
 		end
 		local buttonText = getYesNoText(config.lightColor)
-		makeButton(optionBlock, "Einzigartige Farbe f?r den Dauerbalken?", buttonText, toggleLightColor)
+		makeButton(optionBlock, "Einzigartige Farbe fьr den Dauerbalken?", buttonText, toggleLightColor)
 
 
 		--Description pane
@@ -189,7 +189,7 @@ function modConfig.onCreate(container)
 		--Do description first so it can be updated by buttons
 		descriptionLabel = descriptionBlock:createLabel({ text =
 			"Descriptive Descriptions ist eine Erweiterung, welche zuvor unsichtbare Gegenstandswerte anzeigt. " ..
-			"Es f?gt Werte wie Geschwindigkeit, Reichweite, Verzauberungswert, Seelenkapazit?t under Dauer hinzu."
+			"Es fьgt Werte wie Geschwindigkeit, Reichweite, Verzauberungswert, Seelenkapazitдt under Dauer hinzu."
 		})
 		descriptionLabel.layoutWidthFraction = 1.0
 		descriptionLabel.wrapText = true

@@ -25,7 +25,7 @@ if (lfs.attributes("Data Files/MWSE/lua/nc/escort/mod_init.lua")) then
 		lfs.rmdir("Data Files/MWSE/lua/nc")
 		lfs.rmdir("Data Files/MWSE/lua")
 	else
-		mwse.log("[Easy Escort] Znaleziono star? instalacj?, ale nie mo?na jej usun??. Usu? folder "Pliki danych / MWSE / lua / nc / escort" i uruchom ponownie Morrowind.")
+		mwse.log("[Easy Escort] Znaleziono star№ instalacjк, ale nie moїna jej usun№ж. Usuс folder "Pliki danych / MWSE / lua / nc / escort" i uruchom ponownie Morrowind.")
 		return
 	end
 end

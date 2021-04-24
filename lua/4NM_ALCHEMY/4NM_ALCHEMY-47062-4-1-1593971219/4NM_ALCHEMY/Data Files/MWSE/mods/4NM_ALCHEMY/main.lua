@@ -8,13 +8,13 @@ local function onEquip(e) if e.reference == p and (e.item.objectType == tes3.obj
 if e.item.objectType == tes3.objectType.alchemy and mode and M[e.item.mesh:lower()] then	local ispoison = true
 	if cfg.smart then ispoison = nil		for i, eff in ipairs(e.item.effects) do if eff.object and eff.object.isHarmful then ispoison = true break end end end
 	if ispoison then
-		if tes3.worldController.inputController:isKeyDown(cfg.expkey.keyCode) then -- ??????? ???????
+		if tes3.worldController.inputController:isKeyDown(cfg.expkey.keyCode) then -- кидание бутылок
 			if CD == 0 then CD = 1
 				if mp.readiedWeapon and mp.readiedWeapon.object == B then mp:unequip{item = B} end
 				timer.delayOneFrame(function() CD = 0
 					local numdel = mwscript.getItemCount{reference = p, item = B}		if numdel > 0 then
 						tes3.removeItem{reference = p, item = B, count = numdel}		tes3.addItem{reference = p, item = D.poisonbid, count = numdel}
-						D.poisonbid = nil	if msg then if eng then tes3.messageBox("%d bottles extra unequipped", numdel) else tes3.messageBox("%d ?????? ??????? ?????", numdel) end end
+						D.poisonbid = nil	if msg then if eng then tes3.messageBox("%d bottles extra unequipped", numdel) else tes3.messageBox("%d старых бутылок снято", numdel) end end
 					end
 					local num = mwscript.getItemCount{reference = p, item = e.item}	if num > 0 then
 						for i, eff in ipairs(e.item.effects) do
@@ -24,12 +24,12 @@ if e.item.objectType == tes3.objectType.alchemy and mode and M[e.item.mesh:lower
 						B.weight = e.item.weight	BM:detachChildAt(1)	BM:attachChild(tes3.loadMesh(M[e.item.mesh:lower()] or "w\\4nm_bottle1.nif"):clone(), true)
 						D.poisonbid = e.item.id		tes3.removeItem{reference = p, item = e.item, count = num}		tes3.addItem{reference = p, item = B, count = num}
 						mwscript.equip{reference = p, item = B}
-						if msg then if eng then tes3.messageBox("%d bootles are ready!", num) else tes3.messageBox("%d ??????? ?????? ? ??????!", num) end end
+						if msg then if eng then tes3.messageBox("%d bootles are ready!", num) else tes3.messageBox("%d бутылок готово к броску!", num) end end
 					end
 				end)
 				return false
 			else tes3.messageBox("Not so fast!") return false end
-		else -- ?????????? ??????
+		else -- отравление оружия
 			timer.delayOneFrame(function() if mwscript.getItemCount{reference = p, item = e.item} > 0 then
 				for i, eff in ipairs(e.item.effects) do
 					P.effects[i].id = eff.id	P.effects[i].min = nomag[eff.id] and eff.min or eff.min/5		P.effects[i].max = nomag[eff.id] and eff.max or eff.max/5
@@ -37,7 +37,7 @@ if e.item.objectType == tes3.objectType.alchemy and mode and M[e.item.mesh:lower
 				end
 				D.poison = 100 + mp.alchemy.current + mp.agility.current	PBAR.widget.current = D.poison		PBAR.visible = true
 				tes3.removeItem{reference = p, item = e.item}
-				if msg then if eng then tes3.messageBox("Poison is ready! Charges = %d", D.poison) else tes3.messageBox("?? ?????! ????? = %d", D.poison) end end
+				if msg then if eng then tes3.messageBox("Poison is ready! Charges = %d", D.poison) else tes3.messageBox("Яд готов! объем = %d", D.poison) end end
 			end end)
 			return false
 		end
@@ -46,17 +46,17 @@ end
 
 if D.potmcd then
 	if msg then if eng then tes3.messageBox("Not so fast! I need at least %d seconds to swallow what is already in my mouth!", D.potmcd)
-	else tes3.messageBox("?? ??? ??????! ??? ???? ??? ???? ?? %d ??????? ????? ?????????? ?? ??? ??? ? ???? ?? ???!", D.potmcd) end end		return false
+	else tes3.messageBox("Не так быстро! Мне надо еще хотя бы %d секунды чтобы проглотить то что уже у меня во рту!", D.potmcd) end end		return false
 elseif D.potcd and D.potcd > L then
 	if msg then if eng then tes3.messageBox("Belly already bursting! I can't take it anymore... I have to wait at least %d seconds before I can swallow something else", D.potcd - L)
-	else tes3.messageBox("???? ??? ?? ???? ??????! ?????? ?? ????... ???? ????????? ???? ?? %d ?????? ??????, ??? ? ????? ????????? ???-?? ???", D.potcd - L) end end		return false
+	else tes3.messageBox("Пузо уже по швам трещит! Больше не могу... Надо подождать хотя бы %d секунд прежде, чем я смогу заглотить что-то еще", D.potcd - L) end end		return false
 end
 L = 50 + math.min(mp.endurance.current,100)/2		D.potmcd = 10 - math.min(mp.speed.current,100)/20		D.potcd = (D.potcd or 0) + 50 - mp.alchemy.current/10
 if not TIM.timeLeft then TIM = timer.start{duration = 1, iterations = -1, callback = function() D.potcd = D.potcd - 1	if D.potmcd then D.potmcd = D.potmcd - 1	if D.potmcd <= 0 then D.potmcd = nil end end
 	if D.potmcd and D.potmcd > D.potcd - L then PB.max = 5	PB.current = D.potmcd else PB.max = 30	PB.current = D.potcd - L	if PB.current <= 0 then FR.visible = false end end
 	if D.potcd <= 0 then D.potcd = nil	TIM:cancel() end
 end} end
-PB.max = 5	PB.current = 5	FR.visible = true	if msg then if eng then tes3.messageBox("Om-nom-nom! Belly filled at %d / %d", D.potcd, L) else tes3.messageBox("???-???! ???? ??????????? ?? %d / %d", D.potcd, L) end end
+PB.max = 5	PB.current = 5	FR.visible = true	if msg then if eng then tes3.messageBox("Om-nom-nom! Belly filled at %d / %d", D.potcd, L) else tes3.messageBox("Ням-ням! Пузо заполнилось на %d / %d", D.potcd, L) end end
 end end
 
 
@@ -65,14 +65,14 @@ local function onUnequipped(e)
 		tes3.removeItem{reference = p, item = e.item, count = num}
 		tes3.addItem{reference = p, item = D.poisonbid, count = num}
 		D.poisonbid = nil
-		if msg then if eng then tes3.messageBox("%d bottles unequipped", num) else tes3.messageBox("%d ??????? ?????", num) end end
+		if msg then if eng then tes3.messageBox("%d bottles unequipped", num) else tes3.messageBox("%d бутылок снято", num) end end
 	end end) end
 end
 
 
 local function onItemDropped(e) if e.reference.object == B then local num = e.reference.stackSize
 	tes3.addItem{reference = p, item = D.poisonbid, count = num}
-	e.reference:disable()	mwscript.setDelete{reference = e.reference}		if msg then if eng then tes3.messageBox("%d bottles unequipped", num) else tes3.messageBox("%d ??????? ?????", num) end end
+	e.reference:disable()	mwscript.setDelete{reference = e.reference}		if msg then if eng then tes3.messageBox("%d bottles unequipped", num) else tes3.messageBox("%d бутылок снято", num) end end
 end end
 
 

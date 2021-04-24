@@ -21,18 +21,18 @@ local function onInventoryItemSelected(e)
 	local MenuPersuasion = tes3ui.findMenu(GUI_ID_MenuPersuasion)
 	local actor = MenuPersuasion:getPropertyObject("MenuPersuasion_Actor")
 
-	-- Uzyskaj podstawowe dane umiej?tno?ci, aby m?c uzyska? ustawienia post?pu.
+	-- Uzyskaj podstawowe dane umiejкtnoњci, aby mуc uzyskaж ustawienia postкpu.
 	local speechcraft = tes3.getSkill(tes3.skill.speechcraft)
 	local mercantile = tes3.getSkill(tes3.skill.mercantile)
 
-	-- Podejmij pr?b? perswazji.
+	-- Podejmij prуbк perswazji.
 	local dialoguePage
 	local dialogueHeaderText
 	if (tes3.persuade({ actor = actor, modifier = calculateItemPersuasionModifier(e.item, e.itemData) })) then
 		dialoguePage = 8
 		dialogueHeaderText = tes3.findGMST(tes3.gmst.sBribeSuccess).value
 
-		-- Najed? na przedmiot, kt?ry zosta? przez ciebie dany.
+		-- Najedџ na przedmiot, ktуry zostaі przez ciebie dany.
 		tes3.transferItem({
 			from = tes3.player,
 			to = actor.reference,
@@ -41,18 +41,18 @@ local function onInventoryItemSelected(e)
 			count = 1,
 		})
 
-		-- ?wiczenie na drodze do og?lnego sukcesu i pr?b przekupstwa.
+		-- Жwiczenie na drodze do ogуlnego sukcesu i prуb przekupstwa.
 		tes3.mobilePlayer:exerciseSkill(tes3.skill.speechcraft, speechcraft.actions[1])
 		tes3.mobilePlayer:exerciseSkill(tes3.skill.mercantile, mercantile.actions[2])
 	else
 		dialoguePage = 9
 		dialogueHeaderText = tes3.findGMST(tes3.gmst.sBribeFail).value
 
-		-- ?wiczenia na wypadek, gdy retoryka zawiedzie.
+		-- Жwiczenia na wypadek, gdy retoryka zawiedzie.
 		tes3.mobilePlayer:exerciseSkill(tes3.skill.speechcraft, speechcraft.actions[2])
 	end
 	
-	-- Poka? dialog je?li mo?esz.
+	-- Pokaї dialog jeњli moїesz.
 	local dialogue = tes3.findDialogue({ type = 3, page = dialoguePage })
 	local info = dialogue:getInfo({ actor = actor })
 	if (info) then
@@ -64,7 +64,7 @@ local function onInventoryItemSelected(e)
 		end
 	end
 
-	-- Aktualizacja element?w UI.
+	-- Aktualizacja elementуw UI.
 	tes3ui.updateDialogDisposition()
 
 	-- Zamknij menu.
@@ -78,7 +78,7 @@ end
 local function onGiveAGiftClick(e)
 	tes3ui.showInventorySelectMenu({
 		title = "Daj prezent",
-		noResultsText = "Brak prezent?w mo?liwych do dania.",
+		noResultsText = "Brak prezentуw moїliwych do dania.",
 		filter = filterGifts,
 		callback = onInventoryItemSelected,
 	})
@@ -89,12 +89,12 @@ local function onMenuPersuasionActivated(e)
 		return
 	end
 	
-	-- Stw?rz nowy skr?t.
+	-- Stwуrz nowy skrуt.
 	local MenuPersuasion_ServiceList = e.element:findChild(GUI_ID_MenuPersuasion_ServiceList)
 	local MenuPersuasion_ServiceList_GiveGift = MenuPersuasion_ServiceList:createTextSelect({ id = GUI_ID_MenuPersuasion_ServiceList_GiveGift, text = "Daj prezent" })
 	MenuPersuasion_ServiceList_GiveGift:register("mouseClick", onGiveAGiftClick)
 
-	-- Wymagana dziwna aktualizacja lub menu staje si? dziwne. Dowiedz si? p?niej.
+	-- Wymagana dziwna aktualizacja lub menu staje siк dziwne. Dowiedz siк pуџniej.
 	e.element.visible = false
 	e.element.visible = true
 	e.element:updateLayout()
