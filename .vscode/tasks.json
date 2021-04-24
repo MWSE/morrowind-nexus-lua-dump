@@ -96,7 +96,7 @@
         {
             "label": "scan-updated-mods",
             "type": "shell",
-            "command": "poetry run python -m lua_dump scan-updated-mods 1d",
+            "command": "poetry run python -m lua_dump scan-updated-mods 1w",
             "presentation": {
                 "showReuseMessage": false,
                 "clear": true,
