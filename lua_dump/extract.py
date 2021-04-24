@@ -30,7 +30,9 @@ def fix_encodings_for_lua_files(mod_path: Path) -> None:
         except UnicodeDecodeError:
             logger.info(f"Stripping invalid characters from '{lua_file}'")
             try:
-                lua_file.write_text(contents.decode(errors="replace"), errors="replace")
+                lua_file.write_text(
+                    contents.decode(encoding="cp1251", errors="replace"), encoding="utf-8", errors="replace"
+                )
             except OSError as e:
                 logger.error(f"Failed to strip '{lua_file}'\n{e}")
 
