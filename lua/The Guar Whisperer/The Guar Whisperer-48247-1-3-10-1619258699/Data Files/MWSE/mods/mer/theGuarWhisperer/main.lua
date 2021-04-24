@@ -152,8 +152,7 @@ local function onEquipWhistle(e)
             local buttons = {}
 
             if tes3.player.cell.isInterior ~= true then
-                for refId, _ in pairs(common.data.companions) do
-                    local ref = tes3.getReference(refId)
+                common.iterateRefType("companion", function(ref)
                     local animal = animalController.getAnimal(ref)
                     if animal and animal:canBeSummoned() then
                         common.log:trace("activateWhistle(): %s can be summoned, adding to list", animal.refData.name)
@@ -175,7 +174,7 @@ local function onEquipWhistle(e)
                             end
                         })
                     end
-                end
+                end)
             else
                 common.log:trace("In interior, whistle won't work")
             end
@@ -234,8 +233,7 @@ end
 
 local function guarTimer()
     if not common.getModEnabled() then return end
-    for refId, _ in pairs(common.data.companions) do
-        local ref = tes3.getReference(refId)
+    common.iterateRefType("companion", function(ref)
         local animal = animalController.getAnimal(ref)
         if animal then
             animal:setSwitch()
@@ -249,7 +247,7 @@ local function guarTimer()
             animal:updateMood()
             animal:updateCloseDistance()
         end
-    end
+    end)
 end
 
 local function findFood(animal)
@@ -309,22 +307,21 @@ local function randomActTimer()
     if not common.getModEnabled() then return end
     common.log:debug("Random Act Timer")
     local actingRef
-    for refId, _ in pairs(common.data.companions) do
-        local ref = tes3.getReference(refId)
+    common.iterateRefType("companion", function(ref)
         local animal = animalController.getAnimal(ref)
         if animal and animal.mobile then
             if animal:isActive() then
                 if  animal:getAI() == "wandering" then
                     common.log:debug("%s is wandering, deciding action", animal:getName())
-                    if refId ~= lastRef then
-                        actingRef = refId
+                    if ref.id ~= lastRef then
+                        actingRef = ref.id
                         --check for food to eat
                         if animal.refData.hunger > 40 then
                             local food = findFood(animal)
                             if food then
                                 common.log:debug("randomActTimer: Guar eating")
                                 animal:moveToAction(food, "eat", true)
-                                break
+                                return false
                             end
                         end
 
@@ -333,7 +330,7 @@ local function randomActTimer()
                         if guar then 
                             common.log:debug("randomActTimer: Guar greeting")
                             animal:moveToAction(guar, "greet", true)
-                            break
+                            return false
                         end
 
                         if math.random(100) < 20 then
@@ -359,7 +356,7 @@ local function randomActTimer()
                 end
             end
         end
-    end
+    end)
     --only one guar, let him act again
     if actingRef == lastRef then 
         lastRef = nil
@@ -378,8 +375,7 @@ local function randomActTimer()
 end
 
 local function initialiseVisuals()
-    for refId, _ in pairs(common.data.companions) do
-        local ref = tes3.getReference(refId)
+    common.iterateRefType("companion", function(ref)
         local animal = animalController.getAnimal(ref)
         if animal and not animal:isDead() then
             animal:playAnimation("idle")
@@ -389,7 +385,7 @@ local function initialiseVisuals()
                 end
             end
         end
-    end
+    end)
 end
 
 local function startTimers()
@@ -451,9 +447,7 @@ end
 --     if e.target.object.objectType == tes3.objectType.door then
 --         if e.target.destination then
 --             if e.target.destination.cell.isInterior then
---                 for refId, _ in pairs(common.data.companions) do
---                     local ref = tes3.getReference(refId)
---                     local animal = animalController.getAnimal(ref)
+--                  common.iterateRefType("companion", function(ref)
 --                     if animal:getAI() == "following" then
                         
 --                         --start waiting
@@ -473,7 +467,7 @@ end
 --                         --block this activation
 --                         return false
 --                     end
---                 end
+--                 end)
 --             end
 --         end
 --     end
@@ -481,11 +475,11 @@ end
 
 local function onCombatStart(e)
     if not common.getModEnabled() then return end
+    if not common.data then return end
     local ref = e.actor.reference
     local target = e.target.reference
 
     --Prevent guars from fighting back against player
-    local animal = animalController.getAnimal(ref)
     if animal then
         if animal.refData.aiBroken then
             return 
@@ -512,8 +506,7 @@ local function onCombatStart(e)
     end
     
     --If the player has entered combat, set nearby wandering guars to attack
-    for refId, _ in pairs(common.data.companions) do
-        local animalRef = tes3.getReference(refId)
+    common.iterateRefType("companion", function(animalRef)
         animal = animalController.getAnimal(animalRef)
         if animal:getAI() ~= "following" then
             if animal:isActive() and not animal:isDead() and animal.refData.attackPolicy ~= "passive" then
@@ -524,7 +517,7 @@ local function onCombatStart(e)
                 end 
             end
         end
-    end
+    end)
 end
 
 --[[
@@ -549,6 +542,35 @@ local function onGuarAttack(e)
     end 
 end
 
+--[[
+    For guars from an old update, transfer them to new data table
+]]
+local function convertOldGuar(e)
+    if  tes3.player
+        and tes3.player.data
+        and tes3.player.data.theGuarWhisperer
+        and tes3.player.data.theGuarWhisperer.companions
+        and tes3.player.data.theGuarWhisperer.companions[e.reference.id]
+    then
+        e.reference.data.tgw = tes3.player.data.theGuarWhisperer.companions[e.reference.id]
+        tes3.player.data.theGuarWhisperer.companions[e.reference.id] = nil
+    end
+end
+
+local function clearActionData(e)
+    if e.reference.data 
+        and e.reference.data.tgw 
+        and e.reference.data.tgw.takingAction
+    then
+        e.reference.data.tgw.takingAction = nil
+    end
+end
+
+local function initGuar(e)
+    convertOldGuar(e)
+    clearActionData(e)
+end
+
 local function initialised()
     if tes3.isModActive("TheGuarWhisperer.ESP") then
         require("mer.theGuarWhisperer.AI")
@@ -556,8 +578,6 @@ local function initialised()
         require("mer.theGuarWhisperer.merchantInventory")
         require("mer.theGuarWhisperer.CommandMenu.commandMenuController")
         require("mer.theGuarWhisperer.tooltips")
-
-
         event.register("activate", activateAnimal)
         event.register("equip", onEquipWhistle)
         event.register("uiObjectTooltip", onTooltip)
@@ -569,7 +589,14 @@ local function initialised()
         event.register("combatStopped", onCombatEnd)
         event.register("attack", onGuarAttack)
         common.log:info("[The Guar Whisperer] initialised")
+        event.register("mobileActivated", initGuar)
+        event.register("loaded", function()
+            for i, cell in ipairs(tes3.getActiveCells()) do
+                for ref in cell:iterateReferences(tes3.objectType.creature) do
+                    initGuar({ reference = ref})
+                end
+            end
+        end)
     end
 end
-
 event.register("initialized", initialised)
