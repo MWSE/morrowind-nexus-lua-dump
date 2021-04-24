@@ -190,10 +190,6 @@ local function initialiseData()
     
     this.data = tes3.player.data.theGuarWhisperer
 
-    if not this.data.companions then
-        this.data.companions = {}
-    end
-
     --in case you were stupid enough to save/load during a fadeout
     if fading then
         tes3.fadeIn(0)
@@ -317,5 +313,28 @@ function this.fadeTimeOut( hoursPassed, secondsTaken, callback )
         )
     })
 end
+
+local refController = require("mer.theGuarWhisperer.referenceController")
+function this.iterateRefType(refType, callback)
+    for ref, _ in pairs(refController.controllers[refType].references) do
+        --check requirements in case it's no longer valid
+        if refController.controllers[refType]:requirements(ref) then
+            if callback(ref) == false then break end
+        else
+            --no longer valid, remove from ref list
+            refController.controllers[refType].references[ref] = nil
+        end
+    end
+end
+
+local function onLoadInitialiseRefs(e)
+    this.log:debug("\n\nInitialising companion refs")
+    for i, cell in ipairs(tes3.dataHandler.nonDynamicData.cells) do
+        for reference in cell:iterateReferences() do
+            event.trigger("GuarWhisperer:registerReference", { reference = reference })
+        end
+    end
+end
+event.register("loaded", onLoadInitialiseRefs)
 
 return this

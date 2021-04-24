@@ -3366,12 +3366,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000023674,
-                    "name": "The Guar Whisperer-48247-1-3-8-1617337948.7z",
-                    "version": "1.3.8"
+                    "file_id": 1000024095,
+                    "name": "The Guar Whisperer-48247-1-3-10-1619258699.7z",
+                    "version": "1.3.10"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1619301965
         },
         {
             "mod_id": 48251,
@@ -5228,12 +5228,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000024073,
-                    "name": "Beautiful Cities of Morrowind-49231-1-8-1-1619117425.7z",
+                    "file_id": 1000024096,
+                    "name": "Beautiful Cities of Morrowind-49231-1-8-1-1619281539.7z",
                     "version": "1.8.1"
                 }
             ],
-            "indexed_timestamp": 1619143810
+            "indexed_timestamp": 1619301972
         },
         {
             "mod_id": 49232,
@@ -5502,6 +5502,6 @@
         }
     ],
     "last_scan_for_added_mods_timestamp": 1618976997,
-    "last_scan_for_updated_mods_timestamp": 1619144001,
+    "last_scan_for_updated_mods_timestamp": 1619301959,
     "highest_validated_mod_id": 49573
 }

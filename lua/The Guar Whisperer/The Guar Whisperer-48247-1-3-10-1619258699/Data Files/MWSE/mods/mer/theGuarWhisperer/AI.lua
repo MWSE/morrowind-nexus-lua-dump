@@ -9,8 +9,7 @@ local common = require("mer.theGuarWhisperer.common")
 --Teleport to player when going back outside
 local function checkCellChanged(e)
     if e.previousCell and e.previousCell.isInterior and not e.cell.isInterior then
-        for refId, _ in pairs(common.data.companions) do
-            local ref = tes3.getReference(refId)
+        common.iterateRefType("companion", function(ref)
             local animal = animalController.getAnimal(ref)
             local doTeleport = (
                 animal and 
@@ -22,7 +21,7 @@ local function checkCellChanged(e)
                 common.log:debug("Cell change teleport")
                 animal:teleportToPlayer(500)
             end
-        end
+        end)
     end
 end
 

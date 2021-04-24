@@ -37,28 +37,39 @@ Animal.pickableRotations = {
 ---------------------
 --Internal methods
 ---------------------
+local function traverse(roots)
+    local function iter(nodes)
+        for _, node in ipairs(nodes or roots) do
+            if node then
+                coroutine.yield(node)
+                if node.children then
+                    iter(node.children)
+                end
+            end
+        end
+    end
+    return coroutine.wrap(iter)
+end
 
 
 local function initialiseRefData(reference)
-    local refId = reference.id
-    if not common.data.companions[refId] then
-        common.data.companions[refId] = {}
-    end
-    local data = common.data.companions[refId]
 
-    data.name = data.name or reference.object.name
+    if reference.data.tgw then return reference.data.tgw end
+
     math.randomseed(os.time())
-    data.gender = data.gender or math.random() < 0.55 and "male" or "female"
-    data.birthTime = data.birthTime or common.getHoursPassed()
-
-    data.trust = data.trust or moodConfig.defaultTrust
-    data.affection = data.affection or moodConfig.defaultAffection
-    data.play = data.play or moodConfig.defaultPlay
-    data.happiness = data.happiness or 0
-    data.hunger = data.hunger or 50
-    data.level = data.level or 1.0
-    data.attackPolicy = data.attackPolicy or "defend"
-    return data
+    reference.data.tgw = {
+        name = "Tamed Guar",
+        gender = math.random() < 0.55 and "male" or "female",
+        birthTime = common.getHoursPassed(),
+        trust = moodConfig.defaultTrust,
+        affection = moodConfig.defaultAffection,
+        play = moodConfig.defaultPlay,
+        happiness = 0,
+        hunger = 50,
+        level = 1.0,
+        attackPolicy = "defend",
+    }
+    return reference.data.tgw
 end 
 
 ---------------------
@@ -99,6 +110,8 @@ function Animal:new(reference)
 
     setmetatable(newAnimal, self)
     self.__index = self
+
+    event.trigger("GuarWhisperer:registerReference", { reference = reference })
     return newAnimal
 end
 
@@ -626,7 +639,7 @@ function Animal:addToCarriedItems(name, id, count)
 end
 
 function Animal:removeItemsFromMouth()
-    local node = self.reference.sceneNode:getObjectByName("Bip01 Ponytail21")
+    local node = self.reference.sceneNode:getObjectByName("ATTACH_MOUTH")
 
     for _, item in pairs(self.refData.carriedItems) do
         --detach once per item held
@@ -646,24 +659,69 @@ end
 
 
 function Animal:putItemInMouth(object)
-
     --attach nif
+    -- local objNode = tes3.loadMesh(object.mesh):clone()
+    -- local itemNode = niNode.new()
+    -- itemNode:attachChild(objNode)
     local itemNode = tes3.loadMesh(object.mesh):clone()
+
+    
     itemNode:clearTransforms()
     itemNode.name = "Picked_Up_Item"
-    local node = self.reference.sceneNode:getObjectByName("Bip01 Ponytail21")
+    local node = self.reference.sceneNode:getObjectByName("ATTACH_MOUTH")
     
-    node:attachChild(itemNode, true)
-    itemNode.translation.x = 20
-    itemNode.translation.y = -4
-    itemNode.translation.z = 0
-    itemNode.appCulled = false
-    local rotation = Animal.pickableRotations[object.objectType]
-    if rotation then
-        local zRot90 = tes3matrix33.new()
-        zRot90:fromEulerXYZ(rotation.x or 0, rotation.y or 0, rotation.z or 0)
-        itemNode.rotation = itemNode.rotation * zRot90
+
+    --determine rotation
+    --Due to orientation of ponytail bone, item is already rotated 90 degrees
+    Animal.removeLight(itemNode)
+    --remove collision
+    for node in traverse{itemNode} do
+        if node:isInstanceOfType(tes3.niType.RootCollisionNode) then
+            node.appCulled = true
+        end
     end
+    itemNode:update()
+    node:attachChild(itemNode, true)
+    
+    local bb = itemNode:createBoundingBox()
+    
+    -- --Center position to middle of bounding box
+    -- do 
+    --     local offsetX = (bb.max.x + bb.min.x) / 2
+    --     local offsetY = (bb.max.y + bb.min.y) / 2
+    --     local offsetZ = (bb.max.z + bb.min.z) / 2
+    --    -- itemNode.translation.x = itemNode.translation.x - offsetX
+    --    -- itemNode.translation.y = itemNode.translation.y - offsetY
+    --     itemNode.translation.z = itemNode.translation.z + offsetZ
+
+        
+    -- end
+
+    do
+        --rotation
+        local x = bb.max.x - bb.min.x
+        local y = bb.max.y - bb.min.y
+        local z = bb.max.z - bb.min.z
+        local rotation
+        if x > y and x > z then --x is longest
+            common.log:debug("X is longest, rotate z = 90")
+            rotation = { z = math.rad(90) }
+        elseif y > x and y > z then --y is longest
+            common.log:debug("Y is longest, no rotation")
+            --no rotation
+        elseif z > x and z > y then --z is longest
+            common.log:debug("Z is longest, rotate x = 90")
+            rotation = { x = math.rad(90) }
+        end
+        --local rotation = Animal.pickableRotations[object.objectType]
+        if rotation then
+            common.log:debug("Rotating mouth item")
+            local zRot90 = tes3matrix33.new()
+            zRot90:fromEulerXYZ(rotation.x or 0, rotation.y or 0, rotation.z or 0)
+            itemNode.rotation = itemNode.rotation * zRot90
+        end
+    end
+    itemNode.appCulled = false
 end
 
 function Animal:pickUpItem(reference)
@@ -1712,14 +1770,12 @@ function Animal:breed()
     --Find nearby animal
     local partnerList = {}
 
-    for refId, _ in pairs(common.data.companions) do
-        local ref = tes3.getReference(refId)
+    common.iterateRefType("companion", function(ref)
         local animal = Animal:new(ref)
-        
         if self:canBeImpregnatedBy(animal) then
             table.insert(partnerList, animal)
         end
-    end
+    end)
 
     if #partnerList > 0 then
         local function doBreed(partner)
@@ -1828,30 +1884,24 @@ function Animal:hasPackItem(packItem)
 
 end
 
-local function traverse(roots)
-    local function iter(nodes)
-        for _, node in ipairs(nodes or roots) do
-            if node then
-                coroutine.yield(node)
-                if node.children then
-                    iter(node.children)
-                end
-            end
-        end
-    end
-    return coroutine.wrap(iter)
-end
+
 
 function Animal.removeLight(lightNode) 
 
     for node in traverse{lightNode} do
         --Kill particles
         if node.RTTI.name == "NiBSParticleNode" then
-            node.appCulled = true
+            --node.appCulled = true
+            node.parent:detachChild(node)
         end
         --Kill Melchior's Lantern glow effect
-        if node.name == "Glow" then
-            node.appCulled = true
+        if node.name == "LightEffectSwitch" or node.name == "Glow" then
+            --node.appCulled = true
+            node.parent:detachChild(node)
+        end
+        if node.name == "AttachLight" then
+            --node.appCulled = true
+            node.parent:detachChild(node)
         end
         
         -- Kill materialProperty 
@@ -1872,7 +1922,19 @@ function Animal.removeLight(lightNode)
                 node:updateProperties()
             end
         end
+     -- Kill glowmaps
+        local texturingProperty = node:getProperty(0x4)
+        local newTextureFilepath = "Textures\\tx_black_01.dds"
+        if (texturingProperty and texturingProperty.maps[4]) then
+        texturingProperty.maps[4].texture = niSourceTexture.createFromPath(newTextureFilepath)
+        end
+        if (texturingProperty and texturingProperty.maps[5]) then
+            texturingProperty.maps[5].texture = niSourceTexture.createFromPath(newTextureFilepath)
+        end 
     end
+    lightNode:update()
+    lightNode:updateNodeEffects()
+
 end
 
 function Animal:getHeldItem(packItem)
@@ -2078,9 +2140,18 @@ end
 
 
 function Animal:activate()
-    if not self:isActive() then return end
-    if self:isDead() then return end
-    if not self.reference.mobile.hasFreeAction then return end
+    if not self:isActive() then 
+        common.log:trace("not active")
+        return 
+    end
+    if self:isDead() then 
+        common.log:trace("guar is dead")
+        return 
+    end
+    if not self.reference.mobile.hasFreeAction then 
+        common.log:trace("no free action")
+        return 
+    end
     --Allow regular activation for dialog/companion share
     if self.refData.triggerDialog == true then
         common.log:debug("triggerDialog true, entering companion share")
@@ -2088,6 +2159,7 @@ function Animal:activate()
         return
     --Block activation if issuing a command
     elseif common.data.skipActivate then
+        common.log:trace("skipActivate")
         common.data.skipActivate = false
         return false
     --Otherwise trigger custom activation
@@ -2096,12 +2168,15 @@ function Animal:activate()
             self.refData.commandActive = false
             self:handOverItems()
             self:restorePreviousAI()
-
         elseif self.refData.commandActive then
+            common.log:trace("command is active")
             self.refData.commandActive = false
         else
             if self:canTakeAction() then
+                common.log:trace("showing command menu")
                 event.trigger("TheGuarWhisperer:showCommandMenu", { animal = self })
+            else
+                common.log:trace("can't take action")
             end
         end
         return false
