@@ -3,7 +3,7 @@ secrets
 downloads
 
 # keep only lua files from /lua/
-lua/
+lua/**
 !lua/**/
 !lua/**/*.lua
 
