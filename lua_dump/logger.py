@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from loguru import Logger, Record, logger
+import loguru
 
-__all__ = ["logger", "init_logger"]
+logger = loguru.logger
 
 
-def _format(record: Record) -> str:
+def _format(record: loguru.Record) -> str:
     source = "{file}:{line}".format(**record)
     record["extra"]["source"] = source[-24:]
     return (
@@ -20,9 +20,9 @@ def _format(record: Record) -> str:
     )
 
 
-def init_logger() -> Logger:
-    from sys import stderr
+def init_logger() -> loguru.Logger:
     from datetime import datetime
+    from sys import stderr
 
     now = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
     logger.remove()  # remove the default sync handler

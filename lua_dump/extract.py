@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from .logger import logger
 from patoolib import extract_archive  # type: ignore
 
 from lua_dump import *
@@ -12,6 +11,8 @@ LUA_PATH.mkdir(parents=True, exist_ok=True)
 
 DOWNLOADS_PATH = Path("downloads")
 DOWNLOADS_PATH.mkdir(parents=True, exist_ok=True)
+
+logger = None
 
 
 def set_logger(to):  # type: ignore
@@ -94,6 +95,7 @@ def extract_lua_files(lua_mod: LuaMod) -> None:
 async def extract_all_parellel(index: LuaIndex) -> None:
     """Parellel extraction of lua files for all archives specified in the index."""
     from concurrent.futures import ProcessPoolExecutor
+    from .logger import logger
 
     with ProcessPoolExecutor(initializer=set_logger, initargs=(logger,)) as executor:
         for _ in executor.map(extract_lua_files, index.lua_mods, timeout=300):
