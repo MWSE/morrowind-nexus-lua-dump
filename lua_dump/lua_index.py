@@ -251,7 +251,7 @@ class LuaIndex(BaseModel):
 
         # update relevant index fields
         self.last_scan_for_added_mods_timestamp = timestamp
-        self.highest_validated_mod_id = max(m.mod_id for m in added_mods if m.mod_id)
+        self.highest_validated_mod_id = max(m.mod_id for m in added_mods if m and m.mod_id)
 
     async def refresh_entries_for_updated_mods(
         self, nexusmods: MorrowindNexus, period: str, force: bool = False
