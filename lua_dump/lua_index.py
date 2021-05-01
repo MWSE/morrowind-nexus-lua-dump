@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Iterator, Optional
 
 from aiohttp import ClientResponseError
+from aionexusmods import Mod, ModUpdate
 from pydantic import BaseModel
 
 from .extract import DOWNLOADS_PATH, LUA_PATH, extract_all_parellel
@@ -136,6 +137,10 @@ class LuaMod(BaseModel):
                 except OSError as e:
                     logger.error(f"Failed to remove empty directory '{path}'\n{e}")
 
+    @staticmethod
+    def create_from_nexus_mod(mod: Mod) -> LuaMod:
+        return LuaMod(mod_id=mod.mod_id, name=mod.name, author=mod.author, files=[], indexed_timestamp=0)
+
 
 class LuaIndex(BaseModel):
     lua_mods: list[LuaMod]
@@ -226,28 +231,27 @@ class LuaIndex(BaseModel):
         # so do a lookup for each mod id in that range
         start = self.highest_validated_mod_id + 1
         stop = min(m.mod_id for m in added_mods if m.mod_id)
-        if start >= stop:
+        if start < stop:
+            futures = map(nexusmods.get_mod_if_available, range(start, stop))
+            added_mods.extend(await gather(*futures))
+        else:
             logger.info(f"No mods were added since last run")
             return
 
-        futures = map(nexusmods.get_mod_if_available, range(start, stop))
-        added_mods.extend(await gather(*futures))
+        # filter out any unavailable mods
+        added_mods = [m for m in added_mods if m.available and m.name and m.author]
 
         # now go through the mods and check if they have lua content
-        for mod in filter(None, added_mods):
-            if not (mod and mod.available and mod.name and mod.author):
-                continue
-
-            lua_mod = LuaMod(
-                mod_id=mod.mod_id, name=mod.name, author=mod.author, files=[], indexed_timestamp=0
-            )
-
-            # if it had some lua files we add it to the mods list
+        async def process(mod: Mod):
+            lua_mod = LuaMod.create_from_nexus_mod(mod)
             await lua_mod.update_files_index(nexusmods)
+            # if it had some lua files we add it to the mods list
             if lua_mod.files:
                 self.lua_mods.append(lua_mod)
             else:
                 logger.info(f"Latest added mod {mod.mod_id} has no lua content")
+
+        await gather(*map(process, added_mods))
 
         # update relevant index fields
         self.last_scan_for_added_mods_timestamp = timestamp
@@ -276,23 +280,21 @@ class LuaIndex(BaseModel):
         mod_updates = await nexusmods.get_mod_updates(period)
         logger.info(f"Recieved latest added mods {[update.mod_id for update in mod_updates]}")
 
-        for update in mod_updates:
+        async def process(mod_update: ModUpdate) -> None:
             # get existing entry for the mod if it's already indexed
-            lua_mod = self.get_lua_mod(update.mod_id)
+            lua_mod = self.get_lua_mod(mod_update.mod_id)
             indexed = lua_mod is not None
 
             # if it wasn't already indexed, build a new entry for it
             if not indexed:
-                mod = await nexusmods.get_mod_if_available(update.mod_id)
+                mod = await nexusmods.get_mod_if_available(mod_update.mod_id)
                 if not (mod and mod.available and mod.name and mod.author):
-                    continue
-                lua_mod = LuaMod(
-                    mod_id=mod.mod_id, name=mod.name, author=mod.author, files=[], indexed_timestamp=0
-                )
+                    return
+                lua_mod = LuaMod.create_from_nexus_mod(mod)
             assert lua_mod is not None
 
             # compare our indexed timestamp with the update timestamp
-            if update.latest_file_update > lua_mod.indexed_timestamp:
+            if mod_update.latest_file_update > lua_mod.indexed_timestamp:
                 # this mod update is more recent than our index entry
                 # rebuild the internal files list with new nexus data
                 await lua_mod.update_files_index(nexusmods)
@@ -307,6 +309,8 @@ class LuaIndex(BaseModel):
                 # otherwise it's just a lame non-lua mod that updated
                 if not lua_mod.files:
                     logger.info(f"Updated mod {lua_mod.mod_id} has no lua content")
+
+        await gather(*map(process, mod_updates))
 
         # all done! store timestamp of this scan
         self.last_scan_for_updated_mods_timestamp = timestamp
