@@ -1566,22 +1566,22 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024036,
-                    "name": "4NM_English-47015-2-13-1618785111.zip",
-                    "version": "2.13"
-                },
-                {
-                    "file_id": 1000024037,
-                    "name": "4NM_Russian-47015-2-13-1618785164.zip",
-                    "version": "2.13"
-                },
-                {
                     "file_id": 1000024110,
                     "name": "4nm_dump-47015-1-1619345080.zip",
                     "version": "1"
+                },
+                {
+                    "file_id": 1000024174,
+                    "name": "4NM_English-47015-2-14-1619607846.zip",
+                    "version": "2.14"
+                },
+                {
+                    "file_id": 1000024175,
+                    "name": "4NM_Russian-47015-2-14-1619607873.zip",
+                    "version": "2.14"
                 }
             ],
-            "indexed_timestamp": 1619603142
+            "indexed_timestamp": 1619881540
         },
         {
             "mod_id": 47029,
@@ -4942,12 +4942,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024172,
-                    "name": "Ashfall-49057-2-0-4-1619599944.7z",
-                    "version": "2.0.4"
+                    "file_id": 1000024235,
+                    "name": "Ashfall-49057-2-1-2-1619878056.7z",
+                    "version": "2.1.2"
                 }
             ],
-            "indexed_timestamp": 1619603181
+            "indexed_timestamp": 1619881540
         },
         {
             "mod_id": 49075,
@@ -5111,12 +5111,12 @@
             "author": "C3pa",
             "files": [
                 {
-                    "file_id": 1000023989,
-                    "name": "Magicka Regeneration Suite-49153-1-2-1618560579.7z",
-                    "version": "1.2"
+                    "file_id": 1000024194,
+                    "name": "Magicka Regeneration Suite-49153-1-3-RC1-1619723661.7z",
+                    "version": "1.3-RC1"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1619881492
         },
         {
             "mod_id": 49168,
@@ -5233,12 +5233,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000024169,
-                    "name": "Beautiful Cities of Morrowind-49231-1-8-4-1619597255.7z",
+                    "file_id": 1000024185,
+                    "name": "Beautiful Cities of Morrowind-49231-1-8-4-1619646072.7z",
                     "version": "1.8.4"
                 }
             ],
-            "indexed_timestamp": 1619603187
+            "indexed_timestamp": 1619881590
         },
         {
             "mod_id": 49232,
@@ -5504,9 +5504,87 @@
                 }
             ],
             "indexed_timestamp": 1618867319
+        },
+        {
+            "mod_id": 49607,
+            "name": "Griefers",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000024212,
+                    "name": "Griefers-49607-1-1619827452.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1619881594
+        },
+        {
+            "mod_id": 49608,
+            "name": "HUD Encumbrance Bar",
+            "author": "OperatorJack",
+            "files": [
+                {
+                    "file_id": 1000024214,
+                    "name": "HUD Encumbrance Bar-49608-1-1619830942.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1619881575
+        },
+        {
+            "mod_id": 49609,
+            "name": "Thrown Projectiles Revamped",
+            "author": "Discontinuous Qualia",
+            "files": [
+                {
+                    "file_id": 1000024215,
+                    "name": "Thrown Projectiles Revamped-49609-1-00-1619837636.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1619881548
+        },
+        {
+            "mod_id": 49610,
+            "name": "Dynamic Book Size Adjuster",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000024216,
+                    "name": "Dynamic Book Size Adjuster-49610-1-0-0-1619839231.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1619881581
+        },
+        {
+            "mod_id": 49611,
+            "name": "Jay's Fletching for Go Fletch",
+            "author": "bigJayB",
+            "files": [
+                {
+                    "file_id": 1000024217,
+                    "name": "Jay's Fletching Addon-49611-1-0-1619842652.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1619881079
+        },
+        {
+            "mod_id": 49614,
+            "name": "Stealth",
+            "author": "mort",
+            "files": [
+                {
+                    "file_id": 1000024223,
+                    "name": "Stealth-49614-1-0-1619851984.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1619881079
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1619603059,
-    "last_scan_for_updated_mods_timestamp": 1619603121,
-    "highest_validated_mod_id": 49594
+    "last_scan_for_added_mods_timestamp": 1619881076,
+    "last_scan_for_updated_mods_timestamp": 1619881490,
+    "highest_validated_mod_id": 49619
 }
