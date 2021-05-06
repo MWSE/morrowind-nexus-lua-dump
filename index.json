@@ -2254,12 +2254,12 @@
             "author": "mort",
             "files": [
                 {
-                    "file_id": 1000018936,
-                    "name": "MULE-47452-1-7-1590637546.zip",
-                    "version": "1.7"
+                    "file_id": 1000024309,
+                    "name": "MULE-47452-2-0beta-1620019396.zip",
+                    "version": "2.0beta"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1620337134
         },
         {
             "mod_id": 47461,
@@ -3371,12 +3371,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024095,
-                    "name": "The Guar Whisperer-48247-1-3-10-1619258699.7z",
-                    "version": "1.3.10"
+                    "file_id": 1000024317,
+                    "name": "The Guar Whisperer-48247-1-3-12-1620039922.7z",
+                    "version": "1.3.12"
                 }
             ],
-            "indexed_timestamp": 1619301965
+            "indexed_timestamp": 1620337130
         },
         {
             "mod_id": 48251,
@@ -4942,12 +4942,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024235,
-                    "name": "Ashfall-49057-2-1-2-1619878056.7z",
-                    "version": "2.1.2"
+                    "file_id": 1000024349,
+                    "name": "Ashfall-49057-2-1-4-1620120559.7z",
+                    "version": "2.1.4"
                 }
             ],
-            "indexed_timestamp": 1619881540
+            "indexed_timestamp": 1620337164
         },
         {
             "mod_id": 49075,
@@ -5233,12 +5233,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000024185,
-                    "name": "Beautiful Cities of Morrowind-49231-1-8-4-1619646072.7z",
-                    "version": "1.8.4"
+                    "file_id": 1000024424,
+                    "name": "Beautiful Cities of Morrowind-49231-1-8-7-1620331093.7z",
+                    "version": "1.8.7"
                 }
             ],
-            "indexed_timestamp": 1619881590
+            "indexed_timestamp": 1620337242
         },
         {
             "mod_id": 49232,
@@ -5407,12 +5407,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000023456,
-                    "name": "Wands-49427-1-1-1616257692.7z",
-                    "version": "1.1"
+                    "file_id": 1000024339,
+                    "name": "Wands-49427-1-2-1620090808.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1620337226
         },
         {
             "mod_id": 49462,
@@ -5582,9 +5582,529 @@
                 }
             ],
             "indexed_timestamp": 1619881079
+        },
+        {
+            "mod_id": 49621,
+            "name": "Legion Field Gear",
+            "author": "Endoran",
+            "files": [
+                {
+                    "file_id": 1000024365,
+                    "name": "Legion Field Gear-49621-1-0b-1620163838.zip",
+                    "version": "1.0b"
+                }
+            ],
+            "indexed_timestamp": 1620337202
+        },
+        {
+            "mod_id": 49621,
+            "name": "Legion Field Gear",
+            "author": "Endoran",
+            "files": [
+                {
+                    "file_id": 1000024365,
+                    "name": "Legion Field Gear-49621-1-0b-1620163838.zip",
+                    "version": "1.0b"
+                }
+            ],
+            "indexed_timestamp": 1620337450
+        },
+        {
+            "mod_id": 49624,
+            "name": "Unnecessary Censorship",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000024252,
+                    "name": "Unnecessary Censorship-49624-v1-1619899749.7z",
+                    "version": "v1"
+                }
+            ],
+            "indexed_timestamp": 1620337229
+        },
+        {
+            "mod_id": 49624,
+            "name": "Unnecessary Censorship",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000024252,
+                    "name": "Unnecessary Censorship-49624-v1-1619899749.7z",
+                    "version": "v1"
+                }
+            ],
+            "indexed_timestamp": 1620337458
+        },
+        {
+            "mod_id": 49628,
+            "name": "Grip of Death",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024408,
+                    "name": "Grip of Death-49628-1-2-1620297225.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1620337117
+        },
+        {
+            "mod_id": 49628,
+            "name": "Grip of Death",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024408,
+                    "name": "Grip of Death-49628-1-2-1620297225.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1620337456
+        },
+        {
+            "mod_id": 49629,
+            "name": "Stats",
+            "author": "JaceyS",
+            "files": [
+                {
+                    "file_id": 1000024263,
+                    "name": "Stats-49629-0-1-1619906736.rar",
+                    "version": "0.1"
+                }
+            ],
+            "indexed_timestamp": 1620337237
+        },
+        {
+            "mod_id": 49629,
+            "name": "Stats",
+            "author": "JaceyS",
+            "files": [
+                {
+                    "file_id": 1000024263,
+                    "name": "Stats-49629-0-1-1619906736.rar",
+                    "version": "0.1"
+                }
+            ],
+            "indexed_timestamp": 1620337430
+        },
+        {
+            "mod_id": 49638,
+            "name": "Frenzy n'wahs",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024280,
+                    "name": "Frenzy n'wahs-49638-1-1619951074.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337228
+        },
+        {
+            "mod_id": 49638,
+            "name": "Frenzy n'wahs",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024280,
+                    "name": "Frenzy n'wahs-49638-1-1619951074.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337452
+        },
+        {
+            "mod_id": 49640,
+            "name": "Dash",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024284,
+                    "name": "Dash-49640-1-1619958253.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337255
+        },
+        {
+            "mod_id": 49640,
+            "name": "Dash",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024284,
+                    "name": "Dash-49640-1-1619958253.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337461
+        },
+        {
+            "mod_id": 49642,
+            "name": "KickMaster",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024287,
+                    "name": "KickMaster-49642-1-1619967942.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337153
+        },
+        {
+            "mod_id": 49642,
+            "name": "KickMaster",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024287,
+                    "name": "KickMaster-49642-1-1619967942.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337437
+        },
+        {
+            "mod_id": 49646,
+            "name": "Time Shift",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024296,
+                    "name": "Time Shift-49646-1-1619983069.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337250
+        },
+        {
+            "mod_id": 49646,
+            "name": "Time Shift",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024296,
+                    "name": "Time Shift-49646-1-1619983069.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337452
+        },
+        {
+            "mod_id": 49647,
+            "name": "Try Before You Buy",
+            "author": "Virnetch",
+            "files": [
+                {
+                    "file_id": 1000024329,
+                    "name": "Try Before You Buy-49647-1-0-2-1620061621.7z",
+                    "version": "1.0.2"
+                }
+            ],
+            "indexed_timestamp": 1620337212
+        },
+        {
+            "mod_id": 49647,
+            "name": "Try Before You Buy",
+            "author": "Virnetch",
+            "files": [
+                {
+                    "file_id": 1000024329,
+                    "name": "Try Before You Buy-49647-1-0-2-1620061621.7z",
+                    "version": "1.0.2"
+                }
+            ],
+            "indexed_timestamp": 1620337429
+        },
+        {
+            "mod_id": 49650,
+            "name": "Relevant Rumors",
+            "author": "Elanhant",
+            "files": [
+                {
+                    "file_id": 1000024336,
+                    "name": "Relevant Rumors-49650-1-0-1620090616.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1620337256
+        },
+        {
+            "mod_id": 49650,
+            "name": "Relevant Rumors",
+            "author": "Elanhant",
+            "files": [
+                {
+                    "file_id": 1000024336,
+                    "name": "Relevant Rumors-49650-1-0-1620090616.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1620337421
+        },
+        {
+            "mod_id": 49657,
+            "name": "N'wah Shooter - Marksman Overhaul",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024389,
+                    "name": "N'wah Shooter-49657-1-1-1620243166.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1620337199
+        },
+        {
+            "mod_id": 49657,
+            "name": "N'wah Shooter - Marksman Overhaul",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024389,
+                    "name": "N'wah Shooter-49657-1-1-1620243166.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1620337422
+        },
+        {
+            "mod_id": 49658,
+            "name": "Guarno Coffee",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000024320,
+                    "name": "Guano Coffee-49658-1-0-0-1620042636.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1620337268
+        },
+        {
+            "mod_id": 49658,
+            "name": "Guarno Coffee",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000024320,
+                    "name": "Guano Coffee-49658-1-0-0-1620042636.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1620337432
+        },
+        {
+            "mod_id": 49659,
+            "name": "Control",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024325,
+                    "name": "Control-49659-1-1620058289.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337220
+        },
+        {
+            "mod_id": 49659,
+            "name": "Control",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024325,
+                    "name": "Control-49659-1-1620058289.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337441
+        },
+        {
+            "mod_id": 49662,
+            "name": "Big Icons",
+            "author": "JaceyS",
+            "files": [
+                {
+                    "file_id": 1000024337,
+                    "name": "Big Icons-49662-1-0-1620090735.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1620337196
+        },
+        {
+            "mod_id": 49662,
+            "name": "Big Icons",
+            "author": "JaceyS",
+            "files": [
+                {
+                    "file_id": 1000024337,
+                    "name": "Big Icons-49662-1-0-1620090735.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1620337459
+        },
+        {
+            "mod_id": 49667,
+            "name": "Bomberman",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024347,
+                    "name": "Bomberman-49667-1-1620117891.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337152
+        },
+        {
+            "mod_id": 49667,
+            "name": "Bomberman",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024347,
+                    "name": "Bomberman-49667-1-1620117891.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337459
+        },
+        {
+            "mod_id": 49670,
+            "name": "Ultra AI",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024353,
+                    "name": "Ultra AI-49670-1-1620132633.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337117
+        },
+        {
+            "mod_id": 49670,
+            "name": "Ultra AI",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024353,
+                    "name": "Ultra AI-49670-1-1620132633.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337448
+        },
+        {
+            "mod_id": 49680,
+            "name": "Distraction",
+            "author": "mort",
+            "files": [
+                {
+                    "file_id": 1000024377,
+                    "name": "Distraction-49680-1-0-1620187412.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1620337177
+        },
+        {
+            "mod_id": 49680,
+            "name": "Distraction",
+            "author": "mort",
+            "files": [
+                {
+                    "file_id": 1000024377,
+                    "name": "Distraction-49680-1-0-1620187412.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1620337442
+        },
+        {
+            "mod_id": 49684,
+            "name": "BattleMage",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024383,
+                    "name": "BattleMage-49684-1-1620213461.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337155
+        },
+        {
+            "mod_id": 49684,
+            "name": "BattleMage",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024383,
+                    "name": "BattleMage-49684-1-1620213461.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337462
+        },
+        {
+            "mod_id": 49689,
+            "name": "Adjustable Landscape Texture Scale",
+            "author": "Greatness7",
+            "files": [
+                {
+                    "file_id": 1000024417,
+                    "name": "Adjustable Landscape Texture Scale-49689-2-0-1620324001.zip",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1620337146
+        },
+        {
+            "mod_id": 49689,
+            "name": "Adjustable Landscape Texture Scale",
+            "author": "Greatness7",
+            "files": [
+                {
+                    "file_id": 1000024417,
+                    "name": "Adjustable Landscape Texture Scale-49689-2-0-1620324001.zip",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1620337434
+        },
+        {
+            "mod_id": 49694,
+            "name": "Runes and Totems",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024415,
+                    "name": "Runes and Totems-49694-1-1620321910.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337200
+        },
+        {
+            "mod_id": 49694,
+            "name": "Runes and Totems",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024415,
+                    "name": "Runes and Totems-49694-1-1620321910.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620337433
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1619881076,
-    "last_scan_for_updated_mods_timestamp": 1619881490,
-    "highest_validated_mod_id": 49619
+    "last_scan_for_added_mods_timestamp": 1620337419,
+    "last_scan_for_updated_mods_timestamp": 1620337088,
+    "highest_validated_mod_id": 49696
 }
