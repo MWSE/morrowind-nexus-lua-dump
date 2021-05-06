@@ -239,7 +239,7 @@ class LuaIndex(BaseModel):
             return
 
         # filter out any unavailable mods
-        added_mods = [m for m in added_mods if m.available and m.name and m.author]
+        added_mods = [m for m in added_mods if m and m.available and m.name and m.author]
 
         # now go through the mods and check if they have lua content
         async def process(mod: Mod):
