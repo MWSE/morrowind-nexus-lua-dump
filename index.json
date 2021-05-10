@@ -411,7 +411,7 @@
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1620561206
+            "indexed_timestamp": 1620680585
         },
         {
             "mod_id": 45886,
@@ -6271,9 +6271,48 @@
                 }
             ],
             "indexed_timestamp": 1620561355
+        },
+        {
+            "mod_id": 49733,
+            "name": "MWSE SkinSwapper script",
+            "author": "Bahamut",
+            "files": [
+                {
+                    "file_id": 1000024493,
+                    "name": "SkinSwapper-49733-0-1-1620568617.7z",
+                    "version": "0.1"
+                }
+            ],
+            "indexed_timestamp": 1620680556
+        },
+        {
+            "mod_id": 49739,
+            "name": "MagicStrorm",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024512,
+                    "name": "MagicStrorm-49739-1-1620597936.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620680557
+        },
+        {
+            "mod_id": 49747,
+            "name": "Throw it",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024538,
+                    "name": "Throw it-49747-1-1620658411.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620680556
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1620561353,
-    "last_scan_for_updated_mods_timestamp": 1620561097,
-    "highest_validated_mod_id": 49731
+    "last_scan_for_added_mods_timestamp": 1620680554,
+    "last_scan_for_updated_mods_timestamp": 1620680583,
+    "highest_validated_mod_id": 49748
 }
