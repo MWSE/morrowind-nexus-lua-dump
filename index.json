@@ -3008,12 +3008,12 @@
             "author": "NullCascade Danae",
             "files": [
                 {
-                    "file_id": 1000018469,
-                    "name": "ChameleonFix-47996-1-0-1589068179.7z",
-                    "version": "1.0"
+                    "file_id": 1000024607,
+                    "name": "Chameleon-47996-1-1-1620836240.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1620918457
         },
         {
             "mod_id": 48013,
@@ -3501,12 +3501,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000024445,
-                    "name": "Shrine Tooltips-48275-1-2-1-1620381631.7z",
-                    "version": "1.2.1"
+                    "file_id": 1000024497,
+                    "name": "Shrine Tooltips-48275-1-2-2-1620583787.7z",
+                    "version": "1.2.2"
                 }
             ],
-            "indexed_timestamp": 1620561116
+            "indexed_timestamp": 1620918669
         },
         {
             "mod_id": 48282,
@@ -3793,6 +3793,19 @@
                 }
             ],
             "indexed_timestamp": 1618867319
+        },
+        {
+            "mod_id": 48451,
+            "name": "Movement and Fatigue Settings Tweaked",
+            "author": "nelxxz",
+            "files": [
+                {
+                    "file_id": 1000024599,
+                    "name": "MAFST-MWSE-48451-1-1a-1620774665.7z",
+                    "version": "1.1a"
+                }
+            ],
+            "indexed_timestamp": 1620918602
         },
         {
             "mod_id": 48453,
@@ -4511,12 +4524,12 @@
             "author": "Gawain Melchior Dahrk Merlord Danae",
             "files": [
                 {
-                    "file_id": 1000023285,
-                    "name": "Shinies1pt5-48903-1-5-1615365896.7z",
-                    "version": "1.5"
+                    "file_id": 1000024611,
+                    "name": "Shinies-48903-1-6-1620858828.7z",
+                    "version": "1.6"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1620918673
         },
         {
             "mod_id": 48904,
@@ -4955,12 +4968,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024490,
-                    "name": "Ashfall-49057-2-1-6-1620551749.7z",
-                    "version": "2.1.6"
+                    "file_id": 1000024616,
+                    "name": "Ashfall-49057-2-1-7-1620894922.7z",
+                    "version": "2.1.7"
                 }
             ],
-            "indexed_timestamp": 1620561205
+            "indexed_timestamp": 1620918452
         },
         {
             "mod_id": 49075,
@@ -5272,12 +5285,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000023960,
-                    "name": "FF_main-49251-1-2-3a-1618345875.7z",
-                    "version": "1.2.3a"
+                    "file_id": 1000024602,
+                    "name": "Friends_and_Foes-49251-1-2-5-1620803626.7z",
+                    "version": "1.2.5"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1620918761
         },
         {
             "mod_id": 49255,
@@ -5337,12 +5350,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000023256,
-                    "name": "Double CHIM-49339-1-3-1615194821.zip",
-                    "version": "1.3"
+                    "file_id": 1000024494,
+                    "name": "Double CHIM-49339-2-1620577193.zip",
+                    "version": "2"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1620918531
         },
         {
             "mod_id": 49361,
@@ -6310,9 +6323,48 @@
                 }
             ],
             "indexed_timestamp": 1620680556
+        },
+        {
+            "mod_id": 49753,
+            "name": "Pop A Squat",
+            "author": "Uncle Boss",
+            "files": [
+                {
+                    "file_id": 1000024592,
+                    "name": "Pop A Squat-49753-1-1-1620767009.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1620918434
+        },
+        {
+            "mod_id": 49756,
+            "name": "Fast Attack",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024591,
+                    "name": "Fast Attack-49756-1-1620766489.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620918435
+        },
+        {
+            "mod_id": 49759,
+            "name": "Spawner",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024609,
+                    "name": "Spawner-49759-1-1620843771.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1620918434
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1620680554,
-    "last_scan_for_updated_mods_timestamp": 1620680583,
-    "highest_validated_mod_id": 49748
+    "last_scan_for_added_mods_timestamp": 1620918432,
+    "last_scan_for_updated_mods_timestamp": 1620918445,
+    "highest_validated_mod_id": 49760
 }
