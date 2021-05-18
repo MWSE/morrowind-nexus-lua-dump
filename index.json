@@ -1322,12 +1322,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000024107,
-                    "name": "abotSmartHelmet112-46753-1-12-1619341307.7z",
-                    "version": "1.12"
+                    "file_id": 1000024618,
+                    "name": "abotSmartHelmet113-46753-1-13-1620920863.7z",
+                    "version": "1.13"
                 }
             ],
-            "indexed_timestamp": 1619344514
+            "indexed_timestamp": 1621327310
         },
         {
             "mod_id": 46756,
@@ -1755,12 +1755,12 @@
             "author": "OperatorJack and RedFurryDemon",
             "files": [
                 {
-                    "file_id": 1000022011,
-                    "name": "Magicka Expanded-47111-2-04-1606868502.7z",
-                    "version": "2.04"
+                    "file_id": 1000024764,
+                    "name": "Magicka Expanded Package-47111-2-05-1621208573.7z",
+                    "version": "2.05"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1621327280
         },
         {
             "mod_id": 47120,
@@ -2852,12 +2852,12 @@
             "author": "kindi",
             "files": [
                 {
-                    "file_id": 1000023793,
-                    "name": "Security Success-47914-2-1-1617735248.7z",
-                    "version": "2.1"
+                    "file_id": 1000024743,
+                    "name": "Security Success-47914-2-3-1621171035.7z",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1621327312
         },
         {
             "mod_id": 47925,
@@ -4732,12 +4732,12 @@
             "author": "Aurel AxeMagister Danae",
             "files": [
                 {
-                    "file_id": 1000022490,
-                    "name": "Unidentified_items_1_0b-48964-1-0b-1610386194.7z",
-                    "version": "1.0b"
+                    "file_id": 1000024687,
+                    "name": "Unidentified Items for Wares-48964-1-1-1621065382.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1621327315
         },
         {
             "mod_id": 48971,
@@ -4924,12 +4924,12 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000023749,
-                    "name": "OAAB_Data-49042-1-6-4-1617557493.7z",
-                    "version": "1.6.4"
+                    "file_id": 1000024812,
+                    "name": "OAAB_Data-49042-1-7-0-1621315770.7z",
+                    "version": "1.7.0"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1621327315
         },
         {
             "mod_id": 49045,
@@ -4947,7 +4947,7 @@
                     "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1618969346
+            "indexed_timestamp": 1621327337
         },
         {
             "mod_id": 49046,
@@ -4968,12 +4968,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024616,
-                    "name": "Ashfall-49057-2-1-7-1620894922.7z",
-                    "version": "2.1.7"
+                    "file_id": 1000024714,
+                    "name": "Ashfall-49057-2-1-8-1621120353.7z",
+                    "version": "2.1.8"
                 }
             ],
-            "indexed_timestamp": 1620918452
+            "indexed_timestamp": 1621327257
         },
         {
             "mod_id": 49075,
@@ -5285,12 +5285,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000024602,
-                    "name": "Friends_and_Foes-49251-1-2-5-1620803626.7z",
-                    "version": "1.2.5"
+                    "file_id": 1000024761,
+                    "name": "Friends and Foes-49251-1-3-1621201863.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1620918761
+            "indexed_timestamp": 1621327331
         },
         {
             "mod_id": 49255,
@@ -5459,12 +5459,12 @@
             "author": "Greatness7 and OperatorJack",
             "files": [
                 {
-                    "file_id": 1000024062,
-                    "name": "The Blight 1.2-49504-1-2-1619053579.7z",
-                    "version": "1.2"
+                    "file_id": 1000024650,
+                    "name": "The Blight 1.3-49504-1-3-1621021532.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1619144044
+            "indexed_timestamp": 1621327347
         },
         {
             "mod_id": 49512,
@@ -5576,12 +5576,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024216,
-                    "name": "Dynamic Book Size Adjuster-49610-1-0-0-1619839231.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000024675,
+                    "name": "Dynamic Book Size Adjuster-49610-1-0-1-1621049983.7z",
+                    "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1619881581
+            "indexed_timestamp": 1621327258
         },
         {
             "mod_id": 49611,
@@ -5823,12 +5823,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000024329,
-                    "name": "Try Before You Buy-49647-1-0-2-1620061621.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000024642,
+                    "name": "Try Before You Buy-49647-1-0-3-1621004380.7z",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1620337212
+            "indexed_timestamp": 1621327259
         },
         {
             "mod_id": 49647,
@@ -5868,6 +5868,19 @@
                 }
             ],
             "indexed_timestamp": 1620337421
+        },
+        {
+            "mod_id": 49654,
+            "name": "Character Sound Overhaul",
+            "author": "Anumaril21",
+            "files": [
+                {
+                    "file_id": 1000024691,
+                    "name": "CSO-49654-1-0-1621075896.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621327385
         },
         {
             "mod_id": 49657,
@@ -6356,15 +6369,150 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024609,
-                    "name": "Spawner-49759-1-1620843771.zip",
+                    "file_id": 1000024620,
+                    "name": "Spawner-49759-1-1-1620929664.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1621327267
+        },
+        {
+            "mod_id": 49772,
+            "name": "Welcome To Morrowind MWSE",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000024681,
+                    "name": "WelcomeToMorrowind-49772-1-1-1621062752.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1621327252
+        },
+        {
+            "mod_id": 49775,
+            "name": "Combo Master",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024694,
+                    "name": "Combo Master-49775-1-1621096736.zip",
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620918434
+            "indexed_timestamp": 1621327252
+        },
+        {
+            "mod_id": 49779,
+            "name": "Ancestral Tomb Amulets",
+            "author": "kindi",
+            "files": [
+                {
+                    "file_id": 1000024708,
+                    "name": "Ancestral Tomb Amulets-49779-1-0-1621109253.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49780,
+            "name": "Clear Sight",
+            "author": "tewlwolow",
+            "files": [
+                {
+                    "file_id": 1000024759,
+                    "name": "Clear Sight-49780-1-0-1-1621200118.7z",
+                    "version": "1.0.1"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49782,
+            "name": "Auriel's Bow Revamped",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000024715,
+                    "name": "AurielsBowRevamped-49782-1-0-1621121029.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49786,
+            "name": "Calendar",
+            "author": "JaceyS",
+            "files": [
+                {
+                    "file_id": 1000024795,
+                    "name": "Calendar-49786-1-1-1621258837.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49787,
+            "name": "Bretons Stand Taller",
+            "author": "PhDinSorcery",
+            "files": [
+                {
+                    "file_id": 1000024735,
+                    "name": "Bretons Stand Taller-49787-1-0-1621149504.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49799,
+            "name": "Elemental Effects",
+            "author": "Anumaril21",
+            "files": [
+                {
+                    "file_id": 1000024789,
+                    "name": "Elemental Effects-49799-1-0-1621226643.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49801,
+            "name": "Final Strike",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000024804,
+                    "name": "Final Strike-49801-1-1621281477.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49803,
+            "name": "Weapon Sheathing (Skyrimized)",
+            "author": "TES3 Community",
+            "files": [
+                {
+                    "file_id": 1000024814,
+                    "name": "Weapon Sheathing (Skyrimized)-49803-1-1621316759.7z",
+                    "version": "1"
+                },
+                {
+                    "file_id": 1000024815,
+                    "name": "Weapon Sheathing (Oblivionized)-49803-1-1621317037.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1621327251
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1620918432,
-    "last_scan_for_updated_mods_timestamp": 1620918445,
-    "highest_validated_mod_id": 49760
+    "last_scan_for_added_mods_timestamp": 1621327249,
+    "last_scan_for_updated_mods_timestamp": 1621327255,
+    "highest_validated_mod_id": 49804
 }
