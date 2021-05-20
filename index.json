@@ -575,19 +575,6 @@
             "indexed_timestamp": 1618867319
         },
         {
-            "mod_id": 45969,
-            "name": "Tooltip",
-            "author": "abot",
-            "files": [
-                {
-                    "file_id": 1000021285,
-                    "name": "tooltip105-45969-1-05-1602512110.7z",
-                    "version": "1.05"
-                }
-            ],
-            "indexed_timestamp": 1618867319
-        },
-        {
             "mod_id": 45980,
             "name": "Equipment Requirements",
             "author": "Remiros",
@@ -3192,19 +3179,6 @@
             "indexed_timestamp": 1618867319
         },
         {
-            "mod_id": 48076,
-            "name": "More character backgrounds for Merlord's character backgrounds",
-            "author": "isNaN",
-            "files": [
-                {
-                    "file_id": 1000018688,
-                    "name": "More character backgrounds for Merlord's character backgrounds-48076-1-0-1-1589922359.7z",
-                    "version": "1.0.1"
-                }
-            ],
-            "indexed_timestamp": 1618867319
-        },
-        {
             "mod_id": 48111,
             "name": "Disenchant",
             "author": "Unappendixed",
@@ -4833,24 +4807,6 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1618969345
-        },
-        {
-            "mod_id": 48992,
-            "name": "MWSE Random NPC",
-            "author": "Nwahs and Mushrooms Team",
-            "files": [
-                {
-                    "file_id": 1000021535,
-                    "name": "MWSE Random NPC EN-48992-1-0-1604067128.7z",
-                    "version": "1.0"
-                },
-                {
-                    "file_id": 1000021536,
-                    "name": "MWSE Random NPC RU-48992-1-0-1604067158.7z",
-                    "version": "1.0"
-                }
-            ],
             "indexed_timestamp": 1618969344
         },
         {
@@ -5620,33 +5576,7 @@
                     "version": "1.0b"
                 }
             ],
-            "indexed_timestamp": 1620337202
-        },
-        {
-            "mod_id": 49621,
-            "name": "Legion Field Gear",
-            "author": "Endoran",
-            "files": [
-                {
-                    "file_id": 1000024365,
-                    "name": "Legion Field Gear-49621-1-0b-1620163838.zip",
-                    "version": "1.0b"
-                }
-            ],
             "indexed_timestamp": 1620337450
-        },
-        {
-            "mod_id": 49624,
-            "name": "Unnecessary Censorship",
-            "author": "Safebox",
-            "files": [
-                {
-                    "file_id": 1000024252,
-                    "name": "Unnecessary Censorship-49624-v1-1619899749.7z",
-                    "version": "v1"
-                }
-            ],
-            "indexed_timestamp": 1620337229
         },
         {
             "mod_id": 49624,
@@ -5672,33 +5602,7 @@
                     "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1620337117
-        },
-        {
-            "mod_id": 49628,
-            "name": "Grip of Death",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024408,
-                    "name": "Grip of Death-49628-1-2-1620297225.zip",
-                    "version": "1.2"
-                }
-            ],
             "indexed_timestamp": 1620337456
-        },
-        {
-            "mod_id": 49629,
-            "name": "Stats",
-            "author": "JaceyS",
-            "files": [
-                {
-                    "file_id": 1000024263,
-                    "name": "Stats-49629-0-1-1619906736.rar",
-                    "version": "0.1"
-                }
-            ],
-            "indexed_timestamp": 1620337237
         },
         {
             "mod_id": 49629,
@@ -5724,33 +5628,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620337228
-        },
-        {
-            "mod_id": 49638,
-            "name": "Frenzy n'wahs",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024280,
-                    "name": "Frenzy n'wahs-49638-1-1619951074.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620337452
-        },
-        {
-            "mod_id": 49640,
-            "name": "Dash",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024284,
-                    "name": "Dash-49640-1-1619958253.zip",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1620337255
         },
         {
             "mod_id": 49640,
@@ -5776,33 +5654,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620337153
-        },
-        {
-            "mod_id": 49642,
-            "name": "KickMaster",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024287,
-                    "name": "KickMaster-49642-1-1619967942.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620337437
-        },
-        {
-            "mod_id": 49646,
-            "name": "Time Shift",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024296,
-                    "name": "Time Shift-49646-1-1619983069.zip",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1620337250
         },
         {
             "mod_id": 49646,
@@ -5823,38 +5675,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000024642,
-                    "name": "Try Before You Buy-49647-1-0-3-1621004380.7z",
-                    "version": "1.0.3"
-                }
-            ],
-            "indexed_timestamp": 1621327259
-        },
-        {
-            "mod_id": 49647,
-            "name": "Try Before You Buy",
-            "author": "Virnetch",
-            "files": [
-                {
                     "file_id": 1000024329,
                     "name": "Try Before You Buy-49647-1-0-2-1620061621.7z",
                     "version": "1.0.2"
                 }
             ],
             "indexed_timestamp": 1620337429
-        },
-        {
-            "mod_id": 49650,
-            "name": "Relevant Rumors",
-            "author": "Elanhant",
-            "files": [
-                {
-                    "file_id": 1000024336,
-                    "name": "Relevant Rumors-49650-1-0-1620090616.7z",
-                    "version": "1.0"
-                }
-            ],
-            "indexed_timestamp": 1620337256
         },
         {
             "mod_id": 49650,
@@ -5893,33 +5719,7 @@
                     "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1620337199
-        },
-        {
-            "mod_id": 49657,
-            "name": "N'wah Shooter - Marksman Overhaul",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024389,
-                    "name": "N'wah Shooter-49657-1-1-1620243166.zip",
-                    "version": "1.1"
-                }
-            ],
             "indexed_timestamp": 1620337422
-        },
-        {
-            "mod_id": 49658,
-            "name": "Guarno Coffee",
-            "author": "Merlord",
-            "files": [
-                {
-                    "file_id": 1000024320,
-                    "name": "Guano Coffee-49658-1-0-0-1620042636.7z",
-                    "version": "1.0.0"
-                }
-            ],
-            "indexed_timestamp": 1620337268
         },
         {
             "mod_id": 49658,
@@ -5945,19 +5745,6 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620337220
-        },
-        {
-            "mod_id": 49659,
-            "name": "Control",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024325,
-                    "name": "Control-49659-1-1620058289.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620337441
         },
         {
@@ -5971,19 +5758,6 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1620337196
-        },
-        {
-            "mod_id": 49662,
-            "name": "Big Icons",
-            "author": "JaceyS",
-            "files": [
-                {
-                    "file_id": 1000024337,
-                    "name": "Big Icons-49662-1-0-1620090735.rar",
-                    "version": "1.0"
-                }
-            ],
             "indexed_timestamp": 1620337459
         },
         {
@@ -5997,33 +5771,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620337152
-        },
-        {
-            "mod_id": 49667,
-            "name": "Bomberman",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024347,
-                    "name": "Bomberman-49667-1-1620117891.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620337459
-        },
-        {
-            "mod_id": 49670,
-            "name": "Ultra AI",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024353,
-                    "name": "Ultra AI-49670-1-1620132633.zip",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1620337117
         },
         {
             "mod_id": 49670,
@@ -6049,33 +5797,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1620337177
-        },
-        {
-            "mod_id": 49680,
-            "name": "Distraction",
-            "author": "mort",
-            "files": [
-                {
-                    "file_id": 1000024377,
-                    "name": "Distraction-49680-1-0-1620187412.zip",
-                    "version": "1.0"
-                }
-            ],
             "indexed_timestamp": 1620337442
-        },
-        {
-            "mod_id": 49684,
-            "name": "BattleMage",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024383,
-                    "name": "BattleMage-49684-1-1620213461.zip",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1620337155
         },
         {
             "mod_id": 49684,
@@ -6101,33 +5823,7 @@
                     "version": "2.0"
                 }
             ],
-            "indexed_timestamp": 1620337146
-        },
-        {
-            "mod_id": 49689,
-            "name": "Adjustable Landscape Texture Scale",
-            "author": "Greatness7",
-            "files": [
-                {
-                    "file_id": 1000024417,
-                    "name": "Adjustable Landscape Texture Scale-49689-2-0-1620324001.zip",
-                    "version": "2.0"
-                }
-            ],
             "indexed_timestamp": 1620337434
-        },
-        {
-            "mod_id": 49694,
-            "name": "Runes and Totems",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024415,
-                    "name": "Runes and Totems-49694-1-1620321910.zip",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1620337200
         },
         {
             "mod_id": 49694,
@@ -6153,33 +5849,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620561202
-        },
-        {
-            "mod_id": 49698,
-            "name": "Fast Cast",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024433,
-                    "name": "Fast Cast-49698-1-1620341748.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620561355
-        },
-        {
-            "mod_id": 49699,
-            "name": "Dungeons Rest",
-            "author": "Stripes",
-            "files": [
-                {
-                    "file_id": 1000024457,
-                    "name": "DungeonsRest-49699-1-1-1620445773.7z",
-                    "version": "1.1"
-                }
-            ],
-            "indexed_timestamp": 1620561224
         },
         {
             "mod_id": 49699,
@@ -6205,33 +5875,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620561174
-        },
-        {
-            "mod_id": 49708,
-            "name": "Auramancer",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024448,
-                    "name": "Auramancer-49708-1-1620404515.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620561355
-        },
-        {
-            "mod_id": 49709,
-            "name": "ManaShield",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024452,
-                    "name": "ManaShield-49709-1-1620415187.zip",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1620561233
         },
         {
             "mod_id": 49709,
@@ -6257,33 +5901,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1620561203
-        },
-        {
-            "mod_id": 49715,
-            "name": "Armor Rating",
-            "author": "Archimag",
-            "files": [
-                {
-                    "file_id": 1000024466,
-                    "name": "Armor Rating-49715-1-1620487257.zip",
-                    "version": "1"
-                }
-            ],
             "indexed_timestamp": 1620561355
-        },
-        {
-            "mod_id": 49722,
-            "name": "Rev's Ashfall Patches",
-            "author": "Revacholiere",
-            "files": [
-                {
-                    "file_id": 1000024478,
-                    "name": "Jack's Ashfall Patches-49722-1-0-1620517711.zip",
-                    "version": "1.0"
-                }
-            ],
-            "indexed_timestamp": 1620561178
         },
         {
             "mod_id": 49722,
