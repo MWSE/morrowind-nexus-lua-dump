@@ -4885,7 +4885,7 @@
                     "version": "1.7.0"
                 }
             ],
-            "indexed_timestamp": 1621327315
+            "indexed_timestamp": 1621488442
         },
         {
             "mod_id": 49045,
@@ -5675,12 +5675,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000024329,
-                    "name": "Try Before You Buy-49647-1-0-2-1620061621.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000024642,
+                    "name": "Try Before You Buy-49647-1-0-3-1621004380.7z",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1620337429
+            "indexed_timestamp": 1621488468
         },
         {
             "mod_id": 49650,
@@ -6131,6 +6131,6 @@
         }
     ],
     "last_scan_for_added_mods_timestamp": 1621327249,
-    "last_scan_for_updated_mods_timestamp": 1621327255,
+    "last_scan_for_updated_mods_timestamp": 1621488435,
     "highest_validated_mod_id": 49804
 }
