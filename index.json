@@ -411,7 +411,7 @@
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1620680585
+            "indexed_timestamp": 1621852799
         },
         {
             "mod_id": 45886,
@@ -3179,6 +3179,19 @@
             "indexed_timestamp": 1618867319
         },
         {
+            "mod_id": 48110,
+            "name": "Class-Conscious Character Progression (CCCP)",
+            "author": "Necrolesian",
+            "files": [
+                {
+                    "file_id": 1000024874,
+                    "name": "Class-Conscious Character Progression-48110-2-0-2-1621577067.7z",
+                    "version": "2.0.2"
+                }
+            ],
+            "indexed_timestamp": 1621852884
+        },
+        {
             "mod_id": 48111,
             "name": "Disenchant",
             "author": "Unappendixed",
@@ -3358,12 +3371,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024317,
-                    "name": "The Guar Whisperer-48247-1-3-12-1620039922.7z",
-                    "version": "1.3.12"
+                    "file_id": 1000024914,
+                    "name": "The Guar Whisperer-48247-1-3-13-1621637304.7z",
+                    "version": "1.3.13"
                 }
             ],
-            "indexed_timestamp": 1620337130
+            "indexed_timestamp": 1621852794
         },
         {
             "mod_id": 48251,
@@ -4880,12 +4893,12 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000024812,
-                    "name": "OAAB_Data-49042-1-7-0-1621315770.7z",
-                    "version": "1.7.0"
+                    "file_id": 1000024888,
+                    "name": "OAAB_Data-49042-1-7-1-1621628133.7z",
+                    "version": "1.7.1"
                 }
             ],
-            "indexed_timestamp": 1621488442
+            "indexed_timestamp": 1621852798
         },
         {
             "mod_id": 49045,
@@ -4893,17 +4906,17 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000021840,
-                    "name": "OAAB Dark Temptations-49045-1-0-1605976657.7z",
-                    "version": "1.0"
-                },
-                {
                     "file_id": 1000021983,
                     "name": "OAAB Scroll Qualities-49045-1-1-1606680125.7z",
                     "version": "1.1"
+                },
+                {
+                    "file_id": 1000024976,
+                    "name": "OAAB Dark Temptations-49045-1-1-1621806163.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1621327337
+            "indexed_timestamp": 1621852801
         },
         {
             "mod_id": 49046,
@@ -4924,12 +4937,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024714,
-                    "name": "Ashfall-49057-2-1-8-1621120353.7z",
-                    "version": "2.1.8"
+                    "file_id": 1000024875,
+                    "name": "Ashfall-49057-2-1-9-1621588173.7z",
+                    "version": "2.1.9"
                 }
             ],
-            "indexed_timestamp": 1621327257
+            "indexed_timestamp": 1621852796
         },
         {
             "mod_id": 49075,
@@ -5093,12 +5106,12 @@
             "author": "C3pa",
             "files": [
                 {
-                    "file_id": 1000024194,
-                    "name": "Magicka Regeneration Suite-49153-1-3-RC1-1619723661.7z",
-                    "version": "1.3-RC1"
+                    "file_id": 1000024968,
+                    "name": "Magicka Regeneration Suite-49153-1-3-1621780357.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1619881492
+            "indexed_timestamp": 1621852745
         },
         {
             "mod_id": 49168,
@@ -5215,12 +5228,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000024446,
-                    "name": "Beautiful Cities of Morrowind-49231-1-8-8-1620388520.7z",
-                    "version": "1.8.8"
+                    "file_id": 1000024972,
+                    "name": "Beautiful Cities of Morrowind-49231-1-9-1-1621798957.7z",
+                    "version": "1.9.1"
                 }
             ],
-            "indexed_timestamp": 1620561211
+            "indexed_timestamp": 1621852870
         },
         {
             "mod_id": 49232,
@@ -5241,12 +5254,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000024761,
-                    "name": "Friends and Foes-49251-1-3-1621201863.7z",
-                    "version": "1.3"
+                    "file_id": 1000024963,
+                    "name": "Friends and Foes-49251-1-4-1-1621772014.7z",
+                    "version": "1.4.1"
                 }
             ],
-            "indexed_timestamp": 1621327331
+            "indexed_timestamp": 1621852727
         },
         {
             "mod_id": 49255,
@@ -5376,12 +5389,12 @@
             "author": "Taddeus Danae",
             "files": [
                 {
-                    "file_id": 1000023945,
-                    "name": "Foods_of_Tamriel-49388-1-2-8-1618298602.7z",
-                    "version": "1.2.8"
+                    "file_id": 1000024938,
+                    "name": "Foods Wares-49388-1-3-3-1621713578.7z",
+                    "version": "1.3.3"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1621852803
         },
         {
             "mod_id": 49427,
@@ -5545,12 +5558,12 @@
             "author": "bigJayB",
             "files": [
                 {
-                    "file_id": 1000024217,
-                    "name": "Jay's Fletching Addon-49611-1-0-1619842652.zip",
-                    "version": "1.0"
+                    "file_id": 1000024870,
+                    "name": "Jay's Fletching Addon-49611-1-2-1621562774.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1619881079
+            "indexed_timestamp": 1621852776
         },
         {
             "mod_id": 49614,
@@ -5571,12 +5584,12 @@
             "author": "Endoran",
             "files": [
                 {
-                    "file_id": 1000024365,
-                    "name": "Legion Field Gear-49621-1-0b-1620163838.zip",
-                    "version": "1.0b"
+                    "file_id": 1000024885,
+                    "name": "Legion Field Gear-49621-1-0c-1621624153.zip",
+                    "version": "1.0c"
                 }
             ],
-            "indexed_timestamp": 1620337450
+            "indexed_timestamp": 1621852767
         },
         {
             "mod_id": 49624,
@@ -5727,12 +5740,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024320,
-                    "name": "Guano Coffee-49658-1-0-0-1620042636.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000024952,
+                    "name": "Guarno Coffee-49658-1-0-1-1621729257.7z",
+                    "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1620337432
+            "indexed_timestamp": 1621852748
         },
         {
             "mod_id": 49659,
@@ -5935,12 +5948,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024512,
-                    "name": "MagicStrorm-49739-1-1620597936.zip",
-                    "version": "1"
+                    "file_id": 1000024920,
+                    "name": "MagicStrorm-49739-1-1-1621673906.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1620680557
+            "indexed_timestamp": 1621852756
         },
         {
             "mod_id": 49747,
@@ -6026,12 +6039,12 @@
             "author": "kindi",
             "files": [
                 {
-                    "file_id": 1000024708,
-                    "name": "Ancestral Tomb Amulets-49779-1-0-1621109253.7z",
-                    "version": "1.0"
+                    "file_id": 1000024884,
+                    "name": "Ancestral Tomb Amulets-49779-1-1-1621619130.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1621327251
+            "indexed_timestamp": 1621852739
         },
         {
             "mod_id": 49780,
@@ -6128,9 +6141,74 @@
                 }
             ],
             "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49825,
+            "name": "Fortify MAX",
+            "author": "Necrolesian",
+            "files": [
+                {
+                    "file_id": 1000024873,
+                    "name": "Fortify MAX-49825-1-0-1621576487.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621852723
+        },
+        {
+            "mod_id": 49829,
+            "name": "Useful Bound Armor",
+            "author": "Necrolesian",
+            "files": [
+                {
+                    "file_id": 1000024918,
+                    "name": "Useful Bound Armor-49829-1-0-1621663719.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621852721
+        },
+        {
+            "mod_id": 49830,
+            "name": "Circumstances",
+            "author": "JaceyS",
+            "files": [
+                {
+                    "file_id": 1000024924,
+                    "name": "Circumstances v1.0-49830-1-0-1621690935.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621852721
+        },
+        {
+            "mod_id": 49839,
+            "name": "Lucky Loot",
+            "author": "Hrnchamd NullCascade Danae",
+            "files": [
+                {
+                    "file_id": 1000024962,
+                    "name": "Lucky Loot-49839-1-0-1621770155.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1621852720
+        },
+        {
+            "mod_id": 49841,
+            "name": "The Stone Halls of Solstheim - Reforged",
+            "author": "Corsair",
+            "files": [
+                {
+                    "file_id": 1000024975,
+                    "name": "The Stone Halls of Solstheim - Reforged-49841-1-1-1621805413.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1621852721
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1621327249,
-    "last_scan_for_updated_mods_timestamp": 1621488435,
-    "highest_validated_mod_id": 49804
+    "last_scan_for_added_mods_timestamp": 1621852718,
+    "last_scan_for_updated_mods_timestamp": 1621852725,
+    "highest_validated_mod_id": 49847
 }
