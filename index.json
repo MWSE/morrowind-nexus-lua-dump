@@ -19,12 +19,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000023975,
-                    "name": "Hold_it-43181-2-2-2-1618465789.7z",
-                    "version": "2.2.2"
+                    "file_id": 1000025016,
+                    "name": "Hold it-43181-2-3-1621971603.7z",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1618893108
+            "indexed_timestamp": 1622186298
         },
         {
             "mod_id": 43213,
@@ -3184,12 +3184,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000024874,
-                    "name": "Class-Conscious Character Progression-48110-2-0-2-1621577067.7z",
-                    "version": "2.0.2"
+                    "file_id": 1000025026,
+                    "name": "Class-Conscious Character Progression-48110-2-0-3-1622007296.7z",
+                    "version": "2.0.3"
                 }
             ],
-            "indexed_timestamp": 1621852884
+            "indexed_timestamp": 1622186304
         },
         {
             "mod_id": 48111,
@@ -5228,12 +5228,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000024972,
-                    "name": "Beautiful Cities of Morrowind-49231-1-9-1-1621798957.7z",
-                    "version": "1.9.1"
+                    "file_id": 1000025064,
+                    "name": "Beautiful Cities of Morrowind-49231-1-9-2-1622109643.7z",
+                    "version": "1.9.2"
                 }
             ],
-            "indexed_timestamp": 1621852870
+            "indexed_timestamp": 1622186308
         },
         {
             "mod_id": 49232,
@@ -6039,12 +6039,12 @@
             "author": "kindi",
             "files": [
                 {
-                    "file_id": 1000024884,
-                    "name": "Ancestral Tomb Amulets-49779-1-1-1621619130.7z",
-                    "version": "1.1"
+                    "file_id": 1000025036,
+                    "name": "Ancestral Tomb Amulets-49779-1-2-1622049411.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1621852739
+            "indexed_timestamp": 1622186290
         },
         {
             "mod_id": 49780,
@@ -6117,12 +6117,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024804,
-                    "name": "Final Strike-49801-1-1621281477.zip",
-                    "version": "1"
+                    "file_id": 1000024983,
+                    "name": "Final Strike-49801-1-1-1621868142.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1621327251
+            "indexed_timestamp": 1622186360
         },
         {
             "mod_id": 49803,
@@ -6141,6 +6141,19 @@
                 }
             ],
             "indexed_timestamp": 1621327251
+        },
+        {
+            "mod_id": 49807,
+            "name": "Enhanced Economics for Wares",
+            "author": "Crankgorilla Danae",
+            "files": [
+                {
+                    "file_id": 1000025032,
+                    "name": "EE Wares-49807-1-1-1622014191.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1622186326
         },
         {
             "mod_id": 49825,
@@ -6206,9 +6219,92 @@
                 }
             ],
             "indexed_timestamp": 1621852721
+        },
+        {
+            "mod_id": 49848,
+            "name": "Smart Companions",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000024979,
+                    "name": "abotSmartCompanion100-49848-1-00-1621856614.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1622186105
+        },
+        {
+            "mod_id": 49853,
+            "name": "Potion Renamer",
+            "author": "Necrolesian",
+            "files": [
+                {
+                    "file_id": 1000024998,
+                    "name": "Potion Renamer-49853-1-0-1621922329.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1622186105
+        },
+        {
+            "mod_id": 49858,
+            "name": "Advanced Text Formatting",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000025023,
+                    "name": "AdvancedTextFormatting-49858-1-1621975275.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1622186105
+        },
+        {
+            "mod_id": 49861,
+            "name": "Soulgem Renamer",
+            "author": "Necrolesian",
+            "files": [
+                {
+                    "file_id": 1000025025,
+                    "name": "Soulgem Renamer-49861-1-0-1622001402.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1622186105
+        },
+        {
+            "mod_id": 49867,
+            "name": "Potion of Potion Renamer",
+            "author": "A Raven of Many Hats",
+            "files": [
+                {
+                    "file_id": 1000025062,
+                    "name": "Potion of Potion Renamer - .zip Archive-49867-2-0-1622107240.zip",
+                    "version": "2.0"
+                },
+                {
+                    "file_id": 1000025063,
+                    "name": "Potion of Potion Renamer - data.lua Manual File-49867-2-0-1622107282.zip",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1622186106
+        },
+        {
+            "mod_id": 49870,
+            "name": "Mantle of Ascension - A Climbing Mod",
+            "author": "vtastek",
+            "files": [
+                {
+                    "file_id": 1000025065,
+                    "name": "Mantling Lua-49870-0-0-2-1622115597.7z",
+                    "version": "0.0.2"
+                }
+            ],
+            "indexed_timestamp": 1622186106
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1621852718,
-    "last_scan_for_updated_mods_timestamp": 1621852725,
-    "highest_validated_mod_id": 49847
+    "last_scan_for_added_mods_timestamp": 1622186103,
+    "last_scan_for_updated_mods_timestamp": 1622186108,
+    "highest_validated_mod_id": 49873
 }
