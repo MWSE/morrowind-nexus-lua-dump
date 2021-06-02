@@ -19,12 +19,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000025016,
-                    "name": "Hold it-43181-2-3-1621971603.7z",
-                    "version": "2.3"
+                    "file_id": 1000025097,
+                    "name": "hold it-43181-2-3-1-1622306386.7z",
+                    "version": "2.3.1"
                 }
             ],
-            "indexed_timestamp": 1622186298
+            "indexed_timestamp": 1622658820
         },
         {
             "mod_id": 43213,
@@ -32,12 +32,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000024486,
-                    "name": "Adventurers_backpack_2pt4-43213-2-4-1620540753.7z",
-                    "version": "2.4"
+                    "file_id": 1000025189,
+                    "name": "Backpack Wares-43213-2-4-1-1622539920.7z",
+                    "version": "2.4.1"
                 }
             ],
-            "indexed_timestamp": 1620561222
+            "indexed_timestamp": 1622658835
         },
         {
             "mod_id": 45550,
@@ -411,7 +411,7 @@
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1621852799
+            "indexed_timestamp": 1622658875
         },
         {
             "mod_id": 45886,
@@ -2345,12 +2345,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000019139,
-                    "name": "abotSmartJournal102-47492-1-02-1591351803.7z",
-                    "version": "1.02"
+                    "file_id": 1000025093,
+                    "name": "abotSmartJournal103-47492-1-03-1622290447.7z",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1622658833
         },
         {
             "mod_id": 47510,
@@ -2689,6 +2689,19 @@
                 }
             ],
             "indexed_timestamp": 1618867319
+        },
+        {
+            "mod_id": 47874,
+            "name": "Royal Chargen",
+            "author": "Princess Stomper",
+            "files": [
+                {
+                    "file_id": 1000021087,
+                    "name": "Merlord's Character Backgrounds Adjuster-47874-1-0-1601411805.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1622658857
         },
         {
             "mod_id": 47883,
@@ -4511,12 +4524,12 @@
             "author": "Gawain Melchior Dahrk Merlord Danae",
             "files": [
                 {
-                    "file_id": 1000024611,
-                    "name": "Shinies-48903-1-6-1620858828.7z",
-                    "version": "1.6"
+                    "file_id": 1000025197,
+                    "name": "Shinies Wares-48903-1-6-1-1622540908.7z",
+                    "version": "1.6.1"
                 }
             ],
-            "indexed_timestamp": 1620918673
+            "indexed_timestamp": 1622658823
         },
         {
             "mod_id": 48904,
@@ -5228,12 +5241,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000025064,
-                    "name": "Beautiful Cities of Morrowind-49231-1-9-2-1622109643.7z",
-                    "version": "1.9.2"
+                    "file_id": 1000025162,
+                    "name": "Beautiful Cities of Morrowind-49231-1-9-4-1622489692.7z",
+                    "version": "1.9.4"
                 }
             ],
-            "indexed_timestamp": 1622186308
+            "indexed_timestamp": 1622658903
         },
         {
             "mod_id": 49232,
@@ -5254,12 +5267,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000024963,
-                    "name": "Friends and Foes-49251-1-4-1-1621772014.7z",
-                    "version": "1.4.1"
+                    "file_id": 1000025239,
+                    "name": "FF-49251-1-4-6-1622618966.7z",
+                    "version": "1.4.6"
                 }
             ],
-            "indexed_timestamp": 1621852727
+            "indexed_timestamp": 1622658898
         },
         {
             "mod_id": 49255,
@@ -5389,12 +5402,12 @@
             "author": "Taddeus Danae",
             "files": [
                 {
-                    "file_id": 1000024938,
-                    "name": "Foods Wares-49388-1-3-3-1621713578.7z",
-                    "version": "1.3.3"
+                    "file_id": 1000025210,
+                    "name": "Foods Wares-49388-1-3-4-1622554043.7z",
+                    "version": "1.3.4"
                 }
             ],
-            "indexed_timestamp": 1621852803
+            "indexed_timestamp": 1622658875
         },
         {
             "mod_id": 49427,
@@ -5454,12 +5467,12 @@
             "author": "Denina",
             "files": [
                 {
-                    "file_id": 1000024022,
-                    "name": "Redoran Archmaster's Office-49513-2-1-1618747425.7z",
-                    "version": "2.1"
+                    "file_id": 1000025149,
+                    "name": "Redoran Archmaster's Office-49513-2-11-1622471952.7z",
+                    "version": "2.11"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1622658876
         },
         {
             "mod_id": 49521,
@@ -5571,12 +5584,12 @@
             "author": "mort",
             "files": [
                 {
-                    "file_id": 1000024223,
-                    "name": "Stealth-49614-1-0-1619851984.zip",
-                    "version": "1.0"
+                    "file_id": 1000025174,
+                    "name": "Stealth-49614-1-1-1622517557.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1619881079
+            "indexed_timestamp": 1622658816
         },
         {
             "mod_id": 49621,
@@ -5688,12 +5701,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000024642,
-                    "name": "Try Before You Buy-49647-1-0-3-1621004380.7z",
-                    "version": "1.0.3"
+                    "file_id": 1000025096,
+                    "name": "Try Before You Buy-49647-1-0-4-1622296349.7z",
+                    "version": "1.0.4"
                 }
             ],
-            "indexed_timestamp": 1621488468
+            "indexed_timestamp": 1622658915
         },
         {
             "mod_id": 49650,
@@ -5714,12 +5727,12 @@
             "author": "Anumaril21",
             "files": [
                 {
-                    "file_id": 1000024691,
-                    "name": "CSO-49654-1-0-1621075896.rar",
-                    "version": "1.0"
+                    "file_id": 1000025121,
+                    "name": "CSO-49654-1-1-1622380823.rar",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1621327385
+            "indexed_timestamp": 1622658827
         },
         {
             "mod_id": 49657,
@@ -5766,12 +5779,12 @@
             "author": "JaceyS",
             "files": [
                 {
-                    "file_id": 1000024337,
-                    "name": "Big Icons-49662-1-0-1620090735.rar",
-                    "version": "1.0"
+                    "file_id": 1000025229,
+                    "name": "Big Icons - MWSE-49662-1-1-1622589112.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1620337459
+            "indexed_timestamp": 1622658808
         },
         {
             "mod_id": 49667,
@@ -6034,6 +6047,19 @@
             "indexed_timestamp": 1621327252
         },
         {
+            "mod_id": 49776,
+            "name": "Rethan Redivivus",
+            "author": "Istreddify",
+            "files": [
+                {
+                    "file_id": 1000025166,
+                    "name": "Rethan Redivivus-49776-1-1-1622492937.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1622658950
+        },
+        {
             "mod_id": 49779,
             "name": "Ancestral Tomb Amulets",
             "author": "kindi",
@@ -6148,12 +6174,12 @@
             "author": "Crankgorilla Danae",
             "files": [
                 {
-                    "file_id": 1000025032,
-                    "name": "EE Wares-49807-1-1-1622014191.7z",
-                    "version": "1.1"
+                    "file_id": 1000025191,
+                    "name": "EE Wares-49807-1-1-1-1622540097.7z",
+                    "version": "1.1.1"
                 }
             ],
-            "indexed_timestamp": 1622186326
+            "indexed_timestamp": 1622658902
         },
         {
             "mod_id": 49825,
@@ -6200,12 +6226,12 @@
             "author": "Hrnchamd NullCascade Danae",
             "files": [
                 {
-                    "file_id": 1000024962,
-                    "name": "Lucky Loot-49839-1-0-1621770155.7z",
-                    "version": "1.0"
+                    "file_id": 1000025091,
+                    "name": "Lucky Loot-49839-1-0-1-1622272502.7z",
+                    "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1621852720
+            "indexed_timestamp": 1622658867
         },
         {
             "mod_id": 49841,
@@ -6226,12 +6252,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000024979,
-                    "name": "abotSmartCompanion100-49848-1-00-1621856614.7z",
-                    "version": "1.00"
+                    "file_id": 1000025094,
+                    "name": "abotSmartCompanions101-49848-1-01-1622290661.7z",
+                    "version": "1.01"
                 }
             ],
-            "indexed_timestamp": 1622186105
+            "indexed_timestamp": 1622658865
         },
         {
             "mod_id": 49853,
@@ -6302,9 +6328,74 @@
                 }
             ],
             "indexed_timestamp": 1622186106
+        },
+        {
+            "mod_id": 49904,
+            "name": "Arrow Catch",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000025207,
+                    "name": "ArrowCatchMWSE-49904-1-1622546162.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1622658925
+        },
+        {
+            "mod_id": 49912,
+            "name": "What Are My Attributes",
+            "author": "RingComics",
+            "files": [
+                {
+                    "file_id": 1000025225,
+                    "name": "WAMA-49912-1-0-0-1622585664.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1622658894
+        },
+        {
+            "mod_id": 49913,
+            "name": "The Vampire Hunter's Legacy",
+            "author": "VvardenfellStormSage Safebox and Rubberman",
+            "files": [
+                {
+                    "file_id": 1000025228,
+                    "name": "Vampire Hunter's Legacy-49913-1-1-1622588680.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1622658926
+        },
+        {
+            "mod_id": 49920,
+            "name": "Skoomaesthesia",
+            "author": "Merlord and XeroFoxx",
+            "files": [
+                {
+                    "file_id": 1000025241,
+                    "name": "Skoomaesthesia-49920-1-0-0-1622620500.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1622658836
+        },
+        {
+            "mod_id": 49921,
+            "name": "Primitive Barter",
+            "author": "De Kweeper",
+            "files": [
+                {
+                    "file_id": 1000025240,
+                    "name": "Primitive Barter-49921-0-001-1622620017.7z",
+                    "version": "0.001"
+                }
+            ],
+            "indexed_timestamp": 1622658954
         }
     ],
     "last_scan_for_added_mods_timestamp": 1622186103,
-    "last_scan_for_updated_mods_timestamp": 1622186108,
+    "last_scan_for_updated_mods_timestamp": 1622658796,
     "highest_validated_mod_id": 49873
 }
