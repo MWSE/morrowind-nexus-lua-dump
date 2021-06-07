@@ -691,12 +691,12 @@
             "author": "NullCascade",
             "files": [
                 {
-                    "file_id": 1000024053,
-                    "name": "UI Expansion v1.2.1-46071-1-2-1-1619017965.zip",
-                    "version": "1.2.1"
+                    "file_id": 1000025342,
+                    "name": "UI Expansion v1.3-46071-1-3-1623033648.zip",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1619044211
+            "indexed_timestamp": 1623098715
         },
         {
             "mod_id": 46093,
@@ -1062,12 +1062,12 @@
             "author": "NullCascade",
             "files": [
                 {
-                    "file_id": 1000015314,
-                    "name": "Book Pickup v1.0.1-46625-1-0-1-1564908497.zip",
-                    "version": "1.0.1"
+                    "file_id": 1000025250,
+                    "name": "Book Pickup v1.1.0-46625-1-1-0-1622677535.zip",
+                    "version": "1.1.0"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1623098703
         },
         {
             "mod_id": 46626,
@@ -2860,6 +2860,19 @@
             "indexed_timestamp": 1621327312
         },
         {
+            "mod_id": 47915,
+            "name": "Random Enchantment Encounters Expanded Enhanced",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000021804,
+                    "name": "REEEE-47915-2-1605724943.7z",
+                    "version": "2"
+                }
+            ],
+            "indexed_timestamp": 1623098784
+        },
+        {
             "mod_id": 47925,
             "name": "Assetless No Glow",
             "author": "NullCascade",
@@ -2917,12 +2930,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000020316,
-                    "name": "Consistent Keys - MWSE Version-47954-2-1-1597204759.7z",
-                    "version": "2.1"
+                    "file_id": 1000025341,
+                    "name": "Consistent Keys - MWSE Version-47954-2-1-1-1623033196.7z",
+                    "version": "2.1.1"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1623098721
         },
         {
             "mod_id": 47956,
@@ -3839,17 +3852,17 @@
             "author": "JaceyS",
             "files": [
                 {
-                    "file_id": 1000019754,
-                    "name": "Map and Compass-48455-1-1-2-1593972001.rar",
-                    "version": "1.1.2"
+                    "file_id": 1000025286,
+                    "name": "Map and Compass-48455-1-1-3-1622838190.rar",
+                    "version": "1.1.3"
                 },
                 {
-                    "file_id": 1000019756,
-                    "name": "Map and Compass -- Just the Lua-48455-1-1-2-1593972445.rar",
-                    "version": "1.1.2"
+                    "file_id": 1000025287,
+                    "name": "Map and Compass -- Just the Lua-48455-1-1-3-1622838312.rar",
+                    "version": "1.1.3"
                 }
             ],
-            "indexed_timestamp": 1618969345
+            "indexed_timestamp": 1623098679
         },
         {
             "mod_id": 48456,
@@ -5241,12 +5254,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000025162,
-                    "name": "Beautiful Cities of Morrowind-49231-1-9-4-1622489692.7z",
-                    "version": "1.9.4"
+                    "file_id": 1000025327,
+                    "name": "Beautiful Cities of Morrowind-49231-1-9-5-1623007846.7z",
+                    "version": "1.9.5"
                 }
             ],
-            "indexed_timestamp": 1622658903
+            "indexed_timestamp": 1623098750
         },
         {
             "mod_id": 49232,
@@ -5267,12 +5280,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000025239,
-                    "name": "FF-49251-1-4-6-1622618966.7z",
-                    "version": "1.4.6"
+                    "file_id": 1000025276,
+                    "name": "FF-49251-1-4-7-1622799521.7z",
+                    "version": "1.4.7"
                 }
             ],
-            "indexed_timestamp": 1622658898
+            "indexed_timestamp": 1623098671
         },
         {
             "mod_id": 49255,
@@ -5779,12 +5792,12 @@
             "author": "JaceyS",
             "files": [
                 {
-                    "file_id": 1000025229,
-                    "name": "Big Icons - MWSE-49662-1-1-1622589112.zip",
-                    "version": "1.1"
+                    "file_id": 1000025284,
+                    "name": "Big Icons - MWSE-49662-1-1-2-1622831801.7z",
+                    "version": "1.1.2"
                 }
             ],
-            "indexed_timestamp": 1622658808
+            "indexed_timestamp": 1623098675
         },
         {
             "mod_id": 49667,
@@ -6065,12 +6078,12 @@
             "author": "kindi",
             "files": [
                 {
-                    "file_id": 1000025036,
-                    "name": "Ancestral Tomb Amulets-49779-1-2-1622049411.7z",
-                    "version": "1.2"
+                    "file_id": 1000025332,
+                    "name": "Ancestral Tomb Amulets-49779-1-3-1623018095.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1622186290
+            "indexed_timestamp": 1623098775
         },
         {
             "mod_id": 49780,
@@ -6335,12 +6348,25 @@
             "author": "Stripes",
             "files": [
                 {
-                    "file_id": 1000025207,
-                    "name": "ArrowCatchMWSE-49904-1-1622546162.7z",
-                    "version": "1"
+                    "file_id": 1000025274,
+                    "name": "ArrowCatchMWSE-49904-2-1622793299.7z",
+                    "version": "2"
                 }
             ],
-            "indexed_timestamp": 1622658925
+            "indexed_timestamp": 1623098780
+        },
+        {
+            "mod_id": 49904,
+            "name": "Arrow Catch",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000025274,
+                    "name": "ArrowCatchMWSE-49904-2-1622793299.7z",
+                    "version": "2"
+                }
+            ],
+            "indexed_timestamp": 1623098644
         },
         {
             "mod_id": 49912,
@@ -6356,17 +6382,56 @@
             "indexed_timestamp": 1622658894
         },
         {
+            "mod_id": 49912,
+            "name": "What Are My Attributes",
+            "author": "RingComics",
+            "files": [
+                {
+                    "file_id": 1000025225,
+                    "name": "WAMA-49912-1-0-0-1622585664.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1623098648
+        },
+        {
             "mod_id": 49913,
             "name": "The Vampire Hunter's Legacy",
             "author": "VvardenfellStormSage Safebox and Rubberman",
             "files": [
                 {
-                    "file_id": 1000025228,
-                    "name": "Vampire Hunter's Legacy-49913-1-1-1622588680.zip",
+                    "file_id": 1000025325,
+                    "name": "Vampire Hunter's Legacy-49913-1-3-1623001096.zip",
+                    "version": "1.3"
+                }
+            ],
+            "indexed_timestamp": 1623098781
+        },
+        {
+            "mod_id": 49913,
+            "name": "The Vampire Hunter's Legacy",
+            "author": "VvardenfellStormSage Safebox and Rubberman",
+            "files": [
+                {
+                    "file_id": 1000025325,
+                    "name": "Vampire Hunter's Legacy-49913-1-3-1623001096.zip",
+                    "version": "1.3"
+                }
+            ],
+            "indexed_timestamp": 1623098654
+        },
+        {
+            "mod_id": 49919,
+            "name": "Deadly Diseases",
+            "author": "A Raven of Many Hats",
+            "files": [
+                {
+                    "file_id": 1000025270,
+                    "name": "The (Deadly) Blight-49919-1-1-1622749059.zip",
                     "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1622658926
+            "indexed_timestamp": 1623098648
         },
         {
             "mod_id": 49920,
@@ -6382,20 +6447,98 @@
             "indexed_timestamp": 1622658836
         },
         {
+            "mod_id": 49920,
+            "name": "Skoomaesthesia",
+            "author": "Merlord and XeroFoxx",
+            "files": [
+                {
+                    "file_id": 1000025241,
+                    "name": "Skoomaesthesia-49920-1-0-0-1622620500.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1623098623
+        },
+        {
             "mod_id": 49921,
             "name": "Primitive Barter",
             "author": "De Kweeper",
             "files": [
                 {
-                    "file_id": 1000025240,
-                    "name": "Primitive Barter-49921-0-001-1622620017.7z",
+                    "file_id": 1000025249,
+                    "name": "Primitive Barter-49921-0-001-1622664742.7z",
                     "version": "0.001"
                 }
             ],
-            "indexed_timestamp": 1622658954
+            "indexed_timestamp": 1623098663
+        },
+        {
+            "mod_id": 49921,
+            "name": "Primitive Barter",
+            "author": "De Kweeper",
+            "files": [
+                {
+                    "file_id": 1000025249,
+                    "name": "Primitive Barter-49921-0-001-1622664742.7z",
+                    "version": "0.001"
+                }
+            ],
+            "indexed_timestamp": 1623098631
+        },
+        {
+            "mod_id": 49925,
+            "name": "Deadly Combat Exhaustion",
+            "author": "Uncle Boss",
+            "files": [
+                {
+                    "file_id": 1000025266,
+                    "name": "Deadly Combat Exhaustion-49925-1-0-1622747150.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1623098637
+        },
+        {
+            "mod_id": 49933,
+            "name": "Flip a Coin",
+            "author": "Discontinuous Qualia",
+            "files": [
+                {
+                    "file_id": 1000025309,
+                    "name": "Flip a Coin-49933-1-00-1622960319.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1623098623
+        },
+        {
+            "mod_id": 49939,
+            "name": "Bound Leggings for Beasts",
+            "author": "GreyWyvern",
+            "files": [
+                {
+                    "file_id": 1000025328,
+                    "name": "Bound Leggings for Beasts-49939-1-0-1623010578.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1623098623
+        },
+        {
+            "mod_id": 49941,
+            "name": "Propylon Index Renamer",
+            "author": "Necrolesian",
+            "files": [
+                {
+                    "file_id": 1000025343,
+                    "name": "Propylon Index Renamer-49941-1-0-1623040233.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1623098622
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1622186103,
-    "last_scan_for_updated_mods_timestamp": 1622658796,
-    "highest_validated_mod_id": 49873
+    "last_scan_for_added_mods_timestamp": 1623098619,
+    "last_scan_for_updated_mods_timestamp": 1623098655,
+    "highest_validated_mod_id": 49942
 }
