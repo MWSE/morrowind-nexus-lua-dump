@@ -19,12 +19,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000025097,
-                    "name": "hold it-43181-2-3-1-1622306386.7z",
-                    "version": "2.3.1"
+                    "file_id": 1000025378,
+                    "name": "Hold it-43181-2-3-2-1623237778.7z",
+                    "version": "2.3.2"
                 }
             ],
-            "indexed_timestamp": 1622658820
+            "indexed_timestamp": 1623487552
         },
         {
             "mod_id": 43213,
@@ -1571,17 +1571,17 @@
                     "version": "1"
                 },
                 {
-                    "file_id": 1000024174,
-                    "name": "4NM_English-47015-2-14-1619607846.zip",
-                    "version": "2.14"
+                    "file_id": 1000025405,
+                    "name": "4NM_English-47015-2-15-1-1623316708.zip",
+                    "version": "2.15.1"
                 },
                 {
-                    "file_id": 1000024175,
-                    "name": "4NM_Russian-47015-2-14-1619607873.zip",
-                    "version": "2.14"
+                    "file_id": 1000025406,
+                    "name": "4NM_Russian-47015-2-15-1-1623316758.zip",
+                    "version": "2.15.1"
                 }
             ],
-            "indexed_timestamp": 1619881540
+            "indexed_timestamp": 1623487570
         },
         {
             "mod_id": 47029,
@@ -1664,12 +1664,12 @@
                     "version": "1.0"
                 },
                 {
-                    "file_id": 1000021893,
-                    "name": "Customizable MWSE Multi Mark and Harder Recall 2.1.7-47065-2-1-7-1606133399.7z",
-                    "version": "2.1.7"
+                    "file_id": 1000025365,
+                    "name": "Customizable MWSE Multi Mark and Harder Recall-47065-2-1-8-1623167983.7z",
+                    "version": "2.1.8"
                 }
             ],
-            "indexed_timestamp": 1618969344
+            "indexed_timestamp": 1623487552
         },
         {
             "mod_id": 47084,
@@ -3397,12 +3397,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024914,
-                    "name": "The Guar Whisperer-48247-1-3-13-1621637304.7z",
-                    "version": "1.3.13"
+                    "file_id": 1000025435,
+                    "name": "The Guar Whisperer-48247-1-3-14-1623483806.7z",
+                    "version": "1.3.14"
                 }
             ],
-            "indexed_timestamp": 1621852794
+            "indexed_timestamp": 1623487558
         },
         {
             "mod_id": 48251,
@@ -4963,12 +4963,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000024875,
-                    "name": "Ashfall-49057-2-1-9-1621588173.7z",
-                    "version": "2.1.9"
+                    "file_id": 1000025436,
+                    "name": "Ashfall-49057-2-1-10-1623485942.7z",
+                    "version": "2.1.10"
                 }
             ],
-            "indexed_timestamp": 1621852796
+            "indexed_timestamp": 1623487595
         },
         {
             "mod_id": 49075,
@@ -5280,12 +5280,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000025276,
-                    "name": "FF-49251-1-4-7-1622799521.7z",
-                    "version": "1.4.7"
+                    "file_id": 1000025403,
+                    "name": "FF-49251-1-4-9-1623313872.7z",
+                    "version": "1.4.9"
                 }
             ],
-            "indexed_timestamp": 1623098671
+            "indexed_timestamp": 1623487569
         },
         {
             "mod_id": 49255,
@@ -5610,12 +5610,12 @@
             "author": "Endoran",
             "files": [
                 {
-                    "file_id": 1000024885,
-                    "name": "Legion Field Gear-49621-1-0c-1621624153.zip",
-                    "version": "1.0c"
+                    "file_id": 1000025398,
+                    "name": "Legion Field Gear-49621-1-1-1623278649.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1621852767
+            "indexed_timestamp": 1623487671
         },
         {
             "mod_id": 49624,
@@ -5818,12 +5818,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024353,
-                    "name": "Ultra AI-49670-1-1620132633.zip",
-                    "version": "1"
+                    "file_id": 1000025397,
+                    "name": "Ultra AI-49670-1-1-1623275392.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1620337448
+            "indexed_timestamp": 1623487569
         },
         {
             "mod_id": 49680,
@@ -6156,12 +6156,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024983,
-                    "name": "Final Strike-49801-1-1-1621868142.zip",
-                    "version": "1.1"
+                    "file_id": 1000025407,
+                    "name": "Final Strike-49801-1-2-1623324814.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1622186360
+            "indexed_timestamp": 1623487637
         },
         {
             "mod_id": 49803,
@@ -6517,12 +6517,12 @@
             "author": "GreyWyvern",
             "files": [
                 {
-                    "file_id": 1000025328,
-                    "name": "Bound Leggings for Beasts-49939-1-0-1623010578.zip",
-                    "version": "1.0"
+                    "file_id": 1000025408,
+                    "name": "Bound Leggings for Beasts-49939-1-1-1623328995.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1623098623
+            "indexed_timestamp": 1623487574
         },
         {
             "mod_id": 49941,
@@ -6538,7 +6538,7 @@
             "indexed_timestamp": 1623098622
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1623098619,
-    "last_scan_for_updated_mods_timestamp": 1623098655,
-    "highest_validated_mod_id": 49942
+    "last_scan_for_added_mods_timestamp": 1623487545,
+    "last_scan_for_updated_mods_timestamp": 1623487550,
+    "highest_validated_mod_id": 49955
 }
