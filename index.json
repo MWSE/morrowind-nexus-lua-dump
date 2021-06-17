@@ -6536,9 +6536,48 @@
                 }
             ],
             "indexed_timestamp": 1623098622
+        },
+        {
+            "mod_id": 49957,
+            "name": "Diminishing Skill Returns",
+            "author": "GreyWyvern",
+            "files": [
+                {
+                    "file_id": 1000025459,
+                    "name": "Diminishing Skill Returns-49957-0-3-1623598542.zip",
+                    "version": "0.3"
+                }
+            ],
+            "indexed_timestamp": 1623919540
+        },
+        {
+            "mod_id": 49961,
+            "name": "Just another tooltip mod (MWSE)",
+            "author": "kindi",
+            "files": [
+                {
+                    "file_id": 1000025469,
+                    "name": "Just another tooltip mod-49961-0-99-1623613008.7z",
+                    "version": "0.99"
+                }
+            ],
+            "indexed_timestamp": 1623919540
+        },
+        {
+            "mod_id": 49973,
+            "name": "Friends Don't Pickpocket Followers",
+            "author": "GreyWyvern",
+            "files": [
+                {
+                    "file_id": 1000025504,
+                    "name": "Friends Don't Pickpocket Followers-49973-1-0-1623785779.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1623919540
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1623487545,
+    "last_scan_for_added_mods_timestamp": 1623919537,
     "last_scan_for_updated_mods_timestamp": 1623487550,
-    "highest_validated_mod_id": 49955
+    "highest_validated_mod_id": 49979
 }
