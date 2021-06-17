@@ -3314,6 +3314,19 @@
             "indexed_timestamp": 1618969345
         },
         {
+            "mod_id": 48142,
+            "name": "Cursed Item Adjuster (MWSE)",
+            "author": "KindiEquinox",
+            "files": [
+                {
+                    "file_id": 1000023366,
+                    "name": "Cursed Item Adjuster-48142-1-1-1615795151.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1623930212
+        },
+        {
             "mod_id": 48173,
             "name": "Fargoth Intervention",
             "author": "OperatorJack and Gavrilo93",
@@ -4963,12 +4976,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000025436,
-                    "name": "Ashfall-49057-2-1-10-1623485942.7z",
-                    "version": "2.1.10"
+                    "file_id": 1000025539,
+                    "name": "Ashfall-49057-2-1-11-1623927118.7z",
+                    "version": "2.1.11"
                 }
             ],
-            "indexed_timestamp": 1623487595
+            "indexed_timestamp": 1623930198
         },
         {
             "mod_id": 49075,
@@ -5254,12 +5267,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000025327,
-                    "name": "Beautiful Cities of Morrowind-49231-1-9-5-1623007846.7z",
-                    "version": "1.9.5"
+                    "file_id": 1000025536,
+                    "name": "Beautiful Cities of Morrowind-49231-1-9-8-1623919185.7z",
+                    "version": "1.9.8"
                 }
             ],
-            "indexed_timestamp": 1623098750
+            "indexed_timestamp": 1623930280
         },
         {
             "mod_id": 49232,
@@ -6578,6 +6591,6 @@
         }
     ],
     "last_scan_for_added_mods_timestamp": 1623919537,
-    "last_scan_for_updated_mods_timestamp": 1623487550,
+    "last_scan_for_updated_mods_timestamp": 1623930661,
     "highest_validated_mod_id": 49979
 }
