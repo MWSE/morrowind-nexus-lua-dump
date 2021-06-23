@@ -40,6 +40,19 @@
             "indexed_timestamp": 1622658835
         },
         {
+            "mod_id": 45441,
+            "name": "Bardic Inspiration",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000023729,
+                    "name": "Bardic Inspiration-45441-3-0-0-1617517574.7z",
+                    "version": "3.0.0"
+                }
+            ],
+            "indexed_timestamp": 1624438159
+        },
+        {
             "mod_id": 45550,
             "name": "Discord Rich Presence for Morrowind",
             "author": "NullCascade",
@@ -554,12 +567,12 @@
             "author": "Hrnchamd",
             "files": [
                 {
-                    "file_id": 1000014172,
-                    "name": "UI Inspector-45964-1-2-1556577594.7z",
-                    "version": "1.2"
+                    "file_id": 1000025621,
+                    "name": "UI Inspector-45964-1-4-1624327710.7z",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1618867319
+            "indexed_timestamp": 1624438125
         },
         {
             "mod_id": 45969,
@@ -1571,17 +1584,17 @@
                     "version": "1"
                 },
                 {
-                    "file_id": 1000025405,
-                    "name": "4NM_English-47015-2-15-1-1623316708.zip",
-                    "version": "2.15.1"
+                    "file_id": 1000025562,
+                    "name": "4NM_English-47015-2-16-1624052192.zip",
+                    "version": "2.16"
                 },
                 {
-                    "file_id": 1000025406,
-                    "name": "4NM_Russian-47015-2-15-1-1623316758.zip",
-                    "version": "2.15.1"
+                    "file_id": 1000025561,
+                    "name": "4NM_Russian-47015-2-16-1624048192.zip",
+                    "version": "2.16"
                 }
             ],
-            "indexed_timestamp": 1623487570
+            "indexed_timestamp": 1624438127
         },
         {
             "mod_id": 47029,
@@ -4976,12 +4989,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000025539,
-                    "name": "Ashfall-49057-2-1-11-1623927118.7z",
-                    "version": "2.1.11"
+                    "file_id": 1000025547,
+                    "name": "Ashfall-49057-2-1-12-1624007526.7z",
+                    "version": "2.1.12"
                 }
             ],
-            "indexed_timestamp": 1623930198
+            "indexed_timestamp": 1624438126
         },
         {
             "mod_id": 49075,
@@ -5267,12 +5280,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000025536,
-                    "name": "Beautiful Cities of Morrowind-49231-1-9-8-1623919185.7z",
-                    "version": "1.9.8"
+                    "file_id": 1000025604,
+                    "name": "Beautiful Cities of Morrowind-49231-1-9-9-1624216835.7z",
+                    "version": "1.9.9"
                 }
             ],
-            "indexed_timestamp": 1623930280
+            "indexed_timestamp": 1624438147
         },
         {
             "mod_id": 49232,
@@ -5293,12 +5306,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000025403,
-                    "name": "FF-49251-1-4-9-1623313872.7z",
-                    "version": "1.4.9"
+                    "file_id": 1000025623,
+                    "name": "FF1pt5-49251-1-5-1624343293.7z",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1623487569
+            "indexed_timestamp": 1624438127
         },
         {
             "mod_id": 49255,
@@ -5831,12 +5844,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000025397,
-                    "name": "Ultra AI-49670-1-1-1623275392.zip",
-                    "version": "1.1"
+                    "file_id": 1000025575,
+                    "name": "Ultra AI-49670-1-2-1624116197.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1623487569
+            "indexed_timestamp": 1624438127
         },
         {
             "mod_id": 49680,
@@ -6483,7 +6496,7 @@
                     "version": "0.001"
                 }
             ],
-            "indexed_timestamp": 1623098663
+            "indexed_timestamp": 1624438126
         },
         {
             "mod_id": 49921,
@@ -6572,9 +6585,19 @@
                     "file_id": 1000025469,
                     "name": "Just another tooltip mod-49961-0-99-1623613008.7z",
                     "version": "0.99"
+                },
+                {
+                    "file_id": 1000025554,
+                    "name": "Renamer - Coloring and Icons (MWSE)-49961-1-0-1624018149.7z",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000025617,
+                    "name": "main.lua-49961-1-0-1624309221.7z",
+                    "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1623919540
+            "indexed_timestamp": 1624438127
         },
         {
             "mod_id": 49973,
@@ -6588,9 +6611,35 @@
                 }
             ],
             "indexed_timestamp": 1623919540
+        },
+        {
+            "mod_id": 49989,
+            "name": "Kynareth's Boon - A Lord's Mail",
+            "author": "Lorkhansheart",
+            "files": [
+                {
+                    "file_id": 1000025619,
+                    "name": "Kynareth's Boon 1.1-49989-1-1-1624324734.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1624438121
+        },
+        {
+            "mod_id": 49996,
+            "name": "mtrLineage",
+            "author": "MTR",
+            "files": [
+                {
+                    "file_id": 1000025639,
+                    "name": "mtrLineage-49996-1-0-210622-1624394532.7z",
+                    "version": "1.0.210622"
+                }
+            ],
+            "indexed_timestamp": 1624438122
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1623919537,
-    "last_scan_for_updated_mods_timestamp": 1623930661,
-    "highest_validated_mod_id": 49979
+    "last_scan_for_added_mods_timestamp": 1624438119,
+    "last_scan_for_updated_mods_timestamp": 1624438124,
+    "highest_validated_mod_id": 49997
 }
