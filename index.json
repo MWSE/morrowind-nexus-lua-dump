@@ -1592,22 +1592,22 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024110,
-                    "name": "4nm_dump-47015-1-1619345080.zip",
-                    "version": "1"
+                    "file_id": 1000025895,
+                    "name": "4nm_dump-47015-2-1626119842.zip",
+                    "version": "2"
                 },
                 {
-                    "file_id": 1000025744,
-                    "name": "4NM_English-47015-2-17-1624971293.zip",
-                    "version": "2.17"
+                    "file_id": 1000025973,
+                    "name": "4NM_English-47015-2-19-1626474577.zip",
+                    "version": "2.19"
                 },
                 {
-                    "file_id": 1000025745,
-                    "name": "4NM_Russian-47015-2-17-1624971395.zip",
-                    "version": "2.17"
+                    "file_id": 1000025974,
+                    "name": "4NM_Russian-47015-2-19-1626474614.zip",
+                    "version": "2.19"
                 }
             ],
-            "indexed_timestamp": 1625492617
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 47029,
@@ -1675,9 +1675,14 @@
                     "file_id": 1000019753,
                     "name": "4NM_ALCHEMY-47062-4-1-1593971219.zip",
                     "version": "4.1"
+                },
+                {
+                    "file_id": 1000025893,
+                    "name": "4NM_Alchemy-47062-4-2-1626109646.zip",
+                    "version": "4.2"
                 }
             ],
-            "indexed_timestamp": 1625492364
+            "indexed_timestamp": 1626628013
         },
         {
             "mod_id": 47065,
@@ -1755,12 +1760,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000015615,
-                    "name": "Illegal Summoning-47105-1-3-1567201029.rar",
-                    "version": "1.3"
+                    "file_id": 1000025900,
+                    "name": "Illegal Summoning-47105-1-4-1626127428.7z",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1625492613
+            "indexed_timestamp": 1626628011
         },
         {
             "mod_id": 47111,
@@ -2664,12 +2669,12 @@
             "author": "Remiros and Necrolesian",
             "files": [
                 {
-                    "file_id": 1000022696,
-                    "name": "Clothing Requirements-47813-1-3-1-1611478660.7z",
-                    "version": "1.3.1"
+                    "file_id": 1000025988,
+                    "name": "Clothing Requirements-47813-1-3-2-1626578864.7z",
+                    "version": "1.3.2"
                 }
             ],
-            "indexed_timestamp": 1625492301
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 47835,
@@ -3116,12 +3121,12 @@
                     "version": "1.0.200515"
                 },
                 {
-                    "file_id": 1000018762,
-                    "name": "mtrByTheDivines-48031-1-2-200519-1590254798.zip",
-                    "version": "1.2.200519"
+                    "file_id": 1000025982,
+                    "name": "mtrByTheDivines-48031-1-3-210717-1626515585.7z",
+                    "version": "1.3.210717"
                 }
             ],
-            "indexed_timestamp": 1625492586
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 48050,
@@ -3230,12 +3235,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000025842,
-                    "name": "Class-Conscious Character Progression-48110-2-0-4-1625807436.7z",
-                    "version": "2.0.4"
+                    "file_id": 1000025922,
+                    "name": "Class-Conscious Character Progression-48110-2-0-5-1626240243.7z",
+                    "version": "2.0.5"
                 }
             ],
-            "indexed_timestamp": 1626103028
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 48111,
@@ -3308,12 +3313,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000019842,
-                    "name": "MWSE State-Based Health-48133-1-2-1594454054.7z",
-                    "version": "1.2"
+                    "file_id": 1000025921,
+                    "name": "MWSE State-Based Health-48133-1-3-1626234196.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1625492635
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 48141,
@@ -3391,12 +3396,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000019152,
-                    "name": "Pass the Time-48217-1-2-1591434302.7z",
-                    "version": "1.2"
+                    "file_id": 1000025942,
+                    "name": "Pass the Time-48217-1-2-1-1626304903.7z",
+                    "version": "1.2.1"
                 }
             ],
-            "indexed_timestamp": 1625492325
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 48220,
@@ -3573,12 +3578,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000019151,
-                    "name": "Dynamic Timescale-48287-2-0-1591432528.7z",
-                    "version": "2.0"
+                    "file_id": 1000025943,
+                    "name": "Dynamic Timescale-48287-2-0-1-1626308481.7z",
+                    "version": "2.0.1"
                 }
             ],
-            "indexed_timestamp": 1625492482
+            "indexed_timestamp": 1626628011
         },
         {
             "mod_id": 48292,
@@ -4990,12 +4995,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000025753,
-                    "name": "Ashfall-49057-2-1-15-1624999421.7z",
-                    "version": "2.1.15"
+                    "file_id": 1000025989,
+                    "name": "Ashfall-49057-2-1-19-1626581431.7z",
+                    "version": "2.1.19"
                 }
             ],
-            "indexed_timestamp": 1625492394
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 49075,
@@ -5281,12 +5286,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000025830,
-                    "name": "Beautiful Cities of Morrowind-49231-2-0-1-1625730407.7z",
-                    "version": "2.0.1"
+                    "file_id": 1000025925,
+                    "name": "Beautiful Cities of Morrowind-49231-2-0-2-1626250113.7z",
+                    "version": "2.0.2"
                 }
             ],
-            "indexed_timestamp": 1626103082
+            "indexed_timestamp": 1626628015
         },
         {
             "mod_id": 49232,
@@ -5372,12 +5377,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024494,
-                    "name": "Double CHIM-49339-2-1620577193.zip",
-                    "version": "2"
+                    "file_id": 1000025972,
+                    "name": "Double CHIM-49339-3-1626474518.zip",
+                    "version": "3"
                 }
             ],
-            "indexed_timestamp": 1625492588
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 49361,
@@ -5442,12 +5447,12 @@
             "author": "Taddeus Danae",
             "files": [
                 {
-                    "file_id": 1000025210,
-                    "name": "Foods Wares-49388-1-3-4-1622554043.7z",
-                    "version": "1.3.4"
+                    "file_id": 1000025912,
+                    "name": "Foods-49388-1-3-5-1626160870.7z",
+                    "version": "1.3.5"
                 }
             ],
-            "indexed_timestamp": 1625492506
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 49427,
@@ -6227,12 +6232,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000025866,
-                    "name": "Fortify MAX-49825-1-0-2-1625973665.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000025924,
+                    "name": "Fortify MAX-49825-1-0-3-1626242723.7z",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1626103028
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 49829,
@@ -6292,12 +6297,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000025722,
-                    "name": "abotSmartCompanions102-49848-1-0-2-1624828590.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000025954,
+                    "name": "abotSmartCompanions103-49848-1-0-3-1626351404.7z",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1625492502
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 49853,
@@ -6671,12 +6676,12 @@
             "author": "Booze",
             "files": [
                 {
-                    "file_id": 1000025870,
-                    "name": "Mudcrab_Island_TLAD-BCOM-50002-2-2-1625978420.7z",
-                    "version": "2.2"
+                    "file_id": 1000025975,
+                    "name": "Mudcrab_Island_TLAD-BCOM-50002-2-3-1626500677.7z",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1626103029
+            "indexed_timestamp": 1626628012
         },
         {
             "mod_id": 50004,
@@ -6757,7 +6762,7 @@
             "indexed_timestamp": 1626103024
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1626103021,
-    "last_scan_for_updated_mods_timestamp": 1626103026,
-    "highest_validated_mod_id": 50040
+    "last_scan_for_added_mods_timestamp": 1626627977,
+    "last_scan_for_updated_mods_timestamp": 1626628010,
+    "highest_validated_mod_id": 50052
 }
