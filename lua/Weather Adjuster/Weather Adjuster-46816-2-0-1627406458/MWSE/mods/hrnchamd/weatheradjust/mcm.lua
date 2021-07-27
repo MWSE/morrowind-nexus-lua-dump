@@ -1,12 +1,12 @@
 --[[
 	Mod: Weather Adjuster
 	Author: Hrnchamd
-    Version: 1.0
+    Version: 2.0
 ]]--
 
 local this = {}
 
-local verString = "1.0"
+local verString = "2.0"
 
 function this.onCreate(parent)
 	local pane = parent:createThinBorder{}
@@ -33,7 +33,7 @@ function this.onCreate(parent)
     summary.borderBottom = 40
 
     local configBlock = pane:createBlock{}
-    configBlock.maxWidth = 500
+    configBlock.maxWidth = 600
     configBlock.widthProportional = 1.0
     configBlock.autoHeight = true
     configBlock.flowDirection = "top_to_bottom"
@@ -63,6 +63,20 @@ function this.onCreate(parent)
                 class = "TableVariable",
                 table = this.config,
                 id = "messageOnRegionChange",
+                defaultSetting = false
+            }
+        }
+    )
+    
+    mwse.mcm.createOnOffButton(configBlock,
+        {
+            class = "OnOffButton",
+            label = "Disable sky texture changes (for mod compatibility)",
+            leftSide = false,
+            variable = mwse.mcm.createTableVariable{
+                class = "TableVariable",
+                table = this.config,
+                id = "disableSkyTextureChanges",
                 defaultSetting = false
             }
         }

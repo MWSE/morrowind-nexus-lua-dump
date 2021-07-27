@@ -1,25 +1,27 @@
 --[[
 	Mod: Weather Adjuster
 	Author: Hrnchamd
-    Version: 1.0
+    Version: 2.0
 ]]--
 
 local mcm = require("hrnchamd.weatheradjust.mcm")
-local weatherPatch = require("hrnchamd.weatheradjust.WeatherPatch")
+local weatherPatch = require("hrnchamd.weatheradjust.patch")
 weatherPatch.patchCloudVertexColours()
 
 local this = {}
 
 local configId = "Weather Adjuster"
-local config = mwse.loadConfig(configId)
-if (config == nil) then
-    config = {}
-    config.presets = {}
-    config.regions = {}
-else
-    -- Remove default, to be set from starting values later.
-    config.presets.default = nil
-end
+local configDefault = {
+    presets = {},
+    regions = {},
+    keybind = { keyCode = tes3.scanCode.F4, isShiftDown = true, isAltDown = false, isControlDown = false },
+    messageOnRegionChange = false,
+    disableSkyTextureChanges = false
+}
+
+local config = mwse.loadConfig(configId, configDefault)
+-- Remove default preset, to be set from starting values later.
+config.presets.default = nil
 
 local regionTransitionDuration = 20.0
 local weatherNames = { "Clear", "Cloudy", "Foggy", "Overcast", "Rain", "Thunderstorm", "Ashstorm", "Blight", "Snow", "Blizzard" }
@@ -102,6 +104,7 @@ local function presetToCurrentWeather(p)
         dest.b = src[3]
     end
     
+    local changeTextures = not config.disableSkyTextureChanges
     local wc = tes3.worldController.weatherController
     for i, w in ipairs(wc.weathers) do
         local x = p[weatherNames[i]]
@@ -122,7 +125,9 @@ local function presetToCurrentWeather(p)
         setWeatherRGB(w.sunSunsetColor, x.sunSunsetColor)
         setWeatherRGB(w.sunNightColor, x.sunNightColor)
         setWeatherRGB(w.sundiscSunsetColor, x.sundiscSunsetColor)
-        w.cloudTexture = x.cloudTexture or this.defaultClouds[i]
+        if (changeTextures) then
+            w.cloudTexture = x.cloudTexture or this.defaultClouds[i]
+        end
     end
 
     -- Weather switch required to load cloud texture, try to preserve transitions.
@@ -151,6 +156,7 @@ local function presetToTransitionWeather(p)
         dest.b = src[3]
     end
     
+    local changeTextures = not config.disableSkyTextureChanges
     local wc = tes3.worldController.weatherController
     for i, w in ipairs(wc.weathers) do
         local x = p[weatherNames[i]]
@@ -176,8 +182,10 @@ local function presetToTransitionWeather(p)
             setWeatherRGB(w.sundiscSunsetColor, x.sundiscSunsetColor)
         end
         -- Set all clouds except for transition target, or it will jump when starting the next transition.
-        if (w ~= wc.nextWeather or wc.transitionScalar <= 0.05) then
-            w.cloudTexture = x.cloudTexture or this.defaultClouds[i]
+        if (changeTextures) then
+            if (w ~= wc.nextWeather or wc.transitionScalar <= 0.05) then
+                w.cloudTexture = x.cloudTexture or this.defaultClouds[i]
+            end
         end
     end
 end
@@ -296,7 +304,7 @@ local function sRGBToLCh(sRGB)
         0.0193306 * linRGB[1] + 0.1191972 * linRGB[2] + 0.9503726 * linRGB[3]
     }
     
-    -- To L*ab D50.
+    -- To L*ab D65.
     xyz = { xyz[1] / 0.95047, xyz[2], xyz[3] / 1.08883 }
     for i = 1, 3 do
         if (xyz[i] > 0.008856) then
@@ -327,7 +335,7 @@ end
 
 -- Colour space conversions for picker. CIE LCh perceptual to unclamped sRGB.
 local function LChTosRGB(LCh)
-    -- LCh to L*ab D50.
+    -- LCh to L*ab D65.
     local Lab = {
         LCh[1],
         LCh[2] * math.cos(math.rad(LCh[3])),
@@ -475,6 +483,10 @@ local function createPickerAdv(params)
     picker:register("mouseDown", function(e)
         table.insert(this.undoStack, currentWeatherToPreset())
         this.redoStack = {}
+        tes3ui.captureMouseDrag(true)
+    end)
+    picker:register("mouseRelease", function(e)
+        tes3ui.captureMouseDrag(false)
     end)
     picker:register("mouseStillPressed", function(e)
         local propX = math.max(0, math.min(1, e.relativeX / picker.width))
@@ -495,7 +507,7 @@ local function createPickerAdv(params)
 	return { block = horizontalBlock, label = label, pickerLabel = pickerLabel, picker = picker }
 end
 
-function createRadioButtonPackage(params)
+local function createRadioButtonPackage(params)
     local buttons = {}
 
 	local horizontalBlock = params.parent:createBlock{ id = params.id }
@@ -840,12 +852,12 @@ local function createTabEditor()
     local colourBlock = page:createBlock{ id = this.id_colourBlock }
 	colourBlock.layoutWidthFraction = 1.0
     colourBlock.autoHeight = true
-    colourBlock.borderTop = 8
+    colourBlock.borderTop = 6
 	colourBlock.flowDirection = "top_to_bottom"
     
     local undoRedo = page:createBlock{}
     undoRedo.absolutePosAlignX = 0.96
-    undoRedo.absolutePosAlignY = 0.92
+    undoRedo.absolutePosAlignY = 0.93
     undoRedo.autoWidth = true
     undoRedo.autoHeight = true
     local undoButton = undoRedo:createButton{ text = "Undo" }
@@ -989,7 +1001,7 @@ local function createTabPresets()
             renameInput.parent.visible = false
             tes3ui.acquireTextInput(nil)
 
-            if (oldName == newName) then
+            if (oldName == newName or newName == "") then
                 return
             end
             if (config[newName]) then
@@ -1163,7 +1175,8 @@ local function toggle(e)
         if (not menu) then
             createAdjuster()
             if (not tes3ui.menuMode()) then
-                tes3ui.enterMenuMode(menu)
+                -- Enter menu mode without regular menus appearing.
+                tes3ui.enterMenuMode(this.id_menu)
             end
         else
             this.menuX = menu.positionX
@@ -1179,6 +1192,11 @@ end
 local regionTransitionK = 1 / math.max(1, regionTransitionDuration)
 
 local function customTransition(e)
+    -- Pause transition when inside.
+    if (not this.lastRegion) then
+        return
+    end
+    
     local wc = tes3.worldController.weatherController
     local dt = regionTransitionK * e.delta
 
@@ -1257,17 +1275,19 @@ local function onCellChanged()
                 local currentWeatherOriginalClouds = wc.currentWeather.cloudTexture
                 switchPreset(pname, true)
 
-                -- Re-trigger transition to load textures, or set up a second transition to do it later.
-                if (wc.nextWeather) then
-                    local t = wc.transitionScalar
-                    if (t <= 0.05) then
-                        wc:switchTransition(wc.nextWeather.index)
-                        wc.transitionScalar = t
-                    else
-                        this.secondTransition = wc.nextWeather
+                if (not config.disableSkyTextureChanges) then
+                    -- Re-trigger transition to load textures, or set up a second transition to do it later.
+                    if (wc.nextWeather) then
+                        local t = wc.transitionScalar
+                        if (t <= 0.05) then
+                            wc:switchTransition(wc.nextWeather.index)
+                            wc.transitionScalar = t
+                        else
+                            this.secondTransition = wc.nextWeather
+                        end
+                    elseif (currentWeatherOriginalClouds ~= wc.currentWeather.cloudTexture) then
+                        wc:switchTransition(wc.currentWeather.index)
                     end
-                elseif (currentWeatherOriginalClouds ~= wc.currentWeather.cloudTexture) then
-                    wc:switchTransition(wc.currentWeather.index)
                 end
 
                 -- Begin interpolation.
@@ -1337,3 +1357,4 @@ mcm.configId = configId
 mcm.config = config
 event.register("modConfigReady", mcm.registerModConfig)
 event.register("initialized", init)
+mwse.log("[Weather Adjuster] Loaded successfully.")
