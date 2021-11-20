@@ -6604,19 +6604,6 @@
             "indexed_timestamp": 1625492394
         },
         {
-            "mod_id": 49904,
-            "name": "Arrow Catch",
-            "author": "Stripes",
-            "files": [
-                {
-                    "file_id": 1000025274,
-                    "name": "ArrowCatchMWSE-49904-2-1622793299.7z",
-                    "version": "2"
-                }
-            ],
-            "indexed_timestamp": 1625492548
-        },
-        {
             "mod_id": 49905,
             "name": "Wispy Light (OpenMW)",
             "author": "kindi",
@@ -6643,19 +6630,6 @@
             "indexed_timestamp": 1633550919
         },
         {
-            "mod_id": 49912,
-            "name": "What Are My Attributes",
-            "author": "RingComics",
-            "files": [
-                {
-                    "file_id": 1000025225,
-                    "name": "WAMA-49912-1-0-0-1622585664.zip",
-                    "version": "1.0.0"
-                }
-            ],
-            "indexed_timestamp": 1625492547
-        },
-        {
             "mod_id": 49913,
             "name": "The Vampire Hunter's Legacy",
             "author": "VvardenfellStormSage Safebox and Rubberman",
@@ -6667,19 +6641,6 @@
                 }
             ],
             "indexed_timestamp": 1625492548
-        },
-        {
-            "mod_id": 49913,
-            "name": "The Vampire Hunter's Legacy",
-            "author": "VvardenfellStormSage Safebox and Rubberman",
-            "files": [
-                {
-                    "file_id": 1000025325,
-                    "name": "Vampire Hunter's Legacy-49913-1-3-1623001096.zip",
-                    "version": "1.3"
-                }
-            ],
-            "indexed_timestamp": 1625492442
         },
         {
             "mod_id": 49919,
@@ -6708,19 +6669,6 @@
             "indexed_timestamp": 1625492564
         },
         {
-            "mod_id": 49920,
-            "name": "Skoomaesthesia",
-            "author": "Merlord and XeroFoxx",
-            "files": [
-                {
-                    "file_id": 1000025241,
-                    "name": "Skoomaesthesia-49920-1-0-0-1622620500.7z",
-                    "version": "1.0.0"
-                }
-            ],
-            "indexed_timestamp": 1625492657
-        },
-        {
             "mod_id": 49921,
             "name": "Primitive Barter",
             "author": "De Kweeper",
@@ -6732,19 +6680,6 @@
                 }
             ],
             "indexed_timestamp": 1625492529
-        },
-        {
-            "mod_id": 49921,
-            "name": "Primitive Barter",
-            "author": "De Kweeper",
-            "files": [
-                {
-                    "file_id": 1000025249,
-                    "name": "Primitive Barter-49921-0-001-1622664742.7z",
-                    "version": "0.001"
-                }
-            ],
-            "indexed_timestamp": 1625492578
         },
         {
             "mod_id": 49925,
@@ -6939,19 +6874,6 @@
             "indexed_timestamp": 1625492626
         },
         {
-            "mod_id": 50019,
-            "name": "DuraGra My House",
-            "author": "Booze",
-            "files": [
-                {
-                    "file_id": 1000025782,
-                    "name": "DuraGra My House-50019-1-3-1625369170.7z",
-                    "version": "1.3"
-                }
-            ],
-            "indexed_timestamp": 1625492574
-        },
-        {
             "mod_id": 50020,
             "name": "Concept Arts plantations",
             "author": "Duo Dinamico",
@@ -6989,19 +6911,6 @@
                 }
             ],
             "indexed_timestamp": 1628271001
-        },
-        {
-            "mod_id": 50061,
-            "name": "Companion Stop",
-            "author": "Stripes",
-            "files": [
-                {
-                    "file_id": 1000026026,
-                    "name": "CompanionStop-50061-1-1626861840.7z",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1626944095
         },
         {
             "mod_id": 50061,
