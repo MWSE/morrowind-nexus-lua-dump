@@ -110,12 +110,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000026301,
-                    "name": "Bardic Inspiration-45441-3-0-1-1628586713.7z",
-                    "version": "3.0.1"
+                    "file_id": 1000028163,
+                    "name": "Bardic Inspiration-45441-3-0-4-1638364627.7z",
+                    "version": "3.0.4"
                 }
             ],
-            "indexed_timestamp": 1628735688
+            "indexed_timestamp": 1638609062
         },
         {
             "mod_id": 45550,
@@ -380,12 +380,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000027916,
-                    "name": "Mage Robes-45739-2-0-3-1636983504.7z",
-                    "version": "2.0.3"
+                    "file_id": 1000028171,
+                    "name": "Mage Robes-45739-2-0-4-1638416642.7z",
+                    "version": "2.0.4"
                 }
             ],
-            "indexed_timestamp": 1637421898
+            "indexed_timestamp": 1638609172
         },
         {
             "mod_id": 45742,
@@ -1693,17 +1693,17 @@
                     "version": "3.1"
                 },
                 {
-                    "file_id": 1000027941,
-                    "name": "4NM_English-47015-3-5-1637084810.zip",
-                    "version": "3.5"
+                    "file_id": 1000028182,
+                    "name": "4NM_English-47015-3-8-1638479915.zip",
+                    "version": "3.8"
                 },
                 {
-                    "file_id": 1000027942,
-                    "name": "4NM_Russian-47015-3-5-1637084879.zip",
-                    "version": "3.5"
+                    "file_id": 1000028183,
+                    "name": "4NM_Russian-47015-3-8-1638479940.zip",
+                    "version": "3.8"
                 }
             ],
-            "indexed_timestamp": 1637421941
+            "indexed_timestamp": 1638609208
         },
         {
             "mod_id": 47029,
@@ -1907,7 +1907,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1625492636
+            "indexed_timestamp": 1638609193
         },
         {
             "mod_id": 47133,
@@ -2505,12 +2505,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000027917,
-                    "name": "abotSmartJournal105-47492-1-0-5-1636993005.7z",
-                    "version": "1.0.5"
+                    "file_id": 1000028201,
+                    "name": "abotSmartJournal106-47492-1-0-6-1638570625.7z",
+                    "version": "1.0.6"
                 }
             ],
-            "indexed_timestamp": 1637421673
+            "indexed_timestamp": 1638609198
         },
         {
             "mod_id": 47510,
@@ -3318,12 +3318,17 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000018617,
-                    "name": "abotPWTR-48059-1-00-1589635986.7z",
-                    "version": "1.00"
+                    "file_id": 1000028043,
+                    "name": "abotPTWR-48059-1-01b-1637691738.7z",
+                    "version": "1.01b"
+                },
+                {
+                    "file_id": 1000028193,
+                    "name": "abotPTWR103-48059-1-0-3-1638547423.7z",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1625492407
+            "indexed_timestamp": 1638609205
         },
         {
             "mod_id": 48062,
@@ -4079,12 +4084,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000022454,
-                    "name": "Right Click Menu Exit-48458-1-0-5-1610235297.7z",
-                    "version": "1.0.5"
+                    "file_id": 1000028095,
+                    "name": "Right Click Menu Exit-48458-1-0-6-1637987467.7z",
+                    "version": "1.0.6"
                 }
             ],
-            "indexed_timestamp": 1625492418
+            "indexed_timestamp": 1638609166
         },
         {
             "mod_id": 48459,
@@ -5099,12 +5104,12 @@
             "author": "VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000022114,
-                    "name": "Alchemical Knowledge-49036-1-2-1607581027.zip",
-                    "version": "1.2"
+                    "file_id": 1000028115,
+                    "name": "Alchemical Knowledge-49036-1-3-1638089416.zip",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1625492468
+            "indexed_timestamp": 1638609074
         },
         {
             "mod_id": 49037,
@@ -5169,12 +5174,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000027993,
-                    "name": "Ashfall-49057-2-6-14-1637389682.7z",
-                    "version": "2.6.14"
+                    "file_id": 1000028098,
+                    "name": "Ashfall-49057-2-6-18-1638009181.7z",
+                    "version": "2.6.18"
                 }
             ],
-            "indexed_timestamp": 1637421792
+            "indexed_timestamp": 1638609060
         },
         {
             "mod_id": 49075,
@@ -5465,12 +5470,12 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000027996,
-                    "name": "Beautiful Cities of Morrowind-49231-2-3-5-1637401923.7z",
-                    "version": "2.3.5"
+                    "file_id": 1000028186,
+                    "name": "Beautiful Cities of Morrowind-49231-2-3-7-1638483582.7z",
+                    "version": "2.3.7"
                 }
             ],
-            "indexed_timestamp": 1637421992
+            "indexed_timestamp": 1638609255
         },
         {
             "mod_id": 49232,
@@ -5541,7 +5546,7 @@
                     "version": "1.6.9"
                 }
             ],
-            "indexed_timestamp": 1635630769
+            "indexed_timestamp": 1638609237
         },
         {
             "mod_id": 49255,
@@ -6513,12 +6518,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000027919,
-                    "name": "abotSmartCompanions105-49848-1-0-5-1636996329.7z",
-                    "version": "1.0.5"
+                    "file_id": 1000028200,
+                    "name": "abotSmartCompanions106-49848-1-0-6-1638570008.7z",
+                    "version": "1.0.6"
                 }
             ],
-            "indexed_timestamp": 1637421766
+            "indexed_timestamp": 1638609221
         },
         {
             "mod_id": 49853,
@@ -6879,12 +6884,12 @@
             "author": "Duo Dinamico",
             "files": [
                 {
-                    "file_id": 1000026743,
-                    "name": "Concept Arts Plantations-50020-1-9-4-1631136264.rar",
-                    "version": "1.9.4"
+                    "file_id": 1000028026,
+                    "name": "Concept Arts Plantations-50020-1-9-6-1637603595.rar",
+                    "version": "1.9.6"
                 }
             ],
-            "indexed_timestamp": 1633550715
+            "indexed_timestamp": 1638609134
         },
         {
             "mod_id": 50029,
@@ -7327,9 +7332,9 @@
             "author": "Lucas Remiros Stripes OAAB_Data Team natinnet RuffinVangarr Ashstaar",
             "files": [
                 {
-                    "file_id": 1000027973,
-                    "name": "OAAB Weapons Integrated-50307-1-5-1637270814.7z",
-                    "version": "1.5"
+                    "file_id": 1000028045,
+                    "name": "OAAB Weapons Integrated-50307-1-6-1637700672.7z",
+                    "version": "1.6"
                 },
                 {
                     "file_id": 1000027791,
@@ -7342,7 +7347,7 @@
                     "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1637422080
+            "indexed_timestamp": 1638609275
         },
         {
             "mod_id": 50308,
@@ -7390,9 +7395,9 @@
                     "version": "1.7.1"
                 },
                 {
-                    "file_id": 1000027972,
-                    "name": "BTBGI (Necro Edit) Tweaked and Patches-50308-1-4-5-1637270743.7z",
-                    "version": "1.4.5"
+                    "file_id": 1000028126,
+                    "name": "BTBGI (Necro Edit) Tweaked and Patches-50308-1-7-3-1638135027.7z",
+                    "version": "1.7.3"
                 },
                 {
                     "file_id": 1000027961,
@@ -7400,7 +7405,7 @@
                     "version": "1.4.2"
                 }
             ],
-            "indexed_timestamp": 1637422010
+            "indexed_timestamp": 1638609261
         },
         {
             "mod_id": 50318,
@@ -7511,6 +7516,24 @@
             "indexed_timestamp": 1637422024
         },
         {
+            "mod_id": 50352,
+            "name": "Onion - Layered Headwear and Facial Wear",
+            "author": "Safebox - requested by RuffinVangarr",
+            "files": [
+                {
+                    "file_id": 1000028000,
+                    "name": "Onion - Layered Equipment-50352-1-1637437238.7z",
+                    "version": "1"
+                },
+                {
+                    "file_id": 1000027820,
+                    "name": "Onion - Example-50352-1-1636580780.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1638609396
+        },
+        {
             "mod_id": 50370,
             "name": "Safety In Numbers",
             "author": "Stripes",
@@ -7522,6 +7545,19 @@
                 }
             ],
             "indexed_timestamp": 1637421788
+        },
+        {
+            "mod_id": 50370,
+            "name": "Safety In Numbers",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000027628,
+                    "name": "SafetyInNumbers-50370-1-1635703730.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1638609694
         },
         {
             "mod_id": 50376,
@@ -7537,6 +7573,55 @@
             "indexed_timestamp": 1637421860
         },
         {
+            "mod_id": 50376,
+            "name": "Slaughtery Slaughterfish",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000027655,
+                    "name": "SSF-50376-1-1635849420.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1638609671
+        },
+        {
+            "mod_id": 50386,
+            "name": "Cloud Storage Warehouse - storage resource for packrats",
+            "author": "The Wanderer",
+            "files": [
+                {
+                    "file_id": 1000028023,
+                    "name": "CSW missing lua code-50386-1-0-1637580069.7z",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000028024,
+                    "name": "Cloud Storage Warehouse-50386-1-0-1637580363.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1638609379
+        },
+        {
+            "mod_id": 50386,
+            "name": "Cloud Storage Warehouse - storage resource for packrats",
+            "author": "The Wanderer",
+            "files": [
+                {
+                    "file_id": 1000028023,
+                    "name": "CSW missing lua code-50386-1-0-1637580069.7z",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000028024,
+                    "name": "Cloud Storage Warehouse-50386-1-0-1637580363.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1638609703
+        },
+        {
             "mod_id": 50389,
             "name": "Immersive Tables",
             "author": "Corsair",
@@ -7548,6 +7633,19 @@
                 }
             ],
             "indexed_timestamp": 1637421978
+        },
+        {
+            "mod_id": 50389,
+            "name": "Immersive Tables",
+            "author": "Corsair",
+            "files": [
+                {
+                    "file_id": 1000027766,
+                    "name": "Immersive Tables-50389-1-1-1636312110.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1638609665
         },
         {
             "mod_id": 50400,
@@ -7563,6 +7661,19 @@
             "indexed_timestamp": 1637422001
         },
         {
+            "mod_id": 50400,
+            "name": "Morrowind Crafting TR Edition",
+            "author": "Drac and Toccatta",
+            "files": [
+                {
+                    "file_id": 1000027780,
+                    "name": "Morrowind Crafting 3 beta 1.7z-50400-3-0b1-1636346139.7z",
+                    "version": "3.0b1"
+                }
+            ],
+            "indexed_timestamp": 1638609635
+        },
+        {
             "mod_id": 50405,
             "name": "Harder Battle",
             "author": "Stripes",
@@ -7576,6 +7687,19 @@
             "indexed_timestamp": 1637422070
         },
         {
+            "mod_id": 50405,
+            "name": "Harder Battle",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000027784,
+                    "name": "HarderBattleMWSE-50405-1-1636398307.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1638609648
+        },
+        {
             "mod_id": 50446,
             "name": "MWSE Alchemy Takes Time (inpv edit)",
             "author": "baldamundo Merlord inpv",
@@ -7587,9 +7711,110 @@
                 }
             ],
             "indexed_timestamp": 1637421825
+        },
+        {
+            "mod_id": 50446,
+            "name": "MWSE Alchemy Takes Time (inpv edit)",
+            "author": "baldamundo Merlord inpv",
+            "files": [
+                {
+                    "file_id": 1000027971,
+                    "name": "MWSE Alchemy Takes Time (inpv edit)-50446-1-0-1637267206.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1638609663
+        },
+        {
+            "mod_id": 50448,
+            "name": "Fashionwind - MWSE Glasses and Goggles",
+            "author": "Ruffinvangarr and Safebox",
+            "files": [
+                {
+                    "file_id": 1000028004,
+                    "name": "Fashionwind - Glasses and Goggles-50448-1-0-1637454024.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1638609396
+        },
+        {
+            "mod_id": 50448,
+            "name": "Fashionwind - MWSE Glasses and Goggles",
+            "author": "Ruffinvangarr and Safebox",
+            "files": [
+                {
+                    "file_id": 1000028004,
+                    "name": "Fashionwind - Glasses and Goggles-50448-1-0-1637454024.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1638609619
+        },
+        {
+            "mod_id": 50473,
+            "name": "(MWSE) Charming has Consequences",
+            "author": "KirbonatedBeverage",
+            "files": [
+                {
+                    "file_id": 1000028069,
+                    "name": "Charming has Consequences-50473-1-0-1637810074.zip",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000028084,
+                    "name": "Charming has Consequences 1.1-50473-1-1-1637893464.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1638609434
+        },
+        {
+            "mod_id": 50473,
+            "name": "(MWSE) Charming has Consequences",
+            "author": "KirbonatedBeverage",
+            "files": [
+                {
+                    "file_id": 1000028069,
+                    "name": "Charming has Consequences-50473-1-0-1637810074.zip",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000028084,
+                    "name": "Charming has Consequences 1.1-50473-1-1-1637893464.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1638609713
+        },
+        {
+            "mod_id": 50499,
+            "name": "Extradimensional Pockets",
+            "author": "Yorklag",
+            "files": [
+                {
+                    "file_id": 1000028190,
+                    "name": "Extradimensional Pockets-50499-1-0-0-1638523211.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1638609436
+        },
+        {
+            "mod_id": 50499,
+            "name": "Extradimensional Pockets",
+            "author": "Yorklag",
+            "files": [
+                {
+                    "file_id": 1000028190,
+                    "name": "Extradimensional Pockets-50499-1-0-0-1638523211.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1638609681
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1635630408,
-    "last_scan_for_updated_mods_timestamp": 1637421661,
-    "highest_validated_mod_id": 50368
+    "last_scan_for_added_mods_timestamp": 1638609594,
+    "last_scan_for_updated_mods_timestamp": 1638609050,
+    "highest_validated_mod_id": 50499
 }
