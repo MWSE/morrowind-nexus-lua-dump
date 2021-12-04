@@ -2505,12 +2505,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000028201,
-                    "name": "abotSmartJournal106-47492-1-0-6-1638570625.7z",
-                    "version": "1.0.6"
+                    "file_id": 1000028208,
+                    "name": "abotSmartJournal107-47492-1-0-7-1638616874.7z",
+                    "version": "1.0.7"
                 }
             ],
-            "indexed_timestamp": 1638609198
+            "indexed_timestamp": 1638626682
         },
         {
             "mod_id": 47510,
@@ -7815,6 +7815,6 @@
         }
     ],
     "last_scan_for_added_mods_timestamp": 1638609594,
-    "last_scan_for_updated_mods_timestamp": 1638609050,
+    "last_scan_for_updated_mods_timestamp": 1638626680,
     "highest_validated_mod_id": 50499
 }
