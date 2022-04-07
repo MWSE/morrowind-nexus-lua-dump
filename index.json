@@ -489,7 +489,7 @@
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1640842209
+            "indexed_timestamp": 1649294625
         },
         {
             "mod_id": 45886,
@@ -795,12 +795,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000029633,
-                    "name": "abotLoadingDoors122-46094-1-22-1646747664.7z",
-                    "version": "1.22"
+                    "file_id": 1000029850,
+                    "name": "abotLoadingDoors200-46094-2-00-1648073992.7z",
+                    "version": "2.00"
                 }
             ],
-            "indexed_timestamp": 1647388976
+            "indexed_timestamp": 1649294596
         },
         {
             "mod_id": 46098,
@@ -1711,17 +1711,17 @@
                     "version": "3.1"
                 },
                 {
-                    "file_id": 1000029536,
-                    "name": "4NM_English-47015-3-16-1646075296.zip",
-                    "version": "3.16"
+                    "file_id": 1000029884,
+                    "name": "4NM_English-47015-3-17-1648467959.zip",
+                    "version": "3.17"
                 },
                 {
-                    "file_id": 1000029537,
-                    "name": "4NM_Russian-47015-3-16-1646075319.zip",
-                    "version": "3.16"
+                    "file_id": 1000029885,
+                    "name": "4NM_Russian-47015-3-17-1648467981.zip",
+                    "version": "3.17"
                 }
             ],
-            "indexed_timestamp": 1647389131
+            "indexed_timestamp": 1649294379
         },
         {
             "mod_id": 47029,
@@ -1900,12 +1900,12 @@
             "author": "BTB and Necrolesian",
             "files": [
                 {
-                    "file_id": 1000029317,
-                    "name": "BTB's Game Improvements - Necro Edit-47129-2-0-14-1644907206.7z",
-                    "version": "2.0.14"
+                    "file_id": 1000029809,
+                    "name": "BTB's Game Improvements - Necro Edit-47129-2-0-15-1647851241.7z",
+                    "version": "2.0.15"
                 }
             ],
-            "indexed_timestamp": 1645043003
+            "indexed_timestamp": 1649294426
         },
         {
             "mod_id": 47130,
@@ -1978,12 +1978,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000022828,
-                    "name": "DragonDoor-47169-2-10-1612271600.zip",
-                    "version": "2.10"
+                    "file_id": 1000029811,
+                    "name": "DragonDoor-47169-2-11-1647863790.zip",
+                    "version": "2.11"
                 }
             ],
-            "indexed_timestamp": 1640842020
+            "indexed_timestamp": 1649294623
         },
         {
             "mod_id": 47170,
@@ -2191,7 +2191,7 @@
                     "version": "2.0"
                 }
             ],
-            "indexed_timestamp": 1640842254
+            "indexed_timestamp": 1649294618
         },
         {
             "mod_id": 47270,
@@ -4030,12 +4030,12 @@
             "author": "nelxxz",
             "files": [
                 {
-                    "file_id": 1000024599,
-                    "name": "MAFST-MWSE-48451-1-1a-1620774665.7z",
-                    "version": "1.1a"
+                    "file_id": 1000029907,
+                    "name": "Movement and Fatigue Settings Tweaked (MWSE Version)-48451-1-0c-1648649849.zip",
+                    "version": "1.0c"
                 }
             ],
-            "indexed_timestamp": 1640841989
+            "indexed_timestamp": 1649294625
         },
         {
             "mod_id": 48453,
@@ -4165,12 +4165,12 @@
             "author": "AdituV and VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000021368,
-                    "name": "Locks-and-Traps-Detection-48528-0-9-7-1603025312.zip",
-                    "version": "0.9.7"
+                    "file_id": 1000029990,
+                    "name": "Locks-and-Traps-Detection-48528-1-0-1649138543.zip",
+                    "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1640842249
+            "indexed_timestamp": 1649294277
         },
         {
             "mod_id": 48529,
@@ -4816,12 +4816,12 @@
             "author": "Rougetet Merlord Danae",
             "files": [
                 {
-                    "file_id": 1000027688,
-                    "name": "Booze for Purist-48914-1-2-2-1636026134.7z",
-                    "version": "1.2.2"
+                    "file_id": 1000029822,
+                    "name": "Booze for Purists-48914-1-2-3-1647896506.7z",
+                    "version": "1.2.3"
                 }
             ],
-            "indexed_timestamp": 1640842311
+            "indexed_timestamp": 1649294520
         },
         {
             "mod_id": 48921,
@@ -4977,12 +4977,12 @@
             "author": "VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000021528,
-                    "name": "Borrowed Time-48971-1-1-1604048001.zip",
-                    "version": "1.1"
+                    "file_id": 1000029989,
+                    "name": "Borrowed Time-48971-1-2-1649138064.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1640842084
+            "indexed_timestamp": 1649294330
         },
         {
             "mod_id": 48972,
@@ -5505,12 +5505,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000029617,
-                    "name": "Beautiful Cities of Morrowind-49231-2-4-6-1646600503.7z",
-                    "version": "2.4.6"
+                    "file_id": 1000029899,
+                    "name": "Beautiful Cities of Morrowind-49231-2-5-0-1648629058.7z",
+                    "version": "2.5.0"
+                },
+                {
+                    "file_id": 1000029901,
+                    "name": "BCoM - Patches-49231-2-5-0-1648629190.7z",
+                    "version": "2.5.0"
                 }
             ],
-            "indexed_timestamp": 1647389145
+            "indexed_timestamp": 1649294656
         },
         {
             "mod_id": 49232,
@@ -5563,7 +5568,7 @@
                     "version": "V2"
                 }
             ],
-            "indexed_timestamp": 1647389112
+            "indexed_timestamp": 1649294660
         },
         {
             "mod_id": 49251,
@@ -6111,12 +6116,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000025575,
-                    "name": "Ultra AI-49670-1-2-1624116197.zip",
-                    "version": "1.2"
+                    "file_id": 1000030005,
+                    "name": "Ultra AI-49670-1-4-1649184848.zip",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1640842349
+            "indexed_timestamp": 1649294344
         },
         {
             "mod_id": 49680,
@@ -6711,12 +6716,12 @@
             "author": "Uncle Boss",
             "files": [
                 {
-                    "file_id": 1000025266,
-                    "name": "Deadly Combat Exhaustion-49925-1-0-1622747150.zip",
-                    "version": "1.0"
+                    "file_id": 1000029757,
+                    "name": "Deadly Combat Exhaustion 2.0-49925-2-0-1647549984.zip",
+                    "version": "2.0"
                 }
             ],
-            "indexed_timestamp": 1640842146
+            "indexed_timestamp": 1649294358
         },
         {
             "mod_id": 49933,
@@ -7328,9 +7333,9 @@
             "author": "Lucas Remiros Stripes OAAB_Data Team natinnet RuffinVangarr Ashstaar",
             "files": [
                 {
-                    "file_id": 1000029740,
-                    "name": "OAAB Weapons Integrated-50307-1-9-1647362619.7z",
-                    "version": "1.9"
+                    "file_id": 1000029806,
+                    "name": "OAAB Weapons Integrated-50307-2-0-1-1647832221.7z",
+                    "version": "2.0.1"
                 },
                 {
                     "file_id": 1000027791,
@@ -7343,12 +7348,12 @@
                     "version": "1.1"
                 },
                 {
-                    "file_id": 1000029676,
-                    "name": "RuffinVangarr Armors Integrated-50307-1-0-2-1647055167.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000029789,
+                    "name": "RuffinVangarr Armors Integrated-50307-2-0-1647707848.7z",
+                    "version": "2.0"
                 }
             ],
-            "indexed_timestamp": 1647389128
+            "indexed_timestamp": 1649294715
         },
         {
             "mod_id": 50308,
@@ -7386,19 +7391,14 @@
                     "version": "1.5.1"
                 },
                 {
-                    "file_id": 1000029677,
-                    "name": "BTBGI (Necro Edit) Tweaked-50308-2-0-1-1647055268.7z",
-                    "version": "2.0.1"
-                },
-                {
                     "file_id": 1000027925,
                     "name": "BTBGI Tweaked Patches-50308-1-7-1637007523.7z",
                     "version": "1.7"
                 },
                 {
-                    "file_id": 1000029739,
-                    "name": "BTBGI (Necro Edit) Tweaked Patches-50308-2-0-1-1647362567.7z",
-                    "version": "2.0.1"
+                    "file_id": 1000029794,
+                    "name": "BTBGI (Necro Edit) Tweaked Patches-50308-2-1-0-1647714516.7z",
+                    "version": "2.1.0"
                 },
                 {
                     "file_id": 1000029132,
@@ -7409,9 +7409,14 @@
                     "file_id": 1000027961,
                     "name": "BTBGI (Necro Edit) Tweaked 1.4.2-50308-1-4-2-1637190894.7z",
                     "version": "1.4.2"
+                },
+                {
+                    "file_id": 1000029813,
+                    "name": "BTB's Game Improvements (Necro Edit) Tweaked - Patches-50308-2-1-1-1647875437.7z",
+                    "version": "2.1.1"
                 }
             ],
-            "indexed_timestamp": 1647389143
+            "indexed_timestamp": 1649294736
         },
         {
             "mod_id": 50318,
@@ -7432,12 +7437,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000027837,
-                    "name": "MWSE-Kua NPC Birthsigns-50337-1-0-2-1636652853.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000029770,
+                    "name": "MWSE-Lua NPC Birthsigns-50337-1-03-1647627460.7z",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1640842226
+            "indexed_timestamp": 1649294392
         },
         {
             "mod_id": 50339,
@@ -7504,9 +7509,9 @@
             "author": "Danae Merlord",
             "files": [
                 {
-                    "file_id": 1000027885,
-                    "name": "Ahead of the Classes-50346-2-0-1636829033.7z",
-                    "version": "2.0"
+                    "file_id": 1000030026,
+                    "name": "Ahead of the Classes-50346-2-0-3-1649272440.7z",
+                    "version": "2.0.3"
                 },
                 {
                     "file_id": 1000027498,
@@ -7517,14 +7522,9 @@
                     "file_id": 1000027503,
                     "name": "Ahead of the classes 1pt4-50346-1-4-1634977905.7z",
                     "version": "1.4"
-                },
-                {
-                    "file_id": 1000028966,
-                    "name": "Ahead of the classes-50346-2-0-1-1642708530.7z",
-                    "version": "2.0.1"
                 }
             ],
-            "indexed_timestamp": 1643072089
+            "indexed_timestamp": 1649294717
         },
         {
             "mod_id": 50352,
@@ -7542,12 +7542,12 @@
                     "version": "2"
                 },
                 {
-                    "file_id": 1000029443,
-                    "name": "Onion - Layered Accessories-50352-2-1645477546.7z",
-                    "version": "2"
+                    "file_id": 1000029895,
+                    "name": "Onion - Layered Accessories-50352-2-3-1648585239.7z",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1647389129
+            "indexed_timestamp": 1649294673
         },
         {
             "mod_id": 50370,
@@ -7586,12 +7586,12 @@
                     "version": "1.22"
                 },
                 {
-                    "file_id": 1000029680,
-                    "name": "Cloud Storage Warehouse - Lua code fix-50386-1-22-1647063596.7z",
-                    "version": "1.22"
+                    "file_id": 1000029837,
+                    "name": "Cloud Storage Warehouse - Lua code update-50386-1-23-1648015415.7z",
+                    "version": "1.23"
                 }
             ],
-            "indexed_timestamp": 1647389130
+            "indexed_timestamp": 1649294766
         },
         {
             "mod_id": 50389,
@@ -7612,12 +7612,12 @@
             "author": "Drac and Toccatta",
             "files": [
                 {
-                    "file_id": 1000027780,
-                    "name": "Morrowind Crafting 3 beta 1.7z-50400-3-0b1-1636346139.7z",
-                    "version": "3.0b1"
+                    "file_id": 1000029836,
+                    "name": "Morrowind Crafting 3 beta 2 (TR Edition)-50400-3-0b2-1648003594.7z",
+                    "version": "3.0b2"
                 }
             ],
-            "indexed_timestamp": 1640842176
+            "indexed_timestamp": 1649294453
         },
         {
             "mod_id": 50405,
@@ -7874,12 +7874,12 @@
             "author": "Stripes",
             "files": [
                 {
-                    "file_id": 1000028729,
-                    "name": "rations-50599-1-1641405394.7z",
-                    "version": "1"
+                    "file_id": 1000029934,
+                    "name": "rations-50599-1-1-1648837222.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1645042898
+            "indexed_timestamp": 1649294396
         },
         {
             "mod_id": 50617,
@@ -8162,12 +8162,12 @@
             "author": "Nkfree",
             "files": [
                 {
-                    "file_id": 1000029515,
-                    "name": "TES3MP - Ally health bars-50822-1-0-1645915067.rar",
+                    "file_id": 1000029896,
+                    "name": "TES3MP - AlliedStats-50822-1-0-1648592081.rar",
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1647389098
+            "indexed_timestamp": 1649294395
         },
         {
             "mod_id": 50827,
@@ -8194,6 +8194,19 @@
                 }
             ],
             "indexed_timestamp": 1647389198
+        },
+        {
+            "mod_id": 50833,
+            "name": "A Maze Inn",
+            "author": "The Wanderer",
+            "files": [
+                {
+                    "file_id": 1000029974,
+                    "name": "A Maze Inn-50833-1-0-1649082041.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1649294799
         },
         {
             "mod_id": 50839,
@@ -8253,15 +8266,230 @@
             "author": "The Wanderer",
             "files": [
                 {
-                    "file_id": 1000029689,
-                    "name": "Cloud Storage Warehouse - Shoppe-50863-1-0-1647100945.7z",
+                    "file_id": 1000029993,
+                    "name": "Cloud Storage Warehouse Shoppe - Lua code update - scale fix-50863-1-02-1649143137.7z",
+                    "version": "1.02"
+                },
+                {
+                    "file_id": 1000029994,
+                    "name": "Cloud Storage Warehouse - Shoppe-50863-1-02-1649143398.7z",
+                    "version": "1.02"
+                }
+            ],
+            "indexed_timestamp": 1649294325
+        },
+        {
+            "mod_id": 50883,
+            "name": "Smarter Harder Barter",
+            "author": "quinnocent",
+            "files": [
+                {
+                    "file_id": 1000029768,
+                    "name": "Smarter Harder Barter-50883-1-0-1647609110.7z",
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1647389251
+            "indexed_timestamp": 1649294803
+        },
+        {
+            "mod_id": 50896,
+            "name": "Civilized Vvardenfell",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000030006,
+                    "name": "MWSE Version - Civilized Tamriel-50896-1-1-1649188001.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1649294829
+        },
+        {
+            "mod_id": 50914,
+            "name": "Attribute Carrier Mod",
+            "author": "PinkDarko",
+            "files": [
+                {
+                    "file_id": 1000029880,
+                    "name": "SUPERXP-50914-1-0-1648445146.7z",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000030023,
+                    "name": "AttributeCarrierMod-50914-0-4-1-1649266951.7z",
+                    "version": "0.4.1"
+                }
+            ],
+            "indexed_timestamp": 1649294703
+        },
+        {
+            "mod_id": 50924,
+            "name": "Breakable Unlimited Thieves Tools --- B.U.T.T.",
+            "author": "Krimson",
+            "files": [
+                {
+                    "file_id": 1000029917,
+                    "name": "Breakable Unlimited Thieves Tools --- B.U.T.T.-50924-1-1-1648727727.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1649294655
+        },
+        {
+            "mod_id": 50925,
+            "name": "Acid Rain",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000029909,
+                    "name": "Acid Rain-50925-1-0-1648653671.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1649294592
+        },
+        {
+            "mod_id": 50926,
+            "name": "Skill Capper - MWSE",
+            "author": "ddmlink",
+            "files": [
+                {
+                    "file_id": 1000029914,
+                    "name": "Skill Capper - MWSE-50926-1-0-1648697982.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1649294764
+        },
+        {
+            "mod_id": 50927,
+            "name": "Real Fire Damage - MWSE Edition",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000030003,
+                    "name": "Real Fire Damge MWSE Edition-50927-2-0-1649182395.7z",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1649294831
+        },
+        {
+            "mod_id": 50931,
+            "name": "Doors Anti Stuck",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000029922,
+                    "name": "abotDoorsAntiStuck100-50931-1-00-1648740049.7z",
+                    "version": "1.00"
+                },
+                {
+                    "file_id": 1000029950,
+                    "name": "abotDoorsAntiStuck101-50931-1-01-1648918178.7z",
+                    "version": "1.01"
+                }
+            ],
+            "indexed_timestamp": 1649294732
+        },
+        {
+            "mod_id": 50936,
+            "name": "MWSE Magicka Regen - Russian translation",
+            "author": "Koul99",
+            "files": [
+                {
+                    "file_id": 1000029927,
+                    "name": "MWSE Magicka Regen_MW_v1.2_RU-50936-1-2-1648789894.7z",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1649294491
+        },
+        {
+            "mod_id": 50941,
+            "name": "Absorb Effects Rebalanced",
+            "author": "Dark_Carl",
+            "files": [
+                {
+                    "file_id": 1000029983,
+                    "name": "Absorb Rebalanced-50941-1-2-1649107491.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1649294769
+        },
+        {
+            "mod_id": 50942,
+            "name": "The Spellmaker - an MWSE mod",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000029951,
+                    "name": "The Spellmaker - an MWSE mod-50942-1-0-1648928742.7z",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000029981,
+                    "name": "The Spellmaker - Configurable Version-50942-1-1-1649090479.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1649294675
+        },
+        {
+            "mod_id": 50951,
+            "name": "Staff Casting",
+            "author": "Ohayo Axemagister Dark_Carl",
+            "files": [
+                {
+                    "file_id": 1000030033,
+                    "name": "Staff Casting-50951-2-0-1649294024.7z",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1649294661
+        },
+        {
+            "mod_id": 50953,
+            "name": "SM Morag Tong Armor",
+            "author": "ShadowMimicry and VitruvianGuar",
+            "files": [
+                {
+                    "file_id": 1000030022,
+                    "name": "SM Morag Tong Armor (MWSE)-50953-1-0-1649257804.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1649294820
+        },
+        {
+            "mod_id": 50955,
+            "name": "Erratic Magic",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000030027,
+                    "name": "Erratic Magic-50955-1-0-1649272560.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1649294825
+        },
+        {
+            "mod_id": 50956,
+            "name": "The Astrologer and the Nightsky",
+            "author": "Sephumbra and Danae",
+            "files": [
+                {
+                    "file_id": 1000030028,
+                    "name": "Astrologer-50956-1-0-1649273045.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1649294475
         }
     ],
     "last_scan_for_added_mods_timestamp": 1647389998,
-    "last_scan_for_updated_mods_timestamp": 1638626680,
+    "last_scan_for_updated_mods_timestamp": 1649294274,
     "highest_validated_mod_id": 50878
 }
