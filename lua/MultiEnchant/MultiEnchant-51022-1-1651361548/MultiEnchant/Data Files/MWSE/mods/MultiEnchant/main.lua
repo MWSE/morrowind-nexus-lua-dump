@@ -1,0 +1,1 @@
+local function initialized(e) mwse.memory.writeBytes{address = 0x5C3B6C, bytes={0x90, 0x90, 0x90, 0x90, 0xD9, 0x44, 0x24, 0x10}} end		event.register("initialized", initialized)
