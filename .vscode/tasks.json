@@ -1,0 +1,125 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "format",
+            "type": "shell",
+            "command": "poetry run black --line-length 110 .",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "check",
+            "type": "shell",
+            "command": "poetry run mypy --strict .",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "poetry run pytest -rP",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "update",
+            "type": "shell",
+            "command": "poetry update",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "poetry run pyinstaller lua_dump.spec --noconfirm",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "download-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump download-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "extract-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump extract-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "remove-old-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump remove-old-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "scan-added-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump scan-added-mods Y",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "scan-updated-mods",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump scan-updated-mods 1m",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "lua-dump",
+            "type": "shell",
+            "command": "poetry run python -m lua_dump",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "git restore",
+            "type": "shell",
+            "command": "git restore --source=master index.json && git restore --source=master lua",
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true,
+                "focus": true
+            }
+        }
+    ]
+}
