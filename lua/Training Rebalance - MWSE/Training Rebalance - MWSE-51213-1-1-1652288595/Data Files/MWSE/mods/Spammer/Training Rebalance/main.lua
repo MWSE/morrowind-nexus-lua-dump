@@ -1,0 +1,8 @@
+local mod = require("Spammer\\Training Rebalance\\mod")
+event.register("initialized", function()
+event.register("skillRaised", mod.skillRaised)
+event.register("soundObjectPlay", mod.stopSound)
+event.register("uiActivated", mod.uiActivated)
+event.register("enterFrame", mod.enterFrame)
+    print("["..mod.name..", by Spammer] "..mod.ver.." Initialized!")
+end)
