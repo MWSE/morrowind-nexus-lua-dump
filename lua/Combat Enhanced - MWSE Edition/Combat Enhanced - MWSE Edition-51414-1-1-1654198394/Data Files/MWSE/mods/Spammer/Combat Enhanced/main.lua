@@ -1,0 +1,8 @@
+local mod = require("Spammer\\Combat Enhanced\\mod")
+event.register("modConfigReady", mod.registerModConfig)
+event.register("initialized", function()
+event.register("damage", mod.onDamaged)
+event.register("addSound", mod.onAddSound)
+event.register("skillRaised", mod.onSkillRaised)
+event.register("bodyPartAssigned", mod.onBodyPartAssigned)
+print("["..mod.name..", by Spammer] "..mod.ver.." Initialized!") end, {priority = -1000})
