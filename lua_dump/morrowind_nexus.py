@@ -66,8 +66,8 @@ class MorrowindNexus(NexusMods):
         # group files by their names
         groups: dict[str, list[File]] = {}
         for file in files:
-            if file.category_id not in (4, 6):  # 4=DELETED, 6=OLD_VERSION
-                if file.category_name != "OLD_VERSION":  # maybe redundant
+            if file.category_id not in (4, 6, 7):  # 4=DELETED, 6=OLD_VERSION, 7=ARCHIVED
+                if file.category_name not in ("OLD_VERSION", "ARCHIVED"):  # maybe redundant
                     groups.setdefault(file.name, []).append(file)
 
         # sort files by their dates
