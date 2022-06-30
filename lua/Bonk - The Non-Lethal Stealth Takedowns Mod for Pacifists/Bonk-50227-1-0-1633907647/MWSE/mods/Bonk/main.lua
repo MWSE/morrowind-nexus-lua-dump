@@ -1,1 +1,0 @@
-require("Bonk.functions").run()
