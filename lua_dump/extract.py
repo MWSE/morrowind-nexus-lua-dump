@@ -87,7 +87,7 @@ def extract_lua_files(lua_mod: LuaMod) -> None:
 
             logger.info(f"Attempting to extract '{archive_path}'")
             try:
-                run(f'7z x -o"{str(extract_path)}" "{str(archive_path)}"')
+                run(f'7z x -o"{str(extract_path)}" "{str(archive_path)}"', shell=True)
             except Exception as e:
                 logger.error(f"Failed to extract '{archive_path}'\n{e}")
 

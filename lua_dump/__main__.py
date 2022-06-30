@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import asyncio
 import multiprocessing
 from pathlib import Path
@@ -172,7 +173,8 @@ def execute(update: T) -> None:
     logger = init_logger()
     index = LuaIndex.load()
     try:
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        if os.name == "nt":
+            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         asyncio.run(apply(index, update))
     finally:
         index.save()
