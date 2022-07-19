@@ -1,0 +1,5 @@
+return {
+    "light",
+    "dark",
+    "alloy",
+}
