@@ -5470,17 +5470,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000032235,
-                    "name": "Beautiful Cities of Morrowind-49231-2-7-1-1658093178.7z",
-                    "version": "2.7.1"
+                    "file_id": 1000032278,
+                    "name": "Beautiful Cities of Morrowind - Core-49231-2-7-2-1658263574.7z",
+                    "version": "2.7.2"
                 },
                 {
-                    "file_id": 1000032236,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-1-1658093221.7z",
-                    "version": "2.7.1"
+                    "file_id": 1000032279,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-2-1658263607.7z",
+                    "version": "2.7.2"
                 }
             ],
-            "indexed_timestamp": 1658233202
+            "indexed_timestamp": 1658453212
         },
         {
             "mod_id": 49232,
@@ -10126,7 +10126,7 @@
                     "version": "1.16.0-RUS"
                 }
             ],
-            "indexed_timestamp": 1656631402
+            "indexed_timestamp": 1658453322
         },
         {
             "mod_id": 51520,
@@ -10212,12 +10212,25 @@
             "author": "Sphagne",
             "files": [
                 {
-                    "file_id": 1000032227,
-                    "name": "Tiered Spell Casting-51604-2-0-1658078985.7z",
-                    "version": "2.0"
+                    "file_id": 1000032277,
+                    "name": "Tiered Spell Casting-51604-3-0-1658262695.7z",
+                    "version": "3.0"
                 }
             ],
-            "indexed_timestamp": 1658231315
+            "indexed_timestamp": 1658453342
+        },
+        {
+            "mod_id": 51610,
+            "name": "Fashionwind - MWSE Masks and Facewraps",
+            "author": "Ruffin Vangarr",
+            "files": [
+                {
+                    "file_id": 1000032285,
+                    "name": "Fashionwind - Masks and Facewraps1-51610-1-0-1658394443.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1658453511
         },
         {
             "mod_id": 51622,
@@ -10257,9 +10270,48 @@
                 }
             ],
             "indexed_timestamp": 1658231291
+        },
+        {
+            "mod_id": 51636,
+            "name": "Magicka of the Third Era",
+            "author": "Vengyre",
+            "files": [
+                {
+                    "file_id": 1000032287,
+                    "name": "Magicka of the Third Era-51636-1-0-1658398356.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1658453483
+        },
+        {
+            "mod_id": 51637,
+            "name": "Hot Lava",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000032291,
+                    "name": "abotHotLava-51637-1-00-1658420688.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1658453483
+        },
+        {
+            "mod_id": 51640,
+            "name": "Costly Capering",
+            "author": "CodeRing",
+            "files": [
+                {
+                    "file_id": 1000032295,
+                    "name": "Costly Capering-51640-1-0-0-1658442731.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1658453482
         }
     ],
     "last_scan_for_added_mods_timestamp": 1658231290,
-    "last_scan_for_updated_mods_timestamp": 1658232936,
+    "last_scan_for_updated_mods_timestamp": 1658453039,
     "highest_validated_mod_id": 51630
 }
