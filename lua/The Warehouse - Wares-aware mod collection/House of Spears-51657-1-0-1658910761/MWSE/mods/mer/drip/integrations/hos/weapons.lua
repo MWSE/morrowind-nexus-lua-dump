@@ -1,0 +1,17 @@
+return {
+"arrowhead_spear_hos",
+"arrowhead_spear_throw_hos",
+"chitin_spear_throw_hos",
+"diamond_spear_hos",
+"glass_spear_hos",
+"glass_spear_throw_hos",
+"goblin_spear_1h_hos",
+"goblin_spear_hos",
+"gypsum_halberd_hos",
+"iron_spear_throw_hos",
+"sapphire_spear_hos",
+"scythe_gold_hos",
+"silver scythe_hos",
+"steel harvest scythe_hos",
+"steel scythe_hos",
+}

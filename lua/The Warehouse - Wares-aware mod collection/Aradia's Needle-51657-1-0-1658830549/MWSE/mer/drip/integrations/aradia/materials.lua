@@ -1,0 +1,16 @@
+return {
+    "arabian",
+    "daedric",
+    "blue",
+    "velvet",
+    "drow",
+    "leopard",
+    "green",
+    "white and gold",
+    "mesmer's",
+    "dark",
+    "ranger",
+    "bronze",
+    "karmian",
+    "chain mail",
+}

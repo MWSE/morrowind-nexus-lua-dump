@@ -1,0 +1,16 @@
+return {
+"netch_scout_helm_w",
+"netch_scout_helm_tel",
+"netch_scout_helm_t",
+"netch_scout_helm_r",
+"netch_scout_helm_p",
+"netch_scout_helm_g",
+"netch_scout_helm_b",
+"indoril_ronin_pauldron_r",
+"indoril_ronin_pauldron_l",
+"indoril_ronin_helm",
+"indoril_ronin_cuirass",
+"indoril_ronin_bracer_r",
+"indoril_ronin_bracer_l",
+"indoril_ronin_boots",
+}

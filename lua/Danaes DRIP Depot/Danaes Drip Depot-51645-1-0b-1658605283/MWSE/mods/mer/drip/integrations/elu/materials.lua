@@ -1,0 +1,5 @@
+return {
+    "scout",
+    "indoril",
+    "ronin",
+}

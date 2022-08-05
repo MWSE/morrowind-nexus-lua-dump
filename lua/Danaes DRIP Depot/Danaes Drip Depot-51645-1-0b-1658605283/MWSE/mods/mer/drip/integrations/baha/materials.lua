@@ -1,0 +1,4 @@
+return {
+    "witcher's",
+    "zirael",
+}
