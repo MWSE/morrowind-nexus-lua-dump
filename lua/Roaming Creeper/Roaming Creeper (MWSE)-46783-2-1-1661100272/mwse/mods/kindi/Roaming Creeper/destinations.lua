@@ -1,0 +1,16 @@
+return {
+    {position = {-2771, -605, 46, 47}, cell = "Mournhold, Great Bazaar"},
+    {position = {-350, -60, -126, -65}, cell = "Gnisis, Madach Tradehouse"},
+    {position = {542, 275, -255, -82}, cell = "Pelagiad, Halfway Tavern"},
+    {position = {69, -298, 1, -52}, cell = "Ebonheart, Six Fishes"},
+    {position = {-172, 278, 386, -179}, cell = "Sadrith Mora, Dirty Muriel's Cornerclub"},
+    {position = {-173, 952, -249, 178}, cell = "Balmora, Eight Plates"},
+    {position = {228.62, 1312.63, -506, -166.26}, cell = "Balmora, Lucky Lockup"},
+    {position = {500, -1353, -255, 171.7}, cell = "Ald-ruhn, Ald Skar Inn"},
+    {position = {-335.9, 423.2, 1, 147.7}, cell = "Ald-ruhn, The Rat In The Pot"},
+    {position = {-426.2, 60.26, 6, -170.32}, cell = "Suran, Desele's House Of Earthly Delights"},
+    {position = {58.59, -531.15, 129, -49.61}, cell = "Seyda Neen, Arrille's Tradehouse"},
+    {position = {-824.38, -151.79, 1, 89.5}, cell = "Molag Mar, The Pilgrim's Rest"},
+    {position = {4047, 4223, 13729, 78}, cell = "Khuul, Thongar's Tradehouse"},
+    {position = {-34, 190, 385, -2.61}, cell = "Dagon Fel, The End Of The World"},
+}

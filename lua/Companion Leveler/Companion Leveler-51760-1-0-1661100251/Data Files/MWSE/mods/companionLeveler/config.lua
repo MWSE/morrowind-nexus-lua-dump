@@ -1,0 +1,57 @@
+local defaultConfig = {
+
+	modEnabled = true,
+	buildMode = false,
+	levelSummary = true,
+	aboveMaxSkill = false,
+	aboveMaxAtt = false,
+	levelHealth = true,
+	levelMagicka = false,
+	racialBonus = true,
+	specialBonus = true,
+	factionBonus = true,
+	mentorBonus = true,
+	spellLearning = true,
+	spellLearningC = true,
+	abilityLearning = true,
+	healthMod = 10,
+	magickaMod = 1,
+	racialBonusMod = 1,
+	racialChance = 50,
+	specialBonusMod = 1,
+	specialChance = 50,
+	factionBonusMod = 1,
+	factionChance = 25,
+	mentorBonusMod = 1,
+	mentorChance = 25,
+	spellChance = 50,
+	spellChanceC = 30,
+	minMajor1 = 3,
+	maxMajor1 = 3,
+	minMajor2 = 2,
+	maxMajor2 = 2,
+	minMajor3 = 1,
+	maxMajor3 = 1,
+	minMinor1 = 2,
+	maxMinor1 = 2,
+	minMinor2 = 2,
+	maxMinor2 = 2,
+	minRandom1 = 1,
+	maxRandom1 = 1,
+	minRandom2 = 1,
+	maxRandom2 = 1,
+	minMajorAtt1 = 1,
+	maxMajorAtt1 = 4,
+	minMajorAtt2 = 1,
+	maxMajorAtt2 = 4,
+	minRandAtt = 1,
+	maxRandAtt = 4,
+	logLevel = "INFO",
+	typeBind = {
+		keyCode = tes3.scanCode.k
+	}
+}
+
+local mwseConfig = mwse.loadConfig("Companion Leveler", defaultConfig)
+
+return mwseConfig;
