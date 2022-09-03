@@ -32,12 +32,12 @@
             "author": "qqqbbb",
             "files": [
                 {
-                    "file_id": 1000029504,
-                    "name": "MW Containers Animated-42238-1-07-1645863001.7z",
-                    "version": "2.07"
+                    "file_id": 1000032885,
+                    "name": "MW Containers Animated-42238-2-08-1661842468.7z",
+                    "version": "2.08"
                 }
             ],
-            "indexed_timestamp": 1656630991
+            "indexed_timestamp": 1662221943
         },
         {
             "mod_id": 42417,
@@ -1726,17 +1726,17 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000032420,
-                    "name": "4NM_English-47015-3-23-1659089072.zip",
-                    "version": "3.23"
+                    "file_id": 1000032870,
+                    "name": "4NM_English-47015-3-24-1661679170.zip",
+                    "version": "3.24"
                 },
                 {
-                    "file_id": 1000032421,
-                    "name": "4NM_Russian-47015-3-23-1659089116.zip",
-                    "version": "3.23"
+                    "file_id": 1000032871,
+                    "name": "4NM_Russian-47015-3-24-1661679198.zip",
+                    "version": "3.24"
                 }
             ],
-            "indexed_timestamp": 1659684968
+            "indexed_timestamp": 1662221965
         },
         {
             "mod_id": 47029,
@@ -3653,9 +3653,14 @@
                     "file_id": 1000032502,
                     "name": "AURA 5.1.0-48255-5-1-0-1659659666.7z",
                     "version": "5.1.0"
+                },
+                {
+                    "file_id": 1000032864,
+                    "name": "AURA 5.1.1 Patch-48255-5-1-1-1661633039.7z",
+                    "version": "5.1.1"
                 }
             ],
-            "indexed_timestamp": 1659684950
+            "indexed_timestamp": 1662221962
         },
         {
             "mod_id": 48263,
@@ -5366,12 +5371,12 @@
             "author": "C3pa",
             "files": [
                 {
-                    "file_id": 1000028857,
-                    "name": "Magicka Regeneration Suite-49153-2-1-1642089763.7z",
-                    "version": "2.1"
+                    "file_id": 1000032920,
+                    "name": "Magicka Regeneration Suite-49153-2-2-1662105715.7z",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1656631018
+            "indexed_timestamp": 1662221961
         },
         {
             "mod_id": 49168,
@@ -5488,17 +5493,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000032604,
-                    "name": "Beautiful Cities of Morrowind - Core-49231-2-7-5-1660237489.7z",
-                    "version": "2.7.5"
+                    "file_id": 1000032865,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-6-1661668151.7z",
+                    "version": "2.7.6"
                 },
                 {
-                    "file_id": 1000032605,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-5-1660237534.7z",
-                    "version": "2.7.5"
+                    "file_id": 1000032867,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-7-6-1661670490.7z",
+                    "version": "2.7.6"
                 }
             ],
-            "indexed_timestamp": 1661576698
+            "indexed_timestamp": 1662222027
         },
         {
             "mod_id": 49232,
@@ -5602,12 +5607,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000025972,
-                    "name": "Double CHIM-49339-3-1626474518.zip",
-                    "version": "3"
+                    "file_id": 1000032858,
+                    "name": "Double CHIM-49339-3-1-1661616225.zip",
+                    "version": "3.1"
                 }
             ],
-            "indexed_timestamp": 1656631395
+            "indexed_timestamp": 1662221963
         },
         {
             "mod_id": 49361,
@@ -7703,12 +7708,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000032505,
-                    "name": "Vapourmist 3.2.0-50517-3-2-0-1659660752.7z",
-                    "version": "3.2.0"
+                    "file_id": 1000032863,
+                    "name": "Vapourmist 3.2.1-50517-3-2-1-1661631697.7z",
+                    "version": "3.2.1"
                 }
             ],
-            "indexed_timestamp": 1659685064
+            "indexed_timestamp": 1662222013
         },
         {
             "mod_id": 50520,
@@ -8243,17 +8248,12 @@
             "author": "The Wanderer",
             "files": [
                 {
-                    "file_id": 1000029993,
-                    "name": "Cloud Storage Warehouse Shoppe - Lua code update - scale fix-50863-1-02-1649143137.7z",
-                    "version": "1.02"
-                },
-                {
-                    "file_id": 1000029994,
-                    "name": "Cloud Storage Warehouse - Shoppe-50863-1-02-1649143398.7z",
-                    "version": "1.02"
+                    "file_id": 1000032877,
+                    "name": "Cloud Storage Warehouse - Shoppe 1.03-50863-1-03-1661763879.7z",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1656631405
+            "indexed_timestamp": 1662221995
         },
         {
             "mod_id": 50883,
@@ -10602,9 +10602,35 @@
                 }
             ],
             "indexed_timestamp": 1661576748
+        },
+        {
+            "mod_id": 51787,
+            "name": "Effects Timers - MWSE",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000032905,
+                    "name": "Effect Timers - MWSE-51787-2-0-1661931104.7z",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1662221855
+        },
+        {
+            "mod_id": 51796,
+            "name": "Packrat Skill",
+            "author": "MrGool",
+            "files": [
+                {
+                    "file_id": 1000032931,
+                    "name": "Packrat Skill-51796-1-0-1662158593.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1662221855
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1661576475,
-    "last_scan_for_updated_mods_timestamp": 1661576535,
-    "highest_validated_mod_id": 51783
+    "last_scan_for_added_mods_timestamp": 1662221853,
+    "last_scan_for_updated_mods_timestamp": 1662221887,
+    "highest_validated_mod_id": 51797
 }
