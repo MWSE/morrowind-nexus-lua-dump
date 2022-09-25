@@ -32,12 +32,12 @@
             "author": "qqqbbb",
             "files": [
                 {
-                    "file_id": 1000032885,
-                    "name": "MW Containers Animated-42238-2-08-1661842468.7z",
-                    "version": "2.08"
+                    "file_id": 1000032981,
+                    "name": "MW Containers Animated-42238-2-09-1662630774.7z",
+                    "version": "2.09"
                 }
             ],
-            "indexed_timestamp": 1662221943
+            "indexed_timestamp": 1664088621
         },
         {
             "mod_id": 42417,
@@ -825,12 +825,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000032757,
-                    "name": "abotLoadingDoors201b-46094-2-01b-1661111893.7z",
-                    "version": "2.01b"
+                    "file_id": 1000032938,
+                    "name": "abotLoadingDoors202-46094-2-02-1662233429.7z",
+                    "version": "2.02"
                 }
             ],
-            "indexed_timestamp": 1661576648
+            "indexed_timestamp": 1664088628
         },
         {
             "mod_id": 46098,
@@ -1687,12 +1687,12 @@
             "author": "EquiNox",
             "files": [
                 {
-                    "file_id": 1000030993,
-                    "name": "Protective Guards for OpenMW - Lua Edition-46992-0-16-3-1653339769.7z",
-                    "version": "0.16.3"
+                    "file_id": 1000033076,
+                    "name": "Protective Guards for OpenMW - Lua Edition-46992-0-17-1663095163.7z",
+                    "version": "0.17"
                 }
             ],
-            "indexed_timestamp": 1656631075
+            "indexed_timestamp": 1664088629
         },
         {
             "mod_id": 46993,
@@ -3243,6 +3243,19 @@
             "indexed_timestamp": 1656630970
         },
         {
+            "mod_id": 48014,
+            "name": "Skill Progress Record ( OpenMW )",
+            "author": "kindi",
+            "files": [
+                {
+                    "file_id": 1000033077,
+                    "name": "SPC-Lua-48014-0-1-1663095994.7z",
+                    "version": "0.1"
+                }
+            ],
+            "indexed_timestamp": 1664088715
+        },
+        {
             "mod_id": 48016,
             "name": "Cover Yourself",
             "author": "Merzasphor",
@@ -3954,12 +3967,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000019494,
-                    "name": "Hidden Robe Armor-48425-1-0-3-1592880416.7z",
-                    "version": "1.0.3"
+                    "file_id": 1000033099,
+                    "name": "Hidden Robe Armor-48425-1-0-4-1663282642.7z",
+                    "version": "1.0.4"
                 }
             ],
-            "indexed_timestamp": 1656631220
+            "indexed_timestamp": 1664088630
         },
         {
             "mod_id": 48429,
@@ -5210,12 +5223,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000032783,
-                    "name": "Ashfall-49057-3-0-25-1661339832.7z",
-                    "version": "3.0.25"
+                    "file_id": 1000033086,
+                    "name": "Ashfall-49057-3-0-26-1663221297.7z",
+                    "version": "3.0.26"
                 }
             ],
-            "indexed_timestamp": 1661576689
+            "indexed_timestamp": 1664088655
         },
         {
             "mod_id": 49075,
@@ -5371,12 +5384,12 @@
             "author": "C3pa",
             "files": [
                 {
-                    "file_id": 1000032920,
-                    "name": "Magicka Regeneration Suite-49153-2-2-1662105715.7z",
-                    "version": "2.2"
+                    "file_id": 1000032943,
+                    "name": "Magicka Regeneration Suite-49153-2-2-1-1662281521.7z",
+                    "version": "2.2.1"
                 }
             ],
-            "indexed_timestamp": 1662221961
+            "indexed_timestamp": 1664088638
         },
         {
             "mod_id": 49168,
@@ -5493,17 +5506,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000032865,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-6-1661668151.7z",
-                    "version": "2.7.6"
-                },
-                {
                     "file_id": 1000032867,
                     "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-7-6-1661670490.7z",
                     "version": "2.7.6"
+                },
+                {
+                    "file_id": 1000033062,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-7-1663000164.7z",
+                    "version": "2.7.7"
                 }
             ],
-            "indexed_timestamp": 1662222027
+            "indexed_timestamp": 1664088671
         },
         {
             "mod_id": 49232,
@@ -6683,12 +6696,12 @@
             "author": "Safebox",
             "files": [
                 {
-                    "file_id": 1000026265,
-                    "name": "AdvancedTextFormatting-49858-2-1-1628425947.7z",
-                    "version": "2.1"
+                    "file_id": 1000033089,
+                    "name": "AdvancedTextFormatting-49858-2-2-1663260729.7z",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1656631380
+            "indexed_timestamp": 1664088647
         },
         {
             "mod_id": 49861,
@@ -7335,22 +7348,17 @@
             "author": "Equinox",
             "files": [
                 {
-                    "file_id": 1000030991,
-                    "name": "Pursuit - OpenMW-50271-0-14-6-1653339528.7z",
-                    "version": "0.14.6"
+                    "file_id": 1000033075,
+                    "name": "Pursuit - OpenMW-50271-0-15-1663094947.7z",
+                    "version": "0.15"
                 },
                 {
-                    "file_id": 1000031028,
-                    "name": "NPC Return-50271-0-1-1653440199.7z",
-                    "version": "0.1"
-                },
-                {
-                    "file_id": 1000031035,
-                    "name": "Blacklist-Addon-50271-0-1-1653473971.7z",
+                    "file_id": 1000033078,
+                    "name": "Pursuit - OpenMW-50271-0-1-1663105212.7z",
                     "version": "0.1"
                 }
             ],
-            "indexed_timestamp": 1656631233
+            "indexed_timestamp": 1664088617
         },
         {
             "mod_id": 50272,
@@ -8079,12 +8087,12 @@
             "author": "Aldurion",
             "files": [
                 {
-                    "file_id": 1000029350,
-                    "name": "Tea Mod Interop-50789-1-1645074327.7z",
-                    "version": "1"
+                    "file_id": 1000033071,
+                    "name": "Tea Mod Interop-50789-1-1-1663086952.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631280
+            "indexed_timestamp": 1664088645
         },
         {
             "mod_id": 50790,
@@ -9162,6 +9170,19 @@
             "indexed_timestamp": 1656631166
         },
         {
+            "mod_id": 51174,
+            "name": "Repopulated Morrowind",
+            "author": "GrumblingVomit",
+            "files": [
+                {
+                    "file_id": 1000032951,
+                    "name": "Repopulated Morrowind FOMOD-51174-1-5-1-1662325387.zip",
+                    "version": "1.5.1"
+                }
+            ],
+            "indexed_timestamp": 1664088816
+        },
+        {
             "mod_id": 51175,
             "name": "Simple Renamer MWSE",
             "author": "Revacholiere",
@@ -9623,12 +9644,12 @@
             "author": "Spammer",
             "files": [
                 {
-                    "file_id": 1000031120,
-                    "name": "Physical Journal - MWSE-51347-2-0-1653744173.7z",
-                    "version": "2.0"
+                    "file_id": 1000033101,
+                    "name": "Physical Journal - MWSE-51347-2-1-1-1663302391.7z",
+                    "version": "2.1.1"
                 }
             ],
-            "indexed_timestamp": 1656631222
+            "indexed_timestamp": 1664088657
         },
         {
             "mod_id": 51348,
@@ -10095,12 +10116,12 @@
             "author": "Stripes",
             "files": [
                 {
-                    "file_id": 1000031673,
-                    "name": "MWSE-NPC-Random-Name-Generator-51497-1-01-1655379969.7z",
-                    "version": "1.01"
+                    "file_id": 1000033035,
+                    "name": "MWSE-NPC-Random-Name-Generator-51497-1-1-1662895064.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631154
+            "indexed_timestamp": 1664088665
         },
         {
             "mod_id": 51502,
@@ -10113,12 +10134,12 @@
                     "version": "1"
                 },
                 {
-                    "file_id": 1000031674,
-                    "name": "MWSE-NPC-Random-Face-Generator-51502-1-1655382623.7z",
-                    "version": "1"
+                    "file_id": 1000033036,
+                    "name": "MWSE-NPC-Random-Face-Generator-51502-1-1-1662895521.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631335
+            "indexed_timestamp": 1664088664
         },
         {
             "mod_id": 51503,
@@ -10609,12 +10630,12 @@
             "author": "Spammer",
             "files": [
                 {
-                    "file_id": 1000032905,
-                    "name": "Effect Timers - MWSE-51787-2-0-1661931104.7z",
-                    "version": "2.0"
+                    "file_id": 1000033172,
+                    "name": "Effect Timers - MWSE-51787-2-2-1663933721.7z",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1662221855
+            "indexed_timestamp": 1664088734
         },
         {
             "mod_id": 51796,
@@ -10622,15 +10643,119 @@
             "author": "MrGool",
             "files": [
                 {
-                    "file_id": 1000032931,
-                    "name": "Packrat Skill-51796-1-0-1662158593.zip",
+                    "file_id": 1000032967,
+                    "name": "packratskill-51796-1-1-1662500492.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1664088739
+        },
+        {
+            "mod_id": 51799,
+            "name": "Open the Door",
+            "author": "C3pa",
+            "files": [
+                {
+                    "file_id": 1000032947,
+                    "name": "Open the Door-51799-1-0-1662311972.7z",
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1662221855
+            "indexed_timestamp": 1664088511
+        },
+        {
+            "mod_id": 51804,
+            "name": "Actual Illegal Resting - MWSE",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000033069,
+                    "name": "Actual Illegal Resting-51804-1-5-1663086177.7z",
+                    "version": "1.5"
+                }
+            ],
+            "indexed_timestamp": 1664088511
+        },
+        {
+            "mod_id": 51808,
+            "name": "Zilophos' Item Editor",
+            "author": "Zilophos and Spammer21",
+            "files": [
+                {
+                    "file_id": 1000033034,
+                    "name": "Zilophos' Item Editor-51808-v1-3-1662890791.7z",
+                    "version": "v1.3"
+                }
+            ],
+            "indexed_timestamp": 1664088519
+        },
+        {
+            "mod_id": 51809,
+            "name": "Restock Filled Soul Gems",
+            "author": "JosephMcKean",
+            "files": [
+                {
+                    "file_id": 1000033105,
+                    "name": "Restock Filled Soul Gems-51809-1-0-1-1663334777.7z",
+                    "version": "1.0.1"
+                }
+            ],
+            "indexed_timestamp": 1664088518
+        },
+        {
+            "mod_id": 51810,
+            "name": "Stray Cat",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000033054,
+                    "name": "Stray-51810-1-1-1662918531.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1664088511
+        },
+        {
+            "mod_id": 51821,
+            "name": "Keepers",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000033107,
+                    "name": "abotKeepers101-51821-1-01-1663345515.7z",
+                    "version": "1.01"
+                }
+            ],
+            "indexed_timestamp": 1664088520
+        },
+        {
+            "mod_id": 51825,
+            "name": "Come To Me",
+            "author": "JosephMcKean",
+            "files": [
+                {
+                    "file_id": 1000033106,
+                    "name": "Come To Me-51825-1-0-1663344676.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1664088528
+        },
+        {
+            "mod_id": 51845,
+            "name": "Daily Training",
+            "author": "Kleidium",
+            "files": [
+                {
+                    "file_id": 1000033191,
+                    "name": "Daily Training-51845-1-1-1664044700.rar",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1664088534
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1662221853,
-    "last_scan_for_updated_mods_timestamp": 1662221887,
-    "highest_validated_mod_id": 51797
+    "last_scan_for_added_mods_timestamp": 1664088509,
+    "last_scan_for_updated_mods_timestamp": 1664088567,
+    "highest_validated_mod_id": 51854
 }

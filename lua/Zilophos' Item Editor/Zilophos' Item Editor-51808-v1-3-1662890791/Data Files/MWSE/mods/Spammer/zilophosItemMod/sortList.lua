@@ -1,0 +1,32 @@
+return table.invert({
+
+    "name",
+    "value",
+    "basePurchaseCost",
+    "quality",
+    "weight",
+    "armorRating",
+    "chopMin",
+    "chopMax",
+    "slashMin",
+    "slashMax",
+    "thrustMin",
+    "thrustMax",
+    "reach",
+    "speed",
+    "scale",
+    "skill",
+    "enchantCapacity",
+    "maxCondition",
+    "time",
+    "radius",
+    "chargeCost",
+    "maxCharge",
+    "castType",
+    "effectSkillIds",
+    "effectAttributeIds",
+    "magickaCost",
+    "enchantment",
+    "effects"
+
+})

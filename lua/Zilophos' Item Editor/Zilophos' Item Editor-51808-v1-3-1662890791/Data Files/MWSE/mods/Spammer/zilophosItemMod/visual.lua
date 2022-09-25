@@ -1,0 +1,33 @@
+return {
+
+        name = "Name",
+        weight = "Weight",
+        value = "Value",
+        quality = "Quality",
+        enchantCapacity = "Ench. Capacity",
+        armorRating =
+        "Armor Rating",
+        reach = "Reach",
+        speed = "Speed",
+        chopMin = "Chop Min",
+        chopMax = "Chop Max",
+        slashMin = "Slash Min",
+        slashMax = "Slash Max",
+        thrustMin = "Thrust Min",
+        thrustMax = "Thrust Max",
+        chargeCost = "Charge Cost",
+        maxCharge = "Max Charge",
+        skill = "Skill",
+        maxCondition = "Max Health",
+        castType = "Cast Type",
+        duration = "Duration",
+        max = "Max Magnitude",
+        min = "Min Magnitude",
+        rangeType = "Range",
+        radius = "Radius",
+        basePurchaseCost = "Purchase Cost",
+        magickaCost = "Magicka Cost",
+        time = "Max Duration",
+        scale = "Scale",
+
+}
