@@ -2211,12 +2211,12 @@
             "author": "Dandy Daedra",
             "files": [
                 {
-                    "file_id": 1000030925,
-                    "name": "ebonheart_Underworks114-47272-1-14-1653116868.7z",
-                    "version": "1.14"
+                    "file_id": 1000033362,
+                    "name": "Ebonheart_Underworks116-47272-1-16-1665658566.7z",
+                    "version": "1.16"
                 }
             ],
-            "indexed_timestamp": 1656631339
+            "indexed_timestamp": 1666029004
         },
         {
             "mod_id": 47276,
@@ -2814,12 +2814,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000031432,
-                    "name": "abotWaterSound105-47794-1-05-1654599932.7z",
-                    "version": "1.05"
+                    "file_id": 1000033269,
+                    "name": "abotWaterSound106-47794-1-06-1664784518.7z",
+                    "version": "1.06"
                 }
             ],
-            "indexed_timestamp": 1656631330
+            "indexed_timestamp": 1666028986
         },
         {
             "mod_id": 47813,
@@ -3105,12 +3105,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000032730,
-                    "name": "abotNOMMCintegration-47945-1-08-1660918100.7z",
-                    "version": "1.08"
+                    "file_id": 1000033273,
+                    "name": "abotNOMMCintegration-47945-1-09-1664807861.7z",
+                    "version": "1.09"
                 }
             ],
-            "indexed_timestamp": 1661576667
+            "indexed_timestamp": 1666028995
         },
         {
             "mod_id": 47948,
@@ -3663,17 +3663,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000032502,
-                    "name": "AURA 5.1.0-48255-5-1-0-1659659666.7z",
-                    "version": "5.1.0"
-                },
-                {
-                    "file_id": 1000032864,
-                    "name": "AURA 5.1.1 Patch-48255-5-1-1-1661633039.7z",
-                    "version": "5.1.1"
+                    "file_id": 1000033386,
+                    "name": "AURA 5.2.0-48255-5-2-0-1665959881.7z",
+                    "version": "5.2.0"
                 }
             ],
-            "indexed_timestamp": 1662221962
+            "indexed_timestamp": 1666028997
         },
         {
             "mod_id": 48263,
@@ -4678,12 +4673,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000026049,
-                    "name": "abotWhosWhere101-48843-1-0-1-1627052851.7z",
-                    "version": "1.0.1"
+                    "file_id": 1000033264,
+                    "name": "abotWHosWhere103-48843-1-03-1664730763.7z",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1656630782
+            "indexed_timestamp": 1666028995
         },
         {
             "mod_id": 48863,
@@ -5169,12 +5164,12 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000032433,
-                    "name": "OAAB_Data-49042-1-16-3-1659149122.7z",
-                    "version": "1.16.3"
+                    "file_id": 1000033300,
+                    "name": "OAAB_Data-49042-2-0-2-1664904304.7z",
+                    "version": "2.0.2"
                 }
             ],
-            "indexed_timestamp": 1659684932
+            "indexed_timestamp": 1666028997
         },
         {
             "mod_id": 49045,
@@ -5192,17 +5187,17 @@
                     "version": "1.1"
                 },
                 {
-                    "file_id": 1000031182,
-                    "name": "OAAB Drip-49045-1-1-1653853040.7z",
-                    "version": "1.1"
-                },
-                {
                     "file_id": 1000032616,
                     "name": "OAAB Onionized-49045-1-0-1660312346.7z",
                     "version": "1.0"
+                },
+                {
+                    "file_id": 1000033243,
+                    "name": "OAAB Drip-49045-1-2-1664477560.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1661576605
+            "indexed_timestamp": 1666028993
         },
         {
             "mod_id": 49046,
@@ -6670,12 +6665,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000032758,
-                    "name": "abotSmartCompanions-49848-1-09-1661112790.7z",
-                    "version": "1.09"
+                    "file_id": 1000033263,
+                    "name": "abotSmartCompanions-49848-1-10-1664721291.7z",
+                    "version": "1.10"
                 }
             ],
-            "indexed_timestamp": 1661576673
+            "indexed_timestamp": 1666029014
         },
         {
             "mod_id": 49853,
@@ -7773,12 +7768,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000030292,
-                    "name": "abotSmartActivate104-50558-1-04-1651220390.7z",
-                    "version": "1.04"
+                    "file_id": 1000033197,
+                    "name": "abotSmartActivate105-50558-1-05-1664101049.7z",
+                    "version": "1.05"
                 }
             ],
-            "indexed_timestamp": 1656631425
+            "indexed_timestamp": 1666029036
         },
         {
             "mod_id": 50574,
@@ -8570,12 +8565,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000030129,
-                    "name": "abotDarkening100-50988-1-00-1650101518.7z",
-                    "version": "1.00"
+                    "file_id": 1000033202,
+                    "name": "abotDarkening-50988-1-01-1664132460.7z",
+                    "version": "1.01"
                 }
             ],
-            "indexed_timestamp": 1656631297
+            "indexed_timestamp": 1666029026
         },
         {
             "mod_id": 50990,
@@ -9175,12 +9170,12 @@
             "author": "GrumblingVomit",
             "files": [
                 {
-                    "file_id": 1000032951,
-                    "name": "Repopulated Morrowind FOMOD-51174-1-5-1-1662325387.zip",
-                    "version": "1.5.1"
+                    "file_id": 1000033361,
+                    "name": "Repopulated Morrowind FOMOD-51174-1-7-1665626215.zip",
+                    "version": "1.7"
                 }
             ],
-            "indexed_timestamp": 1664088816
+            "indexed_timestamp": 1666029050
         },
         {
             "mod_id": 51175,
@@ -9639,6 +9634,19 @@
             "indexed_timestamp": 1656631030
         },
         {
+            "mod_id": 51342,
+            "name": "Mirador Castle - Player Home",
+            "author": "The Wanderer -  Dietbob and team",
+            "files": [
+                {
+                    "file_id": 1000033318,
+                    "name": "Mirador Castle BETA-51342-0-910-1665122378.7z",
+                    "version": "0.910"
+                }
+            ],
+            "indexed_timestamp": 1666029126
+        },
+        {
             "mod_id": 51347,
             "name": "Physical Journal - MWSE",
             "author": "Spammer",
@@ -9818,12 +9826,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000032321,
-                    "name": "Time Consumer-51396-1-2-1658543141.rar",
-                    "version": "1.2"
+                    "file_id": 1000033200,
+                    "name": "Time Consumer-51396-1-3-1664125255.rar",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1659684945
+            "indexed_timestamp": 1666029034
         },
         {
             "mod_id": 51399,
@@ -10625,17 +10633,30 @@
             "indexed_timestamp": 1661576748
         },
         {
+            "mod_id": 51777,
+            "name": "Vivec - God the City",
+            "author": "Tapetenklaus",
+            "files": [
+                {
+                    "file_id": 1000033323,
+                    "name": "Vivec - God the City-51777-1-2-0-1665233697.zip",
+                    "version": "1.2.0"
+                }
+            ],
+            "indexed_timestamp": 1666029124
+        },
+        {
             "mod_id": 51787,
             "name": "Effects Timers - MWSE",
             "author": "Spammer",
             "files": [
                 {
-                    "file_id": 1000033172,
-                    "name": "Effect Timers - MWSE-51787-2-2-1663933721.7z",
-                    "version": "2.2"
+                    "file_id": 1000033217,
+                    "name": "Effect Timers - MWSE-51787-2-2-1-1664246267.7z",
+                    "version": "2.2.1"
                 }
             ],
-            "indexed_timestamp": 1664088734
+            "indexed_timestamp": 1666029007
         },
         {
             "mod_id": 51796,
@@ -10753,9 +10774,35 @@
                 }
             ],
             "indexed_timestamp": 1664088534
+        },
+        {
+            "mod_id": 51856,
+            "name": "Immersive Lich race",
+            "author": "Capl1",
+            "files": [
+                {
+                    "file_id": 1000033201,
+                    "name": "Immersive Lich race-51856-1-0-1664130600.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1666028922
+        },
+        {
+            "mod_id": 51874,
+            "name": "Smart Shield",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000033299,
+                    "name": "abotSmartShield-51874-1-00-1664903732.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1666028922
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1664088509,
-    "last_scan_for_updated_mods_timestamp": 1664088567,
-    "highest_validated_mod_id": 51854
+    "last_scan_for_added_mods_timestamp": 1666028920,
+    "last_scan_for_updated_mods_timestamp": 1666028954,
+    "highest_validated_mod_id": 51904
 }
