@@ -413,12 +413,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000032209,
-                    "name": "Mage Robes-45739-2-1-1-1658040312.7z",
-                    "version": "2.1.1"
+                    "file_id": 1000033595,
+                    "name": "Mage Robes-45739-2-1-3-1667921127.7z",
+                    "version": "2.1.3"
                 }
             ],
-            "indexed_timestamp": 1658233082
+            "indexed_timestamp": 1668157681
         },
         {
             "mod_id": 45742,
@@ -522,7 +522,7 @@
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1656630819
+            "indexed_timestamp": 1668157684
         },
         {
             "mod_id": 45886,
@@ -825,12 +825,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000032938,
-                    "name": "abotLoadingDoors202-46094-2-02-1662233429.7z",
-                    "version": "2.02"
+                    "file_id": 1000033420,
+                    "name": "abotLoadingDoors204-46094-2-04-1666357965.7z",
+                    "version": "2.04"
                 }
             ],
-            "indexed_timestamp": 1664088628
+            "indexed_timestamp": 1668157676
         },
         {
             "mod_id": 46098,
@@ -2814,12 +2814,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033269,
-                    "name": "abotWaterSound106-47794-1-06-1664784518.7z",
-                    "version": "1.06"
+                    "file_id": 1000033435,
+                    "name": "abotWaterSounds-47794-1-07-1666602432.7z",
+                    "version": "1.07"
                 }
             ],
-            "indexed_timestamp": 1666028986
+            "indexed_timestamp": 1668157662
         },
         {
             "mod_id": 47813,
@@ -3105,12 +3105,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033273,
-                    "name": "abotNOMMCintegration-47945-1-09-1664807861.7z",
+                    "file_id": 1000033433,
+                    "name": "abotNOMMCintegration-47945-1-09-1666598841.7z",
                     "version": "1.09"
                 }
             ],
-            "indexed_timestamp": 1666028995
+            "indexed_timestamp": 1668157686
         },
         {
             "mod_id": 47948,
@@ -3663,12 +3663,17 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000033386,
-                    "name": "AURA 5.2.0-48255-5-2-0-1665959881.7z",
-                    "version": "5.2.0"
+                    "file_id": 1000033479,
+                    "name": "AURA 5.2.1-48255-5-2-1-1667179354.7z",
+                    "version": "5.2.1"
+                },
+                {
+                    "file_id": 1000033491,
+                    "name": "AURA 5.2.2 Patch-48255-5-2-2-1667257534.7z",
+                    "version": "5.2.2"
                 }
             ],
-            "indexed_timestamp": 1666028997
+            "indexed_timestamp": 1668157674
         },
         {
             "mod_id": 48263,
@@ -4440,12 +4445,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000032503,
-                    "name": "Watch the Skies 4.2.0-48636-4-2-0-1659660286.7z",
-                    "version": "4.2.0"
+                    "file_id": 1000033462,
+                    "name": "Watch the Skies 4.2.1-48636-4-2-1-1667004095.7z",
+                    "version": "4.2.1"
                 }
             ],
-            "indexed_timestamp": 1659684961
+            "indexed_timestamp": 1668157666
         },
         {
             "mod_id": 48642,
@@ -5164,12 +5169,12 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000033300,
-                    "name": "OAAB_Data-49042-2-0-2-1664904304.7z",
-                    "version": "2.0.2"
+                    "file_id": 1000033492,
+                    "name": "OAAB_Data-49042-2-0-3-1667259595.7z",
+                    "version": "2.0.3"
                 }
             ],
-            "indexed_timestamp": 1666028997
+            "indexed_timestamp": 1668157621
         },
         {
             "mod_id": 49045,
@@ -6447,19 +6452,6 @@
             "indexed_timestamp": 1656631423
         },
         {
-            "mod_id": 49779,
-            "name": "Ancestral Tomb Amulets",
-            "author": "kindi",
-            "files": [
-                {
-                    "file_id": 1000028528,
-                    "name": "Ancestral Tomb Amulets-49779-2-1-0-1639927887.7z",
-                    "version": "2.1.0"
-                }
-            ],
-            "indexed_timestamp": 1656631000
-        },
-        {
             "mod_id": 49780,
             "name": "Clear Sight",
             "author": "tewlwolow",
@@ -6665,12 +6657,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033263,
-                    "name": "abotSmartCompanions-49848-1-10-1664721291.7z",
-                    "version": "1.10"
+                    "file_id": 1000033610,
+                    "name": "abotSmartCompanions-49848-1-12b-1668018258.7z",
+                    "version": "1.12b"
                 }
             ],
-            "indexed_timestamp": 1666029014
+            "indexed_timestamp": 1668157684
         },
         {
             "mod_id": 49853,
@@ -7418,12 +7410,12 @@
             "author": "BTB Necrolesian Lucas",
             "files": [
                 {
-                    "file_id": 1000032611,
-                    "name": "BTBGI (Necro Edit) Tweaked - Patches-50308-2-1-3-1660255384.7z",
-                    "version": "2.1.3"
+                    "file_id": 1000033636,
+                    "name": "BTB's Game Improvements (Necro Edit) Tweaked-50308-2-2-2-1668120479.7z",
+                    "version": "2.2.2"
                 }
             ],
-            "indexed_timestamp": 1661576687
+            "indexed_timestamp": 1668157718
         },
         {
             "mod_id": 50315,
@@ -7519,12 +7511,12 @@
             "author": "Danae Merlord",
             "files": [
                 {
-                    "file_id": 1000032424,
-                    "name": "Ahead of The Classes-50346-2-0-6-1659115158.7z",
-                    "version": "2.0.6"
+                    "file_id": 1000033612,
+                    "name": "Ahead of the Classes-50346-2-0-7-1668032546.7z",
+                    "version": "2.0.7"
                 }
             ],
-            "indexed_timestamp": 1659685063
+            "indexed_timestamp": 1668157687
         },
         {
             "mod_id": 50352,
@@ -7711,12 +7703,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000032863,
-                    "name": "Vapourmist 3.2.1-50517-3-2-1-1661631697.7z",
-                    "version": "3.2.1"
+                    "file_id": 1000033490,
+                    "name": "Vapourmist 3.2.2-50517-3-2-2-1667256887.7z",
+                    "version": "3.2.2"
                 }
             ],
-            "indexed_timestamp": 1662222013
+            "indexed_timestamp": 1668157689
         },
         {
             "mod_id": 50520,
@@ -7898,12 +7890,12 @@
             "author": "KirbonatedBeverage",
             "files": [
                 {
-                    "file_id": 1000031410,
-                    "name": "Kirbonated Character Progression-50702-1-3-1654494016.zip",
-                    "version": "1.3"
+                    "file_id": 1000033602,
+                    "name": "Kirbonated Character Progression-50702-1-3-1-1667955749.zip",
+                    "version": "1.3.1"
                 }
             ],
-            "indexed_timestamp": 1656631170
+            "indexed_timestamp": 1668157695
         },
         {
             "mod_id": 50709,
@@ -8173,12 +8165,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000029534,
-                    "name": "abotRevolvingDoorsBlocker-50828-1-00-1646062920.7z",
-                    "version": "1.00"
+                    "file_id": 1000033421,
+                    "name": "abotRevolvingDoorsBlocker-50828-1-01-1666358545.7z",
+                    "version": "1.01"
                 }
             ],
-            "indexed_timestamp": 1656631406
+            "indexed_timestamp": 1668157698
         },
         {
             "mod_id": 50833,
@@ -8622,12 +8614,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000032784,
-                    "name": "The Crafting Framework-51009-1-0-18-1661339985.7z",
-                    "version": "1.0.18"
+                    "file_id": 1000033560,
+                    "name": "The Crafting Framework-51009-1-0-19-1667618715.7z",
+                    "version": "1.0.19"
                 }
             ],
-            "indexed_timestamp": 1661576694
+            "indexed_timestamp": 1668157706
         },
         {
             "mod_id": 51022,
@@ -9163,19 +9155,6 @@
                 }
             ],
             "indexed_timestamp": 1656631166
-        },
-        {
-            "mod_id": 51174,
-            "name": "Repopulated Morrowind",
-            "author": "GrumblingVomit",
-            "files": [
-                {
-                    "file_id": 1000033361,
-                    "name": "Repopulated Morrowind FOMOD-51174-1-7-1665626215.zip",
-                    "version": "1.7"
-                }
-            ],
-            "indexed_timestamp": 1666029050
         },
         {
             "mod_id": 51175,
@@ -10007,12 +9986,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000031532,
-                    "name": "abotSmartRings-51471-1-00-1654935634.7z",
-                    "version": "1.00"
+                    "file_id": 1000033434,
+                    "name": "abotSmartRings-51471-1-01-1666601328.7z",
+                    "version": "1.01"
                 }
             ],
-            "indexed_timestamp": 1656631016
+            "indexed_timestamp": 1668157596
         },
         {
             "mod_id": 51472,
@@ -10124,12 +10103,12 @@
             "author": "Stripes",
             "files": [
                 {
-                    "file_id": 1000033035,
-                    "name": "MWSE-NPC-Random-Name-Generator-51497-1-1-1662895064.7z",
-                    "version": "1.1"
+                    "file_id": 1000033587,
+                    "name": "MWSE-NPC-Random-Name-Generator-51497-1-11-1667912541.7z",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1664088665
+            "indexed_timestamp": 1668157705
         },
         {
             "mod_id": 51502,
@@ -10142,12 +10121,12 @@
                     "version": "1"
                 },
                 {
-                    "file_id": 1000033036,
-                    "name": "MWSE-NPC-Random-Face-Generator-51502-1-1-1662895521.7z",
-                    "version": "1.1"
+                    "file_id": 1000033588,
+                    "name": "MWSE-NPC-Random-Face-Generator-51502-1-11-1667912692.7z",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1664088664
+            "indexed_timestamp": 1668157681
         },
         {
             "mod_id": 51503,
@@ -10513,7 +10492,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1659684905
+            "indexed_timestamp": 1668157626
         },
         {
             "mod_id": 51686,
@@ -10638,12 +10617,12 @@
             "author": "Tapetenklaus",
             "files": [
                 {
-                    "file_id": 1000033323,
-                    "name": "Vivec - God the City-51777-1-2-0-1665233697.zip",
-                    "version": "1.2.0"
+                    "file_id": 1000033630,
+                    "name": "Vivec - God the City-51777-1-2-1-1668089585.zip",
+                    "version": "1.2.1"
                 }
             ],
-            "indexed_timestamp": 1666029124
+            "indexed_timestamp": 1668157708
         },
         {
             "mod_id": 51787,
@@ -10781,12 +10760,12 @@
             "author": "Capl1",
             "files": [
                 {
-                    "file_id": 1000033201,
-                    "name": "Immersive Lich race-51856-1-0-1664130600.zip",
-                    "version": "1.0"
+                    "file_id": 1000033537,
+                    "name": "Immersive Lich race v1.1-51856-1-1-1667428223.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1666028922
+            "indexed_timestamp": 1668157710
         },
         {
             "mod_id": 51874,
@@ -10800,9 +10779,183 @@
                 }
             ],
             "indexed_timestamp": 1666028922
+        },
+        {
+            "mod_id": 51913,
+            "name": "Detect Key Fix",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000033426,
+                    "name": "abotDetectKeyFix-51913-1-00-1666454114.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1668157777
+        },
+        {
+            "mod_id": 51916,
+            "name": "Notes for Modmakers - English version",
+            "author": "SymphonyTeam",
+            "files": [
+                {
+                    "file_id": 1000033436,
+                    "name": "Notes - main pack-51916-v3-3-en-1666631601.rar",
+                    "version": "v3-3-en"
+                }
+            ],
+            "indexed_timestamp": 1668157781
+        },
+        {
+            "mod_id": 51919,
+            "name": "Smart Chasers",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000033608,
+                    "name": "abotSmartChasers-51919-1-02-1668014801.7z",
+                    "version": "1.02"
+                }
+            ],
+            "indexed_timestamp": 1668157812
+        },
+        {
+            "mod_id": 51924,
+            "name": "Buff Bars",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000033468,
+                    "name": "Buff Bars-51924-1-1-1667124494.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1668157857
+        },
+        {
+            "mod_id": 51926,
+            "name": "Kafeid's Circlets - Onionized",
+            "author": "Kafeid",
+            "files": [
+                {
+                    "file_id": 1000033467,
+                    "name": "Kafeid's Circlets - Onionized-51926-1-0-1667122524.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1668157778
+        },
+        {
+            "mod_id": 51932,
+            "name": "Secrets of the Crystal City",
+            "author": "Ancestral Ashkhans",
+            "files": [
+                {
+                    "file_id": 1000033552,
+                    "name": "Secrets of the Crystal City-51932-1-6-1667565817.7z",
+                    "version": "1.6"
+                }
+            ],
+            "indexed_timestamp": 1668157818
+        },
+        {
+            "mod_id": 51936,
+            "name": "Yul Marshee and the Visage of Mzund",
+            "author": "The Provincial Privateers",
+            "files": [
+                {
+                    "file_id": 1000033536,
+                    "name": "Yul Marshee and the Visage of Mzund-51936-1-1-1667428015.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1668157844
+        },
+        {
+            "mod_id": 51937,
+            "name": "Sails and Sales",
+            "author": "Dark Sisterhood",
+            "files": [
+                {
+                    "file_id": 1000033645,
+                    "name": "Sails and Sales-51937-1-3a-1668154412.7z",
+                    "version": "1.3a"
+                }
+            ],
+            "indexed_timestamp": 1668157750
+        },
+        {
+            "mod_id": 51939,
+            "name": "Firemoth Reclaimed",
+            "author": "Team Ceaseless Centurions",
+            "files": [
+                {
+                    "file_id": 1000033586,
+                    "name": "Firemoth Reclaimed-51939-1-5-1667866694.7z",
+                    "version": "1.5"
+                }
+            ],
+            "indexed_timestamp": 1668157832
+        },
+        {
+            "mod_id": 51940,
+            "name": "Memento Mori",
+            "author": "Team Gobblin Goblins",
+            "files": [
+                {
+                    "file_id": 1000033615,
+                    "name": "Memento Mori-51940-1-12-1-1668043431.7z",
+                    "version": "1.2.1"
+                }
+            ],
+            "indexed_timestamp": 1668157821
+        },
+        {
+            "mod_id": 51941,
+            "name": "Horror at Helvil Mine",
+            "author": "The Kwama Koalition of Denina Olaf Ring and TheDrunknenMudcrab",
+            "files": [
+                {
+                    "file_id": 1000033614,
+                    "name": "Helvil Horror-51941-1-3-1668040836.zip",
+                    "version": "1.3"
+                },
+                {
+                    "file_id": 1000033639,
+                    "name": "Helvil Mine - The Olaf Edit-51941-666-1668141141.zip",
+                    "version": "666"
+                }
+            ],
+            "indexed_timestamp": 1668157819
+        },
+        {
+            "mod_id": 51943,
+            "name": "Light Drop",
+            "author": "Lythoc",
+            "files": [
+                {
+                    "file_id": 1000033535,
+                    "name": "Light Drop-51943-1-1667425780.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1668157782
+        },
+        {
+            "mod_id": 51955,
+            "name": "Barter Experience",
+            "author": "Muggins",
+            "files": [
+                {
+                    "file_id": 1000033633,
+                    "name": "Barter Experience-51955-1-1-1668091833.rar",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1668157849
         }
     ],
     "last_scan_for_added_mods_timestamp": 1666028920,
-    "last_scan_for_updated_mods_timestamp": 1666028954,
+    "last_scan_for_updated_mods_timestamp": 1668157590,
     "highest_validated_mod_id": 51904
 }
