@@ -27,6 +27,19 @@
             "indexed_timestamp": 1659685048
         },
         {
+            "mod_id": 42145,
+            "name": "Tamriel Rebuilt",
+            "author": "Tamriel Rebuilt Team",
+            "files": [
+                {
+                    "file_id": 1000033800,
+                    "name": "Tamriel Rebuilt-42145-22-11-1669302346.7z",
+                    "version": "22.11"
+                }
+            ],
+            "indexed_timestamp": 1669514114
+        },
+        {
             "mod_id": 42238,
             "name": "Morrowind Containers Animated",
             "author": "qqqbbb",
@@ -77,6 +90,24 @@
                 }
             ],
             "indexed_timestamp": 1656631151
+        },
+        {
+            "mod_id": 44537,
+            "name": "Tamriel_Data",
+            "author": "Cross-Project Coordination",
+            "files": [
+                {
+                    "file_id": 1000033770,
+                    "name": "Tamriel Data (HD)-44537-9-0-1-1668999061.7z",
+                    "version": "9.0.1"
+                },
+                {
+                    "file_id": 1000033771,
+                    "name": "Tamriel Data (Vanilla)-44537-9-0-1-1668999176.7z",
+                    "version": "9.0.1"
+                }
+            ],
+            "indexed_timestamp": 1669514126
         },
         {
             "mod_id": 44617,
@@ -1726,17 +1757,17 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000032870,
-                    "name": "4NM_English-47015-3-24-1661679170.zip",
-                    "version": "3.24"
+                    "file_id": 1000033648,
+                    "name": "4NM_English-47015-3-25-1668163302.zip",
+                    "version": "3.25"
                 },
                 {
-                    "file_id": 1000032871,
-                    "name": "4NM_Russian-47015-3-24-1661679198.zip",
-                    "version": "3.24"
+                    "file_id": 1000033649,
+                    "name": "4NM_Russian-47015-3-25-1668163420.zip",
+                    "version": "3.25"
                 }
             ],
-            "indexed_timestamp": 1662221965
+            "indexed_timestamp": 1669514036
         },
         {
             "mod_id": 47029,
@@ -2211,12 +2242,12 @@
             "author": "Dandy Daedra",
             "files": [
                 {
-                    "file_id": 1000033362,
-                    "name": "Ebonheart_Underworks116-47272-1-16-1665658566.7z",
-                    "version": "1.16"
+                    "file_id": 1000033677,
+                    "name": "Ebonheart_Underworks117-47272-1-17-1668349943.7z",
+                    "version": "1.17"
                 }
             ],
-            "indexed_timestamp": 1666029004
+            "indexed_timestamp": 1669514071
         },
         {
             "mod_id": 47276,
@@ -2814,12 +2845,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033435,
-                    "name": "abotWaterSounds-47794-1-07-1666602432.7z",
-                    "version": "1.07"
+                    "file_id": 1000033727,
+                    "name": "abotWaterSound108-47794-1-08-1668724664.7z",
+                    "version": "1.08"
                 }
             ],
-            "indexed_timestamp": 1668157662
+            "indexed_timestamp": 1669514034
         },
         {
             "mod_id": 47813,
@@ -5223,12 +5254,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000033086,
-                    "name": "Ashfall-49057-3-0-26-1663221297.7z",
-                    "version": "3.0.26"
+                    "file_id": 1000033657,
+                    "name": "Ashfall-49057-3-0-27-1668253282.7z",
+                    "version": "3.0.27"
                 }
             ],
-            "indexed_timestamp": 1664088655
+            "indexed_timestamp": 1669514002
         },
         {
             "mod_id": 49075,
@@ -5542,12 +5573,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000027577,
-                    "name": "FF-49251-1-6-9-1635450265.7z",
-                    "version": "1.6.9"
+                    "file_id": 1000033787,
+                    "name": "Friends and Foes-49251-1-6-11-1669220969.7z",
+                    "version": "1.6.11"
                 }
             ],
-            "indexed_timestamp": 1656631429
+            "indexed_timestamp": 1669514062
         },
         {
             "mod_id": 49255,
@@ -6657,12 +6688,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033610,
-                    "name": "abotSmartCompanions-49848-1-12b-1668018258.7z",
-                    "version": "1.12b"
+                    "file_id": 1000033726,
+                    "name": "abotSmartCompanions-49848-1-13-1668724223.7z",
+                    "version": "1.13"
                 }
             ],
-            "indexed_timestamp": 1668157684
+            "indexed_timestamp": 1669514054
         },
         {
             "mod_id": 49853,
@@ -7568,17 +7599,12 @@
             "author": "The Wanderer",
             "files": [
                 {
-                    "file_id": 1000032645,
-                    "name": "Cloud Storage Warehouse-50386-1-23-1660540980.7z",
-                    "version": "1.23"
-                },
-                {
-                    "file_id": 1000032675,
-                    "name": "Cloud Storage Warehouse - 1.25-50386-1-25-1660660088.7z",
-                    "version": "1.25"
+                    "file_id": 1000033665,
+                    "name": "Cloud Storage Warehouse - 1.26-50386-1-26-1668290155.7z",
+                    "version": "1.26"
                 }
             ],
-            "indexed_timestamp": 1661576675
+            "indexed_timestamp": 1669514043
         },
         {
             "mod_id": 50389,
@@ -7760,12 +7786,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033197,
-                    "name": "abotSmartActivate105-50558-1-05-1664101049.7z",
-                    "version": "1.05"
+                    "file_id": 1000033725,
+                    "name": "abotSmartActivated106-50558-1-06-1668724008.7z",
+                    "version": "1.06"
                 }
             ],
-            "indexed_timestamp": 1666029036
+            "indexed_timestamp": 1669514060
         },
         {
             "mod_id": 50574,
@@ -9421,12 +9447,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000032347,
-                    "name": "Enchantment Services Redone - ESR-51249-0-9-3-1658682826.7z",
-                    "version": "0.9.3"
+                    "file_id": 1000033673,
+                    "name": "Enchantment Services Redone - ESR-51249-0-9-4-1668335313.7z",
+                    "version": "0.9.4"
                 }
             ],
-            "indexed_timestamp": 1659684935
+            "indexed_timestamp": 1669514056
         },
         {
             "mod_id": 51250,
@@ -9611,19 +9637,6 @@
                 }
             ],
             "indexed_timestamp": 1656631030
-        },
-        {
-            "mod_id": 51342,
-            "name": "Mirador Castle - Player Home",
-            "author": "The Wanderer -  Dietbob and team",
-            "files": [
-                {
-                    "file_id": 1000033318,
-                    "name": "Mirador Castle BETA-51342-0-910-1665122378.7z",
-                    "version": "0.910"
-                }
-            ],
-            "indexed_timestamp": 1666029126
         },
         {
             "mod_id": 51347,
@@ -10147,12 +10160,12 @@
             "author": "Urm Merlord Danae",
             "files": [
                 {
-                    "file_id": 1000031737,
-                    "name": "Imperial Stables-51514-1-0-1655667983.zip",
-                    "version": "1.0"
+                    "file_id": 1000033647,
+                    "name": "Imperial Stables-51514-1-0a-1668161111.zip",
+                    "version": "1.0a"
                 }
             ],
-            "indexed_timestamp": 1656631361
+            "indexed_timestamp": 1669514065
         },
         {
             "mod_id": 51516,
@@ -10791,7 +10804,7 @@
                     "version": "1.00"
                 }
             ],
-            "indexed_timestamp": 1668157777
+            "indexed_timestamp": 1669513304
         },
         {
             "mod_id": 51916,
@@ -10804,7 +10817,7 @@
                     "version": "v3-3-en"
                 }
             ],
-            "indexed_timestamp": 1668157781
+            "indexed_timestamp": 1669513292
         },
         {
             "mod_id": 51919,
@@ -10817,7 +10830,7 @@
                     "version": "1.02"
                 }
             ],
-            "indexed_timestamp": 1668157812
+            "indexed_timestamp": 1669513311
         },
         {
             "mod_id": 51924,
@@ -10825,12 +10838,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000033468,
-                    "name": "Buff Bars-51924-1-1-1667124494.zip",
-                    "version": "1.1"
+                    "file_id": 1000033773,
+                    "name": "Buff Bars-51924-1-2-1669026331.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1668157857
+            "indexed_timestamp": 1669513295
         },
         {
             "mod_id": 51926,
@@ -10843,7 +10856,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1668157778
+            "indexed_timestamp": 1669513297
         },
         {
             "mod_id": 51932,
@@ -10851,12 +10864,12 @@
             "author": "Ancestral Ashkhans",
             "files": [
                 {
-                    "file_id": 1000033552,
-                    "name": "Secrets of the Crystal City-51932-1-6-1667565817.7z",
-                    "version": "1.6"
+                    "file_id": 1000033688,
+                    "name": "Secrets of the Crystal City-51932-1-7-1668470055.7z",
+                    "version": "1.7"
                 }
             ],
-            "indexed_timestamp": 1668157818
+            "indexed_timestamp": 1669513301
         },
         {
             "mod_id": 51936,
@@ -10864,12 +10877,12 @@
             "author": "The Provincial Privateers",
             "files": [
                 {
-                    "file_id": 1000033536,
-                    "name": "Yul Marshee and the Visage of Mzund-51936-1-1-1667428015.7z",
-                    "version": "1.1"
+                    "file_id": 1000033729,
+                    "name": "Yul Marshee and the Visage of Mzund-51936-1-3-1668730246.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1668157844
+            "indexed_timestamp": 1669513305
         },
         {
             "mod_id": 51937,
@@ -10877,12 +10890,12 @@
             "author": "Dark Sisterhood",
             "files": [
                 {
-                    "file_id": 1000033645,
-                    "name": "Sails and Sales-51937-1-3a-1668154412.7z",
-                    "version": "1.3a"
+                    "file_id": 1000033817,
+                    "name": "Sails and Sales-51937-1-4a-1669368574.7z",
+                    "version": "1.4a"
                 }
             ],
-            "indexed_timestamp": 1668157750
+            "indexed_timestamp": 1669513300
         },
         {
             "mod_id": 51939,
@@ -10895,7 +10908,7 @@
                     "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1668157832
+            "indexed_timestamp": 1669513303
         },
         {
             "mod_id": 51940,
@@ -10903,12 +10916,12 @@
             "author": "Team Gobblin Goblins",
             "files": [
                 {
-                    "file_id": 1000033615,
-                    "name": "Memento Mori-51940-1-12-1-1668043431.7z",
-                    "version": "1.2.1"
+                    "file_id": 1000033690,
+                    "name": "Memento Mori-51940-1-2-2-1668479981.7z",
+                    "version": "1.2.2"
                 }
             ],
-            "indexed_timestamp": 1668157821
+            "indexed_timestamp": 1669513307
         },
         {
             "mod_id": 51941,
@@ -10926,7 +10939,7 @@
                     "version": "666"
                 }
             ],
-            "indexed_timestamp": 1668157819
+            "indexed_timestamp": 1669513313
         },
         {
             "mod_id": 51943,
@@ -10939,7 +10952,20 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1668157782
+            "indexed_timestamp": 1669513299
+        },
+        {
+            "mod_id": 51953,
+            "name": "NIR",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000033589,
+                    "name": "NIR-51953-beta1-1667913076.7z",
+                    "version": "beta1"
+                }
+            ],
+            "indexed_timestamp": 1669513314
         },
         {
             "mod_id": 51955,
@@ -10947,15 +10973,67 @@
             "author": "Muggins",
             "files": [
                 {
-                    "file_id": 1000033633,
-                    "name": "Barter Experience-51955-1-1-1668091833.rar",
-                    "version": "1.1"
+                    "file_id": 1000033682,
+                    "name": "Barter Experience-51955-1-4-1668409219.rar",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1668157849
+            "indexed_timestamp": 1669513314
+        },
+        {
+            "mod_id": 51959,
+            "name": "Lucevar Companion",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000033717,
+                    "name": "Lucevar Companion-51959-2-1668643581.7z",
+                    "version": "2"
+                }
+            ],
+            "indexed_timestamp": 1669513316
+        },
+        {
+            "mod_id": 51968,
+            "name": "Main Menu Overhaul",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000033679,
+                    "name": "Main Menu Overhaul-51968-1-1668379781.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1669513306
+        },
+        {
+            "mod_id": 51973,
+            "name": "More Configurable Magic",
+            "author": "Kukaibo",
+            "files": [
+                {
+                    "file_id": 1000033711,
+                    "name": "More Configurable Magic-51973-1-1-2-1668608023.zip",
+                    "version": "1.1.2"
+                }
+            ],
+            "indexed_timestamp": 1669513321
+        },
+        {
+            "mod_id": 51981,
+            "name": "Light Hotkey - OpenMW Lua",
+            "author": "Pharis",
+            "files": [
+                {
+                    "file_id": 1000033811,
+                    "name": "Light Hotkey - OpenMW Lua-51981-1-1-0-1669340384.7z",
+                    "version": "1.1.0"
+                }
+            ],
+            "indexed_timestamp": 1669513325
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1666028920,
-    "last_scan_for_updated_mods_timestamp": 1668157590,
-    "highest_validated_mod_id": 51904
+    "last_scan_for_added_mods_timestamp": 1669513269,
+    "last_scan_for_updated_mods_timestamp": 1669513994,
+    "highest_validated_mod_id": 51998
 }
