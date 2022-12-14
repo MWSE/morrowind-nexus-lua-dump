@@ -35,9 +35,14 @@
                     "file_id": 1000033800,
                     "name": "Tamriel Rebuilt-42145-22-11-1669302346.7z",
                     "version": "22.11"
+                },
+                {
+                    "file_id": 1000033911,
+                    "name": "Tamriel Rebuilt hotfix-42145-22-11-03-1669851801.7z",
+                    "version": "22.11.03"
                 }
             ],
-            "indexed_timestamp": 1669514114
+            "indexed_timestamp": 1671040922
         },
         {
             "mod_id": 42238,
@@ -107,7 +112,7 @@
                     "version": "9.0.1"
                 }
             ],
-            "indexed_timestamp": 1669514126
+            "indexed_timestamp": 1671040930
         },
         {
             "mod_id": 44617,
@@ -167,12 +172,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000030762,
-                    "name": "Bardic Inspiration-45441-3-0-12-1652538480.7z",
-                    "version": "3.0.12"
+                    "file_id": 1000034009,
+                    "name": "Bardic Inspiration-45441-3-0-14-1670232876.7z",
+                    "version": "3.0.14"
                 }
             ],
-            "indexed_timestamp": 1656631061
+            "indexed_timestamp": 1671040929
         },
         {
             "mod_id": 45453,
@@ -444,12 +449,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000033595,
-                    "name": "Mage Robes-45739-2-1-3-1667921127.7z",
-                    "version": "2.1.3"
+                    "file_id": 1000034058,
+                    "name": "Mage Robes-45739-2-2-0-1670465038.7z",
+                    "version": "2.2.0"
                 }
             ],
-            "indexed_timestamp": 1668157681
+            "indexed_timestamp": 1671040928
         },
         {
             "mod_id": 45742,
@@ -553,7 +558,7 @@
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1668157684
+            "indexed_timestamp": 1671040939
         },
         {
             "mod_id": 45886,
@@ -856,12 +861,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033420,
-                    "name": "abotLoadingDoors204-46094-2-04-1666357965.7z",
-                    "version": "2.04"
+                    "file_id": 1000033916,
+                    "name": "abotLoadingDorrs205-46094-2-05-1669885266.7z",
+                    "version": "2.05"
                 }
             ],
-            "indexed_timestamp": 1668157676
+            "indexed_timestamp": 1671040948
         },
         {
             "mod_id": 46098,
@@ -1092,17 +1097,12 @@
             "author": "Mack_Of_Trades69",
             "files": [
                 {
-                    "file_id": 1000021724,
-                    "name": "CKEJTET-46370-Russian-1605177347.zip",
-                    "version": "Russian"
-                },
-                {
                     "file_id": 1000022367,
                     "name": "Morrowind_Best_Playable_Skeleton_Race_Mod-46370-1-3-1609654324.zip",
                     "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1656631071
+            "indexed_timestamp": 1671040940
         },
         {
             "mod_id": 46428,
@@ -3175,12 +3175,12 @@
             "author": "NullCascade Danae",
             "files": [
                 {
-                    "file_id": 1000019052,
-                    "name": "Peaceful pets 1pt1-47956-1-1-1590999255.7z",
-                    "version": "1.1"
+                    "file_id": 1000034141,
+                    "name": "Peaceful Pets-47956-1-1a-1671012827.7z",
+                    "version": "1.1a"
                 }
             ],
-            "indexed_timestamp": 1656631041
+            "indexed_timestamp": 1671040973
         },
         {
             "mod_id": 47959,
@@ -3803,12 +3803,12 @@
             "author": "Necrolesian",
             "files": [
                 {
-                    "file_id": 1000025943,
-                    "name": "Dynamic Timescale-48287-2-0-1-1626308481.7z",
-                    "version": "2.0.1"
+                    "file_id": 1000033915,
+                    "name": "Dynamic Timescale-48287-2-1-1669882191.7z",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1656630869
+            "indexed_timestamp": 1671040859
         },
         {
             "mod_id": 48292,
@@ -4935,12 +4935,12 @@
             "author": "abot - NullCascade",
             "files": [
                 {
-                    "file_id": 1000028738,
-                    "name": "ReadAloud114b-48930-1-14-1641500695.7z",
-                    "version": "1.14"
+                    "file_id": 1000033909,
+                    "name": "readAloud115-48930-1-15-1669844034.7z",
+                    "version": "1.15"
                 }
             ],
-            "indexed_timestamp": 1656631405
+            "indexed_timestamp": 1671040862
         },
         {
             "mod_id": 48933,
@@ -5254,12 +5254,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000033657,
-                    "name": "Ashfall-49057-3-0-27-1668253282.7z",
-                    "version": "3.0.27"
+                    "file_id": 1000033982,
+                    "name": "Ashfall-49057-3-0-28-1670138307.7z",
+                    "version": "3.0.28"
                 }
             ],
-            "indexed_timestamp": 1669514002
+            "indexed_timestamp": 1671040967
         },
         {
             "mod_id": 49075,
@@ -5454,12 +5454,12 @@
             "author": "Scuttling Scribs",
             "files": [
                 {
-                    "file_id": 1000028817,
-                    "name": "Pimp my Shrine-49173-1-0-10-1641897035.7z",
-                    "version": "1.0.10"
+                    "file_id": 1000034099,
+                    "name": "Pimp My Shrine-49173-1-0-11-1670767867.7z",
+                    "version": "1.0.11"
                 }
             ],
-            "indexed_timestamp": 1656630967
+            "indexed_timestamp": 1671040942
         },
         {
             "mod_id": 49174,
@@ -5555,17 +5555,17 @@
             "author": "Sigourn and MMC",
             "files": [
                 {
-                    "file_id": 1000027151,
-                    "name": "Harder Barter 1.2 (Lucas Edit)-49232-Rev2-1633112497.7z",
-                    "version": "Rev2"
+                    "file_id": 1000033948,
+                    "name": "Controlled Consumption-49232-1-3-2-1670030930.7z",
+                    "version": "1.3.2"
                 },
                 {
-                    "file_id": 1000028967,
-                    "name": "Controlled Consumption (Greatness7 - Sigourn - Necro Edit) 1.3.2-49232-V2-1642711460.7z",
-                    "version": "V2"
+                    "file_id": 1000033951,
+                    "name": "Harder Barter-49232-1-2-1670031058.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1658233198
+            "indexed_timestamp": 1671040967
         },
         {
             "mod_id": 49251,
@@ -5573,12 +5573,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000033787,
-                    "name": "Friends and Foes-49251-1-6-11-1669220969.7z",
-                    "version": "1.6.11"
+                    "file_id": 1000034002,
+                    "name": "Friends and Foes-49251-1-6-13-1670194326.7z",
+                    "version": "1.6.13"
                 }
             ],
-            "indexed_timestamp": 1669514062
+            "indexed_timestamp": 1671040951
         },
         {
             "mod_id": 49255,
@@ -7122,12 +7122,12 @@
             "author": "C3pa - QwertyQuit - HedgeHog12",
             "files": [
                 {
-                    "file_id": 1000032416,
-                    "name": "Argonian Anatomy-50101-1-2-1659042996.zip",
-                    "version": "1.2"
+                    "file_id": 1000034093,
+                    "name": "Argonian Anatomy-50101-1-2a-1670688221.zip",
+                    "version": "1.2a"
                 }
             ],
-            "indexed_timestamp": 1659685059
+            "indexed_timestamp": 1671040951
         },
         {
             "mod_id": 50108,
@@ -7428,12 +7428,12 @@
                     "version": "2.0"
                 },
                 {
-                    "file_id": 1000032431,
-                    "name": "OAAB Weapons Integrated-50307-1-16-0-1659145927.7z",
-                    "version": "1.16.0"
+                    "file_id": 1000034082,
+                    "name": "Community Weapons Integrated-50307-2-0-1-1670626168.7z",
+                    "version": "2.0.1"
                 }
             ],
-            "indexed_timestamp": 1659685069
+            "indexed_timestamp": 1671040974
         },
         {
             "mod_id": 50308,
@@ -7441,12 +7441,12 @@
             "author": "BTB Necrolesian Lucas",
             "files": [
                 {
-                    "file_id": 1000033636,
-                    "name": "BTB's Game Improvements (Necro Edit) Tweaked-50308-2-2-2-1668120479.7z",
-                    "version": "2.2.2"
+                    "file_id": 1000033995,
+                    "name": "BTBGI (Necro Edit) Tweaked-50308-2-2-3-1670167121.7z",
+                    "version": "2.2.3"
                 }
             ],
-            "indexed_timestamp": 1668157718
+            "indexed_timestamp": 1671040856
         },
         {
             "mod_id": 50315,
@@ -7542,12 +7542,12 @@
             "author": "Danae Merlord",
             "files": [
                 {
-                    "file_id": 1000033612,
-                    "name": "Ahead of the Classes-50346-2-0-7-1668032546.7z",
-                    "version": "2.0.7"
+                    "file_id": 1000034097,
+                    "name": "Ahead of the Classes-50346-2-0-8c-1670765730.7z",
+                    "version": "2.0.8c"
                 }
             ],
-            "indexed_timestamp": 1668157687
+            "indexed_timestamp": 1671040963
         },
         {
             "mod_id": 50352,
@@ -9351,12 +9351,12 @@
             "author": "urm",
             "files": [
                 {
-                    "file_id": 1000031632,
-                    "name": "AttendMe-51232-1-4-1655225383.zip",
-                    "version": "1.4"
+                    "file_id": 1000034092,
+                    "name": "AttendMe_1.5-51232-1-5-1670677301.zip",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1656631050
+            "indexed_timestamp": 1671040908
         },
         {
             "mod_id": 51240,
@@ -9447,12 +9447,12 @@
             "author": "Virnetch",
             "files": [
                 {
-                    "file_id": 1000033673,
-                    "name": "Enchantment Services Redone - ESR-51249-0-9-4-1668335313.7z",
-                    "version": "0.9.4"
+                    "file_id": 1000033966,
+                    "name": "Enchantment Services Redone - ESR-51249-0-9-5-1670070494.7z",
+                    "version": "0.9.5"
                 }
             ],
-            "indexed_timestamp": 1669514056
+            "indexed_timestamp": 1671040858
         },
         {
             "mod_id": 51250,
@@ -10630,12 +10630,12 @@
             "author": "Tapetenklaus",
             "files": [
                 {
-                    "file_id": 1000033630,
-                    "name": "Vivec - God the City-51777-1-2-1-1668089585.zip",
-                    "version": "1.2.1"
+                    "file_id": 1000033967,
+                    "name": "Vivec - God the City-51777-1-2-2-1670079993.zip",
+                    "version": "1.2.2"
                 }
             ],
-            "indexed_timestamp": 1668157708
+            "indexed_timestamp": 1671040991
         },
         {
             "mod_id": 51787,
@@ -10760,12 +10760,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000033191,
-                    "name": "Daily Training-51845-1-1-1664044700.rar",
-                    "version": "1.1"
+                    "file_id": 1000034100,
+                    "name": "Daily Training-51845-1-2-1670768468.rar",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1664088534
+            "indexed_timestamp": 1671040982
         },
         {
             "mod_id": 51856,
@@ -10851,12 +10851,12 @@
             "author": "Kafeid",
             "files": [
                 {
-                    "file_id": 1000033467,
-                    "name": "Kafeid's Circlets - Onionized-51926-1-0-1667122524.rar",
-                    "version": "1.0"
+                    "file_id": 1000034091,
+                    "name": "Kafeid's Circlets - Onionized-51926-1-1-1670675602.rar",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1669513297
+            "indexed_timestamp": 1671040983
         },
         {
             "mod_id": 51932,
@@ -11025,15 +11025,85 @@
             "author": "Pharis",
             "files": [
                 {
-                    "file_id": 1000033811,
-                    "name": "Light Hotkey - OpenMW Lua-51981-1-1-0-1669340384.7z",
-                    "version": "1.1.0"
+                    "file_id": 1000033955,
+                    "name": "Light Hotkey - OpenMW Lua-51981-1-2-0-1670050124.7z",
+                    "version": "1.2.0"
                 }
             ],
-            "indexed_timestamp": 1669513325
+            "indexed_timestamp": 1671041041
+        },
+        {
+            "mod_id": 52013,
+            "name": "Wares Ultimate",
+            "author": "Danae Aurel",
+            "files": [
+                {
+                    "file_id": 1000033932,
+                    "name": "Hold it OLD-52013-2-3-2-1669937252.7z",
+                    "version": "2.3.2"
+                },
+                {
+                    "file_id": 1000034123,
+                    "name": "Wares Ultimate-52013-1-1-1670941225.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1671040808
+        },
+        {
+            "mod_id": 52030,
+            "name": "MWSE F.A.L.L.",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000034014,
+                    "name": "MWSE-FALL-52030-1-1670257704.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1671040812
+        },
+        {
+            "mod_id": 52033,
+            "name": "Races Stand Taller",
+            "author": "Various",
+            "files": [
+                {
+                    "file_id": 1000034044,
+                    "name": "Races Stand Taller-52033-1-0-1670399298.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1671040813
+        },
+        {
+            "mod_id": 52036,
+            "name": "If The Key Fits",
+            "author": "trainwiz",
+            "files": [
+                {
+                    "file_id": 1000034052,
+                    "name": "If The Key Fits Main File-52036-1-0-1670437131.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1671040818
+        },
+        {
+            "mod_id": 52039,
+            "name": "Casting Reduce (MWSE-Lua)",
+            "author": "Trainwiz",
+            "files": [
+                {
+                    "file_id": 1000034068,
+                    "name": "Casting Reduce Main File-52039-1-0-1670533483.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1671040813
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1669513269,
-    "last_scan_for_updated_mods_timestamp": 1669513994,
-    "highest_validated_mod_id": 51998
+    "last_scan_for_added_mods_timestamp": 1671040803,
+    "last_scan_for_updated_mods_timestamp": 1671040852,
+    "highest_validated_mod_id": 52056
 }
