@@ -19,12 +19,12 @@
             "author": "Hrnchamd",
             "files": [
                 {
-                    "file_id": 1000032423,
-                    "name": "MGE XE Manual Install-41102-0-14-3-1659115008.7z",
-                    "version": "0.14.3"
+                    "file_id": 1000034300,
+                    "name": "MGE XE Manual Install-41102-0-15-0-1671931568.7z",
+                    "version": "0.15.0"
                 }
             ],
-            "indexed_timestamp": 1659685048
+            "indexed_timestamp": 1672657577
         },
         {
             "mod_id": 42145,
@@ -1757,17 +1757,17 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000033648,
-                    "name": "4NM_English-47015-3-25-1668163302.zip",
-                    "version": "3.25"
+                    "file_id": 1000034303,
+                    "name": "4NM_English-47015-3-26-1671969887.zip",
+                    "version": "3.26"
                 },
                 {
-                    "file_id": 1000033649,
-                    "name": "4NM_Russian-47015-3-25-1668163420.zip",
-                    "version": "3.25"
+                    "file_id": 1000034304,
+                    "name": "4NM_Russian-47015-3-26-1671970022.zip",
+                    "version": "3.26"
                 }
             ],
-            "indexed_timestamp": 1669514036
+            "indexed_timestamp": 1672657583
         },
         {
             "mod_id": 47029,
@@ -5537,17 +5537,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000032867,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-7-6-1661670490.7z",
-                    "version": "2.7.6"
+                    "file_id": 1000034279,
+                    "name": "Beautiful Cities of Morrowind - Core-49231-2-8-0-1671814108.7z",
+                    "version": "2.8.0"
                 },
                 {
-                    "file_id": 1000033062,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-7-7-1663000164.7z",
-                    "version": "2.7.7"
+                    "file_id": 1000034293,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-8-0-1671914662.7z",
+                    "version": "2.8.0"
                 }
             ],
-            "indexed_timestamp": 1664088671
+            "indexed_timestamp": 1672657504
         },
         {
             "mod_id": 49232,
@@ -6410,12 +6410,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024620,
-                    "name": "Spawner-49759-1-1-1620929664.zip",
-                    "version": "1.1"
+                    "file_id": 1000034249,
+                    "name": "Spawner-49759-1-2-1671720265.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1656631028
+            "indexed_timestamp": 1672657587
         },
         {
             "mod_id": 49762,
@@ -7122,12 +7122,12 @@
             "author": "C3pa - QwertyQuit - HedgeHog12",
             "files": [
                 {
-                    "file_id": 1000034093,
-                    "name": "Argonian Anatomy-50101-1-2a-1670688221.zip",
-                    "version": "1.2a"
+                    "file_id": 1000034263,
+                    "name": "Argonian Anatomy-50101-1-2b-1671750071.zip",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1671040951
+            "indexed_timestamp": 1672657589
         },
         {
             "mod_id": 50108,
@@ -7542,12 +7542,12 @@
             "author": "Danae Merlord",
             "files": [
                 {
-                    "file_id": 1000034097,
-                    "name": "Ahead of the Classes-50346-2-0-8c-1670765730.7z",
-                    "version": "2.0.8c"
+                    "file_id": 1000034221,
+                    "name": "Ahead of the Classes-50346-2-0-9-1671571755.7z",
+                    "version": "2.0.9"
                 }
             ],
-            "indexed_timestamp": 1671040963
+            "indexed_timestamp": 1672657595
         },
         {
             "mod_id": 50352,
@@ -7625,12 +7625,12 @@
             "author": "Drac and Toccatta",
             "files": [
                 {
-                    "file_id": 1000030573,
-                    "name": "Morrowind Crafting 3.0 Final-50400-3-0-1651967853.7z",
-                    "version": "3.0"
+                    "file_id": 1000034339,
+                    "name": "Morrowind Crafting 3.1.zip-50400-3-1-1672188939.zip",
+                    "version": "3.1"
                 }
             ],
-            "indexed_timestamp": 1656631413
+            "indexed_timestamp": 1672657600
         },
         {
             "mod_id": 50405,
@@ -9818,12 +9818,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000033200,
-                    "name": "Time Consumer-51396-1-3-1664125255.rar",
-                    "version": "1.3"
+                    "file_id": 1000034188,
+                    "name": "Time Consumer-51396-1-4a-1671352276.rar",
+                    "version": "1.4a"
                 }
             ],
-            "indexed_timestamp": 1666029034
+            "indexed_timestamp": 1672657625
         },
         {
             "mod_id": 51399,
@@ -10329,12 +10329,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000032319,
-                    "name": "Friendly Intervention-51630-1-1-1658537407.rar",
-                    "version": "1.1"
+                    "file_id": 1000034329,
+                    "name": "Friendly Intervention-51630-2-0-1672158378.rar",
+                    "version": "2.0"
                 }
             ],
-            "indexed_timestamp": 1659685123
+            "indexed_timestamp": 1672657582
         },
         {
             "mod_id": 51636,
@@ -10505,7 +10505,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1668157626
+            "indexed_timestamp": 1672657644
         },
         {
             "mod_id": 51686,
@@ -10916,12 +10916,12 @@
             "author": "Team Gobblin Goblins",
             "files": [
                 {
-                    "file_id": 1000033690,
-                    "name": "Memento Mori-51940-1-2-2-1668479981.7z",
-                    "version": "1.2.2"
+                    "file_id": 1000034196,
+                    "name": "Memento Mori-51940-1-2-3-1671423465.7z",
+                    "version": "1.2.3"
                 }
             ],
-            "indexed_timestamp": 1669513307
+            "indexed_timestamp": 1672657669
         },
         {
             "mod_id": 51941,
@@ -11043,12 +11043,12 @@
                     "version": "2.3.2"
                 },
                 {
-                    "file_id": 1000034123,
-                    "name": "Wares Ultimate-52013-1-1-1670941225.7z",
-                    "version": "1.1"
+                    "file_id": 1000034384,
+                    "name": "Wares Ultimate-52013-1-4-1672483130.7z",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1671040808
+            "indexed_timestamp": 1672657646
         },
         {
             "mod_id": 52030,
@@ -11101,9 +11101,105 @@
                 }
             ],
             "indexed_timestamp": 1671040813
+        },
+        {
+            "mod_id": 52070,
+            "name": "SUDS",
+            "author": "Stripes",
+            "files": [
+                {
+                    "file_id": 1000034175,
+                    "name": "SUDS-52070-1-1671278085.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1672657425
+        },
+        {
+            "mod_id": 52079,
+            "name": "Gluhwein 2022 - Seyda Neen",
+            "author": "Team Gluhwein 2022",
+            "files": [
+                {
+                    "file_id": 1000034209,
+                    "name": "Gluhwein 2022 - Seyda Neen-52079-1-0-1671487791.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1672657446
+        },
+        {
+            "mod_id": 52091,
+            "name": "NOD - NPC Outfit Diversity",
+            "author": "Lucevar and the Morrowind Community",
+            "files": [
+                {
+                    "file_id": 1000034377,
+                    "name": "NPC Outfit Diversity-52091-1-2-1672445514.7z",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1672657434
+        },
+        {
+            "mod_id": 52105,
+            "name": "MWSE Dynamic Object Replacer",
+            "author": "GOOGLEPOX",
+            "files": [
+                {
+                    "file_id": 1000034326,
+                    "name": "Dynamic Object Replacer-52105-1-0-2-1672132867.7z",
+                    "version": "1.0.2"
+                }
+            ],
+            "indexed_timestamp": 1672657443
+        },
+        {
+            "mod_id": 52108,
+            "name": "Just the Tooltip",
+            "author": "Revacholiere",
+            "files": [
+                {
+                    "file_id": 1000034348,
+                    "name": "Just the Tooltip-52108-1-0-1672232716.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1672657444
+        },
+        {
+            "mod_id": 52111,
+            "name": "OdaiHTN - The AI Framework",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000034374,
+                    "name": "OdaiHTN - The AI Framework-52111-1-1672424154.7z",
+                    "version": "1"
+                },
+                {
+                    "file_id": 1000034391,
+                    "name": "MWSE Example - Tetra AI-52111-1-1672587125.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1672657420
+        },
+        {
+            "mod_id": 52116,
+            "name": "Pet the Damn Scrib",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000034398,
+                    "name": "PetTheDamnScrib-52116-1-0-1-1672619517.7z",
+                    "version": "1.0.1"
+                }
+            ],
+            "indexed_timestamp": 1672657419
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1671040803,
-    "last_scan_for_updated_mods_timestamp": 1671040852,
-    "highest_validated_mod_id": 52056
+    "last_scan_for_added_mods_timestamp": 1672657416,
+    "last_scan_for_updated_mods_timestamp": 1672657478,
+    "highest_validated_mod_id": 52121
 }
