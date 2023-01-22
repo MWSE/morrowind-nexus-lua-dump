@@ -1,0 +1,32 @@
+local odainHTN = require("sb_htn.interop")
+local ConCorky = require("sb_htn_corky.Contexts.ConCorky")
+
+local SubTriggerCuriosity = require("sb_htn_corky.Domains.SubTriggerCuriosity")
+local SubReturnToOrigin = require("sb_htn_corky.Domains.SubReturnToOrigin")
+local SubAtOrigin = require("sb_htn_corky.Domains.SubAtOrigin")
+local SubFollowPlayer = require("sb_htn_corky.Domains.SubFollowPlayer")
+local SubFollowNPC = require("sb_htn_corky.Domains.SubFollowNPC")
+local SubApproachContainer = require("sb_htn_corky.Domains.SubApproachContainer")
+local SubAtContainer = require("sb_htn_corky.Domains.SubAtContainer")
+
+---@class DomCorky : DomainBuilder
+local DomCorky = odainHTN.DomainBuilder:new("Corky Domain", odainHTN.Factory.DefaultFactory:new(), ConCorky)
+
+return DomCorky:Splice(SubTriggerCuriosity)
+    :Select("AI Active")
+    :Condition("Is Not In Combat", function(ctx)
+        -- mwse.log("Is Not In Combat...")
+        return ctx.Reference.mobile.inCombat == false
+    end)
+    :Condition("Is Idling", function(ctx)
+        -- mwse.log("Is Idling...")
+        return ctx:HasState(ConCorky.States.IsIdle)
+    end)
+    :Splice(SubAtOrigin)
+    :Splice(SubAtContainer)
+    :Splice(SubReturnToOrigin)
+    :Splice(SubApproachContainer)
+    :Splice(SubFollowPlayer)
+    :Splice(SubFollowNPC)
+    :End()
+    :Build()
