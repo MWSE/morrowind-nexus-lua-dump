@@ -1,0 +1,56 @@
+---@meta
+
+---@alias craftingFrameworkRotationAxis
+---| '"x"'
+---| '"y"'
+---| '"z"'
+---| '"-x"'
+---| '"-y"'
+---| '"-z"'
+
+---@class craftingFrameworkMaterialRequirementData
+---@field material string **Required.** The id of either a Crafting Framework Material, or an object id. Using an object id will register it as its own Material where the object itself is the only item in the list.
+---@field count number *Default*: `1`. The required amount of the material.
+
+---@class craftingFrameworkRecipeData
+---@field id string **Required** This is the unique identifier used to identify this `recipe`. This id is used when fetching an existing Recipe from the `Recipe` API.
+---@field craftableId string **Required.** The id of the object crafted by this recipe
+---@field description string The description of the recipe, displayed in the crafting menu.
+---@field persist boolean *Default*: `true`. If `false`, the recipe will not be saved to the global recipe list and can't be accessed with Recipe.getRecipe.
+---@field noResult boolean *Defualt*: `false`. If `true`, no object or item will actually be crafted. Instead, use craftCallback to implement a custom result.
+---@field craftable craftingFrameworkCraftableData
+---@field materials craftingFrameworkMaterialRequirementData[] **Required.** A table with the materials required by this recipe.
+---@field timeTaken number The time taken to craft the associated object. Currently, doesn't serve a purpose within Crafting Framework, but it can be used to implement custom mechanics.
+---@field knownByDefault boolean *Default*: `true`. Controls whether the player knows this recipe from the game start.
+---@field customRequirements craftingFrameworkCustomRequirementData[] A table with the custom requirements that need to be met in order to craft the associated item.
+---@field skillRequirements craftingFrameworkSkillRequirementData[] A table with the skill requirements needed to craft the associated item.
+---@field toolRequirements craftingFrameworkToolRequirementData[] A table with the tool requirements needed to craft the associated item.
+---@field category string *Default*: `"Other"`. This is the category in which the recipe will appear in the crafting menu.
+---@field name string The name of the craftable displayed in the menu. If not set, it will use the name of the craftable object
+---@field placedObject string If the object being placed is different from the object that is picked up by the player, use `id` for the held object id and `placedObject` for the id of the object that is placed in the world
+---@field uncarryable boolean Treats the crafted item as uncarryable even if the object type otherwise would be carryable. This will make the object be crafted immediately into the world and remove the Pick Up button from the menu. Not required if the crafted object is already uncarryable, such as a static or activator
+---@field additionalMenuOptions craftingFrameworkMenuButtonData[] A list of additional menu options that will be displayed in the craftable menu
+---@field soundId string Provide a sound ID (for a sound registered in the CS) that will be played when the craftable is crafted
+---@field soundPath string Provide a custom sound path that will be played when an craftable is crafted
+---@field soundType craftingFrameworkCraftableSoundType Determines the crafting sound used, using sounds from the framework or added by interop. These include: "fabric", "wood", "leather", "rope", "straw", "metal" and "carve."
+---@field materialRecovery number The percentage of materials used to craft the item that will be recovered. Overrides the default amount set in the Crafting Framework MCM
+---@field maxSteepness number The max angle a crafted object will be oriented to while repositioning
+---@field resultAmount number The amount of the item to be crafted
+---@field recoverEquipmentMaterials boolean When set to true, and the craftable is an armor or weapon item, equipping it when it has 0 condition will destroy it and salvage its materials
+---@field destroyCallback function Custom function called after a craftable has been destroyed
+---@field placeCallback function Custom function called after a craftable has been placed
+---@field positionCallback function
+---@field craftCallback function Custom function called after a craftable has been crafted
+---@field previewMesh string This is the mesh override for the preview pane in the crafting menu. If no mesh is present, the 3D model of the associated item will be used.
+---@field rotationAxis craftingFrameworkRotationAxis **Default "z"** Determines about which axis the preview mesh will rotate around. Defaults to the z axis.
+---@field previewScale number **Default 1** Determines the scale of the preview mesh.
+---@field previewHeight number **Default 1** Determines the height of the mesh in the preview window.
+
+
+---@class craftingFrameworkRecipe : craftingFrameworkRecipeData
+---@field craftable craftingFrameworkCraftable The object that can be crafted with this recipe.
+---@field materials craftingFrameworkMaterialRequirementData|craftingFrameworkMaterialRequirementData[] **Required.** A table with the materials required by this recipe.
+---@field customRequirements craftingFrameworkCustomRequirement[] A table with the custom requirements that need to be met in order to craft the associated item.
+---@field skillRequirements craftingFrameworkSkillRequirement[] A table with the skill requirements needed to craft the associated item.
+---@field toolRequirements craftingFrameworkToolRequirement[] A table with the tool requirements needed to craft the associated item.
+---@field registeredRecipes table<string, craftingFrameworkRecipe>

@@ -1,0 +1,7 @@
+require("CraftingFramework.mcm")
+require("CraftingFramework.controllers.StaticActivator")
+require("CraftingFramework.controllers.Positioner")
+require("CraftingFramework.controllers.RecoverMaterials")
+require("CraftingFramework.controllers.CraftingEvents")
+mwse.log("[CraftingFramework INFO] initialised.")
+require("CraftingFramework.test")
