@@ -1,0 +1,3 @@
+local common = {}
+
+return common
