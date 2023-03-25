@@ -1,3 +1,0 @@
-local skinningConfig = {}
-
-return skinningConfig
