@@ -19,12 +19,12 @@
             "author": "Hrnchamd",
             "files": [
                 {
-                    "file_id": 1000036526,
-                    "name": "MGE XE Manual Install-41102-0-15-3-1678929503.7z",
-                    "version": "0.15.3"
+                    "file_id": 1000037077,
+                    "name": "MGE XE Manual Install-41102-0-16-0-1681046180.7z",
+                    "version": "0.16.0"
                 }
             ],
-            "indexed_timestamp": 1679712118
+            "indexed_timestamp": 1681234002
         },
         {
             "mod_id": 42145,
@@ -652,12 +652,12 @@
             "author": "Petethegoat",
             "files": [
                 {
-                    "file_id": 1000011441,
-                    "name": "Run Fix-45947-1-0.7z",
-                    "version": "1.0"
+                    "file_id": 1000037073,
+                    "name": "Run Fix-45947-1-1-1681042324.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631069
+            "indexed_timestamp": 1681233983
         },
         {
             "mod_id": 45952,
@@ -2541,12 +2541,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000036278,
-                    "name": "abotSmartJournal-47492-1-14-1677927555.7z",
-                    "version": "1.14"
+                    "file_id": 1000036912,
+                    "name": "abotSmartJournal-47492-1-15-1680455882.7z",
+                    "version": "1.15"
                 }
             ],
-            "indexed_timestamp": 1678341634
+            "indexed_timestamp": 1681233988
         },
         {
             "mod_id": 47510,
@@ -4123,12 +4123,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000036144,
-                    "name": "Right Click Menu Exit-48458-1-0-9-1677406231.7z",
-                    "version": "1.0.9"
+                    "file_id": 1000036906,
+                    "name": "Right Click Menu Exit-48458-1-0-10-1680430021.7z",
+                    "version": "1.0.10"
                 }
             ],
-            "indexed_timestamp": 1678341636
+            "indexed_timestamp": 1681233990
         },
         {
             "mod_id": 48459,
@@ -4492,17 +4492,12 @@
             "author": "OEA",
             "files": [
                 {
-                    "file_id": 1000022500,
-                    "name": "3rd-Person Crosshair-48691-2-1-1a-1610417149.zip",
-                    "version": "2.1.1a"
-                },
-                {
-                    "file_id": 1000034824,
-                    "name": "Enhanced Version-48691-1-2-1-1674614770.zip",
-                    "version": "1.2.1"
+                    "file_id": 1000036747,
+                    "name": "Enhanced Version-48691-1-2-1a-1680094933.zip",
+                    "version": "1.2.1a"
                 }
             ],
-            "indexed_timestamp": 1675831809
+            "indexed_timestamp": 1681233994
         },
         {
             "mod_id": 48711,
@@ -5073,12 +5068,12 @@
             "author": "VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000021527,
-                    "name": "Class Skill Limit-48989-1-0-1604045303.zip",
-                    "version": "1.0"
+                    "file_id": 1000037061,
+                    "name": "Class Skill Limit-48989-1-1-1680978898.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631278
+            "indexed_timestamp": 1681233990
         },
         {
             "mod_id": 48990,
@@ -5182,12 +5177,12 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000036681,
-                    "name": "OAAB_Data-49042-2-1-4-1679706769.7z",
-                    "version": "2.1.4"
+                    "file_id": 1000037110,
+                    "name": "OAAB_Data-49042-2-1-6-1681170262.7z",
+                    "version": "2.1.6"
                 }
             ],
-            "indexed_timestamp": 1679712101
+            "indexed_timestamp": 1681234007
         },
         {
             "mod_id": 49045,
@@ -5241,12 +5236,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000036603,
-                    "name": "Ashfall-49057-3-9-0-1679394082.7z",
-                    "version": "3.9.0"
+                    "file_id": 1000037071,
+                    "name": "Ashfall-49057-3-9-2-1681036517.7z",
+                    "version": "3.9.2"
                 }
             ],
-            "indexed_timestamp": 1679712131
+            "indexed_timestamp": 1681234027
         },
         {
             "mod_id": 49075,
@@ -5524,17 +5519,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000036523,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-8-8-1678912247.7z",
+                    "file_id": 1000036904,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-8-8-1680423981.7z",
                     "version": "2.8.8"
                 },
                 {
-                    "file_id": 1000036641,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-8-7-1679513330.7z",
-                    "version": "2.8.7"
+                    "file_id": 1000036905,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-8-8-1680424152.7z",
+                    "version": "2.8.8"
                 }
             ],
-            "indexed_timestamp": 1679712129
+            "indexed_timestamp": 1681233860
         },
         {
             "mod_id": 49232,
@@ -5804,12 +5799,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000032182,
-                    "name": "Just Drop It-49557-1-1-4-1657947308.7z",
-                    "version": "1.1.4"
+                    "file_id": 1000036698,
+                    "name": "Just Drop It-49557-1-1-5-1679829116.7z",
+                    "version": "1.1.5"
                 }
             ],
-            "indexed_timestamp": 1658233202
+            "indexed_timestamp": 1681233995
         },
         {
             "mod_id": 49607,
@@ -6680,12 +6675,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000033726,
-                    "name": "abotSmartCompanions-49848-1-13-1668724223.7z",
-                    "version": "1.13"
+                    "file_id": 1000036730,
+                    "name": "abotSmartCompanions-49848-1-14-1680000356.7z",
+                    "version": "1.14"
                 }
             ],
-            "indexed_timestamp": 1669514054
+            "indexed_timestamp": 1681234000
         },
         {
             "mod_id": 49853,
@@ -7791,12 +7786,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000036281,
-                    "name": "abotSmartActivate107-50558-1-07-1677936116.7z",
-                    "version": "1.07"
+                    "file_id": 1000037051,
+                    "name": "abotSmartActivate109-50558-1-09-1680958699.7z",
+                    "version": "1.09"
                 }
             ],
-            "indexed_timestamp": 1678341557
+            "indexed_timestamp": 1681234004
         },
         {
             "mod_id": 50574,
@@ -7921,12 +7916,12 @@
             "author": "KirbonatedBeverage",
             "files": [
                 {
-                    "file_id": 1000034678,
-                    "name": "Kirbonated Character Progression-50702-1-3-3-1674063433.zip",
-                    "version": "1.3.3"
+                    "file_id": 1000037084,
+                    "name": "Kirbonated Character Progression-50702-1-3-5-1681094649.zip",
+                    "version": "1.3.5"
                 }
             ],
-            "indexed_timestamp": 1674411083
+            "indexed_timestamp": 1681234022
         },
         {
             "mod_id": 50709,
@@ -8645,12 +8640,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000036570,
-                    "name": "The Crafting Framework-51009-1-6-0-1679186927.7z",
-                    "version": "1.6.0"
+                    "file_id": 1000037093,
+                    "name": "The Crafting Framework-51009-1-7-7-1681114764.7z",
+                    "version": "1.7.7"
                 }
             ],
-            "indexed_timestamp": 1679712135
+            "indexed_timestamp": 1681234029
         },
         {
             "mod_id": 51022,
@@ -9032,12 +9027,12 @@
             "author": "VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000035859,
-                    "name": "Morag Tong Secret Identity-51128-1-1-1676316374.zip",
-                    "version": "1.1"
+                    "file_id": 1000037058,
+                    "name": "Morag Tong Secret Identity-51128-1-2-1680974853.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1677092349
+            "indexed_timestamp": 1681233871
         },
         {
             "mod_id": 51132,
@@ -10082,12 +10077,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000031897,
-                    "name": "abotPlayerMadeMagicRename-51484-1-03-1656421362.7z",
-                    "version": "1.03"
+                    "file_id": 1000036729,
+                    "name": "abotPlayerMadeMagicRename-51484-1-04-1679993801.7z",
+                    "version": "1.04"
                 }
             ],
-            "indexed_timestamp": 1656630984
+            "indexed_timestamp": 1681234026
         },
         {
             "mod_id": 51489,
@@ -10347,12 +10342,12 @@
             "author": "Vengyre",
             "files": [
                 {
-                    "file_id": 1000036151,
-                    "name": "Magicka of the Third Era-51636-1-1-2-1677432464.rar",
-                    "version": "1.1.2"
+                    "file_id": 1000037064,
+                    "name": "Magicka of the Third Era-51636-1-2-1680991209.rar",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1678341667
+            "indexed_timestamp": 1681234035
         },
         {
             "mod_id": 51637,
@@ -10713,12 +10708,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000033105,
-                    "name": "Restock Filled Soul Gems-51809-1-0-1-1663334777.7z",
-                    "version": "1.0.1"
+                    "file_id": 1000036743,
+                    "name": "Restock Filled Soul Gems-51809-1-1-1680075806.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1664088518
+            "indexed_timestamp": 1681234031
         },
         {
             "mod_id": 51810,
@@ -10752,12 +10747,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000033106,
-                    "name": "Come To Me-51825-1-0-1663344676.zip",
-                    "version": "1.0"
+                    "file_id": 1000036947,
+                    "name": "Come To Me-51825-1-1-1680681514.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1664088528
+            "indexed_timestamp": 1681234031
         },
         {
             "mod_id": 51845,
@@ -11704,12 +11699,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000036674,
-                    "name": "abotFootprints-52284-1-03-1679687607.7z",
-                    "version": "1.03"
+                    "file_id": 1000037025,
+                    "name": "aborFootprints-52284-1-04b-1680884415.7z",
+                    "version": "1.04b"
                 }
             ],
-            "indexed_timestamp": 1679712157
+            "indexed_timestamp": 1681234044
         },
         {
             "mod_id": 52286,
@@ -11717,12 +11712,12 @@
             "author": "Wix",
             "files": [
                 {
-                    "file_id": 1000035168,
-                    "name": "WMultiMark-52286-1-0-1675628315.zip",
-                    "version": "1.0"
+                    "file_id": 1000036911,
+                    "name": "MultiMark v 1.1-52286-1-1-1680447680.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1675832187
+            "indexed_timestamp": 1681234040
         },
         {
             "mod_id": 52287,
@@ -11881,19 +11876,6 @@
             "indexed_timestamp": 1677091566
         },
         {
-            "mod_id": 52359,
-            "name": "Barbershop - Face and Hair Recustomizer for Player and NPCs",
-            "author": "AlandroSul",
-            "files": [
-                {
-                    "file_id": 1000035908,
-                    "name": "Barbershop Face and Hair recustomizer-52359-1-1676496382.rar",
-                    "version": "1"
-                }
-            ],
-            "indexed_timestamp": 1677091577
-        },
-        {
             "mod_id": 52362,
             "name": "Armor Training _ RUS",
             "author": "Aazman",
@@ -11912,12 +11894,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000036083,
-                    "name": "Teach Companion Spells-52364-1-1-1677135346.7z",
-                    "version": "1.1"
+                    "file_id": 1000037130,
+                    "name": "Teach Companion Spells-52364-1-2-1681193172.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1678341798
+            "indexed_timestamp": 1681234041
         },
         {
             "mod_id": 52372,
@@ -11964,12 +11946,12 @@
             "author": "None",
             "files": [
                 {
-                    "file_id": 1000036642,
-                    "name": "Skillful Sneaking-52410-1-0-1679522941.rar",
-                    "version": "1.0"
+                    "file_id": 1000036974,
+                    "name": "Skillful Sneaking-52410-1-1-0-1680804863.rar",
+                    "version": "1.1.0"
                 }
             ],
-            "indexed_timestamp": 1679712338
+            "indexed_timestamp": 1681234045
         },
         {
             "mod_id": 52416,
@@ -12068,12 +12050,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000036473,
-                    "name": "Arachnophobia Patch-52476-1-2-1678720378.7z",
-                    "version": "1.2"
+                    "file_id": 1000036773,
+                    "name": "Arachnophobia Patch-52476-1-3-1680143299.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1679712230
+            "indexed_timestamp": 1681234102
         },
         {
             "mod_id": 52487,
@@ -12094,12 +12076,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000036581,
-                    "name": "More Console Commands-52500-1-6-1679221554.7z",
-                    "version": "1.6"
+                    "file_id": 1000036913,
+                    "name": "More Console Commands-52500-1-10-1680456599.7z",
+                    "version": "1.10"
                 }
             ],
-            "indexed_timestamp": 1679711971
+            "indexed_timestamp": 1681234111
         },
         {
             "mod_id": 52505,
@@ -12146,12 +12128,12 @@
             "author": "Diject",
             "files": [
                 {
-                    "file_id": 1000036665,
-                    "name": "Morrowind World Randomizer.zip-52534-1-0a-1679663024.zip",
-                    "version": "1.0a"
+                    "file_id": 1000036925,
+                    "name": "Morrowind World Randomizer v1.2.zip-52534-1-2-1680546012.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1679712336
+            "indexed_timestamp": 1681234125
         },
         {
             "mod_id": 52540,
@@ -12165,9 +12147,79 @@
                 }
             ],
             "indexed_timestamp": 1679711962
+        },
+        {
+            "mod_id": 52553,
+            "name": "Force Close Dialogue Menu",
+            "author": "JosephMcKean",
+            "files": [
+                {
+                    "file_id": 1000036701,
+                    "name": "Force Close Dialogue Menu-52553-1-0-1679847691.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1681233730
+        },
+        {
+            "mod_id": 52560,
+            "name": "Raised by Beasts",
+            "author": "VvardenfellStormSage",
+            "files": [
+                {
+                    "file_id": 1000036731,
+                    "name": "Raised by Argonian-52560-1-1-1680005227.zip",
+                    "version": "1.1"
+                },
+                {
+                    "file_id": 1000036732,
+                    "name": "Raised by Khajiit-52560-1-1-1680005266.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1681233748
+        },
+        {
+            "mod_id": 52581,
+            "name": "Attend Me - CN",
+            "author": "Byzod",
+            "files": [
+                {
+                    "file_id": 1000036781,
+                    "name": "AttendMe_1.5-CN-52581-1-5-1680195232.zip",
+                    "version": "1.5"
+                }
+            ],
+            "indexed_timestamp": 1681233735
+        },
+        {
+            "mod_id": 52582,
+            "name": "Black Soul Gem Crafting (MWSE)",
+            "author": "SNikWard",
+            "files": [
+                {
+                    "file_id": 1000036786,
+                    "name": "Black Soul Gem Crafting-52582-1-1680203128.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1681233744
+        },
+        {
+            "mod_id": 52665,
+            "name": "Class Attribute Limit",
+            "author": "VitruvianGuar",
+            "files": [
+                {
+                    "file_id": 1000037078,
+                    "name": "Class Attribute Limit-52665-1-0-1681061284.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1681233669
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1679711960,
-    "last_scan_for_updated_mods_timestamp": 1679712015,
-    "highest_validated_mod_id": 52547
+    "last_scan_for_added_mods_timestamp": 1681233666,
+    "last_scan_for_updated_mods_timestamp": 1681237960,
+    "highest_validated_mod_id": 52668
 }
