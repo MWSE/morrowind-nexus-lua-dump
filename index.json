@@ -19,12 +19,12 @@
             "author": "Hrnchamd",
             "files": [
                 {
-                    "file_id": 1000037077,
-                    "name": "MGE XE Manual Install-41102-0-16-0-1681046180.7z",
-                    "version": "0.16.0"
+                    "file_id": 1000037329,
+                    "name": "MGE XE Manual Install-41102-0-16-3-1682285033.7z",
+                    "version": "0.16.3"
                 }
             ],
-            "indexed_timestamp": 1681234002
+            "indexed_timestamp": 1682501500
         },
         {
             "mod_id": 42145,
@@ -3676,12 +3676,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000036078,
-                    "name": "AURA 5.3.1-48255-5-3-1-1677109049.7z",
-                    "version": "5.3.1"
+                    "file_id": 1000037236,
+                    "name": "AURA 5.3.2-48255-5-3-2-1681766032.7z",
+                    "version": "5.3.2"
                 }
             ],
-            "indexed_timestamp": 1678341637
+            "indexed_timestamp": 1682501503
         },
         {
             "mod_id": 48263,
@@ -4453,12 +4453,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000034703,
-                    "name": "Watch the Skies 4.3.2-48636-4-3-2-1674167106.7z",
-                    "version": "4.3.2"
+                    "file_id": 1000037235,
+                    "name": "Watch the Skies 4.3.3-48636-4-3-3-1681765684.7z",
+                    "version": "4.3.3"
                 }
             ],
-            "indexed_timestamp": 1674411056
+            "indexed_timestamp": 1682501509
         },
         {
             "mod_id": 48642,
@@ -5068,12 +5068,12 @@
             "author": "VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000037061,
-                    "name": "Class Skill Limit-48989-1-1-1680978898.zip",
-                    "version": "1.1"
+                    "file_id": 1000037252,
+                    "name": "Class Skill Limit-48989-1-2-1681841752.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1681233990
+            "indexed_timestamp": 1682501384
         },
         {
             "mod_id": 48990,
@@ -5177,12 +5177,12 @@
             "author": "OAAB_Data Team",
             "files": [
                 {
-                    "file_id": 1000037110,
-                    "name": "OAAB_Data-49042-2-1-6-1681170262.7z",
-                    "version": "2.1.6"
+                    "file_id": 1000037345,
+                    "name": "OAAB_Data-49042-2-1-8-1682351720.7z",
+                    "version": "2.1.8"
                 }
             ],
-            "indexed_timestamp": 1681234007
+            "indexed_timestamp": 1682501518
         },
         {
             "mod_id": 49045,
@@ -5236,12 +5236,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000037071,
-                    "name": "Ashfall-49057-3-9-2-1681036517.7z",
-                    "version": "3.9.2"
+                    "file_id": 1000037427,
+                    "name": "Ashfall-49057-3-9-4-1682502393.7z",
+                    "version": "3.9.4"
                 }
             ],
-            "indexed_timestamp": 1681234027
+            "indexed_timestamp": 1682514894
         },
         {
             "mod_id": 49075,
@@ -5519,17 +5519,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000036904,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-8-8-1680423981.7z",
-                    "version": "2.8.8"
+                    "file_id": 1000037340,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-9-0-1682327255.7z",
+                    "version": "2.9.0"
                 },
                 {
-                    "file_id": 1000036905,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-8-8-1680424152.7z",
-                    "version": "2.8.8"
+                    "file_id": 1000037341,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-9-0-1682327287.7z",
+                    "version": "2.9.0"
                 }
             ],
-            "indexed_timestamp": 1681233860
+            "indexed_timestamp": 1682501385
         },
         {
             "mod_id": 49232,
@@ -5555,12 +5555,12 @@
             "author": "Danae",
             "files": [
                 {
-                    "file_id": 1000034002,
-                    "name": "Friends and Foes-49251-1-6-13-1670194326.7z",
-                    "version": "1.6.13"
+                    "file_id": 1000037259,
+                    "name": "Friends and Foes-49251-1-6-14-1681922408.7z",
+                    "version": "1.6.14"
                 }
             ],
-            "indexed_timestamp": 1671040951
+            "indexed_timestamp": 1682501511
         },
         {
             "mod_id": 49255,
@@ -7716,12 +7716,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000036077,
-                    "name": "Vapourmist 4.1.0-50517-4-1-0-1677106776.7z",
-                    "version": "4.1.0"
+                    "file_id": 1000037234,
+                    "name": "Vapourmist 4.1.1-50517-4-1-1-1681765474.7z",
+                    "version": "4.1.1"
                 }
             ],
-            "indexed_timestamp": 1678341556
+            "indexed_timestamp": 1682501513
         },
         {
             "mod_id": 50520,
@@ -7916,12 +7916,12 @@
             "author": "KirbonatedBeverage",
             "files": [
                 {
-                    "file_id": 1000037084,
-                    "name": "Kirbonated Character Progression-50702-1-3-5-1681094649.zip",
-                    "version": "1.3.5"
+                    "file_id": 1000037261,
+                    "name": "Kirbonated Character Progression-50702-1-3-6-1681942619.zip",
+                    "version": "1.3.6"
                 }
             ],
-            "indexed_timestamp": 1681234022
+            "indexed_timestamp": 1682501522
         },
         {
             "mod_id": 50709,
@@ -8640,12 +8640,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000037093,
-                    "name": "The Crafting Framework-51009-1-7-7-1681114764.7z",
-                    "version": "1.7.7"
+                    "file_id": 1000037160,
+                    "name": "The Crafting Framework-51009-1-8-0-1681380627.7z",
+                    "version": "1.8.0"
                 }
             ],
-            "indexed_timestamp": 1681234029
+            "indexed_timestamp": 1682501532
         },
         {
             "mod_id": 51022,
@@ -8962,12 +8962,12 @@
             "author": "Revacholiere",
             "files": [
                 {
-                    "file_id": 1000031132,
-                    "name": "Replica Crafting MWSE-51114-1-0-2-2-1653757455.zip",
-                    "version": "1.0.2.2"
+                    "file_id": 1000037313,
+                    "name": "Replica Crafting MWSE-51114-1-0-3-1682191320.zip",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1656631295
+            "indexed_timestamp": 1682501523
         },
         {
             "mod_id": 51122,
@@ -10656,12 +10656,12 @@
             "author": "MrGool",
             "files": [
                 {
-                    "file_id": 1000036573,
-                    "name": "Packrat Skill-51796-1-1-1679191487.zip",
-                    "version": "1.1"
+                    "file_id": 1000037316,
+                    "name": "Packrat Skill-51796-1-11-1682200079.zip",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1679712120
+            "indexed_timestamp": 1682501533
         },
         {
             "mod_id": 51799,
@@ -10929,12 +10929,12 @@
             "author": "Team Gobblin Goblins",
             "files": [
                 {
-                    "file_id": 1000034558,
-                    "name": "Memento Mori-51940-1-2-4-1673372190.7z",
-                    "version": "1.2.4"
+                    "file_id": 1000037163,
+                    "name": "Memento Mori-51940-1-2-6-1681402163.7z",
+                    "version": "1.2.6"
                 }
             ],
-            "indexed_timestamp": 1674411109
+            "indexed_timestamp": 1682501537
         },
         {
             "mod_id": 51941,
@@ -11894,12 +11894,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000037130,
-                    "name": "Teach Companion Spells-52364-1-2-1681193172.7z",
-                    "version": "1.2"
+                    "file_id": 1000037223,
+                    "name": "Teach Companion Spells-52364-1-3-1681698285.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1681234041
+            "indexed_timestamp": 1682501541
         },
         {
             "mod_id": 52372,
@@ -12076,12 +12076,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000036913,
-                    "name": "More Console Commands-52500-1-10-1680456599.7z",
-                    "version": "1.10"
+                    "file_id": 1000037224,
+                    "name": "More Console Commands-52500-1-11-1681698899.7z",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1681234111
+            "indexed_timestamp": 1682501548
         },
         {
             "mod_id": 52505,
@@ -12128,12 +12128,12 @@
             "author": "Diject",
             "files": [
                 {
-                    "file_id": 1000036925,
-                    "name": "Morrowind World Randomizer v1.2.zip-52534-1-2-1680546012.zip",
-                    "version": "1.2"
+                    "file_id": 1000037326,
+                    "name": "Morrowind World Randomizer v1.3.zip-52534-1-3-1682269037.zip",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1681234125
+            "indexed_timestamp": 1682501500
         },
         {
             "mod_id": 52540,
@@ -12211,15 +12211,93 @@
             "author": "VitruvianGuar",
             "files": [
                 {
-                    "file_id": 1000037078,
-                    "name": "Class Attribute Limit-52665-1-0-1681061284.zip",
+                    "file_id": 1000037153,
+                    "name": "Class Attribute Limit-52665-1-1-1681324246.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1682501671
+        },
+        {
+            "mod_id": 52678,
+            "name": "Click Clears Input",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000037191,
+                    "name": "abotClickClearsInput-52678-1-00-1681561248.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1682501330
+        },
+        {
+            "mod_id": 52683,
+            "name": "Immersive Maps",
+            "author": "rfuzzo",
+            "files": [
+                {
+                    "file_id": 1000037181,
+                    "name": "Immersive Maps-52683-1-0-1681495045.zip",
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1681233669
+            "indexed_timestamp": 1682501350
+        },
+        {
+            "mod_id": 52710,
+            "name": "MWSE Equipment Hider",
+            "author": "Telracs",
+            "files": [
+                {
+                    "file_id": 1000037278,
+                    "name": "Equipment Hider-52710-1-0-1682104582.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1682501339
+        },
+        {
+            "mod_id": 52715,
+            "name": "gspeed",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000037311,
+                    "name": "gspeed-52715-1-0b-1682183285.7z",
+                    "version": "1.0b"
+                }
+            ],
+            "indexed_timestamp": 1682501348
+        },
+        {
+            "mod_id": 52720,
+            "name": "Configurable Weapon Stats",
+            "author": "meatbag999",
+            "files": [
+                {
+                    "file_id": 1000037336,
+                    "name": "Configurable Weapon Stats-52720-1-0-1682317900.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1682501337
+        },
+        {
+            "mod_id": 52722,
+            "name": "Casting Reduce (MWSE-Lua) Hotfix",
+            "author": "Trainwiz",
+            "files": [
+                {
+                    "file_id": 1000037347,
+                    "name": "Casting Reduce Hotfix-52722-1-0-1682360589.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1682501331
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1681233666,
-    "last_scan_for_updated_mods_timestamp": 1681237960,
-    "highest_validated_mod_id": 52668
+    "last_scan_for_added_mods_timestamp": 1682501329,
+    "last_scan_for_updated_mods_timestamp": 1682514748,
+    "highest_validated_mod_id": 52726
 }
