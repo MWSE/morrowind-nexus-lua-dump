@@ -1,0 +1,18 @@
+return {
+    ["notify"] = "You use %s (uses: %u) instead.",
+    ["notifyLight"] = "You use %s instead.",
+    ["mcm.label"] = "Settings",
+    ["mcm.description"] = "When using items that has a number of uses or time, if you have same items already used, you can use the one with the least amount of remaining instead.",
+    ["mcm.light.label"] = "Light Sources",
+    ["mcm.lockpick.label"] = "Lockpicks",
+    ["mcm.probe.label"] = "Probes",
+    ["mcm.repairTool.label"] = "Repair Tools",
+    ["mcm.notify.label"] = "Notification",
+    ["mcm.suppressKey.label"] = "Suppress Key",
+    ["mcm.light.description"] = "Use a light source with the least amount of duration instead.\n\nDefault: ",
+    ["mcm.lockpick.description"] = "Use a lockpick with the least amount of remaining instead.\n\nDefault: ",
+    ["mcm.probe.description"] = "Use a probe with the least amount of remaining instead.\n\nDefault: ",
+    ["mcm.repairTool.description"] = "Use a repair tool with the least amount of remaining instead.\n\nDefault: ",
+    ["mcm.notify.description"] = "Notify when you use the item instead.\n\nDefault: ",
+    ["mcm.suppressKey.description"] = "Equip a item while holding down this key, you can equip temporarily unaffected by this mod.\n\nDefault: Left Alt",
+}
