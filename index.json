@@ -634,19 +634,6 @@
             "indexed_timestamp": 1656631374
         },
         {
-            "mod_id": 45940,
-            "name": "Ownership Indicator",
-            "author": "Petethegoat",
-            "files": [
-                {
-                    "file_id": 1000011427,
-                    "name": "Ownership Indicator-45940-1-1b.7z",
-                    "version": "1.1b"
-                }
-            ],
-            "indexed_timestamp": 1656631172
-        },
-        {
             "mod_id": 45942,
             "name": "Configurable Barter Gold",
             "author": "DarkholmeTenk",
@@ -5555,17 +5542,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000038598,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-9-7-1686949995.7z",
-                    "version": "2.9.7"
-                },
-                {
                     "file_id": 1000038599,
                     "name": "Beautiful Cities of Morrowind - Patches-49231-2-9-7-1686950035.7z",
                     "version": "2.9.7"
+                },
+                {
+                    "file_id": 1000038816,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-9-8-1688137210.7z",
+                    "version": "2.9.8"
                 }
             ],
-            "indexed_timestamp": 1687218118
+            "indexed_timestamp": 1688602087
         },
         {
             "mod_id": 49232,
@@ -5744,12 +5731,12 @@
             "author": "Taddeus Danae",
             "files": [
                 {
-                    "file_id": 1000027689,
-                    "name": "Foods-49388-1-3-8-1636026282.7z",
-                    "version": "1.3.8"
+                    "file_id": 1000038890,
+                    "name": "Taddeus Foods of Tamriel-49388-1-3-9-1688583928.7z",
+                    "version": "1.3.9"
                 }
             ],
-            "indexed_timestamp": 1656631431
+            "indexed_timestamp": 1688601979
         },
         {
             "mod_id": 49427,
@@ -6711,12 +6698,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000037865,
-                    "name": "abotSmartCompanions-49848-1-15-1684163099.7z",
-                    "version": "1.15"
+                    "file_id": 1000038882,
+                    "name": "abotSmartCompanions-49848-1-16-1688568584.7z",
+                    "version": "1.16"
                 }
             ],
-            "indexed_timestamp": 1684166153
+            "indexed_timestamp": 1688601943
         },
         {
             "mod_id": 49853,
@@ -7565,12 +7552,12 @@
             "author": "Danae Merlord",
             "files": [
                 {
-                    "file_id": 1000038452,
-                    "name": "Ahead of the Classes-50346-2-11-1686311084.7z",
-                    "version": "2.11"
+                    "file_id": 1000038842,
+                    "name": "Ahead of the Classes-50346-1-12-1688279935.7z",
+                    "version": "2.12"
                 }
             ],
-            "indexed_timestamp": 1687218077
+            "indexed_timestamp": 1688602058
         },
         {
             "mod_id": 50352,
@@ -7832,12 +7819,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000037051,
-                    "name": "abotSmartActivate109-50558-1-09-1680958699.7z",
-                    "version": "1.09"
+                    "file_id": 1000038884,
+                    "name": "abotSmartActivate110-50558-1-10-1688569191.7z",
+                    "version": "1.10"
                 }
             ],
-            "indexed_timestamp": 1681234004
+            "indexed_timestamp": 1688602058
         },
         {
             "mod_id": 50574,
@@ -9397,12 +9384,12 @@
             "author": "urm",
             "files": [
                 {
-                    "file_id": 1000034092,
-                    "name": "AttendMe_1.5-51232-1-5-1670677301.zip",
-                    "version": "1.5"
+                    "file_id": 1000038834,
+                    "name": "AttendMe_1.6-51232-1-6-1688235078.zip",
+                    "version": "1.6"
                 }
             ],
-            "indexed_timestamp": 1671040908
+            "indexed_timestamp": 1688602062
         },
         {
             "mod_id": 51240,
@@ -10214,19 +10201,6 @@
             "indexed_timestamp": 1669514065
         },
         {
-            "mod_id": 51516,
-            "name": "OAAB_DATA - Russian Translation",
-            "author": "HarukoKisaragi",
-            "files": [
-                {
-                    "file_id": 1000031848,
-                    "name": "OAAB_DATA_FULL-51516-1-16-0-RUS-1656163667.zip",
-                    "version": "1.16.0-RUS"
-                }
-            ],
-            "indexed_timestamp": 1658453322
-        },
-        {
             "mod_id": 51519,
             "name": "Alchemical Knowledge - Russian Translation",
             "author": "HarukoKisaragi",
@@ -10889,12 +10863,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000038507,
-                    "name": "abotSmartChasers-51919-1-05-1686480417.7z",
-                    "version": "1.05"
+                    "file_id": 1000038883,
+                    "name": "abotSmartChasers-51919-1-06-1688568943.7z",
+                    "version": "1.06"
                 }
             ],
-            "indexed_timestamp": 1687218068
+            "indexed_timestamp": 1688602075
         },
         {
             "mod_id": 51924,
@@ -11738,11 +11712,6 @@
                     "version": "1.0"
                 },
                 {
-                    "file_id": 1000035178,
-                    "name": "SR_5_DamageHealth-52263-1-0-1675631534.rar",
-                    "version": "1.0"
-                },
-                {
                     "file_id": 1000036485,
                     "name": "SR_0_Core-52263-1-1-1678801350.rar",
                     "version": "1.1"
@@ -11751,9 +11720,14 @@
                     "file_id": 1000038515,
                     "name": "SR_6_DamageMagicka-52263-1-1-1686508053.rar",
                     "version": "1.1"
+                },
+                {
+                    "file_id": 1000038837,
+                    "name": "SR_5_DamageHealth-52263-1-1-1688247301.rar",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1687218108
+            "indexed_timestamp": 1688602073
         },
         {
             "mod_id": 52271,
@@ -11761,12 +11735,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000035464,
-                    "name": "Unstable Soul Gems-52271-1-1-1675825046.7z",
-                    "version": "1.1"
+                    "file_id": 1000038674,
+                    "name": "Soul Gems Indicator-52271-2-0-0-1687286428.7z",
+                    "version": "2.0.0"
                 }
             ],
-            "indexed_timestamp": 1675832041
+            "indexed_timestamp": 1688602087
         },
         {
             "mod_id": 52274,
@@ -12203,12 +12177,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000038666,
-                    "name": "More Console Commands-52500-1-18-0-1687210332.7z",
-                    "version": "1.18.0"
+                    "file_id": 1000038746,
+                    "name": "More Console Commands-52500-1-18-2-1687706262.7z",
+                    "version": "1.18.2"
                 }
             ],
-            "indexed_timestamp": 1687218119
+            "indexed_timestamp": 1688601978
         },
         {
             "mod_id": 52505,
@@ -12698,12 +12672,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000038578,
-                    "name": "abotMoreTrapsMWSELua-52783-1-04-1686926013.7z",
-                    "version": "1.04"
+                    "file_id": 1000038881,
+                    "name": "abotMoreTrapsMWSELua-52783-1-05-1688568317.7z",
+                    "version": "1.05"
                 }
             ],
-            "indexed_timestamp": 1687218144
+            "indexed_timestamp": 1688602082
         },
         {
             "mod_id": 52786,
@@ -12789,12 +12763,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000038665,
-                    "name": "Furniture Catalogue-52805-2-2-0-1687202860.7z",
-                    "version": "2.2.0"
+                    "file_id": 1000038740,
+                    "name": "Furniture Catalogue-52805-2-4-1-1687621755.7z",
+                    "version": "2.4.1"
                 }
             ],
-            "indexed_timestamp": 1687218146
+            "indexed_timestamp": 1688602021
         },
         {
             "mod_id": 52807,
@@ -12958,12 +12932,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000038659,
-                    "name": "Ashfall Survival Start-52880-1-2-6-1687190128.7z",
-                    "version": "1.2.6"
+                    "file_id": 1000038889,
+                    "name": "Ashfall Survival Start-52880-1-2-7-1688580064.7z",
+                    "version": "1.2.7"
                 }
             ],
-            "indexed_timestamp": 1687218343
+            "indexed_timestamp": 1688602092
         },
         {
             "mod_id": 52881,
@@ -13179,12 +13153,12 @@
             "author": "Juidius Danae",
             "files": [
                 {
-                    "file_id": 1000038351,
-                    "name": "The Mysterious Affair of Sara Shenk-52968-1-0-1-1685777023.7z",
-                    "version": "1.0.1"
+                    "file_id": 1000038784,
+                    "name": "The Mysterious Affair of Sara Shenk-52968-1-0-1a-1687950875.7z",
+                    "version": "1.0.1a"
                 }
             ],
-            "indexed_timestamp": 1685936456
+            "indexed_timestamp": 1688602097
         },
         {
             "mod_id": 52969,
@@ -13192,12 +13166,12 @@
             "author": "DetailDevil",
             "files": [
                 {
-                    "file_id": 1000038399,
-                    "name": "Devilish Vampire Overhaul 1.4-52969-1-4-1686006684.rar",
-                    "version": "1.4"
+                    "file_id": 1000038853,
+                    "name": "Devilish Vampire Overhaul 1.5.1-52969-1-5-1-1688381520.rar",
+                    "version": "1.5.1"
                 }
             ],
-            "indexed_timestamp": 1687218183
+            "indexed_timestamp": 1688601987
         },
         {
             "mod_id": 52975,
@@ -13237,19 +13211,6 @@
                 }
             ],
             "indexed_timestamp": 1685936457
-        },
-        {
-            "mod_id": 52991,
-            "name": "Smooth Master Index",
-            "author": "ZackHasaCat",
-            "files": [
-                {
-                    "file_id": 1000038268,
-                    "name": "Smooth Master Index 1.1-52991-1-1-1685589323.zip",
-                    "version": "1.1"
-                }
-            ],
-            "indexed_timestamp": 1685936314
         },
         {
             "mod_id": 52996,
@@ -13322,12 +13283,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000038523,
-                    "name": "Joy of Painting-53036-v1-0-9-1686557567.7z",
-                    "version": "v1.0.9"
+                    "file_id": 1000038697,
+                    "name": "Joy of Painting-53036-v1-1-0-1687349160.7z",
+                    "version": "v1.1.0"
                 }
             ],
-            "indexed_timestamp": 1687217852
+            "indexed_timestamp": 1688602108
         },
         {
             "mod_id": 53064,
@@ -13335,12 +13296,12 @@
             "author": "Phoenixwarrior7",
             "files": [
                 {
-                    "file_id": 1000038653,
-                    "name": "MBSP Uncapped-53064-1-0-2-1687166409.7z",
-                    "version": "1.0.2"
+                    "file_id": 1000038762,
+                    "name": "MBSP Uncapped-53064-1-0-3-1687822684.7z",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1687217865
+            "indexed_timestamp": 1688602249
         },
         {
             "mod_id": 53087,
@@ -13369,19 +13330,6 @@
             "indexed_timestamp": 1687217852
         },
         {
-            "mod_id": 53089,
-            "name": "MyManor.esp - Purchase Hlaalo Manor",
-            "author": "JosephMcKean",
-            "files": [
-                {
-                    "file_id": 1000038664,
-                    "name": "MyManor-53089-1-2-4-1687200556.7z",
-                    "version": "1.2.4"
-                }
-            ],
-            "indexed_timestamp": 1687217851
-        },
-        {
             "mod_id": 53091,
             "name": "Now Playing",
             "author": "abot",
@@ -13393,9 +13341,87 @@
                 }
             ],
             "indexed_timestamp": 1687217851
+        },
+        {
+            "mod_id": 53094,
+            "name": "Convenient Thief Tools",
+            "author": "Pharis",
+            "files": [
+                {
+                    "file_id": 1000038707,
+                    "name": "Convenient Thief Tools-53094-1-0-1-1687413010.7z",
+                    "version": "1.0.1"
+                }
+            ],
+            "indexed_timestamp": 1688601888
+        },
+        {
+            "mod_id": 53097,
+            "name": "ST Alchemy",
+            "author": "Stuporstar",
+            "files": [
+                {
+                    "file_id": 1000038701,
+                    "name": "ST Alchemy-53097-1-6-1687378269.zip",
+                    "version": "1.6"
+                }
+            ],
+            "indexed_timestamp": 1688601894
+        },
+        {
+            "mod_id": 53103,
+            "name": "As Luck Would Have It",
+            "author": "Ring",
+            "files": [
+                {
+                    "file_id": 1000038716,
+                    "name": "As Luck Would Have It-53103-1-1-1687489704.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1688601887
+        },
+        {
+            "mod_id": 53130,
+            "name": "Basic Needs for OpenMW",
+            "author": "jarizleifr",
+            "files": [
+                {
+                    "file_id": 1000038835,
+                    "name": "BasicNeeds-53130-1-0-0-1688242514.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1688601907
+        },
+        {
+            "mod_id": 53136,
+            "name": "NCGDMW Lua Edition",
+            "author": "Greywander EvilEye johnnyhostile",
+            "files": [
+                {
+                    "file_id": 1000038818,
+                    "name": "NCGDMW Lua Edition-53136-1-0-1688143880.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1688601910
+        },
+        {
+            "mod_id": 53142,
+            "name": "Abandoned Flat Containers",
+            "author": "johnnyhostile",
+            "files": [
+                {
+                    "file_id": 1000038855,
+                    "name": "Abandoned Flat Containers-53142-1-1-1688387570.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1688601898
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1687217848,
-    "last_scan_for_updated_mods_timestamp": 1687217899,
-    "highest_validated_mod_id": 53091
+    "last_scan_for_added_mods_timestamp": 1688601884,
+    "last_scan_for_updated_mods_timestamp": 1688601941,
+    "highest_validated_mod_id": 53157
 }
