@@ -574,12 +574,12 @@
             "author": "Melchior Dahrk and NullCascade",
             "files": [
                 {
-                    "file_id": 1000031647,
-                    "name": "Glow in the Dahrk-45886-3-1-1-1655254988.7z",
-                    "version": "3.1.1"
+                    "file_id": 1000038991,
+                    "name": "Glow in the Dahrk-45886-3-1-2-1688994419.7z",
+                    "version": "3.1.2"
                 }
             ],
-            "indexed_timestamp": 1656631299
+            "indexed_timestamp": 1690280242
         },
         {
             "mod_id": 45890,
@@ -2547,19 +2547,6 @@
                 }
             ],
             "indexed_timestamp": 1656631232
-        },
-        {
-            "mod_id": 47492,
-            "name": "Smart Journal",
-            "author": "abot",
-            "files": [
-                {
-                    "file_id": 1000036912,
-                    "name": "abotSmartJournal-47492-1-15-1680455882.7z",
-                    "version": "1.15"
-                }
-            ],
-            "indexed_timestamp": 1681233988
         },
         {
             "mod_id": 47510,
@@ -4935,12 +4922,12 @@
             "author": "abot - NullCascade",
             "files": [
                 {
-                    "file_id": 1000033909,
-                    "name": "readAloud115-48930-1-15-1669844034.7z",
-                    "version": "1.15"
+                    "file_id": 1000039064,
+                    "name": "readAloud116-48930-1-16-1689233969.7z",
+                    "version": "1.16"
                 }
             ],
-            "indexed_timestamp": 1671040862
+            "indexed_timestamp": 1690280371
         },
         {
             "mod_id": 48933,
@@ -5166,7 +5153,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1656631399
+            "indexed_timestamp": 1690280370
         },
         {
             "mod_id": 49036,
@@ -5205,7 +5192,7 @@
                     "version": "2.1.9"
                 }
             ],
-            "indexed_timestamp": 1684166335
+            "indexed_timestamp": 1690280355
         },
         {
             "mod_id": 49045,
@@ -5259,12 +5246,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000038632,
-                    "name": "Ashfall-49057-v3-10-7-1687071352.7z",
-                    "version": "v3.10.7"
+                    "file_id": 1000039310,
+                    "name": "Ashfall-49057-v3-11-2-1690139298.7z",
+                    "version": "v3.11.2"
                 }
             ],
-            "indexed_timestamp": 1687217955
+            "indexed_timestamp": 1690280379
         },
         {
             "mod_id": 49075,
@@ -5272,12 +5259,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000038525,
-                    "name": "OAAB Grazelands-49075-1-4-0-1686583423.7z",
-                    "version": "1.4.0"
+                    "file_id": 1000039071,
+                    "name": "OAAB Grazelands-49075-1-5-0-1689262974.7z",
+                    "version": "1.5.0"
                 }
             ],
-            "indexed_timestamp": 1687218037
+            "indexed_timestamp": 1690280363
         },
         {
             "mod_id": 49076,
@@ -5542,17 +5529,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000038599,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-9-7-1686950035.7z",
-                    "version": "2.9.7"
+                    "file_id": 1000039134,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-9-9-1689429181.7z",
+                    "version": "2.9.9"
                 },
                 {
-                    "file_id": 1000038816,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-9-8-1688137210.7z",
-                    "version": "2.9.8"
+                    "file_id": 1000039159,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-9-9-1689537100.7z",
+                    "version": "2.9.9"
                 }
             ],
-            "indexed_timestamp": 1688602087
+            "indexed_timestamp": 1690280453
         },
         {
             "mod_id": 49232,
@@ -5583,7 +5570,7 @@
                     "version": "1.7a"
                 }
             ],
-            "indexed_timestamp": 1685936518
+            "indexed_timestamp": 1690280323
         },
         {
             "mod_id": 49255,
@@ -5731,12 +5718,12 @@
             "author": "Taddeus Danae",
             "files": [
                 {
-                    "file_id": 1000038890,
-                    "name": "Taddeus Foods of Tamriel-49388-1-3-9-1688583928.7z",
-                    "version": "1.3.9"
+                    "file_id": 1000039160,
+                    "name": "Taddeus Foods of Tamriel-49388-1-3-10-1689539670.7z",
+                    "version": "1.3.10"
                 }
             ],
-            "indexed_timestamp": 1688601979
+            "indexed_timestamp": 1690280435
         },
         {
             "mod_id": 49427,
@@ -6698,12 +6685,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000038882,
-                    "name": "abotSmartCompanions-49848-1-16-1688568584.7z",
-                    "version": "1.16"
+                    "file_id": 1000039224,
+                    "name": "abotSmartCompanions-49848-1-18-1689867477.7z",
+                    "version": "1.18"
                 }
             ],
-            "indexed_timestamp": 1688601943
+            "indexed_timestamp": 1690280352
         },
         {
             "mod_id": 49853,
@@ -7119,12 +7106,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000030128,
-                    "name": "abotSmartHeads110-50098-1-10-1650100212.7z",
-                    "version": "1.10"
+                    "file_id": 1000039067,
+                    "name": "abotSmartHeads-50098-1-11-1689238383.7z",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1656631286
+            "indexed_timestamp": 1690280435
         },
         {
             "mod_id": 50101,
@@ -8673,12 +8660,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000038560,
-                    "name": "The Crafting Framework-51009-1-12-1-1686815273.7z",
-                    "version": "1.12.1"
+                    "file_id": 1000039304,
+                    "name": "The Crafting Framework-51009-1-13-0-1690096673.7z",
+                    "version": "1.13.0"
                 }
             ],
-            "indexed_timestamp": 1687218056
+            "indexed_timestamp": 1690280258
         },
         {
             "mod_id": 51022,
@@ -10655,12 +10642,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000038401,
-                    "name": "Companion Leveler-51760-2-1-0-1686031615.zip",
-                    "version": "2.1.0"
+                    "file_id": 1000038967,
+                    "name": "Companion Leveler-51760-2-2-0-1688895172.zip",
+                    "version": "2.2.0"
                 }
             ],
-            "indexed_timestamp": 1687218065
+            "indexed_timestamp": 1690280366
         },
         {
             "mod_id": 51777,
@@ -10863,12 +10850,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000038883,
-                    "name": "abotSmartChasers-51919-1-06-1688568943.7z",
-                    "version": "1.06"
+                    "file_id": 1000038905,
+                    "name": "abotSmartChasers-51919-1-06b-1688634236.7z",
+                    "version": "1.06b"
                 }
             ],
-            "indexed_timestamp": 1688602075
+            "indexed_timestamp": 1690280378
         },
         {
             "mod_id": 51924,
@@ -11076,12 +11063,12 @@
             "author": "Pharis",
             "files": [
                 {
-                    "file_id": 1000034531,
-                    "name": "Light Hotkey - OpenMW Lua-51981-1-3-0-1673165439.7z",
-                    "version": "1.3.0"
+                    "file_id": 1000038965,
+                    "name": "Light Hotkey - OpenMW Lua-51981-1-4-0-1688888931.7z",
+                    "version": "1.4.0"
                 }
             ],
-            "indexed_timestamp": 1674411113
+            "indexed_timestamp": 1690280238
         },
         {
             "mod_id": 52013,
@@ -11982,12 +11969,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000037758,
-                    "name": "Teach Companion Spells-52364-1-3-1-1683571552.7z",
-                    "version": "1.3.1"
+                    "file_id": 1000038927,
+                    "name": "Teach Companion Spells-52364-1-3-2-1688718710.7z",
+                    "version": "1.3.2"
                 }
             ],
-            "indexed_timestamp": 1684166322
+            "indexed_timestamp": 1690280264
         },
         {
             "mod_id": 52372,
@@ -12177,12 +12164,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000038746,
-                    "name": "More Console Commands-52500-1-18-2-1687706262.7z",
-                    "version": "1.18.2"
+                    "file_id": 1000039222,
+                    "name": "More Console Commands-52500-1-20-0-1689848896.7z",
+                    "version": "1.20.0"
                 }
             ],
-            "indexed_timestamp": 1688601978
+            "indexed_timestamp": 1690280328
         },
         {
             "mod_id": 52505,
@@ -12581,12 +12568,12 @@
             "author": "Danae CutthroatMods Neoptolemus",
             "files": [
                 {
-                    "file_id": 1000037795,
-                    "name": "Friends and Frens-52763-1-0d-1683796405.7z",
-                    "version": "1.0d"
+                    "file_id": 1000039326,
+                    "name": "Friends and Frens-52763-1-3-1690229643.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1685936368
+            "indexed_timestamp": 1690280401
         },
         {
             "mod_id": 52769,
@@ -12659,12 +12646,12 @@
             "author": "Pharis",
             "files": [
                 {
-                    "file_id": 1000038109,
-                    "name": "Pharis' Magicka Regeneration-52779-1-1-0-1685054997.7z",
-                    "version": "1.1.0"
+                    "file_id": 1000038918,
+                    "name": "Pharis' Magicka Regeneration-52779-1-2-0-1688692194.7z",
+                    "version": "1.2.0"
                 }
             ],
-            "indexed_timestamp": 1685936378
+            "indexed_timestamp": 1690280390
         },
         {
             "mod_id": 52783,
@@ -12672,12 +12659,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000038881,
-                    "name": "abotMoreTrapsMWSELua-52783-1-05-1688568317.7z",
-                    "version": "1.05"
+                    "file_id": 1000039065,
+                    "name": "abotMoreTrapsMWSELua-52783-1-06-1689234708.7z",
+                    "version": "1.06"
                 }
             ],
-            "indexed_timestamp": 1688602082
+            "indexed_timestamp": 1690280373
         },
         {
             "mod_id": 52786,
@@ -12750,12 +12737,12 @@
             "author": "StaticNation",
             "files": [
                 {
-                    "file_id": 1000037716,
-                    "name": "StaticsGoldExpansion-52804-2-0-1683343224.zip",
-                    "version": "2.0"
+                    "file_id": 1000039163,
+                    "name": "SGE-52804-2-1-1689546634.zip",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1685936392
+            "indexed_timestamp": 1690280400
         },
         {
             "mod_id": 52805,
@@ -12763,12 +12750,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000038740,
-                    "name": "Furniture Catalogue-52805-2-4-1-1687621755.7z",
-                    "version": "2.4.1"
+                    "file_id": 1000039048,
+                    "name": "Furniture Catalogue-52805-2-5-1-1689174588.7z",
+                    "version": "2.5.1"
                 }
             ],
-            "indexed_timestamp": 1688602021
+            "indexed_timestamp": 1690280479
         },
         {
             "mod_id": 52807,
@@ -12906,12 +12893,12 @@
             "author": "Merlord Greatness7 MelchiorDahrk",
             "files": [
                 {
-                    "file_id": 1000038385,
-                    "name": "Ultimate Fishing-52872-v1-1-1-1685951215.7z",
-                    "version": "v1.1.1"
+                    "file_id": 1000039307,
+                    "name": "Ultimate Fishing-52872-v1-1-4-1690110922.7z",
+                    "version": "v1.1.4"
                 }
             ],
-            "indexed_timestamp": 1687218154
+            "indexed_timestamp": 1690280412
         },
         {
             "mod_id": 52879,
@@ -12919,12 +12906,12 @@
             "author": "ZackHasaCat",
             "files": [
                 {
-                    "file_id": 1000037893,
-                    "name": "Latest Version-52879-0-8-3-1684258525.zip",
-                    "version": "0.8.3"
+                    "file_id": 1000039299,
+                    "name": "Ashlander Architect-52879-0-8-4-1690079472.zip",
+                    "version": "0.8.4"
                 }
             ],
-            "indexed_timestamp": 1685936424
+            "indexed_timestamp": 1690280481
         },
         {
             "mod_id": 52880,
@@ -12932,12 +12919,12 @@
             "author": "JosephMcKean",
             "files": [
                 {
-                    "file_id": 1000038889,
-                    "name": "Ashfall Survival Start-52880-1-2-7-1688580064.7z",
-                    "version": "1.2.7"
+                    "file_id": 1000039062,
+                    "name": "Ashfall Survival Start-52880-1-3-1-1689215963.7z",
+                    "version": "1.3.1"
                 }
             ],
-            "indexed_timestamp": 1688602092
+            "indexed_timestamp": 1690280481
         },
         {
             "mod_id": 52881,
@@ -12984,12 +12971,12 @@
             "author": "ZackHasaCat",
             "files": [
                 {
-                    "file_id": 1000037898,
-                    "name": "Latest Version-52891-1-0-2-1684263873.zip",
-                    "version": "1.0.2"
+                    "file_id": 1000039209,
+                    "name": "Latest Version-52891-1-0-3-1689738381.zip",
+                    "version": "1.0.3"
                 }
             ],
-            "indexed_timestamp": 1685936433
+            "indexed_timestamp": 1690280402
         },
         {
             "mod_id": 52899,
@@ -13049,12 +13036,12 @@
             "author": "VvardenfellStormSage",
             "files": [
                 {
-                    "file_id": 1000038054,
-                    "name": "The Bone Collector-52929-1-0-1684842565.zip",
-                    "version": "1.0"
+                    "file_id": 1000038992,
+                    "name": "The Bone Collector-52929-1-1-1688997567.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1685936473
+            "indexed_timestamp": 1690280399
         },
         {
             "mod_id": 52932,
@@ -13179,12 +13166,12 @@
             "author": "ZackHasaCat",
             "files": [
                 {
-                    "file_id": 1000038198,
-                    "name": "ZackUtils Debug-52975-1-0-1685375745.zip",
-                    "version": "1.0"
+                    "file_id": 1000038961,
+                    "name": "Zackutils Debug-52975-1-1-1688853980.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1685936459
+            "indexed_timestamp": 1690280283
         },
         {
             "mod_id": 52978,
@@ -13283,12 +13270,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000038697,
-                    "name": "Joy of Painting-53036-v1-1-0-1687349160.7z",
-                    "version": "v1.1.0"
+                    "file_id": 1000039305,
+                    "name": "Joy of Painting-53036-v1-1-1-1690096907.7z",
+                    "version": "v1.1.1"
                 }
             ],
-            "indexed_timestamp": 1688602108
+            "indexed_timestamp": 1690280487
         },
         {
             "mod_id": 53064,
@@ -13382,17 +13369,43 @@
             "indexed_timestamp": 1688601887
         },
         {
+            "mod_id": 53104,
+            "name": "Hanafuda - Akaviri Playing Cards",
+            "author": "longod",
+            "files": [
+                {
+                    "file_id": 1000039145,
+                    "name": "Hanafuda-53104-1-1-1689479964.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1690280681
+        },
+        {
             "mod_id": 53130,
             "name": "Basic Needs for OpenMW",
             "author": "jarizleifr",
             "files": [
                 {
-                    "file_id": 1000038835,
-                    "name": "BasicNeeds-53130-1-0-0-1688242514.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000038930,
+                    "name": "BasicNeeds-53130-1-2-0-1688732226.7z",
+                    "version": "1.2.0"
                 }
             ],
-            "indexed_timestamp": 1688601907
+            "indexed_timestamp": 1690280496
+        },
+        {
+            "mod_id": 53132,
+            "name": "The Art of Archery - Deadly Headshots",
+            "author": "JosephMcKean",
+            "files": [
+                {
+                    "file_id": 1000038995,
+                    "name": "The Art of Archery - Deadly Headshots-53132-1-4-0-1689004100.7z",
+                    "version": "1.4.0"
+                }
+            ],
+            "indexed_timestamp": 1690280566
         },
         {
             "mod_id": 53136,
@@ -13400,12 +13413,12 @@
             "author": "Greywander EvilEye johnnyhostile",
             "files": [
                 {
-                    "file_id": 1000038818,
-                    "name": "NCGDMW Lua Edition-53136-1-0-1688143880.zip",
-                    "version": "1.0"
+                    "file_id": 1000039020,
+                    "name": "NCGDMW Lua Edition-53136-1-2-1689029018.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1688601910
+            "indexed_timestamp": 1690280498
         },
         {
             "mod_id": 53142,
@@ -13419,9 +13432,112 @@
                 }
             ],
             "indexed_timestamp": 1688601898
+        },
+        {
+            "mod_id": 53159,
+            "name": "Gameplay tweaks",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000038911,
+                    "name": "abotGameplayTweaks-53159-1-00-1688671461.7z",
+                    "version": "1.00"
+                }
+            ],
+            "indexed_timestamp": 1690280143
+        },
+        {
+            "mod_id": 53161,
+            "name": "JosephMcKean Remixes and Edits",
+            "author": "Morrowind Modding Community",
+            "files": [
+                {
+                    "file_id": 1000038920,
+                    "name": "Lua Lockbashing (JosephMcKean Edit)-53161-2-1-2-1688709978.7z",
+                    "version": "2.1.2"
+                },
+                {
+                    "file_id": 1000038936,
+                    "name": "Bound Ammo (JosephMcKean Edit)-53161-2-0-0-1688754943.7z",
+                    "version": "2.0.0"
+                },
+                {
+                    "file_id": 1000038951,
+                    "name": "Nuke Dark Lights-53161-1-0-0-1688795075.7z",
+                    "version": "1.0.0"
+                },
+                {
+                    "file_id": 1000039127,
+                    "name": "Shinies Wares (JosephMcKean Edit)-53161-1-6-3-1689398544.7z",
+                    "version": "1.6.3"
+                },
+                {
+                    "file_id": 1000039129,
+                    "name": "Backpack Wares (JosephMcKean Edit)-53161-2-4-3-1689405567.7z",
+                    "version": "2.4.3"
+                },
+                {
+                    "file_id": 1000039184,
+                    "name": "Unidentified Items (JosephMcKean Edit)-53161-1-2-1-1689656871.7z",
+                    "version": "1.2.1"
+                }
+            ],
+            "indexed_timestamp": 1690280164
+        },
+        {
+            "mod_id": 53162,
+            "name": "Random Load Doors - OpenMW Lua",
+            "author": "pharispharispharis",
+            "files": [
+                {
+                    "file_id": 1000038921,
+                    "name": "Random Load Doors-53162-1-0-0-1688712419.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1690280148
+        },
+        {
+            "mod_id": 53175,
+            "name": "Skyrim Style Quest Notifications",
+            "author": "Nazz",
+            "files": [
+                {
+                    "file_id": 1000039313,
+                    "name": "Skyrim Style Quest Notifications v 1.05-53175-1-05-1690153378.7z",
+                    "version": "1.05"
+                }
+            ],
+            "indexed_timestamp": 1690280150
+        },
+        {
+            "mod_id": 53214,
+            "name": "Dynamic Distant Buildings - OpenMW Lua",
+            "author": "Zackhasacat",
+            "files": [
+                {
+                    "file_id": 1000039138,
+                    "name": "Dynamic Distant Buildings - OpenMW Lua-53214-1-0-1689443887.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1690280178
+        },
+        {
+            "mod_id": 53234,
+            "name": "Soule Sounds for Morrowind - Playlists",
+            "author": "Publicola",
+            "files": [
+                {
+                    "file_id": 1000039296,
+                    "name": "Soule Sounds - Playlists-53234-1-2-1690070883.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1690280188
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1688601884,
-    "last_scan_for_updated_mods_timestamp": 1688601941,
-    "highest_validated_mod_id": 53157
+    "last_scan_for_added_mods_timestamp": 1690280113,
+    "last_scan_for_updated_mods_timestamp": 1690280235,
+    "highest_validated_mod_id": 53263
 }
