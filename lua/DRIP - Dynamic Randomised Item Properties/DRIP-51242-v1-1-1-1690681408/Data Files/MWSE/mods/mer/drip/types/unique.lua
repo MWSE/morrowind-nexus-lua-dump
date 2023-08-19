@@ -1,0 +1,5 @@
+---@class DripUnique
+---@field name string **Required** The generated name of the unique.
+---@field description string **Required** The generated description of the unique.
+---@field mesh string Path to the unique mesh.
+---@field modifier Drip.Modifier The modifier for this unique.
