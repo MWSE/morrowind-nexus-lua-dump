@@ -947,6 +947,19 @@
             "indexed_timestamp": 1656631185
         },
         {
+            "mod_id": 46177,
+            "name": "OAAB Tel Mora",
+            "author": "Melchior Dahrk",
+            "files": [
+                {
+                    "file_id": 1000040097,
+                    "name": "OAAB Tel Mora-46177-4-0-5-1694138112.7z",
+                    "version": "4.0.5"
+                }
+            ],
+            "indexed_timestamp": 1694294756
+        },
+        {
             "mod_id": 46188,
             "name": "Harder Barter",
             "author": "mort",
@@ -2835,12 +2848,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000039605,
-                    "name": "abotWaterSound109-47794-1-09-1691245737.7z",
-                    "version": "1.09"
+                    "file_id": 1000039926,
+                    "name": "abotWaterSound110-47794-1-10-1693156194.7z",
+                    "version": "1.10"
                 }
             ],
-            "indexed_timestamp": 1692411935
+            "indexed_timestamp": 1694294604
         },
         {
             "mod_id": 47813,
@@ -4240,12 +4253,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000039725,
-                    "name": "abotVanity105-48529-1-05-1691963454.7z",
-                    "version": "1.05"
+                    "file_id": 1000039985,
+                    "name": "abotVanity-48529-1-06-1693466689.7z",
+                    "version": "1.06"
                 }
             ],
-            "indexed_timestamp": 1692411830
+            "indexed_timestamp": 1694294580
         },
         {
             "mod_id": 48540,
@@ -5267,12 +5280,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000039731,
-                    "name": "Ashfall-49057-v3-13-2-1692042714.7z",
-                    "version": "v3.13.2"
+                    "file_id": 1000039917,
+                    "name": "Ashfall-49057-v3-13-3-1693129027.7z",
+                    "version": "v3.13.3"
                 }
             ],
-            "indexed_timestamp": 1692411992
+            "indexed_timestamp": 1694294556
         },
         {
             "mod_id": 49075,
@@ -5550,17 +5563,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000039134,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-2-9-9-1689429181.7z",
-                    "version": "2.9.9"
+                    "file_id": 1000039871,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-3-0-0-1692855953.7z",
+                    "version": "3.0.0"
                 },
                 {
-                    "file_id": 1000039159,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-2-9-9-1689537100.7z",
-                    "version": "2.9.9"
+                    "file_id": 1000039936,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-3-0-0-1693203566.7z",
+                    "version": "3.0.0"
                 }
             ],
-            "indexed_timestamp": 1690280453
+            "indexed_timestamp": 1694294626
         },
         {
             "mod_id": 49232,
@@ -5817,12 +5830,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000036076,
-                    "name": "Avni the Ash-hound 1.2.1-49521-1-2-1-1677105992.7z",
-                    "version": "1.2.1"
+                    "file_id": 1000039980,
+                    "name": "Avni the Ash-hound 1.2.2-49521-1-2-2-1693429887.7z",
+                    "version": "1.2.2"
                 }
             ],
-            "indexed_timestamp": 1678341643
+            "indexed_timestamp": 1694294510
         },
         {
             "mod_id": 49541,
@@ -6719,12 +6732,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000039224,
-                    "name": "abotSmartCompanions-49848-1-18-1689867477.7z",
-                    "version": "1.18"
+                    "file_id": 1000040043,
+                    "name": "abotSmartCompanions-49848-1-19-1693844737.7z",
+                    "version": "1.19"
                 }
             ],
-            "indexed_timestamp": 1690280352
+            "indexed_timestamp": 1694294558
         },
         {
             "mod_id": 49853,
@@ -10339,17 +10352,12 @@
             "author": "Demanufacturer87",
             "files": [
                 {
-                    "file_id": 1000038377,
-                    "name": "Kogoruhn ECoAaS - Rocky Red Mountain Edition-51615-2-2-1-1685913447.rar",
-                    "version": "2.2"
-                },
-                {
-                    "file_id": 1000038634,
-                    "name": "Kogoruhn - Extinct City of Ash and Sulfur-51615-2-3-1687087513.rar",
-                    "version": "2.3"
+                    "file_id": 1000039895,
+                    "name": "Kogoruhn - Extinct City of Ash and Sulfur-51615-2-4-1692993488.rar",
+                    "version": "2.4"
                 }
             ],
-            "indexed_timestamp": 1687218112
+            "indexed_timestamp": 1694294491
         },
         {
             "mod_id": 51622,
@@ -10396,12 +10404,12 @@
             "author": "Vengyre",
             "files": [
                 {
-                    "file_id": 1000038488,
-                    "name": "Magicka of the Third Era-51636-1-2-1-1686385911.rar",
-                    "version": "1.2.1"
+                    "file_id": 1000039959,
+                    "name": "Magicka of the Third Era-51636-1-2-2-1693336314.rar",
+                    "version": "1.2.2"
                 }
             ],
-            "indexed_timestamp": 1687218020
+            "indexed_timestamp": 1694294601
         },
         {
             "mod_id": 51637,
@@ -10879,12 +10887,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000038905,
-                    "name": "abotSmartChasers-51919-1-06b-1688634236.7z",
-                    "version": "1.06b"
+                    "file_id": 1000039796,
+                    "name": "abotSmartChasers-51919-1-07-1692446041.7z",
+                    "version": "1.07"
                 }
             ],
-            "indexed_timestamp": 1690280378
+            "indexed_timestamp": 1694294599
         },
         {
             "mod_id": 51924,
@@ -11250,12 +11258,12 @@
                     "version": "1"
                 },
                 {
-                    "file_id": 1000035057,
-                    "name": "OdaiHTN - The AI Framework-52111-1-1-1675605221.7z",
-                    "version": "1.1"
+                    "file_id": 1000039941,
+                    "name": "OdaiHTN - The AI Framework-52111-1-2-1693217840.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1675831858
+            "indexed_timestamp": 1694294593
         },
         {
             "mod_id": 52116,
@@ -11803,12 +11811,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000039606,
-                    "name": "abotFootprints-52284-1-07-1691246130.7z",
-                    "version": "1.07"
+                    "file_id": 1000040044,
+                    "name": "abotFootprints-52284-1-08-1693846130.7z",
+                    "version": "1.08"
                 }
             ],
-            "indexed_timestamp": 1692411990
+            "indexed_timestamp": 1694294492
         },
         {
             "mod_id": 52286,
@@ -13013,12 +13021,12 @@
             "author": "ZackHasaCat",
             "files": [
                 {
-                    "file_id": 1000039727,
-                    "name": "Tabletop Alchemy-52891-1-1-1691984003.zip",
-                    "version": "1.1"
+                    "file_id": 1000039870,
+                    "name": "Tabletop Alchemy-52891-1-2-1692850327.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1692412058
+            "indexed_timestamp": 1694294626
         },
         {
             "mod_id": 52899,
@@ -13242,17 +13250,30 @@
             "indexed_timestamp": 1685936457
         },
         {
+            "mod_id": 52991,
+            "name": "Smooth Master Index",
+            "author": "ZackHasaCat",
+            "files": [
+                {
+                    "file_id": 1000039902,
+                    "name": "Smooth Master Index-52991-1-5-1693043459.zip",
+                    "version": "1.5"
+                }
+            ],
+            "indexed_timestamp": 1694294840
+        },
+        {
             "mod_id": 52996,
             "name": "Happenstance Hodokinesis",
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000038266,
-                    "name": "Happenstance Hodokinesis v1.0.0-52996-1-0-0-1685582235.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000039982,
+                    "name": "Happenstance Hodokinesis v1.0.1-52996-1-0-1-1693432097.7z",
+                    "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1685936321
+            "indexed_timestamp": 1694294629
         },
         {
             "mod_id": 53003,
@@ -13429,12 +13450,12 @@
             "author": "jarizleifr",
             "files": [
                 {
-                    "file_id": 1000038930,
-                    "name": "BasicNeeds-53130-1-2-0-1688732226.7z",
-                    "version": "1.2.0"
+                    "file_id": 1000040023,
+                    "name": "BasicNeeds-53130-1-3-1-1693730986.7z",
+                    "version": "1.3.1"
                 }
             ],
-            "indexed_timestamp": 1690280496
+            "indexed_timestamp": 1694294642
         },
         {
             "mod_id": 53132,
@@ -13589,12 +13610,12 @@
             "author": "ZackHasaCat",
             "files": [
                 {
-                    "file_id": 1000039665,
-                    "name": "Multimark 1.1.1-53260-1-1-1-1691597088.zip",
-                    "version": "1.1.1"
+                    "file_id": 1000039983,
+                    "name": "Multimark 1.2-53260-1-2-1693458249.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1692412121
+            "indexed_timestamp": 1694294674
         },
         {
             "mod_id": 53291,
@@ -13646,12 +13667,12 @@
             "author": "hornsilk",
             "files": [
                 {
-                    "file_id": 1000039583,
-                    "name": "PRAY-53337-1-0-0-1691089957.zip",
-                    "version": "1.0.0"
+                    "file_id": 1000039924,
+                    "name": "PRAY-53337-1-0-1-1693150941.7z",
+                    "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1692411756
+            "indexed_timestamp": 1694294682
         },
         {
             "mod_id": 53344,
@@ -13672,17 +13693,12 @@
             "author": "Oleksandr Darchuk",
             "files": [
                 {
-                    "file_id": 1000039629,
-                    "name": "Alpha release-53345-0-4-1691339937.zip",
-                    "version": "0.4"
-                },
-                {
-                    "file_id": 1000039643,
-                    "name": "0.4.1-53345-0-4-1-1691422212.zip",
-                    "version": "0.4.1"
+                    "file_id": 1000039857,
+                    "name": "0.6-53345-0-6-1692780710.zip",
+                    "version": "0.6"
                 }
             ],
-            "indexed_timestamp": 1692411760
+            "indexed_timestamp": 1694294683
         },
         {
             "mod_id": 53346,
@@ -13774,9 +13790,126 @@
                 }
             ],
             "indexed_timestamp": 1692411709
+        },
+        {
+            "mod_id": 53392,
+            "name": "Gool's Backgrounds",
+            "author": "MrGool",
+            "files": [
+                {
+                    "file_id": 1000039806,
+                    "name": "goolsbackgrounds-53392-1-1-1692505948.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1694294410
+        },
+        {
+            "mod_id": 53403,
+            "name": "Live Book Editing",
+            "author": "C3pa",
+            "files": [
+                {
+                    "file_id": 1000039852,
+                    "name": "Live Book Editing-53403-1-0-1692737899.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1694294415
+        },
+        {
+            "mod_id": 53418,
+            "name": "Summon Souls (MWSE)",
+            "author": "Great Overlord Maser of All",
+            "files": [
+                {
+                    "file_id": 1000039932,
+                    "name": "Summon Souls-53418-0-511-1693173459.rar",
+                    "version": "0.511"
+                }
+            ],
+            "indexed_timestamp": 1694294437
+        },
+        {
+            "mod_id": 53427,
+            "name": "Blue - Smart Console",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000039949,
+                    "name": "Blue - Smart Console-53427-1-1693265126.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1694294442
+        },
+        {
+            "mod_id": 53441,
+            "name": "OpenMW Hookshot",
+            "author": "imarchnemesis",
+            "files": [
+                {
+                    "file_id": 1000039984,
+                    "name": "OpenMWHookshot.7z-53441-0-1-0-beta-1693460798.7z",
+                    "version": "0.1.0-beta"
+                }
+            ],
+            "indexed_timestamp": 1694294447
+        },
+        {
+            "mod_id": 53454,
+            "name": "Morrowind World Randomizer for OpenMW",
+            "author": "Diject",
+            "files": [
+                {
+                    "file_id": 1000040026,
+                    "name": "Morrowind World Randomizer for OpenMW-53454-0-5-0-1693741696.zip",
+                    "version": "0.5.0"
+                }
+            ],
+            "indexed_timestamp": 1694294432
+        },
+        {
+            "mod_id": 53455,
+            "name": "Fancy Door Randomizer for OpenMW",
+            "author": "Diject",
+            "files": [
+                {
+                    "file_id": 1000040025,
+                    "name": "Fancy Door Randomizer for OpenMW-53455-0-9-0-1693741467.zip",
+                    "version": "0.9.0"
+                }
+            ],
+            "indexed_timestamp": 1694294444
+        },
+        {
+            "mod_id": 53474,
+            "name": "Zoom",
+            "author": "C3pa",
+            "files": [
+                {
+                    "file_id": 1000040071,
+                    "name": "Zoom-53474-1-0-0-1693997077.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1694294449
+        },
+        {
+            "mod_id": 53480,
+            "name": "RWC OpenMW",
+            "author": "MAD Team",
+            "files": [
+                {
+                    "file_id": 1000040102,
+                    "name": "RWC The Sphere Station-53480-1-1-1694190514.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1694294409
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1692411658,
-    "last_scan_for_updated_mods_timestamp": 1692411807,
-    "highest_validated_mod_id": 53391
+    "last_scan_for_added_mods_timestamp": 1694294386,
+    "last_scan_for_updated_mods_timestamp": 1694294483,
+    "highest_validated_mod_id": 53484
 }
