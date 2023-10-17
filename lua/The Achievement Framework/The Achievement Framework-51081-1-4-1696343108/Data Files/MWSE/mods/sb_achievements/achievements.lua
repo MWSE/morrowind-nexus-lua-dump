@@ -1,0 +1,3 @@
+local achievements = {}
+
+return achievements
