@@ -1,0 +1,2 @@
+-- implement once a proper combat UI becomes available.
+-- TODO: Make each of the attack types unique, slash vs light armour, thrust vs heavy etc
