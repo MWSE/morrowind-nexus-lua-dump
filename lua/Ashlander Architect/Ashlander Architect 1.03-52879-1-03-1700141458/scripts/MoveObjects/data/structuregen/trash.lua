@@ -1,0 +1,1 @@
+return  {["trash"] = {ids = { [1]={ ["id"]="0x170ea3db", ["recordId"]="t_imp_setharbor_tradeship_01", ["scale"]=1, ["rotation"]={ ["y"]=0, ["z"]=-3.1415922641754, ["x"]=-0,}, ["position"]={ ["y"]=-143888.859375, ["z"]=-1.1296081542969, ["x"]=61478.26171875,},},},extCells = { {x = 7, y = -18 },},interiors ={ },}}
