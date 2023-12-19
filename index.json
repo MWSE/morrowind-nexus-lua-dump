@@ -19,12 +19,12 @@
             "author": "Hrnchamd",
             "files": [
                 {
-                    "file_id": 1000037329,
-                    "name": "MGE XE Manual Install-41102-0-16-3-1682285033.7z",
-                    "version": "0.16.3"
+                    "file_id": 1000041396,
+                    "name": "MGE XE Manual Install-41102-0-17-0-1702158518.7z",
+                    "version": "0.17.0"
                 }
             ],
-            "indexed_timestamp": 1682501500
+            "indexed_timestamp": 1702977342
         },
         {
             "mod_id": 42238,
@@ -457,12 +457,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000039333,
-                    "name": "Mage Robes-45739-2-2-2-1690295707.7z",
-                    "version": "2.2.2"
+                    "file_id": 1000041536,
+                    "name": "Mage Robes-45739-2-3-0-1702926929.7z",
+                    "version": "2.3.0"
                 }
             ],
-            "indexed_timestamp": 1692411864
+            "indexed_timestamp": 1702977357
         },
         {
             "mod_id": 45742,
@@ -535,12 +535,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000030260,
-                    "name": "Scrolls of the Nine Barriers-45831-2-0-1650991253.7z",
-                    "version": "2.0"
+                    "file_id": 1000041537,
+                    "name": "Scrolls of the Nine Barriers-45831-2-2-1702929204.7z",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1656630704
+            "indexed_timestamp": 1702977340
         },
         {
             "mod_id": 45845,
@@ -1017,12 +1017,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000041061,
-                    "name": "The Sanguine Rose-46214-1-3-0-1700428641.7z",
-                    "version": "1.3.0"
+                    "file_id": 1000041527,
+                    "name": "The Sanguine Rose-46214-1-3-1-1702859889.7z",
+                    "version": "1.3.1"
                 }
             ],
-            "indexed_timestamp": 1701442548
+            "indexed_timestamp": 1702977338
         },
         {
             "mod_id": 46226,
@@ -4525,12 +4525,12 @@
             "author": "tewlwolow",
             "files": [
                 {
-                    "file_id": 1000040205,
-                    "name": "Watch the Skies 4.5.0-48636-4-5-0-1694976593.7z",
-                    "version": "4.5.0"
+                    "file_id": 1000041316,
+                    "name": "Watch the Skies 5.0.0-48636-5-0-0-1701735025.7z",
+                    "version": "5.0.0"
                 }
             ],
-            "indexed_timestamp": 1695850715
+            "indexed_timestamp": 1702977238
         },
         {
             "mod_id": 48642,
@@ -5308,12 +5308,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000041250,
-                    "name": "Ashfall-49057-v3-17-0-1701334831.7z",
-                    "version": "v3.17.0"
+                    "file_id": 1000041415,
+                    "name": "Ashfall-49057-v3-18-7-1702284703.7z",
+                    "version": "v3.18.7"
                 }
             ],
-            "indexed_timestamp": 1701442578
+            "indexed_timestamp": 1702977376
         },
         {
             "mod_id": 49075,
@@ -5591,17 +5591,17 @@
             "author": "RandomPal and the Morrowind Modding Community",
             "files": [
                 {
-                    "file_id": 1000040816,
-                    "name": "Beautiful Cities of Morrowind - Patches-49231-3-0-0-1699122705.7z",
-                    "version": "3.0.0"
+                    "file_id": 1000041526,
+                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-3-0-3-1702857274.7z",
+                    "version": "3.0.3"
                 },
                 {
-                    "file_id": 1000040877,
-                    "name": "Beautiful Cities of Morrowind - BCOM Core-49231-3-0-0-1699391022.7z",
-                    "version": "3.0.0"
+                    "file_id": 1000041548,
+                    "name": "Beautiful Cities of Morrowind - Patches-49231-3-0-4-1702969918.7z",
+                    "version": "3.0.4"
                 }
             ],
-            "indexed_timestamp": 1699483294
+            "indexed_timestamp": 1702977382
         },
         {
             "mod_id": 49232,
@@ -6760,12 +6760,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000040043,
-                    "name": "abotSmartCompanions-49848-1-19-1693844737.7z",
-                    "version": "1.19"
+                    "file_id": 1000041530,
+                    "name": "abotSmartCompanions-49848-1-20-1702890889.7z",
+                    "version": "1.20"
                 }
             ],
-            "indexed_timestamp": 1694294558
+            "indexed_timestamp": 1702977252
         },
         {
             "mod_id": 49853,
@@ -8006,12 +8006,12 @@
             "author": "KirbonatedBeverage",
             "files": [
                 {
-                    "file_id": 1000040659,
-                    "name": "Kirbonated Character Progression-50702-1-3-9-1-1698360730.zip",
-                    "version": "1.3.9.1"
+                    "file_id": 1000041299,
+                    "name": "Kirbonated Character Progression-50702-1-3-10-1701636201.zip",
+                    "version": "1.3.10"
                 }
             ],
-            "indexed_timestamp": 1699293063
+            "indexed_timestamp": 1702977368
         },
         {
             "mod_id": 50709,
@@ -8730,12 +8730,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000041249,
-                    "name": "The Crafting Framework-51009-v1-19-0-1701333984.7z",
-                    "version": "v1.19.0"
+                    "file_id": 1000041371,
+                    "name": "The Crafting Framework-51009-v1-21-1-1702035903.7z",
+                    "version": "v1.21.1"
                 }
             ],
-            "indexed_timestamp": 1701442575
+            "indexed_timestamp": 1702977372
         },
         {
             "mod_id": 51022,
@@ -8782,12 +8782,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000041078,
-                    "name": "PvP-51034-1-5-1700494618.zip",
-                    "version": "1.5"
+                    "file_id": 1000041491,
+                    "name": "PvP-51034-1-7-1702767087.zip",
+                    "version": "1.7"
                 }
             ],
-            "indexed_timestamp": 1701442570
+            "indexed_timestamp": 1702977362
         },
         {
             "mod_id": 51035,
@@ -9480,12 +9480,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000039447,
-                    "name": "DRIP-51242-v1-1-1-1690681408.7z",
-                    "version": "v1.1.1"
+                    "file_id": 1000041366,
+                    "name": "DRIP-51242-v1-2-1-1702027567.7z",
+                    "version": "v1.2.1"
                 }
             ],
-            "indexed_timestamp": 1692411984
+            "indexed_timestamp": 1702977364
         },
         {
             "mod_id": 51243,
@@ -10380,12 +10380,12 @@
             "author": "Demanufacturer87",
             "files": [
                 {
-                    "file_id": 1000040906,
-                    "name": "Kogoruhn - Extinct City of Ash and Sulfur-51615-2-6-1699541253.rar",
-                    "version": "2.6"
+                    "file_id": 1000041295,
+                    "name": "Kogoruhn - Extinct City of Ash and Sulfur-51615-2-7-1701624095.rar",
+                    "version": "2.7"
                 }
             ],
-            "indexed_timestamp": 1701442488
+            "indexed_timestamp": 1702977381
         },
         {
             "mod_id": 51622,
@@ -11146,12 +11146,12 @@
                     "version": "2.3.2"
                 },
                 {
-                    "file_id": 1000037661,
-                    "name": "Wares Ultimate-52013-1-5-1683200408.7z",
-                    "version": "1.5"
+                    "file_id": 1000041453,
+                    "name": "Wares Ultimate-52013-1-6-1702497098.7z",
+                    "version": "1.6"
                 }
             ],
-            "indexed_timestamp": 1684166314
+            "indexed_timestamp": 1702977374
         },
         {
             "mod_id": 52030,
@@ -11917,12 +11917,12 @@
             "author": "Melchior Dahrk",
             "files": [
                 {
-                    "file_id": 1000035462,
-                    "name": "The Search for the White Wave-52301-1-2-1675822220.7z",
-                    "version": "1.2"
+                    "file_id": 1000041539,
+                    "name": "The Search for the White Wave-52301-1-3-1702936509.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1675832046
+            "indexed_timestamp": 1702977379
         },
         {
             "mod_id": 52322,
@@ -11995,12 +11995,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000035814,
-                    "name": "abotSmartJournal Rus-52337-1-0-1676125166.rar",
-                    "version": "1.0"
+                    "file_id": 1000041451,
+                    "name": "abotSmartJournal Rus  (v. 1.16)-52337-1-1a-1702495405.rar",
+                    "version": "1.1a"
                 }
             ],
-            "indexed_timestamp": 1677091467
+            "indexed_timestamp": 1702977241
         },
         {
             "mod_id": 52352,
@@ -12540,12 +12540,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000037706,
-                    "name": "Impact Sounds-52747-1-2-1683307237.zip",
-                    "version": "1.2"
+                    "file_id": 1000041374,
+                    "name": "Impact Sounds-52747-2-1702044430.zip",
+                    "version": "2"
                 }
             ],
-            "indexed_timestamp": 1685936213
+            "indexed_timestamp": 1702977395
         },
         {
             "mod_id": 52748,
@@ -12737,12 +12737,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000039628,
-                    "name": "abotMoreTrapsMWSELua-52783-1-07-1691326518.7z",
-                    "version": "1.07"
+                    "file_id": 1000041532,
+                    "name": "abotMoreTrapsMWSELua-52783-1-08-1702898633.7z",
+                    "version": "1.08"
                 }
             ],
-            "indexed_timestamp": 1692412060
+            "indexed_timestamp": 1702977415
         },
         {
             "mod_id": 52786,
@@ -12997,12 +12997,12 @@
             "author": "Merlord Greatness7 MelchiorDahrk",
             "files": [
                 {
-                    "file_id": 1000041043,
-                    "name": "Ultimate Fishing-52872-v1-4-1-1700376927.7z",
-                    "version": "v1.4.1"
+                    "file_id": 1000041368,
+                    "name": "Ultimate Fishing-52872-v1-4-3-1702032484.7z",
+                    "version": "v1.4.3"
                 }
             ],
-            "indexed_timestamp": 1701442592
+            "indexed_timestamp": 1702977416
         },
         {
             "mod_id": 52879,
@@ -13530,12 +13530,12 @@
             "author": "Greywander EvilEye johnnyhostile",
             "files": [
                 {
-                    "file_id": 1000039791,
-                    "name": "NCGDMW Lua Edition-53136-1-3-1692401088.zip",
-                    "version": "1.3"
+                    "file_id": 1000041478,
+                    "name": "NCGDMW Lua Edition-53136-2-0-1702728435.zip",
+                    "version": "2.0"
                 }
             ],
-            "indexed_timestamp": 1692412091
+            "indexed_timestamp": 1702977436
         },
         {
             "mod_id": 53142,
@@ -13543,12 +13543,12 @@
             "author": "johnnyhostile",
             "files": [
                 {
-                    "file_id": 1000038855,
-                    "name": "Abandoned Flat Containers-53142-1-1-1688387570.zip",
-                    "version": "1.1"
+                    "file_id": 1000041481,
+                    "name": "Abandoned Flat Containers-53142-2-1-1702732794.zip",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1688601898
+            "indexed_timestamp": 1702977442
         },
         {
             "mod_id": 53159,
@@ -14064,12 +14064,12 @@
             "author": "Adventurer66 - eMOElein - Vindsvept",
             "files": [
                 {
-                    "file_id": 1000040466,
-                    "name": "Dynamic Music -  Vindsvept Solstheim-53597-1-1696645348.zip",
-                    "version": "1"
+                    "file_id": 1000041534,
+                    "name": "Dynamic Music -  Vindsvept Solstheim-53597-1-1-1702912267.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1699292884
+            "indexed_timestamp": 1702977466
         },
         {
             "mod_id": 53606,
@@ -14108,7 +14108,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1701442615
+            "indexed_timestamp": 1702977468
         },
         {
             "mod_id": 53647,
@@ -14311,12 +14311,12 @@
             "author": "vtastek",
             "files": [
                 {
-                    "file_id": 1000041026,
-                    "name": "Eternal Shine-53722-1-2-1700336660.zip",
-                    "version": "1.2"
+                    "file_id": 1000041488,
+                    "name": "Eternal Shine-53722-2-5-1702753687.zip",
+                    "version": "2.5"
                 }
             ],
-            "indexed_timestamp": 1701442393
+            "indexed_timestamp": 1702977474
         },
         {
             "mod_id": 53723,
@@ -14389,15 +14389,202 @@
             "author": "Danae and friends",
             "files": [
                 {
-                    "file_id": 1000041260,
-                    "name": "Advent Calendar-53778-1-1a-1701441106.7z",
-                    "version": "1.1a"
+                    "file_id": 1000041343,
+                    "name": "Advent Calendar-53778-1-2-1701910090.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1701442377
+            "indexed_timestamp": 1702977503
+        },
+        {
+            "mod_id": 53779,
+            "name": "Animation Blending",
+            "author": "Greatness7",
+            "files": [
+                {
+                    "file_id": 1000041310,
+                    "name": "Animation Blending-53779-1-0-0-1701705105.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1702977154
+        },
+        {
+            "mod_id": 53782,
+            "name": "Proportional Progression Expanded",
+            "author": "herbert100",
+            "files": [
+                {
+                    "file_id": 1000041308,
+                    "name": "PPE-53782-1-1-1701688136.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1702977160
+        },
+        {
+            "mod_id": 53794,
+            "name": "Simple Auto Save Modified",
+            "author": "vikivgg345 Snowball91",
+            "files": [
+                {
+                    "file_id": 1000041327,
+                    "name": "Simpla Autosave Manager Modified-53794-1-1701805158.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1702977153
+        },
+        {
+            "mod_id": 53795,
+            "name": "Weapon Attack Chance",
+            "author": "vikivgg345",
+            "files": [
+                {
+                    "file_id": 1000041328,
+                    "name": "Weapon Attack Chance-53795-1-1701807116.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1702977161
+        },
+        {
+            "mod_id": 53803,
+            "name": "herbert lib",
+            "author": "herbert100",
+            "files": [
+                {
+                    "file_id": 1000041353,
+                    "name": "herbert lib-53803-1-0-1701957747.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1702977168
+        },
+        {
+            "mod_id": 53804,
+            "name": "Proportional Magicka Regeneration",
+            "author": "herbert100",
+            "files": [
+                {
+                    "file_id": 1000041363,
+                    "name": "Proportional Magicka Regeneration-53804-1-0-1702014045.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1702977167
+        },
+        {
+            "mod_id": 53809,
+            "name": "More QuickLoot (beta)",
+            "author": "herbert100",
+            "files": [
+                {
+                    "file_id": 1000041484,
+                    "name": "more quick loot-53809-0-9-1702736588.7z",
+                    "version": "0.9"
+                }
+            ],
+            "indexed_timestamp": 1702977173
+        },
+        {
+            "mod_id": 53813,
+            "name": "THICC pants and greaves",
+            "author": "see credits",
+            "files": [
+                {
+                    "file_id": 1000041394,
+                    "name": "THICC pants and greaves-53813-0-0-2-1702153767.zip",
+                    "version": "0.0.2"
+                }
+            ],
+            "indexed_timestamp": 1702977172
+        },
+        {
+            "mod_id": 53829,
+            "name": "Gamma",
+            "author": "Archimag",
+            "files": [
+                {
+                    "file_id": 1000041439,
+                    "name": "Gamma-53829-1-1702410555.zip",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1702977181
+        },
+        {
+            "mod_id": 53842,
+            "name": "Animation Blending - OpenMW",
+            "author": "Maksim Eremenko aka Max Yari",
+            "files": [
+                {
+                    "file_id": 1000041518,
+                    "name": "OpenMW windows build release-53842-0-49-1-1702842545.rar",
+                    "version": "0.49.1"
+                }
+            ],
+            "indexed_timestamp": 1702977187
+        },
+        {
+            "mod_id": 53844,
+            "name": "Portal Relic",
+            "author": "CrystalHollow",
+            "files": [
+                {
+                    "file_id": 1000041476,
+                    "name": "Portal Relic-53844-V1-1702686497.zip",
+                    "version": "V1"
+                }
+            ],
+            "indexed_timestamp": 1702977187
+        },
+        {
+            "mod_id": 53845,
+            "name": "Imperial Employment Office (MD Edit)",
+            "author": "Melchior Dahrk and Tabris",
+            "files": [
+                {
+                    "file_id": 1000041524,
+                    "name": "Imperial Employment Office (MD Edits)-53845-3-0-1-1702854746.7z",
+                    "version": "3.0.1"
+                }
+            ],
+            "indexed_timestamp": 1702977151
+        },
+        {
+            "mod_id": 53851,
+            "name": "Raised by Cultists",
+            "author": "VvardenfellStormSage",
+            "files": [
+                {
+                    "file_id": 1000041512,
+                    "name": "Raised by Cultists-53851-1-0-1702824346.zip",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000041533,
+                    "name": "Raised by Cultists Daedric Intervention vers-53851-1-0-1702910887.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1702977153
+        },
+        {
+            "mod_id": 53853,
+            "name": "No Respawns",
+            "author": "tzar777",
+            "files": [
+                {
+                    "file_id": 1000041520,
+                    "name": "No Respawns-53853-1-0-1702851474.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1702977154
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1701442366,
-    "last_scan_for_updated_mods_timestamp": 1701442449,
-    "highest_validated_mod_id": 53778
+    "last_scan_for_added_mods_timestamp": 1702977142,
+    "last_scan_for_updated_mods_timestamp": 1702977219,
+    "highest_validated_mod_id": 53858
 }
