@@ -1,0 +1,1 @@
+return require("herbert100.more quickloot.mod")
