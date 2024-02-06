@@ -1,0 +1,77 @@
+local Class = require("herbert100.Class")
+local base =  require("herbert100.more quickloot.managers.abstract.base")
+local config = require("herbert100.more quickloot.config")
+local defns = require("herbert100.more quickloot.defns")
+
+-- we will define the `Dead` and `Inanimate` managers here because they differ so little from the `base` manager
+
+-- =============================================================================
+-- DEAD MANAGER
+-- =============================================================================
+
+-- this container will be called on dead things. it will allow dead creates to be disposed, based on config settings.
+---@class MQL.Manager.Dead : MQL.Manager
+local Dead = Class{name="Dead Manager", parents={base}}
+
+do -- define `Dead` methods and fields
+
+
+function Dead:do_cant_loot_action()
+    -- if the reason isn't that the container is empty, do the default behavior
+    if self.cant_loot ~= defns.cant_loot.empty then base.do_cant_loot_action(self); return end
+
+    if config.dead.dispose == defns.dispose.auto then 
+        self.ref:delete()
+    else
+        -- change the button name if told to
+        if config.dead.dispose == defns.dispose.take_all then
+            self.gui:set_control_labels({take_all = "Dispose"})
+        end
+        self.gui:block_and_show_msg("Empty")
+    end
+    if self.inventory_outdated and config.UI.update_inv_on_close then
+        self.inventory_outdated = false
+        tes3ui.forcePlayerInventoryUpdate()
+    end
+end
+
+
+
+-- Takes all items from the current target.
+---@param modifier_pressed boolean? is the modifier key pressed?
+---@return boolean looted_successfully `true` if the container was looted successfully, false otherwise
+function Dead:take_all_items(modifier_pressed)
+    -- dispose of dead things by pressing the "Take All" button, but the relevant config option is chosen.
+    if self.cant_loot == defns.cant_loot.empty and config.dead.dispose == defns.dispose.take_all then
+        self.ref:delete()
+        return true
+    end
+
+    -- then call the generic method
+    return base.take_all_items(self, modifier_pressed)
+end
+
+end -- define `Dead` methods and fields
+
+
+
+
+
+
+
+-- =============================================================================
+-- RETURN MANAGER LIST
+-- =============================================================================
+
+---@class MQL.Manager_List
+local Manager_List = {
+    Dead = Dead,                                                            ---@type MQL.Manager.Dead
+    Inanimate = require('herbert100.more quickloot.managers.Inanimate'),    ---@type MQL.Manager.Inanimate
+    Pickpocket = require("herbert100.more quickloot.managers.Pickpocket"),  ---@type MQL.Manager.Pickpocket
+    Organic = require("herbert100.more quickloot.managers.Organic"),        ---@type MQL.Manager.Organic
+    Services = require("herbert100.more quickloot.managers.Services")       ---@type MQL.Manager.Services
+}
+
+
+
+return Manager_List ---@type MQL.Manager_List

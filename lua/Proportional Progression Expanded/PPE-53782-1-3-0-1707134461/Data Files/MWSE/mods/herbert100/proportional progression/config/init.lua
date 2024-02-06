@@ -1,0 +1,1 @@
+return require("herbert100.proportional progression.config.utils").load_first_config()
