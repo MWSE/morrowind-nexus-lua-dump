@@ -1,0 +1,1 @@
+require ("herbert100.hud cleaner.mod")
