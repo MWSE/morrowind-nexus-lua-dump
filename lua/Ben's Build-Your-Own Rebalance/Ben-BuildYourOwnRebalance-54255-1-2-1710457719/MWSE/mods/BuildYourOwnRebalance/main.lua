@@ -1,0 +1,6 @@
+require("BuildYourOwnRebalance.mcm")
+require("BuildYourOwnRebalance.armor")
+require("BuildYourOwnRebalance.unarmored")
+require("BuildYourOwnRebalance.clothing")
+require("BuildYourOwnRebalance.weapon")
+require("BuildYourOwnRebalance.condition")
