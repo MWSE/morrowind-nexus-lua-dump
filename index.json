@@ -45,12 +45,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000026036,
-                    "name": "abotWaterLifeFishingSkillView-42417-1-01-1626959078.7z",
-                    "version": "1.01"
+                    "file_id": 1000043725,
+                    "name": "abotWaterLifeFishingSkillView-42417-1-02-1711811620.7z",
+                    "version": "1.02"
                 }
             ],
-            "indexed_timestamp": 1656631209
+            "indexed_timestamp": 1712950175
         },
         {
             "mod_id": 43181,
@@ -600,12 +600,12 @@
             "author": "thewiz1",
             "files": [
                 {
-                    "file_id": 1000042357,
-                    "name": "Black Soul Gems-45902-2-2-1706502842.zip",
-                    "version": "2.2"
+                    "file_id": 1000043684,
+                    "name": "Black Soul Gems-45902-2-2-1-1711581859.zip",
+                    "version": "2.2.1"
                 }
             ],
-            "indexed_timestamp": 1707252695
+            "indexed_timestamp": 1712950092
         },
         {
             "mod_id": 45904,
@@ -5339,12 +5339,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000043486,
-                    "name": "Ashfall-49057-v3-18-13-1710558263.7z",
-                    "version": "v3.18.13"
+                    "file_id": 1000043748,
+                    "name": "Ashfall-49057-v3-18-15-1711947025.7z",
+                    "version": "v3.18.15"
                 }
             ],
-            "indexed_timestamp": 1710796723
+            "indexed_timestamp": 1712950227
         },
         {
             "mod_id": 49075,
@@ -5633,24 +5633,6 @@
                 }
             ],
             "indexed_timestamp": 1710796734
-        },
-        {
-            "mod_id": 49232,
-            "name": "Sigourn's Misc Mods and Patches",
-            "author": "Sigourn and MMC",
-            "files": [
-                {
-                    "file_id": 1000033948,
-                    "name": "Controlled Consumption-49232-1-3-2-1670030930.7z",
-                    "version": "1.3.2"
-                },
-                {
-                    "file_id": 1000033951,
-                    "name": "Harder Barter-49232-1-2-1670031058.7z",
-                    "version": "1.2"
-                }
-            ],
-            "indexed_timestamp": 1697499786
         },
         {
             "mod_id": 49251,
@@ -7565,12 +7547,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000029770,
-                    "name": "MWSE-Lua NPC Birthsigns-50337-1-03-1647627460.7z",
-                    "version": "1.03"
+                    "file_id": 1000043669,
+                    "name": "MWSE-Lua NPC Birthsigns-50337-1-04-1711377802.7z",
+                    "version": "1.04"
                 }
             ],
-            "indexed_timestamp": 1656631146
+            "indexed_timestamp": 1712950112
         },
         {
             "mod_id": 50339,
@@ -8753,12 +8735,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000042285,
-                    "name": "The Crafting Framework-51009-1-22-1-1706155362.7z",
-                    "version": "1.22.1"
+                    "file_id": 1000043753,
+                    "name": "The Crafting Framework-51009-1-23-1-1711962625.7z",
+                    "version": "1.23.1"
                 }
             ],
-            "indexed_timestamp": 1707252737
+            "indexed_timestamp": 1712950197
         },
         {
             "mod_id": 51022,
@@ -10112,12 +10094,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000034810,
-                    "name": "abotSmartRings-51471-1-02-1674567257.7z",
-                    "version": "1.02"
+                    "file_id": 1000043629,
+                    "name": "abotSmartRings-51471-1-03-1711187652.7z",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1675831837
+            "indexed_timestamp": 1712950189
         },
         {
             "mod_id": 51472,
@@ -12382,6 +12364,19 @@
             "indexed_timestamp": 1681233744
         },
         {
+            "mod_id": 52606,
+            "name": "(OpenMW 0.49) Fix Mercantile Exploit and Rebalance",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000043817,
+                    "name": "Fix Mercantile for OpenMW 0.49-52606-1-1-1712338178.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1712950399
+        },
+        {
             "mod_id": 52665,
             "name": "Class Attribute Limit",
             "author": "VitruvianGuar",
@@ -12400,12 +12395,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000037191,
-                    "name": "abotClickClearsInput-52678-1-00-1681561248.7z",
-                    "version": "1.00"
+                    "file_id": 1000043882,
+                    "name": "abotClickClearsInput-52678-1-02-1712656482.7z",
+                    "version": "1.02"
                 }
             ],
-            "indexed_timestamp": 1682501330
+            "indexed_timestamp": 1712950199
         },
         {
             "mod_id": 52683,
@@ -13072,12 +13067,12 @@
             "author": "Cerebulon",
             "files": [
                 {
-                    "file_id": 1000037978,
-                    "name": "Revered Dead 1.1.1-52886-1-1-1-1684528849.rar",
-                    "version": "1.1.1"
+                    "file_id": 1000043826,
+                    "name": "Revered Dead 1.2.1-52886-1-2-1-1712375568.rar",
+                    "version": "1.2.1"
                 }
             ],
-            "indexed_timestamp": 1685936428
+            "indexed_timestamp": 1712950201
         },
         {
             "mod_id": 52888,
@@ -13576,12 +13571,12 @@
             "author": "Greywander EvilEye johnnyhostile",
             "files": [
                 {
-                    "file_id": 1000043473,
-                    "name": "NCGDMW Lua Edition-53136-2-2-1710464337.zip",
-                    "version": "2.2"
+                    "file_id": 1000043872,
+                    "name": "NCGDMW Lua Edition-53136-3-1-1712614757.zip",
+                    "version": "3.1"
                 }
             ],
-            "indexed_timestamp": 1710796706
+            "indexed_timestamp": 1712950086
         },
         {
             "mod_id": 53142,
@@ -13710,12 +13705,12 @@
             "author": "ZackHasaCat",
             "files": [
                 {
-                    "file_id": 1000040964,
-                    "name": "Mulitmark Lua 1.3-53260-1-3-1699842915.zip",
-                    "version": "1.3"
+                    "file_id": 1000043738,
+                    "name": "Zack's Lua Multimark-53260-1-4-2-1711916058.zip",
+                    "version": "1.4.2"
                 }
             ],
-            "indexed_timestamp": 1701442603
+            "indexed_timestamp": 1712950202
         },
         {
             "mod_id": 53291,
@@ -13736,12 +13731,12 @@
             "author": "DetailDevil",
             "files": [
                 {
-                    "file_id": 1000042111,
-                    "name": "Of Melodies and Moonlight 5_4-53307-5-4-1705361017.rar",
-                    "version": "5.4"
+                    "file_id": 1000043886,
+                    "name": "Of Melodies and Moonlight 5_5-53307-5-5-1712675037.rar",
+                    "version": "5.5"
                 }
             ],
-            "indexed_timestamp": 1707252611
+            "indexed_timestamp": 1712950204
         },
         {
             "mod_id": 53313,
@@ -13754,12 +13749,12 @@
                     "version": "2.03"
                 },
                 {
-                    "file_id": 1000042873,
-                    "name": "Alteration Movement OpenMW-53313-2-03-1707968335.zip",
+                    "file_id": 1000043641,
+                    "name": "Alteration Movement OpenMW-53313-2-03-1711244265.zip",
                     "version": "2.03"
                 }
             ],
-            "indexed_timestamp": 1708992228
+            "indexed_timestamp": 1712950205
         },
         {
             "mod_id": 53337,
@@ -13988,17 +13983,17 @@
             "author": "Randompal DetailDevil DimNussens Kalinter Markond",
             "files": [
                 {
-                    "file_id": 1000042115,
-                    "name": "Sadrith Mora BCOM Plus Module-53465-1-7-5-1705366811.rar",
-                    "version": "1.7.5"
+                    "file_id": 1000043888,
+                    "name": "Sadrith Mora BCOM Plus-53465-1-8-1712681351.rar",
+                    "version": "1.8"
                 },
                 {
-                    "file_id": 1000042116,
-                    "name": "Sadrith Mora BCOM Plus - Just give me everything-53465-1-7-5-1705367159.rar",
-                    "version": "1.7.5"
+                    "file_id": 1000043889,
+                    "name": "Sadrith Mora BCOM Plus - Just give me everything-53465-1-8-1712681598.rar",
+                    "version": "1.8"
                 }
             ],
-            "indexed_timestamp": 1707252746
+            "indexed_timestamp": 1712950191
         },
         {
             "mod_id": 53474,
@@ -15076,12 +15071,12 @@
             "author": "rfuzzo",
             "files": [
                 {
-                    "file_id": 1000043504,
-                    "name": "Immersive Travel-54063-1-2-3-1710608808.zip",
-                    "version": "1.2.3"
+                    "file_id": 1000043585,
+                    "name": "Immersive Travel-54063-1-2-4-1710920322.zip",
+                    "version": "1.2.4"
                 }
             ],
-            "indexed_timestamp": 1710796754
+            "indexed_timestamp": 1712950216
         },
         {
             "mod_id": 54064,
@@ -15229,12 +15224,12 @@
                     "version": "2.2.1"
                 },
                 {
-                    "file_id": 1000043224,
-                    "name": "Rank Up - Advancement Notifications-54140-2-2-2-1709399397.zip",
-                    "version": "2.2.2"
+                    "file_id": 1000043804,
+                    "name": "Rank Up - Advancement Notifications-54140-2-3-0-1712272318.zip",
+                    "version": "2.3.0"
                 }
             ],
-            "indexed_timestamp": 1710796762
+            "indexed_timestamp": 1712950217
         },
         {
             "mod_id": 54142,
@@ -15314,7 +15309,7 @@
                     "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1708992171
+            "indexed_timestamp": 1712950289
         },
         {
             "mod_id": 54203,
@@ -15392,12 +15387,12 @@
             "author": "BigBenJumanji",
             "files": [
                 {
-                    "file_id": 1000043471,
-                    "name": "Ben-BuildYourOwnRebalance-54255-1-2-1710457719.7z",
-                    "version": "1.2"
+                    "file_id": 1000043716,
+                    "name": "Ben-BuildYourOwnRebalance-54255-1-5-1711782036.7z",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1710796499
+            "indexed_timestamp": 1712950345
         },
         {
             "mod_id": 54258,
@@ -15457,15 +15452,319 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000043470,
-                    "name": "abotSmartTopics-54280-1-00-1710455173.7z",
-                    "version": "1.00"
+                    "file_id": 1000043608,
+                    "name": "abotSmartTopics-54280-1-01-1711033279.7z",
+                    "version": "1.01"
                 }
             ],
-            "indexed_timestamp": 1710796513
+            "indexed_timestamp": 1712950355
+        },
+        {
+            "mod_id": 54333,
+            "name": "Immersive Vehicles - Sailable boats",
+            "author": "rfuzzo",
+            "files": [
+                {
+                    "file_id": 1000043663,
+                    "name": "Immersive Vehicles-54333-0-1-1-1711350294.zip",
+                    "version": "0.1.1"
+                }
+            ],
+            "indexed_timestamp": 1712950001
+        },
+        {
+            "mod_id": 54335,
+            "name": "Adjustable Enchantment Capacity",
+            "author": "omy",
+            "files": [
+                {
+                    "file_id": 1000043598,
+                    "name": "Adjustable Enchantment Capacity-54335-1-01-1711009680.rar",
+                    "version": "1.01"
+                }
+            ],
+            "indexed_timestamp": 1712949954
+        },
+        {
+            "mod_id": 54337,
+            "name": "Better Merchants Skills for OpenMW",
+            "author": "mym",
+            "files": [
+                {
+                    "file_id": 1000043855,
+                    "name": "bmso-lua.zip-54337-1-1-1712507603.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1712949997
+        },
+        {
+            "mod_id": 54343,
+            "name": "Adjustable Soul Gem Capacity",
+            "author": "omy",
+            "files": [
+                {
+                    "file_id": 1000043599,
+                    "name": "Adjustable Soul Gem Capacity-54343-1-0-1711009859.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1712949991
+        },
+        {
+            "mod_id": 54344,
+            "name": "Adjustable Soul Size Multiplier",
+            "author": "omy1",
+            "files": [
+                {
+                    "file_id": 1000043604,
+                    "name": "Adjustable Soul Size Multiplier-54344-1-0-1711011112.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1712949996
+        },
+        {
+            "mod_id": 54369,
+            "name": "Brujoloco Magicka Expanded Tweaks",
+            "author": "Brujoloco",
+            "files": [
+                {
+                    "file_id": 1000043688,
+                    "name": "Brujoloco ME Tweaks-54369-1-0-0-1711600654.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1712950014
+        },
+        {
+            "mod_id": 54372,
+            "name": "Thirst Hunger HUD Bars",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000043697,
+                    "name": "Thirst Hunger HUD Bars-54372-1-0-1711686696.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1712950022
+        },
+        {
+            "mod_id": 54381,
+            "name": "Mage Robes - Toggle Hood Hotkey",
+            "author": "Unappendixed",
+            "files": [
+                {
+                    "file_id": 1000043730,
+                    "name": "MageRobeHoodHotkey-54381-1-0-1711847353.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1712950039
+        },
+        {
+            "mod_id": 54383,
+            "name": "Life Devourer",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000043742,
+                    "name": "Life Devourer-54383-1-1711926001.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1712950040
+        },
+        {
+            "mod_id": 54387,
+            "name": "Birthsign Thief",
+            "author": "herbert",
+            "files": [
+                {
+                    "file_id": 1000043757,
+                    "name": "birthsign thief-54387-1-0-0-1711964506.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1712950043
+        },
+        {
+            "mod_id": 54397,
+            "name": "QuickKeys Hotbar - MWSE Russian Translation",
+            "author": "Spammer",
+            "files": [
+                {
+                    "file_id": 1000043780,
+                    "name": "QuickKeys Hotbar - MWSE 2.0 Rus-54397-2-0-1712163022.7z",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1712950032
+        },
+        {
+            "mod_id": 54401,
+            "name": "Vvardenfell Ablutions - A Bathing Mod",
+            "author": "AlandroSul",
+            "files": [
+                {
+                    "file_id": 1000043802,
+                    "name": "Vvardenfell Ablutions-54401-1-02-1712251862.zip",
+                    "version": "1.02"
+                }
+            ],
+            "indexed_timestamp": 1712950034
+        },
+        {
+            "mod_id": 54402,
+            "name": "(OpenMW 0.49) TakeAll Hotkey",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000043797,
+                    "name": "TakeAll-54402-1-2-1712228979.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1712950034
+        },
+        {
+            "mod_id": 54405,
+            "name": "Expeditious Exit Russian Translation",
+            "author": "NullCascade",
+            "files": [
+                {
+                    "file_id": 1000043796,
+                    "name": "Expeditious Exit rus-54405-1-3-1712224574.7z",
+                    "version": "1.3"
+                }
+            ],
+            "indexed_timestamp": 1712950037
+        },
+        {
+            "mod_id": 54406,
+            "name": "More Detailed Companion HealthBars MWSE Lua Script Russian Translation",
+            "author": "Mesafoo Spammer",
+            "files": [
+                {
+                    "file_id": 1000043798,
+                    "name": "More Detailed Companion HealthBars rus-54406-2-1-1712236013.7z",
+                    "version": "2.1"
+                },
+                {
+                    "file_id": 1000043799,
+                    "name": "More Detailed Companion HealthBars compact rus-54406-2-1-1712236082.7z",
+                    "version": "2.1"
+                }
+            ],
+            "indexed_timestamp": 1712950039
+        },
+        {
+            "mod_id": 54414,
+            "name": "Magical Repairing",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000043896,
+                    "name": "Magical Repairing - MWSE Lua-54414-2-1712716147.rar",
+                    "version": "2"
+                }
+            ],
+            "indexed_timestamp": 1712950021
+        },
+        {
+            "mod_id": 54422,
+            "name": "Perfect Placement Russian Translation",
+            "author": "Hrnchamd",
+            "files": [
+                {
+                    "file_id": 1000043851,
+                    "name": "Perfect Placement  Rus-54422-2-1-1712482829.7z",
+                    "version": "2.1"
+                }
+            ],
+            "indexed_timestamp": 1712950019
+        },
+        {
+            "mod_id": 54425,
+            "name": "Torch Hotkey Russian Translation",
+            "author": "Remiros - Greatness7 - NullCascade",
+            "files": [
+                {
+                    "file_id": 1000043854,
+                    "name": "Torch Hotkey Russian Translation-54425-1-2-1712498138.7z",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1712950020
+        },
+        {
+            "mod_id": 54426,
+            "name": "Skills Module Russian Translation",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000043862,
+                    "name": "Skills Module Russian Translation-54426-2-1-1712516611.7z",
+                    "version": "2.1"
+                }
+            ],
+            "indexed_timestamp": 1712950016
+        },
+        {
+            "mod_id": 54427,
+            "name": "Bardic Inspiration Russian Translation",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000043863,
+                    "name": "Bardic Inspiration Russian Translation-54427-3-0-15-1712517225.7z",
+                    "version": "3.0.15"
+                }
+            ],
+            "indexed_timestamp": 1712950016
+        },
+        {
+            "mod_id": 54437,
+            "name": "Cyclical Hotkeys",
+            "author": "Arcanist999",
+            "files": [
+                {
+                    "file_id": 1000043920,
+                    "name": "Cyclical Hotkeys-54437-1-2-1712904405.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1712949990
+        },
+        {
+            "mod_id": 54442,
+            "name": "(OpenMW 0.49) Restocking",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000043918,
+                    "name": "Restock-54442-1-1-1712872941.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1712949992
+        },
+        {
+            "mod_id": 54443,
+            "name": "The Crafting Framework Russian Translation",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000043926,
+                    "name": "The Crafting Framework Russian Translation-54443-1-23-1-1712949619.7z",
+                    "version": "1.23.1"
+                }
+            ],
+            "indexed_timestamp": 1712950000
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1710796434,
-    "last_scan_for_updated_mods_timestamp": 1710796554,
-    "highest_validated_mod_id": 54328
+    "last_scan_for_added_mods_timestamp": 1712949952,
+    "last_scan_for_updated_mods_timestamp": 1712950075,
+    "highest_validated_mod_id": 54443
 }
