@@ -1,0 +1,63 @@
+local tooltipsComplete = include("Tooltips Complete.interop")
+local tooltipData = {
+
+	-- Ingredients:
+    { id = "sig_wsk_msRum_rare", description = "This illegal alcoholic drink, imported from Elseweyr, is made using the equally illegal moon sugar." },
+    { id = "sig_wsk_argMudNectar", description = "Imported from Black Marsh, this alcoholic drink is made from rice and seaweed." },
+    { id = "sig_wsk_argTheilul", description = "Theilul is a dark Argonian rum made from sugarcane. It is said to be more profitable & easier to transport than the cane itself." },
+    { id = "sig_brd_blkLichen", description = "A unique brandy made with black lichen from the mysterious The Lesser House Distillery. Lichen brandies are said to be an 'aquired taste' & rarely found outside of Morrowind." },
+    { id = "sig_brd_grnLichen", description = "A unique brandy made with green lichen from the mysterious The Lesser House Distillery. Lichen brandies are said to be an 'aquired taste' & rarely found outside of Morrowind." },
+    { id = "sig_brd_redLichen", description = "A unique brandy made with red lichen from the mysterious The Lesser House Distillery. Lichen brandies are said to be an 'aquired taste' & rarely found outside of Morrowind." },
+    { id = "sig_brd_yelLichen", description = "A unique brandy made with the yellow lichen commonly found around sulphuric pools. Bottled by The Lesser House Distillery. Lichen brandies are said to be an 'aquired taste' & rarely found outside of Morrowind." },
+    { id = "sig_brd_bluLichen", description = "A unique brandy made with blue lichen from the mysterious The Lesser House Distillery. Lichen brandies are said to be an 'aquired taste' & rarely found outside of Morrowind." },
+    { id = "sig_brd_orgLichen", description = "A unique brandy made with orange lichen from the mysterious The Lesser House Distillery. Lichen brandies are said to be an 'aquired taste' & rarely found outside of Morrowind." },
+    { id = "sig_liq_blkAnther", description = "A sweetened alcoholic beverage infused with Black Anther flowers. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_codaFlower", description = "A sweetened alcoholic beverage infused with Coda flowers. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_gldKanet", description = "A sweetened alcoholic beverage infused with Gold Kanet flowers. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_gldSedge", description = "A sweetened alcoholic beverage infused with Golden Sedge flowers. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_heatherCrm", description = "A sweetened alcoholic beverage infused with Heather flowers & guar milk. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_redwort", description = "A sweetened alcoholic beverage infused with Redwort flowers. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_stoneflower", description = "A sweetened alcoholic beverage infused with stoneflowers. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_honeylily", description = "A sweetened alcoholic beverage infused with honey lily blossoms imported from Skyrim.  Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_liq_waterlily", description = "A sweetened alcoholic beverage infused with waterlilies. Liqueurs are prepared by infusing certain woods, fruits, or flowers in alcohol and adding sweetpulp. Typically served with or after dessert among the nobility. The floral liqueurs from the Lesser House Distillery are also a popular addition to many recipes." },
+    { id = "sig_mor_bloat", description = "A distinctive wine made using Bloatspores. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_bungBane", description = "A distinctive wine made using Bungler's Bane fungus. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_hyphaFacia", description = "A distinctive wine made using Hypha Facia fungus. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_lumRussola", description = "A distinctive wine made using Luminous Russola mushrooms. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_vCoprinus", description = "A distinctive wine made using Violet Coprinus mushrooms. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_flyAmanita", description = "A distinctive wine made using Fly Amanita mushrooms. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_scypha", description = "A distinctive wine made using Scypha Mycena mushrooms. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_mor_temDome", description = "A distinctive wine made using Temple Dome mushrooms. The method used to create morrets is a closely guarded secret of the mysterious The Lesser House Distillery but is rumored to be Dwemeri in origin and very complex. These wines are covetted by collectors as they are made in very small batches making them very rare." },
+    { id = "sig_wsk_lightMgck", description = "A distilled spirit inspired by the city of Mournhold's infamous slogan." },
+    { id = "siq_wsk_sanguine", description = "A distilled spirit inspired by the Daedric prince of lust. Distillers Note: We recommend being fully clothed under your armor before consuming. We are not responsible for any wardrobe malfunctions or subsequent embarassment." },
+    { id = "sig_wsk_vaermina", description = "A distilled spirit inspired by the Daedric Prince of Dreams & Nightmares. Distillers Note: We are not responsible for the contents of your dreams." },
+    { id = "sig_wsk_malacath", description = "A distilled spirit inspired by the Daedric Prince of Lies & Deception. The bottle design features the legendary Volendrung which is associated with Malacath for reasons unknown." },
+    { id = "sig_wsk_ashvavit", description = "This distilled spirit is made with ash yams. It is a drink native to the Ashland tribes of Vvardenfell but is enjoyed across Vvardenfell." },
+    { id = "sig_wsk_pulque", description = "Pulque is made using fermented hackle-lo. It's a stunningly sweet and smooth alcohol made by the Ashland tribes of Vvardenfell." },
+    { id = "sig_wsk_fireFern", description = "This intense whiskey is made by the Ashland tribes of Vvardenfell using the petals of Fire Fern flower. It has a powerful spice that makes it unique among the whiskies in the Empire." },
+    { id = "sig_wsk_dagDownfall", description = "Dagoth's Downfall is a speciality whiskey from The Lesser House Distillery created in the hopes that Dagoth Ur's destruction will come soon." },
+    { id = "sig_wsk_dwemeri", description = "Dwemeri Demise is a speciality whiskey from The Lesser House Distillery created in remembrance of The 7th House." },
+    { id = "sig_wsk_khartag", description = "Khartag's Courage is a speciality whiskey in honor of the orcish hero Khartag. Distillers Note: drink responsibly a good distance from any sharp drops." },
+    { id = "sig_wsk_wickwheat", description = "This premuium aged whiskey features wickwheat grown on Vvardenfell & aged to perfection." },
+    { id = "sig_ale_ninkasi", description = "Ninkasi is a unique beer made from a blend of Vvardenfell's finest grains mixed with a bit of sweetpulp for a hint of sweetness." },
+    { id = "sig_ale_impStout", description = "Imported directly from Cyrodiil A hearty, deep-roasted stout features a hint of strawberries." },
+    { id = "sig_ale_legionLager", description = "A fine lager that's both crisp & refreshing. This handcrafted brew was commissioned by the Imperial legion to improve morale." },
+    { id = "sig_ale_roseLager", description = "This delightfully dark lager features Morrowind's native black roses & meadow rye which give this lager a rich but slightly tart flavour." },
+    { id = "sig_ale_wickwheat", description = "A staple of Morrowind taverns, Wickwheat ale is light, refreshing brew for every occassion." },
+    { id = "sig_ale_bittergreen", description = "A bitter beer brewed by the Ashlanders of Vvardenfell. It features bittergreen & wickwheat to produce a complex but satisfying flavour." },
+    { id = "sig_win_houseDres", description = "House Dres Reserve Blend uses the finest fruits from the Deshaan Plains. Part of the celebrated Great House wine series from The Lesser House Distillery." },
+    { id = "sig_win_houseHlaalu", description = "House Hlaalu Reserve Blend uses the finest fruits money can buy and aged to perfection in the most expensive barrels in the Empire. Part of the celebrated Great House wine series from The Lesser House Distillery." },
+    { id = "sig_win_houseRedoran", description = "House Redoran Reserve Blend distinguishes itself with the addition of pomegranates, a rare fruit found on the Red Mountain. Part of the celebrated Great House wine series from The Lesser House Distillery." },
+    { id = "sig_win_houseTelv", description = "House Telvanni Reserve Blend distinguishes itself by being fermented in amphorae coated with Telvanni Resin which imparts both a unique flavor and aroma. Part of the celebrated Great House wine series from The Lesser House Distillery." },
+    { id = "sig_win_houseIndoril", description = "House Indoril Reserve Blend uses a variety of fruits from their holdings on mainland Morrowind. Part of the celebrated Great House wine series from The Lesser House Distillery." },
+    { id = "sig_win_pomegranate", description = "Pomegranate Wine is a rare vintage made from even more rare pomegranate fruits native to the Red Mountain of Vvardenfell. Due the rarity of the fruit, this wine is made in extremely small batches making it prized among collectors." },
+    { id = "sig_win_scribCbg", description = "Scrib Cabbage wine is a blend hailing from the city of Mournhold. The flavor profile is quite unique, perhaps this is why it is not commonly found outside of Mournhold." },
+}
+local function initialized()
+    if tooltipsComplete then
+        for _, data in ipairs(tooltipData) do
+            tooltipsComplete.addTooltip(data.id, data.description, data.itemType)
+        end
+    end
+end
+event.register("initialized", initialized)

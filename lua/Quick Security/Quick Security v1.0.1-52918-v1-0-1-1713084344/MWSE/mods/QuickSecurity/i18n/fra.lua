@@ -1,0 +1,26 @@
+--- French version
+
+return {
+    ["MCM.modEnabled.label"] = "Activer ",
+    ["MCM.modEnabled.description"] = "Permet d'Activer ou de Désactiver le mod",
+    ["MCM.catGalSettings"] = "Paramètres généraux",
+    ["MCM.useWorstCondition.label"] = "Equiper l'outil usé en priorité",
+    ["MCM.useWorstCondition.description"] = "Equiper en premier un outil déjà usé plutôt qu'un neuf pour éviter d'avoir plein d'outils usés dans l'inventaire",
+    ["MCM.diplayChance.label"] = "Afficher les chances de désarmer ou de crocheter",
+    ["MCM.diplayChance.description"] = "Afficher les chances de désarmer ou de crocheter une porte ou un coffre avec le niveau actuel de fatigue et le niveau complet",
+    ["MCM.catLock"] = "Paramètres verrou / crochet",
+    ["MCM.hintKeyExists.label"] ="Indique au joueur si une clé existe",
+    ["MCM.hintKeyExists.description"] ="Indique au joueur si une clé existe pour crocheter une porte ou un coffre quand il n'a pas de crochet d'assez bonne qualité dans l'inventaire",
+    ["MCM.selectUsableFullFatigue.label"] ="Afficher aussi les crochets utilisables uniquement un fois reposé",
+    ["MCM.selectUsableFullFatigue.description"] ="Ajouter au menu de sélection les crochets utilisables uniquement une fois reposé mais inutilisable au niveau de fatigue actuelle.\nIl faut se reposer ou attendre avant de pouvoir les utiliser\nCes crochets sont affichés en rouge dans le menu.",
+    ["MCM.usePlayerKey.label"] = "Utiliser la clé de l'inventaire",
+    ["MCM.usePlayerKey.description"] = "Si le joueur a la clé permettant d'ouvrir la porte / coffre dans son inventaire, ne pas afficher le menu de sélection",
+    ["MCM.selectionKey.label"] = "Assigner une touche pour la sélection de l'outil",
+    ["MCM.selectionKey.description"] = "Assigner une touche pour la sélection de l'outil.\nIl est nécessaire de redémarrer le jeu pour prendre en compte le changement",
+    ["Menu.title_probe"] = "Sélectionner une sonde",
+    ["Menu.title_lockpick"] = "Sélectionner un crochet",
+    ["MSG.NoProbe"] = "Vous n'avez pas de sondes dans votre inventaire",
+    ["MSG.NoLockpick"] = "Vous n'avez pas de crochets d'assez bonne qualité dans votre inventaire",
+    ["MSG.NoLockpickButKey"] = "Vous n'avez pas de crochets d'assez bonne qualité dans votre inventaire mais une clé existe pour cette porte/coffre",
+    ["MSG.UseKey"] = "Vous avez la clé pour ouvrir cet objet dans votre inventaire",
+}
