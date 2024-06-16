@@ -1814,12 +1814,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000044675,
-                    "name": "4NM_Update-47015-40-1715514855.zip",
-                    "version": "40"
+                    "file_id": 1000045605,
+                    "name": "4NM_Update-47015-42-1718107920.zip",
+                    "version": "42"
                 }
             ],
-            "indexed_timestamp": 1716988986
+            "indexed_timestamp": 1718576627
         },
         {
             "mod_id": 47029,
@@ -2611,12 +2611,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000042188,
-                    "name": "abotSmartJournal-47492-1-17b-1705765917.7z",
-                    "version": "1.17b"
+                    "file_id": 1000045691,
+                    "name": "abotSmartJournal-47492-1-18-1718471745.7z",
+                    "version": "1.18"
                 }
             ],
-            "indexed_timestamp": 1707252886
+            "indexed_timestamp": 1718576964
         },
         {
             "mod_id": 47510,
@@ -5339,12 +5339,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000044118,
-                    "name": "Ashfall-49057-v3-18-17-1714043374.7z",
-                    "version": "v3.18.17"
+                    "file_id": 1000045658,
+                    "name": "Ashfall-49057-v3-18-20-1718344138.7z",
+                    "version": "v3.18.20"
                 }
             ],
-            "indexed_timestamp": 1715321467
+            "indexed_timestamp": 1718576842
         },
         {
             "mod_id": 49075,
@@ -5365,12 +5365,12 @@
             "author": "GOOGLEPOX",
             "files": [
                 {
-                    "file_id": 1000021923,
-                    "name": "Talking Trains Speechcraft-49076-1-0-0-1606295735.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000045570,
+                    "name": "Talking Trains Speechcraft-49076-1-1-0-1717970648.7z",
+                    "version": "1.1.0"
                 }
             ],
-            "indexed_timestamp": 1656630965
+            "indexed_timestamp": 1718576971
         },
         {
             "mod_id": 49077,
@@ -6131,12 +6131,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000024389,
-                    "name": "N'wah Shooter-49657-1-1-1620243166.zip",
-                    "version": "1.1"
+                    "file_id": 1000045436,
+                    "name": "N'wah Shooter-49657-2-1717589595.zip",
+                    "version": "2"
                 }
             ],
-            "indexed_timestamp": 1656631186
+            "indexed_timestamp": 1718576828
         },
         {
             "mod_id": 49658,
@@ -6196,12 +6196,12 @@
             "author": "Sandman Danae Cognatogen Denina",
             "files": [
                 {
-                    "file_id": 1000032274,
-                    "name": "Killing Spree-49668-1-1-5b-1658229227.7z",
-                    "version": "1.1.5b"
+                    "file_id": 1000045349,
+                    "name": "Killing Spree-49668-1-1-6-1717332843.7z",
+                    "version": "1.1.6"
                 }
             ],
-            "indexed_timestamp": 1658233392
+            "indexed_timestamp": 1718576980
         },
         {
             "mod_id": 49670,
@@ -6508,12 +6508,12 @@
             "author": "Aoimevelho Danae",
             "files": [
                 {
-                    "file_id": 1000032335,
-                    "name": "Aoimevelho Wares-49762-1-0-9b-1658605664.7z",
-                    "version": "1.0.9b"
+                    "file_id": 1000045298,
+                    "name": "Aoimevelhos Mods for Wares-49762-1-0-9c-1717236202.7z",
+                    "version": "1.0.9c"
                 }
             ],
-            "indexed_timestamp": 1659685056
+            "indexed_timestamp": 1718576860
         },
         {
             "mod_id": 49766,
@@ -7596,12 +7596,12 @@
             "author": "Danae Merlord",
             "files": [
                 {
-                    "file_id": 1000041233,
-                    "name": "Ahead of the Classes-50346-2-13-1701270907.7z",
-                    "version": "2.13"
+                    "file_id": 1000045346,
+                    "name": "Ahead of the Classes-50346-2-14-1717321692.7z",
+                    "version": "2.14"
                 }
             ],
-            "indexed_timestamp": 1701442461
+            "indexed_timestamp": 1718576832
         },
         {
             "mod_id": 50352,
@@ -7868,12 +7868,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000042164,
-                    "name": "abotSmartActivate-50558-1-12-1705657378.7z",
-                    "version": "1.12"
+                    "file_id": 1000045551,
+                    "name": "abotSmartActivate-50558-1-13-1717940111.7z",
+                    "version": "1.13"
                 }
             ],
-            "indexed_timestamp": 1707252602
+            "indexed_timestamp": 1718576864
         },
         {
             "mod_id": 50574,
@@ -8722,12 +8722,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000044234,
-                    "name": "The Crafting Framework-51009-v1-23-4-1714555037.7z",
-                    "version": "v1.23.4"
+                    "file_id": 1000045703,
+                    "name": "The Crafting Framework-51009-v1-24-0-1718532425.7z",
+                    "version": "v1.24.0"
                 }
             ],
-            "indexed_timestamp": 1715321517
+            "indexed_timestamp": 1718576831
         },
         {
             "mod_id": 51022,
@@ -10424,12 +10424,12 @@
             "author": "Vengyre",
             "files": [
                 {
-                    "file_id": 1000039959,
-                    "name": "Magicka of the Third Era-51636-1-2-2-1693336314.rar",
-                    "version": "1.2.2"
+                    "file_id": 1000045593,
+                    "name": "Magicka of the Third Era-51636-1-2-3-1718054579.rar",
+                    "version": "1.2.3"
                 }
             ],
-            "indexed_timestamp": 1694294601
+            "indexed_timestamp": 1718576994
         },
         {
             "mod_id": 51637,
@@ -11138,12 +11138,12 @@
                     "version": "2.3.2"
                 },
                 {
-                    "file_id": 1000042753,
-                    "name": "Wares Ultimate-52013-1-7b-1707736277.7z",
-                    "version": "1.7b"
+                    "file_id": 1000045297,
+                    "name": "Wares Ultimate-52013-1-7c-1717236094.7z",
+                    "version": "1.7c"
                 }
             ],
-            "indexed_timestamp": 1708992353
+            "indexed_timestamp": 1718576649
         },
         {
             "mod_id": 52030,
@@ -11242,12 +11242,12 @@
             "author": "GOOGLEPOX",
             "files": [
                 {
-                    "file_id": 1000038601,
-                    "name": "Dynamic Object Replacer-52105-1-2-0-1686956032.7z",
-                    "version": "1.2.0"
+                    "file_id": 1000045527,
+                    "name": "Dynamic Object Replacer-52105-1-2-1-1717825593.7z",
+                    "version": "1.2.1"
                 }
             ],
-            "indexed_timestamp": 1687218086
+            "indexed_timestamp": 1718576832
         },
         {
             "mod_id": 52108,
@@ -11582,12 +11582,12 @@
             "author": "Solthas",
             "files": [
                 {
-                    "file_id": 1000036222,
-                    "name": "Solthas Weighty Charge Attacks-52180-1-11-1677728333.7z",
-                    "version": "1.11"
+                    "file_id": 1000045382,
+                    "name": "Solthas Weighty Charge Attacks-52180-1-12-1717384745.7z",
+                    "version": "1.12"
                 }
             ],
-            "indexed_timestamp": 1678341675
+            "indexed_timestamp": 1718576646
         },
         {
             "mod_id": 52184,
@@ -11634,12 +11634,12 @@
             "author": "Solthas",
             "files": [
                 {
-                    "file_id": 1000036224,
-                    "name": "Solthas Timed Directional Attacks-52195-1-4-1677728513.7z",
-                    "version": "1.4"
+                    "file_id": 1000045381,
+                    "name": "Solthas Timed Directional Attacks-52195-1-5-1717384647.7z",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1678341677
+            "indexed_timestamp": 1718576669
         },
         {
             "mod_id": 52201,
@@ -11699,12 +11699,12 @@
             "author": "Solthas",
             "files": [
                 {
-                    "file_id": 1000036225,
-                    "name": "Solthas Combat Pack-52221-1-10-1677728628.7z",
-                    "version": "1.10"
+                    "file_id": 1000045383,
+                    "name": "Solthas Combat Pack-52221-1-11-1717384986.7z",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1678341679
+            "indexed_timestamp": 1718576694
         },
         {
             "mod_id": 52225,
@@ -11846,12 +11846,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000040247,
-                    "name": "abotFootprints-52284-1-09-1695377529.7z",
-                    "version": "1.09"
+                    "file_id": 1000045694,
+                    "name": "abotFootprints-52284-1-10-1718472465.7z",
+                    "version": "1.10"
                 }
             ],
-            "indexed_timestamp": 1695850734
+            "indexed_timestamp": 1718576806
         },
         {
             "mod_id": 52286,
@@ -12080,12 +12080,12 @@
             "author": "Solthas",
             "files": [
                 {
-                    "file_id": 1000036156,
-                    "name": "Solthas Sneak Step Drain-52382-1-3-1677441527.7z",
-                    "version": "1.3"
+                    "file_id": 1000045380,
+                    "name": "Solthas Sneak Step Drain-52382-1-4-1717384505.7z",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1678341803
+            "indexed_timestamp": 1718577009
         },
         {
             "mod_id": 52410,
@@ -12364,6 +12364,19 @@
                 }
             ],
             "indexed_timestamp": 1681233744
+        },
+        {
+            "mod_id": 52589,
+            "name": "(OpenMW 0.49) MBSP - Magicka Based Skill Progression",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000045673,
+                    "name": "MBSP-52589-25-0-1718405715.zip",
+                    "version": "25.0"
+                }
+            ],
+            "indexed_timestamp": 1718577257
         },
         {
             "mod_id": 52606,
@@ -13030,12 +13043,12 @@
             "author": "Merlord Greatness7 MelchiorDahrk",
             "files": [
                 {
-                    "file_id": 1000041802,
-                    "name": "Ultimate Fishing-52872-v1-4-4-1704180278.7z",
-                    "version": "v1.4.4"
+                    "file_id": 1000045657,
+                    "name": "Ultimate Fishing-52872-v1-4-5-1718343657.7z",
+                    "version": "v1.4.5"
                 }
             ],
-            "indexed_timestamp": 1705067814
+            "indexed_timestamp": 1718576848
         },
         {
             "mod_id": 52879,
@@ -13308,17 +13321,17 @@
             "author": "DetailDevil",
             "files": [
                 {
-                    "file_id": 1000042581,
-                    "name": "Devilish Vampire Overhaul (Vampires get stronger)-52969-2-4-1707362050.rar",
-                    "version": "2.4"
+                    "file_id": 1000045270,
+                    "name": "Devilish Vampire Overhaul (Vampires get stronger)-52969-2-5-1717173114.rar",
+                    "version": "2.5"
                 },
                 {
-                    "file_id": 1000042582,
-                    "name": "Devilish Vampire Overhaul (Vampires get weaker)-52969-2-4-1707362459.rar",
-                    "version": "2.4"
+                    "file_id": 1000045271,
+                    "name": "Devilish Vampire Overhaul (Vampires get weaker)-52969-2-5-1717173370.rar",
+                    "version": "2.5"
                 }
             ],
-            "indexed_timestamp": 1708992374
+            "indexed_timestamp": 1718576838
         },
         {
             "mod_id": 52975,
@@ -13443,12 +13456,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000044442,
-                    "name": "Joy of Painting-53036-v1-2-4-1714869213.7z",
-                    "version": "v1.2.4"
+                    "file_id": 1000045704,
+                    "name": "Joy of Painting-53036-v1-4-0-1718532836.7z",
+                    "version": "v1.4.0"
                 }
             ],
-            "indexed_timestamp": 1715321523
+            "indexed_timestamp": 1718576802
         },
         {
             "mod_id": 53064,
@@ -13625,12 +13638,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000043253,
-                    "name": "abotGameplayTweaks-53159-1-01-1709567661.7z",
-                    "version": "1.01"
+                    "file_id": 1000045689,
+                    "name": "abotGameplayTweaks-53159-1-02-1718470248.7z",
+                    "version": "1.02"
                 }
             ],
-            "indexed_timestamp": 1710796677
+            "indexed_timestamp": 1718576855
         },
         {
             "mod_id": 53161,
@@ -13790,12 +13803,12 @@
             "author": "hornsilk",
             "files": [
                 {
-                    "file_id": 1000045233,
-                    "name": "PRAY-53337-1-1-0-1716955518.7z",
-                    "version": "1.1.0"
+                    "file_id": 1000045334,
+                    "name": "PRAY-53337-1-1-1-1717277369.7z",
+                    "version": "1.1.1"
                 }
             ],
-            "indexed_timestamp": 1716989004
+            "indexed_timestamp": 1718576622
         },
         {
             "mod_id": 53344,
@@ -14086,12 +14099,12 @@
             "author": "ZackHasACat",
             "files": [
                 {
-                    "file_id": 1000040638,
-                    "name": "No Sneaky Sleeping-53539-1-1-1698166242.zip",
-                    "version": "1.1"
+                    "file_id": 1000045267,
+                    "name": "No Sneaky Sleeping-53539-1-2-1717111634.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1699293185
+            "indexed_timestamp": 1718577014
         },
         {
             "mod_id": 53545,
@@ -15459,12 +15472,12 @@
             "author": "TribalLu",
             "files": [
                 {
-                    "file_id": 1000045036,
-                    "name": "Gardening and Farming 2.0-54258-2-0-1716341357.zip",
-                    "version": "2.0"
+                    "file_id": 1000045429,
+                    "name": "Gardening and Farming 2.1-54258-2-1-1717564363.zip",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1716988726
+            "indexed_timestamp": 1718577023
         },
         {
             "mod_id": 54263,
@@ -15667,12 +15680,12 @@
             "author": "AlandroSul",
             "files": [
                 {
-                    "file_id": 1000044112,
-                    "name": "Vvardenfell Ablutions-54401-1-03-1713993890.zip",
-                    "version": "1.03"
+                    "file_id": 1000045255,
+                    "name": "Vvardenfell Ablutions-54401-1-04-1717026715.zip",
+                    "version": "1.04"
                 }
             ],
-            "indexed_timestamp": 1715321648
+            "indexed_timestamp": 1718577037
         },
         {
             "mod_id": 54402,
@@ -15680,12 +15693,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000043797,
-                    "name": "TakeAll-54402-1-2-1712228979.zip",
-                    "version": "1.2"
+                    "file_id": 1000045479,
+                    "name": "TakeAll-54402-1-4-1717674717.zip",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1712950034
+            "indexed_timestamp": 1718576789
         },
         {
             "mod_id": 54405,
@@ -15750,12 +15763,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000044907,
-                    "name": "abotWellBehavedSoundReplacers-54423-1-11-1716070518.7z",
-                    "version": "1.11"
+                    "file_id": 1000045690,
+                    "name": "abotWellBehavedSoundReplacers-54423-1-13-1718470908.7z",
+                    "version": "1.13"
                 }
             ],
-            "indexed_timestamp": 1716989038
+            "indexed_timestamp": 1718577045
         },
         {
             "mod_id": 54424,
@@ -15874,12 +15887,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000043927,
-                    "name": "Joy of Painting Russian Translation-54445-1-2-3-1712950989.7z",
-                    "version": "1.2.3"
+                    "file_id": 1000045590,
+                    "name": "Joy of Painting Russian Translation-54445-1-3-6-1718048933.7z",
+                    "version": "1.3.6"
                 }
             ],
-            "indexed_timestamp": 1715321228
+            "indexed_timestamp": 1718577053
         },
         {
             "mod_id": 54448,
@@ -16017,12 +16030,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000044513,
-                    "name": "Floating Healthbars-54498-2-1-1715069381.zip",
-                    "version": "2.1"
+                    "file_id": 1000045569,
+                    "name": "Floating Healthbars-54498-3-6-1717970625.zip",
+                    "version": "3.6"
                 }
             ],
-            "indexed_timestamp": 1715321267
+            "indexed_timestamp": 1718576793
         },
         {
             "mod_id": 54500,
@@ -16224,7 +16237,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1716989115
+            "indexed_timestamp": 1718577095
         },
         {
             "mod_id": 54559,
@@ -16336,12 +16349,12 @@
             "author": "taitechnic",
             "files": [
                 {
-                    "file_id": 1000044830,
-                    "name": "OpenMW Animated Pickup and Sneak to Steal-54585-1-02-1715813173.zip",
-                    "version": "1.02"
+                    "file_id": 1000045420,
+                    "name": "OpenMW Animated Pickup and Sneak to Steal-54585-1-03-1717528960.zip",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1716988857
+            "indexed_timestamp": 1718577095
         },
         {
             "mod_id": 54587,
@@ -16453,12 +16466,12 @@
             "author": "Sirloff",
             "files": [
                 {
-                    "file_id": 1000044910,
-                    "name": "Equipment and Items Requirements Overhaul-54621-1-0-1-1716100340.7z",
-                    "version": "1.0.1"
+                    "file_id": 1000045333,
+                    "name": "Equipment and Items Requirements Overhaul-54621-1-1-0-1717274505.rar",
+                    "version": "1.1.0"
                 }
             ],
-            "indexed_timestamp": 1716988782
+            "indexed_timestamp": 1718576830
         },
         {
             "mod_id": 54622,
@@ -16479,12 +16492,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000044600,
-                    "name": "CUAdropdown.-54623-1-00-1715367185.7z",
-                    "version": "1.00"
+                    "file_id": 1000045606,
+                    "name": "CUAdropdown-54623-1-01-1718124714.7z",
+                    "version": "1.01"
                 }
             ],
-            "indexed_timestamp": 1716988540
+            "indexed_timestamp": 1718576828
         },
         {
             "mod_id": 54627,
@@ -16570,12 +16583,12 @@
             "author": "longod",
             "files": [
                 {
-                    "file_id": 1000045108,
-                    "name": "Inspect It-54636-1-3-1716689650.zip",
-                    "version": "1.3"
+                    "file_id": 1000045439,
+                    "name": "Inspect It-54636-1-4-1717601579.zip",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1716988528
+            "indexed_timestamp": 1718576789
         },
         {
             "mod_id": 54637,
@@ -16814,12 +16827,12 @@
             "author": "Nazz",
             "files": [
                 {
-                    "file_id": 1000045188,
-                    "name": "Tri-Angled Truth-54722-1-0-1716905827.7z",
-                    "version": "1.0"
+                    "file_id": 1000045435,
+                    "name": "Tri-Angled Truth-54722-1-05-1717587340.7z",
+                    "version": "1.05"
                 }
             ],
-            "indexed_timestamp": 1716988565
+            "indexed_timestamp": 1718576787
         },
         {
             "mod_id": 54726,
@@ -16853,12 +16866,12 @@
             "author": "AFFA - Greatness7 - Melchior Dahrk - Seelof",
             "files": [
                 {
-                    "file_id": 1000045093,
-                    "name": "The Popular Plague-54730-1-0-0-1716644070.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000045601,
+                    "name": "The Popular Plague-54730-1-1-1-1718072785.7z",
+                    "version": "1.1.1"
                 }
             ],
-            "indexed_timestamp": 1716989318
+            "indexed_timestamp": 1718576797
         },
         {
             "mod_id": 54741,
@@ -16885,9 +16898,282 @@
                 }
             ],
             "indexed_timestamp": 1716988550
+        },
+        {
+            "mod_id": 54754,
+            "name": "Door Locks",
+            "author": "abot",
+            "files": [
+                {
+                    "file_id": 1000045254,
+                    "name": "abotDoorLocks-54754-1-01-1717018010.7z",
+                    "version": "1.01"
+                }
+            ],
+            "indexed_timestamp": 1718576524
+        },
+        {
+            "mod_id": 54755,
+            "name": "Care for a round of Flin - A Morrowind card game mod",
+            "author": "rfuzzo",
+            "files": [
+                {
+                    "file_id": 1000045239,
+                    "name": "Flin-54755-1-0-1717000973.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576528
+        },
+        {
+            "mod_id": 54756,
+            "name": "BeefLibrary",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000045257,
+                    "name": "BeefLibrary-54756-1-0-1717051522.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576527
+        },
+        {
+            "mod_id": 54757,
+            "name": "ExpBar",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000045258,
+                    "name": "ExpBar-54757-1-0-1717052175.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576525
+        },
+        {
+            "mod_id": 54759,
+            "name": "Songs of the Ashen Winds",
+            "author": "urm",
+            "files": [
+                {
+                    "file_id": 1000045261,
+                    "name": "SongsOftheAshenWinds_0.3-54759-0-3-1717082019.zip",
+                    "version": "0.3"
+                }
+            ],
+            "indexed_timestamp": 1718576535
+        },
+        {
+            "mod_id": 54762,
+            "name": "Glow in the Dahrk Russian Translation",
+            "author": "Melchior Dahrk and NullCascade",
+            "files": [
+                {
+                    "file_id": 1000045269,
+                    "name": "Glow in the Dahrk Russian Translation-54762-3-2-2-1717156796.7z",
+                    "version": "3.2.2"
+                }
+            ],
+            "indexed_timestamp": 1718576540
+        },
+        {
+            "mod_id": 54767,
+            "name": "Luxury Camping Addon for Ashfall",
+            "author": "Lucevar and DimNussens",
+            "files": [
+                {
+                    "file_id": 1000045291,
+                    "name": "Luxury Camping Ashfall Addon-54767-1-0-1717196281.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576539
+        },
+        {
+            "mod_id": 54774,
+            "name": "Ruines'n'Relics",
+            "author": "The Wanderer and dietBob",
+            "files": [
+                {
+                    "file_id": 1000045335,
+                    "name": "Ruines'n'relics-54774-1-0-1717280740.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576537
+        },
+        {
+            "mod_id": 54776,
+            "name": "Devilish Carry Weight Overhaul (OpenMW 0.49)",
+            "author": "DetailDevil",
+            "files": [
+                {
+                    "file_id": 1000045553,
+                    "name": "Devilish Carryweight Overhaul-54776-1-4-1717942194.rar",
+                    "version": "1.4"
+                }
+            ],
+            "indexed_timestamp": 1718576540
+        },
+        {
+            "mod_id": 54777,
+            "name": "Drinking and Delving",
+            "author": "GrumblingVomit_Markond_DimNussens_Kildozery",
+            "files": [
+                {
+                    "file_id": 1000045365,
+                    "name": "Drinking and Delving-54777-1-2-1717354906.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1718576547
+        },
+        {
+            "mod_id": 54779,
+            "name": "Enchanted Pools",
+            "author": "The Wanderer",
+            "files": [
+                {
+                    "file_id": 1000045343,
+                    "name": "tw_enchanted pools-54779-1-0-1717303226.7z",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576541
+        },
+        {
+            "mod_id": 54781,
+            "name": "Dwemer Arcade Cabinets",
+            "author": "Come",
+            "files": [
+                {
+                    "file_id": 1000045370,
+                    "name": "V0.2-54781-0--1717360427.zip",
+                    "version": "0.2"
+                }
+            ],
+            "indexed_timestamp": 1718576546
+        },
+        {
+            "mod_id": 54782,
+            "name": "OpenMW Dynamic Actors",
+            "author": "taitechnic",
+            "files": [
+                {
+                    "file_id": 1000045543,
+                    "name": "OpenMW Dynamic Actors-54782-1-04a-1717886940.zip",
+                    "version": "1.04a"
+                }
+            ],
+            "indexed_timestamp": 1718576548
+        },
+        {
+            "mod_id": 54786,
+            "name": "(OpenMW 0.49) Fortify Fix",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000045426,
+                    "name": "Fortify Fix-54786-1-6-1717553068.zip",
+                    "version": "1.6"
+                }
+            ],
+            "indexed_timestamp": 1718576542
+        },
+        {
+            "mod_id": 54789,
+            "name": "Magicka Expanded Russian Translation",
+            "author": "OperatorJack and RedFurryDemon",
+            "files": [
+                {
+                    "file_id": 1000045390,
+                    "name": "Magicka Expanded Russian Translation-54789-2-09-1717408458.7z",
+                    "version": "2.09"
+                }
+            ],
+            "indexed_timestamp": 1718576548
+        },
+        {
+            "mod_id": 54792,
+            "name": "Wealth Beyond Measure - Banking and Currency",
+            "author": "GOOGLEPOX",
+            "files": [
+                {
+                    "file_id": 1000045693,
+                    "name": "Wealth Beyond Measure-54792-1-2-0-1718472323.7z",
+                    "version": "1.2.0"
+                }
+            ],
+            "indexed_timestamp": 1718576551
+        },
+        {
+            "mod_id": 54798,
+            "name": "Devilish Sleep Spell (OpenMW 0.49)",
+            "author": "DetailDevil",
+            "files": [
+                {
+                    "file_id": 1000045440,
+                    "name": "Devilish Sleep Spell-54798-1-0-1717602598.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1718576557
+        },
+        {
+            "mod_id": 54815,
+            "name": "(OpenMW 0.49) Better Bars",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000045663,
+                    "name": "Better Bars-54815-1-3-1718354549.zip",
+                    "version": "1.3"
+                }
+            ],
+            "indexed_timestamp": 1718576571
+        },
+        {
+            "mod_id": 54823,
+            "name": "Need To Pee",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000045655,
+                    "name": "Need To Pee 2.0-54823-2-0-1718343541.zip",
+                    "version": "2.0"
+                }
+            ],
+            "indexed_timestamp": 1718576564
+        },
+        {
+            "mod_id": 54825,
+            "name": "Shader Hotkeys",
+            "author": "Lucevar",
+            "files": [
+                {
+                    "file_id": 1000045624,
+                    "name": "Shader Hotkeys-54825-1-1-1718217538.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1718576564
+        },
+        {
+            "mod_id": 54842,
+            "name": "Ultimate Teabagging and Squatting",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000045706,
+                    "name": "Ultimate Teabagging and Squatting-54842-1-1-1718544714.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1718576529
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1716988525,
-    "last_scan_for_updated_mods_timestamp": 1716988645,
-    "highest_validated_mod_id": 54752
+    "last_scan_for_added_mods_timestamp": 1718576498,
+    "last_scan_for_updated_mods_timestamp": 1718576604,
+    "highest_validated_mod_id": 54849
 }
