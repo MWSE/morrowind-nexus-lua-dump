@@ -1801,12 +1801,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000015608,
-                    "name": "Chrysopoeia-47008-2-1567123732.rar",
-                    "version": "2"
+                    "file_id": 1000045886,
+                    "name": "Chrysopoeia-47008-2-1-1719169754.7z",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1656630713
+            "indexed_timestamp": 1720301430
         },
         {
             "mod_id": 47015,
@@ -1969,12 +1969,12 @@
             "author": "OperatorJack and RedFurryDemon",
             "files": [
                 {
-                    "file_id": 1000032151,
-                    "name": "Magicka Expanded-47111-2-09-1657824066.7z",
-                    "version": "2.09"
+                    "file_id": 1000046031,
+                    "name": "Magicka Expanded-47111-3-0-3-1719837299.7z",
+                    "version": "3.0.3"
                 }
             ],
-            "indexed_timestamp": 1658233086
+            "indexed_timestamp": 1720301684
         },
         {
             "mod_id": 47129,
@@ -2403,12 +2403,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000023081,
-                    "name": "Cast-On-Swing Enchantments-47338-1-41-1614203373.7z",
-                    "version": "1.41"
+                    "file_id": 1000045888,
+                    "name": "Cast-On-Swing-Enchantments-47338-1-5-1719170123.7z",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1656631017
+            "indexed_timestamp": 1720301712
         },
         {
             "mod_id": 47345,
@@ -2494,12 +2494,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000016844,
-                    "name": "Homing Projectiles 1.1-47403-1-1-1578762173.rar",
-                    "version": "1.1"
+                    "file_id": 1000045892,
+                    "name": "Homing Projectiles-47403-1-2-1719170576.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1656631433
+            "indexed_timestamp": 1720301717
         },
         {
             "mod_id": 47413,
@@ -2546,12 +2546,12 @@
             "author": "OperatorJack and Kurpulio and RedFurryDemon",
             "files": [
                 {
-                    "file_id": 1000032149,
-                    "name": "Enhanced Detection-47480-1-2-2-1657823655.7z",
-                    "version": "1.2.2"
+                    "file_id": 1000045889,
+                    "name": "Enhanced Detection-47480-1-3-0-1719170250.7z",
+                    "version": "1.3.0"
                 }
             ],
-            "indexed_timestamp": 1658233088
+            "indexed_timestamp": 1720301677
         },
         {
             "mod_id": 47482,
@@ -2645,19 +2645,6 @@
             "indexed_timestamp": 1656630867
         },
         {
-            "mod_id": 47534,
-            "name": "MM - Enhanced Telekinesis",
-            "author": "OperatorJack and Kurpulio",
-            "files": [
-                {
-                    "file_id": 1000032153,
-                    "name": "Enhanced Telekinesis-47534-1-04-1657830643.7z",
-                    "version": "1.04"
-                }
-            ],
-            "indexed_timestamp": 1658233086
-        },
-        {
             "mod_id": 47538,
             "name": "4NM_PERKS",
             "author": "Archimag",
@@ -2702,12 +2689,12 @@
             "author": "Vtastek - OperatorJack - Kurpulio",
             "files": [
                 {
-                    "file_id": 1000032150,
-                    "name": "Enhanced Invisibility-47565-1-1-1-1657823814.7z",
-                    "version": "1.1.1"
+                    "file_id": 1000045897,
+                    "name": "Enhanced Invisibility-47565-1-2-0-1719171199.7z",
+                    "version": "1.2.0"
                 }
             ],
-            "indexed_timestamp": 1658233088
+            "indexed_timestamp": 1720301680
         },
         {
             "mod_id": 47581,
@@ -2754,12 +2741,12 @@
             "author": "OperatorJack - Greatness7 - Kurpulio",
             "files": [
                 {
-                    "file_id": 1000020824,
-                    "name": "Enhanced Light-47672-1-21-1600270893.7z",
-                    "version": "1.21"
+                    "file_id": 1000045895,
+                    "name": "Enhanced Light-47672-1-3-1719171060.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1656631078
+            "indexed_timestamp": 1720301672
         },
         {
             "mod_id": 47691,
@@ -3206,12 +3193,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000025862,
-                    "name": "Miscast Enhanced-47948-1-2-1625966467.7z",
-                    "version": "1.2"
+                    "file_id": 1000045887,
+                    "name": "Mistcast Enhanced-47948-1-3-1719169928.7z",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1656631018
+            "indexed_timestamp": 1720301688
         },
         {
             "mod_id": 47954,
@@ -3362,12 +3349,12 @@
             "author": "OperatorJack and Gavrilo93",
             "files": [
                 {
-                    "file_id": 1000018697,
-                    "name": "A Space Odyssey-48019-1-1-1589933840.7z",
-                    "version": "1.1"
+                    "file_id": 1000045885,
+                    "name": "A Space Odyssey-48019-1-2-0-1719169514.7z",
+                    "version": "1.2.0"
                 }
             ],
-            "indexed_timestamp": 1656631430
+            "indexed_timestamp": 1720301663
         },
         {
             "mod_id": 48029,
@@ -3644,12 +3631,12 @@
             "author": "OperatorJack and Gavrilo93",
             "files": [
                 {
-                    "file_id": 1000018871,
-                    "name": "Fargoth Intervention-48173-1-0-1590547577.7z",
-                    "version": "1.0"
+                    "file_id": 1000045900,
+                    "name": "Fargoth Intervention-48173-1-1-1719172994.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631205
+            "indexed_timestamp": 1720301426
         },
         {
             "mod_id": 48197,
@@ -3670,12 +3657,12 @@
             "author": "OperatorJack Danae",
             "files": [
                 {
-                    "file_id": 1000019088,
-                    "name": "hotfix-48199-1-0a-1591112998.7z",
-                    "version": "1.0a"
+                    "file_id": 1000045915,
+                    "name": "Daedric Intervention Spell-48199-1-1-1719239233.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631161
+            "indexed_timestamp": 1720301416
         },
         {
             "mod_id": 48217,
@@ -3774,12 +3761,12 @@
             "author": "OperatorJack and Gavrilo93",
             "files": [
                 {
-                    "file_id": 1000019041,
-                    "name": "Call Incarnate-48263-1-0-1590975591.7z",
-                    "version": "1.0"
+                    "file_id": 1000045898,
+                    "name": "Call Incarnate-48263-1-1-1719172197.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656631066
+            "indexed_timestamp": 1720301667
         },
         {
             "mod_id": 48264,
@@ -5015,12 +5002,12 @@
             "author": "abot - NullCascade",
             "files": [
                 {
-                    "file_id": 1000044514,
-                    "name": "readAloud-48930-1-17-1715087710.7z",
-                    "version": "1.17"
+                    "file_id": 1000046103,
+                    "name": "readAloud-48930-1-18-1720269168.7z",
+                    "version": "1.18"
                 }
             ],
-            "indexed_timestamp": 1715321493
+            "indexed_timestamp": 1720301691
         },
         {
             "mod_id": 48933,
@@ -5093,12 +5080,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000023075,
-                    "name": "Enhanced Reflection-48956-1-01-1614192550.7z",
-                    "version": "1.01"
+                    "file_id": 1000045896,
+                    "name": "Enhanced Reflection-48956-1-1-1719171123.7z",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1656630710
+            "indexed_timestamp": 1720301688
         },
         {
             "mod_id": 48964,
@@ -5339,12 +5326,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000045658,
-                    "name": "Ashfall-49057-v3-18-20-1718344138.7z",
-                    "version": "v3.18.20"
+                    "file_id": 1000045797,
+                    "name": "Ashfall-49057-v3-18-21-1718769951.7z",
+                    "version": "v3.18.21"
                 }
             ],
-            "indexed_timestamp": 1718576842
+            "indexed_timestamp": 1720301741
         },
         {
             "mod_id": 49075,
@@ -5378,12 +5365,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000023023,
-                    "name": "OAAB Astral Pocket-49077-1--01-1613835647.7z",
-                    "version": "1..01"
+                    "file_id": 1000045890,
+                    "name": "OAAB Astral Pocket-49077-1-1-0-1719170338.7z",
+                    "version": "1.1.0"
                 }
             ],
-            "indexed_timestamp": 1656631032
+            "indexed_timestamp": 1720301710
         },
         {
             "mod_id": 49084,
@@ -5819,12 +5806,12 @@
             "author": "OperatorJack",
             "files": [
                 {
-                    "file_id": 1000025859,
-                    "name": "Wands-49427-1-3-1625948263.7z",
-                    "version": "1.3"
+                    "file_id": 1000045891,
+                    "name": "Wands-49427-1-4-0-1719170431.7z",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1656631270
+            "indexed_timestamp": 1720301721
         },
         {
             "mod_id": 49504,
@@ -7868,12 +7855,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000045551,
-                    "name": "abotSmartActivate-50558-1-13-1717940111.7z",
-                    "version": "1.13"
+                    "file_id": 1000045973,
+                    "name": "abotSmartActivate-50558-1-15-1719611923.7z",
+                    "version": "1.15"
                 }
             ],
-            "indexed_timestamp": 1718576864
+            "indexed_timestamp": 1720301735
         },
         {
             "mod_id": 50574,
@@ -7946,12 +7933,12 @@
             "author": "Sephumbra",
             "files": [
                 {
-                    "file_id": 1000029058,
-                    "name": "Seph's HUD Customizer-50588-2-1-1-1643389329.zip",
-                    "version": "2.1.1"
+                    "file_id": 1000046018,
+                    "name": "Seph's HUD Customizer-50588-2-1-2-1719751818.zip",
+                    "version": "2.1.2"
                 }
             ],
-            "indexed_timestamp": 1656630741
+            "indexed_timestamp": 1720301668
         },
         {
             "mod_id": 50599,
@@ -8722,12 +8709,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000045703,
-                    "name": "The Crafting Framework-51009-v1-24-0-1718532425.7z",
-                    "version": "v1.24.0"
+                    "file_id": 1000045796,
+                    "name": "The Crafting Framework-51009-v1-24-1-1718769474.7z",
+                    "version": "v1.24.1"
                 }
             ],
-            "indexed_timestamp": 1718576831
+            "indexed_timestamp": 1720301438
         },
         {
             "mod_id": 51022,
@@ -9083,12 +9070,12 @@
             "author": "Spammer",
             "files": [
                 {
-                    "file_id": 1000031169,
-                    "name": "Enchant Drain - MWSE-51124-1-5-1653831362.7z",
-                    "version": "1.5"
+                    "file_id": 1000045946,
+                    "name": "Enchant Drain-51124-3-0-1719488919.7z",
+                    "version": "3.0"
                 }
             ],
-            "indexed_timestamp": 1656631101
+            "indexed_timestamp": 1720301754
         },
         {
             "mod_id": 51126,
@@ -10094,12 +10081,12 @@
             "author": "Spammer",
             "files": [
                 {
-                    "file_id": 1000031575,
-                    "name": "Obedient Summons - MWSE-51472-2-0-1655118484.7z",
-                    "version": "2.0"
+                    "file_id": 1000045945,
+                    "name": "Obedient Summons-51472-3-0-1719488714.7z",
+                    "version": "3.0"
                 }
             ],
-            "indexed_timestamp": 1656631364
+            "indexed_timestamp": 1720301666
         },
         {
             "mod_id": 51473,
@@ -10411,12 +10398,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000034329,
-                    "name": "Friendly Intervention-51630-2-0-1672158378.rar",
-                    "version": "2.0"
+                    "file_id": 1000045849,
+                    "name": "Friendly Intervention-51630-2-0-1-1718994398.zip",
+                    "version": "2.0.1"
                 }
             ],
-            "indexed_timestamp": 1672657582
+            "indexed_timestamp": 1720301668
         },
         {
             "mod_id": 51636,
@@ -10424,12 +10411,12 @@
             "author": "Vengyre",
             "files": [
                 {
-                    "file_id": 1000045593,
-                    "name": "Magicka of the Third Era-51636-1-2-3-1718054579.rar",
-                    "version": "1.2.3"
+                    "file_id": 1000045957,
+                    "name": "Magicka of the Third Era-51636-1-2-4-1719509611.rar",
+                    "version": "1.2.4"
                 }
             ],
-            "indexed_timestamp": 1718576994
+            "indexed_timestamp": 1720301666
         },
         {
             "mod_id": 51637,
@@ -11330,12 +11317,12 @@
             "author": "urm",
             "files": [
                 {
-                    "file_id": 1000044178,
-                    "name": "QuickSpellCasting 0.2-52130-0-2-1714299614.zip",
-                    "version": "0.2"
+                    "file_id": 1000045712,
+                    "name": "QuickSpellCasting 0.3-52130-0-3-1718578908.zip",
+                    "version": "0.3"
                 }
             ],
-            "indexed_timestamp": 1715321500
+            "indexed_timestamp": 1720301666
         },
         {
             "mod_id": 52133,
@@ -11846,12 +11833,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000045694,
-                    "name": "abotFootprints-52284-1-10-1718472465.7z",
-                    "version": "1.10"
+                    "file_id": 1000045972,
+                    "name": "abotFootprints-52284-1-11-1719610741.7z",
+                    "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1718576806
+            "indexed_timestamp": 1720301676
         },
         {
             "mod_id": 52286,
@@ -12288,12 +12275,12 @@
             "author": "Diject",
             "files": [
                 {
-                    "file_id": 1000044057,
-                    "name": "Morrowind World Randomizer v1.6.2a-52534-1-6-2-1713632304.zip",
-                    "version": "1.6.2a"
+                    "file_id": 1000046051,
+                    "name": "Morrowind World Randomizer v0.6.3-52534-1-6-3-1719941527.zip",
+                    "version": "1.6.3"
                 }
             ],
-            "indexed_timestamp": 1715321517
+            "indexed_timestamp": 1720301709
         },
         {
             "mod_id": 52540,
@@ -13043,12 +13030,12 @@
             "author": "Merlord Greatness7 MelchiorDahrk",
             "files": [
                 {
-                    "file_id": 1000045657,
-                    "name": "Ultimate Fishing-52872-v1-4-5-1718343657.7z",
-                    "version": "v1.4.5"
+                    "file_id": 1000046073,
+                    "name": "Ultimate Fishing-52872-v1-5-1-1719989905.7z",
+                    "version": "v1.5.1"
                 }
             ],
-            "indexed_timestamp": 1718576848
+            "indexed_timestamp": 1720301747
         },
         {
             "mod_id": 52879,
@@ -13459,9 +13446,14 @@
                     "file_id": 1000045704,
                     "name": "Joy of Painting-53036-v1-4-0-1718532836.7z",
                     "version": "v1.4.0"
+                },
+                {
+                    "file_id": 1000045923,
+                    "name": "Joy of Painting-53036-v1-5-5-1719295517.7z",
+                    "version": "v1.5.5"
                 }
             ],
-            "indexed_timestamp": 1718576802
+            "indexed_timestamp": 1720301745
         },
         {
             "mod_id": 53064,
@@ -13612,12 +13604,12 @@
             "author": "Greywander EvilEye johnnyhostile",
             "files": [
                 {
-                    "file_id": 1000045068,
-                    "name": "NCGDMW Lua Edition-53136-3-3-1716514092.zip",
-                    "version": "3.3"
+                    "file_id": 1000045835,
+                    "name": "NCGDMW Lua Edition-53136-3-4-1-1718919527.zip",
+                    "version": "3.4.1"
                 }
             ],
-            "indexed_timestamp": 1716989000
+            "indexed_timestamp": 1720301728
         },
         {
             "mod_id": 53142,
@@ -13765,19 +13757,6 @@
                 }
             ],
             "indexed_timestamp": 1692411730
-        },
-        {
-            "mod_id": 53307,
-            "name": "Of Melodies and Moonlight - A Sadrith Mora Artist",
-            "author": "DetailDevil",
-            "files": [
-                {
-                    "file_id": 1000043886,
-                    "name": "Of Melodies and Moonlight 5_5-53307-5-5-1712675037.rar",
-                    "version": "5.5"
-                }
-            ],
-            "indexed_timestamp": 1712950204
         },
         {
             "mod_id": 53313,
@@ -13941,6 +13920,19 @@
             "indexed_timestamp": 1694294410
         },
         {
+            "mod_id": 53398,
+            "name": "Kalinter's Miscellaneous Mod Box",
+            "author": "Kalinter",
+            "files": [
+                {
+                    "file_id": 1000045799,
+                    "name": "Wealth Beyond Measure - Vanilla Consistency-53398-1-0-3-1718788533.7z",
+                    "version": "1.0.3"
+                }
+            ],
+            "indexed_timestamp": 1720302044
+        },
+        {
             "mod_id": 53403,
             "name": "Live Book Editing",
             "author": "C3pa",
@@ -13998,12 +13990,12 @@
             "author": "Diject",
             "files": [
                 {
-                    "file_id": 1000045076,
-                    "name": "Morrowind World Randomizer v0.6.3-53454-0-6-3-1716562775.zip",
-                    "version": "0.6.3"
+                    "file_id": 1000046108,
+                    "name": "Morrowind World Randomizer v0.6.4-53454-0-6-4-1720286055.zip",
+                    "version": "0.6.4"
                 }
             ],
-            "indexed_timestamp": 1716988733
+            "indexed_timestamp": 1720301763
         },
         {
             "mod_id": 53455,
@@ -14017,24 +14009,6 @@
                 }
             ],
             "indexed_timestamp": 1710796707
-        },
-        {
-            "mod_id": 53465,
-            "name": "Sadrith Mora BCOM Plus Module",
-            "author": "Randompal DetailDevil DimNussens Kalinter Markond",
-            "files": [
-                {
-                    "file_id": 1000043888,
-                    "name": "Sadrith Mora BCOM Plus-53465-1-8-1712681351.rar",
-                    "version": "1.8"
-                },
-                {
-                    "file_id": 1000043889,
-                    "name": "Sadrith Mora BCOM Plus - Just give me everything-53465-1-8-1712681598.rar",
-                    "version": "1.8"
-                }
-            ],
-            "indexed_timestamp": 1712950191
         },
         {
             "mod_id": 53474,
@@ -14585,12 +14559,12 @@
             "author": "herbert100",
             "files": [
                 {
-                    "file_id": 1000044452,
-                    "name": "herbert lib-53803-1-6-1-1714904012.7z",
-                    "version": "1.6.1"
+                    "file_id": 1000045968,
+                    "name": "herbert lib-53803-1-7-0-1719578624.7z",
+                    "version": "1.7.0"
                 }
             ],
-            "indexed_timestamp": 1715321395
+            "indexed_timestamp": 1720301740
         },
         {
             "mod_id": 53804,
@@ -15234,12 +15208,12 @@
             "author": "Xero Foxx",
             "files": [
                 {
-                    "file_id": 1000042700,
-                    "name": "Roll The Dice-54134-1-0-0-1707559315.7z",
-                    "version": "1.0.0"
+                    "file_id": 1000045841,
+                    "name": "Roll The Dice-54134-1-0-1-1718948703.7z",
+                    "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1708992119
+            "indexed_timestamp": 1720301708
         },
         {
             "mod_id": 54136,
@@ -15389,12 +15363,12 @@
             "author": "herbert",
             "files": [
                 {
-                    "file_id": 1000043211,
-                    "name": "quest log menu-54203-1-1-0-1709325794.7z",
-                    "version": "1.1.0"
+                    "file_id": 1000045969,
+                    "name": "quest log menu-54203-2-0-0-1719578834.7z",
+                    "version": "2.0.0"
                 }
             ],
-            "indexed_timestamp": 1710796901
+            "indexed_timestamp": 1720301720
         },
         {
             "mod_id": 54208,
@@ -15472,12 +15446,12 @@
             "author": "TribalLu",
             "files": [
                 {
-                    "file_id": 1000045429,
-                    "name": "Gardening and Farming 2.1-54258-2-1-1717564363.zip",
-                    "version": "2.1"
+                    "file_id": 1000045870,
+                    "name": "Gardening and Farming 2.2-54258-2-2-1719119229.zip",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1718577023
+            "indexed_timestamp": 1720301721
         },
         {
             "mod_id": 54263,
@@ -15511,12 +15485,12 @@
             "author": "Clavernever",
             "files": [
                 {
-                    "file_id": 1000043455,
-                    "name": "Skill_Uses_Scaled-54267-1-02-1710371521.zip",
-                    "version": "1.02"
+                    "file_id": 1000045927,
+                    "name": "Skill_Uses_Scaled-54267-1-03-1719308736.zip",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1710796507
+            "indexed_timestamp": 1720301729
         },
         {
             "mod_id": 54280,
@@ -15524,12 +15498,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000044541,
-                    "name": "abotSmartTopics-54280-1-02-1715200692.7z",
-                    "version": "1.02"
+                    "file_id": 1000046092,
+                    "name": "abotSmartTopics-54280-1-04-1720169094.7z",
+                    "version": "1.04"
                 }
             ],
-            "indexed_timestamp": 1715321620
+            "indexed_timestamp": 1720301688
         },
         {
             "mod_id": 54333,
@@ -15615,12 +15589,12 @@
             "author": "TribalLu",
             "files": [
                 {
-                    "file_id": 1000045171,
-                    "name": "Thirst Hunger HUD Bars 2.0-54372-2-0-1716828226.zip",
-                    "version": "2.0"
+                    "file_id": 1000046090,
+                    "name": "Thirst Hunger HUD Bars 2.1-54372-2-1-1720117279.zip",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1716989035
+            "indexed_timestamp": 1720301765
         },
         {
             "mod_id": 54381,
@@ -15680,12 +15654,12 @@
             "author": "AlandroSul",
             "files": [
                 {
-                    "file_id": 1000045255,
-                    "name": "Vvardenfell Ablutions-54401-1-04-1717026715.zip",
-                    "version": "1.04"
+                    "file_id": 1000045815,
+                    "name": "Vvardenfell Ablutions-54401-1-05-1718834905.zip",
+                    "version": "1.05"
                 }
             ],
-            "indexed_timestamp": 1718577037
+            "indexed_timestamp": 1720301751
         },
         {
             "mod_id": 54402,
@@ -15693,12 +15667,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000045479,
-                    "name": "TakeAll-54402-1-4-1717674717.zip",
-                    "version": "1.4"
+                    "file_id": 1000045804,
+                    "name": "TakeAll Hotkey-54402-1-5-1718814851.zip",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1718576789
+            "indexed_timestamp": 1720301749
         },
         {
             "mod_id": 54405,
@@ -15874,12 +15848,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000044499,
-                    "name": "The Crafting Framework Russian Translation-54443-1-23-4-1715007670.7z",
-                    "version": "1.23.4"
+                    "file_id": 1000045831,
+                    "name": "The Crafting Framework Russian Translation-54443-1-24-1-1718913302.7z",
+                    "version": "1.24.1"
                 }
             ],
-            "indexed_timestamp": 1715321622
+            "indexed_timestamp": 1720301696
         },
         {
             "mod_id": 54445,
@@ -15887,12 +15861,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000045590,
-                    "name": "Joy of Painting Russian Translation-54445-1-3-6-1718048933.7z",
+                    "file_id": 1000045777,
+                    "name": "Joy of Painting Russian Translation-54445-1-3-6-1718689378.7z",
                     "version": "1.3.6"
                 }
             ],
-            "indexed_timestamp": 1718577053
+            "indexed_timestamp": 1720301709
         },
         {
             "mod_id": 54448,
@@ -16004,12 +15978,12 @@
             "author": "TribalLu",
             "files": [
                 {
-                    "file_id": 1000045169,
-                    "name": "Dynamic HUD Bars 2.0-54488-2-0-1716827809.zip",
-                    "version": "2.0"
+                    "file_id": 1000046085,
+                    "name": "Dynamic HUD Bars 2.1-54488-2-1-1720106053.zip",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1716989043
+            "indexed_timestamp": 1720301702
         },
         {
             "mod_id": 54489,
@@ -16092,12 +16066,12 @@
             "author": "Danae et al",
             "files": [
                 {
-                    "file_id": 1000044739,
-                    "name": "Creatures and Critters-54518-1-3a-1715597655.zip",
-                    "version": "1.3a"
+                    "file_id": 1000045830,
+                    "name": "Creatures and Critters-54518-1-4-1718903203.zip",
+                    "version": "1.4"
                 }
             ],
-            "indexed_timestamp": 1716989049
+            "indexed_timestamp": 1720301756
         },
         {
             "mod_id": 54521,
@@ -16237,7 +16211,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1718577095
+            "indexed_timestamp": 1720301812
         },
         {
             "mod_id": 54559,
@@ -16258,12 +16232,12 @@
             "author": "Sephumbra",
             "files": [
                 {
-                    "file_id": 1000044360,
-                    "name": "Seph's HUD Customizer Russian Translation-54560-2-1-1-1714756198.7z",
-                    "version": "2.1.1"
+                    "file_id": 1000046026,
+                    "name": "Seph's HUD Customizer Russian Translation-54560-2-1-2-1719814891.7z",
+                    "version": "2.1.2"
                 }
             ],
-            "indexed_timestamp": 1715321325
+            "indexed_timestamp": 1720301755
         },
         {
             "mod_id": 54563,
@@ -16375,12 +16349,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000044500,
-                    "name": "Ashfall - A Camping Survival and Needs Mod Russian-54597-3-18-17-1715011047.7z",
-                    "version": "3.18.17"
+                    "file_id": 1000045976,
+                    "name": "Ashfall - A Camping Survival and Needs Mod Russian-54597-3-18-21-1719651132.7z",
+                    "version": "3.18.21"
                 }
             ],
-            "indexed_timestamp": 1715321242
+            "indexed_timestamp": 1720301541
         },
         {
             "mod_id": 54607,
@@ -16544,12 +16518,12 @@
             "author": "Stele",
             "files": [
                 {
-                    "file_id": 1000044659,
-                    "name": "Bound Fishing Pole-54630-1-0-1715469785.zip",
-                    "version": "1.0"
+                    "file_id": 1000045901,
+                    "name": "Bound Fishing Pole-54630-1-1-1719173209.zip",
+                    "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1716988528
+            "indexed_timestamp": 1720301599
         },
         {
             "mod_id": 54631,
@@ -16583,12 +16557,12 @@
             "author": "longod",
             "files": [
                 {
-                    "file_id": 1000045439,
-                    "name": "Inspect It-54636-1-4-1717601579.zip",
-                    "version": "1.4"
+                    "file_id": 1000045768,
+                    "name": "Inspect It-54636-1-5-1718664629.zip",
+                    "version": "1.5"
                 }
             ],
-            "indexed_timestamp": 1718576789
+            "indexed_timestamp": 1720301554
         },
         {
             "mod_id": 54637,
@@ -16788,12 +16762,12 @@
             "author": "lelimule",
             "files": [
                 {
-                    "file_id": 1000045032,
-                    "name": "No More Indifferent Actors To Combats-54711-1-0-1716330210.zip",
-                    "version": "1.0"
+                    "file_id": 1000045965,
+                    "name": "No More Indifferent Actors To Combats-54711-1-2-1-1719529650.zip",
+                    "version": "1.2.1"
                 }
             ],
-            "indexed_timestamp": 1716988609
+            "indexed_timestamp": 1720301650
         },
         {
             "mod_id": 54712,
@@ -16905,12 +16879,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000045254,
-                    "name": "abotDoorLocks-54754-1-01-1717018010.7z",
-                    "version": "1.01"
+                    "file_id": 1000046106,
+                    "name": "abotDoorLocks-54754-1-03-1720282776.7z",
+                    "version": "1.03"
                 }
             ],
-            "indexed_timestamp": 1718576524
+            "indexed_timestamp": 1720301731
         },
         {
             "mod_id": 54755,
@@ -17004,19 +16978,6 @@
             "indexed_timestamp": 1718576537
         },
         {
-            "mod_id": 54776,
-            "name": "Devilish Carry Weight Overhaul (OpenMW 0.49)",
-            "author": "DetailDevil",
-            "files": [
-                {
-                    "file_id": 1000045553,
-                    "name": "Devilish Carryweight Overhaul-54776-1-4-1717942194.rar",
-                    "version": "1.4"
-                }
-            ],
-            "indexed_timestamp": 1718576540
-        },
-        {
             "mod_id": 54777,
             "name": "Drinking and Delving",
             "author": "GrumblingVomit_Markond_DimNussens_Kildozery",
@@ -17061,12 +17022,17 @@
             "author": "taitechnic",
             "files": [
                 {
-                    "file_id": 1000045543,
-                    "name": "OpenMW Dynamic Actors-54782-1-04a-1717886940.zip",
-                    "version": "1.04a"
+                    "file_id": 1000046034,
+                    "name": "OpenMW Dynamic Actors-54782-1-07-1719868305.zip",
+                    "version": "1.07"
+                },
+                {
+                    "file_id": 1000046111,
+                    "name": "OpenMW Dynamic Actors with localization support-54782-1-07a-1720294125.zip",
+                    "version": "1.07a"
                 }
             ],
-            "indexed_timestamp": 1718576548
+            "indexed_timestamp": 1720301826
         },
         {
             "mod_id": 54786,
@@ -17139,12 +17105,12 @@
             "author": "TribalLu",
             "files": [
                 {
-                    "file_id": 1000045655,
-                    "name": "Need To Pee 2.0-54823-2-0-1718343541.zip",
-                    "version": "2.0"
+                    "file_id": 1000046089,
+                    "name": "Need To Pee 2.2-54823-2-2-1720117084.zip",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1718576564
+            "indexed_timestamp": 1720301838
         },
         {
             "mod_id": 54825,
@@ -17160,6 +17126,19 @@
             "indexed_timestamp": 1718576564
         },
         {
+            "mod_id": 54836,
+            "name": "Combat Log",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000045918,
+                    "name": "Combat Log-54836-1-4-1719267534.rar",
+                    "version": "1.4"
+                }
+            ],
+            "indexed_timestamp": 1720302046
+        },
+        {
             "mod_id": 54842,
             "name": "Ultimate Teabagging and Squatting",
             "author": "TribalLu",
@@ -17171,9 +17150,230 @@
                 }
             ],
             "indexed_timestamp": 1718576529
+        },
+        {
+            "mod_id": 54855,
+            "name": "Easy Console Commands",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000045776,
+                    "name": "Easy Console Commands-54855-1-0-1718683961.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1720301352
+        },
+        {
+            "mod_id": 54858,
+            "name": "Protective Guards - Factions and NPCs Protections (OpenMW)",
+            "author": "kuyondo and lelimule",
+            "files": [
+                {
+                    "file_id": 1000045822,
+                    "name": "Protective Guards - Factions and NPCs Protections-54858-1-1-1-1718874993.zip",
+                    "version": "1.1.1"
+                }
+            ],
+            "indexed_timestamp": 1720301353
+        },
+        {
+            "mod_id": 54860,
+            "name": "(OpenMW 0.49) Unpaused Tradeskills",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000045807,
+                    "name": "Unpaused Tradeskills-54860-1-1-1718829078.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1720301356
+        },
+        {
+            "mod_id": 54861,
+            "name": "Sit Rest and Heal (Real Time Resting)",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000046094,
+                    "name": "Sit Rest and Heal (Real Time Resting) 1.3-54861-1-3-1720175472.zip",
+                    "version": "1.3"
+                }
+            ],
+            "indexed_timestamp": 1720301355
+        },
+        {
+            "mod_id": 54863,
+            "name": "MPS - Morrowind Positioning System",
+            "author": "Safebox",
+            "files": [
+                {
+                    "file_id": 1000045833,
+                    "name": "MPS-54863-1-1-1718914442.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1720301356
+        },
+        {
+            "mod_id": 54865,
+            "name": "(OpenMW 0.49) Fortify Nerf",
+            "author": "OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000045848,
+                    "name": "Fortify Nerf-54865-1-2-1718992576.zip",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1720301361
+        },
+        {
+            "mod_id": 54886,
+            "name": "MWSE NPC Poser",
+            "author": "AlandroSul",
+            "files": [
+                {
+                    "file_id": 1000046024,
+                    "name": "MWSE NPC Poser-54886-1-1-1719798051.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1720301368
+        },
+        {
+            "mod_id": 54897,
+            "name": "Dynamic Bars - MWSE -",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000046100,
+                    "name": "Dynamic Bars MWSE-54897-1-2-1720218780.rar",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1720301373
+        },
+        {
+            "mod_id": 54898,
+            "name": "Devilish Shrink Spell (OpenMW 0.49)",
+            "author": "DetailDevil",
+            "files": [
+                {
+                    "file_id": 1000046072,
+                    "name": "Devilish Shrink Spell without meshes-54898-1-7-1719988804.rar",
+                    "version": "1.7"
+                }
+            ],
+            "indexed_timestamp": 1720301372
+        },
+        {
+            "mod_id": 54900,
+            "name": "Realistic Repair Russian Translation",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000045989,
+                    "name": "Realistic Repair Russian Translation-54900-1-11-1719737887.7z",
+                    "version": "1.11"
+                }
+            ],
+            "indexed_timestamp": 1720301374
+        },
+        {
+            "mod_id": 54901,
+            "name": "Hygiene HUD Bars",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000046083,
+                    "name": "Hygiene HUD Bars 1.1-54901-1-1-1720098130.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1720301374
+        },
+        {
+            "mod_id": 54904,
+            "name": "Better Blocking for OpenMW",
+            "author": "SaintJ and s3ctor max yari and the openmw discord members",
+            "files": [
+                {
+                    "file_id": 1000046037,
+                    "name": "BetterBlocking0.8-54904-0-8-1719874767.zip",
+                    "version": "0.8"
+                }
+            ],
+            "indexed_timestamp": 1720301377
+        },
+        {
+            "mod_id": 54905,
+            "name": "Loot Notifications",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000046043,
+                    "name": "Loot Notification-54905-1-0-1719905448.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1720301375
+        },
+        {
+            "mod_id": 54908,
+            "name": "Necrocraft Russian Translation",
+            "author": "VitruvianGuar",
+            "files": [
+                {
+                    "file_id": 1000046047,
+                    "name": "Necrocraft Russian Translation-54908-1-1-3-1719912834.7z",
+                    "version": "1.1.3"
+                }
+            ],
+            "indexed_timestamp": 1720301378
+        },
+        {
+            "mod_id": 54911,
+            "name": "The Midnight Oil - Lighting Overhaul Russian Translation",
+            "author": "Merlord",
+            "files": [
+                {
+                    "file_id": 1000046050,
+                    "name": "The Midnight Oil Russian Translation-54911-2-2-2-1719925275.7z",
+                    "version": "2.2.2"
+                }
+            ],
+            "indexed_timestamp": 1720301379
+        },
+        {
+            "mod_id": 54912,
+            "name": "Fist of Azura's Star",
+            "author": "BeefStranger",
+            "files": [
+                {
+                    "file_id": 1000046080,
+                    "name": "Fist of Azura's Star-54912-1-0-1720054184.rar",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1720301380
+        },
+        {
+            "mod_id": 54922,
+            "name": "Real Time Blocking",
+            "author": "TribalLu",
+            "files": [
+                {
+                    "file_id": 1000046105,
+                    "name": "Real Time Blocking-54922-1-0-1720278547.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1720301359
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1718576498,
-    "last_scan_for_updated_mods_timestamp": 1718576604,
-    "highest_validated_mod_id": 54849
+    "last_scan_for_added_mods_timestamp": 1720301345,
+    "last_scan_for_updated_mods_timestamp": 1720301414,
+    "highest_validated_mod_id": 54924
 }

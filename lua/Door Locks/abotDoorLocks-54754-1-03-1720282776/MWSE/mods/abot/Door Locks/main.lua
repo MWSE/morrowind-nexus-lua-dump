@@ -1,0 +1,1453 @@
+--[[
+Dynamic loading doors locking according to time of day cycle, location, faction
+]]
+
+local defaultConfig = {
+modEnabled = true,
+minOpenHour = 7,
+maxOpenHour = 19,
+maxKnockHour = 21,
+minPubCloseHour = 2,
+maxPubCloseHour = 7,
+lockUnlockIntervalHour = 1,
+-- skip scripted doors 0 = 'Off', 1 = 'Containers',
+-- 2 = 'Containers and LD/LCV doors', 3 = 'All doors/containers'
+skipScript = 2,
+
+skipPersistent = true,
+skipChargen = true,
+skipGuard = true,
+checkScriptContext = true,
+knockOn = true,
+knockNotifyPerc = 70,
+maxHeardKnockDist = 1536,
+maxHeardKnockZDist = 172,
+minKnockDisposition = 33,
+maxKnockFight = 75,
+keyRing = true,
+lockEmptyHouses = true,
+logLevel = 0,
+
+stdLockLevel = 38,
+hardLockLevel = 58,
+}
+
+local author = 'abot'
+local modName = 'Door Locks'
+local modPrefix = author .. '/' .. modName
+local configName = author .. modName
+configName = string.gsub(configName, ' ', '_')
+
+local mcmName = author .. "'s " .. modName
+
+local config = mwse.loadConfig(configName, defaultConfig)
+assert(config) -- mainly to avoid visual studio code complains
+
+local modDisabled, minOpenHour, maxOpenHour, maxKnockHour
+local minPubCloseHour, maxPubCloseHour, lockUnlockIntervalHour
+local skipScript, skipPersistent, skipChargen, checkScriptContext
+local skipGuard, knockOn, knockNotifyPerc
+local maxHeardKnockZDist, maxHeardKnockDist, minKnockDisposition, maxKnockFight
+local keyRing, lockEmptyHouses
+local logLevel, logLevel1, logLevel2, logLevel3, logLevel4, logLevel5
+local stdLockLevel, hardLockLevel
+
+local function updateFromConfig()
+	modDisabled = not config.modEnabled
+	minOpenHour = config.minOpenHour
+	maxOpenHour = config.maxOpenHour
+	maxKnockHour = config.maxKnockHour
+	if maxKnockHour < maxOpenHour then
+		maxKnockHour = maxOpenHour
+		config.maxKnockHour = maxKnockHour
+	end
+	minPubCloseHour = config.minPubCloseHour
+	maxPubCloseHour = config.maxPubCloseHour
+	lockUnlockIntervalHour = config.lockUnlockIntervalHour
+	skipScript = config.skipScript
+	skipPersistent = config.skipPersistent
+	skipChargen = config.skipChargen
+	skipGuard = config.skipGuard
+	checkScriptContext = config.checkScriptContext
+	knockOn = config.knockOn
+	knockNotifyPerc = config.knockNotifyPerc
+	maxHeardKnockDist = config.maxHeardKnockDist
+	maxHeardKnockZDist = config.maxHeardKnockZDist
+	minKnockDisposition = config.minKnockDisposition
+	maxKnockFight = config.maxKnockFight
+	keyRing = config.keyRing
+	lockEmptyHouses = config.lockEmptyHouses
+	logLevel = config.logLevel
+	logLevel1 = logLevel >= 1
+	logLevel2 = logLevel >= 2
+	logLevel3 = logLevel >= 3
+	logLevel4 = logLevel >= 4
+	logLevel5 = logLevel >= 5
+
+	stdLockLevel = config.stdLockLevel
+	hardLockLevel = config.hardLockLevel
+end
+updateFromConfig()
+
+local tes3_objectType_door = tes3.objectType.door
+local tes3_objectType_container = tes3.objectType.container
+local tes3_objectType_npc = tes3.objectType.npc
+
+local function find2(s1, s2, pattern)
+	return string.find(s1, pattern, 1, true)
+	or string.find(s2, pattern, 1, true)
+end
+
+local function multifind2(s1, s2, pattern)
+	return string.multifind(s1, pattern, 1, true)
+	or string.multifind(s2, pattern, 1, true)
+end
+
+local function back2slash(s)
+	return string.gsub(s, [[\]], [[/]])
+end
+
+local dummies = {'dumm','mann','target','invis'}
+
+local function isDummy(mobRef)
+	local obj = mobRef.baseObject
+	if string.multifind(string.lower(obj.name), dummies, 1, true) then
+		return true
+	end
+	local mesh
+	local race = obj.race
+	if race then
+		 -- check for invisible race NPC
+		local chest = race.maleBody.chest
+		if not chest then
+			chest = race.femaleBody.chest
+		end
+		if not chest then
+			return true
+		end
+		mesh = chest.mesh
+		if not mesh then
+			return true
+		end
+		if mesh == '' then
+			return true
+		end
+	end
+	mesh = obj.mesh
+	if not mesh then
+		return false
+	end
+	if mesh == '' then
+		return false
+	end
+	if string.multifind(string.lower(back2slash(mesh)), dummies, 1, true) then
+		if logLevel3 then
+			mwse.log('%s: isDummy("%s")', modPrefix, mobRef.id)
+		end
+		return true
+	end
+	return false
+end
+
+local function getRefVariable(ref, variableId)
+
+	local script = ref.object.script
+	if not script then
+		return nil
+	end
+
+	if logLevel4 then
+		mwse.log('%s: getRefVariable("%s", "%s")',
+			modPrefix, ref.id, variableId)
+	end
+
+	local context = ref['context']
+	if not context then
+		return nil
+	end
+
+	if logLevel4 then
+		mwse.log('%s: getRefVariable("%s", "%s") context = %s',
+			modPrefix, ref.id, variableId, context)
+	end
+
+	local value = context[variableId]
+	if value then
+		if logLevel3 then
+			mwse.log('%s: getRefVariable("%s", "%s") context["%s"] = %s)',
+				modPrefix, ref.id, variableId, variableId, value)
+		end
+		return value
+	end
+	return nil
+end
+
+local function isRenting(actorRef)
+	local rent = getRefVariable(actorRef, 'rent')
+	if rent
+	and (rent == 1) then
+		return true
+	end
+	return false
+end
+
+
+local doorBlackList = {
+'ashl','back door','cabin','cave','crypt','dae','district','dwar','dwem','dwrv',
+'gate','grate',---'mark',
+'pelt','propylon','sewer','ship','slave',
+'strong','trap','tomb'
+}
+local doorWhiteList = {'barrack','colony','door','entrance','hut','shack'}
+
+local highSecurityList = {'bank','vault'}
+
+local guardedList = {'district','jail','prison'}
+
+---local districtList = {'district','market'}
+
+local destCellBlackList = {
+'ashl','cabin','cave','crypt','dae','dwar','dwem',
+'dwrv','propylon','sewer','ship','sixth',
+'slave','stronghold','tomb'
+}
+
+local classServices = {'service','trader','seller','clothier','merchant',
+'pawnbroker','guild guide','smith','master-at-arms'}
+
+local serviceCells = {' service',' shop','market',' trade',' seller',
+' cloth',' merchant','pawn','guild',' smith','weapon','armo',
+' fletch','temple','food'}
+
+local houseCells = {' house',' home',' hut',' shack'}
+
+local pubLikeCells = {'light house','lighthouse','tower'}
+
+---local homeLikeCells = {'apartment','flat','home','house'}
+
+local districtLikeCells = {'council hall','district','plaza','square',
+'works','market'}
+
+--[[
+local factionNamePatterns = {
+'guild','temple','imperial','cult','office','tong','brotherhood','company','clan',
+'society','excise','fort','garrison','legion','skaal','navy','blades','reachmen','lords'
+}
+]]
+local npcTypes = {'Not found','NPC','Faction member',
+'Service','Publican','Bed renting'}
+
+local function round(x)
+	return math.floor(x + 0.5)
+end
+
+local function getTimerRef(e)
+	local timer = e.timer
+	if not timer then
+		return
+	end
+	local data = timer.data
+	if not data then
+		return
+	end
+	local handle = data.handle
+	if not handle then
+		return
+	end
+	if not handle.valid then -- bah. it happens
+		return
+	end
+	if not handle:valid() then
+		return
+	end
+	local ref = handle:getObject()
+	return ref
+end
+
+-- set in loaded()
+local player
+
+local skips = 0
+
+local skipKnock = false
+
+local function ab01drlkPT1(e)
+	skipKnock = false
+	local ref = getTimerRef(e)
+	if not ref then
+		return
+	end
+	---skips = 1
+	player:activate(ref)
+end
+
+
+-- set in modConfigReady()
+local ab01KnockKnockSND, worldController
+
+local function getInGameHoursPassedFromGameStart()
+	local daysPassed = worldController.daysPassed.value
+	local gameHour = worldController.hour.value
+	return math.floor((daysPassed * 24) + gameHour + 0.5)
+end
+
+local function isGuard(object)
+	if object.isInstance then
+		return object.isGuard
+	end
+	if find2(string.lower(object.id), string.lower(object.name), 'guard') then
+		return true
+	end
+	return false
+end
+
+local function forceInstance(ref)
+	if not ref.object.isInstance then
+		ref:clone()
+		ref.modified = true
+	end
+end
+
+local function isSleeping(actorRef)
+	local mob = actorRef.mobile
+	if mob
+	and mob.fatigue
+	and mob.fatigue.current <= 0 then
+		return true
+	end
+	return false
+end
+
+-- 1 'Not found', 2 'NPC', 3 'Faction member', 4 'Trader', 5 'Publican', 6 'Bed renting'
+local function checkActorRef(actorRef, destPosition, destCellId)
+	local rec = {npcType = 1, dist = 100000, zdist = 100000, ref = actorRef}
+	if actorRef.disabled
+	or actorRef.deleted
+	or actorRef.isDead
+	or isDummy(actorRef)
+	or isSleeping(actorRef) then
+		return rec
+	end
+	local actorRefId = actorRef.id
+	local actorObj = actorRef.object
+	local dist = round( actorRef.position:distance(destPosition) )
+	local zdist = round( math.abs(actorRef.position.z - destPosition.z) )
+	rec.dist = dist
+	rec.zdist = zdist
+
+	local class = actorObj.class
+	local faction = actorObj.faction
+	local funcPrefix = modPrefix..' checkActorRef()'
+	if logLevel5 then
+		local s = string.format('%s: cell "%s" "%s" "%s" dist = %s zdist = %s',
+			funcPrefix, destCellId, actorRefId, actorObj.name, dist, zdist)
+		if class then
+			s = s .. ' class = "'..class.id..'"'
+		end
+		if faction then
+			s = s .. ' faction = "'..faction.id..'"'
+		end
+		print(s)
+	end
+
+	if class then
+		local lcClassId = string.lower(class.id)
+		if string.multifind(lcClassId, {'publican', 'trader service'}, 1, true) then
+			if logLevel3 then
+				mwse.log('%s: cell "%s" "%s" "%s" class "%s" detected',
+					funcPrefix, destCellId, actorRefId, actorObj.name, class.id)
+			end
+			if checkScriptContext
+			and isRenting(actorRef) then
+				rec.npcType = 6
+			elseif class.bartersAlchemy then
+				rec.npcType = 5
+			end
+			return rec
+		end
+		if string.multifind(lcClassId, classServices, 1, true) then
+			if logLevel3 then
+				mwse.log('%s: cell "%s" "%s" "%s" class "%s" detected',
+					funcPrefix, destCellId, actorRefId, actorObj.name, class.id)
+			end
+			rec.npcType = 4
+			return rec
+		end
+	end
+
+	local aiConfig = actorObj.aiConfig
+	if not aiConfig then
+		rec.npcType = 1
+		return rec
+	end
+
+	local fight = aiConfig.fight
+	if not fight then
+		rec.npcType = 1
+		return rec
+	end
+
+	if fight > maxKnockFight then
+		if logLevel4 then
+			mwse.log('%s: cell "%s" "%s" "%s" dist = %s, zdist = %s hostile NPC detected',
+				funcPrefix, destCellId, actorRefId, actorObj.name, dist, zdist)
+		end
+		rec.npcType = 1
+		return rec
+	end
+
+	if faction
+	and faction.playerJoined then
+		local ok = true
+		local guard = isGuard(actorObj)
+		if skipGuard
+		and guard then
+			ok = false
+		end
+		if logLevel4 then
+			mwse.log('%s: cell "%s" "%s" "%s" dist = %s zdist = %s isGuard = %s same "%s" "%s" player faction detected',
+				funcPrefix, destCellId, actorRefId, actorObj.name, dist, zdist, guard, faction.id, faction.name)
+		end
+		if ok then
+			rec.npcType = 3
+			return rec
+		end
+	end
+
+	---forceInstance(actorRef) -- try and make LOS work
+	-- nope does not work in unloaded cell, even rayTest does not seem to work
+	---local los = tes3.testLineOfSight({position1 = actorRef.position,
+		---position2 = destPosition, height1 = 120})
+
+	---if logLevel3 then
+		---mwse.log('%s: cell "%s" "%s" "%s" dist = %s zdist = %s LOS = %s',
+			---funcPrefix, destCellId, actorRefId, actorObj.name, dist, zdist, los)
+	---end
+
+	---local actorIsNearDestMarker = los
+		---and (dist <= maxHeardKnockDist)
+		---and (zdist <= maxHeardKnockZDist)
+	local actorIsNearDestMarker = (dist <= maxHeardKnockDist)
+		and (zdist <= maxHeardKnockZDist)
+
+	if not actorIsNearDestMarker then
+		rec.npcType = 1
+		return rec
+	end
+
+	local disposition = actorObj.disposition
+
+	if not disposition then
+		disposition = actorObj.baseDisposition
+	end
+	if not disposition then
+		rec.npcType = 1
+		return rec
+	end
+
+	if disposition >= minKnockDisposition then
+		if logLevel4 then
+			mwse.log('%s: cell "%s" "%s" "%s" dist = %s zdist = %s neutral NPC detected',
+				funcPrefix, destCellId, actorRefId, actorObj.name, dist, zdist)
+		end
+		rec.npcType = 2
+		return rec
+	end
+
+	if logLevel4 then
+		mwse.log('%s: cell "%s" "%s" "%s" dist = %s zdist = %s low disposition NPC detected',
+			funcPrefix, destCellId, actorRefId, actorObj.name, dist, zdist)
+	end
+	rec.npcType = 1
+	return rec
+end
+
+
+local function byType(a, b)
+	return b.npcType < a.npcType
+end
+
+local function byDist(a, b)
+	return a.dist < b.dist
+end
+
+local function byZdist(a, b)
+	return a.zdist < b.zdist
+end
+
+local function getBestKnownNPCrec(destCell, destPosition)
+	-- note .mobile od references inside the destination cell is most likely not yet initialized/available
+	local t = {}
+	local destCellId = destCell.id
+	local i = 0
+	local rec = {npcType = 1, dist = 100000, zdist = 100000}
+	for actorRef in destCell:iterateReferences(tes3_objectType_npc) do
+		local arec = checkActorRef(actorRef, destPosition, destCellId)
+		---mwse.log('>>> arec.npcType = %s', arec.npcType)
+		if arec.npcType > 1 then
+			i = i + 1
+			t[i] = arec
+		end
+	end
+	if i <= 0 then
+		return rec
+	end
+	table.sort(t, byZdist)
+	table.sort(t, byDist)
+	table.sort(t, byType)
+	rec = t[1]
+	if logLevel2 then
+		if rec.ref then
+			mwse.log('%s getBestKnownNPCrec("%s"): actor = "%s" "%s" npcType = %s',
+				modPrefix, destCell.editorName, rec.ref.id, rec.ref.object.name, rec.npcType)
+		else
+			mwse.log('%s getBestKnownNPCrec("%s"): npcType = %s',
+				modPrefix, destCell.editorName, rec.npcType)
+		end
+	end
+	return rec
+end
+
+-- dummy function to override door script
+local function nop()
+	---return
+end
+
+-- set in initialized()
+local inputController
+
+local keyRings = {
+['g7_inventory_KEYS'] = 'g7_container_KEYS',
+['invhlp_keyring'] = 'invhlp_keyring_rc',
+}
+
+local function hasKeyFromKeyRing(pcInventory, keyId, keyRingId, keyRingContainerId)
+	if pcInventory:contains(keyRingId) then
+		local keyRingContainerRef = tes3.getReference(keyRingContainerId)
+		if keyRingContainerRef then
+			forceInstance(keyRingContainerRef)
+			local keyChainInventory =keyRingContainerRef.object.inventory
+			if keyChainInventory
+			and keyChainInventory:contains(keyId) then
+				return true
+			end
+		end
+	end
+	return false
+end
+
+local function isHouse(lcCellId)
+	if string.multifind(lcCellId, houseCells, 1, true) then
+		if logLevel2 then
+			mwse.log('%s isHouse("%s") = true', modPrefix, lcCellId)
+		end
+		return true
+	end
+	return false
+end
+
+local function isService(lcCellId)
+	if string.multifind(lcCellId, serviceCells, 1, true) then
+		if logLevel2 then
+			mwse.log('%s isService("%s") = true', modPrefix, lcCellId)
+		end
+		return true
+	end
+	return false
+end
+
+local function playSound(snd)
+	if not tes3.getSoundPlaying({sound = snd, reference = player}) then
+		tes3.playSound({sound = snd, reference = player})
+	end
+end
+
+local function activate(e)
+	if modDisabled then
+		return
+	end
+	if not (e.activator == player) then
+		return
+	end
+
+	local targetRef = e.target
+	local targetRefId = targetRef.id
+
+	local obj = targetRef.object
+	local objType = obj.objectType
+
+	if not (
+		(objType == tes3_objectType_door)
+		or (objType == tes3_objectType_container)
+	) then
+		return
+	end
+
+	local funcPrefix = string.format('%s: activate("%s" in "%s")',
+		modPrefix, targetRefId, targetRef.cell.editorName)
+
+	if skips > 0 then
+		if logLevel2 then
+			mwse.log('%s: skips = %s, return', funcPrefix, skips)
+		end
+		skips = skips - 1
+		return
+	end
+
+	local data = targetRef.data
+
+	if inputController:isAltDown()
+	and inputController:isShiftDown() then
+		if tes3.mobilePlayer.isSneaking then
+			if data then
+				if data.ab01drlkbl then
+					data.ab01drlkbl = nil
+				else
+					data.ab01drlkbl = 1
+				end
+				local action = 'removed from'
+				if data.ab01drlkbl then
+					action = 'added to'
+				end
+				tes3.messageBox('%s: "%s" %s blacklist', modPrefix, targetRefId, action)
+				return
+			end
+		end
+		if logLevel2 then
+			mwse.log("%s: Alt+Shift pressed, skip", funcPrefix)
+		end
+		return -- skip if Alt or Shift pressed
+	end
+
+	if data
+	and data.ab01drlkbl then
+		if logLevel2 then
+			mwse.log('%s: "%s" blacklisted by player, skip', funcPrefix, targetRefId)
+		end
+		return -- skip if blacklisted by player
+	end
+
+	local function delayedActivate(withKnockSound)
+		local delay = 0.25
+		skips = 1
+		if withKnockSound then
+			delay = 1.0
+			skips = 2
+		end
+		local refHandle1 = tes3.makeSafeObjectHandle(targetRef)
+		timer.start({duration = delay, type = timer.real, callback = 'ab01drlkPT1',
+			data = {handle = refHandle1} })
+	end
+
+	local lockNode, level, key
+	local hasKey = false
+
+	local hoursPassedFromGameStart = getInGameHoursPassedFromGameStart()
+
+	local function checkObjType()
+		lockNode = targetRef.lockNode
+		if lockNode then
+			level = lockNode.level
+			key = lockNode.key
+			if lockNode.locked
+			and key then
+				local keyId = key.id
+				local inventory = e.activator.object.inventory
+				if inventory then
+					if inventory:contains(keyId) then
+						hasKey = true
+					elseif config.keyRing then
+						for keyRingId, keyRingContainerId in pairs(keyRings) do
+							if hasKeyFromKeyRing(inventory, keyId, keyRingId, keyRingContainerId) then
+								tes3.unlock({reference = targetRef})
+								if logLevel1 then
+									mwse.log('%s: opening using "%s" key from KeyRing',	funcPrefix, keyId)
+								end
+								tes3ui.showNotifyMenu([[You use the "%s" from your KeyRing...]], key.name)
+								if not targetRef.data then
+									targetRef.data = {}
+								end
+								targetRef.data.ab01drlkhp = hoursPassedFromGameStart
+								delayedActivate()
+								return 2
+							end
+						end
+					end
+				end
+				if hasKey then
+					if logLevel1 then
+						mwse.log('%s: skipping lock processing player has the key', funcPrefix)
+					end
+					return 1
+				end
+
+			end -- if lockNode.locked
+		end -- if lockNode
+
+		if obj.persistent
+		and skipPersistent then
+			if logLevel1 then
+				mwse.log('%s: skipping persistent', funcPrefix)
+			end
+			return 1
+		end
+
+		local script = obj.script
+		if script then
+			if (objType == tes3_objectType_container) then
+				if skipScript > 0 then
+					if logLevel1 then
+						mwse.log('%s: skipping scripted container', funcPrefix)
+					end
+					return 1
+				end
+			elseif (objType == tes3_objectType_door) then
+				local scriptId = script.id
+				local lcScriptId = string.lower(scriptId)
+				if skipScript == 3 then
+					if logLevel1 then
+						mwse.log('%s: skipping scripted door', funcPrefix)
+					end
+					return 1
+				elseif string.startswith(lcScriptId, 'dl_')
+						or string.startswith(lcScriptId, '_doorlock')
+						or string.find(lcScriptId, '^ld_%w-lock') then
+					if skipScript == 2 then
+						if logLevel1 then
+							mwse.log('%s: skipping scripted LD door', funcPrefix)
+						end
+						return 1
+					elseif skipScript > 0 then
+						mwse.overrideScript(scriptId, nop)
+						if logLevel1 then
+							mwse.log('%s: overriding scripted LD/LCV door behavior', funcPrefix)
+						end
+					end
+				end
+			end
+		end
+
+		return 0
+
+	end -- function checkObjType()
+
+	local result = checkObjType()
+	if result == 2 then
+		return false -- block event and open using key from KeyRing
+	elseif result == 1 then
+		return -- skip
+	end
+
+	if not (objType == tes3_objectType_door) then
+		return
+	end
+	-- only doors below
+
+	local doorDest = targetRef.destination
+	if not doorDest then
+		if logLevel1 then
+			mwse.log('%s: skipping non-loading door', funcPrefix)
+		end
+		return
+	end
+
+	local destCell = doorDest.cell
+	local destCellEditorName = destCell.editorName
+
+	if destCell.isOrBehavesAsExterior then
+		if logLevel1 then
+			mwse.log('%s: %s skipping loading-to-exterior "%s" door',
+				funcPrefix, targetRefId, destCellEditorName)
+		end
+		return
+	end
+
+	-- real interior destination below
+	if not destCell.restingIsIllegal then
+		if logLevel1 then
+			mwse.log('%s: door linked to "%s" legal-to-sleep interior cell destination, skip',
+				funcPrefix, destCell.id)
+		end
+		return
+	end
+
+	local lcDestCellId = string.lower(destCell.id)
+	local doorCell = targetRef.cell
+	local lcDoorCellId = string.lower(doorCell.id)
+
+	if lcDestCellId == lcDoorCellId then
+		if logLevel1 then
+			mwse.log('%s: skipping door leading to the same "%s" cell',
+				funcPrefix, destCellEditorName)
+		end
+		return
+	end
+
+	if lockNode then
+		if level then
+			if level == 0 then
+				if lockNode.locked then
+					if logLevel1 then
+						mwse.log('%s: skipping 0-locked door', funcPrefix)
+					end
+					return
+				end
+			elseif level == 1 then
+				if logLevel1 then
+					mwse.log('%s: skipping door marked as openable (locked 1, then locked/unlocked by e.g. Revolving Doors Block mod)', funcPrefix)
+				end
+				return
+			elseif targetRef.data
+			and (not (targetRef.data.ab01locked == nil)) then
+				if logLevel1 then
+					mwse.log('%s: skipping door locked/unlocked by Loading Doors Lock Tune mod)', funcPrefix)
+				end
+				return
+			end
+		end
+		if logLevel3 then
+			mwse.log('%s: door to "%s", locked = %s, lock level = %s',
+				funcPrefix, destCellEditorName, lockNode.locked, lockNode.level)
+		end
+	end
+
+	local sourceMod = targetRef.sourceMod
+	if sourceMod
+	and string.multifind(string.lower(sourceMod),{'ab01houses'}, 1, true) then
+		if logLevel1 then
+			mwse.log('%s: skipping door "%s" "%s" to "%s" from blacklisted mod "%s"',
+				funcPrefix, obj.id, obj.name, destCellEditorName, sourceMod)
+		end
+		return
+	end
+
+	local lcDoorId = string.lower(obj.id)
+	local lcDoorName = string.lower(obj.name)
+
+	if string.multifind(lcDestCellId, destCellBlackList, 1, true) then
+		if logLevel1 then
+			mwse.log('%s: skipping blacklisted destination cell "%s"',
+				funcPrefix, destCellEditorName)
+		end
+		return
+	end
+
+	if skipChargen then
+		if find2(lcDoorId, lcDoorName, 'chargen') then
+			if logLevel1 then
+				mwse.log('%s: skipping chargen door to "%s"', funcPrefix, destCellEditorName)
+			end
+			return
+		end
+	end
+
+	if multifind2(lcDoorId, lcDoorName,	doorBlackList) then
+		if logLevel1 then
+			mwse.log('%s: skipping blacklisted door "%s" "%s" to "%s"',
+				funcPrefix, obj.id, obj.name, destCellEditorName)
+		end
+		return
+	end
+
+	local hasDestSameLocationPrefix = false
+	local cellPrefix = string.match(lcDoorCellId, "^([^,]+)")
+	if cellPrefix then
+		cellPrefix = string.trim(cellPrefix)
+	end
+	if string.startswith(string.trim(lcDestCellId), cellPrefix) then
+		hasDestSameLocationPrefix = true
+	end
+
+	local destCellIsHouse = isHouse(lcDestCellId)
+	local destCellIsService = isService(lcDestCellId)
+
+	-- e.g. "Mundrethi Plantation, Merengor's House: Underground"
+	if (not hasDestSameLocationPrefix)
+	and (not destCellIsHouse)
+	and (not destCellIsService)
+	and (not multifind2(lcDoorId, lcDoorName, doorWhiteList)) then
+		if logLevel1 then
+			mwse.log('%s: skipping non-whitelisted door', funcPrefix)
+		end
+		return
+	end
+
+	if logLevel3 then
+		mwse.log('%s: door to "%s", hasDestSameLocationPrefix = %s',
+			funcPrefix, destCellEditorName, hasDestSameLocationPrefix)
+	end
+
+	if hasDestSameLocationPrefix then
+		local skip = false
+		if string.find(lcDoorCellId, "[:,][^:,]+$") then
+			skip = true
+		elseif string.find(lcDestCellId, "[:,][^:,]+$") then
+			skip = false
+		elseif not doorCell.isOrBehavesAsExterior then
+			---if string.multifind(lcDoorCellId, homeLikeCells, 1, true)) then
+				--skip = true
+			if (not string.multifind(lcDoorCellId, districtLikeCells, 1, true)) then
+				skip = true
+			end
+		end
+		if skip then
+			if logLevel3 then
+				mwse.log('%s: door from interior "%s" to "%s", skip',
+					funcPrefix, doorCell.editorName, destCellEditorName)
+			end
+			return
+		end
+	end
+
+	local guardedDest = false
+	if string.multifind(lcDestCellId, guardedList, 1, true) then
+		guardedDest = true
+	end
+	local highSecurityDest = false
+	if string.multifind(lcDestCellId, highSecurityList, 1, true) then
+		guardedDest = true
+		highSecurityDest = true
+	end
+
+	local newLockLevel = stdLockLevel
+	if highSecurityDest then
+		newLockLevel = hardLockLevel
+		if logLevel3 then
+			mwse.log('%s: door to "%s" in high security list, newLockLevel = %s',
+				funcPrefix, destCellEditorName, newLockLevel)
+		end
+	end
+
+	local hour = worldController.hour.value
+	local isOpenTime = (hour >= minOpenHour)
+		and (hour <= maxOpenHour)
+	local nextCloseHour = minOpenHour
+	if isOpenTime then
+		nextCloseHour = maxOpenHour
+	end
+
+	local someoneInside = false
+	local someoneCanOpen = false
+	---if hasDestSameLocationPrefix then
+
+	-- 1 'Not found', 2 'NPC', 3 'Faction member', 4 'Trader', 5 'Publican', 6 'Bed renting'
+	local destMarker = doorDest.marker
+	local npcType = 1
+	local isInstance = false
+	local lastOpenerRef
+
+	if destMarker then
+		if logLevel3 then
+			local s1 = 'door'
+			local sourceMod = targetRef.sourceMod
+			if sourceMod
+			and (string.len(sourceMod) > 0) then
+				s1 = '("' .. sourceMod .. '") door'
+			end
+			local s2 = '"' .. destCellEditorName .. '"'
+			sourceMod = destMarker.sourceMod
+			if sourceMod
+			and (string.len(sourceMod) > 0) then
+				s2 = s2 .. ' ("' .. sourceMod .. '") '
+			end
+			mwse.log('%s: %s to %s', funcPrefix, s1, s2)
+		end
+	
+		local destPosition = destMarker.position:copy()
+		if destPosition then
+			destPosition.z = destPosition.z + 60
+			local rec = getBestKnownNPCrec(destCell, destPosition)
+			npcType = rec.npcType
+			local actorRef = rec.ref
+			if actorRef then
+				isInstance = actorRef.object.isInstance
+				if isInstance then
+					lastOpenerRef = actorRef
+				end
+			end
+		end
+	end
+
+-- 1 'Not found', 2 'NPC', 3 'Faction member', 4 'Trader', 5 'Publican', 6 'Bed renting'
+	if npcType >= 5 then -- bed renting or publican like
+		isOpenTime = (hour >= maxPubCloseHour)
+			or (hour <= minPubCloseHour)
+		someoneInside = true
+		if isInstance
+		or (npcType == 6) then
+			someoneCanOpen = true
+		end
+		if not isOpenTime then
+			nextCloseHour = minPubCloseHour
+		end
+	elseif npcType == 4 then -- treader
+		someoneInside = true
+		if isInstance then
+			someoneCanOpen = true
+		end
+		if not isOpenTime then
+			nextCloseHour = minPubCloseHour
+		end
+	elseif npcType == 3 then -- same guild npc
+		someoneInside = true
+		newLockLevel = hardLockLevel
+		if (hour <= maxKnockHour)
+		and isInstance then
+			someoneCanOpen = true
+		end
+		if not isOpenTime then
+			nextCloseHour = minPubCloseHour
+		end
+	elseif npcType == 2 then -- house like
+		someoneInside = true
+		if destCellIsHouse
+		and (hour <= maxKnockHour)
+		and isInstance then
+			someoneCanOpen = true
+		end
+	else
+		if string.multifind(lcDestCellId, pubLikeCells, 1, true)
+		and not string.multifind(lcDestCellId, {'hut','keeper'}, 1, true) then
+			isOpenTime = (hour >= maxPubCloseHour)
+				or (hour <= minPubCloseHour)
+			if logLevel3 then
+				mwse.log('%s: door to "%s" close time set between %s and %s',
+					funcPrefix, destCellEditorName, minPubCloseHour, maxPubCloseHour)
+			end
+		elseif destCellIsHouse
+				and lockEmptyHouses then
+			isOpenTime = false
+			if logLevel3 then
+				mwse.log('%s: to "%s" empty unfriendly house closed',
+					funcPrefix, destCellEditorName)
+			end
+		end
+	end
+	if logLevel2 then
+		mwse.log([[%s: dest = "%s", hour = %.02f,
+isOpenTime = %s, someoneInside = %s, someoneCanOpen = %s, npcType = %s %s]],
+			funcPrefix, destCellEditorName, hour, isOpenTime,
+			someoneInside, someoneCanOpen, npcType, npcTypes[npcType])
+	end
+	---end -- if hasDestSameLocationPrefix
+
+	local ab01drlkhp
+	if targetRef.data then
+		ab01drlkhp = targetRef.data.ab01drlkhp
+	end
+
+	local hasAlreadyBeenLockedOrUnlockedToday = false
+	if ab01drlkhp then
+		local hoursPassedSinceLastLockedOrUnlocked = hoursPassedFromGameStart - ab01drlkhp
+		if hoursPassedSinceLastLockedOrUnlocked < lockUnlockIntervalHour then
+			if logLevel1 then
+				mwse.log('%s: hoursPassedFromGameStart = %s, ab01drlkhp = %s',
+					funcPrefix, hoursPassedFromGameStart, ab01drlkhp)
+				mwse.log('%s: door dest = "%s", hoursPassedSinceLastLockedOrUnlocked = %s < %s, skip',
+					funcPrefix, destCellEditorName, hoursPassedSinceLastLockedOrUnlocked, lockUnlockIntervalHour)
+			end
+			hasAlreadyBeenLockedOrUnlockedToday = true
+		end
+	end
+
+	local function unlockAndActivateDoor()
+		if logLevel1 then
+			mwse.log('%s: unlockAndActivateDoor("%s") dest = "%s"',
+				modPrefix, targetRefId, destCellEditorName)
+		end
+		if lockNode then
+			lockNode.level = newLockLevel
+			if lockNode.locked then
+				tes3.unlock({reference = targetRef})
+			end
+		end
+		if not targetRef.data then
+			targetRef.data = {}
+		end
+		targetRef.data.ab01drlkhp = hoursPassedFromGameStart
+		delayedActivate()
+	end
+
+	local function knockUnlockAndActivateDoor()
+		skipKnock = true
+		local withKnockSound = false
+		if ab01KnockKnockSND then
+			withKnockSound = true
+			if player.cell == doorCell then
+				playSound(ab01KnockKnockSND)
+			end
+		end
+		if npcType > 2 then
+			local i = math.random(100)
+			if knockNotifyPerc >= i then
+				local pcName = tes3.player.object.name
+				local i = 100
+				if lastOpenerRef then
+					i = math.random(100)
+				end
+				if i > 50 then
+					tes3ui.showNotifyMenu([["It's me, %s!"]], pcName)
+				elseif lastOpenerRef then
+					local obj = lastOpenerRef.object
+					local name = obj.name
+					local faction = obj.faction
+					if faction then
+						local class = obj.class
+						if class then
+							name = class.name
+						end
+						pcName = faction:getRankName(faction.playerRank)
+					end
+					if npcType <= 4 then
+						tes3ui.showNotifyMenu([["It's me, %s!"]], pcName)
+					else
+						tes3ui.showNotifyMenu([[%s: "Ah, it's you. Welcome, %s."]], name, pcName)
+					end
+				end
+			end
+		end
+		if withKnockSound then
+			timer.start({duration = 0.45, type = timer.real, callback = function ()
+				playSound('Open Lock')
+			end})
+		end
+		unlockAndActivateDoor()
+	end
+
+	local function lockAndActivateDoor()
+		if logLevel1 then
+			mwse.log('%s: empty/unfriendly houses dest = "%s"',
+				funcPrefix, destCellEditorName)
+		end
+		tes3.lock({reference = targetRef, level = newLockLevel})
+		if not targetRef.data then
+			targetRef.data = {}
+		end
+		targetRef.data.ab01drlkhp = hoursPassedFromGameStart
+		delayedActivate()
+	end
+
+	if lockNode
+	and (not hasAlreadyBeenLockedOrUnlockedToday) then
+		if lockNode.locked then
+			if isOpenTime then
+				if someoneInside
+				or guardedDest then
+					unlockAndActivateDoor()
+					return false
+				end
+			elseif someoneCanOpen then
+				if knockOn then
+					knockUnlockAndActivateDoor()
+					return false
+				end
+			end
+		else -- (lockNode.locked == false) and (hasAlreadyBeenLockedOrUnlockedToday == false)
+			if hasDestSameLocationPrefix
+			and (not isOpenTime) then
+				if someoneCanOpen then
+					if knockOn then
+						knockUnlockAndActivateDoor()
+						return false
+					end
+				else
+					if logLevel1 then
+						mwse.log('%s: door "%s" (dest = "%s") locked',
+							funcPrefix, targetRefId, destCell.id)
+					end
+					lockAndActivateDoor()
+					return false
+				end
+			end
+		end
+
+		return -- lockNode processed
+	end
+
+	if not hasAlreadyBeenLockedOrUnlockedToday
+	and hasDestSameLocationPrefix
+	and (not isOpenTime) then
+		if logLevel2 then
+			mwse.log([[%s: door "%s" cell = "%s", dest = "%s", isOpenTime = %s,	someoneCanOpen = %s]],
+				funcPrefix, targetRefId, doorCell.editorName, destCellEditorName, isOpenTime, someoneCanOpen)
+		end
+		if someoneCanOpen then
+			if knockOn then
+				knockUnlockAndActivateDoor()
+			else
+				unlockAndActivateDoor()
+			end
+		else
+			lockAndActivateDoor()
+		end
+		return false
+	end
+
+end
+
+local initDone = false
+local function initOnce()
+	if initDone then
+		return
+	end
+	initDone = true
+	timer.register('ab01drlkPT1', ab01drlkPT1)
+	-- higher priority than Smart Activate
+	event.register('activate', activate, {priority = 100020})
+end
+
+local function loaded()
+	player = tes3.player
+	initOnce()
+end
+
+
+local function createConfigVariable(varId)
+	return mwse.mcm.createTableVariable{id = varId, table = config}
+end
+
+local yesOrNo = {[false] = 'No', [true] = 'Yes'}
+
+local function modConfigReady()
+
+local template = mwse.mcm.createTemplate({name = mcmName})
+
+	template.onClose = function()
+		updateFromConfig()
+		mwse.saveConfig(configName, config, {indent = false})
+	end
+
+	-- Preferences Page
+	local preferences = template:createSideBarPage{
+		label = 'Info',
+		postCreate = function(self)
+			-- total width must be 2
+			self.elements.sideToSideBlock.children[1].widthProportional = 1.3
+			self.elements.sideToSideBlock.children[2].widthProportional = 0.7
+		end
+	}
+
+	local sidebar = preferences.sidebar
+	sidebar:createInfo({
+		text = [[Dynamic loading doors locking according to time of day cycle, location, faction, disposition...
+Meant as a more general/dynamic replacement of Living Cities of Vvardenfell Locks mod, but it works with or without it already installed.
+Also can use keys contained in a recognized keyring while opening doors.]]
+})
+
+	local controls = preferences:createCategory({})
+
+	local function getYesNoDescription(frmt, variableId)
+		return string.format(frmt, yesOrNo[defaultConfig[variableId]])
+	end
+
+	controls:createYesNoButton({
+		label = 'Enabled',
+		description = getYesNoDescription([[Default: %s.
+Enable the mod effects.
+Note: you can also skip processing current door/container under the cursor by pressing Alt+Shift while activating it.
+Also if you do it while sneaking you can add/remove the door/container reference to/from the mod blacklist to make the mod ignore it.
+]], 'modEnabled'),
+		variable = createConfigVariable('modEnabled')
+	})
+
+	local function getDescription(frmt, variableId)
+		return string.format(frmt, defaultConfig[variableId])
+	end
+
+	controls:createInfo({text = string.format('House doors opening between %s and %s',
+		minOpenHour, maxOpenHour)})
+	controls:createSlider({
+		label = 'Min house door opening hour %s',
+		description = getDescription([[Default: %s.
+Minimun door opening hour for house-like places.]], 'minOpenHour'),
+		variable = createConfigVariable('minOpenHour')
+		,min = 5, max = 9
+	})
+	controls:createSlider({
+		label = 'Max house door opening hour %s',
+		description = getDescription([[Default: %s.
+Maximum door opening hour for house-like places.]], 'maxOpenHour'),
+		variable = createConfigVariable('maxOpenHour')
+		,min = 17, max = 21
+	})
+
+	controls:createSlider({
+		label = 'Max house door knock hour %s',
+		description = getDescription([[Default: %s.
+Maximum door knocking hour for house-like places.]], 'maxKnockHour'),
+		variable = createConfigVariable('maxKnockHour')
+		,min = 17, max = 23
+	})
+
+	controls:createInfo({text = string.format('Service doors locking between %s and %s',
+		minPubCloseHour, maxPubCloseHour)})
+	controls:createSlider({
+		label = 'Min service door locking hour %s',
+		description = getDescription([[Default: %s.
+Minimun door locking hour for tavern-like places (having a publican or trade service NPC).]], 'minPubCloseHour'),
+		variable = createConfigVariable('minPubCloseHour')
+		,min = 0, max = 4
+	})
+
+	controls:createSlider({
+		label = 'Max service door locking hour %s',
+		description = getDescription([[Default: %s.
+Maximum door locking hour for tavern like places (e.g. having a publican or trade service NPC).]], 'maxPubCloseHour'),
+		variable = createConfigVariable('maxPubCloseHour')
+		,min = 5, max = 9
+	})
+
+	controls:createSlider({
+		label = 'Min lock/unlock interval (%s hours)',
+		description = getDescription([[Default: %s.
+Minimum hours interval between scheduled doors lock/unlock.]], 'lockUnlockIntervalHour'),
+		variable = createConfigVariable('lockUnlockIntervalHour')
+		,min = 1, max = 24
+	})
+
+	local optionList = {'Off','Containers',
+		'Containers and LD/LCV Nighttime locked doors','All doors/containers'}
+
+	local function getOptions()
+		local options = {}
+		for i = 1, #optionList do
+			options[i] = {label = string.format("%s. %s", i - 1, optionList[i]), value = i - 1}
+		end
+		return options
+	end
+
+	local function getDropDownDescription(frmt, variableId)
+		local i = defaultConfig[variableId]
+		return string.format(frmt, string.format('%s. %s', i, optionList[i+1]))
+	end
+
+	controls:createDropdown{
+		label = 'Skip Scripted:',
+		options = getOptions(),
+		variable = createConfigVariable('skipScript'),
+		description = getDropDownDescription([[Default: %s.
+Set if/when to skip processing vanilla scripted doors.
+Note:
+changes related to "LD/LCV Nighttime locks vanilla scripts" option are effective only on next Morrowind.exe restart.
+]], 'skipScript')
+	}
+
+	controls:createYesNoButton({
+		label = 'Skip Persistent',
+		description = getYesNoDescription([[Default: %s.
+Skip processing persistent doors.]], 'skipPersistent'),
+		variable = createConfigVariable('skipPersistent')
+	})
+
+	controls:createYesNoButton({
+		label = 'Skip Chargen',
+		description = getYesNoDescription([[Default: %s.
+Skip processing Chargen doors.]], 'skipChargen'),
+		variable = createConfigVariable('skipChargen')
+	})
+
+	controls:createYesNoButton({
+		label = 'Skip Guards',
+		description = getYesNoDescription([[Default: %s.
+Do not allow guard NPCs to open doors for player.]], 'skipGuard'),
+		variable = createConfigVariable('skipGuard')
+	})
+
+	controls:createYesNoButton({
+		label = 'Use Keyring',
+		description = getYesNoDescription([[Default: %s.
+Try and use keys contained in a recognized keyring while opening doors.
+Currently working with MWSE Containers and Inventory Helpers keyrings.]], 'keyRing'),
+		variable = createConfigVariable('keyRing')
+	})
+
+	controls:createYesNoButton({
+		label = 'Lock empty houses',
+		description = getYesNoDescription([[Default: %s.
+When enabled empty houses/homes will be locked when nobody's home regardless of the hour.]], 'lockEmptyHouses'),
+		variable = createConfigVariable('lockEmptyHouses')
+	})
+
+	controls:createYesNoButton({
+		label = 'Knock on doors',
+		description = getYesNoDescription([[Default: %s.
+Enable knocking on doors (e.g. doors to player Guilds).]], 'knockOn'),
+		variable = createConfigVariable('knockOn')
+	})
+
+local onlyEffective = '\nOnly effective when "Knock on doors" is enabled.'
+
+	controls:createSlider({
+		label = 'Max door knock hearing distance',
+		description = getDescription([[Default: %s.
+Maximum distance of a friendly NPC from door destination marker to be able to hear player knocking on the door.]]..onlyEffective, 'maxHeardKnockDist'),
+		variable = createConfigVariable('maxHeardKnockDist')
+		,min = 256, max = 4096, jump = 16
+	})
+
+	controls:createSlider({
+		label = 'Max door knock vertical hearing distance',
+		description = getDescription([[Default: %s.
+Maximum vertical/Z axis distance of a friendly NPC from door destination marker to be able to hear player knocking on the door.]]..onlyEffective, 'maxHeardKnockZDist'),
+		variable = createConfigVariable('maxHeardKnockZDist')
+		,min = 92, max = 1024, jump = 16
+	})
+
+	controls:createSlider({
+		label = 'Max Knock Fight',
+		description = getDescription([[Default: %s.
+Maximum NPC Fight setting to be still considered friendly/willing to open to a door-knocking player.]]..onlyEffective, 'maxKnockFight'),
+		variable = createConfigVariable('maxKnockFight')
+		,min = 75, max = 100, jump = 5
+	})
+
+	controls:createSlider({
+		label = 'Min Knock Disposition',
+		description = getDescription([[Default: %s.
+Minimum friendly NPC base object disposition to open to a door-knocking player.
+Only effective for services/home-like interiors and only when "Knock on doors" is enabled.]], 'minKnockDisposition'),
+		variable = createConfigVariable('minKnockDisposition')
+		,min = 30, max = 100, jump = 5
+	})
+
+	controls:createSlider({
+		label = 'Knock Notify Perc',
+		description = getDescription([[Default: %s.
+Percent probability of player/npc saying something when player knocks on door.]]..onlyEffective, 'knockNotifyPerc'),
+		variable = createConfigVariable('knockNotifyPerc')
+		,min = 0, max = 100, jump = 5
+	})
+
+	controls:createYesNoButton({
+		label = 'Check script context',
+		description = getYesNoDescription([[Default: %s.
+Useful to check for bed renting services.
+Try disabling it only in case of crashes while activating a door.]], 'checkScriptContext'),
+		variable = createConfigVariable('checkScriptContext')
+	})
+
+	optionList = {'Off', 'Low', 'Medium', 'High', 'Higher', 'Max'}
+	controls:createDropdown{
+		label = 'Logging level:',
+		options = getOptions(),
+		variable = createConfigVariable('logLevel'),
+		description = getDropDownDescription([[Default: %s.]],'logLevel')
+	}
+
+	mwse.mcm.register(template)
+
+end
+event.register('modConfigReady', modConfigReady)
+
+event.register('initialized', function ()
+	worldController = tes3.worldController
+	inputController = worldController.inputController
+	ab01KnockKnockSND = tes3.getSound('ab01KnockKnockSND')
+	if not ab01KnockKnockSND then
+		ab01KnockKnockSND = tes3.createObject({objectType = tes3.objectType.sound,
+			id = 'ab01KnockKnockSND', filename = 'abot\\knockdoor.wav', volume = 1})
+	end
+	event.register('loaded', loaded)
+end, {doOnce = true}
+)
+
