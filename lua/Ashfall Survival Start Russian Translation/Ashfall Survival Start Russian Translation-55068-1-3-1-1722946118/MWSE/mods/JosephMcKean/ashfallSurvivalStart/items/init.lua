@@ -1,0 +1,6 @@
+require("JosephMcKean.ashfallSurvivalStart.items.brokenArmor")
+require("JosephMcKean.ashfallSurvivalStart.items.jailWindow")
+require("JosephMcKean.ashfallSurvivalStart.items.map")
+require("JosephMcKean.ashfallSurvivalStart.items.raft")
+require("JosephMcKean.ashfallSurvivalStart.items.rocks")
+require("JosephMcKean.ashfallSurvivalStart.items.shrine")
