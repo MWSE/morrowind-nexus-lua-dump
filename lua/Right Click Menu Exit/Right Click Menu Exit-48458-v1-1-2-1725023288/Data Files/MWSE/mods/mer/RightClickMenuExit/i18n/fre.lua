@@ -1,0 +1,16 @@
+return {
+    ModName = "Sortir du menu en cliquant droit",
+    ModDescription = "Sortir des menus en cliquant droit.",
+    ReleaseHistory = "Historique des versions",
+    BuyMeACoffee = "Offrez-moi un café",
+    MadeBy = "Créé par Merlord",
+    Links = "Liens",
+    Credits = "Crédits",
+    Settings = "Paramètres",
+    EnableRightClickExit = "Activer",
+    EnableRightClickExitDescription = "Activer la sortie du menu en cliquant droit.",
+    PlayMenuSound = "Jouer le son du menu",
+    PlayMenuSoundDescription = "Activer ou désactiver le son du clic du menu lors de la sortie des menus.",
+    LogLevel = "Niveau des logs.",
+    LogLevelDescription = "Définir le niveau des logs pour to us less enregistreurs.",
+}
