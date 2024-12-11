@@ -1,0 +1,32 @@
+local ssqn = include("SSQN.interop")
+
+local function init() 
+    if (ssqn) then
+	ssqn.registerQIcon("afq_cult","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_cult_alchi","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_cult_apoth","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_arming","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_ash","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_carav","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_fish","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_horker","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_khajiit","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_lights","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_no_sugar","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_scout","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_intro_soul","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_main","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_main_cn","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_scope","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_scope_ence","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_scope_has","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_scope_senil","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_scope_yagrum","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_up_essence","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_up_sugar","\\Icons\\afq\\DSicon.dds")
+	ssqn.registerQIcon("afq_up_triangle","\\Icons\\afq\\DSicon.dds")
+    end
+end
+
+event.register(tes3.event.initialized, init)

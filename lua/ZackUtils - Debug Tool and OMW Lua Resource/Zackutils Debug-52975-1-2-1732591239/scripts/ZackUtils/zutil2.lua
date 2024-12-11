@@ -1,0 +1,1 @@
+--Mean to be able to be included in any script
