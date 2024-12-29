@@ -1,0 +1,1 @@
+-- Empty script only used to tag Fair Care potions
