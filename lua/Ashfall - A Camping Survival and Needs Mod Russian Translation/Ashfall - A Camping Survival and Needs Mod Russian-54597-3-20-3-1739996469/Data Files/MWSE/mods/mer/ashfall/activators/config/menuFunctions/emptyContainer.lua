@@ -1,0 +1,29 @@
+local common = require ("mer.ashfall.common.common")
+
+local campfireUtil = require("mer.ashfall.camping.campfire.CampfireUtil")
+
+return {
+    text = "Опустошить",
+    showRequirements = function(reference)
+        if not reference.supportsLuaData then return false end
+        return campfireUtil.isWaterContainer(reference)
+            and reference.data.waterAmount
+            and reference.data.waterAmount > 0
+    end,
+    callback = function(reference)
+        tes3ui.showMessageMenu{
+            message = string.format("Опустшить %s?",  common.helper.getGenericUtensilName(reference.object)),
+            buttons = {
+                {
+                    text = "Да",
+                    callback = function()
+                        event.trigger("Ashfall:Campfire_clear_utensils", { campfire = reference})
+                        tes3.playSound{ reference = tes3.player, pitch = 0.8, sound = "ashfall_water" }
+                        --event.trigger("Ashfall:Campfire_Update_Visuals", { campfire = campfire, all = true})
+                    end
+                }
+            },
+            cancels = true,
+        }
+    end
+}
