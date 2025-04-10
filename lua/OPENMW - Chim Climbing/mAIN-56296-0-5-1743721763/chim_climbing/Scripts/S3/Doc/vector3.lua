@@ -1,0 +1,18 @@
+---@class util.vector3
+--- Represents a 3D vector with various mathematical operations and properties.
+---@field x number The x-coordinate of the vector.
+---@field y number The y-coordinate of the vector.
+---@field z number The z-coordinate of the vector.
+---@field xyz01 string Swizzle support for constructing new vectors, including constants 0 and 1.
+---@field __add fun(self: util.vector3, v: util.vector3): util.vector3 Adds two vectors.
+---@field __sub fun(self: util.vector3, v: util.vector3): util.vector3 Subtracts one vector from another.
+---@field __mul fun(self: util.vector3, k: number): util.vector3 Multiplies the vector by a scalar.
+---@field __div fun(self: util.vector3, k: number): util.vector3 Divides the vector by a scalar.
+---@field __tostring fun(self: util.vector3): string Converts the vector to a string representation.
+---@field cross fun(self: util.vector3, v: util.vector3): util.vector3 Computes the cross product of this vector with another vector.
+---@field dot fun(self: util.vector3, v: util.vector3): number Computes the dot product of this vector with another vector.
+---@field ediv fun(self: util.vector3, v: util.vector3): util.vector3 Performs element-wise division with another vector.
+---@field emul fun(self: util.vector3, v: util.vector3): util.vector3 Performs element-wise multiplication with another vector.
+---@field length fun(self: util.vector3): number Computes the length (magnitude) of the vector.
+---@field length2 fun(self: util.vector3): number Computes the square of the vector's length (magnitude).
+---@field normalize fun(self: util.vector3): util.vector3 Normalizes the vector (scales it to have a length of 1).

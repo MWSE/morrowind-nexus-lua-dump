@@ -1,0 +1,3 @@
+local playerAchievements = {}
+
+return playerAchievements
