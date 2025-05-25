@@ -1,3 +1,0 @@
-local playerAchievements = {}
-
-return playerAchievements

@@ -1,0 +1,16 @@
+return {
+	["a_m_chitin_gauntlet"] = { 3, 4, 5 },
+	["a_netch_m_gauntlet"] = { 3 },
+	["a_nordicfur_gauntlet"] = { 0, 1 },
+	["a_indoril_m_gauntlet"] = { 0, 1 },
+	["a_iron_gauntlet"] = { 2 },
+	["a_daedric_gauntlet"] = { 0, 4 },
+	["a_imperial_gauntlet"] = { 3 },
+	["a_steel_gauntlet"] = { 0, 1 },
+	["a_helsethguard_gauntlets"] = { 0 },
+	["a_almindoril_gauntlets"] = { 1 },
+	["a_bear2_gauntlet"] = { 1 },
+	["a_bear_gauntlet"] = { 1 },
+	["a_wolf_gauntlet"] = { 1 },
+	["a_wolf2_gauntlet"] = { 1 },
+}
