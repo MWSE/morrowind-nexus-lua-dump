@@ -1,3 +1,0 @@
----@class MQL.events.Manager.item_selected
----@field index integer index of the item in the manager
----@field item MQL.Item item being selected
