@@ -1,0 +1,443 @@
+local recipes = {
+
+	-- Weapons
+
+    {
+        id = "T_Kha_Copper_Arrow_01", -- arrows
+        craftableId = "T_Kha_Copper_Arrow_01",
+        category = "Copper",
+        soundId = "Repair",
+        previewMesh = "els\\w\\els_w_copper_arrow.nif",
+        noResult = true,
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted. Crafts 24 arrows.",
+        materials = {
+            { material = "hap_copper", count = 3 },
+            { material = "hap_plumes", count = 3 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function()
+            local ref = tes3.player and tes3.player.reference or tes3.getReference("player")
+            if ref then
+                tes3.addItem({ reference = ref, item = "T_Kha_Copper_Arrow_01", count = 24 })
+                local skillId = tes3.skill.armorer
+                local progress = 2
+                tes3.mobilePlayer:exerciseSkill(skillId, progress)
+            else
+                mwse.log("[HammerAndProngs] Could not add T_Kha_Copper_Arrow_01 - invalid reference.")
+            end
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Axe_01", -- everything else
+        craftableId = "T_Kha_Copper_Axe_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 3 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_BattleAxe_01", -- everything else
+        craftableId = "T_Kha_Copper_BattleAxe_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 8 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Bow_01", -- bow
+        craftableId = "T_Kha_Copper_Bow_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 4 },
+            { material = "hap_thread", count = 1 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Claymore_01", -- everything else
+        craftableId = "T_Kha_Copper_Claymore_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 8 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Club_01", -- everything else
+        craftableId = "T_Kha_Copper_Club_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 8 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Dagger_01", -- everything else
+        craftableId = "T_Kha_Copper_Dagger_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 2 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Dart_01", -- everything else
+        craftableId = "T_Kha_Copper_Dart_01",
+        category = "Copper",
+        soundId = "Repair",
+        previewMesh = "els\\w\\els_w_copper_dart.nif",
+        noResult = true,
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted. Crafts 10 darts.",
+        materials = {
+            { material = "hap_copper", count = 2 },
+            { material = "hap_plumes", count = 2 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function()
+            local ref = tes3.player and tes3.player.reference or tes3.getReference("player")
+            if ref then
+                tes3.addItem({ reference = ref, item = "T_Kha_Copper_Dart_01", count = 10 })
+                local skillId = tes3.skill.armorer
+                local progress = 2
+                tes3.mobilePlayer:exerciseSkill(skillId, progress)
+            else
+                mwse.log("[HammerAndProngs] Could not add T_Kha_Copper_Dart_01 - invalid reference.")
+            end
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Halberd_01", -- everything else
+        craftableId = "T_Kha_Copper_Halberd_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 10 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+        },
+
+        {
+        id = "T_Kha_Copper_Longsword_01", -- everything else
+        craftableId = "T_Kha_Copper_Longsword_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 6 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Mace_01", -- everything else
+        craftableId = "T_Kha_Copper_Mace_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 6 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Shortsword_01", -- everything else
+        craftableId = "T_Kha_Copper_Shortsword_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 4 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Spear_01", -- everything else
+        craftableId = "T_Kha_Copper_Spear_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 8 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Staff_01", -- everything else
+        craftableId = "T_Kha_Copper_Staff_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 6 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_ThrowingKnife_01", -- knifes
+        craftableId = "T_Kha_Copper_ThrowingKnife_01",
+        category = "Copper",
+        soundId = "Repair",
+        previewMesh = "els\\w\\els_w_cpr_throw_knife.nif",
+        noResult = true,
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted. Crafts 10 knives.",
+        materials = {
+            { material = "hap_copper", count = 3 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function()
+            local ref = tes3.player and tes3.player.reference or tes3.getReference("player")
+            if ref then
+                tes3.addItem({ reference = ref, item = "T_Kha_Copper_ThrowingKnife_01", count = 10 })
+                local skillId = tes3.skill.armorer
+                local progress = 2
+                tes3.mobilePlayer:exerciseSkill(skillId, progress)
+            else
+                mwse.log("[HammerAndProngs] Could not add T_Kha_Copper_ThrowingKnife_01 - invalid reference.")
+            end
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+    {
+        id = "T_Kha_Copper_Warhammer_01", -- everything else
+        craftableId = "T_Kha_Copper_Warhammer_01",
+        category = "Copper",
+        soundId = "Repair",
+        description = "Requires a Journeyman's Armorer's Hammer or greater to be crafted.",
+        materials = {
+            { material = "hap_copper", count = 8 }
+        },
+        toolRequirements = {
+            { tool = "mid_hammer", count = 1, conditionPerUse = 5 }
+        },
+        craftCallback = function(self, e)
+            local skillId = tes3.skill.armorer
+            local progress = 2
+            tes3.mobilePlayer:exerciseSkill(skillId, progress)
+        end,
+        knowledgeRequirement = function(self)
+            local player = tes3.player
+            if not player then return false end
+            local skillValue = tes3.mobilePlayer.skills[tes3.skill.armorer + 1].base
+            return skillValue >= 45
+        end
+    },
+
+}
+
+local function registerRecipes(e)
+    ---@type CraftingFramework.MenuActivator
+    if e.menuActivator then
+        for _, recipe in ipairs(recipes) do
+            e.menuActivator:registerRecipe(recipe)
+        end
+    end
+end
+
+event.register("HammerAndProngs:OpenMenu:Registered", registerRecipes)
