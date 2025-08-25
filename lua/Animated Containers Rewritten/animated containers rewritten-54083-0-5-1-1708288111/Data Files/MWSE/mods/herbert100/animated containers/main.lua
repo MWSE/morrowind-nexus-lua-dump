@@ -1,1 +1,0 @@
-require("herbert100.animated containers.mod")
