@@ -1892,12 +1892,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000057234,
-                    "name": "4NM_Update-47015-55-1759171952.zip",
-                    "version": "55"
+                    "file_id": 1000058048,
+                    "name": "4NM_Update-47015-58-1761838083.zip",
+                    "version": "58"
                 }
             ],
-            "indexed_timestamp": 1760044467
+            "indexed_timestamp": 1762287712
         },
         {
             "mod_id": 47029,
@@ -7297,7 +7297,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1744314761
+            "indexed_timestamp": 1762287561
         },
         {
             "mod_id": 50108,
@@ -7979,12 +7979,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000055943,
-                    "name": "abotSmartActivate-50558-1-22-1755174838.7z",
-                    "version": "1.22"
+                    "file_id": 1000057629,
+                    "name": "abotSmartActivate-50558-1-23-1760357556.7z",
+                    "version": "1.23"
                 }
             ],
-            "indexed_timestamp": 1756125272
+            "indexed_timestamp": 1762287691
         },
         {
             "mod_id": 50574,
@@ -8911,12 +8911,12 @@
             "author": "Archimag",
             "files": [
                 {
-                    "file_id": 1000057088,
-                    "name": "PvP-51034-2-1-1758823124.zip",
-                    "version": "2.1"
+                    "file_id": 1000057724,
+                    "name": "PvP-51034-2-21-1760720815.zip",
+                    "version": "2.21"
                 }
             ],
-            "indexed_timestamp": 1760044344
+            "indexed_timestamp": 1762287687
         },
         {
             "mod_id": 51035,
@@ -10836,12 +10836,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000057217,
-                    "name": "Companion Leveler-51760-3-3-0-1759132186.zip",
-                    "version": "3.3.0"
+                    "file_id": 1000057785,
+                    "name": "Companion Leveler-51760-3-3-1-1760900257.zip",
+                    "version": "3.3.1"
                 }
             ],
-            "indexed_timestamp": 1760044463
+            "indexed_timestamp": 1762287695
         },
         {
             "mod_id": 51777,
@@ -10979,12 +10979,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000050445,
-                    "name": "Daily Training-51845-2-0-1-1739741803.zip",
-                    "version": "2.0.1"
+                    "file_id": 1000057803,
+                    "name": "Daily Training-51845-2-0-3-1760949369.zip",
+                    "version": "2.0.3"
                 }
             ],
-            "indexed_timestamp": 1740630274
+            "indexed_timestamp": 1762287691
         },
         {
             "mod_id": 51856,
@@ -10995,9 +10995,14 @@
                     "file_id": 1000033537,
                     "name": "Immersive Lich race v1.1-51856-1-1-1667428223.zip",
                     "version": "1.1"
+                },
+                {
+                    "file_id": 1000057731,
+                    "name": "Immersive Lich race v1.2-51856-1-2--1760728826.zip",
+                    "version": "1.2."
                 }
             ],
-            "indexed_timestamp": 1668157710
+            "indexed_timestamp": 1762287559
         },
         {
             "mod_id": 51874,
@@ -13865,12 +13870,12 @@
             "author": "Greywander EvilEye johnnyhostile",
             "files": [
                 {
-                    "file_id": 1000057457,
-                    "name": "NCGDMW Lua Edition-53136-4-6-2-1759823095.zip",
-                    "version": "4.6.2"
+                    "file_id": 1000058161,
+                    "name": "NCGDMW Lua Edition-53136-4-6-6-1762264254.zip",
+                    "version": "4.6.6"
                 }
             ],
-            "indexed_timestamp": 1760044328
+            "indexed_timestamp": 1762287698
         },
         {
             "mod_id": 53142,
@@ -15762,12 +15767,12 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000051854,
-                    "name": "abotSmartTopics-54280-1-06-1744378082.7z",
-                    "version": "1.06"
+                    "file_id": 1000058103,
+                    "name": "abotSmartTopics-54280-1-08-1762029624.7z",
+                    "version": "1.08"
                 }
             ],
-            "indexed_timestamp": 1746294542
+            "indexed_timestamp": 1762287696
         },
         {
             "mod_id": 54333,
@@ -15801,12 +15806,12 @@
             "author": "mym",
             "files": [
                 {
-                    "file_id": 1000056988,
-                    "name": "BetterMerchantsSkills-54337-2-1-2-1758531045.zip",
-                    "version": "2.1.2"
+                    "file_id": 1000058171,
+                    "name": "BetterMerchantsSkills-54337-2-2-1762272071.zip",
+                    "version": "2.2"
                 }
             ],
-            "indexed_timestamp": 1760044509
+            "indexed_timestamp": 1762287706
         },
         {
             "mod_id": 54343,
@@ -16582,12 +16587,12 @@
             "author": "taitechnic",
             "files": [
                 {
-                    "file_id": 1000054661,
-                    "name": "OpenMW Animated Pickup and Shop Around-54585-1-25a-1750717426.zip",
-                    "version": "1.25a"
+                    "file_id": 1000057989,
+                    "name": "OpenMW Animated Pickup and Shop Around-54585-1-26-1761604318.zip",
+                    "version": "1.26"
                 }
             ],
-            "indexed_timestamp": 1751920896
+            "indexed_timestamp": 1762287572
         },
         {
             "mod_id": 54587,
@@ -16774,7 +16779,7 @@
                     "version": "0.56"
                 }
             ],
-            "indexed_timestamp": 1760044502
+            "indexed_timestamp": 1762287706
         },
         {
             "mod_id": 54630,
@@ -16834,17 +16839,17 @@
             "author": "abot",
             "files": [
                 {
-                    "file_id": 1000047092,
-                    "name": "abotInventorySorter-54637-1-01-1725542850.7z",
-                    "version": "1.01"
-                },
-                {
                     "file_id": 1000047093,
                     "name": "Poison Crafting Compatibility Patch-54637-1-00-1725543155.7z",
                     "version": "1.00"
+                },
+                {
+                    "file_id": 1000058032,
+                    "name": "aboInventorySorter-54637-1-02-1761769168.7z",
+                    "version": "1.02"
                 }
             ],
-            "indexed_timestamp": 1726721570
+            "indexed_timestamp": 1762287700
         },
         {
             "mod_id": 54640,
@@ -17291,12 +17296,12 @@
             "author": "taitechnic",
             "files": [
                 {
-                    "file_id": 1000056838,
-                    "name": "OpenMW Dynamic Actors-54782-1-25-1757870886.zip",
-                    "version": "1.25"
+                    "file_id": 1000058141,
+                    "name": "OpenMW Dynamic Actors-54782-1-26-1762204204.zip",
+                    "version": "1.26"
                 }
             ],
-            "indexed_timestamp": 1760044342
+            "indexed_timestamp": 1762287718
         },
         {
             "mod_id": 54786,
@@ -17556,12 +17561,12 @@
             "author": "Merlord",
             "files": [
                 {
-                    "file_id": 1000045989,
-                    "name": "Realistic Repair Russian Translation-54900-1-11-1719737887.7z",
+                    "file_id": 1000057650,
+                    "name": "Realistic Repair Russian Translation-54900-1-11-1760438794.7z",
                     "version": "1.11"
                 }
             ],
-            "indexed_timestamp": 1720301374
+            "indexed_timestamp": 1762287716
         },
         {
             "mod_id": 54901,
@@ -18496,12 +18501,12 @@
             "author": "Nitro",
             "files": [
                 {
-                    "file_id": 1000047592,
-                    "name": "Buff Timers for OpenMW-55305-0-0-12-1728261679.7z",
-                    "version": "0.0.12"
+                    "file_id": 1000057881,
+                    "name": "BuffTimers for OpenMW-55305-1-0-0-1761248301.7z",
+                    "version": "1.0.0"
                 }
             ],
-            "indexed_timestamp": 1729937112
+            "indexed_timestamp": 1762287707
         },
         {
             "mod_id": 55309,
@@ -18787,7 +18792,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1760044539
+            "indexed_timestamp": 1762287722
         },
         {
             "mod_id": 55430,
@@ -18894,6 +18899,24 @@
             "indexed_timestamp": 1733906121
         },
         {
+            "mod_id": 55454,
+            "name": "Odai - Lifeblood of Balmora",
+            "author": "Tapetenklaus",
+            "files": [
+                {
+                    "file_id": 1000057591,
+                    "name": "Odai - Lifeblood of Balmora-55454-1-1-1760215908.zip",
+                    "version": "1.1"
+                },
+                {
+                    "file_id": 1000057592,
+                    "name": "OLOB Patches-55454-1-1-1760217768.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1762287824
+        },
+        {
             "mod_id": 55455,
             "name": "Alternative Skill Point Leveling (OpenMW)",
             "author": "Staticky",
@@ -18925,12 +18948,12 @@
             "author": "tamrielrus",
             "files": [
                 {
-                    "file_id": 1000057335,
-                    "name": "tr2508ru-55464-2025-10-03-1759517162.7z",
-                    "version": "2025-10-03"
+                    "file_id": 1000058098,
+                    "name": "tr2508ru-55464-2025-11-01-1762009947.7z",
+                    "version": "2025-11-01"
                 }
             ],
-            "indexed_timestamp": 1760044539
+            "indexed_timestamp": 1762287724
         },
         {
             "mod_id": 55480,
@@ -18938,12 +18961,12 @@
             "author": "CarlZee",
             "files": [
                 {
-                    "file_id": 1000057493,
-                    "name": "SSQN Patches-55480-1-15-1759936142.zip",
-                    "version": "1.15"
+                    "file_id": 1000057715,
+                    "name": "SSQN Patches-55480-1-16-1760675146.zip",
+                    "version": "1.16"
                 }
             ],
-            "indexed_timestamp": 1760044531
+            "indexed_timestamp": 1762287724
         },
         {
             "mod_id": 55484,
@@ -19146,12 +19169,12 @@
             "author": "mym",
             "files": [
                 {
-                    "file_id": 1000057182,
-                    "name": "HarderBetterFasterStronger-55542-2-4-2-1759031229.zip",
-                    "version": "2.4.2"
+                    "file_id": 1000057542,
+                    "name": "HarderBetterFasterStronger-55542-2-4-3-1760082287.zip",
+                    "version": "2.4.3"
                 }
             ],
-            "indexed_timestamp": 1760044530
+            "indexed_timestamp": 1762287725
         },
         {
             "mod_id": 55543,
@@ -19278,12 +19301,12 @@
             "author": "Diject",
             "files": [
                 {
-                    "file_id": 1000057375,
-                    "name": "Quest Guider v1.3.5-55593-1-3-5-1759651505.zip",
-                    "version": "1.3.5"
+                    "file_id": 1000058012,
+                    "name": "Quest Guider v1.3.6-55593-1-3-7-1761676166.zip",
+                    "version": "1.3.7"
                 }
             ],
-            "indexed_timestamp": 1760044510
+            "indexed_timestamp": 1762287716
         },
         {
             "mod_id": 55594,
@@ -19982,6 +20005,19 @@
             "indexed_timestamp": 1756125482
         },
         {
+            "mod_id": 55968,
+            "name": "A New Hope - A Starwind Mod",
+            "author": "Von Djangos",
+            "files": [
+                {
+                    "file_id": 1000058073,
+                    "name": "A New Hope - A Starwind Mod-55968-4-25-1761905858.zip",
+                    "version": "4.25"
+                }
+            ],
+            "indexed_timestamp": 1762287981
+        },
+        {
             "mod_id": 55972,
             "name": "Premade Player Characters",
             "author": "Pete Goodfellow",
@@ -20254,9 +20290,14 @@
                     "file_id": 1000056701,
                     "name": "Tis But a Scratch-56122-1-5-1-1757339483.zip",
                     "version": "1.5.1"
+                },
+                {
+                    "file_id": 1000057694,
+                    "name": "Tis But A Scratch - Separate Legs-56122-1-5-1-1760628601.zip",
+                    "version": "1.5.1"
                 }
             ],
-            "indexed_timestamp": 1757812121
+            "indexed_timestamp": 1762287727
         },
         {
             "mod_id": 56128,
@@ -20360,7 +20401,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1760044526
+            "indexed_timestamp": 1762287558
         },
         {
             "mod_id": 56179,
@@ -20659,17 +20700,17 @@
             "author": "Izgramortrue15",
             "files": [
                 {
-                    "file_id": 1000055457,
-                    "name": "Kirbonated Character Progression_RUS-56301-1-3-12-1753468394.7z",
-                    "version": "1.3.12"
-                },
-                {
                     "file_id": 1000055458,
                     "name": "Patch for Kirbonated Character Progression_RUS-56301-1-3-12-1753468478.7z",
                     "version": "1.3.12"
+                },
+                {
+                    "file_id": 1000057774,
+                    "name": "Kirbonated Character Progression_RUS-56301-1-3-13-1760868083.7z",
+                    "version": "1.3.13"
                 }
             ],
-            "indexed_timestamp": 1753811525
+            "indexed_timestamp": 1762287728
         },
         {
             "mod_id": 56302,
@@ -20677,12 +20718,12 @@
             "author": "Izgramortrue15",
             "files": [
                 {
-                    "file_id": 1000051710,
-                    "name": "MWSE Perk Framework_RUS-56302-1-0-1-1743793103.7z",
-                    "version": "1.0.1"
+                    "file_id": 1000057773,
+                    "name": "Perk Framework_RUS-56302-1-0-11-1760867854.7z",
+                    "version": "1.2.3"
                 }
             ],
-            "indexed_timestamp": 1744314554
+            "indexed_timestamp": 1762287725
         },
         {
             "mod_id": 56319,
@@ -20830,12 +20871,12 @@
             "author": "therealralts",
             "files": [
                 {
-                    "file_id": 1000054417,
-                    "name": "Oblivion-Style Lockpicking-56355-2-0-0-1749945122.7z",
-                    "version": "2.0.0"
+                    "file_id": 1000057663,
+                    "name": "Oblivion-Style Lockpicking-56355-2-1-0-1760494897.7z",
+                    "version": "2.1.0"
                 }
             ],
-            "indexed_timestamp": 1751920966
+            "indexed_timestamp": 1762287735
         },
         {
             "mod_id": 56389,
@@ -20869,12 +20910,12 @@
             "author": "S3ctor",
             "files": [
                 {
-                    "file_id": 1000052139,
-                    "name": "Main-56417-0-1-1745733955.zip",
-                    "version": "0.1"
+                    "file_id": 1000057910,
+                    "name": "H3 Main-56417-0-5-1761344092.zip",
+                    "version": "0.5"
                 }
             ],
-            "indexed_timestamp": 1748139371
+            "indexed_timestamp": 1762287731
         },
         {
             "mod_id": 56421,
@@ -21269,12 +21310,12 @@
             "author": "eledin",
             "files": [
                 {
-                    "file_id": 1000057398,
-                    "name": "main-56572-1-3-1759689535.7z",
-                    "version": "1.3"
+                    "file_id": 1000057875,
+                    "name": "main-56572-1-3-2-1-1761223178.7z",
+                    "version": "1.3.2.1"
                 }
             ],
-            "indexed_timestamp": 1760044542
+            "indexed_timestamp": 1762287756
         },
         {
             "mod_id": 56577,
@@ -22126,12 +22167,12 @@
             "author": "Erin",
             "files": [
                 {
-                    "file_id": 1000057356,
-                    "name": "ErnBurglary.zip-56965-1-3-5-1759595440.zip",
-                    "version": "1.3.5"
+                    "file_id": 1000058064,
+                    "name": "ErnBurglary.zip-56965-1-3-7-1761878362.zip",
+                    "version": "1.3.7"
                 }
             ],
-            "indexed_timestamp": 1760044551
+            "indexed_timestamp": 1762287767
         },
         {
             "mod_id": 56966,
@@ -22152,12 +22193,12 @@
             "author": "ysmiraak",
             "files": [
                 {
-                    "file_id": 1000055476,
-                    "name": "omwTelefollow-56976-1-1-1753563535.7z",
-                    "version": "1.1"
+                    "file_id": 1000057973,
+                    "name": "omwTelefollow-56976-1-1-1-1761571008.7z",
+                    "version": "1.1.1"
                 }
             ],
-            "indexed_timestamp": 1753811555
+            "indexed_timestamp": 1762287767
         },
         {
             "mod_id": 56978,
@@ -22243,12 +22284,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000056457,
-                    "name": "EasyHarvest-57039-1-7-1756407549.zip",
-                    "version": "1.7"
+                    "file_id": 1000058051,
+                    "name": "EasyHarvest-57039-1-8-1761860160.zip",
+                    "version": "1.8"
                 }
             ],
-            "indexed_timestamp": 1757812159
+            "indexed_timestamp": 1762287786
         },
         {
             "mod_id": 57040,
@@ -22347,12 +22388,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000056562,
-                    "name": "Disenchanting-57068-3-5-1756830294.zip",
-                    "version": "3.5"
+                    "file_id": 1000058013,
+                    "name": "Disenchanting-57068-3-8-1761677209.zip",
+                    "version": "3.8"
                 }
             ],
-            "indexed_timestamp": 1757812162
+            "indexed_timestamp": 1762287788
         },
         {
             "mod_id": 57073,
@@ -22668,12 +22709,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000057275,
-                    "name": "Roguelite-57169-2-2-1759283463.zip",
-                    "version": "2.2"
+                    "file_id": 1000058020,
+                    "name": "Roguelite-57169-2-4-1761689653.zip",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1760044560
+            "indexed_timestamp": 1762287804
         },
         {
             "mod_id": 57175,
@@ -22896,12 +22937,12 @@
             "author": "Wolfweim",
             "files": [
                 {
-                    "file_id": 1000055693,
-                    "name": "Real Training for Fighters Guild Members-57250-1-0-1754472462.7z",
-                    "version": "1.0"
+                    "file_id": 1000057771,
+                    "name": "Real Training for Fighters Guild Members-57250-1-2-1760864357.7z",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1756125179
+            "indexed_timestamp": 1762287816
         },
         {
             "mod_id": 57257,
@@ -22961,12 +23002,12 @@
             "author": "Sosnoviy Bor",
             "files": [
                 {
-                    "file_id": 1000055966,
-                    "name": "Modern Merhunes' Razor-57273-2-0-1755251417.zip",
-                    "version": "2.0"
+                    "file_id": 1000057816,
+                    "name": "Modern Merhunes' Razor-57273-2-0-1-1760998352.zip",
+                    "version": "2.0.1"
                 }
             ],
-            "indexed_timestamp": 1756125145
+            "indexed_timestamp": 1762287817
         },
         {
             "mod_id": 57274,
@@ -22974,12 +23015,12 @@
             "author": "Sosnoviy Bor",
             "files": [
                 {
-                    "file_id": 1000055963,
-                    "name": "Backstabs-57274-2-2-1-1755245899.zip",
-                    "version": "2.2.1"
+                    "file_id": 1000057820,
+                    "name": "Backstabs-57274-2-3-1761004727.zip",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1756125140
+            "indexed_timestamp": 1762287818
         },
         {
             "mod_id": 57276,
@@ -23052,22 +23093,22 @@
             "author": "Diject",
             "files": [
                 {
-                    "file_id": 1000056173,
-                    "name": "Quest Data TR_PC_SHotN-57285-7-0-1755708322.zip",
-                    "version": "7.0"
+                    "file_id": 1000057601,
+                    "name": "Quest Data base_game-57285-7-1-1760267283.zip",
+                    "version": "7.1"
                 },
                 {
-                    "file_id": 1000056174,
-                    "name": "Quest Data base_game-57285-7-0-1755708416.zip",
-                    "version": "7.0"
+                    "file_id": 1000057602,
+                    "name": "Quest Data TR_PC_SHotN-57285-7-1-1760267394.zip",
+                    "version": "7.1"
                 },
                 {
-                    "file_id": 1000056642,
-                    "name": "Quest Guider Lite v1.1.0-57285-1-1-0-1757169176.zip",
-                    "version": "1.1.0"
+                    "file_id": 1000058175,
+                    "name": "Quest Guider Lite v1.2.1-57285-1-2-1-1762278397.zip",
+                    "version": "1.2.1"
                 }
             ],
-            "indexed_timestamp": 1760044574
+            "indexed_timestamp": 1762287820
         },
         {
             "mod_id": 57286,
@@ -23080,12 +23121,12 @@
                     "version": "1.0.0"
                 },
                 {
-                    "file_id": 1000056914,
-                    "name": "proximityTool v1.0.4-57286-1-0-4-1758216400.zip",
-                    "version": "1.0.4"
+                    "file_id": 1000057606,
+                    "name": "proximityTool v1.1.0-57286-1-1-0-1760272418.zip",
+                    "version": "1.1.0"
                 }
             ],
-            "indexed_timestamp": 1760044575
+            "indexed_timestamp": 1762287822
         },
         {
             "mod_id": 57288,
@@ -23158,12 +23199,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000056603,
-                    "name": "puremultimark-57313-2-2-1757032654.zip",
-                    "version": "2.2"
+                    "file_id": 1000058008,
+                    "name": "puremultimark-57313-2-3-1761647893.zip",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1757812192
+            "indexed_timestamp": 1762287825
         },
         {
             "mod_id": 57315,
@@ -23184,12 +23225,12 @@
             "author": "Storm Atronach",
             "files": [
                 {
-                    "file_id": 1000056736,
-                    "name": "Stealth Overhaul-57321-1-0-1757579019.zip",
-                    "version": "1.0"
+                    "file_id": 1000057769,
+                    "name": "Stealth Overhaul-57321-1-2-1760858148.zip",
+                    "version": "1.2"
                 }
             ],
-            "indexed_timestamp": 1757812203
+            "indexed_timestamp": 1762287782
         },
         {
             "mod_id": 57329,
@@ -23197,12 +23238,12 @@
             "author": "ComeBESNIER",
             "files": [
                 {
-                    "file_id": 1000056670,
-                    "name": "Main-57329-0-53-1757234821.zip",
-                    "version": "0.53"
+                    "file_id": 1000057651,
+                    "name": "Main-57329-0-54-1760443117.zip",
+                    "version": "0.54"
                 }
             ],
-            "indexed_timestamp": 1757812204
+            "indexed_timestamp": 1762287826
         },
         {
             "mod_id": 57333,
@@ -23636,6 +23677,19 @@
             "indexed_timestamp": 1760044235
         },
         {
+            "mod_id": 57495,
+            "name": "Dubious patches and miscellany",
+            "author": "DubiousNPC",
+            "files": [
+                {
+                    "file_id": 1000057876,
+                    "name": "Simple Cooking - Devilish Needs-57495-1-2-1761223732.7z",
+                    "version": "1.2"
+                }
+            ],
+            "indexed_timestamp": 1762287865
+        },
+        {
             "mod_id": 57499,
             "name": "Auto Light Drop v1.2 - OpenMW",
             "author": "skrow42",
@@ -23654,12 +23708,12 @@
             "author": "Implawyer",
             "files": [
                 {
-                    "file_id": 1000057107,
-                    "name": "SpellsBookmarks-57501-0-1-0-1758900469.zip",
-                    "version": "0.1.0"
+                    "file_id": 1000057670,
+                    "name": "SpellsBookmarks-57501-0-2-0-1760538039.zip",
+                    "version": "0.2.0"
                 }
             ],
-            "indexed_timestamp": 1760044232
+            "indexed_timestamp": 1762287835
         },
         {
             "mod_id": 57508,
@@ -23680,12 +23734,12 @@
             "author": "OwnlyMe",
             "files": [
                 {
-                    "file_id": 1000057453,
-                    "name": "LeaveTheLightsOff-57510-1-6-1759798339.zip",
-                    "version": "1.6"
+                    "file_id": 1000058107,
+                    "name": "LeaveTheLightsOff-57510-1-7-1762046418.zip",
+                    "version": "1.7"
                 }
             ],
-            "indexed_timestamp": 1760044264
+            "indexed_timestamp": 1762287775
         },
         {
             "mod_id": 57518,
@@ -23693,12 +23747,25 @@
             "author": "Onkija",
             "files": [
                 {
-                    "file_id": 1000057461,
-                    "name": "OpenMWCraftingFramework_EbonyAndDaedric-57518-1-4-1759854012.zip",
-                    "version": "1.4"
+                    "file_id": 1000057923,
+                    "name": "OpenWMCraftingFramework_EbonyAndDaedric.zip-57518-2-3-1761387270.zip",
+                    "version": "2.3"
                 }
             ],
-            "indexed_timestamp": 1760044182
+            "indexed_timestamp": 1762287837
+        },
+        {
+            "mod_id": 57526,
+            "name": "Sun's Dusk - Primary Needs and Wellness",
+            "author": "ownlyme and lhyacinth",
+            "files": [
+                {
+                    "file_id": 1000057890,
+                    "name": "Sun's Dusk-57526-1-1-1761280227.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1762288009
         },
         {
             "mod_id": 57530,
@@ -23719,12 +23786,12 @@
             "author": "Tinumbra1",
             "files": [
                 {
-                    "file_id": 1000057324,
-                    "name": "Controlled Jumps-57543-1-0-1759476821.zip",
-                    "version": "1.0"
+                    "file_id": 1000058169,
+                    "name": "Controlled Jumps-57543-1-3-1762269903.zip",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1760044246
+            "indexed_timestamp": 1762287840
         },
         {
             "mod_id": 57545,
@@ -23732,12 +23799,12 @@
             "author": "illest503",
             "files": [
                 {
-                    "file_id": 1000057452,
-                    "name": "illest Devilish Needs icons-57545-1-6-1759795402.zip",
-                    "version": "1.6"
+                    "file_id": 1000057814,
+                    "name": "illest Devilish Needs icons collection-57545-2-07-1760993363.zip",
+                    "version": "2.07"
                 }
             ],
-            "indexed_timestamp": 1760044244
+            "indexed_timestamp": 1762287840
         },
         {
             "mod_id": 57548,
@@ -23745,12 +23812,12 @@
             "author": "Implawyer",
             "files": [
                 {
-                    "file_id": 1000057534,
-                    "name": "HitKillFeedback-57548-0-3-0-1760037375.zip",
-                    "version": "0.3.0"
+                    "file_id": 1000057917,
+                    "name": "HitKillFeedback-57548-0-4-0-1761365995.zip",
+                    "version": "0.4.0"
                 }
             ],
-            "indexed_timestamp": 1760044227
+            "indexed_timestamp": 1762287841
         },
         {
             "mod_id": 57551,
@@ -23771,12 +23838,12 @@
             "author": "Kleidium",
             "files": [
                 {
-                    "file_id": 1000057520,
-                    "name": "Message Box-57553-1-3-1-1760009946.zip",
-                    "version": "1.3.1"
+                    "file_id": 1000058011,
+                    "name": "Message Box-57553-1-5-0-1761675266.zip",
+                    "version": "1.5.0"
                 }
             ],
-            "indexed_timestamp": 1760044269
+            "indexed_timestamp": 1762287843
         },
         {
             "mod_id": 57559,
@@ -23797,17 +23864,17 @@
             "author": "slowchu",
             "files": [
                 {
-                    "file_id": 1000057373,
-                    "name": "Double Jump-57563-V0-3-1759643633.7z",
-                    "version": "V0.3"
+                    "file_id": 1000057839,
+                    "name": "Double Jump (Controller Edition)-57563-v2-2-1761083015.7z",
+                    "version": "v2.2"
                 },
                 {
-                    "file_id": 1000057456,
-                    "name": "Double Jump (Controller Edition)-57563-v1-1-1759813537.7z",
-                    "version": "v1.1"
+                    "file_id": 1000058021,
+                    "name": "Double Jump-57563-2-4-1761691833.7z",
+                    "version": "2.4"
                 }
             ],
-            "indexed_timestamp": 1760044288
+            "indexed_timestamp": 1762287844
         },
         {
             "mod_id": 57565,
@@ -23815,12 +23882,22 @@
             "author": "DubiousNPC",
             "files": [
                 {
-                    "file_id": 1000057507,
-                    "name": "Camping Gear Recipes-57565-1-0-1759980328.7z",
+                    "file_id": 1000057999,
+                    "name": "Bardcraft Recipes-57565-1-0-1761608361.7z",
                     "version": "1.0"
+                },
+                {
+                    "file_id": 1000058126,
+                    "name": "Simple Tasks-57565-1-0-1762128479.7z",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000058145,
+                    "name": "00 CraftingMaterials_Dubiousnpc 00-57565-2-1-1762210312.7z",
+                    "version": "2.1"
                 }
             ],
-            "indexed_timestamp": 1760044291
+            "indexed_timestamp": 1762287853
         },
         {
             "mod_id": 57573,
@@ -23828,12 +23905,12 @@
             "author": "Infiniti",
             "files": [
                 {
-                    "file_id": 1000057416,
-                    "name": "Fall_Risk-57573-0-1-1759705076.7z",
-                    "version": "0.1"
+                    "file_id": 1000057933,
+                    "name": "Fall_Risk-57573-0-2-1761426276.7z",
+                    "version": "0.2"
                 }
             ],
-            "indexed_timestamp": 1760044278
+            "indexed_timestamp": 1762287735
         },
         {
             "mod_id": 57575,
@@ -23913,6 +23990,19 @@
             "indexed_timestamp": 1760044278
         },
         {
+            "mod_id": 57583,
+            "name": "Scribo (OpenMW)",
+            "author": "Tinumbra1",
+            "files": [
+                {
+                    "file_id": 1000058159,
+                    "name": "Scribo-57583-1-4-1762263927.zip",
+                    "version": "1.4"
+                }
+            ],
+            "indexed_timestamp": 1762287857
+        },
+        {
             "mod_id": 57585,
             "name": "sch2266's non-dungeon mods",
             "author": "sch2266",
@@ -23923,7 +24013,7 @@
                     "version": "Final"
                 }
             ],
-            "indexed_timestamp": 1760044204
+            "indexed_timestamp": 1762287874
         },
         {
             "mod_id": 57586,
@@ -23944,12 +24034,12 @@
             "author": "skrow42",
             "files": [
                 {
-                    "file_id": 1000057497,
-                    "name": "QuickSelect Ultimate - OpenMW-57590-1-0-1759950669.zip",
-                    "version": "1.0"
+                    "file_id": 1000057760,
+                    "name": "QuickSelect Ultimate - OpenMW-57590-1-3-1760810247.zip",
+                    "version": "1.3"
                 }
             ],
-            "indexed_timestamp": 1760044221
+            "indexed_timestamp": 1762287791
         },
         {
             "mod_id": 57593,
@@ -23957,15 +24047,352 @@
             "author": "alerom1612",
             "files": [
                 {
-                    "file_id": 1000057523,
-                    "name": "Alarmed Morrowind for OpenMW-57593-1-0-1760014233.7z",
+                    "file_id": 1000058016,
+                    "name": "Alarmed Morrowind for OpenMW-57593-1-0-0-1761681609.7z",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1762287785
+        },
+        {
+            "mod_id": 57615,
+            "name": "Perk Framework (OpenMW)",
+            "author": "Erin",
+            "files": [
+                {
+                    "file_id": 1000058104,
+                    "name": "ErnPerkFramework.zip-57615-0-9-4-1762031274.zip",
+                    "version": "0.9.4"
+                }
+            ],
+            "indexed_timestamp": 1762287450
+        },
+        {
+            "mod_id": 57619,
+            "name": "Iron Fist for OpenMW",
+            "author": "slowchu",
+            "files": [
+                {
+                    "file_id": 1000057655,
+                    "name": "Iron Fist for OpenMW-57619-V2-0-1760471854.7z",
+                    "version": "V2.0"
+                }
+            ],
+            "indexed_timestamp": 1762287454
+        },
+        {
+            "mod_id": 57622,
+            "name": "Enchantment Xfer (OpenMW)",
+            "author": "slowchu",
+            "files": [
+                {
+                    "file_id": 1000058003,
+                    "name": "Enchant Xfer (Russian)-57622-2-3-1761613139.7z",
+                    "version": "2.3"
+                },
+                {
+                    "file_id": 1000058004,
+                    "name": "Enchant Xfer-57622-2-3-1761613173.7z",
+                    "version": "2.3"
+                }
+            ],
+            "indexed_timestamp": 1762287388
+        },
+        {
+            "mod_id": 57628,
+            "name": "OpenMW CoV addon",
+            "author": "ComeBESNIER",
+            "files": [
+                {
+                    "file_id": 1000057674,
+                    "name": "Main-57628-0-60-1760552355.zip",
+                    "version": "0.60"
+                }
+            ],
+            "indexed_timestamp": 1762287459
+        },
+        {
+            "mod_id": 57633,
+            "name": "OpenMW Dynamic Animations",
+            "author": "taitechnic",
+            "files": [
+                {
+                    "file_id": 1000058121,
+                    "name": "OpenMW Dynamic Animations-57633-1-06-1762119146.zip",
+                    "version": "1.06"
+                }
+            ],
+            "indexed_timestamp": 1762287466
+        },
+        {
+            "mod_id": 57640,
+            "name": "GRIP (Stance Toggle OpenMW)",
+            "author": "slowchu",
+            "files": [
+                {
+                    "file_id": 1000057916,
+                    "name": "GRIP Repair-57640-v1-0-1761360650.7z",
+                    "version": "v1.0"
+                },
+                {
+                    "file_id": 1000058035,
+                    "name": "GRIP-57640-v3-52-1761779029.7z",
+                    "version": "v3.52"
+                },
+                {
+                    "file_id": 1000058050,
+                    "name": "GRIP (No Sheathe Fix)-57640-v3-52-1761859533.7z",
+                    "version": "v3.52"
+                }
+            ],
+            "indexed_timestamp": 1762287483
+        },
+        {
+            "mod_id": 57647,
+            "name": "Corpse Preparation",
+            "author": "kokosz133 and ComeBESNIER",
+            "files": [
+                {
+                    "file_id": 1000057827,
+                    "name": "Main-57647-0-60-1761042702.zip",
+                    "version": "0.60"
+                }
+            ],
+            "indexed_timestamp": 1762287490
+        },
+        {
+            "mod_id": 57648,
+            "name": "Archetype perk system for Kirbonated Character Progression",
+            "author": "Izgramortrue15",
+            "files": [
+                {
+                    "file_id": 1000057775,
+                    "name": "ArchetypePerk for Kirbonated Character Progression-57648-1-0-1760869808.7z",
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1760044220
+            "indexed_timestamp": 1762287490
+        },
+        {
+            "mod_id": 57659,
+            "name": "Enchant XP Rebalanced (OpenMW)",
+            "author": "Plonix",
+            "files": [
+                {
+                    "file_id": 1000057830,
+                    "name": "Enchanting XP Rebalance OpenMW-57659-1-0-0-1761061063.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1762287495
+        },
+        {
+            "mod_id": 57660,
+            "name": "Lock Ring Slot",
+            "author": "NitroInferno",
+            "files": [
+                {
+                    "file_id": 1000057928,
+                    "name": "LockRingSlot v1.0.1-57660-1-0-1-1761410354.7z",
+                    "version": "1.0.1"
+                }
+            ],
+            "indexed_timestamp": 1762287496
+        },
+        {
+            "mod_id": 57661,
+            "name": "Canonical Gear (OpenMW)",
+            "author": "Sosnoviy Bor",
+            "files": [
+                {
+                    "file_id": 1000057829,
+                    "name": "Canonical Gear-57661-1-0-1761060711.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287496
+        },
+        {
+            "mod_id": 57666,
+            "name": "Indoril and Her Hand Armor Privileges - OpenMW",
+            "author": "AbbaddoN33",
+            "files": [
+                {
+                    "file_id": 1000057850,
+                    "name": "Indoril and Her Hand Armor Privileges - OpenMW-57666-1-0-1761157631.zip",
+                    "version": "1.0"
+                },
+                {
+                    "file_id": 1000057867,
+                    "name": "Indoril and Her Hand Armor Privileges - TR-57666-1-0-1761179291.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287482
+        },
+        {
+            "mod_id": 57673,
+            "name": "More Scenarios For Merlord's Chargen Russian Translation",
+            "author": "Pirate",
+            "files": [
+                {
+                    "file_id": 1000057869,
+                    "name": "More Scenarios For Merlord's Chargen Russian Trans-57673-1-1761201343.7z",
+                    "version": "1"
+                }
+            ],
+            "indexed_timestamp": 1762287472
+        },
+        {
+            "mod_id": 57674,
+            "name": "Oblivion Remaster Magic XP for OpenMW",
+            "author": "Plonix",
+            "files": [
+                {
+                    "file_id": 1000057870,
+                    "name": "Oblivion Remaster Magic XP for OpenMW-57674-1-0-0-1761211905.zip",
+                    "version": "1.0.0"
+                }
+            ],
+            "indexed_timestamp": 1762287472
+        },
+        {
+            "mod_id": 57681,
+            "name": "(OpenMW) Crafting Framework - Nordic And Stalhrim",
+            "author": "Onkija",
+            "files": [
+                {
+                    "file_id": 1000057922,
+                    "name": "OpenMWCraftingFramework_NordicAndStalhrim.zip-57681-1-1-1761386456.zip",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1762287475
+        },
+        {
+            "mod_id": 57687,
+            "name": "(OpenMW) Crafting Framework - Crafting Materials",
+            "author": "Onkija and Dubiousnpc",
+            "files": [
+                {
+                    "file_id": 1000057921,
+                    "name": "OpenMWCraftingFramework_CraftingMaterials.zip-57687-0-1-1761385452.zip",
+                    "version": "0.1"
+                },
+                {
+                    "file_id": 1000057994,
+                    "name": "CraftingMaterials_Dubiousnpc-57687-1-1-1761607145.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1762287463
+        },
+        {
+            "mod_id": 57688,
+            "name": "Dwemer Beam Blades (OpenMW Crafting)",
+            "author": "OpenMW recipes by myself as well as light effects - the blades by Remiros",
+            "files": [
+                {
+                    "file_id": 1000058077,
+                    "name": "Dwemer Beam Blades with light and sound-57688-1-1-1761928893.7z",
+                    "version": "1.1"
+                }
+            ],
+            "indexed_timestamp": 1762287462
+        },
+        {
+            "mod_id": 57698,
+            "name": "Daedra Use Bound Equipment for OpenMW",
+            "author": "alerom1612",
+            "files": [
+                {
+                    "file_id": 1000058146,
+                    "name": "Daedra Use Bound Equipment for OpenMW-57698-1-3-0-1762213846.7z",
+                    "version": "1.3.0"
+                }
+            ],
+            "indexed_timestamp": 1762287442
+        },
+        {
+            "mod_id": 57703,
+            "name": "T4rg3t5 - OpenMW Targeting System",
+            "author": "S3ctor",
+            "files": [
+                {
+                    "file_id": 1000058005,
+                    "name": "T4rg3t5-57703-0-5-1761618560.zip",
+                    "version": "0.5"
+                }
+            ],
+            "indexed_timestamp": 1762287433
+        },
+        {
+            "mod_id": 57704,
+            "name": "Simple Text Compass (OpenMW)",
+            "author": "Erin",
+            "files": [
+                {
+                    "file_id": 1000058063,
+                    "name": "ErnCompass.zip-57704-1-1-0-1761877620.zip",
+                    "version": "1.1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287433
+        },
+        {
+            "mod_id": 57719,
+            "name": "(OpenMW) Banishing",
+            "author": "Hyacinth and OwnlyMe",
+            "files": [
+                {
+                    "file_id": 1000058086,
+                    "name": "Banishing-57719-1-0-1761946365.zip",
+                    "version": "1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287486
+        },
+        {
+            "mod_id": 57721,
+            "name": "Knockback - OpenMW 0.50",
+            "author": "Implawyer",
+            "files": [
+                {
+                    "file_id": 1000058118,
+                    "name": "Knockback-57721-0-1-0-1762105408.zip",
+                    "version": "0.1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287484
+        },
+        {
+            "mod_id": 57727,
+            "name": "Stats Window Extender (OpenMW)",
+            "author": "Ralts",
+            "files": [
+                {
+                    "file_id": 1000058138,
+                    "name": "Stats Window Extender-57727-1-1-0-1762189564.7z",
+                    "version": "1.1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287504
+        },
+        {
+            "mod_id": 57730,
+            "name": "Inventory Manager - OpenMW",
+            "author": "Implawyer",
+            "files": [
+                {
+                    "file_id": 1000058131,
+                    "name": "Inventory Manager-57730-0-1-0-1762179914.zip",
+                    "version": "0.1.0"
+                }
+            ],
+            "indexed_timestamp": 1762287439
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1760044147,
-    "last_scan_for_updated_mods_timestamp": 1760044324,
-    "highest_validated_mod_id": 57593
+    "last_scan_for_added_mods_timestamp": 1762287363,
+    "last_scan_for_updated_mods_timestamp": 1762287536,
+    "highest_validated_mod_id": 57739
 }
