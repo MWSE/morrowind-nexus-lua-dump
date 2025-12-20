@@ -1,0 +1,18 @@
+return {
+    ModName = "Выход из меню правым кликом",
+    ModDescription = "Выход из любых меню правой кнопкой мыши.",
+    ReleaseHistory = "История версий",
+    BuyMeACoffee = "Купите мне кофе",
+    MadeBy = "Сделано Merlord",
+    Links = "Ссылки",
+    Credits = "Авторы",
+    Settings = "Настройки",
+    EnableRightClickExit = "Включить",
+    EnableRightClickExitDescription = "Включить выход из меню правым кликом.",
+    PlayMenuSound = "Звук меню",
+    PlayMenuSoundDescription = "Включить или отключить звук меню при выходе из меню.",
+    LogLevel = "Уровень журнала",
+    LogLevelDescription = "Установите уровень ведения журнала событий mwse.log.",
+    ReopenInventory = "Повторно открыть инвентарь",
+    ReopenInventoryDescription = "Повторно открыть меню инвентаря, если оно было открыто при закрытии другого меню.",
+}

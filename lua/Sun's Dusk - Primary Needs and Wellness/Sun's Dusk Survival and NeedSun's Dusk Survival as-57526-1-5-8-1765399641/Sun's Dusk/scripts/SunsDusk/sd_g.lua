@@ -1,0 +1,3238 @@
+--[[
+╭──────────────────────────────────────────────────────────────────────╮
+│  Sun's Dusk - Global								  				   │
+│  The thicc boi 								 					   │
+╰──────────────────────────────────────────────────────────────────────╯
+]]
+	
+MODNAME = "SunsDusk" -- Starwind: Solaris Duskia
+I		= require('openmw.interfaces')
+world	= require('openmw.world')
+types	= require('openmw.types')
+core	= require('openmw.core')
+storage	= require('openmw.storage')
+async	= require('openmw.async')
+vfs		= require('openmw.vfs')
+util	= require('openmw.util')
+time	= require('openmw_aux.time')
+v3 = util.vector3
+onUpdateJobs = {}
+require("scripts.SunsDusk.localization_g")
+
+-- ╭────────────────────────────────────────────────────────────────────╮
+-- │ Texture pack discovery (Before settings)							│
+-- ╰────────────────────────────────────────────────────────────────────╯
+
+require('scripts.SunsDusk.sd_loadTexturePacks')
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Log Levels															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+DEBUG_LEVEL = 5  --  { "Silent", "Quiet", "Chatty", "Deep", "Trace" }
+local _raw_print = print 
+function log(level, ...)
+	if level <= DEBUG_LEVEL then
+		_raw_print(...)
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Settings															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+presetColors = {
+    "d4edfc", -- thirst
+    "bfd4bc", -- hunger
+    "cfbddb", -- sleep
+    "81cded", -- fav color of blue
+    "caa560", -- fontColor_color_normal
+    "d4b77f", -- goldenMix
+    "dfc99f", -- FontColor_color_normal_over
+    "eee2c9", -- lightText
+    "253170", -- fontColor_color_journal_link
+    "3a4daf", -- fontColor_color_journal_link_over
+    "707ecf", -- fontColor_color_journal_link_pressed
+}
+
+for filename in vfs.pathsWithPrefix("scripts/SunsDusk/settings/") do
+	if filename:match("%.lua$") then
+		local require_path = filename:gsub("%.lua$", "")
+		require_path = require_path:gsub("/", ".")
+		log(5, "[SD] Loaded "..require_path)
+		require(require_path)
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Databases															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+require('scripts.SunsDusk.spreadsheetParser') -- dbConsumables
+require('scripts.SunsDusk.staticsParser') -- dbStatics
+
+openBottles = {
+	["misc_com_bottle_06"] = true,
+	["misc_com_bottle_09"] = true,
+	["misc_com_bottle_11"] = true,
+	["misc_com_bottle_13"] = true,
+	["misc_com_bottle_13"] = true,
+	["misc_com_bottle_02"] = true,
+	["misc_com_bottle_01"] = true,
+	-- Starwind
+}
+extraClosedBottles = {
+	["misc_com_redware_flask"] = true,
+	["ab_misc_waterskin"]	   = true,
+}
+
+-- maxVolumeQ: only vessels with Q <= this can roll the liquid
+-- spawnChance: relative weight
+-- valuePerQ: value added per Q
+local LIQUIDS = {
+	water = {
+		templateId  = 'sd_waterbottle_template',
+		displayName = 'Water',
+		maxVolumeQ  = math.huge,
+		spawnChance = 1.0,
+		valuePerQ   = 1,
+	},
+	sujamma = {
+		templateId  = 'sd_sujamma_template',
+		displayName = 'Sujamma',
+		maxVolumeQ  = 2,	-- Q<=2 (<=500 ml per Q step*2) by default
+		spawnChance = 0.3,  -- less common than water
+		valuePerQ   = 6,	-- pricier kick
+	},
+	flin = {
+		templateId  = 'sd_flin_template',
+		displayName = 'Flin',
+		maxVolumeQ  = 1,	-- Q<=1 (<=250 ml per Q step*2) by default
+		spawnChance = 0.15, -- less common than sujamma
+		valuePerQ   = 10,	-- pricier kick
+	},
+	-- sd_saltwater_template ; sd_suswater_template
+	-- Starwind: sd_bluemilk_template ; sd_bluebooze_template ; sd_banthamilk_template
+	tea_c_SF = {
+		templateId  = 'sd_tea_sf_template',
+		displayName = 'Cup of Stoneflower Tea',
+		maxVolumeQ  = 0.25,
+		spawnChance = 0.80,
+		valuePerQ   = 20,
+	},
+	tea_p_SF = {
+		templateId  = 'sd_tea_sf_template',
+		displayName = 'Kettle of Stoneflower Tea',
+		maxVolumeQ  = 1,	-- Q<=1 (<=250 ml per Q step*2) by default
+		spawnChance = 0.80, -- less common than sujamma
+		valuePerQ   = 40,	-- pricier kick
+	}
+}
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Constants															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local STEP_ML = 250
+
+-- substrings -> fallback liters
+local FALLBACK_LITERS = {
+	bottle  		= 1.0,
+	flask   		= 0.5,
+	beaker  		= 0.5,
+	cup	 			= 0.25,
+	misc_de_glass   = 0.25,
+	goblet  		= 0.25,
+	pitcher 		= 0.75,
+	tankard 		= 0.5,
+	vase			= 2.0,
+	bucket			= 4.0,
+	teapot			= 1.0,
+}
+
+local ZERO_CHANCE_SUBSTRINGS = { 'bucket' }
+local LOW_CHANCE_SUBSTRINGS = { 'vase', 'pot' }
+local SUBSTRINGS			= { 'flask', 'beaker', 'cup', 'goblet', 'pitcher', 'tankard', 'misc_de_glass', 'drinkinghorn' }
+local INVENTORY_SUBSTRINGS  = { 'bottle', 'canteen', 'misc_flask_03', 'ab_misc_waterskin' }
+local BLACKLIST_SUBSTRINGS  = { 'broken' }
+-- Starwind
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Utils																  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function lc(s)
+	if s then
+		return string.lower(s)
+	end
+	return s
+end
+
+local function hasKeyword(hay, kw)
+	if not hay then
+		return false
+	end
+	return string.find(hay, kw, 1, true) ~= nil
+end
+
+-- Trim trailing zeros from decimal strings.
+local function trimZeros(num)
+	-- num is number
+	local n = math.floor(num * 100 + 0.5) / 100
+	local s = tostring(n)
+	if string.find(s, "%.") then
+		s = s:gsub("0+$", "")
+		s = s:gsub("%.$", "")
+	end
+	return s
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Restocking															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+--each itemPool shares a startstock, maxstock and restockperday
+local stockingConfig = {
+    {
+        itemPool = { "sd_wood_publican" },
+		itemType = "Ingredient",
+        serviceRequired = "Ingredients",
+        classPatterns = { "publican", "innkeeper", "trader", "merchant" },
+        startStock = 6,
+        maxStock = 6,
+        restockPerDay = 3,
+    },
+	{
+        itemPool = { "sd_campingitem_tent" },
+		itemType = "Ingredient",
+        serviceRequired = "Ingredients",
+        classPatterns = { "publican", "innkeeper", "trader", "merchant" },
+        startStock = 8,
+        maxStock = 8,
+        restockPerDay = 4,
+    },
+	{
+        itemPool = { "sd_campingitem_bedroll" },
+		itemType = "Ingredient",
+        serviceRequired = "Ingredients",
+        classPatterns = { "publican", "innkeeper", "trader", "merchant" },
+        startStock = 8,
+        maxStock = 8,
+        restockPerDay = 4,
+    },
+	{
+        itemPool = { 
+			"misc_de_cloth10",             -- vanilla
+			"misc_de_cloth11",             -- vanilla
+			"misc_de_foldedcloth00",       -- vanilla
+			"ab_misc_comtowelblack01",     -- OAAB
+			"ab_misc_comtowelblack01",     -- OAAB
+			"ab_misc_comtowelblue01",     -- OAAB
+			"ab_misc_comtowelblue02",     -- OAAB
+			"ab_misc_comtowelbrown01",     -- OAAB
+			"ab_misc_comtowelbrown02",     -- OAAB
+			"ab_misc_comtowelburgy01",     -- OAAB
+			"ab_misc_comtowelburgy02",     -- OAAB
+			"ab_misc_comtowelgreen01",     -- OAAB
+			"ab_misc_comtowelgreen02",     -- OAAB
+			"ab_misc_comtowelwhite01",     -- OAAB
+			"ab_misc_comtowelwhite02",     -- OAAB
+			"ab_misc_decloth01large",      -- OAAB
+			"ab_misc_decloth01small",      -- OAAB
+			"ab_misc_decloth02large",      -- OAAB
+			"ab_misc_decloth02small",      -- OAAB
+			"t_com_clothbrownfolded_01",   -- TD
+			"t_com_clothbrown_01",         -- TD
+			"t_com_clothgreenfolded_01",   -- TD
+			"t_com_clothgreen_01",         -- TD
+			"t_com_clothplainfolded_01",   -- TD
+			"t_com_clothplain_01",         -- TD
+			"t_com_clothplain_02",         -- TD
+			"t_com_clothpurplefolded_01",  -- TD
+			"t_com_clothpurple_01",        -- TD
+			"t_com_clothredfolded_01",     -- TD
+			"t_com_clothred_01",           -- TD
+			"t_com_clothyellowfolded_01",  -- TD
+			"t_com_clothyellow_01",        -- TD
+			"s3_towel",                    -- BoV			
+		},
+		itemType = "Miscellaneous",
+        serviceRequired = "Misc",
+        classPatterns = { "trader", "merchant", "pawn broker", "soap seller" },
+        startStock = 4,
+        maxStock = 8,
+        restockPerDay = 4,
+    },
+	{
+        itemPool = { 
+			"t_com_soap_01", 	-- TD
+			"t_com_soap_02", 	-- TD
+			"t_com_soap_03", 	-- TD
+			"t_com_soap_04", 	-- TD
+			"t_com_soap_05", 	-- TD
+			"ab_misc_soap01", 	-- OAAB
+		},
+		itemType = "Miscellaneous",
+        serviceRequired = "Misc",
+        classPatterns = { "trader", "merchant", "pawn broker", "soap seller" },
+        startStock = 2,
+        maxStock = 2,
+        restockPerDay = 3,
+    },	
+	{
+        itemPool = { "s3_towel" },
+		itemType = "Miscellaneous",
+        serviceRequired = "Misc",
+        classPatterns = { "soap seller" },
+        startStock = 2,
+        maxStock = 2,
+        restockPerDay = 4,
+    },	
+	{
+        itemPool = {
+			"ingred_sload_soap_01", -- sload soap
+			"s3_soap",
+			"s3_soapinv_01", --"tigers tail", (UNOFFICIAL)			
+			"s3_soapinv_02", --"star icon",
+			"s3_soapinv_03", --"Moonflower",
+			"s3_soapinv_04", --"Sea Breeze",
+			"s3_soapinv_05", --"Divine",
+			"s3_soapinv_06", --"Ocean Deep",
+			"s3_soapinv_07", --"Midnight Musk",
+			"s3_soapinv_08", --"Resolve",
+			"asd", 			 -- safe because of verify script
+		},
+		itemType = "Ingredient",
+        serviceRequired = "Ingredients",
+        classPatterns = { "publican", "innkeeper", "trader", "merchant" },
+        startStock = 2,
+        maxStock = 4,
+        restockPerDay = 0.5,
+    },
+	-- Starwind
+}
+
+-- verify pools
+for i = #stockingConfig, 1, -1 do
+    local group = stockingConfig[i]
+    local typeTable = types[group.itemType]
+    
+    if not typeTable then
+        print("[StockingConfig] Invalid itemType: " .. tostring(group.itemType) .. " - deleting group " .. i)
+        table.remove(stockingConfig, i)
+    else
+        for j = #group.itemPool, 1, -1 do
+            local itemId = group.itemPool[j]
+            if not typeTable.records[itemId] then
+                print("[StockingConfig] Item not found in " .. group.itemType .. ".records: " .. itemId)
+                table.remove(group.itemPool, j)
+            end
+        end
+        
+        if #group.itemPool == 0 then
+            print("[StockingConfig] No valid items remain in group " .. i .. " - deleting group")
+            table.remove(stockingConfig, i)
+        end
+    end
+end
+
+local function replaceFirewood(object)
+	if not object:isValid() or object.count < 1 then return end
+	if types.Ingredient.objectIsInstance(object) then
+		if object.count > 1 or object.recordId == "sd_wood_publican"  then
+			local upgradedFire = "sd_wood_"..math.min(5, object.count)
+			local pos = object.position
+			local cell = object.cell
+			local id = object.id
+			
+			object:remove()
+			--print(upgradedFire)
+			local upgradedObject = world.createObject(upgradedFire)
+			--print(upgradedObject)
+			upgradedObject:teleport(cell, pos)
+		end
+	end
+end
+
+local function cellHasPublican(cell)
+	for _, object in pairs(cell:getAll(types.NPC)) do
+		local record = types.NPC.record(object)
+		local className = record.class:lower()
+		if className:find("publican") then
+			return true
+		end
+	end
+	return false
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Woodcutting														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function onUpdate(dt)
+	for _, func in pairs(onUpdateJobs) do
+		func(dt)
+	end
+	if firewoodToReplace3 then
+		replaceFirewood(firewoodToReplace3)
+		firewoodToReplace3 = nil
+	end
+	if firewoodToReplace2 then
+		firewoodToReplace3 = firewoodToReplace2
+		firewoodToReplace2 = nil
+	end
+	if firewoodToReplace then
+		firewoodToReplace2 = firewoodToReplace
+		firewoodToReplace = nil
+	end
+	--world.setSimulationTimeScale(0.2)
+	-- Update falling wood physics
+	local GRAVITY = -627  -- OpenMW gravity constant (negative Z)
+	local SETTLE_TIME = 0.4  -- Time to align to ground in seconds
+	
+	for woodId, woodData in pairs(saveData.fallingWood) do
+		local woodObject = woodData.woodObject
+		--print(woodObject and woodObject:isValid() , woodObject.cell , woodData.elapsedTime == 0 , not woodObject.id:find("deleted"))
+		if woodObject and woodObject:isValid() and not woodObject.id:find("deleted") then --and woodObject.enabled then
+			if woodObject.cell then
+				if woodData.phase == "falling" then
+					-- Update velocity with gravity
+					woodData.velocity = woodData.velocity + util.vector3(0, 0, GRAVITY * dt)
+					
+					-- Update position
+					local newPos = woodObject.position + woodData.velocity * dt
+					
+					-- Track elapsed time
+					woodData.elapsedTime = woodData.elapsedTime + dt
+					
+					-- Check if reached or passed ground
+					if newPos.z <= woodData.targetPos.z+1 then
+						-- Snap to ground position with landing rotation (0-30° off)
+						--print(woodObject, woodObject.cell, woodData.targetPos, woodData.landingRotation)
+						--print(woodObject.rotation, woodData.landingRotation)
+						woodObject:teleport(woodObject.cell, woodData.targetPos, {
+							rotation = woodData.landingRotation
+						})
+						
+						-- Switch to settling phase
+						woodData.phase = "settling"
+						woodData.settleTimer = 0
+					else
+						-- Still falling - update position and rotation
+						
+						-- Calculate rotation based on angular velocity and elapsed time
+						local totalAngle = woodData.angularVelocity * woodData.elapsedTime
+						
+						-- Create rotation around the random spin axis
+						local spinAxis = util.vector3(woodData.rotAxisX, woodData.rotAxisY, woodData.rotAxisZ)
+						local spinRotation = util.transform.rotate(totalAngle, spinAxis)
+						
+						-- Combine with starting rotation
+						local currentRotation = spinRotation * woodData.startRotation
+						
+						woodObject:teleport(woodObject.cell, newPos, {
+							rotation = currentRotation
+						})
+					end
+					
+				elseif woodData.phase == "settling" then
+					woodData.settleTimer = woodData.settleTimer + dt
+					
+					-- Always interpolate (t clamps to 1.0 when timer exceeds SETTLE_TIME)
+					local t = math.min(1, woodData.settleTimer / SETTLE_TIME)
+					
+					-- Extract Euler angles from both rotations
+					local landingZ, landingY, landingX = woodData.landingRotation:getAnglesZYX()
+					local targetZ, targetY, targetX = woodData.targetRotation:getAnglesZYX()
+					
+					-- Helper function to interpolate angles with proper wrapping
+					local function lerpAngle(a, b, t)
+						local diff = b - a
+						while diff > math.pi do diff = diff - 2*math.pi end
+						while diff < -math.pi do diff = diff + 2*math.pi end
+						return a + diff * t
+					end
+					
+					-- Interpolate each angle
+					local interpZ = lerpAngle(landingZ, targetZ, t)
+					local interpY = lerpAngle(landingY, targetY, t)
+					local interpX = lerpAngle(landingX, targetX, t)
+					
+					-- Rebuild the Transform from interpolated angles (ZYX order)
+					local interpRotation = util.transform.rotateZ(interpZ) 
+						* util.transform.rotateY(interpY) 
+						* util.transform.rotateX(interpX)
+						
+					-- AFTER interpolating, check if we're done
+					if woodData.settleTimer >= SETTLE_TIME then
+						woodObject:teleport(woodObject.cell, woodData.targetPos, {
+							rotation = woodData.groundRotation
+						})
+						saveData.fallingWood[woodId] = nil
+						world.vfx.spawn(
+							 "meshes/SunsDusk/sparkle.nif",
+							 woodData.targetPos-v3(0,0,22),
+							 {
+								scale = 0.33,
+							}
+						)
+						async:newUnsavableSimulationTimer(2.5, function()
+							if not woodObject:isValid() or woodObject.count == 0 then return end
+							world.vfx.spawn(
+								"meshes/SunsDusk/sparkle.nif",
+								woodData.targetPos-v3(0,0,22),
+								{
+									scale = 0.33,
+								}
+							)
+						end)
+						async:newUnsavableSimulationTimer(5, function()
+							if not woodObject:isValid() or woodObject.count == 0 then return end
+							world.vfx.spawn(
+								"meshes/SunsDusk/sparkle.nif",
+								woodData.targetPos-v3(0,0,22),
+								{
+									scale = 0.33,
+								}
+							)
+						end)
+						async:newUnsavableSimulationTimer(7.5, function()
+							if not woodObject:isValid() or woodObject.count == 0 then return end
+							world.vfx.spawn(
+								"meshes/SunsDusk/sparkle.nif",
+								woodData.targetPos-v3(0,0,22),
+								{
+									scale = 0.33,
+								}
+							)
+						end)
+					else
+						woodObject:teleport(woodObject.cell, woodData.targetPos, {
+							rotation = interpRotation
+						})
+					end
+				end
+			else
+				--print("err")
+			end
+		else
+			-- Object was destroyed or disabled, remove from tracking
+			saveData.fallingWood[woodId] = nil
+		end
+	end
+	local now = world.getGameTime()
+	for objectId, tbl in pairs(saveData.litFires) do
+		local object = tbl[1]
+		local timeStamp = tbl[2]
+		local timePassed = now - timeStamp
+		if timePassed > 2*time.hour then
+			if object:isValid() and object.count > 0 then
+				local amountOfLogs = tonumber(object.recordId:sub(-5,-5))
+				local pos = object.position
+				local cell = object.cell
+				local newId = "sd_wood_"..(amountOfLogs-1).."_lit"
+				if amountOfLogs == 1 then
+					newId = "sd_coal_pile"
+					pos = pos - v3(0,0,0)
+				end
+				object:remove()
+				
+				local upgradedObject = world.createObject(newId)
+				upgradedObject:teleport(cell, pos)
+				if newId ~= "sd_coal_pile" then
+					saveData.litFires[upgradedObject.id] = {upgradedObject, timeStamp + 2*time.hour}
+				end
+				saveData.litFires[objectId] = nil
+			end
+		end
+	end
+	if math.random() < 0.05 then
+		for objectId, tbl in pairs(saveData.campingGear) do
+			if now - tbl.time > time.day then
+				if tbl.tent and tbl.tent:isValid() and tbl.tent.count > 0 then
+					tbl.tent:remove()
+				end
+				if tbl.bedroll and tbl.bedroll:isValid() and tbl.bedroll.count > 0 then
+					tbl.bedroll:remove()
+				end
+				saveData.campingGear[objectId] = nil
+			end
+		end
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Vessel Types 														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+-- Returns (chance, avgFill) or false.
+local function isVesselRecord(rec, isSealed)
+	if not rec then
+		return false
+	end
+
+	local id   = lc(rec.id)
+	local name = lc(rec.name or '')
+
+	-- Avoid scripted items to prevent conflicts
+	if rec.mwscript then
+		return false
+	end
+	
+	for _, sub in ipairs(BLACKLIST_SUBSTRINGS) do
+		if hasKeyword(id, sub) or hasKeyword(name, sub) then
+			return false
+		end
+	end
+
+	if isSealed == true then
+		if extraClosedBottles[id] then
+			return 2, 1
+		end
+		if openBottles[name] then
+			return false
+		end
+		for _, sub in ipairs(INVENTORY_SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 2, 1
+			end
+		end
+	elseif isSealed == false then
+		if openBottles[name] then
+			return 0.6, 0.35
+		end
+		for _, sub in ipairs(ZERO_CHANCE_SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 0, 0.75
+			end
+		end
+		for _, sub in ipairs(LOW_CHANCE_SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 0.3, 0.75
+			end
+		end
+		for _, sub in ipairs(SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 0.6, 0.75
+			end
+		end
+		if extraClosedBottles[id] then
+			return 1.5, 1.5
+		end
+	else
+		if openBottles[name] then
+			return 0.6, 0.35
+		end
+		for _, sub in ipairs(ZERO_CHANCE_SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 0, 0.75
+			end
+		end
+		for _, sub in ipairs(LOW_CHANCE_SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 0.3, 0.75
+			end
+		end
+		for _, sub in ipairs(INVENTORY_SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 1.5, 1.5
+			end
+		end
+		for _, sub in ipairs(SUBSTRINGS) do
+			if hasKeyword(id, sub) or hasKeyword(name, sub) then
+				return 0.99, 0.75
+			end
+		end
+		if extraClosedBottles[id] then
+			return 1.5, 1.5
+		end
+	end
+	return false
+end
+
+local function categorizeVessel(rec)
+	if not rec then
+		return ""
+	end
+
+	local id   = lc(rec.id)
+	local name = lc(rec.name or '')
+
+	if rec.mwscript then
+		return ""
+	end
+	for _, sub in ipairs(BLACKLIST_SUBSTRINGS) do
+		if hasKeyword(id, sub) or hasKeyword(name, sub) then
+			return ""
+		end
+	end
+	if extraClosedBottles[id] then
+		return "closed bottle"
+	end
+	if openBottles[name] then
+		return "open bottle"
+	end
+	for _, sub in ipairs(INVENTORY_SUBSTRINGS) do
+		if hasKeyword(id, sub) or hasKeyword(name, sub) then
+			return "closed bottle"
+		end
+	end
+	for _, sub in ipairs(ZERO_CHANCE_SUBSTRINGS) do
+		if hasKeyword(id, sub) or hasKeyword(name, sub) then
+			return "open container"
+		end
+	end
+	for _, sub in ipairs(LOW_CHANCE_SUBSTRINGS) do
+		if hasKeyword(id, sub) or hasKeyword(name, sub) then
+			return "open container"
+		end
+	end
+	for _, sub in ipairs(SUBSTRINGS) do
+		if hasKeyword(id, sub) or hasKeyword(name, sub) then
+			return "open drink " .. sub
+		end
+	end
+	return ""
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Vessel Capacity													  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function fallbackLitersFrom(rec)
+	local id   = lc(rec.id)
+	local name = lc(rec.name or '')
+	local chosen
+	local chosenL = nil
+
+	for k, L in pairs(FALLBACK_LITERS) do
+		if hasKeyword(id, k) or hasKeyword(name, k) then
+			if not chosenL or L > chosenL then
+				chosen  = k
+				chosenL = L
+			end
+		end
+	end
+
+	if chosenL then
+		log(2, "[WaterBottles] Fallback volume for " .. rec.id .. " = " .. trimZeros(chosenL) .. " L")
+		return chosenL
+	end
+
+	return 1.0
+end
+
+local function litersFor(origIdLower)
+	local ok, db = pcall(function()
+		return dbConsumables
+	end)
+
+	if ok and db then
+		local row = db[origIdLower]
+		if row and type(row.volume) == 'number' and row.volume > 0 then
+			return row.volume
+		end
+	end
+
+	local miscRec = types.Miscellaneous.record(origIdLower)
+	if miscRec then
+		return fallbackLitersFrom(miscRec)
+	end
+
+	return 1.0
+end
+
+local function ceildiv(n, d)
+	return math.floor((n + d - 1) / d)
+end
+
+local function fmt_amount_ml(ml)
+	if ml >= 1000 then
+		local liters = ml / 1000
+		return trimZeros(liters) .. "L"
+	end
+	return tostring(ml) .. " ml"
+end
+
+local function resolveMaxQ(origIdLower)
+	local q = saveData.maxQ[origIdLower]
+	if q then
+		return q
+	end
+
+	local liters	 = litersFor(origIdLower)
+	local capacityMl = math.max(STEP_ML, math.floor(liters * 1000 + 0.5))
+	q = math.max(1, ceildiv(capacityMl, STEP_ML))
+	saveData.maxQ[origIdLower] = q
+
+	log(2, "[WaterBottles] maxQ for " .. origIdLower .. " = " .. tostring(q) ..
+		" (" .. fmt_amount_ml(q * STEP_ML) .. " capacity)")
+	return q
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Liquid Helpers														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function ensureLiquidDB(liquidKey)
+	if not saveData.liquidDB[liquidKey] then
+		saveData.liquidDB[liquidKey] = {}
+	end
+	return saveData.liquidDB[liquidKey]
+end
+
+-- Weighted choice with interior v exterior bias  -- teacup - Misc_Com_Redware_Cup ; AB_Misc_DeCeramicCup_02 // teapot - ceramicteapot ; AB_Misc_kettleceremonial ; AB_Misc_debugteapot
+local function chooseLiquidFor(origIdLower)
+	local vQ		 = resolveMaxQ(origIdLower)
+	local pool	  	 = {}
+	local total	 	 = 0
+	local vesselType = categorizeVessel(types.Miscellaneous.records[origIdLower])
+	local exp		 = 1
+-- high chance regardless of interior or exterior
+	if vesselType:find("open") and isExterior then
+		-- outside - Stronger bias to non-water if open
+		exp = 2
+	elseif vesselType:find("open drink") and not isExterior then
+		-- inside cups lean back to water a bit
+		exp = 0.99
+	end
+
+	for key, def in pairs(LIQUIDS) do
+		if vQ <= def.maxVolumeQ and def.spawnChance > 0 then
+			if not isExterior and exp == 0.99 and key == "water" then
+				local w = def.spawnChance * 0.1
+				total = total + w
+				pool[#pool + 1] = { key = key, w = w }
+			else
+				local w = def.spawnChance ^ exp
+				total = total + w
+				pool[#pool + 1] = { key = key, w = w }
+			end
+		end
+	end
+
+	-- fallback for edge cases. nod to the well
+	if isSealed == 0.3 or #pool == 0 then
+		log(4, "[WaterBottles]", origIdLower, "Fallback liquid -> water")
+		return 'water'
+	end
+
+	local r, acc = math.random() * total, 0
+	for _, e in ipairs(pool) do
+		acc = acc + e.w
+		if r <= acc then
+			return e.key
+		end
+	end
+
+	return pool[#pool].key
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Record Creation													  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function ensurePotionFor(origIdLower, q, liquidKey)
+	local def = LIQUIDS[liquidKey or 'water']
+	if not def then
+		def = LIQUIDS.water
+	end
+
+	local maxQ = resolveMaxQ(origIdLower)
+	if q < 1 then
+		q = 1
+	elseif q > maxQ then
+		q = maxQ
+	end
+
+	local liquidDB  = ensureLiquidDB(liquidKey or 'water')
+	liquidDB[origIdLower] = liquidDB[origIdLower] or {}
+	local existing  = liquidDB[origIdLower][q]
+	if existing then
+		return existing
+	end
+
+	local tmpl = types.Potion.record(def.templateId)
+	if not tmpl then
+		log(1, "[WaterBottles] ERROR: template potion missing: " .. tostring(def.templateId))
+		return nil
+	end
+
+	local miscRec = types.Miscellaneous.record(origIdLower)
+	if not miscRec then
+		log(1, "[WaterBottles] ERROR: misc record missing: " .. tostring(origIdLower))
+		return nil
+	end
+
+	local baseMl   = maxQ * STEP_ML
+	local leftMl   = q * STEP_ML
+	local nameBase = (miscRec.name and miscRec.name ~= '') and miscRec.name or 'Liquid Container'
+	if saveData.newLiquidNaming then
+		nameBase = " "..nameBase
+		if (liquidKey or 'water') == 'water' then
+			nameBase = " "..nameBase
+		end
+	end
+	local newName  = nameBase .. " (" .. fmt_amount_ml(leftMl) .. "/" .. fmt_amount_ml(baseMl) .. " " .. def.displayName .. ")"
+	local newWeight = (miscRec.weight or tmpl.weight) + leftMl / 1000
+	local newValue  = (miscRec.value or 0) + q * (def.valuePerQ or 1)
+
+	local recordDraft = types.Potion.createRecordDraft({
+		name	= newName,
+		template= tmpl,
+		model   = (miscRec.model and miscRec.model ~= '') and miscRec.model or tmpl.model,
+		icon	= (miscRec.icon and miscRec.icon ~= '') and miscRec.icon or tmpl.icon,
+		weight  = newWeight,
+		value   = newValue,
+	})
+
+	local rec  = world.createRecord(recordDraft)
+	local newId = rec.id
+
+	liquidDB[origIdLower][q] = newId
+	saveData.reverse[lc(newId)] = { orig = origIdLower, q = q, liquid = liquidKey or 'water' }
+
+	log(2, "[WaterBottles] Created record " .. newId .. " for " .. origIdLower ..
+		" q=" .. tostring(q) .. "/" .. tostring(maxQ) .. " [" .. (liquidKey or 'water') .. "]")
+
+	return newId
+end
+
+local function randomFillQ(maxQ, avg)
+	local u	= math.random()
+	local mode = avg
+	local fill
+
+	if u < mode then
+		fill = math.sqrt(u * mode)
+	else
+		fill = 1 - math.sqrt((1 - u) * (1 - mode))
+	end
+
+	local q = math.max(1, math.floor(fill * maxQ + 0.5))
+	return q
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Replacements														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function replaceWorldObjectWithFull(obj)
+	local rec = types.Miscellaneous.record(obj)
+	local chance, averageFillLevel = isVesselRecord(rec)
+
+	if not chance or math.random() > chance * WATER_SPAWN_CHANCE / 100 then
+		return 0
+	end
+
+	local origId	= lc(rec.id)
+	local liquidKey = chooseLiquidFor(origId)
+	local newId	 = ensurePotionFor(origId, randomFillQ(resolveMaxQ(origId), averageFillLevel), liquidKey)
+
+	if not newId then
+		return 0
+	end
+
+	local cell  = obj.cell
+	local pos   = obj.position
+	local rot   = obj.rotation
+	local owner = obj.owner
+	local count = (obj.count or 1)
+
+	obj:remove()
+	local newItem = world.createObject(newId, count)
+	newItem.owner.factionId  = owner.factionId
+	newItem.owner.factionRank= owner.factionRank
+	newItem.owner.recordId   = owner.recordId
+	newItem:teleport(cell, pos, rot)
+
+	log(1, "[WaterBottles] World replaced " .. tostring(count) .. " × " .. rec.id)
+	return count
+end
+
+local function replaceInInventory(inv, cont)
+	local Misc	  = types.Miscellaneous
+	local replaced  = 0
+
+	if not inv:isResolved() and (not cont or not types.Container.record(cont).isOrganic) then
+		inv:resolve()
+	end
+
+	for _, item in ipairs(inv:getAll(Misc)) do
+		if item:isValid() and item.count > 0 then
+			local rec = Misc.record(item)
+			local chance, averageFillLevel = isVesselRecord(rec, true)
+
+			if chance and math.random() < chance * WATER_SPAWN_CHANCE / 100 then
+				local origId	= lc(rec.id)
+				local liquidKey = chooseLiquidFor(origId)
+				local fullId	= ensurePotionFor(origId, resolveMaxQ(origId), liquidKey)
+
+				if fullId then
+					local count = item.count
+					item:remove()
+					world.createObject(fullId, count):moveInto(inv)
+					replaced = replaced + count
+				end
+			end
+		end
+	end
+
+	if replaced > 0 then
+		log(1, "[WaterBottles] Inventory replaced " .. tostring(replaced) .. " items")
+	end
+
+	return replaced
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ NPC Stocking														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function addFullToClassNPC(npc)
+
+	-- Original logic preserved for future use
+	local cls = lc(types.NPC.record(npc).class or '')
+	if cls ~= 'publican' and cls ~= 'trader' then
+		return false
+	end
+
+	local anyOrig
+	if cls == 'publican' then
+		for orig, _ in pairs(saveData.maxQ) do
+			if (orig:find('flask') or orig:find('bottle') or orig:find('flask') or
+				orig:find('cup') or orig:find('goblet') or orig:find('pitcher') or orig:find('tankard'))
+				and math.random() < 0.3 then
+				anyOrig = orig
+				break
+			end
+		end
+	else
+		for orig, _ in pairs(saveData.maxQ) do
+			if orig:find('bottle') and math.random() < 0.5 then
+				anyOrig = orig
+				break
+			end
+		end
+	end
+
+	if not anyOrig then
+		return false
+	end
+
+	local liquidKey = chooseLiquidFor(anyOrig)
+	local fullId = ensurePotionFor(anyOrig, resolveMaxQ(anyOrig), liquidKey)
+	if not fullId then
+		return false
+	end
+
+	local inv = types.NPC.inventory(npc)
+	local rndAmount = math.random(1, 5)
+	world.createObject(fullId, rndAmount):moveInto(inv)
+	log(1, "[WaterBottles] Stocked " .. tostring(rndAmount) .. " bottles to " .. npc.id)
+	return true
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Downgrade															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function downgradeWaterItem(data)
+	local item   = data.item
+	local inv	= data.inv
+	local player = data.player
+
+	if not inv then
+		inv = types.NPC.inventory(player)
+	end
+
+	local idLower = lc(item.recordId)
+	local rev	 = saveData.reverse[idLower]
+	if not rev then
+		return false
+	end
+
+	--if item:isValid() and item.count > 0 then
+	--	item:remove(1)
+	--end
+
+	local nextQ = rev.q - 1
+	if nextQ >= 1 then
+		local nextId = ensurePotionFor(rev.orig, nextQ, rev.liquid or 'water')
+		if nextId then
+			world.createObject(nextId):moveInto(inv)
+		end
+		log(3, "[WaterBottles] Drank " .. (rev.liquid or 'water') .. ": " .. rev.orig .. " -> q=" .. tostring(nextQ))
+	else
+		world.createObject(rev.orig):moveInto(inv)
+		log(3, "[WaterBottles] Emptied " .. (rev.liquid or 'water') .. ": " .. rev.orig .. " -> original misc")
+	end
+
+	player:sendEvent("SunsDusk_WaterBottles_consumedWater", rev.liquid or 'water')
+	return true
+end
+
+local function consumeMilliliters(player, mlToConsume)
+	if not player or not mlToConsume or mlToConsume <= 0 then
+		return 0
+	end
+	
+	local mlConsumed = 0
+	local inventory = types.Actor.inventory(player)
+	
+	-- Collect all liquid items and categorize them
+	local openVessels = {}
+	local closedVessels = {}
+	
+	for _, item in pairs(inventory:getAll()) do
+		local pid = item.recordId:lower()
+		local info = saveData.reverse[pid]
+		
+		if info and info.orig and info.q then
+			-- Get the original vessel record and categorize it
+			local origRecord = types.Miscellaneous.record(info.orig)
+			if origRecord then
+				local category = categorizeVessel(origRecord)
+				
+				if category and category:find("open") then
+					table.insert(openVessels, {item = item, pid = pid, info = info})
+				else
+					table.insert(closedVessels, {item = item, pid = pid, info = info})
+				end
+			end
+		end
+	end
+	
+	log(5, string.format("Found %d open, %d closed vessels", #openVessels, #closedVessels))
+	
+	-- Process a list of vessels
+	local function processVessels(vesselList)
+		for _, data in ipairs(vesselList) do
+			if mlConsumed >= mlToConsume then
+				break
+			end
+			
+			local item = data.item
+			local pid = data.pid
+			local info = data.info
+			local count = item.count
+			
+			for i = 1, count do
+				if mlConsumed >= mlToConsume then
+					break
+				end
+				
+				local mlInBottle = info.q * STEP_ML
+				local mlNeeded = mlToConsume - mlConsumed
+				local mlToTake = math.min(mlInBottle, mlNeeded)
+				local qToRemove = math.ceil(mlToTake / STEP_ML)
+				local newQ = info.q - qToRemove
+				
+				-- Remove current bottle
+				item:remove(1)
+				
+				-- Add downgraded bottle if not empty
+				if newQ > 0 then
+					local liquid = info.liquid or 'water'
+					local liquidDB = saveData.liquidDB[liquid]
+					if liquidDB and liquidDB[info.orig] and liquidDB[info.orig][newQ] then
+						world.createObject(liquidDB[info.orig][newQ], 1):moveInto(inventory)
+					end
+				else
+					world.createObject(info.orig, 1):moveInto(inventory)
+				end
+				
+				mlConsumed = mlConsumed + mlToTake
+			end
+		end
+	end
+	
+	-- Process open vessels first, then closed
+	processVessels(openVessels)
+	
+	if mlConsumed < mlToConsume then
+		processVessels(closedVessels)
+	end
+	
+	log(4, string.format("Consumed %d/%d ml from player inventory", mlConsumed, mlToConsume))
+	
+	return mlConsumed
+end
+
+-- Consume water from inventory, prioritizing open vessels
+local function consumeWater(data)
+	local player = data.player
+	local amountMl = data.amountMl or 250
+	consumeMilliliters(player, amountMl)
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Cell Conversion													  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function convertMiscInCell(data)
+	local cell = data.player.cell
+	isExterior = cell:hasTag("QuasiExterior") or cell.isExterior
+
+	if saveData.convertedCellsWater[cell.id] then
+		return
+	end
+
+	local converted = 0
+	local stocked   = 0
+
+	for _, obj in ipairs(cell:getAll(types.Miscellaneous)) do
+		if obj:isValid() and (obj.count or 1) > 0 then
+			converted = converted + replaceWorldObjectWithFull(obj)
+		end
+	end
+
+	for _, c in ipairs(cell:getAll(types.Container)) do
+		converted = converted + replaceInInventory(types.Container.inventory(c), c)
+	end
+
+	for _, npc in ipairs(cell:getAll(types.NPC)) do
+		local idLower = lc(npc.id)
+		if not saveData.convertedNPCsWater[idLower] then
+			converted = converted + replaceInInventory(types.NPC.inventory(npc))
+
+			if addFullToClassNPC(npc) then
+				stocked = stocked + 1
+			end
+
+			saveData.convertedNPCsWater[idLower] = true
+		end
+	end
+
+	for _, cr in ipairs(cell:getAll(types.Creature)) do
+		converted = converted + replaceInInventory(types.Creature.inventory(cr))
+	end
+
+	if converted > 0 then
+		log(2, "[WaterBottles] Converted " .. tostring(converted) .. " items in cell " .. tostring(cell.id))
+	end
+
+	if stocked > 0 then
+		log(2, "[WaterBottles] Gave bottles to " .. tostring(stocked) .. " NPCs")
+	end
+
+	saveData.convertedCellsWater[cell.id] = true
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Spillage															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function spillWater(player)
+	local Misc	  = types.Miscellaneous
+	local spilledMl = 0
+	local inv	   = types.NPC.inventory(player)
+
+	for _, item in ipairs(inv:getAll(types.Potion)) do
+		local rev = saveData.reverse[item.recordId:lower()]
+		if rev then
+			local isBottle = isVesselRecord(Misc.record(rev.orig), true)
+			if not isBottle then
+				local quantity = item.count
+				spilledMl = spilledMl + rev.q * 250 * quantity
+				item:remove()
+				world.createObject(rev.orig, quantity):moveInto(inv)
+			end
+		end
+	end
+
+	if spilledMl > 0 then
+		player:sendEvent("SunsDusk_spilledWater", spilledMl)
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ NPC Scripts														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function unhookObject(object)
+	object:removeScript("scripts/SunsDusk/sd_a.lua")
+end
+
+local function onObjectActive(object)
+	if types.Actor.objectIsInstance(object) then
+		object:addScript("scripts/SunsDusk/sd_a.lua")
+	end
+	if object.recordId:sub(1,8) == "sd_wood_" or object.recordId == "sd_wood_publican" then
+		firewoodToReplace = object
+	end
+	if object.recordId == "sd_campingitem_tent" then
+		local cell = object.cell
+		if cellHasPublican(cell) then
+			for _, player in pairs(cell:getAll(types.Player)) do
+				player:sendEvent("SunsDusk_messageBox",messageBoxes_campInCell[math.random(1,#messageBoxes_campInCell)])
+			end
+			return 
+		end
+		local position = object.position
+		local nearestPlayer
+		local shortestDistance = math.huge
+		for _, player in pairs(cell:getAll(types.Player)) do
+			if not nearestPlayer then
+				nearestPlayer = player
+				shortestDistance = (player.position - position):length()
+			elseif (player.position - position):length() < shortestDistance then
+				nearestPlayer = player
+				shortestDistance = (player.position - position):length()
+			end
+		end
+		if nearestPlayer then
+			local yaw = nearestPlayer.rotation:getYaw()
+			local dir = v3(
+				math.sin(yaw),
+				math.cos(yaw),
+				0
+			):normalize()
+			position = nearestPlayer.position + dir * 100 -- v3(0,0,2)
+		end
+		
+		local rotation = object.rotation
+		object:remove()
+		local tent = world.createObject("sd_campingobject_tent", 1)
+		tent:teleport(cell, position, {
+			rotation = rotation,
+			onGround = true
+		})
+		
+		tent:setScale(0.45)
+		local bedroll = world.createObject("sd_campingobject_bedrolltent", 1)
+		bedroll:teleport(cell, position, {
+			rotation = rotation,
+			onGround = true
+		})
+		
+		saveData.campingGear[tent.id] = {tent = tent, bedroll = bedroll, time = core.getGameTime()}
+	elseif object.recordId == "sd_campingitem_bedroll" then
+		local cell = object.cell
+		if cellHasPublican(cell) then 
+			for _, player in pairs(cell.Players) do
+				player:sendEvent("SunsDusk_messageBox", "Caius' words echoed... There's a time and place for everything, but not now.")
+			end
+			return 
+		end
+		local position = object.position
+		local rotation = object.rotation
+		object:remove()
+		local bedroll = world.createObject("sd_campingobject_bedroll", 1)
+		bedroll:teleport(cell, position, {
+			rotation = rotation
+		})
+		saveData.campingGear[bedroll.id] = {bedroll = bedroll, time = core.getGameTime()}
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Activating Beds and coal											  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function activateActivator(object, actor)
+	local scrName = (types.Activator.record(object.recordId).mwscript or ''):lower()
+	if scrName == "bed_standard" or scrName == "chargenbed" then
+		actor:sendEvent("SunsDusk_ActivatedBed", object)
+	end
+	if object.recordId == "sd_coal_pile" then
+		object:remove()
+		if types.Ingredient.record("t_ingmine_coal_01") then
+			world.createObject("t_ingmine_coal_01", 1):moveInto(types.NPC.inventory(actor))
+		end
+		actor:sendEvent("SunsDusk_playSound", "Item Misc Up")
+	end
+end
+
+I.Activation.addHandlerForType(types.Activator, activateActivator)
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Refilling															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+-- Starwind ; Saltwater, Sus water
+local function refillBottlesWell(player)
+	local inv	= types.NPC.inventory(player)
+	local Misc   = types.Miscellaneous
+	local Potion = types.Potion
+
+	local replaced = 0
+
+	for _, item in ipairs(inv:getAll(Misc)) do
+		if item:isValid() and item.count > 0 then
+			local rec	= Misc.record(item)
+			local chance = isVesselRecord(rec, true)
+
+			if chance then
+				local origId = lc(rec.id)
+				local fullId = ensurePotionFor(origId, resolveMaxQ(origId), 'water')
+
+				if fullId then
+					local count = item.count
+					item:remove()
+					world.createObject(fullId, count):moveInto(inv)
+					replaced = replaced + count
+				end
+			end
+		end
+	end
+
+	for _, item in ipairs(inv:getAll(Potion)) do
+		if item:isValid() and item.count > 0 then
+			local rev = saveData.reverse[item.recordId:lower()]
+			if rev then
+				local origId = lc(rev.orig)
+				local maxQ   = resolveMaxQ(origId)
+				local fullId = ensurePotionFor(origId, maxQ, 'water')
+
+				if maxQ and rev.q < maxQ and fullId then
+					local count = item.count
+					item:remove()
+					world.createObject(fullId, count):moveInto(inv)
+					replaced = replaced + count
+				end
+			end
+		end
+	end
+
+	if replaced > 0 then
+		local str = "Refilled " .. tostring(replaced) .. " bottles"
+		player:sendEvent("SunsDusk_refilledBottlesWell", str)
+	end
+end
+
+-- open sources only refill spillables; keep water
+local function refillSpillables(player)
+	local inv	= types.NPC.inventory(player)
+	local Misc   = types.Miscellaneous
+	local Potion = types.Potion
+
+	local replaced = 0
+
+	for _, item in ipairs(inv:getAll(Misc)) do
+		if item:isValid() and item.count > 0 then
+			local rec   = Misc.record(item)
+			local isOpen = isVesselRecord(rec, false)
+
+			if isOpen then
+				local origId = lc(rec.id)
+				local fullId = ensurePotionFor(origId, resolveMaxQ(origId), 'water')
+
+				if fullId then
+					local count = item.count
+					item:remove()
+					world.createObject(fullId, count):moveInto(inv)
+					replaced = replaced + count
+				end
+			end
+		end
+	end
+
+	for _, item in ipairs(inv:getAll(Potion)) do
+		if item:isValid() and item.count > 0 then
+			local rev = saveData.reverse[item.recordId:lower()]
+			if rev then
+				local origId = lc(rev.orig)
+				local isOpen = isVesselRecord(Misc.records[origId], false)
+
+				if isOpen then
+					local maxQ   = resolveMaxQ(origId)
+					local fullId = ensurePotionFor(origId, maxQ, 'water')
+
+					if maxQ and rev.q < maxQ and fullId then
+						local count = item.count
+						item:remove()
+						world.createObject(fullId, count):moveInto(inv)
+						replaced = replaced + count
+					end
+				end
+			end
+		end
+	end
+
+	if replaced > 0 then
+		local str = "Refilled " .. tostring(replaced) .. " bottles"
+		player:sendEvent("SunsDusk_messageBox", str)
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Cooking and Magic													  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+function toBitPositions(n, step)
+	step = step or 1  -- default to standard binary (step of 1)
+	n = math.floor(n / step) -- Convert magnitude to "units" based on step
+	local result = {}
+	local position = 1
+	while n > 0 do
+		if n % 2 == 1 then
+			table.insert(result, position)
+		end
+		n = math.floor(n / 2)
+		position = position + 1
+	end
+	return result
+end
+
+local shortBits = {
+["sd-detectenchantment1"] = 4,
+["sd-detectenchantment2"] = 4,
+["sd-detectenchantment3"] = 4,
+["sd-detectenchantment4"] = 4,
+["sd-fortifyhealth1"] = 4,
+["sd-fortifyhealth2"] = 4,
+["sd-fortifyhealth3"] = 4,
+["sd-fortifyhealth4"] = 4,
+["sd-cureblightdisease1"] = 4,
+["sd-cureblightdisease2"] = 4,
+["sd-cureblightdisease3"] = 4,
+["sd-cureblightdisease4"] = 4,
+["sd-spellabsorption1"] = 4,
+["sd-spellabsorption2"] = 4,
+["sd-spellabsorption3"] = 4,
+["sd-spellabsorption4"] = 4,
+["sd-waterbreathing1"] = 1,
+["sd-waterbreathing2"] = 1,
+["sd-waterbreathing3"] = 1,
+["sd-waterbreathing4"] = 1,
+["sd-cureparalyzation1"] = 4,
+["sd-cureparalyzation2"] = 4,
+["sd-cureparalyzation3"] = 4,
+["sd-cureparalyzation4"] = 4,
+["sd-restoremagicka1"] = 4,
+["sd-restoremagicka2"] = 4,
+["sd-restoremagicka3"] = 4,
+["sd-restoremagicka4"] = 4,
+["sd-resistfire1"] = 4,
+["sd-resistfire2"] = 4,
+["sd-resistfire3"] = 4,
+["sd-resistfire4"] = 4,
+["sd-lightningshield1"] = 4,
+["sd-lightningshield2"] = 4,
+["sd-lightningshield3"] = 4,
+["sd-lightningshield4"] = 4,
+["sd-drainfatigue1"] = 4,
+["sd-drainfatigue2"] = 4,
+["sd-drainfatigue3"] = 4,
+["sd-drainfatigue4"] = 4,
+["sd-swiftswim1"] = 4,
+["sd-swiftswim2"] = 4,
+["sd-swiftswim3"] = 4,
+["sd-swiftswim4"] = 4,
+["sd-fortifyattack1"] = 4,
+["sd-fortifyattack2"] = 4,
+["sd-fortifyattack3"] = 4,
+["sd-fortifyattack4"] = 4,
+["sd-resistfrost1"] = 4,
+["sd-resistfrost2"] = 4,
+["sd-resistfrost3"] = 4,
+["sd-resistfrost4"] = 4,
+["sd-resistpoison1"] = 4,
+["sd-resistpoison2"] = 4,
+["sd-resistpoison3"] = 4,
+["sd-resistpoison4"] = 4,
+["sd-resistshock1"] = 4,
+["sd-resistshock2"] = 4,
+["sd-resistshock3"] = 4,
+["sd-resistshock4"] = 4,
+["sd-curepoison1"] = 4,
+["sd-curepoison2"] = 4,
+["sd-curepoison3"] = 4,
+["sd-curepoison4"] = 4,
+["sd-invisibility1"] = 1,
+["sd-invisibility2"] = 1,
+["sd-invisibility3"] = 1,
+["sd-invisibility4"] = 1,
+["sd-restorehealth1"] = 5,
+["sd-restorehealth2"] = 5,
+["sd-restorehealth3"] = 5,
+["sd-restorehealth4"] = 5,
+["sd-nighteye1"] = 4,
+["sd-nighteye2"] = 4,
+["sd-nighteye3"] = 4,
+["sd-nighteye4"] = 4,
+["sd-almsiviintervention1"] = 4,
+["sd-almsiviintervention2"] = 4,
+["sd-almsiviintervention3"] = 4,
+["sd-almsiviintervention4"] = 4,
+["sd-burden1"] = 4,
+["sd-burden2"] = 4,
+["sd-burden3"] = 4,
+["sd-burden4"] = 4,
+["sd-detectkey1"] = 4,
+["sd-detectkey2"] = 4,
+["sd-detectkey3"] = 4,
+["sd-detectkey4"] = 4,
+["sd-restorefatigue1"] = 5,
+["sd-restorefatigue2"] = 5,
+["sd-restorefatigue3"] = 5,
+["sd-restorefatigue4"] = 5,
+["sd-fortifyfatigue1"] = 4,
+["sd-fortifyfatigue2"] = 4,
+["sd-fortifyfatigue3"] = 4,
+["sd-fortifyfatigue4"] = 4,
+["sd-jump1"] = 4,
+["sd-jump2"] = 4,
+["sd-jump3"] = 4,
+["sd-jump4"] = 4,
+["sd-sanctuary1"] = 4,
+["sd-sanctuary2"] = 4,
+["sd-sanctuary3"] = 4,
+["sd-sanctuary4"] = 4,
+["sd-waterwalking1"] = 1,
+["sd-waterwalking2"] = 1,
+["sd-waterwalking3"] = 1,
+["sd-waterwalking4"] = 1,
+["sd-shield1"] = 4,
+["sd-shield2"] = 4,
+["sd-shield3"] = 4,
+["sd-shield4"] = 4,
+["sd-light1"] = 4,
+["sd-light2"] = 4,
+["sd-light3"] = 4,
+["sd-light4"] = 4,
+["sd-levitate1"] = 4,
+["sd-levitate2"] = 4,
+["sd-levitate3"] = 4,
+["sd-levitate4"] = 4,
+["sd-fireshield1"] = 4,
+["sd-fireshield2"] = 4,
+["sd-fireshield3"] = 4,
+["sd-fireshield4"] = 4,
+["sd-telekinesis1"] = 4,
+["sd-telekinesis2"] = 4,
+["sd-telekinesis3"] = 4,
+["sd-telekinesis4"] = 4,
+["sd-fortifyattributepersonality1"] = 4,
+["sd-fortifyattributewillpower1"] = 4,
+["sd-fortifyattributestrength1"] = 4,
+["sd-fortifyattributespeed1"] = 4,
+["sd-fortifyattributeagility1"] = 4,
+["sd-fortifyattributeintelligence1"] = 4,
+["sd-fortifyattributeluck1"] = 4,
+["sd-fortifyattributeendurance1"] = 4,
+["sd-fortifyattributepersonality2"] = 4,
+["sd-fortifyattributewillpower2"] = 4,
+["sd-fortifyattributestrength2"] = 4,
+["sd-fortifyattributespeed2"] = 4,
+["sd-fortifyattributeagility2"] = 4,
+["sd-fortifyattributeintelligence2"] = 4,
+["sd-fortifyattributeluck2"] = 4,
+["sd-fortifyattributeendurance2"] = 4,
+["sd-fortifyattributepersonality3"] = 4,
+["sd-fortifyattributewillpower3"] = 4,
+["sd-fortifyattributestrength3"] = 4,
+["sd-fortifyattributespeed3"] = 4,
+["sd-fortifyattributeagility3"] = 4,
+["sd-fortifyattributeintelligence3"] = 4,
+["sd-fortifyattributeluck3"] = 4,
+["sd-fortifyattributeendurance3"] = 4,
+["sd-fortifyattributepersonality4"] = 4,
+["sd-fortifyattributewillpower4"] = 4,
+["sd-fortifyattributestrength4"] = 4,
+["sd-fortifyattributespeed4"] = 4,
+["sd-fortifyattributeagility4"] = 4,
+["sd-fortifyattributeintelligence4"] = 4,
+["sd-fortifyattributeluck4"] = 4,
+["sd-fortifyattributeendurance4"] = 4,
+["sd-frostshield1"] = 4,
+["sd-frostshield2"] = 4,
+["sd-frostshield3"] = 4,
+["sd-frostshield4"] = 4,
+["sd-resistmagicka1"] = 4,
+["sd-resistmagicka2"] = 4,
+["sd-resistmagicka3"] = 4,
+["sd-resistmagicka4"] = 4,
+["sd-slowfall1"] = 4,
+["sd-slowfall2"] = 4,
+["sd-slowfall3"] = 4,
+["sd-slowfall4"] = 4,
+["sd-curecommondisease1"] = 4,
+["sd-curecommondisease2"] = 4,
+["sd-curecommondisease3"] = 4,
+["sd-curecommondisease4"] = 4,
+["sd-feather1"] = 4,
+["sd-feather2"] = 4,
+["sd-feather3"] = 4,
+["sd-feather4"] = 4,
+["sd-chameleon1"] = 4,
+["sd-chameleon2"] = 4,
+["sd-chameleon3"] = 4,
+["sd-chameleon4"] = 4,
+["sd-detectanimal1"] = 4,
+["sd-detectanimal2"] = 4,
+["sd-detectanimal3"] = 4,
+["sd-detectanimal4"] = 4,
+}
+
+local longBits = {
+sd_weaknesstoblightdisease1 = 3,
+sd_weaknesstoblightdisease2 = 3,
+sd_fortifymagicka1 = 5,
+sd_fortifymagicka2 = 5,
+sd_spellabsorption1 = 3,
+sd_spellabsorption2 = 3,
+sd_reflect1 = 3,
+sd_reflect2 = 3,
+sd_blind1 = 3,
+sd_blind2 = 3,
+sd_waterwalking1 = 1,
+sd_waterwalking2 = 1,
+sd_absorbmagicka1 = 3,
+sd_absorbmagicka2 = 3,
+sd_detectanimal1 = 7,
+sd_detectanimal2 = 7,
+sd_fortifymaximummagicka1 = 3,
+sd_fortifymaximummagicka2 = 3,
+sd_swiftswim1 = 6,
+sd_swiftswim2 = 6,
+sd_weaknesstoshock1 = 3,
+sd_weaknesstoshock2 = 3,
+sd_calmcreature1 = 5,
+sd_calmcreature2 = 5,
+sd_sound1 = 3,
+sd_sound2 = 3,
+sd_levitate1 = 2,
+sd_levitate2 = 2,
+sd_poison1 = 2,
+sd_poison2 = 2,
+sd_weaknesstofire1 = 3,
+sd_weaknesstofire2 = 3,
+sd_drainskillbluntweapon1 = 4,
+sd_drainskillaxe1 = 4,
+sd_drainskillarmorer1 = 4,
+sd_drainskillrestoration1 = 4,
+sd_drainskillenchant1 = 4,
+sd_drainskillathletics1 = 4,
+sd_drainskillmarksman1 = 4,
+sd_drainskillmediumarmor1 = 4,
+sd_drainskillunarmored1 = 4,
+sd_drainskillspear1 = 4,
+sd_drainskillalteration1 = 4,
+sd_drainskilldestruction1 = 4,
+sd_drainskillspeechcraft1 = 4,
+sd_drainskillshortblade1 = 4,
+sd_drainskilllongblade1 = 4,
+sd_drainskillmysticism1 = 4,
+sd_drainskillsecurity1 = 4,
+sd_drainskillillusion1 = 4,
+sd_drainskillblock1 = 4,
+sd_drainskilllightarmor1 = 4,
+sd_drainskillheavyarmor1 = 4,
+sd_drainskillhandtohand1 = 4,
+sd_drainskillalchemy1 = 4,
+sd_drainskillsneak1 = 4,
+sd_drainskillconjuration1 = 4,
+sd_drainskillacrobatics1 = 4,
+sd_drainskillmercantile1 = 4,
+sd_drainskillbluntweapon2 = 4,
+sd_drainskillaxe2 = 4,
+sd_drainskillarmorer2 = 4,
+sd_drainskillrestoration2 = 4,
+sd_drainskillenchant2 = 4,
+sd_drainskillathletics2 = 4,
+sd_drainskillmarksman2 = 4,
+sd_drainskillmediumarmor2 = 4,
+sd_drainskillunarmored2 = 4,
+sd_drainskillspear2 = 4,
+sd_drainskillalteration2 = 4,
+sd_drainskilldestruction2 = 4,
+sd_drainskillspeechcraft2 = 4,
+sd_drainskillshortblade2 = 4,
+sd_drainskilllongblade2 = 4,
+sd_drainskillmysticism2 = 4,
+sd_drainskillsecurity2 = 4,
+sd_drainskillillusion2 = 4,
+sd_drainskillblock2 = 4,
+sd_drainskilllightarmor2 = 4,
+sd_drainskillheavyarmor2 = 4,
+sd_drainskillhandtohand2 = 4,
+sd_drainskillalchemy2 = 4,
+sd_drainskillsneak2 = 4,
+sd_drainskillconjuration2 = 4,
+sd_drainskillacrobatics2 = 4,
+sd_drainskillmercantile2 = 4,
+sd_firedamage1 = 2,
+sd_firedamage2 = 2,
+sd_rallycreature1 = 8,
+sd_rallycreature2 = 8,
+sd_weaknesstocorprusdisease1 = 3,
+sd_weaknesstocorprusdisease2 = 3,
+sd_weaknesstofrost1 = 3,
+sd_weaknesstofrost2 = 3,
+sd_resistcorprusdisease1 = 6,
+sd_resistcorprusdisease2 = 6,
+sd_absorbskillbluntweapon1 = 3,
+sd_absorbskillaxe1 = 3,
+sd_absorbskillarmorer1 = 3,
+sd_absorbskillrestoration1 = 3,
+sd_absorbskillenchant1 = 3,
+sd_absorbskillathletics1 = 3,
+sd_absorbskillmarksman1 = 3,
+sd_absorbskillmediumarmor1 = 3,
+sd_absorbskillunarmored1 = 3,
+sd_absorbskillspear1 = 3,
+sd_absorbskillalteration1 = 3,
+sd_absorbskilldestruction1 = 3,
+sd_absorbskillspeechcraft1 = 3,
+sd_absorbskillshortblade1 = 3,
+sd_absorbskilllongblade1 = 3,
+sd_absorbskillmysticism1 = 3,
+sd_absorbskillsecurity1 = 3,
+sd_absorbskillillusion1 = 3,
+sd_absorbskillblock1 = 3,
+sd_absorbskilllightarmor1 = 3,
+sd_absorbskillheavyarmor1 = 3,
+sd_absorbskillhandtohand1 = 3,
+sd_absorbskillalchemy1 = 3,
+sd_absorbskillsneak1 = 3,
+sd_absorbskillconjuration1 = 3,
+sd_absorbskillacrobatics1 = 3,
+sd_absorbskillmercantile1 = 3,
+sd_absorbskillbluntweapon2 = 3,
+sd_absorbskillaxe2 = 3,
+sd_absorbskillarmorer2 = 3,
+sd_absorbskillrestoration2 = 3,
+sd_absorbskillenchant2 = 3,
+sd_absorbskillathletics2 = 3,
+sd_absorbskillmarksman2 = 3,
+sd_absorbskillmediumarmor2 = 3,
+sd_absorbskillunarmored2 = 3,
+sd_absorbskillspear2 = 3,
+sd_absorbskillalteration2 = 3,
+sd_absorbskilldestruction2 = 3,
+sd_absorbskillspeechcraft2 = 3,
+sd_absorbskillshortblade2 = 3,
+sd_absorbskilllongblade2 = 3,
+sd_absorbskillmysticism2 = 3,
+sd_absorbskillsecurity2 = 3,
+sd_absorbskillillusion2 = 3,
+sd_absorbskillblock2 = 3,
+sd_absorbskilllightarmor2 = 3,
+sd_absorbskillheavyarmor2 = 3,
+sd_absorbskillhandtohand2 = 3,
+sd_absorbskillalchemy2 = 3,
+sd_absorbskillsneak2 = 3,
+sd_absorbskillconjuration2 = 3,
+sd_absorbskillacrobatics2 = 3,
+sd_absorbskillmercantile2 = 3,
+sd_commandhumanoid1 = 2,
+sd_commandhumanoid2 = 2,
+sd_fortifyattributepersonality1 = 6,
+sd_fortifyattributewillpower1 = 6,
+sd_fortifyattributestrength1 = 6,
+sd_fortifyattributespeed1 = 6,
+sd_fortifyattributeagility1 = 6,
+sd_fortifyattributeintelligence1 = 6,
+sd_fortifyattributeluck1 = 6,
+sd_fortifyattributeendurance1 = 6,
+sd_fortifyattributepersonality2 = 6,
+sd_fortifyattributewillpower2 = 6,
+sd_fortifyattributestrength2 = 6,
+sd_fortifyattributespeed2 = 6,
+sd_fortifyattributeagility2 = 6,
+sd_fortifyattributeintelligence2 = 6,
+sd_fortifyattributeluck2 = 6,
+sd_fortifyattributeendurance2 = 6,
+sd_weaknesstocommondisease1 = 4,
+sd_weaknesstocommondisease2 = 4,
+sd_frenzycreature1 = 5,
+sd_frenzycreature2 = 5,
+sd_weaknesstonormalweapons1 = 3,
+sd_weaknesstonormalweapons2 = 3,
+sd_fireshield1 = 5,
+sd_fireshield2 = 5,
+sd_sanctuary1 = 5,
+sd_sanctuary2 = 5,
+sd_slowfall1 = 4,
+sd_slowfall2 = 4,
+sd_calmhumanoid1 = 5,
+sd_calmhumanoid2 = 5,
+sd_fortifyfatigue1 = 6,
+sd_fortifyfatigue2 = 6,
+sd_restoreskillbluntweapon1 = 4,
+sd_restoreskillaxe1 = 4,
+sd_restoreskillarmorer1 = 4,
+sd_restoreskillrestoration1 = 4,
+sd_restoreskillenchant1 = 4,
+sd_restoreskillathletics1 = 4,
+sd_restoreskillmarksman1 = 4,
+sd_restoreskillmediumarmor1 = 4,
+sd_restoreskillunarmored1 = 4,
+sd_restoreskillspear1 = 4,
+sd_restoreskillalteration1 = 4,
+sd_restoreskilldestruction1 = 4,
+sd_restoreskillspeechcraft1 = 4,
+sd_restoreskillshortblade1 = 4,
+sd_restoreskilllongblade1 = 4,
+sd_restoreskillmysticism1 = 4,
+sd_restoreskillsecurity1 = 4,
+sd_restoreskillillusion1 = 4,
+sd_restoreskillblock1 = 4,
+sd_restoreskilllightarmor1 = 4,
+sd_restoreskillheavyarmor1 = 4,
+sd_restoreskillhandtohand1 = 4,
+sd_restoreskillalchemy1 = 4,
+sd_restoreskillsneak1 = 4,
+sd_restoreskillconjuration1 = 4,
+sd_restoreskillacrobatics1 = 4,
+sd_restoreskillmercantile1 = 4,
+sd_restoreskillbluntweapon2 = 4,
+sd_restoreskillaxe2 = 4,
+sd_restoreskillarmorer2 = 4,
+sd_restoreskillrestoration2 = 4,
+sd_restoreskillenchant2 = 4,
+sd_restoreskillathletics2 = 4,
+sd_restoreskillmarksman2 = 4,
+sd_restoreskillmediumarmor2 = 4,
+sd_restoreskillunarmored2 = 4,
+sd_restoreskillspear2 = 4,
+sd_restoreskillalteration2 = 4,
+sd_restoreskilldestruction2 = 4,
+sd_restoreskillspeechcraft2 = 4,
+sd_restoreskillshortblade2 = 4,
+sd_restoreskilllongblade2 = 4,
+sd_restoreskillmysticism2 = 4,
+sd_restoreskillsecurity2 = 4,
+sd_restoreskillillusion2 = 4,
+sd_restoreskillblock2 = 4,
+sd_restoreskilllightarmor2 = 4,
+sd_restoreskillheavyarmor2 = 4,
+sd_restoreskillhandtohand2 = 4,
+sd_restoreskillalchemy2 = 4,
+sd_restoreskillsneak2 = 4,
+sd_restoreskillconjuration2 = 4,
+sd_restoreskillacrobatics2 = 4,
+sd_restoreskillmercantile2 = 4,
+sd_restoremagicka1 = 2,
+sd_restoremagicka2 = 2,
+sd_restoreattributepersonality1 = 4,
+sd_restoreattributewillpower1 = 4,
+sd_restoreattributestrength1 = 4,
+sd_restoreattributespeed1 = 4,
+sd_restoreattributeagility1 = 4,
+sd_restoreattributeintelligence1 = 4,
+sd_restoreattributeluck1 = 4,
+sd_restoreattributeendurance1 = 4,
+sd_restoreattributepersonality2 = 4,
+sd_restoreattributewillpower2 = 4,
+sd_restoreattributestrength2 = 4,
+sd_restoreattributespeed2 = 4,
+sd_restoreattributeagility2 = 4,
+sd_restoreattributeintelligence2 = 4,
+sd_restoreattributeluck2 = 4,
+sd_restoreattributeendurance2 = 4,
+sd_resistcommondisease1 = 6,
+sd_resistcommondisease2 = 6,
+sd_drainattributepersonality1 = 4,
+sd_drainattributewillpower1 = 4,
+sd_drainattributestrength1 = 4,
+sd_drainattributespeed1 = 4,
+sd_drainattributeagility1 = 4,
+sd_drainattributeintelligence1 = 4,
+sd_drainattributeluck1 = 4,
+sd_drainattributeendurance1 = 4,
+sd_drainattributepersonality2 = 4,
+sd_drainattributewillpower2 = 4,
+sd_drainattributestrength2 = 4,
+sd_drainattributespeed2 = 4,
+sd_drainattributeagility2 = 4,
+sd_drainattributeintelligence2 = 4,
+sd_drainattributeluck2 = 4,
+sd_drainattributeendurance2 = 4,
+sd_resistfrost1 = 5,
+sd_resistfrost2 = 5,
+sd_resistshock1 = 5,
+sd_resistshock2 = 5,
+sd_restorehealth1 = 2,
+sd_restorehealth2 = 2,
+sd_nighteye1 = 7,
+sd_nighteye2 = 7,
+sd_frostshield1 = 5,
+sd_frostshield2 = 5,
+sd_resistnormalweapons1 = 4,
+sd_resistnormalweapons2 = 4,
+sd_damagefatigue1 = 2,
+sd_damagefatigue2 = 2,
+sd_demoralizecreature1 = 5,
+sd_demoralizecreature2 = 5,
+sd_telekinesis1 = 7,
+sd_telekinesis2 = 7,
+sd_resistmagicka1 = 5,
+sd_resistmagicka2 = 5,
+sd_fortifyskillbluntweapon1 = 6,
+sd_fortifyskillaxe1 = 6,
+sd_fortifyskillarmorer1 = 6,
+sd_fortifyskillrestoration1 = 6,
+sd_fortifyskillenchant1 = 6,
+sd_fortifyskillathletics1 = 6,
+sd_fortifyskillmarksman1 = 6,
+sd_fortifyskillmediumarmor1 = 6,
+sd_fortifyskillunarmored1 = 6,
+sd_fortifyskillspear1 = 6,
+sd_fortifyskillalteration1 = 6,
+sd_fortifyskilldestruction1 = 6,
+sd_fortifyskillspeechcraft1 = 6,
+sd_fortifyskillshortblade1 = 6,
+sd_fortifyskilllongblade1 = 6,
+sd_fortifyskillmysticism1 = 6,
+sd_fortifyskillsecurity1 = 6,
+sd_fortifyskillillusion1 = 6,
+sd_fortifyskillblock1 = 6,
+sd_fortifyskilllightarmor1 = 6,
+sd_fortifyskillheavyarmor1 = 6,
+sd_fortifyskillhandtohand1 = 6,
+sd_fortifyskillalchemy1 = 6,
+sd_fortifyskillsneak1 = 6,
+sd_fortifyskillconjuration1 = 6,
+sd_fortifyskillacrobatics1 = 6,
+sd_fortifyskillmercantile1 = 6,
+sd_fortifyskillbluntweapon2 = 6,
+sd_fortifyskillaxe2 = 6,
+sd_fortifyskillarmorer2 = 6,
+sd_fortifyskillrestoration2 = 6,
+sd_fortifyskillenchant2 = 6,
+sd_fortifyskillathletics2 = 6,
+sd_fortifyskillmarksman2 = 6,
+sd_fortifyskillmediumarmor2 = 6,
+sd_fortifyskillunarmored2 = 6,
+sd_fortifyskillspear2 = 6,
+sd_fortifyskillalteration2 = 6,
+sd_fortifyskilldestruction2 = 6,
+sd_fortifyskillspeechcraft2 = 6,
+sd_fortifyskillshortblade2 = 6,
+sd_fortifyskilllongblade2 = 6,
+sd_fortifyskillmysticism2 = 6,
+sd_fortifyskillsecurity2 = 6,
+sd_fortifyskillillusion2 = 6,
+sd_fortifyskillblock2 = 6,
+sd_fortifyskilllightarmor2 = 6,
+sd_fortifyskillheavyarmor2 = 6,
+sd_fortifyskillhandtohand2 = 6,
+sd_fortifyskillalchemy2 = 6,
+sd_fortifyskillsneak2 = 6,
+sd_fortifyskillconjuration2 = 6,
+sd_fortifyskillacrobatics2 = 6,
+sd_fortifyskillmercantile2 = 6,
+sd_frenzyhumanoid1 = 5,
+sd_frenzyhumanoid2 = 5,
+sd_absorbhealth1 = 3,
+sd_absorbhealth2 = 3,
+sd_waterbreathing1 = 1,
+sd_waterbreathing2 = 1,
+sd_shockdamage1 = 2,
+sd_shockdamage2 = 2,
+sd_detectkey1 = 7,
+sd_detectkey2 = 7,
+sd_resistparalysis1 = 5,
+sd_resistparalysis2 = 5,
+sd_demoralizehumanoid1 = 5,
+sd_demoralizehumanoid2 = 5,
+sd_lightningshield1 = 5,
+sd_lightningshield2 = 5,
+sd_commandcreature1 = 2,
+sd_commandcreature2 = 2,
+sd_resistfire1 = 5,
+sd_resistfire2 = 5,
+sd_fortifyattack1 = 6,
+sd_fortifyattack2 = 6,
+sd_resistpoison1 = 5,
+sd_resistpoison2 = 5,
+sd_detectenchantment1 = 7,
+sd_detectenchantment2 = 7,
+sd_weaknesstopoison1 = 4,
+sd_weaknesstopoison2 = 4,
+sd_absorbfatigue1 = 3,
+sd_absorbfatigue2 = 3,
+sd_resistblightdisease1 = 6,
+sd_resistblightdisease2 = 6,
+sd_burden1 = 5,
+sd_burden2 = 5,
+sd_sundamage1 = 2,
+sd_sundamage2 = 2,
+sd_restorefatigue1 = 2,
+sd_restorefatigue2 = 2,
+sd_weaknesstomagicka1 = 3,
+sd_weaknesstomagicka2 = 3,
+sd_frostdamage1 = 2,
+sd_frostdamage2 = 2,
+sd_fortifyhealth1 = 5,
+sd_fortifyhealth2 = 5,
+sd_rallyhumanoid1 = 8,
+sd_rallyhumanoid2 = 8,
+sd_feather1 = 6,
+sd_feather2 = 6,
+sd_absorbattributepersonality1 = 3,
+sd_absorbattributewillpower1 = 3,
+sd_absorbattributestrength1 = 3,
+sd_absorbattributespeed1 = 3,
+sd_absorbattributeagility1 = 3,
+sd_absorbattributeintelligence1 = 3,
+sd_absorbattributeluck1 = 3,
+sd_absorbattributeendurance1 = 3,
+sd_absorbattributepersonality2 = 3,
+sd_absorbattributewillpower2 = 3,
+sd_absorbattributestrength2 = 3,
+sd_absorbattributespeed2 = 3,
+sd_absorbattributeagility2 = 3,
+sd_absorbattributeintelligence2 = 3,
+sd_absorbattributeluck2 = 3,
+sd_absorbattributeendurance2 = 3,
+sd_shield1 = 5,
+sd_shield2 = 5,
+sd_jump1 = 5,
+sd_jump2 = 5,
+sd_charm1 = 2,
+sd_charm2 = 2,
+sd_chameleon1 = 5,
+sd_chameleon2 = 5,
+}
+
+--maxlength	32
+
+local function createStew(data)
+	local player = data[1]
+	local foodData = data[2]
+	local dbName = foodData.foodValue.."-"..foodData.drinkValue.."-"..foodData.wakeValue.."-"..tostring(foodData.isToxic).."-"..tostring(foodData.isGreenPact)
+	
+	--if not saveData.foodDB[dbName] then
+		local tmpl = types.Potion.record("sd_waterbottle_template")
+		
+		local infoBracket = math.floor(foodData.foodValue+0.5)
+		if foodData.wakeValue > 0 then
+			infoBracket = infoBracket.."/"..math.floor(foodData.drinkValue+0.5).."/"..math.floor(foodData.wakeValue+0.5)
+		elseif foodData.drinkValue > 0 then
+			infoBracket = infoBracket.."/"..math.floor(foodData.drinkValue+0.5)
+		end
+		
+		local newEffects = {}
+		
+		for uniqueId, effectData in pairs(foodData.dynamicEffects) do
+			local magnitude = effectData.magnitude
+			if math.random() < magnitude%1 then
+				magnitude = magnitude + 1
+			end
+			local step = 1
+			local maxBits = longBits[uniqueId] or 0
+			
+			if foodData.shortBuff then
+				step = 5
+				maxBits = shortBits[uniqueId] or 0
+				magnitude = math.floor(magnitude / 5 + 0.5) * 5 -- Round to nearest multiple of 5
+				if effectData.successfulContributors and effectData.successfulContributors > 0 then
+					magnitude = math.max(5, magnitude)
+				end
+			else
+				magnitude = math.floor(magnitude)
+			end
+			
+			local maxMagnitude = step * (2^maxBits - 1)
+
+			magnitude = math.min(maxMagnitude, magnitude)
+			
+			if magnitude >= step then --(min mag of 1 or 5)
+				local sourcePotion = types.Potion.records[uniqueId]
+				if sourcePotion then
+					if foodData.shortBuff then
+						table.insert(newEffects, sourcePotion.effects[math.floor(magnitude/5)])
+					else
+						for _, pos in pairs(toBitPositions(magnitude, step)) do
+							table.insert(newEffects, sourcePotion.effects[pos])
+						end
+					end
+				end
+			end
+		end
+		
+		local value = 0
+		for itemId, item in pairs(foodData.consumedIngredients) do
+			local record = types.Ingredient.records[itemId] or types.Potion.records[itemId]
+			if record then
+				value = value + record.value
+			end
+		end
+		
+		local recordDraft = types.Potion.createRecordDraft({
+			name	= " Stew ["..infoBracket.."]",
+			template= tmpl,
+			model   = "meshes/SunsDusk/contain_couldron10.nif",
+			icon	= "icons/SunsDusk/cooking_pot.dds",
+			weight  = 1,
+			value   = value,
+			effects = newEffects,
+		})
+		
+		local rec  = world.createRecord(recordDraft)
+		local newId = rec.id
+		saveData.foodDB[dbName] = rec.id
+		player:sendEvent("SunsDusk_addConsumable", {rec.id, {
+				--recordType 			= "Potion", 
+				--localizedName		= "Stew ["..infoBracket.."]", 
+				consumeCategory	 = foodData.consumeCategory, 
+				foodValue 			= foodData.foodValue or 0, 
+				foodValue2 			= foodData.foodValue2 or 0, 
+				drinkValue 			= foodData.drinkValue or 0, 
+				drinkValue2 		= foodData.drinkValue2 or 0, 
+				wakeValue			= foodData.wakeValue or 0,
+				wakeValue2			= foodData.wakeValue2 or 0,
+				isToxic				= foodData.isToxic,
+				isGreenPact   		= foodData.isGreenPact,
+				isCookedMeal 		= true,
+			}}
+		)
+	--end
+	world.createObject(saveData.foodDB[dbName], foodData.count):moveInto(types.Actor.inventory(player))
+end
+
+local function consumeIngredients(data)
+	local player = data[1]
+	local ingredients = data[2]
+	for _, item in pairs(types.Actor.inventory(player):getAll()) do
+		if ingredients[item.recordId] then
+			item:remove(ingredients[item.recordId])
+		end
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Lifecycle															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function migrate_v1_to_v2(sd)
+	-- v1 -> v2: waterDB -> liquidDB['water']; reverse adds liquid='water'
+end
+
+local function onLoad(data)
+	saveData = data or {}
+	saveData.maxQ					= saveData.maxQ					or {}
+	saveData.reverse				= saveData.reverse				or {}
+	saveData.convertedCellsWater	= saveData.convertedCellsWater	or {}
+	saveData.convertedNPCsWater		= saveData.convertedNPCsWater	or {}
+	saveData.restockingNPCs			= saveData.restockingNPCs		or {}
+	saveData.removedTrees			= saveData.removedTrees			or {}
+	saveData.fallingWood			= saveData.fallingWood			or {}
+	
+	if data then
+		saveData.newLiquidNaming = false
+	else
+		saveData.newLiquidNaming = true
+	end
+
+	-- migration and container sanity
+	if not saveData.liquidDB then
+		saveData.liquidDB = {}
+	
+		if saveData.waterDB then
+			saveData.liquidDB.water = saveData.waterDB
+			saveData.waterDB = nil
+		else
+			saveData.liquidDB.water = {}
+		end
+		
+		for pid, info in pairs(saveData.reverse) do
+			if info and info.orig and info.q and not info.liquid then
+				info.liquid = 'water'
+			end
+		end
+	end
+	
+	if not saveData.foodDB then
+		saveData.foodDB = {}
+	end
+	
+	if not saveData.litFires then
+		saveData.litFires = {}
+	end
+	
+	if not saveData.campingGear then
+		saveData.campingGear = {}
+	end
+end
+
+local function onSave()
+	return saveData
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Util Events														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function checkIfVampireWerewolf(player)
+	local gv	   = world.mwscript.getGlobalVariables(player)
+	local vampire  = gv.PCVampire
+	local werewolf = gv.PCWerewolf
+	player:sendEvent("SunsDusk_checkedIfVampireWerewolf", { vampire, werewolf })
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Woodcutting														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+-- Spawn falling wood items in the air
+local function spawnFallingWood(data)
+	local itemId = data.itemId
+	local spawnData = data.spawnData
+	local player = data.player
+	
+	if not itemId or not spawnData or not player then
+		return
+	end
+	
+	-- Use the player's cell directly
+	local targetCell = player.cell
+	
+	local GRAVITY = 627  -- openmw gravity magnitude (positive)
+	
+	-- Spawn each wood piece in the air and track for physics
+	for _, pieceData in ipairs(spawnData) do
+-- Random number of spins between 0.5 and 1.5
+local totalSpins = 0.5 + math.random() * 1.0
+
+-- Calculate fall time using physics
+local fallHeight = pieceData.airPosition.z - pieceData.groundPosition.z
+local fallTime = math.sqrt(2 * fallHeight / GRAVITY)
+
+-- Calculate angular velocity
+local angularVelocity = (totalSpins * math.pi * 2) / fallTime
+
+-- Random rotation axis (normalised)
+local rotAxisX = (math.random() - 0.5) * 2
+local rotAxisY = (math.random() - 0.5) * 2
+local rotAxisZ = (math.random() - 0.5) * 2
+local axisLength = math.sqrt(rotAxisX*rotAxisX + rotAxisY*rotAxisY + rotAxisZ*rotAxisZ)
+if axisLength > 0 then
+	rotAxisX = rotAxisX / axisLength
+	rotAxisY = rotAxisY / axisLength
+	rotAxisZ = rotAxisZ / axisLength
+else
+	rotAxisX, rotAxisY, rotAxisZ = 0, 0, 1
+end
+
+-- Calculate landing rotation (0-30° off from target)
+local offsetAngle = math.random() * math.pi / 6
+local offsetAxis = util.vector3(
+	(math.random() - 0.5) * 2,
+	(math.random() - 0.5) * 2,
+	(math.random() - 0.5) * 2
+):normalize()
+local landingRotation = pieceData.groundRotation * 
+					   util.transform.rotate(offsetAngle, offsetAxis)
+
+-- Calculate total spin that will occur during fall
+local totalSpinAngle = totalSpins * math.pi * 2
+local spinAxis = util.vector3(rotAxisX, rotAxisY, rotAxisZ)
+local totalSpinRotation = util.transform.rotate(totalSpinAngle, spinAxis)
+
+-- Work BACKWARDS: what starting rotation will spin into landingRotation?
+local startRotation = totalSpinRotation:inverse() * landingRotation
+		
+		local woodItem = world.createObject(itemId, 1)
+		
+		-- Place at air position with starting rotation
+		woodItem:teleport(
+			targetCell,
+			pieceData.airPosition,
+			{
+				rotation = startRotation
+			}
+		)
+		
+		-- Track this wood for physics simulation
+		saveData.fallingWood[woodItem.id] = {
+			woodObject = woodItem,
+			startPos = pieceData.airPosition,
+			targetPos = pieceData.groundPosition,
+			velocity = util.vector3(0, 0, 0),
+			targetRotation = pieceData.groundRotation,
+			landingRotation = landingRotation,
+			startRotation = startRotation,
+			angularVelocity = angularVelocity,
+			rotAxisX = rotAxisX,
+			rotAxisY = rotAxisY,
+			rotAxisZ = rotAxisZ,
+			totalSpins = totalSpins,
+			elapsedTime = 0,
+			phase = "falling",  -- "falling", "settling"
+			settleTimer = 0
+		}
+	end
+end
+
+-- Remove tree and track in saveData
+local function removeTree(data)
+	local tree = data.tree
+	
+	if not tree then
+		return
+	end
+	
+	local recordId = tree.recordId
+	local cellId = tree.cell.id or ""
+	local position = tree.position
+	local rotation = tree.rotation
+	
+	-- Get current game time
+	local gameTime = core.getGameTime()
+	
+	-- Create unique ID for this tree removal
+	local treeId = recordId .. "_" .. cellId .. "_" .. tostring(position.x) .. "_" .. tostring(position.y) .. "_" .. tostring(position.z)
+	
+	-- Store tree removal data
+	saveData.removedTrees = saveData.removedTrees or {}
+	saveData.removedTrees[treeId] = {
+		gameTime = gameTime,
+		recordId = recordId,
+		cellId = cellId,
+		position = {
+			x = position.x,
+			y = position.y,
+			z = position.z
+		},
+		rotation = {
+			x = rotation.x,
+			y = rotation.y,
+			z = rotation.z
+		}
+	}
+	
+	tree:remove()
+end
+
+local campfireUpgrades = {
+    ["sd_wood_1"] 	  = "sd_wood_2",
+    ["sd_wood_2"] 	  = "sd_wood_3",
+	["sd_wood_3"] 	  = "sd_wood_4",
+	["sd_wood_4"] 	  = "sd_wood_5",
+	["sd_wood_5"] 	  = false,
+    ["sd_wood_1_lit"] = "sd_wood_2_lit",
+    ["sd_wood_2_lit"] = "sd_wood_3_lit",
+    ["sd_wood_3_lit"] = "sd_wood_4_lit",
+    ["sd_wood_4_lit"] = "sd_wood_5_lit",
+    ["sd_wood_5_lit"] = false,
+}
+
+local function upgradeFire(data)
+	local player = data[1]
+	local object = data[2]
+	
+	local upgradedFire = campfireUpgrades[object.recordId]
+	if not upgradedFire then return end
+	local logInInv = types.NPC.inventory(player):find("sd_wood_1") or types.NPC.inventory(player):find("sd_wood_publican")
+	if not logInInv then return end
+	
+	logInInv:remove(1)
+	
+	local pos = object.position
+	local cell = object.cell
+	local id = object.id
+	
+	object:remove()
+	local upgradedObject = world.createObject(upgradedFire)
+    upgradedObject:teleport(cell, pos)
+	if upgradedObject.recordId:sub(-4) == "_lit" then
+		--local time = -- only add to time instead of resetting but w/e
+		saveData.litFires[id] = nil
+		saveData.litFires[upgradedObject.id] = {upgradedObject, world.getGameTime()}
+	end
+end
+
+local function igniteFire(data)
+	local player = data[1]
+	local object = data[2]
+	
+	local isValid = campfireUpgrades[object.recordId]
+	if isValid == nil then return end
+	local litId = object.recordId.."_lit"
+	if not types.Light.records[litId] then return end
+	local pos = object.position
+	local cell = object.cell
+	
+	object:remove()
+	local upgradedObject = world.createObject(litId)
+    upgradedObject:teleport(cell, pos)
+	saveData.litFires[upgradedObject.id] = {upgradedObject, world.getGameTime()}
+	
+	for _, player in pairs(cell:getAll(types.Player)) do
+		player:sendEvent("SunsDusk_registerFire", upgradedObject)
+	end
+end
+
+local burningWood = {
+    ["sd_wood_1_lit"] = true,
+    ["sd_wood_2_lit"] = true,
+    ["sd_wood_3_lit"] = true,
+    ["sd_wood_4_lit"] = true,
+    ["sd_wood_5_lit"] = true,
+}
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Heat Sources														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+-- Starwind
+function isHeatSource(recordId, mode)
+	local dbEntry = dbStatics[recordId] and dbStatics[recordId].heatsource
+	if dbEntry ~= nil then
+		return dbEntry and true
+	end
+    local heatWords = { "fire", "flame", "torch", "brazier", "lava", "firepit", 
+                       "incense", "burner", "tiki", "logpile", "pitfire", "forge" }
+    if mode == 3 and (
+		string.match(recordId, "cave") 
+		or string.match(recordId, "_rock") 
+		or string.match(recordId, "boulder")
+		or recordId == "in_lava_blacksquare"
+	) then
+		return false
+	end
+    -- Exclude if it's off or broken
+    if string.match(recordId, "_[Oo]ff$") or string.match(recordId, "burnedout") 
+       or string.match(recordId, "broke") or string.match(recordId, "flame light") or string.match(recordId, "roht_mg_fire") then
+        return false
+    end
+    
+    -- Check if contains any heat word
+    for _, word in ipairs(heatWords) do
+        if string.find(recordId, word) then
+            return true
+        end
+    end
+    if burningWood[recordId] then
+		return true
+	end
+    return false
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Cell Data															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+-- Cell categorisation based on static objects
+
+local function getCellInfo(player)
+	local cellInfo = {
+		isExterior = false,
+		isIceCave = false,
+		isCave = false,
+		isDwemer = false,
+		isDaedric = false,
+		isMine = false,
+		isTomb = false,
+		isHouse = false,
+		isCastle = false,
+		isMushroom = false,  -- Telvanni
+		isHlaalu = false,    -- Hlaalu
+		isRedoran = false,   -- Redoran
+		isSewer = false,     -- Sewers/Underworks
+		isTemple = false,    -- Temple interiors
+		isBath = false,
+	--  isAshlander = false,
+		hasPublican = false,
+		fires = {}
+	}
+	
+	if not NEEDS_TEMP then 
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	end
+	
+	local cell = player.cell
+	if not cell then
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	end
+	
+	for _, object in pairs(cell:getAll(types.Activator)) do
+		if isHeatSource(object.recordId) then
+			log(4,"activator heat source:",object.recordId)
+			table.insert(cellInfo.fires, object)
+		end
+	end
+	
+	for _, object in pairs(cell:getAll(types.Light)) do
+		if isHeatSource(object.recordId) then
+			log(4,"light heat source:",object.recordId)
+			table.insert(cellInfo.fires, object)
+		end
+	end
+	
+	for _, object in pairs(cell:getAll(types.Static)) do
+		if isHeatSource(object.recordId, 3) then
+			log(4,"static heat source:",object.recordId)
+			table.insert(cellInfo.fires, object)
+		end
+	end
+	
+	cellInfo.hasPublican = cellHasPublican(cell)
+	
+	if (cell.isExterior or cell:hasTag("QuasiExterior")) and cell.hasSky then
+		cellInfo.isExterior = true
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	end
+	local cellId = cell.id
+	-- Check for Bath house
+	if cellId == "port telvannis, the avenue: subterranean balconies" then
+		cellInfo.isHouse 	= true
+		cellInfo.isCave 	= true
+		cellInfo.isBath 	= true
+		cellInfo.isMushroom = true
+		log(3,"port telvannis: house, cave, bath, mushroom")
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return -- "Vivec, Foreign Quarter Public Bath" ; "Vivec, Telvanni Public Bath" ; "Vivec, Redoran Public Bath" ; "Vivec, Hlaalu Public Bath"
+	elseif cellId == "odai mudbaths" then
+		cellInfo.isBath 	= true
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	elseif cellId == "vivec, telvanni public bath" then
+		cellInfo.isMushroom = true	
+		cellInfo.isBath 	= true
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	elseif cellId == "vivec, redoran public bath" then
+		cellInfo.isRedoran = true	
+		cellInfo.isBath = true	
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	elseif cellId == "vivec, hlaalu public bath" then
+		cellInfo.isHlaalu = true	
+		cellInfo.isBath = true	
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	elseif cellId == "mournhold, healing bath" then
+		cellInfo.isTemple = true	
+		cellInfo.isBath = true	
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return
+	elseif cellId == "vivec, bath house" then
+		cellInfo.isTemple = true	
+		cellInfo.isBath = true	
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return		
+	elseif cellId == "balmora, bath house" then
+		cellInfo.isTemple = true	
+		cellInfo.isBath = true	
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		return			
+	elseif cellId:find("sea of ghosts") then
+		cellInfo.isIceCave 	= true
+		cellInfo.isCave 	= true
+	elseif cellId:find("grotto") then
+		cellInfo.isBath 	= true
+		cellInfo.isCave		= true
+	elseif cellId:find("bath") then
+		cellInfo.isBath 	= true
+		--isntHouse = true -- cancelled before house part anyway
+	elseif cellId:find("sewer") then
+		cellInfo.isSewer 	= true
+		isntHouse 			= true
+	elseif cellId:find("catac") then
+		cellInfo.isTomb 	= true
+		isntHouse 			= true
+	--elseif cellId:find("temple") or cellId:find("shrine") then
+	--	cellInfo.isTomb = true
+	--	isntHouse = true
+	end	
+	
+	-- Counters for weighted detection
+	local counts = {
+		iceCave = 0,
+		cave 	= 0,
+		dwemer 	= 0,
+		daedric = 0,
+		mine 	= 0,
+		tomb 	= 0,
+		house 	= 0,
+		castle	 = 0,
+		mushroom = 0,   -- Telvanni
+		hlaalu 	= 0,     
+		redoran = 0,    
+		sewer 	= 0,      
+		temple 	= 0,
+		bath 	= 0,
+	--  ashlander = 0,
+	}
+	
+	-- Iterate through all statics in the cell, TD patterns start with t_
+	for _, object in pairs(cell:getAll(types.Static)) do
+		local id = object.recordId:lower() -- Convert to lowercase for case-insensitive matching
+		local foundMatch = false
+		
+		-- Check for Ice Cave indicators
+		if (id:find("ice") or id:find("frost") or id:find("snow") or id:find("frozen") or
+		   id:find("_caveic_") or id:find("t_glb_terrice_") or id:find("icicle"))
+			and not id:find("practice") and not id:find("office") and not id:find("justice") then
+			foundMatch = true
+			log(5,"iceCave",id)
+			counts.iceCave = counts.iceCave + 1
+		end
+		
+		-- Check for Dwemer indicators
+		if id:find("dwrv_") or id:find("in_dwe") or id:find("ex_dwe") or 
+		   id:find("dwemer") or id:find("_dwe_") or id:find("centurion") or
+		   id:find("t_dwe_dng") then
+			foundMatch = true
+			log(5,"dwemer",id)
+			counts.dwemer = counts.dwemer + 1
+		end
+		
+		-- Check for Daedric indicators
+		if id:find("_dae_") or id:find("daedric") or id:find("ex_dae") or 
+		   id:find("in_dae") or id:find("daed_") or id:find("t_dae_dng") then
+			foundMatch = true
+			log(5,"daedric",id)
+			counts.daedric = counts.daedric + 1
+		end
+		
+		-- Check for Mine indicators
+		if id:find("mine") or id:find("in_cavern_") or id:find("eggmine") or
+		   id:find("kvatch") or id:find("t_com_setmine_") or
+		   id:find("mineentr") then
+			foundMatch = true
+			log(5,"mine",id)
+			counts.mine = counts.mine + 1
+		end
+		
+		-- Check for general Cave indicators
+		if id:find("cave") or id:find("cavern") or id:find("grotto") or
+		   id:find("t_cnq_cave_") or (id:find("t_glb_cave") and not id:find("_caveic_")) then
+			foundMatch = true
+			log(5,"cave",id)
+			counts.cave = counts.cave + 1
+		end
+		
+		-- Check for Castle/Fortress indicators (strongholds, keeps, forts, guard towers, and large defensive structures)
+		if id:find("stronghold") or id:find("_keep") or id:find("fort") or
+		   id:find("castle") or id:find("guardtower") or id:find("imp_tower") or
+		   id:find("wall_512") or id:find("battlement") or id:find("ex_vivec") or
+		   id:find("in_impbig") or
+		   id:find("t_bre_setostc_") or id:find("keepwall") or id:find("keepbase") then
+			foundMatch = true
+			log(5,"castle",id)
+			counts.castle = counts.castle + 1
+		end
+		
+		-- Check for Ashlander indicators in_ashl
+		-- Includes yurts
+--[[		if id:find("") or id:find("") or id:find("") or
+		   id:find("") or id:find("") or id:find("") then
+			foundMatch = true
+			log(5,"ashlander",id)
+			counts.ashlander = counts.ashlander + 1
+		end	
+]]		
+
+		if id:find("in_t_") then
+			foundMatch = true
+			counts.mushroom = counts.mushroom + 1
+		end
+		
+		-- Texture pattern: in_hlaalu
+		if id:find("in_hlaalu") or id:find("in_h_") then
+			foundMatch = true
+			counts.hlaalu = counts.hlaalu + 1
+			log(5, "hlaalu", id)
+		end
+		
+		-- Texture patterns: in_redoran, in_r_s_int
+		if id:find("in_redoran") or id:find("in_r_") then
+			foundMatch = true
+			counts.redoran = counts.redoran + 1
+			log(5, "redoran", id)
+		end
+		
+		-- Check for Sewer/Underworks indicators
+		if id:find("sewer") or id:find("underwork") then
+			foundMatch = true
+			counts.sewer = counts.sewer + 1
+			log(5, "sewer", id)
+		end
+				-- Check for Tomb indicators
+		if id:find("tomb") or id:find("in_om_") or id:find("in_bm_") or 
+		   id:find("ancestral") or id:find("crypt") or id:find("burial") or
+		   id:find("furn_bone") or
+		   id:find("t_bre_dngcrypt") or id:find("coffin") or id:find("sarcophagus") then
+			foundMatch = true
+			log(5,"tomb",id)
+			counts.tomb = counts.tomb + 1
+		end
+		-- Check for Temple indicators
+		if id:find("temple") or id:find("shrine") or id:find("in_velothi") or id:find("prayer_stool")  then -- no idea about this static
+			foundMatch = true
+			counts.temple = counts.temple + 1
+			if id:find("in_mh_temple") then
+				counts.temple = counts.temple + 4
+				log(5, "temple!!!!!", id)
+			else
+				log(5, "temple", id)
+			end
+		-- Check for House indicators (residential buildings, shacks, and interior furniture) 
+		end
+		if (id:find("house") or id:find("shack") or id:find("hut") or
+		   id:find("in_common_") or id:find("in_de_") or id:find("in_nord_") or
+		   id:find("in_redoran_") or id:find("in_hlaalu_") or
+		   id:find("furn_") or id:find("t_.*_furn") or
+		   id:find("ex_common_building") or id:find("ex_nord_house") or
+		   id:find("ex_redoran_hut") or id:find("housepod") or id:find("housestem")) then
+		--and not foundMatch then
+			foundMatch = true
+			log(5,"house",id)
+			counts.house = counts.house + 1
+		end
+
+		if not foundMatch then
+			log(5,id)
+		end
+		log(5,"----")
+	end
+	local threshold = 3 -- Minimum number of matching statics to classify
+	
+	if counts.mushroom >= threshold then
+		cellInfo.isMushroom = true
+		log(3, "isMushroom")
+	end
+	if counts.hlaalu >= threshold then
+		cellInfo.isHlaalu = true
+		log(3, "isHlaalu")
+	end
+	if counts.redoran >= threshold then
+		cellInfo.isRedoran = true
+		log(3, "isRedoran")
+	end
+	
+	-- for bathhouses, only big house is relevant
+	if cellInfo.isBath then
+		player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+		log(3, "isBath")
+		return
+	end
+	
+	-- Determine cell types based on thresholds
+	-- Prioritise more specific types over general ones
+	local isntHouse = false
+	if counts.iceCave >= threshold then
+		cellInfo.isIceCave = true
+		cellInfo.isCave = true -- Ice caves are also caves
+		isntHouse = true
+		log(3, "isIceCave")
+		log(3, "isCave")
+	end
+
+	if counts.mine >= threshold then
+		cellInfo.isMine = true
+		cellInfo.isCave = true -- Mines are cave-like
+		isntHouse = true
+		log(3, "isMine")
+		log(3, "isCave")
+	end
+--[[if counts.ashlander >= threshold then
+		cellInfo.isAshlander = true
+		log(3, "isAshlander")
+	end	]]
+-- note: "bath house" can be both bath AND telvanni/redoran/hlaalu/temple
+
+	if counts.sewer >= threshold then
+		cellInfo.isSewer = true
+		isntHouse = true
+		log(3, "isSewer")
+	end
+	if counts.temple >= threshold then
+		cellInfo.isTemple = true
+		isntHouse = true
+		log(3, "isTemple")
+	end
+	if counts.daedric >= threshold then
+		cellInfo.isDaedric = true
+		isntHouse = true
+		log(3, "isDaedric")
+	elseif counts.dwemer >= threshold then
+		cellInfo.isDwemer = true
+		isntHouse = true
+		log(3, "isDwemer")
+	elseif counts.tomb >= threshold*2 then
+		cellInfo.isTomb = true
+		isntHouse = true
+		log(3, "isTomb")
+	elseif counts.castle >= threshold then
+		cellInfo.isCastle = true
+		isntHouse = true
+		log(3, "isCastle")
+	end
+	local countShrines = 0
+	for _, object in pairs(cell:getAll(types.Activator)) do
+		local recordId = object.recordId
+		if recordId == "furn_shrine_tribunal_cure_01" then
+			log(3," - temple activator",object.recordId)
+			isntHouse = true
+			cellInfo.isTomb = false
+			cellInfo.isTemple = true
+			break
+		elseif recordId:find("furn_shrine") then
+			countShrines = countShrines + 1
+		elseif cellInfo.isTomb and not cellInfo.isSewer then
+			local scrName = (types.Activator.record(recordId).mwscript or ''):lower()
+			if (scrName == "bed_standard" or scrName == "chargenbed") and not recordId:find("bedroll") then
+				log(3," - tomb with bed = temple",recordId)
+				isntHouse = true
+				cellInfo.isTomb = false
+				cellInfo.isTemple = true
+				break
+			end
+		end
+	end
+	if countShrines > 3 then
+		isntHouse = true
+		cellInfo.isTomb = false
+		cellInfo.isTemple = true
+		log(3," - temple (many shrines):",countShrines)
+	end
+	-- Only mark as generic cave if no other specific type was found
+	if counts.cave >= threshold and not (cellInfo.isIceCave or cellInfo.isDwemer or 
+	   cellInfo.isDaedric or cellInfo.isTomb or cellInfo.isMine) then
+		cellInfo.isCave = true
+		isntHouse = true
+		log(3, "isCave")
+	end
+	
+	if counts.cave >= threshold and not isntHouse then
+		cellInfo.isCave = true
+		isntHouse = true
+		log(3, "isCave")
+	end
+	
+	if counts.house >= threshold and not isntHouse then
+		cellInfo.isHouse = true
+		log(3, "isHouse")
+	end
+	
+	player:sendEvent("SunsDusk_receiveCellInfo", cellInfo)
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Firewood															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local miscWood = {
+    ["sd_wood_2"] = 2,
+	["sd_wood_3"] = 3,
+	["sd_wood_4"] = 4,
+	["sd_wood_5"] = 5,
+}
+local function lootIngredient(item, player)
+	local woodCount = miscWood[item.recordId]
+	if woodCount then
+		if item.count > 0 then
+			world.createObject("sd_wood_1", woodCount):moveInto(types.NPC.inventory(player))
+			player:sendEvent("SunsDusk_playSound", "Item Misc Up")
+			item:remove()
+		end
+		return false
+	end
+end
+I.Activation.addHandlerForType(types.Ingredient, lootIngredient)
+
+-- ========== RESTOCKING FIREWOOD ==========
+local function activateNPC(npc, player)
+	local npcRecordId = npc.recordId
+	local npcId = npc.id
+	local record = types.NPC.record(npcRecordId)
+	local className = record.class:lower()
+	if types.Actor.isDead(npc) then
+		saveData.restockingNPCs[npcId] = nil
+		return
+	end
+	local now = world.getGameTime() / (24 * 60 * 60)
+    
+    if not saveData.restockingNPCs[npcId] then
+        saveData.restockingNPCs[npcId] = {
+            lastRestock = now,
+            initialized = false,
+        }
+    end
+    
+    local npcData = saveData.restockingNPCs[npcId]
+    local daysSinceRestock = now - npcData.lastRestock
+    local didProcess = false
+    
+    for _, config in ipairs(stockingConfig) do
+        local serviceMatch = record.servicesOffered[config.serviceRequired]
+        
+        -- Check if className matches any pattern in the array
+        local classMatch = false
+        for _, pattern in ipairs(config.classPatterns) do
+            if className:find(pattern) then
+                classMatch = true
+                break
+            end
+        end
+        
+        if serviceMatch and classMatch then
+            didProcess = true
+            
+            -- Count current stock across entire pool
+            local currentStock = 0
+            local poolSet = {}
+            for _, itemId in ipairs(config.itemPool) do
+                poolSet[itemId] = true
+            end
+            
+            for _, item in pairs(types.NPC.inventory(npc):getAll(types[config.itemType])) do
+                if poolSet[item.recordId] then
+                    currentStock = currentStock + item.count
+                end
+            end
+            
+            local toAdd = 0
+            
+            if not npcData.initialized then
+                toAdd = math.max(0, config.startStock - currentStock)
+            elseif currentStock < config.maxStock then
+                local restockAmount = math.min(daysSinceRestock, 1.0) * config.restockPerDay
+                toAdd = math.floor(restockAmount)
+                
+                if math.random() < (restockAmount % 1) then
+                    toAdd = toAdd + 1
+                end
+                
+                toAdd = math.min(toAdd, config.maxStock - currentStock)
+            end
+            
+            for i = 1, toAdd do
+                local itemId = config.itemPool[math.random(#config.itemPool)]
+                local tempItem = world.createObject(itemId, 1)
+                tempItem:moveInto(types.NPC.inventory(npc))
+            end
+        end
+    end
+    
+    if didProcess then
+        npcData.initialized = true
+        npcData.lastRestock = now
+    end
+	
+--[[
+	local missingTents
+	local missingBedrolls
+	for a,b in pairs(record.servicesOffered) do
+		print(a,b)
+	end
+	if record.servicesOffered["Ingredients"] then
+		if className:find("publican") then
+			missingTents = 5
+			missingBedrolls = 5
+		end
+	end
+	if missingTents then
+		for _, item in pairs(types.NPC.inventory(npc):getAll(types.Miscellaneous)) do
+			if item.recordId == "sd_campingitem_bedroll" then
+				missingBedrolls = missingBedrolls - item.count
+			elseif item.recordId == "sd_campingitem_tent" then
+				missingTents = missingTents - item.count
+			end
+		end
+		if missingTents > 0 then
+			local tempItem = world.createObject("sd_campingitem_tent", missingTents)
+			tempItem:moveInto(types.NPC.inventory(npc))
+		end
+		if missingBedrolls > 0 then
+			local tempItem = world.createObject("sd_campingitem_bedroll", missingBedrolls)
+			tempItem:moveInto(types.NPC.inventory(npc))
+		end
+	end
+	]]
+end
+
+I.Activation.addHandlerForType(types.NPC, activateNPC)
+
+local function convertPurchasedWood(player)
+	do return end
+	local Misc	  = types.Miscellaneous
+	local inv	= types.NPC.inventory(player)
+
+	for _, item in pairs(inv:getAll(Misc)) do
+		if item.recordId == "sd_wood_publican" then
+			local count = item.count
+			if item:isValid() and item.count > 0 then
+				item:remove()
+				world.createObject("sd_wood_1", count):moveInto(inv)
+				log(3,"converted "..count.." purchased firewood")
+			end
+		end
+	end	
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Armor Equiping														  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+I.ItemUsage.addHandlerForType(types.Armor, function(armor, actor)
+    actor:sendEvent("SunsDusk_equippedArmor", armor)
+end)
+
+I.ItemUsage.addHandlerForType(types.Light, function(armor, actor)
+    actor:sendEvent("SunsDusk_equippedArmor", armor)
+end)
+
+I.ItemUsage.addHandlerForType(types.Clothing, function(armor, actor)
+    actor:sendEvent("SunsDusk_equippedArmor", armor)
+end)
+
+I.ItemUsage.addHandlerForType(types.Weapon, function(armor, actor)
+    actor:sendEvent("SunsDusk_equippedArmor", armor)
+end)
+
+I.ItemUsage.addHandlerForType(types.Lockpick, function(armor, actor)
+    actor:sendEvent("SunsDusk_equippedArmor", armor)
+end)
+
+I.ItemUsage.addHandlerForType(types.Probe, function(armor, actor)
+    actor:sendEvent("SunsDusk_equippedArmor", armor)
+end)
+
+I.ItemUsage.addHandlerForType(types.Miscellaneous, function(item, actor)
+    actor:sendEvent("SunsDusk_usedMisc", item)
+end)
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Spriggan															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function spawnSpriggan(data)
+	local player = data[1]
+	local tree = data[2]
+	
+		-- Position at random offset from player
+	local playerPos = player.position
+	local angle = math.random() * math.pi * 2
+	local distance = 100 + math.random() * 200
+	
+	local spawnPos = util.vector3(
+		playerPos.x + math.cos(angle) * distance,
+		playerPos.y + math.sin(angle) * distance,
+		playerPos.z + 100
+	)
+	
+	if types.LevelledCreature.records["t_sky_lvl_spriggans"] then
+		local spriggan = world.createObject("t_sky_lvl_spriggans", 1)
+		if spriggan then
+			spriggan:teleport(player.cell, spawnPos)
+		end
+		return
+	end
+	
+	local playerLevel = types.Actor.stats.level(player).current
+	
+	-- Collect all spriggans with their levels
+	local spriggans = {}
+	for _, creatureRecord in pairs(types.Creature.records) do
+		if (creatureRecord.id:find("spriggan") or creatureRecord.name:lower():find("spriggan")) and not creatureRecord.id:find("unique") and not creatureRecord.id:find("bm_spriggan_co") then
+			table.insert(spriggans, {
+				id = creatureRecord.id,
+				level = creatureRecord.level or 1 -- level is not accessible yet
+			})
+		end
+	end
+	
+	if #spriggans == 0 then
+		print("Warning: No spriggans found!")
+		return
+	end
+	
+	-- Find minimum level across all spriggans
+	local minLevel = math.huge
+	for _, sprig in ipairs(spriggans) do
+		minLevel = math.min(minLevel, sprig.level)
+	end
+	
+	-- Determine level cap: if player is weaker than all spriggans, cap at minimum
+	-- Otherwise allow up to playerLevel + 5
+	local maxAllowedLevel = playerLevel < minLevel and minLevel or playerLevel + 5
+	
+	-- Build candidate pool
+	local candidates = {}
+	for _, sprig in ipairs(spriggans) do
+		if sprig.level <= maxAllowedLevel then
+			print(sprig.id, sprig.level)
+			table.insert(candidates, sprig.id)
+		end
+	end
+	
+	-- Pick random candidate and spawn
+	local selectedId = candidates[math.random(#candidates)]
+	local spriggan = world.createObject(selectedId, 1)
+	spriggan:teleport(player.cell, spawnPos)
+
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Inventory Stuff													  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+local function removeItem(data)
+	local player = data[1]
+	local item = data[2]
+	local count = math.min(item.count, data[3] or 1)
+	if count >= 1 then
+		item:remove(count)
+	end
+end
+
+local function addItem(data)
+	local player = data[1]
+	local recordId = data[2]
+	local count = data[3]
+	
+	local tempItem = world.createObject(recordId, count)
+	tempItem:moveInto(types.NPC.inventory(player))
+end
+
+local function destroyCamp(object)
+	local objectId = object.id
+	local tbl = saveData.campingGear[objectId]
+	if tbl then
+		if tbl.tent and tbl.tent:isValid() and tbl.tent.count > 0 then
+			tbl.tent:remove()
+		end
+		if tbl.bedroll and tbl.bedroll:isValid() and tbl.bedroll.count > 0 then
+			tbl.bedroll:remove()
+		end
+		saveData.campingGear[objectId] = nil
+	end
+end
+
+-- ╭──────────────────────────────────────────────────────────────────────╮
+-- │ Handlers															  │
+-- ╰──────────────────────────────────────────────────────────────────────╯
+
+return {
+	engineHandlers = { -- 30 total events
+		onLoad			= onLoad,
+		onInit			= onLoad,
+		onSave			= onSave,
+		onObjectActive	= onObjectActive,
+		onUpdate		= onUpdate,
+	},
+	eventHandlers = {
+		SunsDusk_Unhook								= unhookObject,
+		SunsDusk_WaterBottles_convertMiscInCell		= convertMiscInCell,
+		SunsDusk_WaterBottles_downgradeWaterItem	= downgradeWaterItem,
+		SunsDusk_WaterBottles_spillWater			= spillWater,
+		SunsDusk_WaterBottles_refillBottlesWell		= refillBottlesWell,
+		SunsDusk_WaterBottles_refillSpillables		= refillSpillables,
+		SunsDusk_WaterBottles_consumeWater			= consumeWater,
+		SunsDusk_checkIfVampireWerewolf				= checkIfVampireWerewolf,
+		SunsDusk_createStew							= createStew,
+		SunsDusk_consumeIngredients					= consumeIngredients,
+		SunsDusk_spawnFallingWood					= spawnFallingWood,
+		SunsDusk_removeTree							= removeTree,
+		SunsDusk_igniteFire							= igniteFire,
+		SunsDusk_upgradeFire						= upgradeFire,
+		SunsDusk_getCellInfo						= getCellInfo,
+		SunsDusk_convertPurchasedWood				= convertPurchasedWood,
+		SunsDusk_spawnSpriggan						= spawnSpriggan,
+		SunsDusk_removeItem							= removeItem,
+		SunsDusk_addItem							= addItem,
+		SunsDusk_destroyCamp						= destroyCamp,
+	},
+}
