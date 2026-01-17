@@ -1,0 +1,33 @@
+---@class util.vector2
+--- Represents a 2D vector with various mathematical operations and properties.
+---@field x number The x-coordinate of the vector.
+---@field y number The y-coordinate of the vector.
+---@field __add fun(self: util.vector2, v: util.vector2): util.vector2 Adds two vectors.
+---@field __sub fun(self: util.vector2, v: util.vector2): util.vector2 Subtracts one vector from another.
+---@field __mul fun(self: util.vector2, k: number): util.vector2 Multiplies the vector by a scalar.
+---@field __div fun(self: util.vector2, k: number): util.vector2 Divides the vector by a scalar.
+---@field __tostring fun(self: util.vector2): string Converts the vector to a string representation.
+---@field cross fun(self: util.vector2, v: util.vector2): util.vector2 Computes the cross product of this vector with another vector.
+---@field dot fun(self: util.vector2, v: util.vector2): number Computes the dot product of this vector with another vector.
+---@field ediv fun(self: util.vector2, v: util.vector2): util.vector2 Performs element-wise division with another vector.
+---@field emul fun(self: util.vector2, v: util.vector2): util.vector2 Performs element-wise multiplication with another vector.
+---@field length fun(self: util.vector2): number Computes the length (magnitude) of the vector.
+---@field length2 fun(self: util.vector2): number Computes the square of the vector's length (magnitude).
+---@field normalize fun(self: util.vector2): util.vector2 Normalizes the vector (scales it to have a length of 1).
+---@field rotate fun(self: util.vector2, angle: number): util.vector2 Rotate the vector by radians
+---@field xx util.vector2
+---@field xy util.vector2
+---@field x0 util.vector2
+---@field x1 util.vector2
+---@field yx util.vector2
+---@field yy util.vector2
+---@field y0 util.vector2
+---@field y1 util.vector2
+---@field ["0x"] util.vector2
+---@field ["0y"] util.vector2
+---@field ["00"] util.vector2
+---@field ["01"] util.vector2
+---@field ["1x"] util.vector2
+---@field ["1y"] util.vector2
+---@field ["10"] util.vector2
+---@field ["11"] util.vector2

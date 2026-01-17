@@ -1,0 +1,389 @@
+local LogMessage = require('Scripts.SW4.helper.logmessage')
+local ModInfo = require('scripts.sw4.modinfo')
+
+local Types = require('openmw.types')
+local World = require('openmw.world')
+
+---@alias RecordId string
+---@alias RecordReplacementCallback fun(gameObject: userdata, suggestedReplacementId: RecordId): RecordId, number? Defines a function which is used to determine what object, if any, will replace a specific one. If the return value is false, no replacement will be performed. Otherwise all callbacks will be called until one returns false, a recordId and count(optional) or the originally-suggested replacment object is used.
+
+---@class BaseRecordReplacementData
+---@field recordData table
+---@field replacementCallback RecordReplacementCallback? optional callback to invoke when a record replacement is requested
+
+---@class StringRecordReplacementData:BaseRecordReplacementData
+---@field recordId RecordId
+---@field recordType string
+
+---@class ObjectRecordReplacementData:BaseRecordReplacementData
+---@field gameObject userdata
+
+---@class SubscriptionRecordReplacementData
+---@field originalRecordId RecordId the recordId of the original object to be replaced
+---@field replacementRecordId RecordId the recordId of the replacement object
+
+---@alias GenericReplacementData
+---| StringRecordReplacementData
+---| ObjectRecordReplacementData
+---| SubscriptionRecordReplacementData
+
+---@type table<RecordId, RecordId> map of original recordIds to replacement recordIds
+local RecordReplacementMap = {}
+
+---@type table<RecordId, RecordReplacementCallback[]> map of original recordIds to replacement callbacks
+local ReplacementCallbackMap = {}
+
+---@type table<RecordId, boolean>
+local RecordDeletionMap = {}
+
+---@type table<string, boolean> list of generated recordIds
+local GeneratedRecordIds = {}
+
+---@class RecordReplacementManager
+local RecordReplacementManager = {}
+
+--- Takes a string and capitalizes the first letter, making the rest lowercase.
+--- @param input string
+--- @return string capitalized string or nil if input is not a string
+function RecordReplacementManager.capitalizeFirstLetter(input)
+    assert(input and type(input) == "string", "Input must be a string")
+
+    return input:sub(1, 1):upper() .. input:sub(2):lower()
+end
+
+--- Iterates over the types module and checks all recordStores for the presence of a given recordId, returning that module if it exists.
+---@param recordId RecordId input recordId to search for
+---@return userdata? typesModule  the submodule of openmw.types to provide to the caller
+function RecordReplacementManager.getRecordType(recordId)
+    for _, typedObjectTable in pairs(Types) do
+        if typedObjectTable.records and typedObjectTable.records[recordId] then return typedObjectTable end
+    end
+end
+
+---@param recordId RecordId object to query replacements for
+---@param callback RecordReplacementCallback function to run when actually attempting to replace an instance of this record
+function RecordReplacementManager.addReplacementCallback(recordId, callback)
+    if not callback or not recordId then return end
+
+    if not ReplacementCallbackMap[recordId] then
+        ReplacementCallbackMap[recordId] = {}
+    end
+
+    local callbackTable = ReplacementCallbackMap[recordId]
+
+    for _, existingCallback in ipairs(callbackTable) do
+        if callback == existingCallback then
+            return LogMessage(
+                ("RecordReplacementManager: Replacement callback %s already exists for %s"):format(recordId, callback)
+            )
+        end
+    end
+
+    callbackTable[#callbackTable + 1] = callback
+end
+
+--- Creates a new record in the game world using the provided replacement data.
+--- Does NOT store the data in the replacement map. This is the caller's responsibility, otherwise use the replaceRecord function
+---@param replacementData StringRecordReplacementData
+---@return RecordId recordId recordId of the newly created object
+function RecordReplacementManager.newRecord(replacementData)
+    assert(replacementData.recordType, "Record type is required!")
+
+    local recordTypeName = RecordReplacementManager.capitalizeFirstLetter(replacementData.recordType)
+    local recordType = Types[recordTypeName]
+    assert(recordType, ("Record type %s does not exist!"):format(replacementData.recordType))
+
+    local recordGenerator = recordType.createRecordDraft
+    assert(recordGenerator,
+        ("Record type %s cannot be generated!"):format(recordType)
+    )
+
+    local recordDraft = recordGenerator(replacementData.recordData)
+    local newRecord = World.createRecord(recordDraft)
+    GeneratedRecordIds[newRecord.id] = true
+
+    RecordReplacementManager.addReplacementCallback(newRecord.id, replacementData.replacementCallback)
+
+    return newRecord.id
+end
+
+--- Maps one recordId to another, allowing for the replacement of one record with another.
+--- NOTE: Does't create new records, but does validate their existence. Also, the target recordId may only be one which was generated by the recordReplacer.
+---@param replacementData SubscriptionRecordReplacementData
+function RecordReplacementManager.subscribeToReplacement(replacementData)
+    assert(replacementData.originalRecordId, "Original recordId is required!")
+    assert(replacementData.replacementRecordId, "Replacement recordId is required!")
+
+    local targetRecordId = GeneratedRecordIds[replacementData.replacementRecordId]
+    if not targetRecordId then
+        return LogMessage(("RecordMan: %s does not exist in the replacement map."):format(replacementData
+            .replacementRecordId))
+    end
+
+    local existingReplacement = RecordReplacementMap[replacementData.originalRecordId]
+    if existingReplacement then
+        return LogMessage(("RecordMan: %s already replaced by %s, skipping replacement."):format(
+            replacementData.originalRecordId, existingReplacement))
+    end
+
+    RecordReplacementMap[replacementData.originalRecordId] = replacementData.replacementRecordId
+end
+
+---@param instanceToDelete RecordId recordId of the object which will be deleted upon spawning
+function RecordReplacementManager.subscribeToDeletion(instanceToDelete)
+    if RecordDeletionMap[instanceToDelete] then
+        return LogMessage(
+            ('RecordReplacementManager: %s already exists in the record deletion map!'):format(
+                instanceToDelete)
+        )
+    end
+
+    RecordDeletionMap[instanceToDelete] = true
+end
+
+--- Replaces a record in the game world with a new one, using the provided replacement data.
+--- Takes a string as input instead of requiring the game object
+--- If return value is nil, the record was already replaced on a previous call.
+---@param replacementData StringRecordReplacementData
+---@return string? recordId new recordId of the replacement object
+function RecordReplacementManager.replaceRecordFromId(replacementData)
+    RecordReplacementManager.addReplacementCallback(replacementData.recordId, replacementData.replacementCallback)
+
+    local existingReplacement = RecordReplacementMap[replacementData.recordId]
+    if existingReplacement then
+        LogMessage(("RecordMan: Record %s already replaced, skipping replacement."):format(replacementData.recordId))
+        return existingReplacement
+    end
+
+    local recordType
+    if replacementData.recordType then
+        local typeName = RecordReplacementManager.capitalizeFirstLetter(replacementData.recordType)
+        recordType = Types[typeName]
+    else
+        recordType = RecordReplacementManager.getRecordType(replacementData.recordId)
+    end
+
+    assert(recordType, ("Requested record %s does not exist!"):format(replacementData.recordId))
+
+    local recordGenerator = recordType.createRecordDraft
+    assert(recordGenerator,
+        ("Record type %s cannot be generated!"):format(recordType)
+    )
+
+    local recordDraft = recordGenerator(replacementData.recordData)
+    local replacementRecord = World.createRecord(recordDraft)
+
+    RecordReplacementMap[replacementData.recordId] = replacementRecord.id
+
+    GeneratedRecordIds[replacementRecord.id] = true
+
+    return replacementRecord.id
+end
+
+--- Replaces a record in the game world with a new one, using the provided replacement data.
+--- Takes a game object as input instead of a more primitive string.
+--- If return value is nil, the record was already replaced on a previous call.
+--- Possibly better as an eventHandler.
+---@param replacementData ObjectRecordReplacementData
+---@return string? recordId new recordId of the replacement object. Nil if the record was already replaced.
+function RecordReplacementManager.replaceRecordFromObject(replacementData)
+    assert(replacementData.gameObject, "Game object is required!")
+
+    local recordType = replacementData.gameObject.type
+    local originalRecordId = replacementData.gameObject.recordId
+
+    RecordReplacementManager.addReplacementCallback(originalRecordId, replacementData.replacementCallback)
+
+    local existingReplacement = RecordReplacementMap[originalRecordId]
+    if existingReplacement then
+        LogMessage(("RecordMan: Record %s already replaced, skipping replacement."):format(originalRecordId))
+        return existingReplacement
+    end
+
+    local originalRecord = recordType.records[originalRecordId]
+    assert(originalRecord, ("Original record %s does not exist!"):format(originalRecordId))
+
+    local recordGenerator = recordType.createRecordDraft
+    assert(recordGenerator,
+        ("Record type %s cannot be generated!"):format(recordType)
+    )
+
+    local recordDraft = recordGenerator(replacementData.gameObject)
+    local replacementRecord = World.createRecord(recordDraft)
+
+    RecordReplacementMap[originalRecordId] = replacementRecord.id
+    GeneratedRecordIds[replacementRecord.id] = true
+
+
+    return replacementRecord.id
+end
+
+--- Retrieves the replacement recordId for a given object or recordId.
+--- @param objectOrId string|userdata
+--- @return string
+function RecordReplacementManager.getReplacementRecord(objectOrId)
+    if type(objectOrId) == "string" then
+        return RecordReplacementMap[objectOrId]
+    elseif objectOrId and objectOrId.__type and objectOrId.__type.name == 'MWLua::GObject' then
+        return RecordReplacementMap[objectOrId.recordId]
+    else
+        error("Invalid input provided. Must be either a string or a gameObject.")
+    end
+end
+
+---@param recordId RecordId recordId to run replacement callbacks for
+---@param suggestedReplacementId RecordId recordId found in the recordreplacementmap
+---@param originalObject userdata object to potentially replace
+---@return RecordId|boolean? replacementRecord, number? replacementCount Desired recordId and optional replacement count. If the recordId is simply false, breaks execution of all replacement handlers and prevents replacement altogether.
+function RecordReplacementManager.runReplacementCallbacks(recordId, suggestedReplacementId, originalObject)
+    local replacementCallbacks = ReplacementCallbackMap[recordId]
+
+    if not replacementCallbacks then
+        return LogMessage(
+            ('No Replacement callbacks exist for %s'):format(recordId)
+        )
+    end
+
+    for i = #replacementCallbacks, 1, -1 do
+        -- Bail early and prevent replacement if one of the inner callbacks has attempted to replace the object
+        if not originalObject:isValid() or originalObject.count == 0 then
+            print(
+                ('RecordReplacementManager: BAILING ON OBJECT REPLACEMENT AS A CALLBACK DELETED %s'):format(
+                originalObject)
+            )
+            return false
+        end
+
+        local thisCallback = replacementCallbacks[i]
+        local success, overrideId, overrideCount = pcall(function()
+            return thisCallback(originalObject, suggestedReplacementId)
+        end)
+
+        if success then
+            if overrideId == false then
+                return false
+            elseif overrideId and type(overrideId) == 'string' and RecordReplacementManager.getRecordType(overrideId) then
+                return overrideId, overrideCount
+            end
+        else
+            LogMessage(
+                ('RecordReplacementManager: Failed replacement callback %s on record %s'):format(thisCallback, recordId)
+            )
+        end
+    end
+end
+
+--- Spawns an object instance using the transform and cell information of another.
+--- Since this may be called repeatedly, does not actually remove or disable the original.
+---@param recordId RecordId
+---@param count number
+---@param originalObject userdata
+---@return userdata newObject
+function RecordReplacementManager.spawnAtOldObject(recordId, count, originalObject)
+    local newObject = World.createObject(recordId, count)
+    newObject:teleport(originalObject.cell.name, originalObject.position, originalObject.rotation)
+    newObject:setScale(originalObject.scale)
+    return newObject
+end
+
+--- Replaces a subscribed object with the recorded one
+--- @param originalObject userdata
+--- @return userdata[]? replaced the new objects placed in exchange for the old one, if a replacement was made - otheriwse nil. Note that the framework by default will only replace one object at a time, but replacementCallbacks may specify a count of instances to spawn.
+function RecordReplacementManager.replaceSubscribedObjects(originalObject)
+    assert(originalObject, "Object is required!")
+
+    local recordId = originalObject.recordId
+
+    if RecordDeletionMap[recordId] then
+        originalObject.enabled = false
+        originalObject:remove()
+        return
+    end
+
+    local replacementRecordId = RecordReplacementMap[recordId]
+    local replacementCount = 1
+
+    local overrideId, overrideCount = RecordReplacementManager.runReplacementCallbacks(recordId, replacementRecordId,
+        originalObject)
+
+    if overrideId then
+        if overrideId == false then
+            return
+        else
+            assert(
+                type(overrideId) == 'string',
+                ('RecordReplacementManager: Only false may be used as a value for replacementRecordId if it is not a string type! Received: %s')
+                :format(overrideId)
+            )
+            replacementRecordId = overrideId
+            replacementCount = overrideCount or 1
+        end
+    end
+
+    if not replacementRecordId then return end
+
+    local replacementObjects = {}
+    if not Types.NPC.records[replacementRecordId] and not Types.Creature.records[replacementRecordId] then
+        replacementObjects[#replacementObjects + 1] = RecordReplacementManager.spawnAtOldObject(replacementRecordId,
+            replacementCount, originalObject)
+    else
+        for _ = 1, replacementCount do
+            replacementObjects[#replacementObjects + 1] = RecordReplacementManager.spawnAtOldObject(replacementRecordId,
+                1, originalObject)
+        end
+    end
+
+    originalObject:remove()
+    originalObject.enabled = false
+
+    return #replacementObjects > 0 and replacementObjects or nil
+end
+
+return {
+    engineHandlers = {
+        onSave = function()
+            return {
+                GeneratedRecordIds = GeneratedRecordIds,
+                RecordDeletionMap = RecordDeletionMap,
+                RecordReplacementMap = RecordReplacementMap,
+            }
+        end,
+        onLoad = function(data)
+            if not data then return end
+
+            GeneratedRecordIds = data.GeneratedRecordIds or {}
+            RecordDeletionMap = data.recordDeletionMap or {}
+            RecordReplacementMap = data.RecordReplacementMap or {}
+        end,
+    },
+    interfaceName = ModInfo.name .. "_RecordReplacer",
+    interface = {
+        addReplacementCallback = RecordReplacementManager.addReplacementCallback,
+        getReplacementRecord = RecordReplacementManager.getReplacementRecord,
+        newRecord = RecordReplacementManager.newRecord,
+        replaceSubscribedObjects = RecordReplacementManager.replaceSubscribedObjects,
+        subscribeToDeletion = RecordReplacementManager.subscribeToDeletion,
+        subscribeToReplacement = RecordReplacementManager.subscribeToReplacement,
+        recordDeletionMap = RecordDeletionMap,
+        recordReplacementMap = RecordReplacementMap,
+        replacementCallbackMap = ReplacementCallbackMap,
+        --- Handles generic object replacement by taking either a gameObject or recordId as input,
+        --- replacing the original record with a new one, using provided options.
+        ---@param replacementData GenericReplacementData
+        replaceRecord = function(replacementData)
+            assert(replacementData, "Replacement data is required!")
+            assert(replacementData.recordData, "Replacement data must contain recordData!")
+
+            if replacementData.gameObject then
+                ---@cast replacementData ObjectRecordReplacementData
+                return RecordReplacementManager.replaceRecordFromObject(replacementData)
+            elseif replacementData.recordId then
+                ---@cast replacementData StringRecordReplacementData
+                return RecordReplacementManager.replaceRecordFromId(replacementData)
+            else
+                error("Invalid replacement data provided. Must contain either gameObject or recordId and recordType.")
+            end
+        end,
+    }
+
+}

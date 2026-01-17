@@ -1,0 +1,167 @@
+---@class util.vector3
+--- Represents a 3D vector with various mathematical operations and properties.
+---@field x number The x-coordinate of the vector.
+---@field y number The y-coordinate of the vector.
+---@field z number The z-coordinate of the vector.
+---@field __add fun(self: util.vector3, v: util.vector3): util.vector3 Adds two vectors.
+---@field __sub fun(self: util.vector3, v: util.vector3): util.vector3 Subtracts one vector from another.
+---@field __mul fun(self: util.vector3, k: number): util.vector3 Multiplies the vector by a scalar.
+---@field __div fun(self: util.vector3, k: number): util.vector3 Divides the vector by a scalar.
+---@field __tostring fun(self: util.vector3): string Converts the vector to a string representation.
+---@field cross fun(self: util.vector3, v: util.vector3): util.vector3 Computes the cross product of this vector with another vector.
+---@field dot fun(self: util.vector3, v: util.vector3): number Computes the dot product of this vector with another vector.
+---@field ediv fun(self: util.vector3, v: util.vector3): util.vector3 Performs element-wise division with another vector.
+---@field emul fun(self: util.vector3, v: util.vector3): util.vector3 Performs element-wise multiplication with another vector.
+---@field length fun(self: util.vector3): number Computes the length (magnitude) of the vector.
+---@field length2 fun(self: util.vector3): number Computes the square of the vector's length (magnitude).
+---@field normalize fun(self: util.vector3): util.vector3 Normalizes the vector (scales it to have a length of 1).
+---@field xx util.vector2
+---@field xy util.vector2
+---@field xz util.vector2
+---@field x0 util.vector2
+---@field x1 util.vector2
+---@field yx util.vector2
+---@field yy util.vector2
+---@field yz util.vector2
+---@field y0 util.vector2
+---@field y1 util.vector2
+---@field zx util.vector2
+---@field zy util.vector2
+---@field zz util.vector2
+---@field z0 util.vector2
+---@field z1 util.vector2
+---@field xxx util.vector3
+---@field xxy util.vector3
+---@field xxz util.vector3
+---@field xx0 util.vector3
+---@field xx1 util.vector3
+---@field xyx util.vector3
+---@field xyy util.vector3
+---@field xyz util.vector3
+---@field xy0 util.vector3
+---@field xy1 util.vector3
+---@field xzx util.vector3
+---@field xzy util.vector3
+---@field xzz util.vector3
+---@field xz0 util.vector3
+---@field xz1 util.vector3
+---@field x0x util.vector3
+---@field x0y util.vector3
+---@field x0z util.vector3
+---@field x00 util.vector3
+---@field x01 util.vector3
+---@field x1x util.vector3
+---@field x1y util.vector3
+---@field x1z util.vector3
+---@field x10 util.vector3
+---@field x11 util.vector3
+---@field yxx util.vector3
+---@field yxy util.vector3
+---@field yxz util.vector3
+---@field yx0 util.vector3
+---@field yx1 util.vector3
+---@field yyx util.vector3
+---@field yyy util.vector3
+---@field yyz util.vector3
+---@field yy0 util.vector3
+---@field yy1 util.vector3
+---@field yzx util.vector3
+---@field yzy util.vector3
+---@field yzz util.vector3
+---@field yz0 util.vector3
+---@field yz1 util.vector3
+---@field y0x util.vector3
+---@field y0y util.vector3
+---@field y0z util.vector3
+---@field y00 util.vector3
+---@field y01 util.vector3
+---@field y1x util.vector3
+---@field y1y util.vector3
+---@field y1z util.vector3
+---@field y10 util.vector3
+---@field y11 util.vector3
+---@field zxx util.vector3
+---@field zxy util.vector3
+---@field zxz util.vector3
+---@field zx0 util.vector3
+---@field zx1 util.vector3
+---@field zyx util.vector3
+---@field zyy util.vector3
+---@field zyz util.vector3
+---@field zy0 util.vector3
+---@field zy1 util.vector3
+---@field zzx util.vector3
+---@field zzy util.vector3
+---@field zzz util.vector3
+---@field zz0 util.vector3
+---@field zz1 util.vector3
+---@field z0x util.vector3
+---@field z0y util.vector3
+---@field z0z util.vector3
+---@field z00 util.vector3
+---@field z01 util.vector3
+---@field z1x util.vector3
+---@field z1y util.vector3
+---@field z1z util.vector3
+---@field z10 util.vector3
+---@field z11 util.vector3
+---@field ["0x"] util.vector2
+---@field ["0y"] util.vector2
+---@field ["0z"] util.vector2
+---@field ["00"] util.vector2
+---@field ["01"] util.vector2
+---@field ["1x"] util.vector2
+---@field ["1y"] util.vector2
+---@field ["1z"] util.vector2
+---@field ["10"] util.vector2
+---@field ["11"] util.vector2
+---@field ["0xx"] util.vector3
+---@field ["0xy"] util.vector3
+---@field ["0xz"] util.vector3
+---@field ["0x0"] util.vector3
+---@field ["0x1"] util.vector3
+---@field ["0yx"] util.vector3
+---@field ["0yy"] util.vector3
+---@field ["0yz"] util.vector3
+---@field ["0y0"] util.vector3
+---@field ["0y1"] util.vector3
+---@field ["0zx"] util.vector3
+---@field ["0zy"] util.vector3
+---@field ["0zz"] util.vector3
+---@field ["0z0"] util.vector3
+---@field ["0z1"] util.vector3
+---@field ["00x"] util.vector3
+---@field ["00y"] util.vector3
+---@field ["00z"] util.vector3
+---@field ["000"] util.vector3
+---@field ["001"] util.vector3
+---@field ["01x"] util.vector3
+---@field ["01y"] util.vector3
+---@field ["01z"] util.vector3
+---@field ["010"] util.vector3
+---@field ["011"] util.vector3
+---@field ["1xx"] util.vector3
+---@field ["1xy"] util.vector3
+---@field ["1xz"] util.vector3
+---@field ["1x0"] util.vector3
+---@field ["1x1"] util.vector3
+---@field ["1yx"] util.vector3
+---@field ["1yy"] util.vector3
+---@field ["1yz"] util.vector3
+---@field ["1y0"] util.vector3
+---@field ["1y1"] util.vector3
+---@field ["1zx"] util.vector3
+---@field ["1zy"] util.vector3
+---@field ["1zz"] util.vector3
+---@field ["1z0"] util.vector3
+---@field ["1z1"] util.vector3
+---@field ["10x"] util.vector3
+---@field ["10y"] util.vector3
+---@field ["10z"] util.vector3
+---@field ["100"] util.vector3
+---@field ["101"] util.vector3
+---@field ["11x"] util.vector3
+---@field ["11y"] util.vector3
+---@field ["11z"] util.vector3
+---@field ["110"] util.vector3
+---@field ["111"] util.vector3

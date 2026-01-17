@@ -1,0 +1,9 @@
+---@class util.color
+---@field r number red channel (normalized)
+---@field g number green channel (normalized)
+---@field a number alpha channel (normalized)
+---@field b number blue channel (normalized)
+---@field asHex fun(self: util.color): string
+---@field asRgb fun(self: util.color): util.vector3
+--- Fuck this, I don't feel like annotating vec4 right now
+---@field asRgba fun(self: util.color): util.vector4
