@@ -1,0 +1,50 @@
+return {
+    KHAJIIT_RACE = {
+        ["khajiit"] = true,
+        ["t_els_cathay"] = true,
+        ["t_els_cathay-raht"] = true,
+        ["t_els_ohmes"] = true,
+        ["t_els_ohmes-raht"] = true,
+        ["t_els_suthay"] = true,
+        ["t_els_dagi-raht"] = true,
+    },
+
+    EXEMPT_FACTIONS = {
+        ["thieves guild"] = true,
+        ["camonna tong"]  = true,
+        ["telvanni"]      = true,
+    },
+
+    CONTRABAND = {
+        ["potion_skooma_01"]     = true,
+        ["ingred_moon_sugar_01"] = true,
+        ["ingred_ash_salts_01"]    = true,
+        ["ingred_raw_glass_01"]    = true,
+        ["ingred_raw_ebony_01"] = true,
+        ["ingred_Dae_cursed_raw_ebony_01"] = true,
+        ["ingred_human_meat_01"] = true,
+        ["amulet of 6th house"] =true,
+        ["ingred_6th_corprusmeat_01"]   = true,
+        ["ingred_6th_corprusmeat_02"]   = true,
+        ["ingred_6th_corprusmeat_03"]   = true,
+        ["ingred_6th_corprusmeat_04"]   = true,
+        ["ingred_6th_corprusmeat_05"]   = true,
+        ["ingred_6th_corprusmeat_06"]   = true,
+        ["ingred_6th_corprusmeat_07"]   = true,
+        ["ingred_corprus_weepings_01"]   = true,
+        ["misc_6th_ash_statue_01"]   = true,
+        ["Misc_dwrv_artifact50"] = true,
+        ["Misc_coin00"] = true,
+        ["Misc_dwrv_pitcher00"] = true,
+        ["Misc_dwrv_artifact60"]    = true,
+        ["misc_dwrv_artifact00"]    = true,
+        ["Misc_dwrv_goblet10"]  = true,
+        ["Misc_dwrv_goblet00"]  = true,
+        ["Misc_dwrv_mug00"] = true,
+        ["Misc_dwrv_bowl00"]    = true,
+    },
+
+    EXEMPT_NPCS = {
+        -- ["npc_id_here"] = true,
+    },
+}

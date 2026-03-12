@@ -1,0 +1,22 @@
+local ATTACK_STATE = {
+    NO_STATE = 0,
+    WINDUP_START = 1,
+    WINDUP_MIN = 2,
+    WINDUP_MAX = 3,
+    RELEASE_START = 4,
+    RELEASE_HIT = 5,
+    FOLLOW_START = 6
+}
+
+local COMBAT_STATE = {
+    NO_STATE = "NO_STATE",
+    STAND_GROUND = "STAND_GROUND",
+    FIGHT = "FIGHT",
+    RETREAT = "RETREAT",
+    MERCY = "MERCY"
+}
+
+return {
+    ATTACK_STATE = ATTACK_STATE,
+    COMBAT_STATE = COMBAT_STATE
+}
