@@ -1,0 +1,54 @@
+local config = {}
+config.modVersion = "1.0"
+config.configPath = "QuickKeysHotbarExtended"
+config.BorderSize = 2
+config.panelNames = { "quick_", "quick2", "quickH" }
+config.mcmDefault = {
+    logLevel = 3,
+    HotBarVisible = true,
+    HotBarOrientation = "horizontal",   -- "horizontal" или "vertical"
+    sephIntegration = true,
+    HotBarPositionX = 50,
+    HotBarPositionY = 98,
+    SlotSpacing = 3,
+    SlotIconSize = 33,
+    equipBorderSize = 2,
+    SlotBackgroundAlpha = 0,
+    iconBackgroundAlpha = 60,
+    iconBackgroundTexture = true,
+    StatusBar = true,
+    ItemCountPositionX = 90,
+    ItemCountPositionY = 90,
+    SlotNumber = true,
+    SlotNumberPositionX = 10,
+    SlotNumberPositionY = 10,
+    AlchemyEffectIcons = true,
+    ScrollEffectIcons = true,
+    EnchantEffectIcons = false,
+    effectIconStyle = "bigIcon",       -- "Icon" или "bigIcon"
+    effectIconSize = 40,
+    effectIconPositionX = 95,
+    effectIconPositionY = 5,
+    HotBarExtended = false,
+    modifierKey2 = {
+        keyCode = tes3.scanCode.lShift,
+        isShiftDown = false,
+        isAltDown = false,
+        isControlDown = false,
+        mouseWheel = false,
+        mouseButton = false
+        },
+    modifierKey3 = {
+        keyCode = tes3.scanCode.lAlt,
+        isShiftDown = false,
+        isAltDown = false,
+        isControlDown = false,
+        mouseWheel = false,
+        mouseButton = false
+        },
+    numberVisiblePanels = 3,
+    numberVisibleSlot = 9,
+    PanelsInOneLine = false,
+    }
+config.mcm = mwse.loadConfig(config.configPath, config.mcmDefault)
+return config

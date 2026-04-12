@@ -1,0 +1,62 @@
+local I     = require('openmw.interfaces')
+local input = require('openmw.input')
+
+I.Settings.registerPage({
+    key = "InspectIt",
+    l10n = "InspectIt",
+    name = "InspectIt mod",
+    description = "Settings of Inspect items mod",
+})
+
+input.registerAction({
+    key  = 'inspectItemAction',
+    type = input.ACTION_TYPE.Boolean,
+    l10n = 'InspectIt',
+    name = 'Inspect Item',
+    description = 'Use this action to inspect item',
+    defaultValue = false,
+})
+
+input.registerAction({
+    key = 'DetailItemAction',
+    type = input.ACTION_TYPE.Boolean,
+    l10n = 'InspectIt',
+    name = 'Inspect Details',
+    description = 'Use this action to Inspect Details',
+    defaultValue = false,
+})
+
+I.Settings.registerGroup({
+    key = "Settings_tt_InspectIT",
+    page = "InspectIt",
+    l10n = "InspectIt",
+    name = "InspectIt settings",
+    permanentStorage = true,
+    settings = {
+        {
+            key = 'INIT_FreezeTimeDefault',
+            renderer = 'checkbox',
+            name = 'Freeze Time Automatically',
+            description = 'Freeze time when inspecting',
+            default = true
+        },
+        {
+            key      = "inspectItemAction", 
+            renderer = 'inputBinding',
+            name     = 'choose inspect key',
+            description = 'key to inspect items',
+            default  = 'Y',  
+            argument = { type = "action", key = 'inspectItemAction' },
+        },
+        {
+            key = "DetailItemAction",
+            renderer = 'inputBinding',
+            name = 'Choose Inspect Details key',
+            description = 'Key to Inspect Details',
+            default = 'U',
+            argument = { type = "action", key = 'DetailItemAction' },
+        },		
+    },
+})
+
+return
