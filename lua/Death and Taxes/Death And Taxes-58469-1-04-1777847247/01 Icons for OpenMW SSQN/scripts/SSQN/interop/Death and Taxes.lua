@@ -1,0 +1,151 @@
+local ssqn = include("SSQN.interop")
+
+if (ssqn) then
+
+    -- add commands to register an SSQN icon
+
+	ssqn.registerQIcon("MV_DeadTaxman","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_CE","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_0","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_seydafinale","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_IB","\\Icons\\SSQN\\bounty.dds")
+	ssqn.registerQIcon("TR_m3_OE_Resigned","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_Cursed","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_misc","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_1","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_2","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_TrueFinale","\\Icons\\SSQN\\census.dds")
+	ssqn.registerQIcon("DAT_DF","\\Icons\\SSQN\\census.dds")
+    ssqn.registerQIcon("MT_DAT","\\Icons\\SSQN\\DAT_MT.dds")
+    ssqn.registerQIcon("IL_DAT","\\Icons\\SSQN\\DAT_IL.dds")
+	ssqn.registerQIcon("TG_DAT","\\Icons\\SSQN\\DAT_TG.dds")
+
+
+	
+
+end
+
+if (ssqn) and (ssqn.registerQBlock) then
+
+    -- add commands to block a journal ID from showing banner notifications
+
+	ssqn.registerQBlock("DAT_CE_taxes01_Eldafire")
+	ssqn.registerQBlock("__DAT_CE_Book")
+	ssqn.registerQBlock("DAT_Addhiranirr")
+	ssqn.registerQBlock("DAT_CE_Tsavia02_betray")
+	ssqn.registerQBlock("DAT_CE_taxes01_FineMouth")
+	ssqn.registerQBlock("DAT_CE_NarsisFinale_Kill")
+	ssqn.registerQBlock("_DAT_CE_armtownsfolk_kunlei")
+	ssqn.registerQBlock("_DAT_CE_armtownsfolk_ital")
+	ssqn.registerQBlock("_DAT_CE_armtownsfolk_vows")
+	ssqn.registerQBlock("DAT_CE_taxes01_hrisskar")
+	ssqn.registerQBlock("DAT_CE_warehouse_Hrisskar")
+	ssqn.registerQBlock("DAT_CE_warehouse_Sellus")
+	ssqn.registerQBlock("_DAT_CE_armtownsfolk_neewul")
+	ssqn.registerQBlock("_DAT_CE_badgeman_badge")
+	ssqn.registerQBlock("_DAT_CE_cajan_darnell")
+	ssqn.registerQBlock("_DAT_CE_cajan_int")
+	ssqn.registerQBlock("_DAT_CE_discount_demote")
+	ssqn.registerQBlock("_DAT_CE_dondolin_misteyes")
+	ssqn.registerQBlock("_DAT_CE_dondolin_nilara")
+	ssqn.registerQBlock("_DAT_CE_dondolin_valtio")
+	ssqn.registerQBlock("_DAT_CE_dondolin_valvius")
+	ssqn.registerQBlock("_DAT_CE_ebontax_1")
+	ssqn.registerQBlock("_DAT_CE_ebontax_2")
+	ssqn.registerQBlock("_DAT_CE_ebontax_3")
+	ssqn.registerQBlock("_DAT_CE_ebontax_4")
+	ssqn.registerQBlock("_DAT_CE_ebontax_5")
+	ssqn.registerQBlock("_DAT_CE_envoy_bolnor")
+	ssqn.registerQBlock("_DAT_CE_envoy_nebris")
+	ssqn.registerQBlock("_DAT_CE_envoy_bolnorA")
+	ssqn.registerQBlock("_DAT_CE_envoy_bolnorB")
+	ssqn.registerQBlock("MV_DeadTaxmanBody")
+	ssqn.registerQBlock("DAT_CE_laurient01_intro")
+	ssqn.registerQBlock("DAT_CE_laurient01_duty")
+	ssqn.registerQBlock("DAT_CE_laurient01_dreams")
+	ssqn.registerQBlock("DAT_CE_laurient01_census")
+	ssqn.registerQBlock("_DAT_CE_FF_elam")
+	ssqn.registerQBlock("_DAT_CE_FF_mora")
+	ssqn.registerQBlock("_DAT_CE_FF_nidril")
+	ssqn.registerQBlock("_DAT_CE_FF_tandryen")
+	ssqn.registerQBlock("DAT_CE_smugglerscave_free")
+	ssqn.registerQBlock("DAT_CE_patrol_qor")
+	ssqn.registerQBlock("DAT_CE_patrol_hwm")
+	ssqn.registerQBlock("DAT_CE_patrol_beshvi")
+	ssqn.registerQBlock("DAT_CE_patrol_skrend")
+	ssqn.registerQBlock("DAT_CE_patrol_pontian")
+	ssqn.registerQBlock("DAT_CE_mole_coyle")
+	ssqn.registerQBlock("DAT_CE_mole_delvath")
+	ssqn.registerQBlock("DAT_CE_mole_hjefla")
+	ssqn.registerQBlock("DAT_CE_hrondar_mero")
+	ssqn.registerQBlock("DAT_CE_tyrant_laur")
+	ssqn.registerQBlock("DAT_CE_surrender_ceno")
+	ssqn.registerQBlock("DAT_CE_surrender_pnd")
+	ssqn.registerQBlock("DAT_CE_surrender_quinc")
+	ssqn.registerQBlock("DAT_misc_hrisskar_bonus")
+	ssqn.registerQBlock("DAT_CE_warndavoth_void")
+	ssqn.registerQBlock("_DAT_var_weirdvaxthing")
+	ssqn.registerQBlock("_DAT_CE_golmok_dreugh")
+	ssqn.registerQBlock("_DAT_CE_golmok_refuse")
+	ssqn.registerQBlock("_DAT_CE_golmok_tax")
+	ssqn.registerQBlock("DAT_CE_nerevaraxe_good")
+	ssqn.registerQBlock("DAT_CE_nerevaraxe_laur")
+	ssqn.registerQBlock("DAT_CE_nerevaraxe_me")
+	ssqn.registerQBlock("DAT_CE_helnimfire_era")
+	ssqn.registerQBlock("_DAT_CE_helloworld_thuxis")
+	ssqn.registerQBlock("_DAT_CE_helloworld_xalmota")
+	ssqn.registerQBlock("_DAT_CE_helloworld_kaladryon")
+	ssqn.registerQBlock("_DAT_CE_helloworld_beshvi")
+	ssqn.registerQBlock("_DAT_CE_stormgatechoiceB")
+	ssqn.registerQBlock("DAT_CE_sohskill")
+	ssqn.registerQBlock("DAT_1_becomeinspector_seyda")
+	ssqn.registerQBlock("DAT_1_becomeinspector_stormgate")
+	ssqn.registerQBlock("DAT_1_becomeinspector_teyn")
+	ssqn.registerQBlock("DAT_1_becomeinspector_helnim")
+	ssqn.registerQBlock("DAT_1_becomeinspector_firewatch")
+	ssqn.registerQBlock("DAT_1_becomeinspector_ebonheart")
+	ssqn.registerQBlock("DAT_1_becomeinspector_narsis")
+	ssqn.registerQBlock("DAT_1_becomeinspector_coast")
+	ssqn.registerQBlock("DAT_CE_caldana_adri")
+	ssqn.registerQBlock("DAT_CE_caldana_itia")
+	ssqn.registerQBlock("DAT_VAR_platter")
+	ssqn.registerQBlock("DAT_VAR_benzul")
+	ssqn.registerQBlock("DAT_VAR_haraldletter")
+	ssqn.registerQBlock("DAT_VAR")
+	ssqn.registerQBlock("DAT_misc_brotherhood")
+	ssqn.registerQBlock("DAT_VAR_dagger")
+	ssqn.registerQBlock("DAT_helnimkey")
+	ssqn.registerQBlock("DAT_var_helnims")
+	ssqn.registerQBlock("DAT_AnvilNote")
+	ssqn.registerQBlock("DAT_CE_ImbrelBow_Exposed")
+	ssqn.registerQBlock("DAT_CE_dumbuk_gnisis")
+	ssqn.registerQBlock("DAT_CE_dumbuk_wolverine")
+	ssqn.registerQBlock("DAT_DF_townsfolk_sarnir")
+	ssqn.registerQBlock("DAT_DF_townsfolk_hurg")
+	ssqn.registerQBlock("DAT_DF_townsfolk_onmi")
+	ssqn.registerQBlock("DAT_DF_townsfolk_fjorrod")
+	ssqn.registerQBlock("DAT_DF_townsfolk_greidil")
+	ssqn.registerQBlock("DAT_AfterParty")
+	ssqn.registerQBlock("DAT_CE_Narsis01_Coast")
+	ssqn.registerQBlock("DAT_misc_tohan_leads")
+	ssqn.registerQBlock("DAT_misc_tohan_norvayne")
+	ssqn.registerQBlock("DAT_CE_Alfnar01_thoga")
+	ssqn.registerQBlock("DAT_CE_Alfnar01_angoril")
+	ssqn.registerQBlock("DAT_CE_Alfnar01_ygfa")
+	ssqn.registerQBlock("DAT_CE_Alfnar01_mebastien")
+	ssqn.registerQBlock("DAT_CE_Alfnar01_drelasa")
+
+
+
+
+
+
+
+end
+
+if (ssqn) and (ssqn.addQComment) then
+
+ssqn.addQComment("MV_DeadTaxman", 100, "You now own the Grand Pharos Lighthouse in Seyda Neen.")
+
+end
+

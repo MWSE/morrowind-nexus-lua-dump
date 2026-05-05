@@ -1,0 +1,36 @@
+---@meta
+-- ###
+--- @class lwsModData
+--- @field baseStaffId string
+--- @field progression lws.progression|integer
+--- @field staffEquipped boolean
+--- @field staffMagickaAccumulated number
+--- @field staffLevel integer
+--- @field staffMaxLevelReached boolean
+--- @field staffLevelUpPending boolean
+--- @field staffEffectLevels table<lws.effectType, integer>
+--- @field staffFilledEnchantmentSlots integer
+-- ###
+--- @class lwsEffectInfo
+--- @field type tes3.effect
+--- @field attribute tes3.attribute|integer|nil
+--- @field skill tes3.skill|integer|nil
+-- ###
+--- @class lwsEffectDefinition
+--- @field type lws.effectType
+--- @field displayName string
+--- @field effectInfos lwsEffectInfo[]
+--- @field magnitudes integer[]
+--- @field availableAtLevel integer
+-- ###
+--- @class lwsUpgradeOptionUi
+--- @field setSelected function<boolean>
+-- ###
+---@class levelingWizardStaffConfig
+---@field modStartRequiresWizardRank boolean
+---@field modStartRequiredPlayerLevel integer
+---@field levelUpMagickaBase integer
+---@field levelUpMagickaAtTargetLevel integer
+---@field targetLevel integer
+---@field useDiminishingReturns boolean
+---@field diminishingReturnHalfThreshold number

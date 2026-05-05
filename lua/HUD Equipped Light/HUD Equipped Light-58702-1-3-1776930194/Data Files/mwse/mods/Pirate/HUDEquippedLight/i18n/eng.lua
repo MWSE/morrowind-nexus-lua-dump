@@ -1,0 +1,36 @@
+local this = {
+    --mcm general
+    ["mcm.modname"] = "HUD Equipped Light",
+    ["mcm.version"] = "\nVersion: ",
+    ["mcm.TESAll"] = "Mod page on TESAll",
+    ["mcm.FullRest"] = "Mod page on FullRest",
+    ["mcm.Nexus"] = "Mod page on Nexusmods",
+    ["mcm.Pirate"] = "Mod made by Pirate.",
+    ["mcm.ModDescription"] = "This mod adds a slot to the game interface that displays the icon of the equipped light source or shield.\nFor a light source, the remaining time bar is displayed. For a shield, the condition bar and, if enchanted, the remaining charge bar are displayed.",
+    ["mcm.Links"] = "Links",
+    ["mcm.Credits"] = "Credits",
+    ["mcm.generalSettings"] = "General Settings",
+    ["mcm.displaySlot.label"] = "Slot position settings",
+    ["mcm.displaySlot.desc"] = "This option allows you to enable\\disable the display of the equipped light\\shield slot on the screen.",
+    ["mcm.Slot.YesNo.label"] = "Show equipped light slot?",
+    ["mcm.Slot.YesNo.desc"] = "This option allows you to enable\\disable the display of the equipped light slot on the screen.",
+    ["mcm.EmptySlot.YesNo.label"] = "Show empty light slot?",
+    ["mcm.EmptySlot.YesNo.desc"] = "This option allows you to enable\\disable the display of the slot when no light source or shield is equipped.",
+    ["mcm.seph.YesNo.label"] = "Use \"Seph's HUD Customizer\"?",
+    ["mcm.seph.YesNo.desc"] = "This option enables precise positioning of the equipped light slot using \"Seph's HUD Customizer\".\nThe option is available when \"Seph's HUD Customizer\" is installed.\n\n\z
+    If you want to use the built-in position settings from this menu, disable this option.\nAfter enabling\\disabling this option, you need to restart the game!",
+    ["mcm.Slot.PosX.label"] = "Slot horizontal position:",
+    ["mcm.Slot.PosX.desc"] = "This parameter determines the horizontal position of the equipped light slot on the screen.",
+    ["mcm.Slot.PosY.label"] = "Slot vertical position:",
+    ["mcm.Slot.PosY.desc"] = "This parameter determines the vertical position of the equipped light slot on the screen.",
+    ["mcm.category1.label"] = "Equipped items settings",
+    ["mcm.category1.desc"] = "Settings for equipped items.",
+    ["mcm.LightVisible.YesNo.label"] = "Show equipped light?",
+    ["mcm.LightVisible.YesNo.desc"] = "This option allows you to enable\\disable the display of the equipped light source.",
+    ["mcm.ShieldVisible.YesNo.label"] = "Show equipped shield?",
+    ["mcm.ShieldVisible.YesNo.desc"] = "This option allows you to enable\\disable the display of the equipped shield.",
+    ["mcm.SloticonSize.label"] = "Icon size",
+    ["mcm.SloticonSize.desc"] = "This parameter determines the size of the equipped item icon.",
+
+}
+return this

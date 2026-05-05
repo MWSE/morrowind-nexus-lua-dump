@@ -1,0 +1,54 @@
+---@meta AdvancedWorldMap.Interface
+
+---@class AdvancedWorldMap.DataHandler.EntranceData
+---@field pos any position
+---@field cId string cell id
+---@field isEx boolean is in exterior cell
+---@field isLEx boolean is destination in like exterior cell
+---@field dCId string destination cell id
+---@field dPos any destination position
+---@field isDEx boolean is destination cell exterior
+---@field isDLEx boolean is destination cell like exterior
+---@field name string destination cell name
+---@field fName string destination cell full name
+---@field dHash string door hash
+
+---@class AdvancedWorldMap.MapImageInfo
+---@field version integer
+---@field time integer
+---@field file string
+---@field width integer
+---@field height integer
+---@field tileSize integer?
+---@field pixelsPerCell integer
+---@field gridX {min : integer, max : integer}
+---@field gridY {min : integer, max : integer}
+---@field bColor number[]?
+
+---@class AdvancedWorldMap.Interface.UIElements
+---@field scrollBox fun(params: any): Layout creates a scroll box
+---@field button fun(params: any): Layout creates a button
+---@field borders fun(): Layout[] creates borders
+---@field checkbox fun(params: any): Layout creates a checkbox
+---@field interval fun(width: number, height: number): Layout creates an interval
+---@field tooltip table module for creating tooltips
+
+---@class AdvancedWorldMap.Interface
+---@field version integer version of the interface
+---@field events AdvancedWorldMap.Event event system
+---@field openMapMenu fun(inMenuMode: boolean): AdvancedWorldMap.Menu.Map opens the world map menu
+---@field closeMapMenu fun() closes the world map menu
+---@field toggleMapMenu fun() toggles the world map menu
+---@field getMapMenu fun() : AdvancedWorldMap.Menu.Map gets the world map menu
+---@field getConfig fun() : table gets the current configuration
+---@field setConfigValue fun(path: string, value: any) sets a configuration value at the given path. Like setConfigValue("main.updateFrequency", 25)
+---@field isDiscovered fun(cellId: string) : boolean checks if the cell with the given ID is discovered
+---@field isVisited fun(cellId: string) : number? checks if the cell with the given ID is visited. Returns timestamp or nil
+---@field isMapDataInitialized fun() : boolean checks if the map data is initialized
+---@field getCellNameById fun(cellId: string) : string? gets the cell name by its ID
+---@field getExteriorCellName fun(pos: any) : string? gets the exterior cell name by position
+---@field getEntranceMarkerData fun(cellId: string) : table<string, AdvancedWorldMap.DataHandler.EntranceData>? gets the entrance marker data for the given cell ID. Returns a table where keys are door hashes and values are EntranceData
+---@field getDoorHash fun(doorRef: GameObject, destCellId: string) : string gets the door hash for the given door reference and destination cell ID
+---@field setWorldMapInfo fun(mapInfo: AdvancedWorldMap.MapImageInfo, dirPath: string, mapV1ImagePath: string?): boolean sets the world map info for the map. Used to inject custom map info when the map is initialized.
+---@field uiElements AdvancedWorldMap.Interface.UIElements
+---@field realTimer fun(time: number, callback: fun()) sets a real time timer

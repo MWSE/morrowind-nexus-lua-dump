@@ -1,0 +1,1 @@
+lws.Config = nil -- assigned from the MCM

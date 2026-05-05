@@ -1,0 +1,167 @@
+local routes = {
+
+    ------------------------
+    -- SILT STRIDERS
+    ------------------------
+    silt_vanilla = {
+        ["Ald-ruhn"] = { links = { "Balmora", "Gnisis", "Khuul", "Maar Gan" } },
+        ["Balmora"] = { links = { "Ald-ruhn", "Seyda Neen", "Suran", "Vivec" } },
+        ["Gnisis"] = { links = { "Ald-ruhn", "Khuul", "Maar Gan", "Seyda Neen" } },
+        ["Khuul"] = { links = { "Ald-ruhn", "Gnisis", "Maar Gan" } },
+        ["Maar Gan"] = { links = { "Ald-ruhn", "Gnisis", "Khuul" } },
+        ["Molag Mar"] = { links = { "Suran", "Vivec" } },
+        ["Seyda Neen"] = { links = { "Balmora", "Gnisis", "Suran", "Vivec" } },
+        ["Suran"] = { links = { "Balmora", "Molag Mar", "Seyda Neen", "Vivec" } },
+        ["Vivec"] = { links = { "Balmora", "Molag Mar", "Seyda Neen", "Suran" } },
+    },
+    silt_tr= {
+        -- TR West Network
+        ["Arvud"] = { links = { "Hlan Oek", "Menaan" } },
+        ["Bal Foyen"] = { links = { "Hlan Oek", "Menaan", "Omaynis" } },
+        ["Bodrum"] = { links = { "Omaynis" } },
+        ["Hlan Oek"] = { links = { "Arvud", "Bal Foyen", "Hlerynhul" } },
+        ["Hlerynhul"] = { links = { "Hlan Oek", "Narsis" } },
+        ["Menaan"] = { links = { "Arvud", "Bal Foyen" } },
+        ["Narsis"] = { links = { "Hlerynhul" } },
+        ["Omaynis"] = { links = { "Bal Foyen", "Bodrum" } },
+        -- TR East Network
+        ["Aimrah"] = { links = { "Almas Thirr", "Vhul" } },
+        ["Akamora"] = { links = { "Necrom", "Sailen", "Tel Muthada" } },
+        ["Almas Thirr"] = { links = { "Aimrah", "Vhul" } },
+        ["Bosmora"] = { links = { "Sailen" } },
+        ["Necrom"] = { links = { "Akamora", "Sailen" } },
+        ["Ranyon-ruhn"] = { links = { "Helnim", "Tel Ouada" } },
+        ["Sailen"] = { links = { "Akamora", "Bosmora", "Necrom" } },
+        ["Helnim"] = { links = { "Ranyon-ruhn", "Tel Muthada" } },
+        ["Tel Muthada"] = { links = { "Akamora", "Helnim" } },
+        ["Tel Ouada"] = { links = { "Ranyon-ruhn" } },
+        ["Vhul"] = { links = { "Aimrah", "Almas Thirr" } },
+    },
+    silt_pc= {
+        ["Anvil"] = { links = { "Brina Cross", "Hal Sadek" } },
+        ["Brina Cross"] = { links = { "Anvil" } },
+        ["Hal Sadek"] = { links = { "Anvil" } },
+    },
+    silt_sky= {
+        ["Karthwasten"] = { links = { "Dragonstar West" } },
+        ["Dragonstar West"] = { links = { "Karthwasten" } },
+    },
+
+    ------------------------
+    -- BOATS
+    ------------------------
+    boat_vanilla = {
+        ["Dagon Fel"] = { links = { "Khuul", "Sadrith Mora", "Tel Aruhn", "Tel Mora" } },
+        ["Ebonheart"] = { links = { "Hla Oad", "Sadrith Mora", "Tel Branora", "Vivec", "Holamayan" } },
+        ["Gnaar Mok"] = { links = { "Hla Oad", "Khuul" } },
+        ["Hla Oad"] = { links = { "Ebonheart", "Gnaar Mok", "Molag Mar", "Vivec" } },
+        ["Holamayan"] = { links = { "Ebonheart" } },
+        ["Khuul"] = { links = { "Dagon Fel", "Gnaar Mok", "Fort Frostmoth" } },
+        ["Molag Mar"] = { links = { "Hla Oad", "Tel Branora", "Vivec" } },
+        ["Sadrith Mora"] = { links = { "Ebonheart", "Dagon Fel", "Tel Branora", "Tel Mora", "Vos" } },
+        ["Tel Aruhn"] = { links = { "Dagon Fel", "Tel Mora", "Vos" } },
+        ["Tel Branora"] = { links = { "Ebonheart", "Molag Mar", "Sadrith Mora", "Vivec" } },
+        ["Tel Mora"] = { links = { "Dagon Fel", "Sadrith Mora", "Tel Aruhn", "Vos" } },
+        ["Vivec"] = { links = { "Ebonheart", "Hla Oad", "Molag Mar", "Tel Branora" } },
+        ["Vos"] = { links = { "Sadrith Mora", "Tel Aruhn", "Tel Mora" } },
+
+        -- Bloodmoon
+        ["Fort Frostmoth"] = { links = { "Khuul", "Raven Rock" } },
+        ["Raven Rock"] = { links = { "Fort Frostmoth" } },
+    },
+    boat_tr = { -- includes river striders
+        ["Seyda Neen"] = { links = { "Hla Oad", "Gnaar Mok", "Ebonheart" } },
+        ["Hla Oad"] = { links = { "Seyda Neen", "Gnaar Mok", "Vivec" } },
+        ["Gnaar Mok"] = { links = { "Seyda Neen", "Hla Oad", "Khuul" } },
+        ["Khuul"] = { links = { "Gnaar Mok", "Dagon Fel" } },
+        ["Dagon Fel"] = { links = { "Khuul", "Sadrith Mora", "Firewatch", "Nivalis" } },
+        ["Sadrith Mora"] = { links = { "Dagon Fel", "Tel Mora", "Tel Branora", "Vivec", "Firewatch", "Helnim", "Marog" } },
+        ["Tel Mora"] = { links = { "Sadrith Mora", "Tel Aruhn" } },
+        ["Tel Aruhn"] = { links = { "Tel Mora", "Vos" } },
+        ["Vos"] = { links = { "Tel Aruhn" } },
+        ["Tel Branora"] = { links = { "Sadrith Mora", "Vivec" } },
+        ["Vivec"] = { links = { "Ebonheart", "Hla Oad", "Sadrith Mora", "Tel Branora", "Bal Foyen", "Darvonis", "Old Ebonheart" } },
+        ["Ebonheart"] = { links = { "Vivec", "Seyda Neen", "Old Ebonheart", "Teyn" } },
+        ["Aimrah"] = { links = { "Maar-Bani Crossing" } },
+        ["Ald Iuval"] = { links = { "Hlerynhul", "Narsis", "Othmura", "Sadrathim" } },
+        ["Almas Thirr"] = { links = { "Bal Foyen", "Hlan Oek", "Maar-Bani Crossing", "Narsis", "Old Ebonheart" } },
+        ["Alt Bosara"] = { links = { "Necrom", "Llothanis", "Tel Mothrivra" } },
+        ["Bahrammu"] = { links = { "Bal Oyra", "Nivalis" } },
+        ["Bal Foyen"] = { links = { "Almas Thirr", "Old Ebonheart", "Teyn", "Vivec" } },
+        ["Bal Oyra"] = { links = { "Bahrammu", "Nivalis", "Tel Ouada" } },
+        ["Darvonis"] = { links = { "Marog", "Helnim", "Old Ebonheart", "Vivec" } },
+        ["Enamor Dayn"] = { links = { "Gorne", "Necrom" } },
+        ["Firewatch"] = { links = { "Dagon Fel", "Helnim", "Nivalis", "Sadrith Mora" } },
+        ["Gah Sadrith"] = { links = { "Llothanis", "Port Telvannis" } },
+        ["Gorne"] = { links = { "Enamor Dayn" } },
+        ["Helnim"] = { links = { "Darvonis", "Firewatch", "Marog", "Sadrith Mora" } },
+        ["Hlan Oek"] = { links = { "Almas Thirr", "Idathren", "Maar-Bani Crossing" } },
+        ["Hlerynhul"] = { links = { "Ald Iuval", "Narsis", "Othmura", "Sadrathim" } },
+        ["Idathren"] = { links = { "Maar-Bani Crossing", "Hlan Oek" } },
+        ["Llothanis"] = { links = { "Alt Bosara", "Gah Sadrith", "Tel Ouada", "Port Telvannis" } },
+        ["Maar-Bani Crossing"] = { links = { "Aimrah", "Almas Thirr", "Hlan Oek", "Idathren", "Othmura" } },
+        ["Marog"] = { links = { "Helnim", "Darvonis", "Sadrith Mora" } },
+        ["Mundrethi Plantation"] = { links = { "Oran Plantation" } },
+        ["Narsis"] = { links = { "Ald Iuval", "Almas Thirr", "Hlerynhul", "Othmura", "Sadrathim" } },
+        ["Necrom"] = { links = { "Alt Bosara", "Enamor Dayn" } },
+        ["Nivalis"] = { links = { "Bahrammu", "Bal Oyra", "Dagon Fel", "Firewatch" } },
+        ["Old Ebonheart"] = { links = { "Almas Thirr", "Bal Foyen", "Darvonis", "Ebonheart", "Vivec" } },
+        ["Oran Plantation"] = { links = { "Mundrethi Plantation" } },
+        ["Othmura"] = { links = { "Ald Iuval", "Hlerynhul", "Maar-Bani Crossing", "Sadrathim" } },
+        ["Port Telvannis"] = { links = { "Llothanis", "Tel Ouada", "Gah Sadrith", "Sadas Plantation" } },
+        ["Sadas Plantation"] = { links = { "Port Telvannis" } },
+        ["Sadrathim"] = { links = { "Ald Iuval", "Hlerynhul", "Narsis", "Othmura" } },
+        ["Tel Mothrivra"] = { links = { "Alt Bosara" } },
+        ["Tel Ouada"] = { links = { "Bal Oyra", "Llothanis", "Port Telvannis" } },
+        ["Teyn"] = { links = { "Bal Foyen", "Ebonheart" } },
+    },
+    boat_pc = {
+        ["AnvilSHOTN"] = { links = { "Karthwasten" } },
+        ["Karthwasten"] = { links = { "AnvilSHOTN" } },
+        ["Anvil"] = { links = { "Ebonheart", "Archad", "Charach", "Thresvy" } },
+        ["Ebonheart"] = { links = { "Anvil" } },
+        ["Archad"] = { links = { "Anvil" } },
+        ["Charach"] = { links = { "Anvil", "Thresvy" } },
+        ["Thresvy"] = { links = { "Anvil", "Charach" } },
+        ["Karthwasten"] = { links = { "Anvil" } },
+    },
+    boat_sky = {
+        ["Dagon Fel"] = { links = { "Karthwasten Docks" } },
+        ["Anvil's Port Quarter"] = { links = { "Karthwasten Docks" } },
+        ["Karthwasten Docks"] = { links = { "Dagon Fel", "Vorndgad Forest Region", "Anvil's Port Quarter" } },
+        ["Vorndgad Forest Region"] = { links = { "Karthwasten Docks" } },
+    },
+
+    ------------------------
+    -- MAGES GUILD GUIDES
+    ------------------------
+    guide_vanilla = {
+        ["Balmora"] = { links = { "Ald-ruhn", "Caldera", "Sadrith Mora", "Vivec" } },
+        ["Ald-ruhn"] = { links = { "Balmora", "Caldera", "Sadrith Mora", "Vivec" } },
+        ["Caldera"] = { links = { "Balmora", "Ald-ruhn", "Sadrith Mora", "Vivec" } },
+        ["Vivec"] = { links = { "Balmora", "Ald-ruhn", "Caldera", "Sadrith Mora" } },
+        ["Sadrith Mora"] = { links = { "Balmora", "Ald-ruhn", "Caldera", "Vivec" } },
+    },
+    guide_tr = {
+        ["Almas Thirr"] = { links = { "Akamora", "Bal Foyen", "Old Ebonheart" } },
+        ["Akamora"] = { links = { "Almas Thirr", "Bal Foyen", "Old Ebonheart" } },
+        ["Bal Foyen"] = { links = { "Akamora", "Bal Foyen", "Old Ebonheart" } },
+        ["Firewatch"] = { links = { "Helnim", "Nivalis", "Old Ebonheart", "Vivec" } },
+        ["Helnim"] = { links = { "Firewatch", "Nivalis" } },
+        ["Narsis"] = { links = { "Firewatch", "Old Ebonheart", "Vivec", "Othmura" } },
+        ["Nivalis"] = { links = { "Firewatch", "Helnim" } },
+        ["Old Ebonheart"] = { links = { "Akamora", "Almas Thirr", "Bal Foyen", "Firewatch", "Vivec" } },
+        ["Othmura"] = { links = { "Narsis" } },
+    },    
+    guide_pc = {
+        ["Anvil"] = { links = { "Brina Cross", "Charach" } },
+        ["Brina Cross"] = { links = { "Anvil", "Charach" } },
+        ["Charach"] = { links = { "Anvil", "Brina Cross" } },
+    },
+    guide_sky= {
+        ["Karthwasten"] = { links = { "Dragonstar West" } },
+        ["Dragonstar West"] = { links = { "Karthwasten" } },
+    },
+}
+
+return routes
