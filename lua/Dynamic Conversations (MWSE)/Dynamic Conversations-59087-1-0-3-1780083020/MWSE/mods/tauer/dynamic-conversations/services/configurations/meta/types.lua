@@ -1,0 +1,10 @@
+---@meta
+---@alias questIndex number
+---@alias questId string
+---@alias reason string
+---@alias conversationId string
+---@alias factionId string
+---@alias classId string
+---@alias cellId string
+---@alias weather string
+---@alias operator "=" | ">" | "<" | ">=" | "<="

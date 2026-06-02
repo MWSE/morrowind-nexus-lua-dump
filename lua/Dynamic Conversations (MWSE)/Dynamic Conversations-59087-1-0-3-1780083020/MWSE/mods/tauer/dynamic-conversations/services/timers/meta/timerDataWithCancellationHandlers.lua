@@ -1,0 +1,3 @@
+---@meta
+---@class timerDataWithCancellationHandlers : decoratedTimerData
+---@field public cancellationHandlers? {[eventId]: fun()}

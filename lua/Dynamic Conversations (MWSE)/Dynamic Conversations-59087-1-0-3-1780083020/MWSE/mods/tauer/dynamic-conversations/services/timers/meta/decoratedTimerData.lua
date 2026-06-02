@@ -1,0 +1,4 @@
+---@meta
+---@class decoratedTimerData
+---@field public decoratedTimer? mwseTimer The timer instance associated with this data
+---@field public onExpire? fun(data: mwseTimerCallbackData) Callback function to be called when the timer completes all iterations

@@ -1,0 +1,3 @@
+--- Represents a service that is initialized on startup.
+---@class initializedService
+---@field public initialize fun():boolean Initializes the service. Returns true if initialization was successful, false otherwise.

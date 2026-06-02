@@ -1,0 +1,3 @@
+---@meta
+---@class mcmPage
+---@field public initialize fun(template: mwseMCMTemplate)

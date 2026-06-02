@@ -1,0 +1,201 @@
+local I        = require('openmw.interfaces')
+local shared   = require('scripts.potionanim_shared')
+local DEFAULTS = shared.DEFAULTS
+
+I.Settings.registerPage {
+    key         = 'PotionAnimations',
+    l10n        = 'PotionAnimations',
+    name        = 'page_name',
+    description = 'page_desc',
+}
+
+I.Settings.registerGroup {
+    key              = 'Settings_PotionAnimations_General',
+    page             = 'PotionAnimations',
+    l10n             = 'PotionAnimations',
+    name             = 'settings_group_name',
+    permanentStorage = true,
+    order            = 1,
+    settings = {
+        {
+            key         = 'ENABLE',
+            name        = 'enable_name',
+            description = 'enable_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.ENABLE,
+        },
+        {
+            key         = 'EAT_ENABLE',
+            name        = 'eat_enable_name',
+            description = 'eat_enable_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.EAT_ENABLE,
+        },
+        {
+            key         = 'COMBAT_BLOCKS',
+            name        = 'combat_blocks_name',
+            description = 'combat_blocks_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.COMBAT_BLOCKS,
+        },
+        {
+            key         = 'LOCK_WEAPON',
+            name        = 'lock_weapon_name',
+            description = 'lock_weapon_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.LOCK_WEAPON,
+        },
+        {
+            key         = 'LOCK_POV',
+            name        = 'lock_pov_name',
+            description = 'lock_pov_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.LOCK_POV,
+        },
+        {
+            key         = 'ALLOW_MOVEMENT',
+            name        = 'allow_movement_name',
+            description = 'allow_movement_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.ALLOW_MOVEMENT,
+        },
+        {
+            key         = 'PREVENT_CONSECUTIVE',
+            name        = 'prevent_consecutive_name',
+            description = 'prevent_consecutive_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.PREVENT_CONSECUTIVE,
+        },
+        {
+            key         = 'SOUND_ENABLE',
+            name        = 'sound_enable_name',
+            description = 'sound_enable_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.SOUND_ENABLE,
+        },
+        {
+            key         = 'EAT_SOUND_ENABLE',
+            name        = 'eat_sound_enable_name',
+            description = 'eat_sound_enable_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.EAT_SOUND_ENABLE,
+        },
+        {
+            key         = 'SOUND_VOLUME',
+            name        = 'sound_volume_name',
+            description = 'sound_volume_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.SOUND_VOLUME,
+            argument    = { integer = true, min = 1, max = 400 },
+        },
+        {
+            key         = 'SOUND_PITCH',
+            name        = 'sound_pitch_name',
+            description = 'sound_pitch_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.SOUND_PITCH,
+            argument    = { integer = true, min = 1, max = 100 },
+        },
+        {
+            key         = 'ANIMATION_COOLDOWN',
+            name        = 'cooldown_name',
+            description = 'cooldown_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.ANIMATION_COOLDOWN,
+            argument    = { min = 0.5, max = 10.0 },
+        },
+        {
+            key         = 'ANIMATION_SPEED',
+            name        = 'speed_name',
+            description = 'speed_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.ANIMATION_SPEED,
+            argument    = { min = 0.25, max = 3.0 },
+        },
+        {
+            key         = 'SD_SUPPORT',
+            name        = 'sd_support_name',
+            description = 'sd_support_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.SD_SUPPORT,
+        },
+        {
+            key         = 'SD_EAT_COOKED',
+            name        = 'sd_eat_cooked_name',
+            description = 'sd_eat_cooked_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.SD_EAT_COOKED,
+        },
+        {
+            key         = 'MODEL_MESH_NONPOTION',
+            name        = 'model_mesh_nonpotion_name',
+            description = 'model_mesh_nonpotion_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.MODEL_MESH_NONPOTION,
+        },
+    }
+}
+
+I.Settings.registerGroup {
+    key              = 'Settings_PotionAnimations_NPC',
+    page             = 'PotionAnimations',
+    l10n             = 'PotionAnimations',
+    name             = 'settings_npc_group_name',
+    permanentStorage = true,
+    order            = 2,
+    settings = {
+        {
+            key         = 'NPC_ENABLE',
+            name        = 'npc_enable_name',
+            description = 'npc_enable_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.NPC_ENABLE,
+        },
+        {
+            key         = 'NPC_LOCK_WEAPON',
+            name        = 'npc_lock_weapon_name',
+            description = 'npc_lock_weapon_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.NPC_LOCK_WEAPON,
+        },
+        {
+            key         = 'NPC_SOUND_ENABLE',
+            name        = 'npc_sound_enable_name',
+            description = 'npc_sound_enable_desc',
+            renderer    = 'checkbox',
+            default     = DEFAULTS.NPC_SOUND_ENABLE,
+        },
+        {
+            key         = 'NPC_SOUND_VOLUME',
+            name        = 'npc_sound_volume_name',
+            description = 'npc_sound_volume_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.NPC_SOUND_VOLUME,
+            argument    = { integer = true, min = 1, max = 400 },
+        },
+        {
+            key         = 'NPC_SOUND_PITCH',
+            name        = 'npc_sound_pitch_name',
+            description = 'npc_sound_pitch_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.NPC_SOUND_PITCH,
+            argument    = { integer = true, min = 1, max = 100 },
+        },
+        {
+            key         = 'NPC_ANIMATION_COOLDOWN',
+            name        = 'npc_cooldown_name',
+            description = 'npc_cooldown_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.NPC_ANIMATION_COOLDOWN,
+            argument    = { min = 0.5, max = 10.0 },
+        },
+        {
+            key         = 'NPC_ANIMATION_SPEED',
+            name        = 'npc_speed_name',
+            description = 'npc_speed_desc',
+            renderer    = 'number',
+            default     = DEFAULTS.NPC_ANIMATION_SPEED,
+            argument    = { min = 1, max = 7.0 },
+        },
+    }
+}

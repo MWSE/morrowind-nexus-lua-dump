@@ -1,0 +1,113 @@
+local I = require('openmw.interfaces')
+local S = require('scripts.ashpit_shared')
+
+I.Settings.registerPage {
+    key         = 'AshpitUndead',
+    l10n        = 'AshpitUndead',
+    name        = 'page_name',
+    description = 'page_desc',
+}
+
+I.Settings.registerGroup {
+    key              = 'SettingsAshpitUndead',
+    page             = 'AshpitUndead',
+    l10n             = 'AshpitUndead',
+    name             = 'settings_groupName',
+    permanentStorage = true,
+    order            = 1,
+    settings = {
+        {
+            key         = 'MOD_ENABLED',
+            renderer    = 'checkbox',
+            name        = 'mod_enabled_name',
+            description = 'mod_enabled_desc',
+            default     = S.DEFAULTS.MOD_ENABLED,
+        },
+        {
+            key         = 'CHECK_TICK',
+            renderer    = 'number',
+            name        = 'check_tick_name',
+            description = 'check_tick_desc',
+            default     = S.DEFAULTS.CHECK_TICK,
+            argument    = { min = 0.1, max = 10 },
+        },
+        {
+            key         = 'SPAWN_RADIUS',
+            renderer    = 'number',
+            name        = 'spawn_radius_name',
+            description = 'spawn_radius_desc',
+            default     = S.DEFAULTS.SPAWN_RADIUS,
+            argument    = { integer = true, min = 1, max = 400 },
+        },
+        {
+            key         = 'SPAWN_HEIGHT',
+            renderer    = 'number',
+            name        = 'spawn_height_name',
+            description = 'spawn_height_desc',
+            default     = S.DEFAULTS.SPAWN_HEIGHT,
+            argument    = { integer = true, min = 1, max = 500 },
+        },
+        {
+            key         = 'HOSTILE_CHANCE',
+            renderer    = 'number',
+            name        = 'hostile_chance_name',
+            description = 'hostile_chance_desc',
+            default     = S.DEFAULTS.HOSTILE_CHANCE,
+            argument    = { integer = true, min = 0, max = 100 },
+        },
+        {
+            key         = 'TEMPLE_REDUCTION',
+            renderer    = 'number',
+            name        = 'temple_reduction_name',
+            description = 'temple_reduction_desc',
+            default     = S.DEFAULTS.TEMPLE_REDUCTION,
+            argument    = { integer = true, min = 0, max = 100 },
+        },
+        {
+            key         = 'FOLLOWER_CHANCE',
+            renderer    = 'number',
+            name        = 'follower_chance_name',
+            description = 'follower_chance_desc',
+            default     = S.DEFAULTS.FOLLOWER_CHANCE,
+            argument    = { integer = true, min = 0, max = 100 },
+        },
+        {
+            key         = 'FOLLOWER_DURATION',
+            renderer    = 'number',
+            name        = 'follower_duration_name',
+            description = 'follower_duration_desc',
+            default     = S.DEFAULTS.FOLLOWER_DURATION,
+            argument    = { integer = true, min = 10, max = 3600 },
+        },
+        {
+            key         = 'MIN_SPAWNS',
+            renderer    = 'number',
+            name        = 'min_spawns_name',
+            description = 'min_spawns_desc',
+            default     = S.DEFAULTS.MIN_SPAWNS,
+            argument    = { integer = true, min = 1, max = 10 },
+        },
+        {
+            key         = 'MAX_SPAWNS',
+            renderer    = 'number',
+            name        = 'max_spawns_name',
+            description = 'max_spawns_desc',
+            default     = S.DEFAULTS.MAX_SPAWNS,
+            argument    = { integer = true, min = 1, max = 10 },
+        },
+        {
+            key         = 'WARN_NO_SPAWN',
+            renderer    = 'checkbox',
+            name        = 'warn_no_spawn_name',
+            description = 'warn_no_spawn_desc',
+            default     = S.DEFAULTS.WARN_NO_SPAWN,
+        },
+        {
+            key         = 'PRINT_LOG',
+            renderer    = 'checkbox',
+            name        = 'print_log_name',
+            description = 'print_log_desc',
+            default     = S.DEFAULTS.PRINT_LOG,
+        },
+    },
+}

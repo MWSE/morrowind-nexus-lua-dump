@@ -1,0 +1,3 @@
+---@meta
+---@class decoratedType
+---@field protected inner any *Read-only*. The inner decorated type instance

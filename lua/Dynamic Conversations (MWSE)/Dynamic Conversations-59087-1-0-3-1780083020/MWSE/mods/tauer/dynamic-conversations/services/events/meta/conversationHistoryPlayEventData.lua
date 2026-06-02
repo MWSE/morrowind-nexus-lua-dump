@@ -1,0 +1,3 @@
+---@meta
+---@class conversationHistoryPlayEventData Event data for the conversation history play event
+---@field public index integer The index of the dialog entry being played

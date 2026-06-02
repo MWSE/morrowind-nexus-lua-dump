@@ -1,0 +1,6 @@
+---@meta
+---@class historyConfiguration Represents a conversation in the context of the conversation history page in the MCM
+---@field public id string The unique identifier of the conversation
+---@field public name string The name of the conversation
+---@field public dialog dialog[] The dialog entries in the conversation history
+---@field public speakers conversationHistorySpeaker[] The speakers involved in the conversation history

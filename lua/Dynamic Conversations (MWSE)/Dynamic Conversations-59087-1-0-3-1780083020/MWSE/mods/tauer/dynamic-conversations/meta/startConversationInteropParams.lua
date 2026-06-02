@@ -1,0 +1,5 @@
+---@meta
+---@class startConversationInteropParams Parameters for starting a conversation via interop
+---@field public firstParticipant tes3npcInstance The first participant in the conversation
+---@field public secondParticipant tes3npcInstance The second participant in the conversation
+---@field public configurationPath string The path to the conversation configuration to use

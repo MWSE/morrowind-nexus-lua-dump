@@ -1,0 +1,3 @@
+---@meta
+---@class timerManagerStartParams : timerDecoratorStartParams
+---@field public cancellationEvents? eventId[] Events that will cancel the timer when triggered

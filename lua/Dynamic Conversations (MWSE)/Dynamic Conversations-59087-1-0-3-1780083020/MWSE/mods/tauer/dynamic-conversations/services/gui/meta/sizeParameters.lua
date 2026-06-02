@@ -1,0 +1,4 @@
+---@meta
+---@class sizeParameters Parameters for size settings
+---@field public width number? The width value
+---@field public height number? The height value

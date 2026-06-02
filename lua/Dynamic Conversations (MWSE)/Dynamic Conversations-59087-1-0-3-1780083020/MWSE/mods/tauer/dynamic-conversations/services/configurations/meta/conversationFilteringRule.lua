@@ -1,0 +1,4 @@
+---@meta
+--- A rule used to filter conversations configurations based on NPCs and other conditions
+---@class conversationFilteringRule : rule
+---@field public isMet fun(npcs:tes3npcInstance[], configuration:conversationConfiguration):boolean Checks if the rule is met for the given NPCs and conversation configuration. Returns true if the rule is met, otherwise false.

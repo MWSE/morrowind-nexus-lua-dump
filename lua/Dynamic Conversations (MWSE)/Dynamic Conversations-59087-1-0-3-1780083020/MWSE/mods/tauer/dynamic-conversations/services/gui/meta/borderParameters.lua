@@ -1,0 +1,7 @@
+---@meta
+---@class borderPaddingParameters Parameters for setting border or padding values
+---@field all number? The value to set all sides to
+---@field top number? The value to set the top side to
+---@field bottom number? The value to set the bottom side to
+---@field left number? The value to set the left side to
+---@field right number? The value to set the right side to

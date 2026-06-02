@@ -1,0 +1,3 @@
+---@meta
+---@class npcStateRestoredEventData
+---@field public npc tes3npcInstance The NPC whose state has been restored

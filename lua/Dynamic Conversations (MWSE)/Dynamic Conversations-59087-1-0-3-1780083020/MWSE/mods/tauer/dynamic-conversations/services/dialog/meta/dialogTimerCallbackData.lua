@@ -1,0 +1,6 @@
+--- Payload for dialog timer callback events
+---@class dialogTimerCallbackData
+---@field public dialogIndex dialogIndex The dialog index of the dialog that has just been spoken
+---@field public configuration conversationConfiguration The conversation configuration containing dialog definitions
+---@field public speaker mwseSafeObjectHandle The speaker NPC's safe object handle
+---@field public listener mwseSafeObjectHandle The listener NPC's safe object handle

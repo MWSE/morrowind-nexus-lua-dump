@@ -1,0 +1,13 @@
+---@meta
+
+--- Defines the mod settings from the MCM
+---@class settings
+---@field public enabled boolean Whether the Dynamic Conversations mod is enabled
+---@field public conversationTimer number The time interval (in seconds) before a new conversation can be scheduled
+---@field public conversationChance number The probability of a conversation being scheduled when the timer expires
+---@field public exteriorsOnly boolean Whether conversations should only occur in exterior cells
+---@field public enableAnimations boolean Whether to enable animations during conversations
+---@field public blacklistedNpcs table<string, boolean> A list of NPCs excluded from conversations
+---@field public blacklistedCells table<string, boolean> A list of cells excluded from conversations
+---@field public conversationDistance number The maximum distance (in game units) of participants from the player for conversations to trigger
+---@field public logLevel string The logging verbosity level

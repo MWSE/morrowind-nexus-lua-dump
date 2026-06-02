@@ -1,0 +1,153 @@
+local world = require("openmw.world")
+local types = require("openmw.types")
+local APPEARANCE_POOLS = require("scripts.servants.appearancePools")
+
+local LABEL = "High Elf Female"
+local NAME_KEY = "high_elf_female"
+local IS_MALE = false
+local NAME_STYLE = "full"
+
+local SOURCE_NPCS = {
+  "SM-HighElf-FEMALE-1",
+}
+
+local FIRST_NAMES = { "Adagio", "Inwaldawin", "Ahlora", "Aicarya", "Ainamee", "Ainare", "Airfilwen", "Alanaire", "Alandare", "Alande", "Alandil", "Alanne", "Alanwe", "Alanya", "Alcalime", "Alchemy", "Alcildilwe", "Alcorana", "Aldamaire", "Aldarch", "Aldarenya", "Aldimonwe", "Aldunie", "Aldurlde", "Alerume", "Alinisse", "Alirfire", "Alisewen", "Allegro", "Alquufwe", "Altafire", "Altansawen", "Altininde", "Alwe", "Alwyanarwe", "Amaleera", "Amalien", "Ambarel", "Ambaril", "Ambassador", "Ambermil", "Amelinwe", "Amilya", "Aminore", "Aminwe", "Amirmil", "Analande", "Anaril", "Ancalin", "Andalore", "Andenyerinwe", "Andewen", "Andiryewen", "Andorie", "Anenale", "Anenwen", "Anenya", "Angalanwen", "Anganirne", "Angelenwen", "Angorwe", "Angwe", "Aniama", "Aniaste", "Aniel", "Anildalin", "Aninwe", "Aniralda", "Anirione", "Anirmelda", "Anirwe", "Antomine", "Anurlan", "Anwartoril", "Anwelore", "Anwulsawen", "Araltil", "Aranecarne", "Aranias", "Aranorne", "Arantale", "Arawe", "Arawende", "Arcimil", "Ardalure", "Ardia", "Arfaire", "Arfanwe", "Arfiril", "Arfolasse", "Arnarne", "Arnarra", "Arnelnewen", "Arnurdurwe", "Arnuulle", "Arnyeana", "Arocil", "Aroliel", "Arowende", "Arteril", "Arterome", "Artilonwe", "Artiranwen", "Arufinwe", "Asteril", "Astewen", "Astilme", "Astorne", "Atifwe", "Atildel", "Avarya", "Azarari", "Bailiff", "Baker", "Battlereeve", "Belarin", "Boatswain", "Bookbinder", "Burglar", "Butcher" }
+local LAST_NAMES = { "Softpetals", "Colaste", "Oiomifwe", "Tarinwe", "Fanyeor", "Farwewa", "Nesaawy", "Tirwortil", "Alduril", "Erriisse", "Farwenya", "Tanerline", "Faranya", "Elquisa", "Malanie", "Nesaranwe", "Pinanande", "Carawen", "Suriwen", "Arawe", "Endalle", "Vinelore", "Fairenwen", "Vindilween", "Anderine", "Anotille", "Two-Spoons", "Valinwe", "Temolire", "Anirwen", "Arnure", "Enaline", "Sorcalin", "Valessea", "Estre", "Vaerunne", "Mirondil", "Linulyia", "Lorne", "Avanaire", "Avirel", "Elwalama", "Farowel", "Nurofire", "Aldermil", "Avinisse", "Helenaere", "Hiradil", "Ilunsare", "Iniel", "Taanwae", "Terannil", "Turquenwen", "Valullinwe", "Artaste", "Mincarione", "Pandetuile", "Favrete", "Aramil", "Falen", "Firinore", "Tanaame", "Urwende", "Nesunte", "Altoririe", "Astalwen", "Colelsawen", "Astuwae", "Linguvale", "Tancano", "Uryaamo", "Lindafwe", "Canaale", "Freyvene", "Grenedel", "Hannayel", "Larnatille", "Nolyemal", "Rundirwe", "Undaisse", "Uudilwen" }
+
+local SERVANT_CLASS_ID = "Servant"
+local SERVANT_MWSCRIPT_ID = "gennedServantScript"
+local MAGE_SERVANT_CLASS_ID = "Mage-Servant"
+local MAGE_SERVANT_MWSCRIPT_ID = "gennedServantMageScript"
+local MERCENARY_SERVANT_CLASS_ID = "Mercenary-Servant"
+local MERCENARY_SERVANT_MWSCRIPT_ID = "gennedServantMercenaryScript"
+
+local function pick(list)
+  return list[math.random(1, #list)]
+end
+
+local function cap(s)
+  if not s or #s == 0 then
+    return s
+  end
+  return s:sub(1, 1):upper() .. s:sub(2)
+end
+
+local function getNpcRecord(id)
+  if types.NPC.record then
+    return types.NPC.record(id)
+  elseif types.NPC.records then
+    return types.NPC.records(id)
+  end
+  return nil
+end
+
+local function pickAppearance(source)
+  local pool = APPEARANCE_POOLS[NAME_KEY]
+
+  if not pool then
+    return source.head, source.hair
+  end
+
+  local headId = (pool.heads and #pool.heads > 0) and pick(pool.heads) or source.head
+  local hairId = (pool.hairs and #pool.hairs > 0) and pick(pool.hairs) or source.hair
+
+  return headId, hairId
+end
+
+local function generateName()
+  if NAME_STYLE == "hyphen" then
+    return cap(pick(FIRST_NAMES)) .. "-" .. cap(pick(LAST_NAMES))
+  end
+
+  if NAME_STYLE == "apostrophe" then
+    local prefix = cap(pick(FIRST_NAMES))
+    local root = cap(pick(LAST_NAMES))
+    local name = prefix .. "'" .. root
+
+    if math.random(1, 5) == 1 then
+      name = name .. "-Dar"
+    end
+
+    return name
+  end
+
+  return cap(pick(FIRST_NAMES)) .. " " .. cap(pick(LAST_NAMES))
+end
+
+local function buildUniqueNames(target)
+  local names = {}
+  local seen = {}
+  local guard = 0
+
+  while #names < target and guard < target * 40 do
+    guard = guard + 1
+    local candidate = generateName()
+
+    if candidate and candidate ~= "" and not seen[candidate] then
+      seen[candidate] = true
+      names[#names + 1] = candidate
+    end
+  end
+
+  if #names == 0 then
+    names[1] = "Servant"
+  end
+
+  return names
+end
+
+local RANDOM_NAMES = buildUniqueNames(900)
+
+local function createRecord(servantType)
+  local sourceId = SOURCE_NPCS[1]
+  local source = getNpcRecord(sourceId)
+
+  if not source then
+    return nil, "Missing source NPC record: " .. tostring(sourceId)
+  end
+
+  local headId, hairId = pickAppearance(source)
+
+  if servantType == true then
+    servantType = "mage"
+  elseif servantType == false or servantType == nil then
+    servantType = "servant"
+  end
+
+  local classId = SERVANT_CLASS_ID
+  local mwscriptId = SERVANT_MWSCRIPT_ID
+
+  if servantType == "mage" then
+    classId = MAGE_SERVANT_CLASS_ID
+    mwscriptId = MAGE_SERVANT_MWSCRIPT_ID
+  elseif servantType == "mercenary" then
+    classId = MERCENARY_SERVANT_CLASS_ID
+    mwscriptId = MERCENARY_SERVANT_MWSCRIPT_ID
+  end
+
+  local draft = types.NPC.createRecordDraft({
+    template = source,
+    name = pick(RANDOM_NAMES),
+    class = classId,
+    mwscript = mwscriptId,
+    isMale = IS_MALE,
+    head = headId,
+    hair = hairId,
+  })
+
+  local rec = world.createRecord(draft)
+
+  if not rec or not rec.id then
+    return nil, "createRecord failed for source " .. tostring(sourceId)
+  end
+
+  return rec
+end
+
+return {
+  label = LABEL,
+  nameKey = NAME_KEY,
+  isMale = IS_MALE,
+  templateIds = SOURCE_NPCS,
+  createRecord = createRecord,
+}

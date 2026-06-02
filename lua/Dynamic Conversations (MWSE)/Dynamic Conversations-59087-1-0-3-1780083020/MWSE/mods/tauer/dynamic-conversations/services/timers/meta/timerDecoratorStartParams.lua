@@ -1,0 +1,9 @@
+---@meta
+---@class timerDecoratorStartParams
+---@field public type? integer *Default*: ``timer.simulate``. Type of the timer. This value can be `timer.simulate`, `timer.game` or `timer.real`.
+---@field public duration number Duration of the timer. The method of time passing depends on the timer type.
+---@field public iterations? integer *Default*: `1`. The number of iterations to run. Use `-1` for infinite looping.
+---@field public onTick fun(e: mwseTimerCallbackData) The callback function that will execute when the timer completes one iteration
+---@field public onExpire? fun(e: mwseTimerCallbackData) Callback function to be called when the timer completes all iterations
+---@field public id string? An identifier for the timer
+---@field public data? table *Optional*. Data to be attached to the timer. If this is a persistent timer, the data must be json-serializable, matching the same limitations as data stored on references.

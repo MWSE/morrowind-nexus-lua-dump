@@ -1,0 +1,12 @@
+---@meta
+
+--- Represents the state of an NPC during a conversation
+---@class npcState
+---@field public position tes3vector3 The position of the NPC
+---@field public helloValue npcHelloValue The NPC's hello value
+---@field public idleChances aiPackageIdleChance[] The idle chances for the NPC's wander package
+---@field public range aiPackageRange The range of the NPC's wander package
+---@field public duration aiPackageDuration The duration of the NPC's wander package
+---@field public packageType tes3.aiPackage The type of AI package the NPC is using
+---@field public orientation tes3vector3 The orientation of the NPC
+---@field public destination tes3vector3 The destination of the NPC's travel package (if applicable)

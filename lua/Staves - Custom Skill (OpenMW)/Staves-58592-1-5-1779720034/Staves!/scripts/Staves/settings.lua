@@ -1,0 +1,112 @@
+--[[
+    Staves! — Settings (MENU scope)
+    Registered at menu scope so it is visible and mutable from the main menu
+    as well as from inside a loaded game.
+]]
+
+local I = require('openmw.interfaces')
+
+local MODNAME = 'Staves'
+
+I.Settings.registerPage {
+    key = MODNAME,
+    l10n = MODNAME,
+    name = 'PageName',
+    description = 'PageDescription',
+}
+
+I.Settings.registerGroup {
+    key = 'Settings_' .. MODNAME,
+    page = MODNAME,
+    l10n = MODNAME,
+    name = 'SettingsName',
+    description = 'SettingsDescription',
+    permanentStorage = true,
+    settings = {
+        -- Core
+        { key = 'enabled', name = 'SettingEnabled', renderer = 'checkbox', default = true,
+          description = 'SettingEnabledDescription' },
+        { key = 'spellBonus', name = 'SettingSpellBonus', renderer = 'number', default = 25,
+          description = 'SettingSpellBonusDescription',
+          argument = { integer = true, min = 0, max = 50 } },
+        { key = 'enchantSaving', name = 'SettingEnchantSaving', renderer = 'checkbox', default = true,
+          description = 'SettingEnchantSavingDescription' },
+        { key = 'maxSaveChance', name = 'SettingMaxSaveChance', renderer = 'number', default = 50,
+          description = 'SettingMaxSaveChanceDescription',
+          argument = { integer = true, min = 10, max = 75 } },
+        { key = 'redirectXP', name = 'SettingRedirectXP', renderer = 'checkbox', default = true,
+          description = 'SettingRedirectXPDescription' },
+        { key = 'replaceBlunt', name = 'SettingReplaceBlunt', renderer = 'checkbox', default = true,
+          description = 'SettingReplaceBluntDescription' },
+        { key = 'xpMultiplier', name = 'SettingXpMultiplier', renderer = 'number', default = 100,
+          description = 'SettingXpMultiplierDescription',
+          argument = { integer = true, min = 0, max = 300 } },
+        { key = 'spellXpShare', name = 'SettingSpellXpShare', renderer = 'number', default = 25,
+          description = 'SettingSpellXpShareDescription',
+          argument = { integer = true, min = 0, max = 100 } },
+
+        -- Perk toggles
+        { key = 'perksEnabled', name = 'SettingPerksEnabled', renderer = 'checkbox', default = true,
+          description = 'SettingPerksEnabledDescription' },
+        { key = 'concussiveEnabled', name = 'SettingConcussiveEnabled', renderer = 'checkbox', default = true,
+          description = 'SettingConcussiveEnabledDescription' },
+        { key = 'arcaneSiphonEnabled', name = 'SettingArcaneSiphonEnabled', renderer = 'checkbox', default = true,
+          description = 'SettingArcaneSiphonEnabledDescription' },
+        { key = 'resonantConduitEnabled', name = 'SettingResonantConduitEnabled', renderer = 'checkbox', default = true,
+          description = 'SettingResonantConduitEnabledDescription' },
+        { key = 'nullPulseEnabled', name = 'SettingNullPulseEnabled', renderer = 'checkbox', default = true,
+          description = 'SettingNullPulseEnabledDescription' },
+
+        -- UI / Notifications
+        { key = 'perkMessageStyle', name = 'SettingPerkMessageStyle', renderer = 'number', default = 1,
+          description = 'SettingPerkMessageStyleDescription',
+          argument = { integer = true, min = 0, max = 2 } },
+        { key = 'perkPopupDetail', name = 'SettingPerkPopupDetail', renderer = 'number', default = 0,
+          description = 'SettingPerkPopupDetailDescription',
+          argument = { integer = true, min = 0, max = 1 } },
+        { key = 'hideSensoryPerkPopups', name = 'SettingHideSensoryPerkPopups', renderer = 'checkbox', default = false,
+          description = 'SettingHideSensoryPerkPopupsDescription' },
+        { key = 'showFeedback', name = 'SettingShowFeedback', renderer = 'checkbox', default = false,
+          description = 'SettingShowFeedbackDescription' },
+        { key = 'popupPosition', name = 'SettingPopupPosition', renderer = 'number', default = 4,
+          description = 'SettingPopupPositionDescription',
+          argument = { integer = true, min = 0, max = 4 } },
+        { key = 'popupDuration', name = 'SettingPopupDuration', renderer = 'number', default = 1.35,
+          description = 'SettingPopupDurationDescription',
+          argument = { min = 0.5, max = 10, step = 0.05 } },
+        { key = 'popupMaxVisible', name = 'SettingPopupMaxVisible', renderer = 'number', default = 5,
+          description = 'SettingPopupMaxVisibleDescription',
+          argument = { integer = true, min = 1, max = 10 } },
+        { key = 'popupColourPreset', name = 'SettingPopupColourPreset', renderer = 'number', default = 0,
+          description = 'SettingPopupColourPresetDescription',
+          argument = { integer = true, min = 0, max = 1 } },
+        { key = 'perkMessageTextR', name = 'SettingPerkMessageTextR', renderer = 'number', default = 186,
+          description = 'SettingPerkMessageTextRDescription',
+          argument = { integer = true, min = 0, max = 255 } },
+        { key = 'perkMessageTextG', name = 'SettingPerkMessageTextG', renderer = 'number', default = 255,
+          description = 'SettingPerkMessageTextGDescription',
+          argument = { integer = true, min = 0, max = 255 } },
+        { key = 'perkMessageTextB', name = 'SettingPerkMessageTextB', renderer = 'number', default = 96,
+          description = 'SettingPerkMessageTextBDescription',
+          argument = { integer = true, min = 0, max = 255 } },
+        { key = 'perkMessageShadowR', name = 'SettingPerkMessageShadowR', renderer = 'number', default = 130,
+          description = 'SettingPerkMessageShadowRDescription',
+          argument = { integer = true, min = 0, max = 255 } },
+        { key = 'perkMessageShadowG', name = 'SettingPerkMessageShadowG', renderer = 'number', default = 43,
+          description = 'SettingPerkMessageShadowGDescription',
+          argument = { integer = true, min = 0, max = 255 } },
+        { key = 'perkMessageShadowB', name = 'SettingPerkMessageShadowB', renderer = 'number', default = 41,
+          description = 'SettingPerkMessageShadowBDescription',
+          argument = { integer = true, min = 0, max = 255 } },
+        { key = 'renameSkillToStaff', name = 'SettingRenameSkillToStaff', renderer = 'checkbox', default = false,
+          description = 'SettingRenameSkillToStaffDescription' },
+        { key = 'showMechanicTooltips', name = 'SettingShowMechanicTooltips', renderer = 'checkbox', default = true,
+          description = 'SettingShowMechanicTooltipsDescription' },
+        { key = 'showPerkTooltips', name = 'SettingShowPerkTooltips', renderer = 'checkbox', default = true,
+          description = 'SettingShowPerkTooltipsDescription' },
+        { key = 'tooltipUnlockedOnly', name = 'SettingTooltipUnlockedOnly', renderer = 'checkbox', default = false,
+          description = 'SettingTooltipUnlockedOnlyDescription' },
+        { key = 'debugLogging', name = 'SettingDebugMessages', renderer = 'checkbox', default = false,
+          description = 'SettingDebugMessagesDescription' },
+    },
+}

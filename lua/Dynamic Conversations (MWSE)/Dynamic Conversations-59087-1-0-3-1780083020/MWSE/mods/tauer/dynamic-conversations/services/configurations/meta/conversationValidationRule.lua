@@ -1,0 +1,4 @@
+---@meta
+--- A rule used to validate conversation configurations
+---@class conversationValidationRule : rule
+---@field public isMet fun(configuration:conversationConfiguration):boolean,reason|nil Checks if the rule is met for the given conversation configuration. Returns true if the rule is met, otherwise false and a reason.

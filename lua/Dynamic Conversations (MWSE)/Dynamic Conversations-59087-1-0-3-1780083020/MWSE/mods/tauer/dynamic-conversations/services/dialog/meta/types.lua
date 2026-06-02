@@ -1,0 +1,2 @@
+---@alias dialogIndex number
+---@alias dialogTemplateName string

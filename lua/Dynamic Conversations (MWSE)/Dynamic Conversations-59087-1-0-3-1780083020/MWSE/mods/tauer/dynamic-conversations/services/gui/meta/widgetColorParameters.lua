@@ -1,0 +1,11 @@
+---@meta
+---@class widgetColorParameters Parameters for setting widget colors on GUI elements
+---@field idle? niColor[] The idle color in RGB format
+---@field idleActive? niColor[] The idle active in RGB format
+---@field idleDisabled? niColor[] The idle disabled color in RGB format
+---@field over? niColor[] The over color in RGB format
+---@field overActive? niColor[] The over active color in RGB format
+---@field overDisabled? niColor[] The over disabled color in RGB format
+---@field pressed? niColor[] The pressed color in RGB format
+---@field pressedActive? niColor[] The pressed active color in RGB format
+---@field pressedDisabled? niColor[] The pressed disabled color in RGB format

@@ -1,0 +1,5 @@
+---@meta
+---@class conversationHistorySpeaker
+---@field public name string
+---@field public race? string
+---@field public sex? SEX

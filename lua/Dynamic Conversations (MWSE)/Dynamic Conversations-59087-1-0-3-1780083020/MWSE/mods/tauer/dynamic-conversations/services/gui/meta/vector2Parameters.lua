@@ -1,0 +1,4 @@
+---@meta
+---@class vector2Parameters Parameters for vector2 settings
+---@field public x number? The x value
+---@field public y number? The y value
