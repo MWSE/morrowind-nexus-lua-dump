@@ -1,0 +1,201 @@
+ES = ES or {}
+ES.DB = ES.DB or {}
+
+ES.DB.journals = {
+	favorJournals = {
+		-- morrowind main quest
+		--["mg_bcshrooms"]                    = { deity = {"vivec"}, stage = {10},  favor = 5 }, -- TEST
+		["b8_meetvivec"]                    = { deity = "vivec", stage = 50,  favor = 5 }, -- accept wraithguard
+		["c3_destroydagoth"]                = { deity = "vivec", stage = 20,  favor = 5 }, -- destroy dagoth ur
+		["da_mephala"]                      = { deity = "vivec", stage = 60,  favor = 2 }, -- mephala's daedric quest
+		["mt_s_red"]                        = { deity = "vivec", stage = 20,  favor = 5 }, -- mephala's spell quest
+		
+		-- vanilla tribunal temple : ald'ruhn
+		["tt_compassion"]                   = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_falseincarnate"]               = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_maargan"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_hassour"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		-- vanilla tribunal temple : vivec high fane
+		["tt_diseasecarrier"]               = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_sanctusshrine"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_rilmsshoes"]                   = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_staralor"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		-- vanilla tribunal temple : molag mar
+		["tt_curingtouch"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_mountkand"]                    = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_mawia"]                        = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_galomdeus"]                    = { deity = "vivec", stage = 10,  favor = 1 },
+		-- vanilla tribunal temple : ghostgate
+		["tt_ministryheathen"]              = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_supplymonk"]                   = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_hairshirt"]                    = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_felmscleaver"]                 = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_llothiscrosier"]               = { deity = "vivec", stage = 10,  favor = 1 },
+		-- vanilla tribunal temple : archcanon saryoni
+		["tt_dagonfel"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_aldsotha"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_balur"]                        = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_alddaedroth"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_assarnibibi"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		-- vanilla pilgrimages
+		["tt_sevengraces"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tt_pilgrimspath"]                 = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_fieldskummu"]                  = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_stopmoon"]                     = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_palacevivec"]                  = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_puzzlecanal"]                  = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_maskvivec"]                    = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_ruddyman"]                     = { deity = "vivec", stage = 100, favor = 1 },
+		["tt_ghostgate"]                    = { deity = "vivec", stage = 100, favor = 1 },
+		
+		-- td tribunal temple : ald iuval
+		["tr_m7_ai_tt_q1"]                  = { deity = "vivec", stage = 25,  favor = 1 },
+		["tr_m7_ai_tt_q2"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ai_tt_q3"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ai_tt_q4"]                  = { deity = "vivec", stage = 20,  favor = 1 },
+		["tr_m7_ai_tt_q5"]                  = { deity = "vivec", stage = 20,  favor = 1 },
+		["tr_m7_ai_tt_q6"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : almas thirr
+		["tr_m3_tt_lloris1"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris2"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris2c"]               = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris3"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris3d"]               = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris4"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris5"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_lloris5b"]               = { deity = "vivec", stage = 50,  favor = 1 },
+		["tr_m3_tt_lloris5c"]               = { deity = "vivec", stage = 100, favor = 1 },
+		["tr_m3_tt_lloris5d"]               = { deity = "vivec", stage = 100, favor = 1 },
+		["tr_m3_tt_illene1"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_illene2"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_illene3"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_illene3d"]               = { deity = "vivec", stage = 100, favor = 5 },
+		["tr_m3_tt_rip"]                    = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_rip_2"]                  = { deity = "vivec", stage = 70,  favor = 1 },
+		["tr_m3_tt_floodedtomb"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : speaker for the dead
+		["tr_m3_tt_speaker"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_disembodied"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_disembodied2"]           = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_facestealer"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_seeyou"]                 = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_seeyou_arara"]           = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_seeyou_dilale"]          = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m3_tt_seeyou_kha"]             = { deity = "vivec", stage = 1,   favor = 1 },
+		-- td tribunal temple : bal foyen
+		["tr_m4_tt_wellnesscheck"]          = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_kitchensupplies"]        = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_troublesomeorc"]         = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_troublesomeorc_c"]       = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_armunadventure_e"]       = { deity = "vivec", stage = 50,  favor = 1 },
+		["tr_m4_tt_booksbarbarians"]        = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_forgiveness"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_andothrencharity"]       = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_andothrencharitymels"]   = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_andothrencharitymilns"]  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_andothrencharitytholas"] = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_andothrencharitytholer"] = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_andothrencharityzalan"]  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_armunadventure"]         = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_armunadventure_b"]       = { deity = "vivec", stage = 100, favor = 1 },
+		["tr_m4_tt_armunadventure_c"]       = { deity = "vivec", stage = 110, favor = 1 },
+		["tr_m4_tt_armunadventure_f"]       = { deity = "vivec", stage = 100, favor = 1 },
+		["tr_m4_tt_lastwillandtestament"]   = { deity = "vivec", stage = 5,   favor = 1 },
+		["tr_m4_tt_lastwillandtestament_b"] = { deity = "vivec", stage = 20,  favor = 1 },
+		-- td tribunal temple : hlan oek
+		["tr_m7_ho_tt_01"]                  = { deity = "vivec", stage = 1,   favor = 1 },
+		["tr_m7_ho_tt_02"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ho_tt_03"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ho_tt_04"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ho_tt_05"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ho_tt_06"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ho_tt_07"]                  = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : monastery of st. aralor
+		["tr_m4_tt_staralor_q1"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_staralor_q2"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_staralor_q3"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : monastery of st. delyn
+		["tr_m7_stdelyn_tt_01"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_stdelyn_tt_02"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_stdelyn_tt_03"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : monastery of st. felms
+		["tr_m4_tt_stf_mf_pilgrimage"]      = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_stf_aum_pilgrimage"]     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_stf_destroy_ancient"]    = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : narsis shrine of hidden saints
+		["tr_m7_ns_tt_chavana1"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_chavana2"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_chavana3"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_chavana4"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_chavana3a"]           = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : narsis eight-bones temple
+		["tr_m7_ns_tt_orvayn1"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_orvayn2"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_orvayn3"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_orvayn4"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ns_tt_orvayn5"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : ranyon ruhn
+		["tr_m1_tt_2"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_2_status"]               = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_3"]                      = { deity = "vivec", stage = 50,  favor = 1 },
+		["tr_m1_tt_3_status"]               = { deity = "vivec", stage = 100, favor = 1 },
+		["tr_m1_tt_4"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_4point5"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_5"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_5_curea"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_5_cured"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_5_curev"]                = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_6"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_7"]                      = { deity = "vivec", stage = 10,  favor = 1 },
+		-- td tribunal temple : pilgrimages
+		["tr_tt_q1"]                        = { deity = "vivec", stage = 100, favor = 3 }, -- initiation, after 3 pilgrimages
+		["tr_m3_tt_bloodstone"]             = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_1a"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_1b"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m1_tt_1c"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m2_tt_1a"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m2_tt_1b"]                     = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_tt_pedestalmuatra"]         = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_shrinealmafury"]         = { deity = { "vivec", "almalexia" }, stage = 10,  favor = 1 },
+		["tr_m4_tt_shrinebodrum"]           = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_tt_shrineconviction"]       = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m7_ho_tt_shrineho"]            = { deity = "vivec", stage = 10,  favor = 1 },
+		["tr_m4_tt_shrineolmsrest"]         = { deity = "vivec", stage = 10,  favor = 1 },
+		
+		-- almalexia
+		["tr_m3_va_merihayanfavor"]         = { deity = "almalexia", stage = { 5, 10, 25 }, favor = 1 },
+		-- TR_m3_VA_Merihayanfavor favor - from 11,15,20,21
+		["tr_mazedband"]                    = { deity = "almalexia", stage = 100,  favor = 1 },
+		["tr_showpower"]                    = { deity = "almalexia", stage = 100,  favor = 1 },
+		["tr_missinghand_02"]               = { deity = "almalexia", stage = 100,  favor = 1 },
+		["tr_blade"]                        = { deity = "almalexia", stage = 100,  favor = 1 },
+		-- do NOT complete TR_SothaSil
+		
+		-- sotha sil
+		["tr_sothasil"]                     = { deity = "sothasil", stage = 70,  favor = 5 },
+		["mg_excavation"]                   = { deity = "sothasil", stage = 100,  favor = 5 },
+		["mg_nchuleftbook"]                 = { deity = "sothasil", stage = 100,  favor = 5 },
+		["mg_science"]                      = { deity = "sothasil", stage = 100,  favor = 5 },
+		["mg_mzuleft"]                      = { deity = "sothasil", stage = 100,  favor = 5 },
+		["mg_bethamez"]                     = { deity = "sothasil", stage = 100,  favor = 5 },
+		["mg_dwarves"]                      = { deity = "sothasil", stage = 100,  favor = 5 },
+		["ht_dwemerlaw"]                    = { deity = "sothasil", stage = 100,  favor = 5 },
+		["ht_chroniclesnchuleft"]           = { deity = "sothasil", stage = 100,  favor = 5 },
+		["ht_fireandfaith"]                 = { deity = "sothasil", stage = 100,  favor = 5 },
+		["ht_nchuleftkey"]                  = { deity = "sothasil", stage = 100,  favor = 5 },
+		["ht_dahrkmezalf"]                  = { deity = "sothasil", stage = 100,  favor = 5 },
+		["tg_aldruhndefenses"]              = { deity = "sothasil", stage = 100,  favor = 5 },
+		["fg_nchurdamz"]                    = { deity = "sothasil", stage = 100,  favor = 5 },
+		["a1_2_antabolisinformant"]         = { deity = "sothasil", stage = 25,  favor = 5 },
+		["cx_backpath"]                     = { deity = "sothasil", stage = 65,  favor = 5 },
+		["tr_bamz"]                         = { deity = "sothasil", stage = 105,  favor = 5 },
+		["ms_battlebots1"]                  = { deity = "sothasil", stage = 20,  favor = 5 },
+		["tr_m1_fg_manrizache"]             = { deity = "sothasil", stage = 100,  favor = 5 },
+		["tr_m2_wil_ruinofstrife"]          = { deity = "sothasil", stage = 85,  favor = 5 },
+		["tr_m4_wil_belbetu2"]              = { deity = "sothasil", stage = 120,  favor = 5 },
+		["tr_m4_fg_map"]                    = { deity = "sothasil", stage = 200,  favor = 5 },
+		["tr_m3_oe_deadlytreasure"]         = { deity = "sothasil", stage = 55,  favor = 5 },
+		["tr_m1_as_dwemer"]                 = { deity = "sothasil", stage = 55,  favor = 5 },
+		["tr_m3_ic_oe_fundingdwemer"]       = { deity = "sothasil", stage = 10,  favor = 5 },
+	},
+}
