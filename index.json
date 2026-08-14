@@ -175,19 +175,6 @@
             "indexed_timestamp": 1656631023
         },
         {
-            "mod_id": 45126,
-            "name": "Salt Gems of Bensamsi",
-            "author": "Melchior Dahrk",
-            "files": [
-                {
-                    "file_id": 1000048523,
-                    "name": "Salt Gems of Bensamsi-45126-1-4-1732938499.7z",
-                    "version": "1.4"
-                }
-            ],
-            "indexed_timestamp": 1733906174
-        },
-        {
             "mod_id": 45147,
             "name": "Dahrk's Super-Sized Storage (D'sSSS)",
             "author": "Melchior Dahrk",
@@ -3821,19 +3808,6 @@
                 }
             ],
             "indexed_timestamp": 1656630879
-        },
-        {
-            "mod_id": 48267,
-            "name": "Essential Indicators",
-            "author": "Anumaril21",
-            "files": [
-                {
-                    "file_id": 1000064624,
-                    "name": "Essential Indicators-48267-1-7-1779752616.zip",
-                    "version": "1.7"
-                }
-            ],
-            "indexed_timestamp": 1780408191
         },
         {
             "mod_id": 48269,
@@ -12805,19 +12779,6 @@
             "indexed_timestamp": 1685936367
         },
         {
-            "mod_id": 52763,
-            "name": "Friends and Frens",
-            "author": "Danae CutthroatMods Neoptolemus",
-            "files": [
-                {
-                    "file_id": 1000051066,
-                    "name": "Friends and Frens-52763-2-1-1741605099.7z",
-                    "version": "2.1"
-                }
-            ],
-            "indexed_timestamp": 1742169196
-        },
-        {
             "mod_id": 52764,
             "name": "Hide Grass",
             "author": "abot",
@@ -14650,7 +14611,7 @@
                     "version": "1"
                 }
             ],
-            "indexed_timestamp": 1780408710
+            "indexed_timestamp": 1786664869
         },
         {
             "mod_id": 53756,
@@ -16285,19 +16246,6 @@
             "indexed_timestamp": 1737185638
         },
         {
-            "mod_id": 54536,
-            "name": "Wearable Lanterns",
-            "author": "syanide23",
-            "files": [
-                {
-                    "file_id": 1000045083,
-                    "name": "MWSE Lanterns-54536-1-0-1-1716600096.zip",
-                    "version": "1.0.1"
-                }
-            ],
-            "indexed_timestamp": 1751920881
-        },
-        {
             "mod_id": 54538,
             "name": "Moruhn Corkbulb Manor",
             "author": "Juidius and Dimnussens",
@@ -17654,19 +17602,6 @@
                 }
             ],
             "indexed_timestamp": 1785011133
-        },
-        {
-            "mod_id": 54976,
-            "name": "Take Cover (OpenMW)",
-            "author": "mym",
-            "files": [
-                {
-                    "file_id": 1000065538,
-                    "name": "TakeCover-54976-1-6-1781092949.zip",
-                    "version": "1.6"
-                }
-            ],
-            "indexed_timestamp": 1782735977
         },
         {
             "mod_id": 54980,
@@ -19965,19 +19900,6 @@
             "indexed_timestamp": 1740630107
         },
         {
-            "mod_id": 56075,
-            "name": "Creatures of Starwind",
-            "author": "Von Djangos",
-            "files": [
-                {
-                    "file_id": 1000060878,
-                    "name": "Creatures of Starwind-56075-2-4-1771599987.zip",
-                    "version": "2.4"
-                }
-            ],
-            "indexed_timestamp": 1773356369
-        },
-        {
             "mod_id": 56078,
             "name": "Talking Trains Speechcraft-openmw lua",
             "author": "MISTERSMELLIES",
@@ -20171,7 +20093,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1785010944
+            "indexed_timestamp": 1786665277
         },
         {
             "mod_id": 56179,
@@ -20841,19 +20763,6 @@
             "indexed_timestamp": 1748139379
         },
         {
-            "mod_id": 56494,
-            "name": "voshond's Quick Select (OpenMW)",
-            "author": "voshond",
-            "files": [
-                {
-                    "file_id": 1000059329,
-                    "name": "voshondsQuickSelect-v1.0.21-56494-v1-0-21-1766083799.zip",
-                    "version": "v1.0.21"
-                }
-            ],
-            "indexed_timestamp": 1785010788
-        },
-        {
             "mod_id": 56503,
             "name": "voshond's TakeAll (OpenMW)",
             "author": "voshond",
@@ -20943,19 +20852,6 @@
                 }
             ],
             "indexed_timestamp": 1748139429
-        },
-        {
-            "mod_id": 56554,
-            "name": "Improved Global Map Markers - MWSE",
-            "author": "Gerotaritor",
-            "files": [
-                {
-                    "file_id": 1000053042,
-                    "name": "Improved Global Map Markers - MWSE-56554-1-3-1747393217.zip",
-                    "version": "1.3"
-                }
-            ],
-            "indexed_timestamp": 1748139410
         },
         {
             "mod_id": 56555,
@@ -21379,19 +21275,6 @@
             "indexed_timestamp": 1778022264
         },
         {
-            "mod_id": 56753,
-            "name": "Oblivion Remastered Like Leveling (MWSE)",
-            "author": "SedrynTyros",
-            "files": [
-                {
-                    "file_id": 1000054616,
-                    "name": "Oblivion Remastered Like Leveling (MWSE)-56753-2-10-1750573719.7z",
-                    "version": "2.10"
-                }
-            ],
-            "indexed_timestamp": 1751920993
-        },
-        {
             "mod_id": 56754,
             "name": "ErnGearRandomizer",
             "author": "Erin",
@@ -21686,19 +21569,6 @@
                 }
             ],
             "indexed_timestamp": 1749758475
-        },
-        {
-            "mod_id": 56832,
-            "name": "Talking Matters Remastered (Speechcraft Overhaul)",
-            "author": "rhjelte",
-            "files": [
-                {
-                    "file_id": 1000059015,
-                    "name": "Talking Matters Remastered (Speechcraft overhaul)-56832-1-1-1-1765109291.7z",
-                    "version": "1.1.1"
-                }
-            ],
-            "indexed_timestamp": 1766226568
         },
         {
             "mod_id": 56835,
@@ -22314,19 +22184,6 @@
             "indexed_timestamp": 1756125475
         },
         {
-            "mod_id": 57157,
-            "name": "Tooltips Complete - Syanide23 Mods",
-            "author": "syanide23",
-            "files": [
-                {
-                    "file_id": 1000055341,
-                    "name": "Tooltips Complete-57157-1-0-0-1752938467.zip",
-                    "version": "1.0.0"
-                }
-            ],
-            "indexed_timestamp": 1753811269
-        },
-        {
             "mod_id": 57158,
             "name": "Yet Another Page of Patches",
             "author": "mods original authors and yyatsuta",
@@ -22425,19 +22282,6 @@
             "indexed_timestamp": 1776033594
         },
         {
-            "mod_id": 57178,
-            "name": "Simple Configurable Head Bobbing (MWSE)",
-            "author": "rhjelte",
-            "files": [
-                {
-                    "file_id": 1000061040,
-                    "name": "Modernized 1st Person Experience (MWSE)-57178-1-7-1-1771961124.7z",
-                    "version": "1.7.1"
-                }
-            ],
-            "indexed_timestamp": 1773356320
-        },
-        {
             "mod_id": 57180,
             "name": "Into the Abyss_RUS",
             "author": "Izgramortrue15",
@@ -22529,19 +22373,6 @@
                 }
             ],
             "indexed_timestamp": 1780408831
-        },
-        {
-            "mod_id": 57228,
-            "name": "Transfer Items Spells (OpenWM 0.49)",
-            "author": "Onkija",
-            "files": [
-                {
-                    "file_id": 1000057060,
-                    "name": "TransferItemsSpells-57228-4-7-1758725217.zip",
-                    "version": "4.7"
-                }
-            ],
-            "indexed_timestamp": 1760044563
         },
         {
             "mod_id": 57234,
@@ -22658,19 +22489,6 @@
             "indexed_timestamp": 1756125183
         },
         {
-            "mod_id": 57272,
-            "name": "Modernized 1st Person Experience (MWSE) Russian Translation",
-            "author": "Pirate",
-            "files": [
-                {
-                    "file_id": 1000061049,
-                    "name": "Modernized 1st Person Experience (MWSE) Rus-57272-1-7-1-1772004189.7z",
-                    "version": "1.7.1"
-                }
-            ],
-            "indexed_timestamp": 1773356318
-        },
-        {
             "mod_id": 57273,
             "name": "Modern Mehrunes' Razor (OpenMW)",
             "author": "Sosnoviy Bor",
@@ -22777,7 +22595,7 @@
                     "version": "7.2"
                 }
             ],
-            "indexed_timestamp": 1785011240
+            "indexed_timestamp": 1786665454
         },
         {
             "mod_id": 57286,
@@ -22790,7 +22608,7 @@
                     "version": "1.0.0"
                 }
             ],
-            "indexed_timestamp": 1782735928
+            "indexed_timestamp": 1786665452
         },
         {
             "mod_id": 57288,
@@ -23643,7 +23461,7 @@
                     "version": "0.13.2"
                 }
             ],
-            "indexed_timestamp": 1785010881
+            "indexed_timestamp": 1786665473
         },
         {
             "mod_id": 57622,
@@ -24355,19 +24173,6 @@
             "indexed_timestamp": 1766226233
         },
         {
-            "mod_id": 57892,
-            "name": "Devilish Sheathe Your Weapon Gothic Style (OpenMW)",
-            "author": "DetailDevil",
-            "files": [
-                {
-                    "file_id": 1000063549,
-                    "name": "Devilish Sheathe Your Weapon Gothic Style (OpenMW)-57892-1-8-1777842914.7z",
-                    "version": "1.8"
-                }
-            ],
-            "indexed_timestamp": 1778022321
-        },
-        {
             "mod_id": 57893,
             "name": "Baths of Vvardenfell",
             "author": "The Modding Community and DubiousNPC",
@@ -24417,7 +24222,7 @@
                     "version": "1.0"
                 }
             ],
-            "indexed_timestamp": 1782735866
+            "indexed_timestamp": 1786665335
         },
         {
             "mod_id": 57941,
@@ -24594,16 +24399,6 @@
             "author": "MrLuckyNumber",
             "files": [
                 {
-                    "file_id": 1000060381,
-                    "name": "Completionist-58020-2-1-0-1769889080.zip",
-                    "version": "2.1.0"
-                },
-                {
-                    "file_id": 1000060382,
-                    "name": "Completionist - Tamriel Rebuilt-58020-1-0-0-1769889165.zip",
-                    "version": "1.0.0"
-                },
-                {
                     "file_id": 1000060383,
                     "name": "Completionist - Project Cyrodill-58020-1-0-0-1769889217.zip",
                     "version": "1.0.0"
@@ -24619,7 +24414,7 @@
                     "version": "1.0.2"
                 }
             ],
-            "indexed_timestamp": 1770819787
+            "indexed_timestamp": 1786665433
         },
         {
             "mod_id": 58024,
@@ -24877,19 +24672,6 @@
                 }
             ],
             "indexed_timestamp": 1770819798
-        },
-        {
-            "mod_id": 58083,
-            "name": "Devilishly Peaceful Wildlife (OpenMW)",
-            "author": "DetailDevil",
-            "files": [
-                {
-                    "file_id": 1000064503,
-                    "name": "Devilishly Peaceful Wildlife-58083-1-2-3-1779571136.7z",
-                    "version": "1.2.3"
-                }
-            ],
-            "indexed_timestamp": 1780408375
         },
         {
             "mod_id": 58086,
@@ -25428,7 +25210,7 @@
                     "version": "1.0.1"
                 }
             ],
-            "indexed_timestamp": 1785010777
+            "indexed_timestamp": 1786665483
         },
         {
             "mod_id": 58231,
@@ -25652,19 +25434,6 @@
             "indexed_timestamp": 1780408293
         },
         {
-            "mod_id": 58299,
-            "name": "Arrow Stick (OpenMW)",
-            "author": "DaisyHasACat - Sosnoviy Bor",
-            "files": [
-                {
-                    "file_id": 1000062613,
-                    "name": "Arrow Stick-58299-1-6-1-1776017163.zip",
-                    "version": "1.6.1"
-                }
-            ],
-            "indexed_timestamp": 1776033720
-        },
-        {
             "mod_id": 58302,
             "name": "Just Simply Magicka Regeneration - OpenMW",
             "author": "frogstat",
@@ -25730,19 +25499,6 @@
             "indexed_timestamp": 1773356028
         },
         {
-            "mod_id": 58324,
-            "name": "Advanced World Map - Tracking",
-            "author": "Diject",
-            "files": [
-                {
-                    "file_id": 1000061259,
-                    "name": "Advanced World Map - Tracking v1.0.0-58324-1-0-0-1772560184.zip",
-                    "version": "1.0.0"
-                }
-            ],
-            "indexed_timestamp": 1773356056
-        },
-        {
             "mod_id": 58325,
             "name": "Souls-like Camera Movement (OpenMW)",
             "author": "Jimbusoid",
@@ -25767,19 +25523,6 @@
                 }
             ],
             "indexed_timestamp": 1776033724
-        },
-        {
-            "mod_id": 58335,
-            "name": "(OpenMW) Illegal Necromancy",
-            "author": "Foxunder",
-            "files": [
-                {
-                    "file_id": 1000063985,
-                    "name": "Illegal Necromancy-58335-1-3-2-1778578767.7z",
-                    "version": "1.3.2"
-                }
-            ],
-            "indexed_timestamp": 1780408393
         },
         {
             "mod_id": 58336,
@@ -25863,19 +25606,6 @@
                 }
             ],
             "indexed_timestamp": 1773356042
-        },
-        {
-            "mod_id": 58362,
-            "name": "(OpenMW) Thieves Pickpocket",
-            "author": "Foxunder",
-            "files": [
-                {
-                    "file_id": 1000063587,
-                    "name": "Thieves Pickpocket-58362-1-5-1777893864.7z",
-                    "version": "1.5"
-                }
-            ],
-            "indexed_timestamp": 1778022360
         },
         {
             "mod_id": 58365,
@@ -25972,19 +25702,6 @@
                 }
             ],
             "indexed_timestamp": 1778022335
-        },
-        {
-            "mod_id": 58405,
-            "name": "(OpenMW) Vaults Restricted",
-            "author": "Foxunder",
-            "files": [
-                {
-                    "file_id": 1000064892,
-                    "name": "(OpenMW) Vaults Restricted-58405-2-0-4-1780066405.7z",
-                    "version": "2.0.4"
-                }
-            ],
-            "indexed_timestamp": 1780408395
         },
         {
             "mod_id": 58411,
@@ -26099,24 +25816,6 @@
                 }
             ],
             "indexed_timestamp": 1778022353
-        },
-        {
-            "mod_id": 58440,
-            "name": "Daedra Equipment OpenMW Lua",
-            "author": "borok",
-            "files": [
-                {
-                    "file_id": 1000061711,
-                    "name": "gloden_saint_equipment_openmw_lua-58440-1-1-1773677059.7z",
-                    "version": "1.1"
-                },
-                {
-                    "file_id": 1000064945,
-                    "name": "dremora_equipment_openmw_lua-58440-1-1-1780115423.7z",
-                    "version": "1.1"
-                }
-            ],
-            "indexed_timestamp": 1780408399
         },
         {
             "mod_id": 58441,
@@ -26368,19 +26067,6 @@
             "indexed_timestamp": 1780408431
         },
         {
-            "mod_id": 58531,
-            "name": "Necrocraft Resurrected",
-            "author": "StormAtronach0",
-            "files": [
-                {
-                    "file_id": 1000062179,
-                    "name": "Necrocraft Resurrected-58531-1-1-1774957864.zip",
-                    "version": "1.1"
-                }
-            ],
-            "indexed_timestamp": 1776025649
-        },
-        {
             "mod_id": 58542,
             "name": "Disobedient Summons (OpenMW)",
             "author": "Sosnoviy Bor",
@@ -26417,7 +26103,7 @@
                     "version": "1.2.2"
                 }
             ],
-            "indexed_timestamp": 1782736454
+            "indexed_timestamp": 1786665070
         },
         {
             "mod_id": 58555,
@@ -26535,19 +26221,6 @@
                 }
             ],
             "indexed_timestamp": 1780408814
-        },
-        {
-            "mod_id": 58576,
-            "name": "(OpenMW) Gothic Style Knockout",
-            "author": "Foxunder",
-            "files": [
-                {
-                    "file_id": 1000065178,
-                    "name": "Gothic Style Knockout-58576-2-2-6-1780427826.7z",
-                    "version": "2.2.6"
-                }
-            ],
-            "indexed_timestamp": 1782736455
         },
         {
             "mod_id": 58582,
@@ -27084,7 +26757,7 @@
                     "version": "1.1"
                 }
             ],
-            "indexed_timestamp": 1778022055
+            "indexed_timestamp": 1786665072
         },
         {
             "mod_id": 58757,
@@ -27212,19 +26885,6 @@
                 }
             ],
             "indexed_timestamp": 1780408670
-        },
-        {
-            "mod_id": 58818,
-            "name": "Follower Commands (OpenMW)",
-            "author": "SosnoviyBor",
-            "files": [
-                {
-                    "file_id": 1000064190,
-                    "name": "FollowerCommands-58818-1-1-2-1778959811.zip",
-                    "version": "1.1.2"
-                }
-            ],
-            "indexed_timestamp": 1780408674
         },
         {
             "mod_id": 58827,
@@ -28374,19 +28034,6 @@
             "indexed_timestamp": 1780409110
         },
         {
-            "mod_id": 59095,
-            "name": "Playable Ancestor Ghosts (OpenMW)",
-            "author": "souredoutlook",
-            "files": [
-                {
-                    "file_id": 1000064813,
-                    "name": "Ancestor Ghost 0.2.2-59095-0-2-2-1779990538.zip",
-                    "version": "0.2.2"
-                }
-            ],
-            "indexed_timestamp": 1780409112
-        },
-        {
             "mod_id": 59098,
             "name": "Leeches Always Bite Twice - Misophonia Relief Patch",
             "author": "Shanjaq",
@@ -28781,7 +28428,7 @@
             "indexed_timestamp": 1782735708
         }
     ],
-    "last_scan_for_added_mods_timestamp": 1785010426,
-    "last_scan_for_updated_mods_timestamp": 1785010668,
-    "highest_validated_mod_id": 59683
+    "last_scan_for_added_mods_timestamp": 1786664651,
+    "last_scan_for_updated_mods_timestamp": 1786664848,
+    "highest_validated_mod_id": 59857
 }
